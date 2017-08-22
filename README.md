@@ -1,6 +1,6 @@
 # Include Fussball.de Widgets #
 
-Easy integration of the Fussball.de widgets (currently in the version since season 2016).
+Easy integration of the fussball.de widgets (currently in the version since season 2016) for Wordpress.
 
 ## Installation ##
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
