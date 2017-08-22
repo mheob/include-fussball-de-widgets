@@ -25,28 +25,29 @@ define( 'FUBADE_NOTICE', 'notice' );
  * @return string
  */
 function fubade_shortcode( $atts ) {
-    extract( shortcode_atts( array(
-        FUBADE_ID_KEY => FUBADE_ID_VALUE,
-        FUBADE_API    => '000',
-        FUBADE_NOTICE => '...',
-    ), $atts ) );
+	extract( shortcode_atts( array(
+		FUBADE_ID_KEY => FUBADE_ID_VALUE,
+		FUBADE_API    => '000',
+		FUBADE_NOTICE => '...',
+	), $atts ) );
 
-    $args = shortcode_atts( array( FUBADE_ID_KEY => FUBADE_ID_VALUE,
-                                   FUBADE_API => '000',
-                                   FUBADE_NOTICE => '...' ),
-        $atts );
+	$args = shortcode_atts( array(
+		FUBADE_ID_KEY => FUBADE_ID_VALUE,
+		FUBADE_API    => '000',
+		FUBADE_NOTICE => '...',
+	), $atts );
 
-    ob_start();
+	ob_start();
 
-    printf( '<div id="%1$s" class="fubade">...', $args[ FUBADE_ID_KEY ] );
-    /* translators: %1$s: the description of the widget */
-    printf( __( 'the fussball.de widget with the description <i>%1$s</i> is currently loaded', FUBADE_ID_VALUE ), $args[ FUBADE_NOTICE ] );
-    print ( '...</div>' );
+	printf( '<div id="%1$s" class="fubade">...', $args[ FUBADE_ID_KEY ] );
+	/* translators: %1$s: the description of the widget */
+	printf( __( 'the fussball.de widget with the description <i>%1$s</i> is currently loaded', FUBADE_ID_VALUE ), $args[ FUBADE_NOTICE ] );
+	print ( '...</div>' );
 
-    printf( '<script type="text/javascript" src="%1$s"></script>', esc_url( plugins_url( "js/fubade-api.js", __FILE__ ) ) );
-    printf( '<script type="text/javascript">new fussballdeWidgetAPI().showWidget("%1$s", "%2$s");</script>', $args[ FUBADE_ID_KEY ], $args[ FUBADE_API ] );
+	printf( '<script type="text/javascript" src="%1$s"></script>', esc_url( plugins_url( "js/fubade-api.js", __FILE__ ) ) );
+	printf( '<script type="text/javascript">new fussballdeWidgetAPI().showWidget("%1$s", "%2$s");</script>', $args[ FUBADE_ID_KEY ], $args[ FUBADE_API ] );
 
-    return ob_get_clean();
+	return ob_get_clean();
 }
 
 add_shortcode( FUBADE_ID_VALUE, "fubade_shortcode" );
