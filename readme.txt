@@ -4,7 +4,7 @@ Donate link: https://www.tsg-irlich.de
 Tags: soccer, football
 Requires at least: 4.8
 Tested up to: 4.8.1
-Stable tag: 1.2
+Stable tag: 1.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,21 +19,24 @@ Easy integration of the Fussball.de widgets (currently in the version since seas
 1. Use Shortcode like `[fubade id={DIV-ID} api={32-digit API} notice=description]`.
 
 ## Changelog ##
+### 1.4 ###
+* [Fixed] wrong sequence in the layout of the scripts (2017-08-23)
+
 ### 1.3 ###
-* [Bug-Fix] l10n (2017-08-23)
+* [Fixed] I18N (2017-08-23)
 
 ### 1.2 ###
-* [Bug-Fix] l10n (2017-08-23)
+* [Fixed] I18N (2017-08-23)
 
 ### 1.1 ###
-* [Bug-Fix] l10n (2017-08-23)
+* [Fixed] I18N (2017-08-23)
 
 ### 1.0 ###
 * Initial release (2017-08-23)
 
 ## Upgrade Notice ##
-### 1.3 ###
-* Fixes with the l10n (2017-08-23)
+### 1.4 ###
+* [Fixed] wrong sequence in the layout of the scripts (2017-08-23)
 
 ## Screenshots ##
 1. screenshot-1.jpg

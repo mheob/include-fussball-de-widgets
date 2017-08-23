@@ -2,7 +2,7 @@
 /*
   Plugin Name: Include Fussball.de Widgets
   Description: Easy integration of the Fussball.de widgets (currently in the version since season 2016). Use it like: [fubade id="{DIV-ID}" api="{32-digit API}" notice="description"]
-  Version: 1.3
+  Version: 1.4
   Author: Alexander Böhm
   Author URI: http://profiles.wordpress.org/mheob
   Min WP Version: 4.8
@@ -55,13 +55,12 @@ function fubade_shortcode( $atts ) {
 	printf( __( 'the fussball.de widget with the description <i>%1$s</i> is currently loaded', FUBADE_ID_VALUE ), $args[ FUBADE_NOTICE ] );
 	print ( '...</div>' );
 
-	wp_enqueue_script( 'fubade-api', plugin_dir_url( __FILE__ ) . 'scripts' );
+	wp_enqueue_script( 'fubade-api', plugin_dir_url( __FILE__ ) . 'js/fubade-api.js' );
 	wp_localize_script( 'fubade-api', FUBADE_ID_VALUE, array(
 		'missing_div' => __( "Can't display the iframe. The following DIV is missing. ID = ", FUBADE_ID_VALUE ),
+		FUBADE_ID_KEY => $args[ FUBADE_ID_KEY ],
+		FUBADE_API    => $args[ FUBADE_API ],
 	) );
-
-	//printf( '<script type="text/javascript" src="%1$s"></script>', esc_url( plugins_url( "js/fubade-api.js", __FILE__ ) ) );
-	printf( '<script type="text/javascript">new fussballdeWidgetAPI().showWidget("%1$s", "%2$s");</script>', $args[ FUBADE_ID_KEY ], $args[ FUBADE_API ] );
 
 	return ob_get_clean();
 }
