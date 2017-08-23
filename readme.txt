@@ -23,13 +23,13 @@ Easy integration of the Fussball.de widgets (currently in the version since seas
 
 ### 1.0 ###
 
-* Initial release (2017-08-18)
+* Initial release (2017-08-23)
 
 ## Upgrade Notice ##
 
 ### 1.0 ###
 
-* Initial release (2017-08-18)
+* Initial release (2017-08-23)
 
 ## Screenshots ##
 
