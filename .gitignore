@@ -1,3 +1,4 @@
 *.hg*
+*.idea*
 *.releases*
 *.github-releases*
