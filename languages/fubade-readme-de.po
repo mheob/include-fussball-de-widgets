@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Include Fussball.de Widgets - Development Readme (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-08-23 07:34+0200\n"
+"PO-Revision-Date: 2017-08-23 08:03+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,8 +19,8 @@ msgid "Installation Instructions"
 msgstr "Installationsanleitung"
 
 #. Found in changelog list item.
-msgid "Initial release (2017-08-18)"
-msgstr "Erstveröffentlichung (2017-08-22)"
+msgid "Initial release (2017-08-23)"
+msgstr "Erstveröffentlichung (2017-08-23)"
 
 #. Found in installation list item, faq list item.
 msgid "Use Shortcode like <code>[fubade id={DIV-ID} api={32-digit API} notice=description]</code>."
