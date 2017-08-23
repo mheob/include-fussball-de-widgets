@@ -17,7 +17,8 @@ var fussballdeWidgetAPI = function () {
           createIFrame(targetId, egmWidget2.url + '/-/schluessel/' + apiKey + '/target/' + targetId + '/caller/' + egmWidget2.referer);
         }
       } else {
-        log('Der angegebene DIV mit der ID ' + targetId + ' zur Ausgabe existiert nicht.');
+        // noinspection JSUnresolvedVariable
+        log(fubade.missing_div + targetId);
       }
     }
   };

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Include Fussball.de Widgets\n"
-"POT-Creation-Date: 2017-08-23 07:25+0200\n"
-"PO-Revision-Date: 2017-08-23 07:26+0200\n"
+"POT-Creation-Date: 2017-08-23 10:13+0200\n"
+"PO-Revision-Date: 2017-08-23 10:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -22,12 +22,17 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #. translators: %1$s: the description of the widget
-#: include-fussball-de-widgets.php:44
+#: include-fussball-de-widgets.php:55
 #, php-format
 msgid ""
 "the fussball.de widget with the description <i>%1$s</i> is currently loaded"
 msgstr ""
 "das fussball.de-Widget mit der Beschreibung <i>%1$s</i> ist derzeit am laden"
+
+#: include-fussball-de-widgets.php:60
+msgid "Can't display the iframe. The following DIV is missing. ID = "
+msgstr ""
+"Das Iframe kann nicht angezeigt werden. Es fehlt das DIV mit der ID = "
 
 #. Plugin Name of the plugin/theme
 msgid "Include Fussball.de Widgets"
