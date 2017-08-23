@@ -14,3 +14,6 @@ Easy integration of the fussball.de widgets (currently in the version since seas
 ## Changelog ##
 ### 1.0 ###
 * Initial release (2017-08-23)
+
+### 1.1 ###
+* Fixes with the I18N (2017-08-23)

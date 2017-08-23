@@ -1,9 +1,10 @@
 # Include Fussball.de Widgets #
 Contributors: mheob
+Donate link: https://www.tsg-irlich.de
 Tags: soccer, football
 Requires at least: 4.8
-Tested up to: 4.8
-Stable tag: 1.0
+Tested up to: 4.8.1
+Stable tag: 1.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -22,15 +23,15 @@ Easy integration of the Fussball.de widgets (currently in the version since seas
 ## Changelog ##
 
 ### 1.0 ###
-
 * Initial release (2017-08-23)
+
+### 1.1 ###
+* Fixes with the I18N (2017-08-23)
 
 ## Upgrade Notice ##
 
-### 1.0 ###
-
-* Initial release (2017-08-23)
+### 1.1 ###
+* Fixes with the I18N (2017-08-23)
 
 ## Screenshots ##
-
 1. screenshot-1.jpg
