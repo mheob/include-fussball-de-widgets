@@ -12,8 +12,11 @@ Easy integration of the fussball.de widgets (currently in the version since seas
 1. Use Shortcode like `[fubade id={DIV-ID} api={32-digit API} notice=description]`.
 
 ## Changelog ##
-### 1.0 ###
-* Initial release (2017-08-23)
+### 1.2 ###
+* [Bug-Fix] I18N (2017-08-23)
 
 ### 1.1 ###
-* Fixes with the I18N (2017-08-23)
+* [Bug-Fix] I18N (2017-08-23)
+
+### 1.0 ###
+* Initial release (2017-08-23)
