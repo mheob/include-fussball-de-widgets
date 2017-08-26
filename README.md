@@ -31,12 +31,12 @@ You can get the required ID when you are at fussball.de at your widgets (<https:
 
 You find there a code looking similar to this, at the near of the end:
 
-<pre>
+``` html
 <div id="widget1"></div>
 <script type="text/javascript">
 	new fussballdeWidgetAPI().showWidget('widget1', '020EXXXXXG000000VS54XXXXXSGIXXME');
 </script>
-</pre>
+```
 
 The long (32-digit) number and letter mix at the end is the ID to be used.
 
