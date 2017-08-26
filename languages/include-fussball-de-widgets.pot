@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Include Fussball.de Widgets\n"
-"POT-Creation-Date: 2017-08-22 07:59+0200\n"
+"POT-Creation-Date: 2017-08-26 13:07+0200\n"
 "PO-Revision-Date: 2017-08-22 07:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,15 +16,16 @@ msgstr ""
 "X-Poedit-WPHeader: include-fussball-de-widgets.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #. translators: %1$s: the description of the widget
-#: include-fussball-de-widgets.php:30
+#: include-fussball-de-widgets.php:55
 #, php-format
-msgid "fussball.de widget with the description <i>%1$s</i> is loading"
+msgid ""
+"the fussball.de widget with the description <i>%1$s</i> is currently loaded"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
@@ -33,8 +34,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Creation and inclusion of the Fussball.de-Widgets (currently since season "
-"2016) for Wordpress!"
+"Easy integration of the Fussball.de widgets (currently in the version "
+"since season 2016). Use it like: [fubade id=\"{DIV-ID}\" api=\"{32-digit "
+"API}\" notice=\"description\"]"
 msgstr ""
 
 #. Author of the plugin/theme
