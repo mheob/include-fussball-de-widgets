@@ -61,23 +61,23 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 
 = 1.4 =
 
-* [Fixed] wrong sequence in the layout of the scripts (2017-08-23)
+* [Fixed] wrong sequence in the layout of the scripts
 
 = 1.3 =
 
-* [Fixed] I18N (2017-08-23)
+* [Fixed] I18N
 
 = 1.2 =
 
-* [Fixed] I18N (2017-08-23)
+* [Fixed] I18N
 
 = 1.1 =
 
-* [Fixed] I18N (2017-08-23)
+* [Fixed] I18N
 
 = 1.0 =
 
-* Initial release (2017-08-23)
+* Initial release
 
 == Upgrade Notice ==
 
