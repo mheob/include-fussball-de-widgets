@@ -27,7 +27,7 @@ The description can be entered according to your own wishes.
 **The NOTICE is optional and can be omitted.**
 
 ### Where can I get the official ID?
-You can get the required ID when you are at wussball.de at your widgets (<https://www.fussball.de/account.admin.widgets>). There you go to the corresponding widget to `Code anzeigen`.
+You can get the required ID when you are at fussball.de at your widgets (<https://www.fussball.de/account.admin.widgets>). There you go to the corresponding widget to `Code anzeigen`.
 
 You find there a code looking similar to this, at the near of the end:
 
