@@ -18,7 +18,7 @@ var fussballdeWidgetAPI = function () {
         }
       } else {
         // noinspection JSUnresolvedVariable
-        log(fubade.missing_div + targetId);
+        log('Can\'t display the iframe. The following DIV is missing. ID = ' + targetId);
       }
     }
   };
