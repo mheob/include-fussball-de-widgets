@@ -41,7 +41,7 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 ## Changelog
 ### 1.5
 * [Added] from now on several widgets on a page are possible
-* [Added] FAQ mit deutlich genaueren Beschreibungen aktualisiert.
+* [Added] FAQ with much more accurate descriptions updated
 
 ### 1.4
 * [Fixed] wrong sequence in the layout of the scripts (2017-08-23)
