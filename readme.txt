@@ -40,7 +40,7 @@ The description can be entered according to your own wishes.
 
 = Where can I get the official ID? =
 
-You can get the required ID when you are at wussball.de at your widgets (<http://www.fussball.de/account.admin.widgets>). There you go to the corresponding widget to `Code anzeigen`.
+You can get the required ID when you are at wussball.de at your widgets (<https://www.fussball.de/account.admin.widgets>). There you go to the corresponding widget to `Code anzeigen`.
 
 You find there a code looking similar to this, at the near of the end:
 `
@@ -52,31 +52,40 @@ You find there a code looking similar to this, at the near of the end:
 
 The long (32-digit) number and letter mix at the end is the ID to be used.
 
-
 == Changelog ==
 
 = 1.5 =
+
 * [Added] from now on several widgets on a page are possible
+* [Added] FAQ mit deutlich genaueren Beschreibungen aktualisiert.
 
 = 1.4 =
+
 * [Fixed] wrong sequence in the layout of the scripts (2017-08-23)
 
 = 1.3 =
+
 * [Fixed] I18N (2017-08-23)
 
 = 1.2 =
+
 * [Fixed] I18N (2017-08-23)
 
 = 1.1 =
+
 * [Fixed] I18N (2017-08-23)
 
 = 1.0 =
+
 * Initial release (2017-08-23)
 
 == Upgrade Notice ==
+
 = 1.5 =
 
 * [Added] from now on several widgets on a page are possible
+* [Added] FAQ mit deutlich genaueren Beschreibungen aktualisiert.
 
 == Screenshots ==
+
 1. screenshot-1.jpg
