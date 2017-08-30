@@ -49,6 +49,3 @@ function createIFrame (parentId, src) {
   parent.innerHTML = '';
   parent.appendChild(iframe);
 }
-
-// noinspection JSUnresolvedVariable
-new fussballdeWidgetAPI().showWidget(fubade.id, fubade.api);

@@ -41,6 +41,9 @@ You find there a code looking similar to this, at the near of the end:
 The long (32-digit) number and letter mix at the end is the ID to be used.
 
 ## Changelog
+### 1.5.1
+* [Fixed] uncaught ReferenceError: fubade is not defined
+
 ### 1.5
 * [Added] from now on several widgets on a page are possible
 * [Added] FAQ with much more accurate descriptions updated

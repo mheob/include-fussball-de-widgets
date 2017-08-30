@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
 Tested up to: 4.8.1
-Stable tag: 1.5
+Stable tag: 1.5.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,16 +43,20 @@ The description can be entered according to your own wishes.
 You can get the required ID when you are at fussball.de at your widgets (<https://www.fussball.de/account.admin.widgets>). There you go to the corresponding widget to `Code anzeigen`.
 
 You find there a code looking similar to this, at the near of the end:
-`
+```
 <div id="widget1"></div>
 <script type="text/javascript">
 	new fussballdeWidgetAPI().showWidget('widget1', '020EXXXXXG000000VS54XXXXXSGIXXME');
 </script>
-`
+```
 
 The long (32-digit) number and letter mix at the end is the ID to be used.
 
 == Changelog ==
+
+= 1.5.1 =
+
+* [Fixed] uncaught ReferenceError: fubade is not defined
 
 = 1.5 =
 
@@ -81,10 +85,9 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 
 == Upgrade Notice ==
 
-= 1.5 =
+= 1.5.1 =
 
-* [Added] from now on several widgets on a page are possible
-* [Added] FAQ mit deutlich genaueren Beschreibungen aktualisiert.
+* [Fixed] uncaught ReferenceError: fubade is not defined
 
 == Screenshots ==
 
