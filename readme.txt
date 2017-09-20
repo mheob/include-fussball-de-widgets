@@ -4,7 +4,7 @@ Donate link: https://www.tsg-irlich.de
 Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
-Tested up to: 4.8.1
+Tested up to: 4.8.2
 Stable tag: 1.5.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
