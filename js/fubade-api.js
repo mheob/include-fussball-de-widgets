@@ -17,7 +17,6 @@ var fussballdeWidgetAPI = function () {
           createIFrame(targetId, egmWidget2.url + '/-/schluessel/' + apiKey + '/target/' + targetId + '/caller/' + egmWidget2.referer);
         }
       } else {
-        // noinspection JSUnresolvedVariable
         log('Can\'t display the iframe. The following DIV is missing. ID = ' + targetId);
       }
     }
