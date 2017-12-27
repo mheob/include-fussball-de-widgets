@@ -9,7 +9,8 @@ Easy integration of the fussball.de widgets (currently in the version since seas
 ## Installation
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Use Shortcode like `[fubade id={DIV-ID} api={32-digit API} notice=description]`.
+1. Use Shortcode like `[fubade id="{DIV-ID}" api="{32-digit API}" notice="{description}"]`<br> 
+e.g. `[fubade id="standingsU19" api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19"]`.
 
 ## How to use
 ### What is the `id` as `{DIV-ID}`?
