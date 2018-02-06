@@ -42,6 +42,10 @@ You find there a code looking similar to this, at the near of the end:
 The long (32-digit) number and letter mix at the end is the ID to be used.
 
 ## Changelog
+### 1.5.5
+* [Fixed]   some minor code reformations
+* [Checked] tested up to wordpress version 4.9.3
+
 ### 1.5.4
 * [Checked] tested up to wordpress version 4.9.2
 

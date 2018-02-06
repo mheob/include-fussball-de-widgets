@@ -7,7 +7,7 @@ var egmWidget2 = {};
 egmWidget2.url = '//www.fussball.de/widget2';
 egmWidget2.referer = location.host ? encodeURIComponent(location.host) : 'unknown';
 
-var fussballdeWidgetAPI = function () {
+var FussballdeWidgetAPI = function () {
   var widgetObj = {};
 
   widgetObj.showWidget = function (targetId, apiKey) {

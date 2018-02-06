@@ -4,8 +4,8 @@ Donate link: https://www.tsg-irlich.de
 Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
-Tested up to: 4.9.2
-Stable tag: 1.5.4
+Tested up to: 4.9.3
+Stable tag: 1.5.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -55,6 +55,11 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 
 == Changelog ==
 
+= 1.5.5 =
+
+* [Fixed]   some minor code reformations
+* [Checked] tested up to wordpress version 4.9.3
+
 = 1.5.4 =
 
 * [Checked] tested up to wordpress version 4.9.2
@@ -98,9 +103,10 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 
 == Upgrade Notice ==
 
-= 1.5.4 =
+= 1.5.5 =
 
-* [Checked] tested up to wordpress version 4.9.2
+* [Fixed]   some minor code reformations
+* [Checked] tested up to wordpress version 4.9.3
 
 == Screenshots ==
 
