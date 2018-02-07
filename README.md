@@ -9,7 +9,7 @@ Easy integration of the fussball.de widgets (currently in the version since seas
 ## Installation
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Use Shortcode like `[fubade id="{DIV-ID}" api="{32-digit API}" notice="{description}"]`<br> 
+1. Use Shortcode like `[fubade id="{DIV-ID}" api="{32-digit API}" notice="{description}"]`<br>
 e.g. `[fubade id="standingsU19" api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19"]`.
 
 ## How to use
@@ -44,7 +44,7 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 ## Changelog
 ### 1.5.5
 * [Fixed]   some minor code reformations
-* [Checked] tested up to wordpress version 4.9.3
+* [Checked] tested up to wordpress version 4.9.4
 
 ### 1.5.4
 * [Checked] tested up to wordpress version 4.9.2

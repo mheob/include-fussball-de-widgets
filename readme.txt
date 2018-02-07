@@ -4,7 +4,7 @@ Donate link: https://www.tsg-irlich.de
 Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
-Tested up to: 4.9.3
+Tested up to: 4.9.4
 Stable tag: 1.5.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ Easy integration of the Fussball.de widgets (currently in the version since seas
 
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Use Shortcode like `[fubade id="{DIV-ID}" api="{32-digit API}" notice="{description}"]`<br> 
+1. Use Shortcode like `[fubade id="{DIV-ID}" api="{32-digit API}" notice="{description}"]`<br>
 e.g. `[fubade id="standingsU19" api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19"]`.
 
 == Frequently Asked Questions ==
@@ -58,7 +58,7 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 = 1.5.5 =
 
 * [Fixed]   some minor code reformations
-* [Checked] tested up to wordpress version 4.9.3
+* [Checked] tested up to wordpress version 4.9.4
 
 = 1.5.4 =
 
@@ -106,7 +106,7 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 = 1.5.5 =
 
 * [Fixed]   some minor code reformations
-* [Checked] tested up to wordpress version 4.9.3
+* [Checked] tested up to wordpress version 4.9.4
 
 == Screenshots ==
 
