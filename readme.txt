@@ -1,6 +1,6 @@
 === Include Fussball.de Widgets ===
 Contributors: mheob
-Donate link: https://www.tsg-irlich.de
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS
 Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
