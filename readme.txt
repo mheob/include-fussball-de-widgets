@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
 Tested up to: 4.9.4
-Stable tag: 1.6
+Stable tag: 1.6.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -54,6 +54,9 @@ You find there a code looking similar to this, at the near of the end:
 The long (32-digit) number and letter mix at the end is the ID to be used.
 
 == Changelog ==
+
+= 1.6.1 =
+* [Added]   if the ID is numeric only a string will added in front
 
 = 1.6 =
 
@@ -108,9 +111,8 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 
 == Upgrade Notice ==
 
-= 1.6 =
-
-* [Fixed]   clean up the ID in the shortcode by using only chars, digits and underscores * [Fixed]   typo on the loading text
+= 1.6.1 =
+* [Added]   if the ID is numeric only a string will added in front
 
 == Screenshots ==
 

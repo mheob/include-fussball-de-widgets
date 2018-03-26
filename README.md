@@ -42,6 +42,9 @@ You find there a code looking similar to this, at the near of the end:
 The long (32-digit) number and letter mix at the end is the ID to be used.
 
 ## Changelog
+### 1.6.1
+* [Added]   if the ID is numeric only a string will added in front
+
 ### 1.6
 * [Fixed]   clean up the ID in the shortcode by using only chars, digits and underscores
 * [Fixed]   typo on the loading text

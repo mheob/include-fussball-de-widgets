@@ -2,7 +2,7 @@
 /*
   Plugin Name: Include Fussball.de Widgets
   Description: Easy integration of the Fussball.de widgets (currently in the version since season 2016). Use it like: [fubade id="{DIV-ID}" api="{32-digit API}" notice="description"]
-  Version: 1.6
+  Version: 1.6.1
   Author: Alexander Böhm
   Author URI: http://profiles.wordpress.org/mheob
   Min WP Version: 4.8
@@ -50,10 +50,11 @@ function fubade_shortcode( $atts ) {
 
 	ob_start();
 
-	$id_key = preg_replace( '/[^\w]/', '', $args[ FUBADE_ID_KEY ] );
 	$api    = strtoupper( preg_replace( '/[^\w]/', '', $args[ FUBADE_API ] ) );
+	$id_key = preg_replace( '/[^\w]/', '', $args[ FUBADE_ID_KEY ] );
+	$id_key = is_numeric( $id_key ) ? 'fubade_' . $id_key : $id_key;
 
-	printf( '<div id="%1$s" class="fubade">...', $id_key );
+	printf( '<div id="%1$s" class="%2$s">...', $id_key, FUBADE_ID_VALUE );
 	/* translators: %1$s: the description of the widget */
 	printf( __( 'the fussball.de widget with the description <i>%1$s</i> is currently loading', FUBADE_ID_VALUE ), $args[ FUBADE_NOTICE ] );
 	print ( '...</div>' );
