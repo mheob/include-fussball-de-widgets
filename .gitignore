@@ -47,9 +47,7 @@ node_modules
 *.vi
 *.zip
 
-# Compiled stuff
-css/style.css
-
-# Releases
+# Compiled stuff and releases
+dist
 .releases
 .github-releases
