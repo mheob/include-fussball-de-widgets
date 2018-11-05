@@ -1,7 +1,6 @@
 <?php
 /**
- * Functions to register client-side assets (scripts and stylesheets) for the
- * Gutenberg block.
+ * Functions to register client-side assets (scripts and stylesheets) for the Gutenberg block.
  *
  * @package include-fussball-de-widgets
  */
@@ -13,45 +12,42 @@
  * @see https://wordpress.org/gutenberg/handbook/blocks/writing-your-first-block-type/#enqueuing-block-scripts
  */
 function fubade_block_init() {
-        // Skip block registration if Gutenberg is not enabled/merged.
-        if ( ! function_exists( 'register_block_type' ) ) {
-                return;
-        }
-        $dir = dirname( __FILE__ );
+  // Skip block registration if Gutenberg is not enabled/merged.
+  if ( ! function_exists( 'register_block_type' ) ) { return; }
+  
+  $dir = dirname( __FILE__ );
+  $index_js = 'fubade/index.js';
+  $editor_css = 'fubade/editor.css';
 
-        $index_js = 'fubade/index.js';
-        wp_register_script( 
-                'fubade-block-editor',
-                plugins_url( $index_js, __FILE__ ),
-                array(
-                        'wp-blocks',
-                        'wp-i18n',
-                        'wp-element',
-                ),
-                filemtime( "$dir/$index_js" )
-        );
+  wp_register_script( 
+    'fubade-block-editor',
+    plugins_url( $index_js, __FILE__ ),
+    array(
+      'wp-blocks',
+      'wp-i18n',
+      'wp-element',
+    ), filemtime( "$dir/$index_js" )
+  );
 
-        $editor_css = 'fubade/editor.css';
-        wp_register_style(
-                'fubade-block-editor',
-                plugins_url( $editor_css, __FILE__ ),
-                array(),
-                filemtime( "$dir/$editor_css" )
-        );
+  wp_register_style(
+    'fubade-block-editor',
+    plugins_url( $editor_css, __FILE__ ),
+    array(),
+    filemtime( "$dir/$editor_css" )
+  );
 
-        $style_css = 'fubade/style.css';
-        wp_register_style(
-                'fubade-block',
-                plugins_url( $style_css, __FILE__ ),
-                array(),
-                filemtime( "$dir/$style_css" )
-              );
+  $style_css = 'fubade/style.css';
+    wp_register_style(
+    'fubade-block',
+    plugins_url( $style_css, __FILE__ ),
+    array(),
+    filemtime( "$dir/$style_css" )
+  );
 
-              register_block_type( 'include-fussball-de-widgets/fubade', array(
-                      'editor_script' => 'fubade-block-editor',
-                      'editor_style'  => 'fubade-block-editor',
-                      'style'         => 'fubade-block',
-              ) );
-      }
-      add_action( 'init', 'fubade_block_init' );
-      
+  register_block_type( 'include-fussball-de-widgets/fubade', array(
+    'editor_script' => 'fubade-block-editor',
+    'editor_style'  => 'fubade-block-editor',
+    'style'         => 'fubade-block'
+  ) );
+}
+add_action( 'init', 'fubade_block_init' );
