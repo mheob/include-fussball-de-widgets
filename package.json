@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Easy integration of the fussball.de widgets (currently in the version since season 2016) for Wordpress.",
   "scripts": {
-    "clear:dist": "rm -R dist/*",
+    "clear:dist": "rm -rf dist/*",
     "prepare:dist": "mkdir -p dist/assets dist/blocks/fubade dist/js dist/languages",
     "cp:dist": "cp src/assets/* dist/assets && cp src/blocks/fubade.php dist/blocks/ && cp src/languages/* dist/languages/ && cp src/include-fussball-de-widgets.php dist/include-fussball-de-widgets.php",
     "build:dist": "npm-run-all clear:dist prepare:dist cp:dist",
