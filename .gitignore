@@ -1,4 +1,55 @@
-*.hg*
-*.idea*
-*.releases*
-*.github-releases*
+### Linux template
+*~
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+### MacOs template
+.DS_Store
+
+### Windows template
+# Windows thumbnail cache files
+Thumbs.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+### User-specific stuff
+# IDE
+.idea
+*.sublime-project
+*.sublime-workspace
+.cache
+.project
+.settings
+
+# NPM
+package-lock.json
+node_modules
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
+*.zip
+
+# Compiled stuff
+css/style.css
+
+# Releases
+.releases
+.github-releases

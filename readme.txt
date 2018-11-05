@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
-Tested up to: 4.9.6
-Stable tag: 1.6.1
+Tested up to: 5.0.0
+Stable tag: 2.0.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
