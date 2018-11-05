@@ -5,8 +5,8 @@
   "scripts": {
     "clear:dist": "rm -R dist/*",
     "prepare:dist": "mkdir -p dist/assets dist/blocks/fubade dist/js dist/languages",
-    "mv:dist": "mv src/assets/* dist/assets && mv src/blocks/fubade.php dist/blocks/ && mv src/languages/* dist/languages/ && mv src/include-fussball-de-widgets.php dist/include-fussball-de-widgets.php",
-    "build:dist": "npm-run-all clear:dist prepare:dist mv:dist",
+    "cp:dist": "cp src/assets/* dist/assets && cp src/blocks/fubade.php dist/blocks/ && cp src/languages/* dist/languages/ && cp src/include-fussball-de-widgets.php dist/include-fussball-de-widgets.php",
+    "build:dist": "npm-run-all clear:dist prepare:dist cp:dist",
     "compile:sass": "node-sass src/blocks/fubade/ -o dist/blocks/fubade/ --output-style compressed",
     "build": "npm-run-all build:dist compile:sass"
   },
