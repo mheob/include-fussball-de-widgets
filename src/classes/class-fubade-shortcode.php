@@ -113,17 +113,16 @@ class Fubade_Shortcode {
 			false
 		);
 
-		/*
-		// Or use this for the original external script
-
-		wp_enqueue_script(
-		'fubade_api',
-		plugins_url( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js', __FILE__ ),
-		array(),
-		filemtime( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js' ),
-		false
-		);
-		*/
+		// phpcs:disable
+		// // Or use this for the original external script
+		// wp_enqueue_script(
+		// 'fubade_api',
+		// plugins_url( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js', __FILE__ ),
+		// array(),
+		// filemtime( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js' ),
+		// false
+		// );
+		// phpcs:enable
 	}
 
 	/**
