@@ -81,6 +81,12 @@ class Fubade_Shortcode {
 		$id_key = is_numeric( $id_key ) || '' === $id_key ? "fubade_$id_key" : $id_key;
 		$id_key = $id_key . '_' . substr( $a['api'], -5 );
 
+		if ( ! wp_script_is( 'fubade_api' ) ) {
+			register_fubade_api();
+		}
+
+		register_fubade_api_call( $id_key, strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
+
 		ob_start();
 
 		print( '<!-- PLUGIN START Include Fussball.de Widgets -->' );
@@ -89,12 +95,6 @@ class Fubade_Shortcode {
 		printf( esc_html__( 'the fussball.de widget with the description <i>%s</i> is currently loading', 'include-fussball-de-widgets' ), esc_html( $a['notice'] ) );
 		print ( ' ...</div>' );
 		print( '<!-- PLUGIN END Include Fussball.de Widgets -->' );
-
-		if ( ! wp_script_is( 'fubade_api' ) ) {
-			register_fubade_api();
-		}
-
-		register_fubade_api_call( $id_key, strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
 
 		return ob_get_clean();
 	}
