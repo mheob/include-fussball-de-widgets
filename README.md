@@ -41,7 +41,7 @@ You find there a code looking similar to this, at the near of the end:
 ```html
 <div id="widget1"></div>
 <script type="text/javascript">
-	new fussballdeWidgetAPI().showWidget('widget1', '020EXXXXXG000000VS54XXXXXSGIXXME');
+    new fussballdeWidgetAPI().showWidget('widget1', '020EXXXXXG000000VS54XXXXXSGIXXME');
 </script>
 ```
 
@@ -51,54 +51,54 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 
 ### 1.6.1
 
-- [Added] if the ID is numeric only a string will added in front
+- [Add] if the ID is numeric only a string will added in front
 
 ### 1.6
 
-- [Fixed] clean up the ID in the shortcode by using only chars, digits and underscores
-- [Fixed] typo on the loading text
+- [Fix] clean up the ID in the shortcode by using only chars, digits and underscores
+- [Fix] typo on the loading text
 
 ### 1.5.5
 
-- [Fixed] some minor code reformations
-- [Checked] tested up to wordpress version 4.9.4
+- [Fix] some minor code reformations
+- [Check] tested up to wordpress version 4.9.4
 
 ### 1.5.4
 
-- [Checked] tested up to wordpress version 4.9.2
+- [Check] tested up to wordpress version 4.9.2
 
 ### 1.5.3
 
-- [Checked] tested up to wordpress version 4.9
+- [Check] tested up to wordpress version 4.9
 
 ### 1.5.2
 
-- [Checked] tested up to wordpress version 4.8.3
+- [Check] tested up to wordpress version 4.8.3
 
 ### 1.5.1
 
-- [Fixed] uncaught ReferenceError: fubade is not defined
+- [Fix] uncaught ReferenceError: fubade is not defined
 
 ### 1.5
 
-- [Added] from now on several widgets on a page are possible
-- [Added] FAQ with much more accurate descriptions updated
+- [Add] from now on several widgets on a page are possible
+- [Add] FAQ with much more accurate descriptions updated
 
 ### 1.4
 
-- [Fixed] wrong sequence in the layout of the scripts
+- [Fix] wrong sequence in the layout of the scripts
 
 ### 1.3
 
-- [Fixed] I18N
+- [Fix] I18N
 
 ### 1.2
 
-- [Fixed] I18N
+- [Fix] I18N
 
 ### 1.1
 
-- [Fixed] I18N
+- [Fix] I18N
 
 ### 1.0
 
