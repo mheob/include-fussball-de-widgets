@@ -104,9 +104,17 @@ export class edit extends Component {
    * @memberof edit
    */
   generateId() {
-    const id = "fubade_" + this.state.api.substr(this.state.api.length - 5);
+    let id;
+
+    if (undefined === this.state.api) {
+      id = "fubade_";
+    } else {
+      id = "fubade_" + this.state.api.substr(this.state.api.length - 5);
+    }
+
     this.state.id = id;
     this.props.attributes.id = id;
+
     return id;
   }
 }
