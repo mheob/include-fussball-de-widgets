@@ -1,10 +1,13 @@
 const path = require("path");
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src/blocks-include-fussball-de-widgets.js"),
+  entry: path.resolve(
+    __dirname,
+    "./src/js/blocks-include-fussball-de-widgets.js"
+  ),
   output: {
     filename: "blocks-include-fussball-de-widgets.js",
-    path: path.resolve(__dirname, "./assets/blocks")
+    path: path.resolve(__dirname, "./dist/js")
   },
   devtool: "source-map",
   module: {

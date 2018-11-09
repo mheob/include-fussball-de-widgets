@@ -6,11 +6,11 @@
     "dev": "node_modules/.bin/webpack",
     "watch": "NODE_ENV=development node_modules/.bin/webpack --watch",
     "clear:dist": "rm -rf dist/*",
-    "prepare:dist": "mkdir -p dist/assets dist/blocks/fubade dist/js dist/languages",
-    "cp:dist": "cp src/assets/* dist/assets && cp src/blocks/fubade.php dist/blocks/ && cp src/languages/* dist/languages/ && cp src/include-fussball-de-widgets.php dist/include-fussball-de-widgets.php",
+    "prepare:dist": "mkdir -p dist/assets dist/classes dist/css dist/js dist/languages",
+    "cp:dist": "cp src/assets/* dist/assets/ && cp src/classes/* dist/classes/ && cp src/js/fubade-api.js dist/js/ && cp src/languages/* dist/languages/ && cp src/*.php dist/",
     "build:dist": "npm-run-all clear:dist prepare:dist cp:dist",
-    "compile:sass": "node-sass src/blocks/fubade/ -o dist/blocks/fubade/ --output-style compressed",
-    "build": "npm-run-all build:dist compile:sass"
+    "compile:sass": "node-sass src/scss/ -o dist/css/ --output-style compressed",
+    "build": "npm-run-all build:dist compile:sass dev"
   },
   "repository": {
     "type": "git",
