@@ -43,16 +43,9 @@ class Fubade_Shortcode {
 	 * @since 2.0.0
 	 */
 	public function __construct() {
-		$this->plugin_dir = plugin_dir_path( __FILE__ );
+		$this->plugin_dir = plugin_dir_path( dirname( __FILE__ ) );
 
 		// Add the shortcode to init action of WordPress.
-		add_action( 'init', 'register_shortcode' );
-	}
-
-	/**
-	 * Register the shortcode.
-	 */
-	private function register_shortcode() {
 		add_shortcode( 'fubade', array( $this, 'render_shortcode' ) );
 	}
 
@@ -63,7 +56,7 @@ class Fubade_Shortcode {
 	 *
 	 * @return string
 	 */
-	private function render_shortcode( $atts ) {
+	public function render_shortcode( $atts ) {
 		$a = shortcode_atts(
 			array(
 				'id'     => '',
@@ -80,19 +73,19 @@ class Fubade_Shortcode {
 		$id_key = 'fubade_' . substr( $a['api'], -5 );
 
 		if ( ! wp_script_is( 'fubade_api' ) ) {
-			register_fubade_api();
+			$this->register_fubade_api();
 		}
 
-		register_fubade_api_call( $id_key, strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
+		$this->register_fubade_api_call( $id_key, strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
 
 		ob_start();
 
-		print( '<!-- PLUGIN START Include Fussball.de Widgets -->' );
-		printf( '<div id="%s" class="include-fussball-de-widgets">... ', esc_html( $id_key ) );
+		print( "<!-- PLUGIN START Include Fussball.de Widgets -->\n" );
+		printf( "<div id=\"%s\" class=\"include-fussball-de-widgets\">\n", esc_html( $id_key ) );
 		/* translators: %s: the description of the widget */
-		printf( esc_html__( 'the fussball.de widget with the description <i>%s</i> is currently loading', 'include-fussball-de-widgets' ), esc_html( $a['notice'] ) );
-		print ( ' ...</div>' );
-		print( '<!-- PLUGIN END Include Fussball.de Widgets -->' );
+		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $a['notice'] ) );
+		print ( "</div>\n" );
+		print( "<!-- PLUGIN END Include Fussball.de Widgets -->\n" );
 
 		return ob_get_clean();
 	}
@@ -102,12 +95,12 @@ class Fubade_Shortcode {
 	 *
 	 * @since 2.0.0
 	 */
-	private function register_fubade_api() {
+	public function register_fubade_api() {
 		wp_enqueue_script(
 			'fubade_api',
-			plugins_url( "$this->plugin_dir/js/fubade-api.js", __FILE__ ),
+			plugins_url( '/js/fubade-api.js', dirname( __FILE__ ) ),
 			array(),
-			filemtime( "$this->plugin_dir/js/fubade-api.js" ),
+			filemtime( $this->plugin_dir . 'js/fubade-api.js' ),
 			false
 		);
 
@@ -115,7 +108,7 @@ class Fubade_Shortcode {
 		// // Or use this for the original external script
 		// wp_enqueue_script(
 		// 'fubade_api',
-		// plugins_url( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js', __FILE__ ),
+		// plugins_url( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js', dirname( __FILE__ ) ),
 		// array(),
 		// filemtime( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js' ),
 		// false
@@ -131,7 +124,7 @@ class Fubade_Shortcode {
 	 * @param string $id  The id of the div-container.
 	 * @param string $api The api code from the fussball.de widget.
 	 */
-	private function register_fubade_api_call( $id, $api ) {
+	public function register_fubade_api_call( $id, $api ) {
 		wp_add_inline_script(
 			'fubade_api',
 			"new FussballdeWidgetAPI().showWidget('$id', '$api');"

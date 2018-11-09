@@ -15,14 +15,12 @@
 // Exit if not defined.
 defined( 'ABSPATH' ) || exit;
 
-use Include_Fussball_De_Widgets;
-
 // Generate the shortcode.
-require_once __DIR__ . '/classes/class-fubade-shortcodes';
-new Fubade_Shortcode();
+require_once __DIR__ . '/classes/class-fubade-shortcode.php';
+new Include_Fussball_De_Widgets\Fubade_Shortcode();
 
 // Generate the Gutenberg blocks only if Gutenberg is running.
 if ( function_exists( 'register_block_type' ) ) {
-	require_once __DIR__ . '/classes/class-fubade-blocks';
-	new Fubade_Blocks();
+	require_once __DIR__ . '/classes/class-fubade-block.php';
+	new Include_Fussball_De_Widgets\Fubade_Block();
 }

@@ -42,7 +42,7 @@ class Fubade_Block {
 	 * @since 2.0.0
 	 */
 	public function __construct() {
-		$this->plugin_dir = plugin_dir_path( __FILE__ );
+		$this->plugin_dir = plugin_dir_path( dirname( __FILE__ ) );
 
 		// Add the scripts and styles to the WordPress backend.
 		add_action( 'enqueue_block_editor_assets', array( $this, 'register_editor_scripts_for_fubade' ) );
@@ -57,13 +57,13 @@ class Fubade_Block {
 	 *
 	 * @since 2.0.0
 	 */
-	private function register_editor_scripts_for_fubade() {
+	public function register_editor_scripts_for_fubade() {
 		// Register Gutenberg block.
 		wp_enqueue_script(
 			'fubade-editor-block',
-			plugins_url( "$this->plugin_dir/js/fubade-block.js", __FILE__ ),
+			plugins_url( '/js/blocks-include-fussball-de-widgets.js', dirname( __FILE__ ) ),
 			array( 'wp-element', 'wp-blocks', 'wp-i18n', 'wp-components', 'wp-editor' ),
-			filemtime( "$this->plugin_dir/js/fubade-block.js" ),
+			filemtime( $this->plugin_dir . 'js/blocks-include-fussball-de-widgets.js' ),
 			true
 		);
 
@@ -82,9 +82,9 @@ class Fubade_Block {
 
 		wp_enqueue_script(
 			'fubade_api',
-			plugins_url( "$this->plugin_dir/js/fubade-api.js", __FILE__ ),
+			plugins_url( '/js/fubade-api.js', dirname( __FILE__ ) ),
 			array(),
-			filemtime( "$this->plugin_dir/js/fubade-api.js" ),
+			filemtime( $this->plugin_dir . 'js/fubade-api.js' ),
 			false
 		);
 
@@ -92,7 +92,7 @@ class Fubade_Block {
 		// // Or use this for the original external script
 		// wp_enqueue_script(
 		// 'fubade_api',
-		// plugins_url( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js', __FILE__ ),
+		// plugins_url( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js', dirname( __FILE__ ) ),
 		// array(),
 		// filemtime( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js' ),
 		// false
@@ -105,13 +105,13 @@ class Fubade_Block {
 	 *
 	 * @since 2.0.0
 	 */
-	private function register_editor_styles_for_fubade() {
+	public function register_editor_styles_for_fubade() {
 		// Register gutenberg map block.
 		wp_enqueue_style(
 			'fubade-editor-block',
-			plugins_url( "$this->plugin_dir/css/editor.css", __FILE__ ),
+			plugins_url( '/css/editor.css', dirname( __FILE__ ) ),
 			array(),
-			filemtime( "$this->plugin_dir/css/editor.css" )
+			filemtime( $this->plugin_dir . 'css/editor.css' )
 		);
 	}
 
@@ -120,13 +120,13 @@ class Fubade_Block {
 	 *
 	 * @since 2.0.0
 	 */
-	private function register_styles_for_fubade() {
+	public function register_styles_for_fubade() {
 		// Register gutenberg map block.
 		wp_enqueue_style(
 			'fubade-block',
-			plugins_url( "$this->plugin_dir/css/styles.css", __FILE__ ),
+			plugins_url( '/css/styles.css', dirname( __FILE__ ) ),
 			array(),
-			filemtime( "$this->plugin_dir/css/styles.css" )
+			filemtime( $this->plugin_dir . 'css/styles.css' )
 		);
 	}
 }
