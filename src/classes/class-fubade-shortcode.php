@@ -66,7 +66,7 @@ class Fubade_Shortcode {
 	private function render_shortcode( $atts ) {
 		$a = shortcode_atts(
 			array(
-				'id'     => 'fubade',
+				'id'     => '',
 				'api'    => '',
 				'notice' => 'Thanks for the widget "include-fussball-de-widgets" <3.',
 			),
@@ -77,9 +77,7 @@ class Fubade_Shortcode {
 			return '';
 		}
 
-		$id_key = preg_replace( '/[^\w]/', '', $a['id'] );
-		$id_key = is_numeric( $id_key ) || '' === $id_key ? "fubade_$id_key" : $id_key;
-		$id_key = $id_key . '_' . substr( $a['api'], -5 );
+		$id_key = 'fubade_' . substr( $a['api'], -5 );
 
 		if ( ! wp_script_is( 'fubade_api' ) ) {
 			register_fubade_api();
