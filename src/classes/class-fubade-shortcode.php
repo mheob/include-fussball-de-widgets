@@ -62,7 +62,7 @@ class Fubade_Shortcode {
 			array(
 				'id'     => '',
 				'api'    => '',
-				'notice' => 'Thanks for the widget "include-fussball-de-widgets" <3.',
+				'notice' => 'Thanks for using the widget "include-fussball-de-widgets" <3.',
 			),
 			$atts
 		);
