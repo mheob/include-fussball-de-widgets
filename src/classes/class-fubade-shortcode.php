@@ -71,20 +71,23 @@ class Fubade_Shortcode {
 			return '';
 		}
 
-		$id_key = 'fubade_' . substr( $a['api'], -5 );
+		$api    = sanitize_text_field( $a['api'] );
+		$notice = sanitize_text_field( $a['notice'] );
+
+		$id_key = 'fubade_' . substr( $api, -5 );
 
 		if ( ! wp_script_is( 'fubade_api' ) ) {
 			$this->register_fubade_api();
 		}
 
-		$this->register_fubade_api_call( $id_key, strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
+		$this->register_fubade_api_call( $id_key, strtoupper( preg_replace( '/[^\w]/', '', $api ) ) );
 
 		ob_start();
 
 		print( "<!-- PLUGIN START Include Fussball.de Widgets -->\n" );
 		printf( "<div id=\"%s\" class=\"include-fussball-de-widgets\">\n", esc_html( $id_key ) );
 		/* translators: %s: the description of the widget */
-		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $a['notice'] ) );
+		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $notice ) );
 		print ( "</div>\n" );
 		print( "<!-- PLUGIN END Include Fussball.de Widgets -->\n" );
 
