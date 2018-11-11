@@ -7,8 +7,6 @@
  * Author URI:     http://profiles.wordpress.org/mheob
  * License:        GPL-2.0-or-later
  * License URI:    https://www.gnu.org/licenses/gpl.html
- * Text Domain:    include-fussball-de-widgets
- * Domain Path:    /languages
  *
  * @package Include_Fussball_De_Widgets
  */
