@@ -17,7 +17,7 @@
     "url": "git+https://github.com/ITS-Boehm/include-fussball-de-widgets.git"
   },
   "author": "IT-Service Böhm -- Alexander Böhm",
-  "license": "GPLv3",
+  "license": "GPL-2.0-or-later",
   "bugs": {
     "url": "https://github.com/ITS-Boehm/include-fussball-de-widgets/issues"
   },

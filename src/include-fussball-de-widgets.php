@@ -2,14 +2,30 @@
 /**
  * Plugin Name:    Include Fussball.de Widgets
  * Description:    Easy integration of the Fussball.de widgets (currently in the version since season 2016). Use it like: [fubade id="{DIV-ID}" api="{32-digit API}" notice="description"]
+ * Version:        2.0.0
  * Author:         Alexander Böhm
  * Author URI:     http://profiles.wordpress.org/mheob
- * Min WP Version: 4.8
- * Max WP Version: 5.x
+ * License:        GPL-2.0-or-later
+ * License URI:    https://www.gnu.org/licenses/gpl.html
  * Text Domain:    include-fussball-de-widgets
- * Version:        2.0.0
+ * Domain Path:    /languages
  *
  * @package Include_Fussball_De_Widgets
+ */
+
+/**
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 // Exit if not defined.
