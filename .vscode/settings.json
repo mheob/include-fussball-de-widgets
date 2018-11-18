@@ -1,17 +1,17 @@
 {
-  "editor.fontSize": 16,
-  "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace, 'Segoe UI Emoji'",
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "editor.fontLigatures": true,
-  "editor.formatOnSave": true,
-  "html.format.endWithNewline": true,
-  "html.format.wrapAttributes": "aligned-multiple",
+	"editor.formatOnSave": true,
+	"editor.tabSize": 2,
+	"html.format.endWithNewline": true,
+	"html.format.wrapAttributes": "aligned-multiple",
 
-  // Extensions
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true,
-  "phpcs.executablePath": "/home/mheob/.config/composer/vendor/bin/phpcs",
-  "phpcs.standard": "WordPress",
-  "phpcbf.executablePath": "/home/mheob/.config/composer/vendor/bin/phpcbf",
-  "phpcbf.standard": "WordPress"
+	// Extensions
+	"prettier.eslintIntegration": true,
+	"prettier.stylelintIntegration": true,
+	// Set path in the user settings
+	"phpcs.executablePath": "/home/mheob/.config/composer/vendor/bin/phpcs",
+	"phpcs.standard": "WordPress",
+	"phpcs.ignorePatterns": ["*/node_modules/*"],
+	// Set path in the user settings
+	"phpcbf.executablePath": "/home/mheob/.config/composer/vendor/bin/phpcbf",
+	"phpcbf.standard": "WordPress"
 }

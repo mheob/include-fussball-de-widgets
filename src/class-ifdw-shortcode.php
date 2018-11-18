@@ -19,17 +19,25 @@
  * @package Include_Fussball_De_Widgets
  */
 
-namespace Include_Fussball_De_Widgets;
+/**
+ * Shortcode Initializer
+ *
+ * Define and render the shortcode.
+ *
+ * @since   2.0.0
+ * @package Include_Fussball_De_Widgets
+ */
 
-// Exit if not defined.
-defined( 'ABSPATH' ) || exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
- * Class Fubade_Shortcode
+ * Class Ifdw_Shortcode
  *
  * @since 2.0.0
  */
-class Fubade_Shortcode {
+class Ifdw_Shortcode {
 
 	/**
 	 * The plugin direction
@@ -39,7 +47,7 @@ class Fubade_Shortcode {
 	private $plugin_dir;
 
 	/**
-	 * Constructor function for the Fubade_Shortcode class.
+	 * Constructor function for the Ifdw_Shortcode class.
 	 *
 	 * @since 2.0.0
 	 */
@@ -53,7 +61,7 @@ class Fubade_Shortcode {
 	/**
 	 * Render the shortcode
 	 *
-	 * @param array $atts Shortcode attributes.
+	 * @param array $atts Shortcode attributes (`id`, `api` and `notice`).
 	 *
 	 * @return string
 	 */
@@ -67,11 +75,11 @@ class Fubade_Shortcode {
 			$atts
 		);
 
-		if ( empty( $a['api'] ) ) {
-			return '';
+		if ( 32 !== strlen( $a['api'] ) ) {
+			return __( '!!! the API musst have a length of 32 digits !!!', 'include-fussball-de-widgets' );
 		}
 
-		$api    = sanitize_text_field( $a['api'] );
+		$api    = sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
 		$notice = sanitize_text_field( $a['notice'] );
 
 		$id_key = 'fubade_' . substr( $api, -5 );
@@ -80,16 +88,14 @@ class Fubade_Shortcode {
 			$this->register_fubade_api();
 		}
 
-		$this->register_fubade_api_call( $id_key, strtoupper( preg_replace( '/[^\w]/', '', $api ) ) );
+		$this->register_fubade_api_call( $id_key, $api );
 
 		ob_start();
 
-		print( "<!-- PLUGIN START Include Fussball.de Widgets -->\n" );
 		printf( "<div id=\"%s\" class=\"include-fussball-de-widgets\">\n", esc_html( $id_key ) );
 		/* translators: %s: the description of the widget */
 		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $notice ) );
 		print ( "</div>\n" );
-		print( "<!-- PLUGIN END Include Fussball.de Widgets -->\n" );
 
 		return ob_get_clean();
 	}
@@ -102,9 +108,9 @@ class Fubade_Shortcode {
 	public function register_fubade_api() {
 		wp_enqueue_script(
 			'fubade_api',
-			plugins_url( '/js/fubade-api.js', dirname( __FILE__ ) ),
+			plugins_url( '/src/fubade-api.js', dirname( __FILE__ ) ),
 			array(),
-			filemtime( $this->plugin_dir . 'js/fubade-api.js' ),
+			filemtime( $this->plugin_dir . 'src/fubade-api.js' ),
 			false
 		);
 
@@ -131,8 +137,8 @@ class Fubade_Shortcode {
 	public function register_fubade_api_call( $id, $api ) {
 		wp_add_inline_script(
 			'fubade_api',
-			"new FussballdeWidgetAPI().showWidget('$id', '$api');"
+			"new FussballdeWidgetAPI().showWidget('$id', '$api');",
+			'after'
 		);
 	}
 }
-

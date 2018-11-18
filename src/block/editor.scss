@@ -1,0 +1,41 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss which makes it higher in priority.
+ */
+
+.wp-block-ifdw-fubade {
+	display: flex;
+	flex-direction: row;
+	padding: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 13px;
+	background-color: #f8f9f9;
+
+	label {
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		margin-right: 8px;
+		font-weight: 600;
+		white-space: nowrap;
+	}
+
+	&-header {
+		margin: 0;
+		font-size: 1em !important;
+		font-style: italic;
+	}
+
+	&-shortcode {
+		font-family: monospace;
+		font-size: 0.5em;
+	}
+
+	&-header,
+	&-shortcode {
+		padding: 0 0.5em;
+		color: $white;
+		background-color: $fubade_green;
+	}
+}
