@@ -109,9 +109,10 @@ function ifdw_render_block_fubade( $attributes ) {
 
   // phpcs:disable
   // extract( $attributes, null, null );
-
+  
 	// if ( isset( $api ) && strlen( $api ) === 32 ) {
-	// return sprintf( '[fubade id="%s" api="%s" notice="%s"]', $id, $api, $notice );
-	// }
-	// return __( '<div style="color:gray;">!!! the API musst have a length of 32 digits !!!</div>', 'include-fussball-de-widgets' );
+    // return sprintf( '[fubade id="%s" api="%s" notice="%s"]', $id, $api, $notice );
+    // }
+    // return __( '<div style="color:gray;">!!! the API musst have a length of 32 digits !!!</div>', 'include-fussball-de-widgets' );
+    // phpcs:enable
 }
