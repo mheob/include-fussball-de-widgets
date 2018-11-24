@@ -21,6 +21,14 @@
 		white-space: nowrap;
 	}
 
+	&-header,
+	&-shortcode {
+		padding: 0 0.5em;
+		color: $white;
+		text-align: center;
+		background-color: $fubade_green;
+	}
+
 	&-header {
 		margin: 0;
 		font-size: 1em !important;
@@ -30,12 +38,14 @@
 	&-shortcode {
 		font-family: monospace;
 		font-size: 0.5em;
-	}
+		color: $black;
 
-	&-header,
-	&-shortcode {
-		padding: 0 0.5em;
-		color: $white;
-		background-color: $fubade_green;
+		&.error {
+			padding: 0 0.5em;
+			margin: 0;
+			color: $white;
+			background-color: $error_color;
+			border: none;
+		}
 	}
 }

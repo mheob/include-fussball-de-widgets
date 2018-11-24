@@ -13,7 +13,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InspectorControls, PlainText } = wp.editor;
 const { Fragment } = wp.element;
-const { PanelBody, ServerSideRender, TextControl } = wp.components;
+const { PanelBody, TextControl } = wp.components;
 const { withInstanceId } = wp.compose;
 
 /**
@@ -50,7 +50,7 @@ registerBlockType( 'ifdw/fubade', {
 
 	edit: withInstanceId(
 		( { attributes, className, instanceId, isSelected, setAttributes } ) => {
-			const { api, id, notice } = attributes;
+			const { api, notice } = attributes;
 			const inputId = `${ className }-${ instanceId }`;
 
 			const createId = () => {
@@ -59,7 +59,7 @@ registerBlockType( 'ifdw/fubade', {
 
 			const onChangeApi = newApi => {
 				setAttributes( { api: newApi } );
-				createId( newApi );
+				createId();
 			};
 
 			const onChangeNotice = newNotice => {
@@ -105,10 +105,21 @@ registerBlockType( 'ifdw/fubade', {
 							onChange={ onChangeApi }
 						/>
 					</div>
-					<div className={ `${ className }-shortcode` }>
-						<ServerSideRender block="ifdw/fubade" attributes={ attributes } />
-					</div>
-					<div id={ id } />
+					{ 32 === api.length ? (
+						<div className={ `${ className }-shortcode` }>
+							{ __(
+								'The widget should now be able to be displayed in the frontend.',
+								'include-fussball-de-widgets'
+							) }
+						</div>
+					) : (
+						<div className={ `${ className }-shortcode error` }>
+							{ __(
+								'The fussball.de API must have a length of exactly 32 characters.',
+								'include-fussball-de-widgets'
+							) }
+						</div>
+					) }
 				</Fragment>,
 			];
 		}

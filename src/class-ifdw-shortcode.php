@@ -118,10 +118,10 @@ class Ifdw_Shortcode {
 		// // Or use this for the original external script
 		// wp_enqueue_script(
 		// 'fubade_api',
-		// plugins_url( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js', dirname( __FILE__ ) ),
+		// 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js',
 		// array(),
-		// filemtime( 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js' ),
-		// false
+		// null,
+		// true
 		// );
 		// phpcs:enable
 	}
@@ -137,7 +137,7 @@ class Ifdw_Shortcode {
 	public function register_fubade_api_call( $id, $api ) {
 		wp_add_inline_script(
 			'fubade_api',
-			"new FussballdeWidgetAPI().showWidget('$id', '$api');",
+			"new FussballdeWidgetAPI().showWidget( '$id', '$api' );",
 			'after'
 		);
 	}
