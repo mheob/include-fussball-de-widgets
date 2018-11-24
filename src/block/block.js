@@ -9,6 +9,8 @@
 import './style.scss';
 import './editor.scss';
 
+import icon from './icon';
+
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InspectorControls, PlainText } = wp.editor;
@@ -35,7 +37,7 @@ registerBlockType( 'ifdw/fubade', {
 		'Showing the fussball.de widget',
 		'include-fussball-de-widgets'
 	),
-	icon: 'sos',
+	icon: icon.fubade,
 	category: 'widgets',
 	keywords: [ __( 'fubade', 'include-fussball-de-widgets' ) ],
 
