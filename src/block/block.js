@@ -55,20 +55,17 @@ registerBlockType( 'ifdw/fubade', {
 			const { api, notice } = attributes;
 			const inputId = `${ className }-${ instanceId }`;
 
-			const createId = () => {
-				setAttributes( { id: 'fubade_' + api.slice( -5 ) } );
-			};
-
 			const onChangeApi = newApi => {
 				setAttributes( { api: newApi } );
-				createId();
+				setAttributes( {
+					id:
+						'fubade_' + ( 32 !== newApi.length ? +new Date() : newApi.slice( -5 ) ),
+				} );
 			};
 
 			const onChangeNotice = newNotice => {
 				setAttributes( { notice: newNotice } );
 			};
-
-			setAttributes( createId() );
 
 			return [
 				!! isSelected && (
@@ -90,7 +87,9 @@ registerBlockType( 'ifdw/fubade', {
 				<Fragment key="output">
 					<h4 className={ `${ className }-header` }>
 						{ __( 'Fussball.de Widget', 'include-fussball-de-widgets' ) }
-						{ 'undefined' === notice || '' === notice ? '' : `: "${ notice }"` }
+						{ 'undefined' === typeof notice || '' === notice ?
+							'' :
+							`: "${ notice }"` }
 					</h4>
 					<div className={ className }>
 						<label htmlFor={ inputId }>
@@ -107,7 +106,7 @@ registerBlockType( 'ifdw/fubade', {
 							onChange={ onChangeApi }
 						/>
 					</div>
-					{ 32 === api.length ? (
+					{ 'undefined' !== typeof api && 32 === api.length ? (
 						<div className={ `${ className }-shortcode` }>
 							{ __(
 								'The widget should now be able to be displayed in the frontend.',
