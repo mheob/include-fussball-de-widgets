@@ -10,16 +10,13 @@ Easy integration of the fussball.de widgets (currently in the version since seas
 
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Use Shortcode like `[fubade id="{DIV-ID}" api="{32-digit API}" notice="{description}"]`<br>
-   e.g. `[fubade id="standingsU19" api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19"]`.
+1. You can use the plugin in two ways. As a shortcode and from version 5 also as an integrated Gutenberg Block.
+   1. In versions below 5.0 use the shortcode like:  
+      `[fubade api="{32-digit API}" notice="{description}"]`  
+      e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19"]`
+   1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `/ fubade`.
 
 ## How to use
-
-### What is the `id` as `{DIV-ID}`?
-
-If there is more than one widget on a single page, the respective DIV container must be distinguished. This is done through this value.
-
-**The ID is optional and can be omitted.**
 
 ### What is the `api` as `{32-digit API}`?
 
@@ -41,13 +38,31 @@ You find there a code looking similar to this, at the near of the end:
 ```html
 <div id="widget1"></div>
 <script type="text/javascript">
-    new fussballdeWidgetAPI().showWidget('widget1', '020EXXXXXG000000VS54XXXXXSGIXXME');
+	new fussballdeWidgetAPI().showWidget(
+		"widget1",
+		"020EXXXXXG000000VS54XXXXXSGIXXME"
+	);
 </script>
 ```
 
 The long (32-digit) number and letter mix at the end is the ID to be used.
 
+### Obsolet ID
+
+In older versions there was still an ID must be assigned. This is no longer necessary because it is automatically generated.
+
 ## Changelog
+
+### 2.0.1
+
+- [Fix] Fatal error: Call to undefined function register_block_type()
+
+### 2.0.0 (complete redesign)
+
+- [Add] using as Gutenberg Block
+- [Modify] redesign the whole structure
+- [Fix] problems with the input of the ID (no more input needed)
+- [Check] tested up to wordpress version 5.0
 
 ### 1.6.1
 

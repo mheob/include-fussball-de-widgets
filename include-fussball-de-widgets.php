@@ -2,11 +2,11 @@
 /**
  * Plugin Name:    Include Fussball.de Widgets
  * Description:    Easy integration of the Fussball.de widgets (currently in the version since season 2016). Use it like: [fubade id="{DIV-ID}" api="{32-digit API}" notice="description"]
- * Version:        2.0.0
+ * Version:        2.0.1
  * Author:         IT-Service Böhm -- Alexander Böhm
  * Author URI:     http://profiles.wordpress.org/mheob
- * License:        GPL-2.0-or-later
- * License URI:    https://www.gnu.org/licenses/gpl.html
+ * License:        GPLv2
+ * License URI:    https://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package Include_Fussball_De_Widgets
  */

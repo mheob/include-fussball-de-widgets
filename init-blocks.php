@@ -62,25 +62,27 @@ function register_dynamic_blocks() {
 	);
 
 	// The Block.
-	register_block_type(
-		'ifdw/fubade',
-		array(
-			'attributes'      => array(
-				'id'     => array(
-					'type' => 'string',
+	if ( function_exists( 'register_block_type' ) ) {
+		register_block_type(
+			'ifdw/fubade',
+			array(
+				'attributes'      => array(
+					'id'     => array(
+						'type' => 'string',
+					),
+					'api'    => array(
+						'type' => 'string',
+					),
+					'notice' => array(
+						'type' => 'string',
+					),
 				),
-				'api'    => array(
-					'type' => 'string',
-				),
-				'notice' => array(
-					'type' => 'string',
-				),
-			),
-			'editor_script'   => 'ifdw-block',
-			'editor_style'    => 'ifdw-editor-block',
-			'render_callback' => 'ifdw_render_block_fubade',
-		)
-	);
+				'editor_script'   => 'ifdw-block',
+				'editor_style'    => 'ifdw-editor-block',
+				'render_callback' => 'ifdw_render_block_fubade',
+			)
+		);
+	}
 }
 add_action( 'init', 'register_dynamic_blocks' );
 
