@@ -116,7 +116,7 @@ registerBlockType( 'ifdw/fubade', {
 					) : (
 						<div className={ `${ className }-shortcode error` }>
 							{ __(
-								'The fussball.de API must have a length of exactly 32 characters.',
+								'!!! The fussball.de API must have a length of exactly 32 characters. !!!',
 								'include-fussball-de-widgets'
 							) }
 						</div>

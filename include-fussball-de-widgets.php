@@ -18,10 +18,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Shortcode Initializer.
  */
-require_once plugin_dir_path( __FILE__ ) . 'src/class-ifdw-shortcode.php';
+require_once plugin_dir_path( __FILE__ ) . 'class-ifdw-shortcode.php';
 new Ifdw_Shortcode();
 
 /**
  * Block Initializer.
  */
-require_once plugin_dir_path( __FILE__ ) . 'src/init-blocks.php';
+require_once plugin_dir_path( __FILE__ ) . 'init-blocks.php';

@@ -38,22 +38,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 2.0.0
  */
 class Ifdw_Shortcode {
-
-	/**
-	 * The plugin direction
-	 *
-	 * @var string
-	 */
-	private $plugin_dir;
-
 	/**
 	 * Constructor function for the Ifdw_Shortcode class.
 	 *
 	 * @since 2.0.0
 	 */
 	public function __construct() {
-		$this->plugin_dir = plugin_dir_path( dirname( __FILE__ ) );
-
 		// Add the shortcode to init action of WordPress.
 		add_shortcode( 'fubade', array( $this, 'render_shortcode' ) );
 	}
@@ -76,7 +66,7 @@ class Ifdw_Shortcode {
 		);
 
 		if ( 32 !== strlen( $a['api'] ) ) {
-			return __( '!!! the API musst have a length of 32 digits !!!', 'include-fussball-de-widgets' );
+			return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
 		}
 
 		$api    = sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
@@ -108,9 +98,9 @@ class Ifdw_Shortcode {
 	public function register_fubade_api() {
 		wp_enqueue_script(
 			'fubade_api',
-			plugins_url( '/src/fubade-api.js', dirname( __FILE__ ) ),
+			plugins_url( 'fubade-api.js', __FILE__ ),
 			array(),
-			filemtime( $this->plugin_dir . 'src/fubade-api.js' ),
+			filemtime( plugin_dir_path( __FILE__ ) . 'fubade-api.js' ),
 			false
 		);
 

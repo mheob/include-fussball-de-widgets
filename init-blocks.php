@@ -47,25 +47,18 @@ function register_dynamic_blocks() {
 	// Scripts.
 	wp_register_script(
 		'ifdw-block',
-		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
+		plugins_url( '/dist/blocks.build.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'dist/blocks.build.js' ),
 		true
 	);
 
 	// Styles.
 	wp_register_style(
-		'ifdw-block',
-		plugins_url( '/dist/blocks.style.build.css', dirname( __FILE__ ) ),
-		array(),
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
-	);
-
-	wp_register_style(
 		'ifdw-editor-block',
-		plugins_url( '/dist/blocks.editor.build.css', dirname( __FILE__ ) ),
+		plugins_url( '/dist/blocks.editor.build.css', __FILE__ ),
 		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
+		filemtime( plugin_dir_path( __FILE__ ) . 'dist/blocks.editor.build.css' )
 	);
 
 	// The Block.
@@ -85,7 +78,6 @@ function register_dynamic_blocks() {
 			),
 			'editor_script'   => 'ifdw-block',
 			'editor_style'    => 'ifdw-editor-block',
-			'style'           => 'ifdw-block',
 			'render_callback' => 'ifdw_render_block_fubade',
 		)
 	);
@@ -106,13 +98,4 @@ function ifdw_render_block_fubade( $attributes ) {
 	require_once plugin_dir_path( __FILE__ ) . 'class-ifdw-shortcode.php';
 
 	return ( new Ifdw_Shortcode() )->render_shortcode( $attributes );
-
-  // phpcs:disable
-  // extract( $attributes, null, null );
-  
-	// if ( isset( $api ) && strlen( $api ) === 32 ) {
-    // return sprintf( '[fubade id="%s" api="%s" notice="%s"]', $id, $api, $notice );
-    // }
-    // return __( '<div style="color:gray;">!!! the API musst have a length of 32 digits !!!</div>', 'include-fussball-de-widgets' );
-    // phpcs:enable
 }
