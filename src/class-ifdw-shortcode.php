@@ -70,7 +70,7 @@ class Ifdw_Shortcode {
 			array(
 				'id'     => '',
 				'api'    => '',
-				'notice' => 'Thanks for using the widget "include-fussball-de-widgets" <3.',
+				'notice' => '',
 			),
 			$atts
 		);
