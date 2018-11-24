@@ -37,7 +37,7 @@ registerBlockType( 'ifdw/fubade', {
 		'Showing the fussball.de widget',
 		'include-fussball-de-widgets'
 	),
-	icon: icon.fubade,
+	icon: icon.includeFussballDeWidgets,
 	category: 'widgets',
 	keywords: [ __( 'fubade', 'include-fussball-de-widgets' ) ],
 
