@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:    Include Fussball.de Widgets
- * Description:    Easy integration of the Fussball.de widgets (currently in the version since season 2016). Use it like: [fubade id="{DIV-ID}" api="{32-digit API}" notice="description"]
+ * Description:    Easy integration of the Fussball.de widgets (currently in the version since season 2016). Use it like: [fubade api="{32-digit API}" notice="description"]
  * Version:        2.0.1
  * Author:         IT-Service Böhm -- Alexander Böhm
  * Author URI:     http://profiles.wordpress.org/mheob

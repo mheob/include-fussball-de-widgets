@@ -42,6 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * `notice`: an short description for the user.
  *
  * @since 2.0.0
+ * @version 2.0.1
  */
 function register_dynamic_blocks() {
 	// Scripts.
