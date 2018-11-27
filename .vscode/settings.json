@@ -8,10 +8,10 @@
 	"prettier.eslintIntegration": true,
 	"prettier.stylelintIntegration": true,
 	// Set path in the user settings
-	//"phpcs.executablePath": "/home/alb/tools/PHP_CodeSniffer/bin/phpcs",
+	//"phpcs.executablePath": "/home/alb/tools/phpcs/bin/phpcs",
 	"phpcs.standard": "WordPress",
 	"phpcs.ignorePatterns": ["*/node_modules/*"],
 	// Set path in the user settings
-	//"phpcbf.executablePath": "/home/alb/tools/PHP_CodeSniffer/bin/phpcbf",
+	//"phpcbf.executablePath": "/home/alb/tools/phpcs/bin/phpcbf",
 	"phpcbf.standard": "WordPress"
 }
