@@ -53,6 +53,10 @@ In older versions there was still an ID must be assigned. This is no longer nece
 
 ## Changelog
 
+### 2.0.2
+
+- [Add] Local language files. For the Gutenberg Block they aren't in GlotPress.
+
 ### 2.0.1
 
 - [Fix] Fatal error: Call to undefined function register_block_type()

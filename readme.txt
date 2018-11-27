@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
 Tested up to: 5.0
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,10 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 In older versions there was still an ID must be assigned. This is no longer necessary because it is automatically generated.
 
 == Changelog ==
+
+= 2.0.2 =
+
+* [Add] Local language files. For the Gutenberg Block they aren't in GlotPress.
 
 = 2.0.1 =
 
@@ -128,9 +132,9 @@ In older versions there was still an ID must be assigned. This is no longer nece
 
 == Upgrade Notice ==
 
-= 2.0.1 =
+= 2.0.2 =
 
-* [Fix] Fatal error: Call to undefined function register_block_type()
+* [Add] Local language files. For the Gutenberg Block they aren't in GlotPress.
 
 == Screenshots ==
 
