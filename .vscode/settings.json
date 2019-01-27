@@ -13,5 +13,14 @@
 	"phpcs.ignorePatterns": ["*/node_modules/*"],
 	// Set path in the user settings
 	//"phpcbf.executablePath": "/home/alb/tools/phpcs/bin/phpcbf",
-	"phpcbf.standard": "WordPress"
+	"phpcbf.standard": "WordPress",
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/.github/**": true,
+		"**/.github-releases/**": true
+	}
 }
