@@ -53,6 +53,10 @@ In older versions there was still an ID must be assigned. This is no longer nece
 
 ## Changelog
 
+### 2.0.3
+
+- [Fix] Internet Explorer 11 can't load plugin
+
 ### 2.0.2
 
 - [Add] Local language files. For the Gutenberg Block they aren't in GlotPress.

@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
 Tested up to: 5.0
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,8 +20,8 @@ Easy integration of the Fussball.de widgets (currently in the version since seas
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. You can use the plugin in two ways. As a shortcode and from version 5 also as an integrated Gutenberg Block.
-   1. In versions below 5.0 use the shortcode like:  
-      `[fubade api="{32-digit API}" notice="{description}"]`  
+   1. In versions below 5.0 use the shortcode like:
+      `[fubade api="{32-digit API}" notice="{description}"]`
       e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19"]`
    1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `/ fubade`.
 
@@ -59,6 +59,10 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 In older versions there was still an ID must be assigned. This is no longer necessary because it is automatically generated.
 
 == Changelog ==
+
+= 2.0.3 =
+
+* [Fix] Internet Explorer 11 can't load plugin
 
 = 2.0.2 =
 
@@ -132,9 +136,9 @@ In older versions there was still an ID must be assigned. This is no longer nece
 
 == Upgrade Notice ==
 
-= 2.0.2 =
+= 2.0.3 =
 
-* [Add] Local language files. For the Gutenberg Block they aren't in GlotPress.
+- [Fix] Internet Explorer 11 can't load plugin
 
 == Screenshots ==
 
