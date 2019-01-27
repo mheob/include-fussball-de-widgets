@@ -38,7 +38,9 @@ var FussballdeWidgetAPI = function() {
 				}
 			} else {
 				console.log(
-					`Can't display the iframe. The DIV with the ID=${targetId} is missing.`
+					'Can\'t display the iframe. The DIV with the ID="' +
+						targetId +
+						'"is missing.'
 				);
 			}
 		}
