@@ -28,8 +28,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.0] - 2018-11-24
 
-### Fixed
-
 ### Added
 
 - Using as Gutenberg Block.
@@ -46,7 +44,7 @@ All notable changes to this project will be documented in this file.
 
 - If the ID is numeric only, a string will added in front.
 
-## [1.6] - 2018-03-17
+## [1.6.0] - 2018-03-17
 
 ### Fixed
 
@@ -87,7 +85,7 @@ All notable changes to this project will be documented in this file.
 
 - Fix the "uncaught ReferenceError: fubade is not defined".
 
-## [1.5] - 2017-08-26
+## [1.5.0] - 2017-08-26
 
 ### Added
 
@@ -97,31 +95,31 @@ All notable changes to this project will be documented in this file.
 
 - The FAQ are now with much more accurate descriptions.
 
-## [1.4] - 2017-08-23
+## [1.4.0] - 2017-08-23
 
 ### Fixed
 
 - Fix a wrong sequence in the layout of the scripts.
 
-## [1.3] - 2017-08-23
+## [1.3.0] - 2017-08-23
 
 ### Fixed
 
 - Fix some typos.
 
-## [1.2] - 2017-08-23
+## [1.2.0] - 2017-08-23
 
 ### Fixed
 
 - Fix some typos.
 
-## [1.1] - 2017-08-23
+## [1.1.0] - 2017-08-23
 
 ### Fixed
 
 - Fix some typos.
 
-## [1.0] - 2017-08-22
+## 1.0.0 - 2017-08-22
 
 - Initial release.
 
