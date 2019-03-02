@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - This changelog.
+- The ToDo.md file.
 
 ## [2.0.3] - 2019-01-27
 

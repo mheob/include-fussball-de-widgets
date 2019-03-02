@@ -3,8 +3,12 @@
 ## Feature-Requests
 
 ### From the WordPress-Support-Forum
-* [Tabell mit fester Breite](https://wordpress.org/support/topic/tabelle-mit-fester-breite/)
+
+- [ ] [Tabelle mit fester breite](https://wordpress.org/support/topic/tabelle-mit-fester-breite/)
+- [ ] [Ä, Ö, Ü im Vereinsnamen und in der HP Adresse](https://wordpress.org/support/topic/a-o-u-im-vereinsnamen-und-in-der-hp-adresse/)
 
 ## Own Ideas
-* Set `max-width: 100%;` directly the the javascript api file (on the setStyle attribute on generating the iframe)
-* Include the original fubade API in the own modular javascript structure
+
+- [ ] Include the original fubade API in the own modular javascript structure.
+- [ ] Structure the whole code a bit more effizient.
+- [ ] Update the translation files
