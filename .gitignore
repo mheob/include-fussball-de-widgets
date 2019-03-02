@@ -34,6 +34,7 @@ $RECYCLE.BIN/
 .settings
 
 # NPM
+yarn.lock
 package-lock.json
 node_modules
 
