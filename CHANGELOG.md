@@ -4,8 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.1.0] - 2019-03-03
+
 ### Added
 
+- Support for setting up the width of the widget to 100% to of their parent element.
 - This changelog.
 - The ToDo.md file.
 
@@ -124,7 +127,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.3...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.3...v2.1.0
 [2.0.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.0...v2.0.1

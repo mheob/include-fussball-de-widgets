@@ -12,8 +12,8 @@ Easy integration of the fussball.de widgets (currently in the version since seas
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. You can use the plugin in two ways. As a shortcode and from version 5 also as an integrated Gutenberg Block.
    1. In versions below 5.0 use the shortcode like:  
-      `[fubade api="{32-digit API}" notice="{description}"]`  
-      e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19"]`
+      `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe width}]`
+      e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true]`
    1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `/ fubade`.
 
 ## How to use
@@ -28,6 +28,12 @@ Here the 32-digit ID must be entered from the official Fußball.de-Widget.
 
 The description can be entered according to your own wishes.
 **The NOTICE is optional and can be omitted.**
+
+### What is the `fullwidth` as `{iframe width}`?
+
+The IFRAME WIDTH can be set to the full width of 100% to the parent element.
+As values are only `true` or `1` possible.
+**The IFRAME WIDTH is optional and can be omitted.**
 
 ### Where can I get the official ID?
 

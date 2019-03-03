@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
 Tested up to: 5.1
-Stable tag: 2.0.3
+Stable tag: 2.1.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,8 +21,8 @@ Easy integration of the Fussball.de widgets (currently in the version since seas
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. You can use the plugin in two ways. As a shortcode and from version 5 also as an integrated Gutenberg Block.
    1. In versions below 5.0 use the shortcode like:
-      `[fubade api="{32-digit API}" notice="{description}"]`
-      e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19"]`
+      `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe width}]`  
+      e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true]`
    1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `/ fubade`.
 
 == Frequently Asked Questions ==
@@ -36,6 +36,12 @@ Here the 32-digit ID must be entered from the official Fußball.de-Widget.
 
 The description can be entered according to your own wishes.
 **The NOTICE is optional and can be omitted.**
+
+= What is the `fullwidth` as `{iframe width}`? =
+
+The IFRAME WIDTH can be set to the full width of 100% to the parent element.
+As values are only `true` or `1` possible.
+**The IFRAME WIDTH is optional and can be omitted.**
 
 = Where can I get the official ID? =
 
@@ -54,91 +60,140 @@ You find there a code looking similar to this, at the near of the end:
 
 The long (32-digit) number and letter mix at the end is the ID to be used.
 
-### Obsolet ID
+= Obsolet ID =
 
 In older versions there was still an ID must be assigned. This is no longer necessary because it is automatically generated.
 
 == Changelog ==
 
-= 2.0.3 =
+= 2.1.0 - 2019-03-03 =
 
-* [Fix] Internet Explorer 11 can't load plugin
+= Added =
 
-= 2.0.2 =
+* Support for setting up the width of the widget to 100% to of their parent element.
 
-* [Add] Local language files. For the Gutenberg Block they aren't in GlotPress.
+= [2.0.3] - 2019-01-27 =
 
-= 2.0.1 =
+= Fixed =
 
-* [Fix] Fatal error: Call to undefined function register_block_type()
+* Fix an issue, that the Internet Explorer 11 can't load plugin.
 
-= 2.0.0 (complete redesign) =
+= [2.0.2] - 2018-11-28 =
 
-* [Add] using as Gutenberg Block
-* [Modify] redesign the whole structure
-* [Fix] problems with the input of the ID (no more input needed)
-* [Check] tested up to wordpress version 5.0
+= Added =
 
-= 1.6.1 =
+* Local language files. For the Gutenberg Block they aren't in GlotPress.
 
-* [Added]   if the ID is numeric only a string will added in front
+= [2.0.1] - 2018-11-24 =
 
-= 1.6 =
+= Fixed =
 
-* [Fixed]   clean up the ID in the shortcode by using only chars, digits and underscores
-* [Fixed]   typo on the loading text
+* Fix the "Fatal error: Call to undefined function register_block_type()".
 
-= 1.5.5 =
+= [2.0.0] - 2018-11-24 =
 
-* [Fixed]   some minor code reformations
-* [Checked] tested up to wordpress version 4.9.4
+= Added =
 
-= 1.5.4 =
+* Using as Gutenberg Block.
+* The Plugin is tested up to wordpress version 5.0.
 
-* [Checked] tested up to wordpress version 4.9.2
+= Changed =
 
-= 1.5.3 =
+* No more input for the ID is needed. It will generate automatically at now.
+* Redesign the whole structure.
 
-* [Checked] tested up to wordpress version 4.9
+= [1.6.1] - 2018-03-26 =
 
-= 1.5.2 =
+= Fixed =
 
-* [Checked] tested up to wordpress version 4.8.3
+* If the ID is numeric only, a string will added in front.
 
-= 1.5.1 =
+= [1.6.0] - 2018-03-17 =
 
-* [Fixed] uncaught ReferenceError: fubade is not defined
+= Fixed =
 
-= 1.5 =
+* Clean up the ID in the shortcode by using only chars, digits and underscores. This prevents some possible errors.
+* Fix a typo on the loading text.
 
-* [Added] from now on several widgets on a page are possible
-* [Added] FAQ with much more accurate descriptions updated
+= [1.5.5] - 2018-02-06 =
 
-= 1.4 =
+= Changed =
 
-* [Fixed] wrong sequence in the layout of the scripts
+* Some minor code reformations for a better performance.
 
-= 1.3 =
+= Added =
 
-* [Fixed] I18N
+* The Plugin is tested up to wordpress version 4.9.4.
 
-= 1.2 =
+= [1.5.4] - 2018-01-17 =
 
-* [Fixed] I18N
+= Added =
 
-= 1.1 =
+* The Plugin is tested up to wordpress version 4.9.2.
 
-* [Fixed] I18N
+= [1.5.3] - 2017-11-13 =
 
-= 1.0 =
+= Added =
 
-* Initial release
+* The Plugin is tested up to wordpress version 4.9.
+
+= [1.5.2] - 2017-11-01 =
+
+= Added =
+
+* The Plugin is tested up to wordpress version 4.8.3.
+
+= [1.5.1] - 2017-08-30 =
+
+= Fixed =
+
+* Fix the "uncaught ReferenceError: fubade is not defined".
+
+= [1.5.0] - 2017-08-26 =
+
+= Added =
+
+* From now on several widgets on a page are possible.
+
+= Changed =
+
+* The FAQ are now with much more accurate descriptions.
+
+= [1.4.0] - 2017-08-23 =
+
+= Fixed =
+
+* Fix a wrong sequence in the layout of the scripts.
+
+= [1.3.0] - 2017-08-23 =
+
+= Fixed =
+
+* Fix some typos.
+
+= [1.2.0] - 2017-08-23 =
+
+= Fixed =
+
+* Fix some typos.
+
+= [1.1.0] - 2017-08-23 =
+
+= Fixed =
+
+* Fix some typos.
+
+= 1.0.0 - 2017-08-22 =
+
+* Initial release.
 
 == Upgrade Notice ==
 
-= 2.0.3 =
+= 2.1.0 =
 
-- [Fix] Internet Explorer 11 can't load plugin
+= Added =
+
+* Support for setting up the width of the widget to 100% to of their parent element.
 
 == Screenshots ==
 
