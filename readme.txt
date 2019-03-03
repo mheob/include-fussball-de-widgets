@@ -23,7 +23,7 @@ Easy integration of the Fussball.de widgets (currently in the version since seas
    1. In versions below 5.0 use the shortcode like:
       `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe width}]`  
       e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true]`
-   1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `/ fubade`.
+   1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `/fubade`.
 
 == Frequently Asked Questions ==
 
