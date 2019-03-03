@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 /**
  * BLOCK: Include_Fussball_De_Widgets
  *
@@ -15,7 +16,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InspectorControls, PlainText } = wp.editor;
 const { Fragment } = wp.element;
-const { PanelBody, TextControl } = wp.components;
+const { PanelBody, TextControl, ToggleControl } = wp.components;
 const { withInstanceId } = wp.compose;
 
 /**
@@ -42,30 +43,15 @@ registerBlockType( 'ifdw/fubade', {
 	keywords: [ __( 'fubade', 'include-fussball-de-widgets' ) ],
 
 	attributes: {
-		api: {
-			type: 'string',
-		},
-		notice: {
-			type: 'string',
-		},
+		api: { type: 'string' },
+		notice: { type: 'string' },
+		fullwidth: { type: 'boolean' },
 	},
 
 	edit: withInstanceId(
 		( { attributes, className, instanceId, isSelected, setAttributes } ) => {
-			const { api, notice } = attributes;
+			const { api, notice, fullwidth } = attributes;
 			const inputId = `${ className }-${ instanceId }`;
-
-			const onChangeApi = newApi => {
-				setAttributes( { api: newApi } );
-				setAttributes( {
-					id:
-						'fubade_' + ( 32 !== newApi.length ? +new Date() : newApi.slice( -5 ) ),
-				} );
-			};
-
-			const onChangeNotice = newNotice => {
-				setAttributes( { notice: newNotice } );
-			};
 
 			return [
 				!! isSelected && (
@@ -79,7 +65,27 @@ registerBlockType( 'ifdw/fubade', {
 							<TextControl
 								label={ __( 'Notice', 'include-fussball-de-widgets' ) }
 								value={ notice }
-								onChange={ onChangeNotice }
+								onChange={ newNotice => {
+									setAttributes( { notice: newNotice } );
+								} }
+							/>
+							<ToggleControl
+								label={ __( 'Show in full width', 'include-fussball-de-widgets' ) }
+								help={
+									fullwidth ?
+										__(
+											'The widget will be shown in the maximal width.',
+											'include-fussball-de-widgets'
+										  ) :
+										__(
+											'The widget will be shown in the width given from fussball.de (CSS possible could overwrite this setting).',
+											'include-fussball-de-widgets'
+										  )
+								}
+								checked={ fullwidth }
+								onChange={ newFullwidth => {
+									setAttributes( { fullwidth: newFullwidth } );
+								} }
 							/>
 						</PanelBody>
 					</InspectorControls>
@@ -103,7 +109,14 @@ registerBlockType( 'ifdw/fubade', {
 								'Insert API here...',
 								'include-fussball-de-widgets'
 							) }
-							onChange={ onChangeApi }
+							onChange={ newApi => {
+								setAttributes( { api: newApi } );
+								setAttributes( {
+									id:
+										'fubade_' +
+										( 32 !== newApi.length ? +new Date() : newApi.slice( -5 ) ),
+								} );
+							} }
 						/>
 					</div>
 					{ 'undefined' !== typeof api && 32 === api.length ? (

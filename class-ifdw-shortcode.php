@@ -32,6 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
 /**
  * Class Ifdw_Shortcode
  *
@@ -48,8 +49,11 @@ class Ifdw_Shortcode {
 		add_shortcode( 'fubade', array( $this, 'render_shortcode' ) );
 	}
 
+
 	/**
 	 * Render the shortcode
+	 *
+	 * @since 2.0.0
 	 *
 	 * @param array $atts Shortcode attributes (`id`, `api` and `notice`).
 	 *
@@ -58,9 +62,10 @@ class Ifdw_Shortcode {
 	public function render_shortcode( $atts ) {
 		$a = shortcode_atts(
 			array(
-				'id'     => '',
-				'api'    => '',
-				'notice' => '',
+				'id'        => '',
+				'api'       => '',
+				'notice'    => '',
+				'fullwidth' => '',
 			),
 			$atts
 		);
@@ -69,16 +74,17 @@ class Ifdw_Shortcode {
 			return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
 		}
 
-		$api    = sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
-		$notice = sanitize_text_field( $a['notice'] );
-
-		$id_key = 'fubade_' . substr( $api, -5 );
+		$notice     = sanitize_text_field( $a['notice'] );
+		$api        = sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
+		$id_key     = 'fubade_' . substr( $api, -5 );
+		$full_width = sanitize_text_field( $a['fullwidth'] );
+		$full_width = '1' === $full_width || 'true' === $full_width || true === $full_width ? true : false;
 
 		if ( ! wp_script_is( 'fubade_api' ) ) {
 			$this->register_fubade_api();
 		}
 
-		$this->register_fubade_api_call( $id_key, $api );
+		$this->register_fubade_api_call( $id_key, $api, $full_width );
 
 		ob_start();
 
@@ -89,6 +95,7 @@ class Ifdw_Shortcode {
 
 		return ob_get_clean();
 	}
+
 
 	/**
 	 * Register the api from fussball.de.
@@ -103,18 +110,8 @@ class Ifdw_Shortcode {
 			filemtime( plugin_dir_path( __FILE__ ) . 'fubade-api.js' ),
 			false
 		);
-
-		// phpcs:disable
-		// // Or use this for the original external script
-		// wp_enqueue_script(
-		// 'fubade_api',
-		// 'http://www.fussball.de/static/layout/fbde2/egm//js/widget2.js',
-		// array(),
-		// null,
-		// true
-		// );
-		// phpcs:enable
 	}
+
 
 	/**
 	 * Register the calling script for the api from fussball.de.
@@ -123,11 +120,12 @@ class Ifdw_Shortcode {
 	 *
 	 * @param string $id  The id of the div-container.
 	 * @param string $api The api code from the fussball.de widget.
+	 * @param bool   $full_width If TRUE the full_width will set; otherwise the default width will used.
 	 */
-	public function register_fubade_api_call( $id, $api ) {
+	public function register_fubade_api_call( $id, $api, $full_width ) {
 		wp_add_inline_script(
 			'fubade_api',
-			"new FussballdeWidgetAPI().showWidget( '$id', '$api' );",
+			"new FussballdeWidgetAPI().showWidget( '$id', '$api', $full_width );",
 			'after'
 		);
 	}

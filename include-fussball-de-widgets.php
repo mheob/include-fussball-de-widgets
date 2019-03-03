@@ -2,7 +2,7 @@
 /**
  * Plugin Name:    Include Fussball.de Widgets
  * Description:    Easy integration of the Fussball.de widgets (currently in the version since season 2016). Use it like: [fubade api="{32-digit API}" notice="description"]
- * Version:        2.0.3
+ * Version:        2.1.0
  * Author:         IT-Service Böhm -- Alexander Böhm
  * Author URI:     http://profiles.wordpress.org/mheob
  * License:        GPLv2
@@ -16,12 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Block Initializer.
+ */
+require_once plugin_dir_path( __FILE__ ) . 'init-blocks.php';
+
+
+/**
  * Shortcode Initializer.
  */
 require_once plugin_dir_path( __FILE__ ) . 'class-ifdw-shortcode.php';
 new Ifdw_Shortcode();
-
-/**
- * Block Initializer.
- */
-require_once plugin_dir_path( __FILE__ ) . 'init-blocks.php';
