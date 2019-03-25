@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
 Tested up to: 5.1
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,12 @@ The long (32-digit) number and letter mix at the end is the ID to be used.
 In older versions there was still an ID must be assigned. This is no longer necessary because it is automatically generated.
 
 == Changelog ==
+
+= 2.1.1 - 2019-03-25 =
+
+= Added =
+
+* Fix a bug in the IE11, when the fullwidth was not set.
 
 = 2.1.0 - 2019-03-03 =
 
@@ -189,11 +195,11 @@ In older versions there was still an ID must be assigned. This is no longer nece
 
 == Upgrade Notice ==
 
-= 2.1.0 =
+= 2.1.1 =
 
 = Added =
 
-* Support for setting up the width of the widget to 100% to of their parent element.
+* Fix a bug in the IE11, when the fullwidth was not set.
 
 == Screenshots ==
 

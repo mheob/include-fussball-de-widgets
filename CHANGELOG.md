@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.1.1] - 2019-03-25
+
+### Fixed
+
+- Fix a bug in the IE11, when the fullwidth was not set.
+
 ## [2.1.0] - 2019-03-03
 
 ### Added
@@ -127,7 +133,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.0...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.3...v2.1.0
 [2.0.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.1...v2.0.2
