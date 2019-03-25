@@ -73,7 +73,7 @@ In older versions there was still an ID must be assigned. This is no longer nece
 
 = 2.1.1 - 2019-03-25 =
 
-= Added =
+= Fixed =
 
 * Fix a bug in the IE11, when the fullwidth was not set.
 
@@ -201,8 +201,6 @@ In older versions there was still an ID must be assigned. This is no longer nece
 == Upgrade Notice ==
 
 = 2.1.1 =
-
-= Added =
 
 * Fix a bug in the IE11, when the fullwidth was not set.
 
