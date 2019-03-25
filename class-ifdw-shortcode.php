@@ -78,7 +78,7 @@ class Ifdw_Shortcode {
 		$api        = sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
 		$id_key     = 'fubade_' . substr( $api, -5 );
 		$full_width = sanitize_text_field( $a['fullwidth'] );
-		$full_width = '1' === $full_width || 'true' === $full_width || true === $full_width ? true : false;
+		$full_width = '1' === $full_width || 'true' === $full_width || true === $full_width ? 1 : 0;
 
 		if ( ! wp_script_is( 'fubade_api' ) ) {
 			$this->register_fubade_api();
