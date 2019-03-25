@@ -27,6 +27,11 @@ Easy integration of the Fussball.de widgets (currently in the version since seas
 
 == Frequently Asked Questions ==
 
+= How should I write the shortcode? =
+
+`[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe width}]`
+e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true]`
+
 = What is the `api` as `{32-digit API}`? =
 
 Here the 32-digit ID must be entered from the official Fußball.de-Widget.
