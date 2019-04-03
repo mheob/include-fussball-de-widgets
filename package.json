@@ -23,7 +23,7 @@
 		"release": "npm-run-all build release-only"
 	},
 	"dependencies": {
-		"cgb-scripts": "^1.15.0"
+		"cgb-scripts": "^1.17.0"
 	},
 	"devDependencies": {
 		"npm-run-all": "^4.1.5",
