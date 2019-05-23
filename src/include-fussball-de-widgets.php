@@ -11,9 +11,7 @@
  * @package Include_Fussball_De_Widgets
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Block Initializer.

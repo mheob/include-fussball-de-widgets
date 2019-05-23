@@ -20,19 +20,13 @@
  */
 
 /**
- * Initializer of the blocks and other functions.
- *
- * Enqueue CSS/JS of all the blocks.
- * Initial the shortcode.
+ * Functions to register client-side assets (scripts and stylesheets) for the Gutenberg block.
  *
  * @since   2.0.0
  * @package Include_Fussball_De_Widgets
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
+defined( 'ABSPATH' ) || exit();
 
 /**
  * Register the dynamic block.
@@ -43,44 +37,55 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 2.0.0
  */
-function register_dynamic_blocks() {
-	// Scripts.
+function ifdw_fubade_block_init() {
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return;
+	}
+
+	$dir = dirname( __FILE__ );
+
+	$index_js = 'fubade/index.js';
 	wp_register_script(
-		'ifdw-block',
-		plugins_url( '/dist/blocks.build.js', __FILE__ ),
+		'fubade-block-editor',
+		plugins_url( $index_js, __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'dist/blocks.build.js' ),
+		filemtime( "$dir/$index_js" ),
 		true
 	);
 
-	// Styles.
+	$editor_css = 'fubade/editor.css';
 	wp_register_style(
-		'ifdw-editor-block',
-		plugins_url( '/dist/blocks.editor.build.css', __FILE__ ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'dist/blocks.editor.build.css' )
+		'fubade-block-editor',
+		plugins_url( $editor_css, __FILE__ ),
+		array(),
+		filemtime( "$dir/$editor_css" )
 	);
 
-	// The Block.
-	if ( function_exists( 'register_block_type' ) ) {
-		register_block_type(
-			'ifdw/fubade',
-			array(
-				'attributes'      => array(
-					'id'        => array( 'type' => 'string' ),
-					'api'       => array( 'type' => 'string' ),
-					'notice'    => array( 'type' => 'string' ),
-					'fullwidth' => array( 'type' => 'boolean' ),
-				),
-				'editor_script'   => 'ifdw-block',
-				'editor_style'    => 'ifdw-editor-block',
-				'render_callback' => 'ifdw_render_block_fubade',
-			)
-		);
-	}
-}
-add_action( 'init', 'register_dynamic_blocks' );
+	$style_css = 'fubade/style.css';
+	wp_register_style(
+		'fubade-block',
+		plugins_url( $style_css, __FILE__ ),
+		array(),
+		filemtime( "$dir/$style_css" )
+	);
 
+	register_block_type(
+		'ifdw/fubade',
+		array(
+			'attributes'      => array(
+				'id'        => array( 'type' => 'string' ),
+				'api'       => array( 'type' => 'string' ),
+				'notice'    => array( 'type' => 'string' ),
+				'fullwidth' => array( 'type' => 'boolean' ),
+			),
+			'editor_script'   => 'fubade-block',
+			'editor_style'    => 'fubade-editor-block',
+			'style'           => 'fubade-block',
+			'render_callback' => 'ifdw_render_block_fubade',
+		)
+	);
+}
+add_action( 'init', 'ifdw_fubade_block_init' );
 
 /**
  * Define the dynamic block.

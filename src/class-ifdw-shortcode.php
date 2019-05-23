@@ -28,9 +28,7 @@
  * @package Include_Fussball_De_Widgets
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 
 /**
@@ -102,7 +100,7 @@ class Ifdw_Shortcode {
 	 *
 	 * @since 2.0.0
 	 */
-	public function register_fubade_api() {
+	private function register_fubade_api() {
 		wp_enqueue_script(
 			'fubade_api',
 			plugins_url( 'fubade-api.js', __FILE__ ),
@@ -118,11 +116,11 @@ class Ifdw_Shortcode {
 	 *
 	 * @since 2.0.0
 	 *
-	 * @param string $id  The id of the div-container.
-	 * @param string $api The api code from the fussball.de widget.
-	 * @param bool   $full_width If TRUE the full_width will set; otherwise the default width will used.
+	 * @param string $id          The id of the div-container.
+	 * @param string $api         The api code from the fussball.de widget.
+	 * @param bool   $full_width  If TRUE the full_width will set; otherwise the default width will used.
 	 */
-	public function register_fubade_api_call( $id, $api, $full_width ) {
+	private function register_fubade_api_call( $id, $api, $full_width ) {
 		wp_add_inline_script(
 			'fubade_api',
 			"new FussballdeWidgetAPI().showWidget( '$id', '$api', $full_width );",

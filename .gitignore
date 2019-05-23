@@ -33,9 +33,9 @@ $RECYCLE.BIN/
 .project
 .settings
 
-# NPM
-yarn.lock
+# NPM / YARN
 package-lock.json
+yarn.lock
 node_modules
 
 # Numerous always-ignore extensions
@@ -49,7 +49,8 @@ node_modules
 *.vi
 *.zip
 
-# Compiled stuff and releases
-dist
-.releases
-.github-releases
+# Compiled stuff
+**/build/**
+**/dist/**
+**/.releases/**
+**/.github-releases/**

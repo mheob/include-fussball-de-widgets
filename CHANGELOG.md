@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+
+- The widget will now also appear in IE and in the Edge if the domain uses non-ASCII characters (such as ä, ö, ü).
+
+### Added
+
+- The Plugin is tested up to wordpress version 5.2.
+
+### Changed
+
+- Redefined the file structure for using GULP in the development.
+- Using the newest javascript features (ES6) for easier development.
+- Cleanup the php code for a better performance.
+
 ## [2.1.1] - 2019-03-25
 
 ### Fixed

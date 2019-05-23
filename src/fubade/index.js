@@ -1,4 +1,3 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 /**
  * BLOCK: Include_Fussball_De_Widgets
  *
@@ -12,12 +11,12 @@ import './editor.scss';
 
 import icon from './icon';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { InspectorControls, PlainText } = wp.editor;
-const { Fragment } = wp.element;
-const { PanelBody, TextControl, ToggleControl } = wp.components;
-const { withInstanceId } = wp.compose;
+const { __ } = wp.i18n,
+	{ registerBlockType } = wp.blocks,
+	{ InspectorControls, PlainText } = wp.editor,
+	{ Fragment } = wp.element,
+	{ PanelBody, TextControl, ToggleControl } = wp.components,
+	{ withInstanceId } = wp.compose;
 
 /**
  * Register the dynamic Gutenberg Block for the `Include Fussball.de Widgets`.
@@ -32,15 +31,15 @@ const { withInstanceId } = wp.compose;
  * @return {WPBlock}           The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'ifdw/fubade', {
-	title: __( 'Include Fussball.de Widgets', 'include-fussball-de-widgets' ),
+registerBlockType('ifdw/fubade', {
+	title: __('Include Fussball.de Widgets', 'include-fussball-de-widgets'),
 	description: __(
 		'Showing the fussball.de widget',
 		'include-fussball-de-widgets'
 	),
 	icon: icon.includeFussballDeWidgets,
 	category: 'widgets',
-	keywords: [ __( 'fubade', 'include-fussball-de-widgets' ) ],
+	keywords: [ __('fubade', 'include-fussball-de-widgets') ],
 
 	attributes: {
 		api: { type: 'string' },
@@ -49,12 +48,12 @@ registerBlockType( 'ifdw/fubade', {
 	},
 
 	edit: withInstanceId(
-		( { attributes, className, instanceId, isSelected, setAttributes } ) => {
-			const { api, notice, fullwidth } = attributes;
-			const inputId = `${ className }-${ instanceId }`;
+		({ attributes, className, instanceId, isSelected, setAttributes }) => {
+			const { api, notice, fullwidth } = attributes,
+				inputId = `${ className }-${ instanceId }`;
 
 			return [
-				!! isSelected && (
+				Boolean(isSelected) && (
 					<InspectorControls key="inspector">
 						<PanelBody
 							title={ __(
@@ -63,28 +62,30 @@ registerBlockType( 'ifdw/fubade', {
 							) }
 						>
 							<TextControl
-								label={ __( 'Notice', 'include-fussball-de-widgets' ) }
-								value={ notice }
+								label={ __('Notice', 'include-fussball-de-widgets') }
 								onChange={ newNotice => {
-									setAttributes( { notice: newNotice } );
+									setAttributes({ notice: newNotice });
 								} }
+								value={ notice }
 							/>
 							<ToggleControl
-								label={ __( 'Show in full width', 'include-fussball-de-widgets' ) }
+								checked={ fullwidth }
 								help={
 									fullwidth ?
 										__(
 											'The widget will be shown in the maximal width.',
 											'include-fussball-de-widgets'
+											// eslint-disable-next-line no-mixed-spaces-and-tabs
 										  ) :
 										__(
 											'The widget will be shown in the width given from fussball.de (CSS possible could overwrite this setting).',
 											'include-fussball-de-widgets'
+											// eslint-disable-next-line no-mixed-spaces-and-tabs
 										  )
 								}
-								checked={ fullwidth }
+								label={ __('Show in full width', 'include-fussball-de-widgets') }
 								onChange={ newFullwidth => {
-									setAttributes( { fullwidth: newFullwidth } );
+									setAttributes({ fullwidth: newFullwidth });
 								} }
 							/>
 						</PanelBody>
@@ -92,31 +93,31 @@ registerBlockType( 'ifdw/fubade', {
 				),
 				<Fragment key="output">
 					<h4 className={ `${ className }-header` }>
-						{ __( 'Fussball.de Widget', 'include-fussball-de-widgets' ) }
+						{ __('Fussball.de Widget', 'include-fussball-de-widgets') }
 						{ 'undefined' === typeof notice || '' === notice ?
 							'' :
 							`: "${ notice }"` }
 					</h4>
 					<div className={ className }>
 						<label htmlFor={ inputId }>
-							{ __( 'Api:', 'include-fussball-de-widgets' ) }
+							{ __('Api:', 'include-fussball-de-widgets') }
 						</label>
 						<PlainText
 							className="input-control"
 							id={ inputId }
-							value={ api }
+							onChange={ newApi => {
+								setAttributes({ api: newApi });
+								setAttributes({
+									id: `fubade_${
+										32 !== newApi.length ? Number(new Date()) : newApi.slice(-5)
+									}`,
+								});
+							} }
 							placeholder={ __(
 								'Insert API here...',
 								'include-fussball-de-widgets'
 							) }
-							onChange={ newApi => {
-								setAttributes( { api: newApi } );
-								setAttributes( {
-									id:
-										'fubade_' +
-										( 32 !== newApi.length ? +new Date() : newApi.slice( -5 ) ),
-								} );
-							} }
+							value={ api }
 						/>
 					</div>
 					{ 'undefined' !== typeof api && 32 === api.length ? (
@@ -143,4 +144,4 @@ registerBlockType( 'ifdw/fubade', {
 		// Rendering in PHP
 		return null;
 	},
-} );
+});
