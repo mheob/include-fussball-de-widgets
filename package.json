@@ -1,67 +1,67 @@
 {
-	"name": "include-fussball-de-widgets",
-	"version": "2.0.2",
-	"description": "Easy integration of the fussball.de widgets (currently in the version since season 2016) for Wordpress.",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ITS-Boehm/include-fussball-de-widgets.git"
-	},
-	"author": "IT-Service Böhm -- Alexander Böhm",
-	"license": "GPL-2.0-or-later",
-	"bugs": {
-		"url": "https://github.com/ITS-Boehm/include-fussball-de-widgets/issues"
-	},
-	"homepage": "https://github.com/ITS-Boehm/include-fussball-de-widgets#readme",
-	"scripts": {
-		"clean": "gulp cleanAll",
-		"start": "NODE_ENV=development gulp",
-		"build": "NODE_ENV=production gulp build",
-		"release:clear": "rm -rf .releases/include-fussball-de-widgets/trunk/*",
-		"release:copy": "rsync -a readme.txt LICENSE fubade-api.js *.php .releases/include-fussball-de-widgets/trunk/ && rsync -a dist/blocks.build.js dist/blocks.editor.build.css .releases/include-fussball-de-widgets/trunk/dist/ && rsync -a languages/ .releases/include-fussball-de-widgets/trunk/languages ",
-		"release:github": "rsync -a .releases/include-fussball-de-widgets/trunk/* .github-releases/include-fussball-de-widgets && cd .github-releases/ && zip -r include-fussball-de-widgets-vx.x.x.zip include-fussball-de-widgets/* && rm -rf include-fussball-de-widgets && cd ..",
-		"release-only": "npm-run-all release:clear release:copy release:github",
-		"release": "npm-run-all build release-only"
-	},
-	"browserslist": [
-		"> 1%",
-		"ie >= 11",
-		"last 1 Android versions",
-		"last 1 ChromeAndroid versions",
-		"last 2 Chrome versions",
-		"last 2 Firefox versions",
-		"last 2 Safari versions",
-		"last 2 iOS versions",
-		"last 2 Edge versions",
-		"last 2 Opera versions"
-	],
-	"dependencies": {
-		"punycode": "^2.1.1"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.4.4",
-		"@babel/plugin-transform-react-jsx": "7.3.0",
-		"@babel/preset-env": "^7.4.4",
-		"@babel/register": "^7.4.4",
-		"babel-eslint": "^10.0.1",
-		"babel-loader": "^8.0.5",
-		"browser-sync": "^2.26.5",
-		"del": "^4.1.0",
-		"eslint": "^5.16.0",
-		"eslint-config-wordpress": "^2.0.0",
-		"eslint-plugin-jest": "^22.5.1",
-		"eslint-plugin-jsx-a11y": "^6.2.1",
-		"eslint-plugin-react": "^7.13.0",
-		"gulp": "^4.0.2",
-		"gulp-sass": "^4.0.2",
-		"gulp-wp-pot": "^2.3.5",
-		"node-sass": "^4.12.0",
-		"prettier": "^1.17.0",
-		"prettier-eslint": "^8.8.2",
-		"prettier-stylelint": "^0.4.2",
-		"stylelint": "^10.0.1",
-		"stylelint-config-wordpress": "^14.0.0",
-		"stylelint-order": "^3.0.0",
-		"webpack": "^4.31.0",
-		"webpack-stream": "^5.2.1"
-	}
+  "name": "include-fussball-de-widgets",
+  "version": "2.0.2",
+  "description": "Easy integration of the fussball.de widgets (currently in the version since season 2016) for Wordpress.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ITS-Boehm/include-fussball-de-widgets.git"
+  },
+  "author": "IT-Service Böhm -- Alexander Böhm",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ITS-Boehm/include-fussball-de-widgets/issues"
+  },
+  "homepage": "https://github.com/ITS-Boehm/include-fussball-de-widgets#readme",
+  "scripts": {
+    "clean": "gulp cleanAll",
+    "start": "NODE_ENV=development gulp",
+    "build": "NODE_ENV=production gulp build",
+    "release:clear": "rm -rf .releases/include-fussball-de-widgets/trunk/*",
+    "release:copy": "rsync -a readme.txt LICENSE fubade-api.js *.php .releases/include-fussball-de-widgets/trunk/ && rsync -a dist/blocks.build.js dist/blocks.editor.build.css .releases/include-fussball-de-widgets/trunk/dist/ && rsync -a languages/ .releases/include-fussball-de-widgets/trunk/languages ",
+    "release:github": "rsync -a .releases/include-fussball-de-widgets/trunk/* .github-releases/include-fussball-de-widgets && cd .github-releases/ && zip -r include-fussball-de-widgets-vx.x.x.zip include-fussball-de-widgets/* && rm -rf include-fussball-de-widgets && cd ..",
+    "release-only": "npm-run-all release:clear release:copy release:github",
+    "release": "npm-run-all build release-only"
+  },
+  "browserslist": [
+    "> 1%",
+    "ie >= 11",
+    "last 1 Android versions",
+    "last 1 ChromeAndroid versions",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 iOS versions",
+    "last 2 Edge versions",
+    "last 2 Opera versions"
+  ],
+  "dependencies": {
+    "punycode": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-react-jsx": "7.3.0",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/register": "^7.4.4",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "browser-sync": "^2.26.5",
+    "del": "^4.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-wp-pot": "^2.3.5",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.17.0",
+    "prettier-eslint": "^8.8.2",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint": "^10.0.1",
+    "stylelint-config-wordpress": "^14.0.0",
+    "stylelint-order": "^3.0.0",
+    "webpack": "^4.31.0",
+    "webpack-stream": "^5.2.1"
+  }
 }

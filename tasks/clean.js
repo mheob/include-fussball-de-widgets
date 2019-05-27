@@ -1,9 +1,9 @@
 /**
  * Cleaner
  */
-import del from 'del';
+import del from "del";
 
-import config from './utils/config';
+import config from "./utils/config";
 
 export const cleanBuild = () => del(config.root.build);
 

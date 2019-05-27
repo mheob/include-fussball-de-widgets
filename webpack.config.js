@@ -8,10 +8,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js?$/,
-        include: [ resolve( __dirname, './src/assets/js' ) ],
+        test: /\.js$/,
+        include: [ resolve(__dirname, './src/assets/js') ],
         loader: 'babel-loader',
-        exclude: '/node_modules/'
+        exclude: /node_modules/
       }
     ]
   }
