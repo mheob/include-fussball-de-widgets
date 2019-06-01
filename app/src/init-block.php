@@ -44,16 +44,16 @@ function ifdw_fubade_block_init() {
 
 	$dir = dirname( __FILE__ );
 
-	$index_js = 'fubade/index.js';
+	$js_file = 'js/fubade-block.js';
 	wp_register_script(
 		'fubade-block-editor',
-		plugins_url( $index_js, __FILE__ ),
+		plugins_url( $js_file, __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
-		filemtime( "$dir/$index_js" ),
+		filemtime( "$dir/$js_file" ),
 		true
 	);
 
-	$editor_css = 'fubade/editor.css';
+	$editor_css = 'css/editor-block.css';
 	wp_register_style(
 		'fubade-block-editor',
 		plugins_url( $editor_css, __FILE__ ),
@@ -61,14 +61,13 @@ function ifdw_fubade_block_init() {
 		filemtime( "$dir/$editor_css" )
 	);
 
-	$style_css = 'fubade/style.css';
-	wp_register_style(
-		'fubade-block',
-		plugins_url( $style_css, __FILE__ ),
-		array(),
-		filemtime( "$dir/$style_css" )
-	);
-
+	// $style_css = 'css/frontend-block.css';
+	// wp_register_style(
+	// 'fubade-block',
+	// plugins_url( $style_css, __FILE__ ),
+	// array(),
+	// filemtime( "$dir/$style_css" )
+	// );
 	register_block_type(
 		'ifdw/fubade',
 		array(
@@ -78,8 +77,8 @@ function ifdw_fubade_block_init() {
 				'notice'    => array( 'type' => 'string' ),
 				'fullwidth' => array( 'type' => 'boolean' ),
 			),
-			'editor_script'   => 'fubade-block',
-			'editor_style'    => 'fubade-editor-block',
+			'editor_script'   => 'fubade-block-editor',
+			'editor_style'    => 'fubade-block-editor',
 			'style'           => 'fubade-block',
 			'render_callback' => 'ifdw_render_block_fubade',
 		)

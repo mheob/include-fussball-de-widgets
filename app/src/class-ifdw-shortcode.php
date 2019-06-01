@@ -103,9 +103,9 @@ class Ifdw_Shortcode {
 	private function register_fubade_api() {
 		wp_enqueue_script(
 			'fubade_api',
-			plugins_url( 'fubade-api.js', __FILE__ ),
+			plugins_url( 'js/fubade-api.js', __FILE__ ),
 			array(),
-			filemtime( plugin_dir_path( __FILE__ ) . 'fubade-api.js' ),
+			filemtime( plugin_dir_path( __FILE__ ) . 'js/fubade-api.js' ),
 			false
 		);
 	}

@@ -36,6 +36,8 @@
     "editor.formatOnSave": true,
     "editor.minimap.maxColumn": 100,
     "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 120,
 
     "html.format.endWithNewline": true,
     "html.format.wrapAttributes": "aligned-multiple",
@@ -99,8 +101,6 @@
       "typescript",
       "typescriptreact",
       "yml"
-    ],
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 120
+    ]
   }
 }
