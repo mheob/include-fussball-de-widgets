@@ -3,7 +3,7 @@
 Easy integration of the fussball.de widgets (currently in the version since season 2016) for Wordpress.
 
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
-[![WordPress](https://img.shields.io/wordpress/v/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
+[![WordPress](https://img.shields.io/wordpress/plugin/tested/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Installs](https://img.shields.io/wordpress/plugin/installs/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 
@@ -50,10 +50,10 @@ You find there a code looking similar to this, at the near of the end:
 ```html
 <div id="widget1"></div>
 <script type="text/javascript">
-	new fussballdeWidgetAPI().showWidget(
-		"widget1",
-		"020EXXXXXG000000VS54XXXXXSGIXXME"
-	);
+  new fussballdeWidgetAPI().showWidget(
+    "widget1",
+    "020EXXXXXG000000VS54XXXXXSGIXXME"
+  );
 </script>
 ```
 
