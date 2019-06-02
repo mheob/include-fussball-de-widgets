@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /*
  * fussball.de widgetAPI
  */
@@ -8,6 +9,8 @@ widget.url = '//www.fussball.de/widget2';
 widget.referer = document.location.host ?
   encodeURIComponent(document.location.host) :
   'unknown';
+
+console.log(widget.referer);
 
 // eslint-disable-next-line no-unused-vars
 window.FussballdeWidgetAPI = () => {
@@ -33,7 +36,6 @@ window.FussballdeWidgetAPI = () => {
           );
         }
       } else {
-        // eslint-disable-next-line no-console
         console.error(
           `Can\'t display the iframe. The DIV with the ID="${ targetId }" is missing.`
         );
