@@ -39,14 +39,24 @@ const commonConfig = {
 
 const blockConfig = {
   ...commonConfig,
-  entry: [
-    './app/src/block/index.js',
-    './app/src/block/editor.scss'
-    // './app/src/block/frontend.scss'
-  ],
+  entry: [ './app/src/block/index.js', './app/src/block/editor.scss' ],
   output: {
     path: path.resolve(__dirname, 'app', 'dist'),
     filename: 'js/fubade-block.js'
+  },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            unused: false
+          },
+          mangle: {
+            reserved: [ '__' ]
+          }
+        }
+      })
+    ]
   }
 };
 
@@ -65,7 +75,7 @@ const fubadeConfig = {
             unused: false
           },
           mangle: {
-            reserved: [ 'FussballdeWidgetAPI' ]
+            reserved: [ 'FussballdeWidgetAPI', '__' ]
           }
         }
       })
@@ -74,7 +84,8 @@ const fubadeConfig = {
   plugins: [
     new CopyPlugin([
       { from: '*.php', to: '../dist/', context: 'app/src' },
-      { from: 'languages', to: '../dist/languages', context: 'app/src' }
+      { from: '../../LICENSE', to: './', context: 'app/dist' },
+      { from: '../../readme.txt', to: './', context: 'app/dist' }
     ])
   ]
 };

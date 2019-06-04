@@ -13,13 +13,16 @@
   },
   "homepage": "https://github.com/ITS-Boehm/include-fussball-de-widgets#readme",
   "scripts": {
+    "build:clear": "rm -rf app/dist/*",
     "build": "wp-scripts build",
     "check-engines": "wp-scripts check-engines",
     "check-licenses": "wp-scripts check-licenses --production",
     "lint:css": "wp-scripts lint-style '**/*.css'",
     "lint:js": "wp-scripts lint-js .",
     "lint:pkg-json": "wp-scripts lint-pkg-json .",
-    "start": "wp-scripts start"
+    "start": "wp-scripts start",
+    "i18n:pot": "wp i18n make-pot app/dist app/dist/languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
+    "i18n:json": "wp i18n make-json app/dist/languages/include-fussball-de-widgets-de_DE.po --no-purge"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
@@ -27,7 +30,7 @@
   "devDependencies": {
     "@wordpress/browserslist-config": "^2.4.0",
     "@wordpress/scripts": "^3.2.1",
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.6.0",
     "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
@@ -48,8 +51,5 @@
     "stylelint-config-wordpress": "^14.0.0",
     "stylelint-order": "^3.0.0",
     "terser-webpack-plugin": "^1.3.0"
-  },
-  "dependencies": {
-    "punycode": "^2.1.1"
   }
 }

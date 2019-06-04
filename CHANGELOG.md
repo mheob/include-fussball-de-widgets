@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+
+- ~~The widget will now also appear in IE and in the Edge if the domain uses non-ASCII characters (such as ä, ö, ü).~~ - currently todo
+
 ### Added
 
 - The Plugin is tested up to wordpress version 5.2.
