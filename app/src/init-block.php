@@ -28,12 +28,15 @@
 
 defined( 'ABSPATH' ) || exit();
 
+
 /**
  * Register the dynamic block.
  *
  * `id`: the id talks between the html and the fussball.de api.
- * `api`: the official and individuell api snippet from fussball.de.
- * `notice`: an short description for the user.
+ * `api`: The official and individuell api snippet from fussball.de.
+ * `notice`: A short description for the user.
+ * `fullwidth`: If true, the widget is displaying in the full width.
+ * `devtools`: If true, some dev tools are used.
  *
  * @since 2.0.0
  */
@@ -46,28 +49,22 @@ function ifdw_fubade_block_init() {
 
 	$js_file = 'js/fubade-block.js';
 	wp_register_script(
-		'fubade-block-editor',
+		'fubade-block-script',
 		plugins_url( $js_file, __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
 		filemtime( "$dir/$js_file" ),
 		true
 	);
+	wp_set_script_translations( 'fubade-block-script', 'include-fussball-de-widgets' );
 
 	$editor_css = 'css/editor-block.css';
 	wp_register_style(
-		'fubade-block-editor',
+		'fubade-block-style',
 		plugins_url( $editor_css, __FILE__ ),
 		array(),
 		filemtime( "$dir/$editor_css" )
 	);
 
-	// $style_css = 'css/frontend-block.css';
-	// wp_register_style(
-	// 'fubade-block',
-	// plugins_url( $style_css, __FILE__ ),
-	// array(),
-	// filemtime( "$dir/$style_css" )
-	// );
 	register_block_type(
 		'ifdw/fubade',
 		array(
@@ -76,15 +73,16 @@ function ifdw_fubade_block_init() {
 				'api'       => array( 'type' => 'string' ),
 				'notice'    => array( 'type' => 'string' ),
 				'fullwidth' => array( 'type' => 'boolean' ),
+				'devtools'  => array( 'type' => 'boolean' ),
 			),
-			'editor_script'   => 'fubade-block-editor',
-			'editor_style'    => 'fubade-block-editor',
-			'style'           => 'fubade-block',
+			'editor_script'   => 'fubade-block-script',
+			'editor_style'    => 'fubade-block-style',
 			'render_callback' => 'ifdw_render_block_fubade',
 		)
 	);
 }
 add_action( 'init', 'ifdw_fubade_block_init' );
+
 
 /**
  * Define the dynamic block.

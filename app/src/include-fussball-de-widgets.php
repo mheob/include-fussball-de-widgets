@@ -7,11 +7,13 @@
  * Author URI:     http://profiles.wordpress.org/mheob
  * License:        GPLv2
  * License URI:    https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:    include-fussball-de-widgets
  *
  * @package Include_Fussball_De_Widgets
  */
 
 defined( 'ABSPATH' ) || exit;
+
 
 /**
  * Block Initializer.

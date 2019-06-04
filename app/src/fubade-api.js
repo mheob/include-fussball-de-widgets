@@ -3,20 +3,18 @@
  * fussball.de widgetAPI
  */
 
+const { __, sprintf } = wp.i18n;
+
 const widget = {};
 
 widget.url = '//www.fussball.de/widget2';
-widget.referer = document.location.host ?
-  encodeURIComponent(document.location.host) :
-  'unknown';
-
-console.log(widget.referer);
+widget.referer = document.location.host ? encodeURIComponent(document.location.host) : 'unknown';
 
 // eslint-disable-next-line no-unused-vars
 window.FussballdeWidgetAPI = () => {
   const widgetObj = {};
 
-  widgetObj.showWidget = (targetId, apiKey, fullWidth) => {
+  widgetObj.showWidget = (targetId, apiKey, fullWidth, isDevTools) => {
     if (
       undefined !== targetId &&
       null !== targetId &&
@@ -29,26 +27,32 @@ window.FussballdeWidgetAPI = () => {
         if ('' !== apiKey) {
           createIFrame(
             targetId,
-            `${ widget.url }/-/schluessel/${ apiKey }/target/${ targetId }/caller/${
-              widget.referer
-            }`,
+            `${ widget.url }/-/schluessel/${ apiKey }/target/${ targetId }/caller/${ widget.referer }`,
             fullWidth
           );
         }
       } else {
         console.error(
-          `Can\'t display the iframe. The DIV with the ID="${ targetId }" is missing.`
+          sprintf(
+            /* translators: %s: the ID */
+            __('Can\'t display the iframe. The DIV with the ID="%s" is missing.', 'include-fussball-de-widgets'),
+            targetId
+          )
         );
       }
+    }
+
+    if (isDevTools) {
+      console.info(
+        sprintf(__('Website for fussball.de registration: %s', 'include-fussball-de-widgets'), widget.referer)
+      );
     }
   };
 
   window.addEventListener(
     'message',
     event => {
-      const currentIframe = document.querySelector(
-        '#' + event.data.container + ' iframe'
-      );
+      const currentIframe = document.querySelector('#' + event.data.container + ' iframe');
       if ('setHeight' === event.data.type) {
         currentIframe.setAttribute('height', event.data.value + 'px');
       }
