@@ -1,5 +1,10 @@
 # Include Fussball.de Widgets
 
+## Work in prgoress
+
+- Update Readme (with the new attributes)
+- Remove the the "since season 2016"
+
 ## Feature-Requests
 
 ### From the WordPress-Support-Forum
