@@ -4,6 +4,7 @@
 
 - Update Readme (with the new attributes)
 - Remove the the "since season 2016"
+- Include an extra german version of the README.md
 
 ## Feature-Requests
 
