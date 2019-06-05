@@ -1,51 +1,55 @@
 /* eslint-disable no-console */
+import punycode from 'punycode';
+
 /*
  * fussball.de widgetAPI
  */
 
 const { __, sprintf } = wp.i18n;
 
-const widget = {};
+const host = punycode.toASCII(decodeURIComponent(document.location.host));
 
-widget.url = '//www.fussball.de/widget2';
-widget.referer = document.location.host ? encodeURIComponent(document.location.host) : 'unknown';
+const widget = {
+  url: '//www.fussball.de/widget2',
+  referer: host ? encodeURIComponent(host) : 'unknown'
+};
 
 // eslint-disable-next-line no-unused-vars
 window.FussballdeWidgetAPI = () => {
-  const widgetObj = {};
-
-  widgetObj.showWidget = (targetId, apiKey, fullWidth, isDevTools) => {
-    if (
-      undefined !== targetId &&
-      null !== targetId &&
-      '' !== targetId &&
-      undefined !== apiKey &&
-      null !== apiKey &&
-      '' !== apiKey
-    ) {
-      if (document.getElementById(targetId)) {
-        if ('' !== apiKey) {
-          createIFrame(
-            targetId,
-            `${ widget.url }/-/schluessel/${ apiKey }/target/${ targetId }/caller/${ widget.referer }`,
-            fullWidth
+  const widgetObj = {
+    showWidget: (targetId, apiKey, fullWidth, isDevTools) => {
+      if (
+        undefined !== targetId &&
+        null !== targetId &&
+        '' !== targetId &&
+        undefined !== apiKey &&
+        null !== apiKey &&
+        '' !== apiKey
+      ) {
+        if (document.getElementById(targetId)) {
+          if ('' !== apiKey) {
+            createIFrame(
+              targetId,
+              `${ widget.url }/-/schluessel/${ apiKey }/target/${ targetId }/caller/${ widget.referer }`,
+              fullWidth
+            );
+          }
+        } else {
+          console.error(
+            sprintf(
+              /* translators: %s: the ID */
+              __('Can\'t display the iframe. The DIV with the ID="%s" is missing.', 'include-fussball-de-widgets'),
+              targetId
+            )
           );
         }
-      } else {
-        console.error(
-          sprintf(
-            /* translators: %s: the ID */
-            __('Can\'t display the iframe. The DIV with the ID="%s" is missing.', 'include-fussball-de-widgets'),
-            targetId
-          )
+      }
+
+      if (isDevTools) {
+        console.info(
+          sprintf(__('Website for fussball.de registration: %s', 'include-fussball-de-widgets'), widget.referer)
         );
       }
-    }
-
-    if (isDevTools) {
-      console.info(
-        sprintf(__('Website for fussball.de registration: %s', 'include-fussball-de-widgets'), widget.referer)
-      );
     }
   };
 
