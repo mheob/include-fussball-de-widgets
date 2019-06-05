@@ -1,6 +1,6 @@
 # Include Fussball.de Widgets
 
-[:uk: ENGLISH](#english) | [:de: DEUTSCH](#deutsch)
+[:uk: ENGLISH](#uk-english) | [:de: DEUTSCH](#de-deutsch)
 
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![WordPress](https://img.shields.io/wordpress/plugin/tested/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
