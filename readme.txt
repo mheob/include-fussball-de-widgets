@@ -9,11 +9,11 @@ Stable tag: 2.1.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Easy integration of the Fussball.de widgets (currently in the version since season 2016).
+Easy integration of the Fussball.de widgets
 
 == Description ==
 
-Easy integration of the Fussball.de widgets (currently in the version since season 2016).
+Easy integration of the Fussball.de widgets.
 
 == Installation ==
 

@@ -1,6 +1,6 @@
 # Include Fussball.de Widgets
 
-Easy integration of the fussball.de widgets (currently in the version since season 2016) for Wordpress.
+Easy integration of the fussball.de widgets.
 
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![WordPress](https://img.shields.io/wordpress/plugin/tested/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)

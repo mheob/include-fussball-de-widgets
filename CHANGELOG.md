@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- ~~The widget will now also appear in IE and in the Edge if the domain uses non-ASCII characters (such as ä, ö, ü).~~ - currently todo
+- The widget will now also appear in IE and in the Edge if the domain uses non-ASCII characters (such as ä, ö, ü).
 
 ### Added
 
