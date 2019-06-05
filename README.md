@@ -79,7 +79,7 @@ z.B. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" full
 
 ### Was ist die `API` als `{32-stellige API}`?
 
-Hier muss die 32-stellige ID aus dem offiziellen Fußball.de-Widget eingegeben werden.\
+Hier muss die 32-stellige ID (der Website-Schlüssel) aus dem offiziellen Fußball.de-Widget eingegeben werden.\
 **Die API ist erforderlich.**
 
 ### Was ist der "Hinweis" als `{Hinweis}`?
@@ -101,6 +101,6 @@ Als Werte sind nur `true` oder `1` möglich.\
 Der Standardwert ist `false` bzw. `0`.\
 **AUSGABE DER DEVTOOLS ist optional und kann weggelassen werden.**
 
-### Wo kann ich den amtlichen Ausweis bekommen?
+### Wo kann ich den Website-Schlüssel bekommen?
 
 Den erforderlichen Ausweis erhalten Sie bei fussball.de in Ihren Widgets (<https://www.fussball.de/account.admin.widgets>). In der Übersicht Ihres Widgets finden Sie den Punkt `Website-Schlüssel`. Dies ist die benötigte Zeichenfolge.
