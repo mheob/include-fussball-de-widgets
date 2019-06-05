@@ -59,7 +59,7 @@ A WordPress plugin for easy integration of fussball.de widgets.
 
 ### What can I do if the plugin does not work?
 
-> The first clue is always the [official support forum on worpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section here on Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues).\
+> The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section here on Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues).\
 > \
 > Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.\
 > \
@@ -117,7 +117,7 @@ Ein WordPress-Plugin für die einfache Integration der fussball.de Widgets.
 
 ### Was kann ich machen wenn das Plugin nicht funktioniert?
 
-> Der erste Anhaltspunkt ist immer gerne das [offizielle Support-Forum auf worpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch die [Issues-Sektion hier auf Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues).\
+> Der erste Anhaltspunkt sollte immer das [offizielle Support-Forum auf wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch die [Issues-Sektion hier auf Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues) sein.\
 > \
 > Gerne und oft werden auch die falschen Anführungszeichen verwendet. Hier muss unbedingt das normale `"`-Zeichen verwendet werden.\
 > \

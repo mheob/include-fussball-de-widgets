@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.2.0] - 2019-06-05
+
 ### Fixed
 
 - The widget will now also appear in IE and in the Edge if the domain uses non-ASCII characters (such as ä, ö, ü).
@@ -11,12 +13,14 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - The Plugin is tested up to wordpress version 5.2.
+- Preparations for easier debugging.
 
 ### Changed
 
 - Redefined the file structure for using WebPack in the development.
 - Using the newest javascript features (ES6) for easier development.
 - Cleanup the php code for a better performance.
+- Update readme files for better plugin usage instructions.
 
 ## [2.1.1] - 2019-03-25
 
@@ -147,7 +151,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.1...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.0...HEAD
+[2.2.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.1...v2.2.0
 [2.1.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.3...v2.1.0
 [2.0.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.2...v2.0.3
