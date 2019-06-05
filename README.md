@@ -87,12 +87,12 @@ Ein WordPress-Plugin für die einfache Integration der fussball.de Widgets.
 > also z.B. so:\
 > `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
 
-### Was ist die `API` als `{32-stellige API}`?
+### Was ist die `api` als `{32-stellige API}`?
 
 > Hier muss die 32-stellige ID (der Website-Schlüssel) aus dem offiziellen Fußball.de-Widget eingegeben werden.\
 > **Die API ist erforderlich.**
 
-### Was ist der "Hinweis" als `{Hinweis}`?
+### Was ist der `notice` als `{Hinweis}`?
 
 > Die Beschreibung kann nach eigenen Wünschen eingegeben werden.\
 > **HINWEIS ist optional und kann weggelassen werden.**
