@@ -61,7 +61,7 @@ A WordPress plugin for easy integration of fussball.de widgets.
 
 > The first clue is always the [official support forum on worpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section here on Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues).\
 > \
-> Likewise and often the wrong quotes are used. It is essential to use the normal `"`signs, which you can get by pressing the keys <kbd>Shift</kbd> + <kbd>2</kbd>.\
+> Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.\
 > \
 > The curly braces from my examples above should only show placeholders. These are also included, which is not correct.
 
@@ -119,6 +119,6 @@ Ein WordPress-Plugin für die einfache Integration der fussball.de Widgets.
 
 > Der erste Anhaltspunkt ist immer gerne das [offizielle Support-Forum auf worpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch die [Issues-Sektion hier auf Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues).\
 > \
-> Gerne und oft werden auch die falschen Anführungszeichen verwendet. Hier müssen unbedingt die normalen `"`-Zeichen verwendet werden. Du bekommst es mit den Tasten <kbd>Umschalt</kbd> + <kbd>2</kbd>.\
+> Gerne und oft werden auch die falschen Anführungszeichen verwendet. Hier muss unbedingt das normale `"`-Zeichen verwendet werden.\
 > \
 > Die geschweiften Klammern aus meinen Beispielen weiter oben sollen nur Platzhalter anzeigen. Auch diese werden gerne mal mit eingefügt, was nicht korrekt ist.
