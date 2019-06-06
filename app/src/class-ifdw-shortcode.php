@@ -38,12 +38,46 @@ defined( 'ABSPATH' ) || exit;
  */
 class Ifdw_Shortcode {
 	/**
+	 * The id of the div-container.
+	 *
+	 * @var string
+	 */
+	private $id;
+
+	/**
+	 * The api code from the fussball.de widget.
+	 *
+	 * @var string
+	 */
+	private $api;
+
+	/**
+	 * The notice of the current widget.
+	 *
+	 * @var string
+	 */
+	private $notice;
+
+	/**
+	 * If TRUE the full_width will set; otherwise the default width will used.
+	 *
+	 * @var bool
+	 */
+	private $full_width;
+
+	/**
+	 * If TRUE the dev_tools will activated.
+	 *
+	 * @var boolean
+	 */
+	private $dev_tools;
+
+	/**
 	 * Constructor function for the Ifdw_Shortcode class.
 	 *
 	 * @since 2.0.0
 	 */
 	public function __construct() {
-		// Add the shortcode and the script translation to init action of WordPress.
 		add_action( 'init', array( $this, 'register_fubade_api' ) );
 		add_shortcode( 'fubade', array( $this, 'render_shortcode' ) );
 	}
@@ -72,7 +106,7 @@ class Ifdw_Shortcode {
 	 *
 	 * @since 2.0.0
 	 *
-	 * @param array $atts Shortcode attributes (`id`, `api` and `notice`).
+	 * @param array $atts Shortcode attributes (`id`, `api`, `notice`, `fullwidth` and `devtools`).
 	 *
 	 * @return string
 	 */
@@ -92,25 +126,27 @@ class Ifdw_Shortcode {
 			return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
 		}
 
-		$notice     = sanitize_text_field( $a['notice'] );
-		$api        = sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
-		$id_key     = 'fubade_' . substr( $api, -5 );
-		$full_width = sanitize_text_field( $a['fullwidth'] );
-		$full_width = '1' === $full_width || 'true' === $full_width || true === $full_width ? 1 : 0;
-		$dev_tools  = sanitize_text_field( $a['devtools'] );
-		$dev_tools  = '1' === $dev_tools || 'true' === $dev_tools || true === $dev_tools ? 1 : 0;
+		$this->api        = sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
+		$this->id         = 'fubade_' . substr( $this->api, -5 );
+		$this->notice     = sanitize_text_field( $a['notice'] );
+		$this->full_width = '1' === $a['fullwidth'] || 'true' === $a['fullwidth'] || true === $a['fullwidth'] ? 1 : 0;
+		$this->dev_tools  = '1' === $a['devtools'] || 'true' === $a['devtools'] || true === $a['devtools'] ? 1 : 0;
 
 		if ( ! wp_script_is( 'fubade-api' ) ) {
 			wp_enqueue_script( 'fubade-api' );
 		}
 
-		$this->register_fubade_api_call( $id_key, $api, $full_width, $dev_tools );
+		$this->register_fubade_api_call();
+
+		if ( $this->dev_tools ) {
+			$this->console_log();
+		}
 
 		ob_start();
 
-		printf( "<div id=\"%s\" class=\"include-fussball-de-widgets\">\n", esc_html( $id_key ) );
+		printf( "<div id=\"%s\" class=\"include-fussball-de-widgets\">\n", esc_html( $this->id ) );
 		/* translators: %s: the description of the widget */
-		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $notice ) );
+		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $this->notice ) );
 		print ( "</div>\n" );
 
 		return ob_get_clean();
@@ -121,17 +157,34 @@ class Ifdw_Shortcode {
 	 * Register the calling script for the api from fussball.de.
 	 *
 	 * @since 2.0.0
-	 *
-	 * @param string $id          The id of the div-container.
-	 * @param string $api         The api code from the fussball.de widget.
-	 * @param bool   $full_width  If TRUE the full_width will set; otherwise the default width will used.
-	 * @param bool   $dev_tools   If TRUE the dev_tools will activated.
 	 */
-	private function register_fubade_api_call( $id, $api, $full_width, $dev_tools ) {
+	private function register_fubade_api_call() {
 		wp_add_inline_script(
 			'fubade-api',
-			"new FussballdeWidgetAPI().showWidget( '$id', '$api', $full_width, $dev_tools );",
+			"new FussballdeWidgetAPI().showWidget( '$this->id', '$this->api', $this->full_width, $this->dev_tools );",
 			'after'
 		);
+	}
+
+
+	/**
+	 * Generates a logging output in the browser console.
+	 *
+	 * @since 2.2.0
+	 */
+	private function console_log() {
+		$logging_list = array(
+			esc_html__( 'api: ', 'include-fussball-de-widgets' ) . esc_html( $this->api ),
+			esc_html__( 'notice: ', 'include-fussball-de-widgets' ) . esc_html( $this->notice ),
+			esc_html__( 'fullwidth: ', 'include-fussball-de-widgets' ) . esc_html( $this->full_width ),
+			esc_html__( 'devtools: ', 'include-fussball-de-widgets' ) . esc_html( $this->dev_tools ),
+		);
+
+		$output = '';
+		foreach ( $logging_list as $logging_item ) {
+			$output .= 'console.info(' . wp_json_encode( '[' . esc_html( $this->id ) . '] ' . $logging_item, JSON_HEX_TAG ) . ');' . PHP_EOL;
+		};
+
+		wp_add_inline_script( 'fubade-api', $output, 'after' );
 	}
 }
