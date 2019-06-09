@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.2.1] - 2019-06-09
+
+### Fixed
+
+- The inline styles height and width are removed to prevent complications with the themes.
+
 ## [2.2.0] - 2019-06-05
 
 ### Fixed
@@ -151,7 +157,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.0...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.1...HEAD
+[2.2.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.0...v2.2.1
 [2.2.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.1...v2.2.0
 [2.1.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.0.3...v2.1.0

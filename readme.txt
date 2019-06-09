@@ -5,11 +5,11 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Easy integration of the Fussball.de widgets
+A WordPress plugin for easy integration of fussball.de widgets.
 
 == Description ==
 
@@ -19,9 +19,9 @@ A WordPress plugin for easy integration of fussball.de widgets.
 
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. You can use the plugin in two ways. As a shortcode and since version 5 also as an integrated Gutenberg Block.
-   1. In versions below 5.0 use the shortcode like:
-      `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe in fullwidth} devtools={print devtools}]`  
+1. You can use the plugin in two ways. As a shortcode and since wordpress version 5 also as an integrated Gutenberg Block.
+   1. In wordpress versions below 5 use the shortcode like:
+      `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe in fullwidth} devtools={print devtools}]`
       e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
    1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `fubade`.
 
@@ -29,31 +29,32 @@ A WordPress plugin for easy integration of fussball.de widgets.
 
 = How should I write the shortcode? =
 
-`[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe in fullwidth} devtools={print devtools}]`
-e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
+`[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe in fullwidth} devtools={print devtools}]` 
+e.g. like: 
+`[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
 
 = What is the `api` as `{32-digit API}`? =
 
-Here the 32-digit ID must be entered from the official Fußball.de-Widget.
+Here the 32-digit ID must be entered from the official Fußball.de-Widget. 
 **The API is required.**
 
 = What is the `notice` as `{description}`? =
 
-The description can be entered according to your own wishes.
+The description can be entered according to your own wishes. 
 **The NOTICE is optional and can be omitted.**
 
 = What is the `fullwidth` as `{iframe in fullwidth}`? =
 
-The IFRAME WIDTH can be set to the full width of 100% to the parent element.
-As values are only `true` or `1` possible.
-The default value ist `false` or rather `0`.
+The IFRAME WIDTH can be set to the full width of 100% to the parent element. 
+As values are only `true` or `1` possible. 
+The default value ist `false` or rather `0`. 
 **The IFRAME WIDTH is optional and can be omitted.**
 
 = What is the `devtools` as `{print devtools}`? =
 
-The PRINT DEVTOOLS can help the creator to get debugging informations.
-As values are only `true` or `1` possible.
-The default value ist `false` or rather `0`.
+The PRINT DEVTOOLS can help the creator to get debugging informations. 
+As values are only `true` or `1` possible. 
+The default value ist `false` or rather `0`. 
 **The PRINT DEVTOOLS is optional and can be omitted.**
 
 = Where can I get the official ID? =
@@ -62,10 +63,10 @@ You can get the required ID when you are at fussball.de at your widgets (<https:
 
 = What can I do if the plugin does not work? =
 
-The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section here on Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues).
+The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues). 
 
-Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.
-
+Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign. 
+ 
 The curly braces from my examples above should only show placeholders. These are also included, which is not correct.
 
 = How can I participate in the development? =
@@ -74,23 +75,29 @@ The latest state of development is available at any time in my [Github repositor
 
 == Changelog ==
 
+= 2.2.1 - 2019-06-09 =
+
+= Fixed =
+
+* The inline styles height and width are removed to prevent complications with the themes.
+
 = 2.2.0 - 2019-06-05 =
 
 = Fixed =
 
-- The widget will now also appear in IE and in the Edge if the domain uses non-ASCII characters (such as ä, ö, ü).
+* The widget will now also appear in IE and in the Edge if the domain uses non-ASCII characters (such as ä, ö, ü).
 
 = Added =
 
-- The Plugin is tested up to wordpress version 5.2.
-- Preparations for easier debugging.
+* The Plugin is tested up to wordpress version 5.2.
+* Preparations for easier debugging.
 
 = Changed =
 
-- Redefined the file structure for using WebPack in the development.
-- Using the newest javascript features (ES6) for easier development.
-- Cleanup the php code for a better performance.
-- Update readme files for better plugin usage instructions.
+* Redefined the file structure for using WebPack in the development.
+* Using the newest javascript features (ES6) for easier development.
+* Cleanup the php code for a better performance.
+* Update readme files for better plugin usage instructions.
 
 = 2.1.1 - 2019-03-25 =
 
@@ -221,23 +228,11 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 2.2.0 =
+= 2.2.1 - 2019-06-09 =
 
 = Fixed =
 
-- The widget will now also appear in IE and in the Edge if the domain uses non-ASCII characters (such as ä, ö, ü).
-
-= Added =
-
-- The Plugin is tested up to wordpress version 5.2.
-- Preparations for easier debugging.
-
-= Changed =
-
-- Redefined the file structure for using WebPack in the development.
-- Using the newest javascript features (ES6) for easier development.
-- Cleanup the php code for a better performance.
-- Update readme files for better plugin usage instructions.
+* The inline styles height and width are removed to prevent complications with the themes.
 
 == Screenshots ==
 

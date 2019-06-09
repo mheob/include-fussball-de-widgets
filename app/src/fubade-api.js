@@ -37,13 +37,13 @@ window.FussballdeWidgetAPI = () => {
             );
           }
         } else {
-          console.error(__('Can\'t display the iframe. The DIV is missing:', 'include-fussball-de-widgets'), targetId);
+          console.error(__('Can\'t display the iframe. The DIV is missing: ', 'include-fussball-de-widgets'), targetId);
         }
       }
 
       if (isDevTools) {
-        console.info(__('[FUBADE] Plugin Version:', 'include-fussball-de-widgets'), version);
-        console.info(__('[FUBADE] Website for registration:', 'include-fussball-de-widgets'), widget.referer);
+        console.info(__('[FUBADE] Plugin Version: ', 'include-fussball-de-widgets'), version);
+        console.info(__('[FUBADE] Website for registration: ', 'include-fussball-de-widgets'), widget.referer);
       }
     }
   };
@@ -55,11 +55,15 @@ window.FussballdeWidgetAPI = () => {
       if ('setHeight' === evt.data.type) {
         currentIframe.setAttribute('height', evt.data.value + 'px');
       }
+
       if ('setWidth' === evt.data.type) {
         if ('100%' !== currentIframe.getAttribute('width')) {
           currentIframe.setAttribute('width', evt.data.value + 'px');
         }
       }
+
+      currentIframe.style.height = null;
+      currentIframe.style.width = null;
     },
     false
   );
