@@ -34,38 +34,6 @@ const commonConfig = {
         ]
       }
     ]
-  }
-};
-
-const blockConfig = {
-  ...commonConfig,
-  entry: [ './app/src/block/index.js', './app/src/block/editor.scss' ],
-  output: {
-    path: path.resolve(__dirname, 'app', 'dist'),
-    filename: 'js/fubade-block.js'
-  },
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          compress: {
-            unused: false
-          },
-          mangle: {
-            reserved: [ '__' ]
-          }
-        }
-      })
-    ]
-  }
-};
-
-const fubadeConfig = {
-  ...commonConfig,
-  entry: './app/src/fubade-api.js',
-  output: {
-    path: path.resolve(__dirname, 'app', 'dist'),
-    filename: 'js/fubade-api.js'
   },
   optimization: {
     minimizer: [
@@ -80,6 +48,24 @@ const fubadeConfig = {
         }
       })
     ]
+  }
+};
+
+const blockConfig = {
+  ...commonConfig,
+  entry: [ './app/src/block/index.js', './app/src/block/editor.scss' ],
+  output: {
+    path: path.resolve(__dirname, 'app', 'dist'),
+    filename: 'js/fubade-block.js'
+  }
+};
+
+const fubadeConfig = {
+  ...commonConfig,
+  entry: './app/src/fubade-api.js',
+  output: {
+    path: path.resolve(__dirname, 'app', 'dist'),
+    filename: 'js/fubade-api.js'
   },
   plugins: [
     new CopyPlugin([
