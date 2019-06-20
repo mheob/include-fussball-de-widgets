@@ -95,7 +95,7 @@ class Ifdw_Shortcode {
 			plugins_url( $js_file, __FILE__ ),
 			[ 'wp-i18n' ],
 			filemtime( dirname( __FILE__ ) . '/' . $js_file ),
-			false
+			true
 		);
 		wp_set_script_translations( 'fubade-api', 'include-fussball-de-widgets' );
 	}
