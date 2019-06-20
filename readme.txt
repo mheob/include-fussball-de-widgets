@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,12 @@ The curly braces from my examples above should only show placeholders. These are
 The latest state of development is available at any time in my [Github repository](https://github.com/ITS-Boehm/include-fussball-de-widgets/). Look around there.
 
 == Changelog ==
+
+= 2.2.2 - 2019-06-20 =
+
+= Fixed =
+
+* Load the fubade-api in the footer.
 
 = 2.2.1 - 2019-06-09 =
 
@@ -228,11 +234,11 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 2.2.1 - 2019-06-09 =
+= 2.2.2 - 2019-06-20 =
 
 = Fixed =
 
-* The inline styles height and width are removed to prevent complications with the themes.
+* Load the fubade-api in the footer.
 
 == Screenshots ==
 
