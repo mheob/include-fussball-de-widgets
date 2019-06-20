@@ -78,8 +78,8 @@ class Ifdw_Shortcode {
 	 * @since 2.0.0
 	 */
 	public function __construct() {
-		add_action( 'init', array( $this, 'register_fubade_api' ) );
-		add_shortcode( 'fubade', array( $this, 'render_shortcode' ) );
+		add_action( 'init', [ $this, 'register_fubade_api' ] );
+		add_shortcode( 'fubade', [ $this, 'render_shortcode' ] );
 	}
 
 
@@ -93,7 +93,7 @@ class Ifdw_Shortcode {
 		wp_register_script(
 			'fubade-api',
 			plugins_url( $js_file, __FILE__ ),
-			array( 'wp-i18n' ),
+			[ 'wp-i18n' ],
 			filemtime( dirname( __FILE__ ) . '/' . $js_file ),
 			false
 		);
@@ -112,13 +112,13 @@ class Ifdw_Shortcode {
 	 */
 	public function render_shortcode( $atts ) {
 		$a = shortcode_atts(
-			array(
+			[
 				'id'        => '',
 				'api'       => '',
 				'notice'    => '',
 				'fullwidth' => '',
 				'devtools'  => '',
-			),
+			],
 			$atts
 		);
 
@@ -173,12 +173,12 @@ class Ifdw_Shortcode {
 	 * @since 2.2.0
 	 */
 	private function console_log() {
-		$logging_list = array(
+		$logging_list = [
 			esc_html__( 'api: ', 'include-fussball-de-widgets' ) . esc_html( $this->api ),
 			esc_html__( 'notice: ', 'include-fussball-de-widgets' ) . esc_html( $this->notice ),
 			esc_html__( 'fullwidth: ', 'include-fussball-de-widgets' ) . esc_html( $this->full_width ),
 			esc_html__( 'devtools: ', 'include-fussball-de-widgets' ) . esc_html( $this->dev_tools ),
-		);
+		];
 
 		$output = '';
 		foreach ( $logging_list as $logging_item ) {
