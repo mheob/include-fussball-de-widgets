@@ -3,7 +3,7 @@ import punycode from 'punycode';
 
 import { version } from '../../package.json';
 
-/*
+/**
  * fussball.de widgetAPI
  */
 
@@ -16,7 +16,6 @@ const widget = {
   referer: host ? encodeURIComponent(host) : 'unknown'
 };
 
-// eslint-disable-next-line no-unused-vars
 window.FussballdeWidgetAPI = () => {
   const widgetObj = {
     showWidget: (targetId, apiKey, isFullWidth, isDevTools) => {
@@ -52,18 +51,19 @@ window.FussballdeWidgetAPI = () => {
     'message',
     evt => {
       const currentIframe = document.querySelector('#' + evt.data.container + ' iframe');
+
       if ('setHeight' === evt.data.type) {
         currentIframe.setAttribute('height', evt.data.value + 'px');
+        currentIframe.style.height = '';
       }
 
       if ('setWidth' === evt.data.type) {
         if ('100%' !== currentIframe.getAttribute('width')) {
           currentIframe.setAttribute('width', evt.data.value + 'px');
         }
-      }
 
-      currentIframe.style.height = null;
-      currentIframe.style.width = null;
+        currentIframe.style.width = '';
+      }
     },
     false
   );
