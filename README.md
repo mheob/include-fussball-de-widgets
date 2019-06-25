@@ -1,13 +1,13 @@
 # Include Fussball.de Widgets
 
-Jump to [:de: DEUTSCH](#de-deutsch)
+Jump to [DEUTSCH](#de-deutsch)
 
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![WordPress](https://img.shields.io/wordpress/plugin/tested/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Installs](https://img.shields.io/wordpress/plugin/installs/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 
-## :uk: English
+## English
 
 A WordPress plugin for easy integration of fussball.de widgets.
 
@@ -65,7 +65,7 @@ A WordPress plugin for easy integration of fussball.de widgets.
 > \
 > The curly braces from my examples above should only show placeholders. These are also included, which is not correct.
 
-## :de: Deutsch
+## Deutsch
 
 Ein WordPress-Plugin für die einfache Integration der fussball.de Widgets.
 
