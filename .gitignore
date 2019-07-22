@@ -34,8 +34,8 @@ $RECYCLE.BIN/
 .settings
 
 # NPM / YARN
-package-lock.json
-yarn.lock
+# package-lock.json
+# yarn.lock
 node_modules
 
 # Numerous always-ignore extensions
