@@ -40,48 +40,50 @@ defined( 'ABSPATH' ) || exit();
  *
  * @since 2.0.0
  */
-function ifdw_fubade_block_init() {
-	if ( ! function_exists( 'register_block_type' ) ) {
-		return;
+add_action(
+	'init',
+	function() {
+		if ( ! function_exists( 'register_block_type' ) ) {
+			return;
+		}
+
+		$dir = dirname( __FILE__ );
+
+		$js_file = 'js/fubade-block.js';
+		wp_register_script(
+			'fubade-block-script',
+			plugins_url( $js_file, __FILE__ ),
+			[ 'wp-blocks', 'wp-i18n', 'wp-element' ],
+			filemtime( "$dir/$js_file" ),
+			true
+		);
+		wp_set_script_translations( 'fubade-block-script', 'include-fussball-de-widgets' );
+
+		$editor_css = 'css/editor-block.css';
+		wp_register_style(
+			'fubade-block-style',
+			plugins_url( $editor_css, __FILE__ ),
+			[],
+			filemtime( "$dir/$editor_css" )
+		);
+
+		register_block_type(
+			'ifdw/fubade',
+			[
+				'attributes'      => [
+					'id'        => [ 'type' => 'string' ],
+					'api'       => [ 'type' => 'string' ],
+					'notice'    => [ 'type' => 'string' ],
+					'fullwidth' => [ 'type' => 'boolean' ],
+					'devtools'  => [ 'type' => 'boolean' ],
+				],
+				'editor_script'   => 'fubade-block-script',
+				'editor_style'    => 'fubade-block-style',
+				'render_callback' => 'ifdw_render_block_fubade',
+			]
+		);
 	}
-
-	$dir = dirname( __FILE__ );
-
-	$js_file = 'js/fubade-block.js';
-	wp_register_script(
-		'fubade-block-script',
-		plugins_url( $js_file, __FILE__ ),
-		[ 'wp-blocks', 'wp-i18n', 'wp-element' ],
-		filemtime( "$dir/$js_file" ),
-		true
-	);
-	wp_set_script_translations( 'fubade-block-script', 'include-fussball-de-widgets' );
-
-	$editor_css = 'css/editor-block.css';
-	wp_register_style(
-		'fubade-block-style',
-		plugins_url( $editor_css, __FILE__ ),
-		[],
-		filemtime( "$dir/$editor_css" )
-	);
-
-	register_block_type(
-		'ifdw/fubade',
-		[
-			'attributes'      => [
-				'id'        => [ 'type' => 'string' ],
-				'api'       => [ 'type' => 'string' ],
-				'notice'    => [ 'type' => 'string' ],
-				'fullwidth' => [ 'type' => 'boolean' ],
-				'devtools'  => [ 'type' => 'boolean' ],
-			],
-			'editor_script'   => 'fubade-block-script',
-			'editor_style'    => 'fubade-block-style',
-			'render_callback' => 'ifdw_render_block_fubade',
-		]
-	);
-}
-add_action( 'init', 'ifdw_fubade_block_init' );
+);
 
 
 /**
