@@ -75,7 +75,7 @@ The latest state of development is available at any time in my [Github repositor
 
 == Changelog ==
 
-= 2.2.3-b1 - 2019-07-26 =
+= 2.3.0 - 2019-07-26 =
 
 = Added =
 
@@ -240,7 +240,7 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 2.2.3-b1 - 2019-07-26 =
+= 2.3.0 - 2019-07-26 =
 
 = Added =
 
