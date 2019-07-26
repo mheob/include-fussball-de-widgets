@@ -65,6 +65,8 @@
 
     "eslint.autoFixOnSave": true,
 
+    "phpcs.executablePath": "./wpcs/vendor/bin/phpcs.bat",
+    "phpcbf.executablePath": "./wpcs/vendor/bin/phpcbf.bat",
     "phpcs.standard": "WordPress",
     "phpcbf.standard": "WordPress",
 
