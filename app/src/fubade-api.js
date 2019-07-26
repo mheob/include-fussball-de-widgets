@@ -52,15 +52,39 @@ window.FussballdeWidgetAPI = () => {
     }
   };
   
-  window.addEventListener('message', eventHandler, false);
+  window.addEventListener(
+    'message',
+    evt => {
+      const currentIframe = document.querySelector('#' + evt.data.container + ' > iframe');
+
+      if ('setHeight' === evt.data.type) {
+        currentIframe.setAttribute('height', evt.data.value + 'px');
+        currentIframe.style.height = '';
+      }
+
+      if ('setWidth' === evt.data.type) {
+        if ('100%' !== currentIframe.getAttribute('width')) {
+          currentIframe.setAttribute('width', evt.data.value + 'px');
+        }
+
+        currentIframe.style.width = '';
+      }
+    },
+    false
+  );
 
   // Divi tab support
-  if (document.body.classList.contains('et_divi_theme')) {
-    const diviTab = document.querySelector('.et_pb_tabs_controls');
-    if (diviTab) {
-      diviTab.addEventListener('click', eventHandler, false);
-      console.log("Clicked on Divi Tab");
-    }
+  const diviTab = document.querySelector('.et_pb_tabs_controls');
+  if (diviTab) {
+    diviTab.addEventListener(
+      'click',
+      () => {
+        document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe').forEach(iframe => {
+          iframe.src += '';
+        });
+      },
+      false
+    );
   }
 
   return widgetObj;
@@ -79,21 +103,4 @@ const createIFrame = (parentId, src, isFullWidth) => {
 
   parent.innerHTML = '';
   parent.appendChild(iframe);
-};
-
-const eventHandler = evt => {
-  const currentIframe = document.querySelector('#' + evt.data.container + ' iframe');
-
-  if ('setHeight' === evt.data.type) {
-    currentIframe.setAttribute('height', evt.data.value + 'px');
-    currentIframe.style.height = '';
-  }
-
-  if ('setWidth' === evt.data.type) {
-    if ('100%' !== currentIframe.getAttribute('width')) {
-      currentIframe.setAttribute('width', evt.data.value + 'px');
-    }
-
-    currentIframe.style.width = '';
-  }
 };
