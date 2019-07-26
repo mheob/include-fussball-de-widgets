@@ -123,7 +123,9 @@ class Ifdw_Shortcode {
 		);
 
 		if ( 32 !== strlen( $a['api'] ) ) {
-			$this->console_log();
+			$this->console_log( false );
+			/* translators: %s: the length of the api */
+			printf( esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ), esc_html( strlen( $a['api'] ) ) );
 			return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
 		}
 
