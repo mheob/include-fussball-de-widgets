@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Tabs from theme Divi-Theme are now supported.
+
 ## [2.2.2] - 2019-06-20
 
 ### Fixed

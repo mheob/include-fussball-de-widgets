@@ -1,6 +1,6 @@
 {
   "name": "include-fussball-de-widgets",
-  "version": "2.2.2",
+  "version": "2.2.3-b1",
   "description": "A WordPress plugin for easy integration of fussball.de widgets.",
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "release:clear": "rm -rf .releases/include-fussball-de-widgets/trunk/*",
     "release:copy": "rsync -a ./app/dist/* .releases/include-fussball-de-widgets/trunk/",
     "release:github": "rsync -a ./app/dist/* .github-releases/include-fussball-de-widgets && cd .github-releases/ && zip -r include-fussball-de-widgets-v2.2.2.zip include-fussball-de-widgets/* && rm -rf include-fussball-de-widgets && cd ..",
-    "release": "yarn run release:clear; yarn run release:copy; yarn run release:github"
+    "release": "npm run release:clear; npm run release:copy; npm run release:github"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
@@ -38,9 +38,9 @@
     "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^3.1.0",
     "eslint": "^6.1.0",
-    "eslint-plugin-jest": "^22.13.0",
+    "eslint-plugin-jest": "^22.13.6",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react": "^7.14.3",
     "extract-loader": "^3.1.0",
     "file-loader": "^4.1.0",
     "node-sass": "^4.12.0",
