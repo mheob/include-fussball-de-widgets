@@ -16,7 +16,7 @@ const widget = {
   referer: host ? encodeURIComponent(host) : 'unknown'
 };
 
-console.warn("THIS IS AN DEVELOPMENT BUILD!");
+console.warn("[FUBADE] THIS IS AN DEVELOPMENT BUILD!");
 
 window.FussballdeWidgetAPI = () => {
   const widgetObj = {
@@ -51,14 +51,14 @@ window.FussballdeWidgetAPI = () => {
       }
     }
   };
-
-  window.addEventListener('message', eventHandler(this), false);
+  
+  window.addEventListener('message', eventHandler, false);
 
   // Divi tab support
   if (document.body.classList.contains('et_divi_theme')) {
     const diviTab = document.querySelector('.et_pb_tabs_controls');
     if (diviTab) {
-      diviTab.addEventListener('click', eventHandler(this), false);
+      diviTab.addEventListener('click', eventHandler, false);
       console.log("Clicked on Divi Tab");
     }
   }
