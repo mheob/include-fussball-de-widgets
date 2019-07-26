@@ -123,6 +123,7 @@ class Ifdw_Shortcode {
 		);
 
 		if ( 32 !== strlen( $a['api'] ) ) {
+			$this->console_log();
 			return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
 		}
 
@@ -144,7 +145,7 @@ class Ifdw_Shortcode {
 
 		ob_start();
 
-		printf( "<div id=\"%s\" class=\"include-fussball-de-widgets\">\n", esc_html( $this->id ) );
+		printf( '<div id="%s" class="include-fussball-de-widgets" data-version="' . esc_html( IFDW_VERSION ) . '\">\n', esc_html( $this->id ) );
 		/* translators: %s: the description of the widget */
 		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $this->notice ) );
 		print ( "</div>\n" );
@@ -171,8 +172,10 @@ class Ifdw_Shortcode {
 	 * Generates a logging output in the browser console.
 	 *
 	 * @since 2.2.0
+	 *
+	 * @param boolean $in_console If true, the log is output to the debug console of the browser.
 	 */
-	private function console_log() {
+	private function console_log( $in_console = true ) {
 		$logging_list = [
 			esc_html__( 'api: ', 'include-fussball-de-widgets' ) . esc_html( $this->api ),
 			esc_html__( 'notice: ', 'include-fussball-de-widgets' ) . esc_html( $this->notice ),
@@ -180,11 +183,16 @@ class Ifdw_Shortcode {
 			esc_html__( 'devtools: ', 'include-fussball-de-widgets' ) . esc_html( $this->dev_tools ),
 		];
 
-		$output = '';
-		foreach ( $logging_list as $logging_item ) {
-			$output .= 'console.info(' . wp_json_encode( '[' . esc_html( $this->id ) . '] ' . $logging_item, JSON_HEX_TAG ) . ');' . PHP_EOL;
-		};
-
-		wp_add_inline_script( 'fubade-api', $output, 'after' );
+		if ( $in_console ) {
+			$output = '';
+			foreach ( $logging_list as $logging_item ) {
+				$output .= 'console.info(' . wp_json_encode( '[' . esc_html( $this->id ) . '] ' . $logging_item, JSON_HEX_TAG ) . ');' . PHP_EOL;
+			};
+			wp_add_inline_script( 'fubade-api', $output, 'after' );
+		} else {
+			foreach ( $logging_list as $logging_item ) {
+				echo '<!--' . wp_json_encode( '[' . esc_html( $this->id ) . '] ' . $logging_item, JSON_HEX_TAG ) . '-->' . PHP_EOL;
+			}
+		}
 	}
 }
