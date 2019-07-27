@@ -74,7 +74,7 @@ window.FussballdeWidgetAPI = () => {
   );
 
   // Divi tab support
-  const diviTab = document.querySelector('.et_pb_tabs_controls');
+  const diviTab = document.querySelector('.et_pb_tabs_controls a');
   if (diviTab) {
     diviTab.addEventListener(
       'click',
