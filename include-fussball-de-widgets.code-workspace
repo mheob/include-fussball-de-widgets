@@ -17,6 +17,7 @@
     }
   ],
   "settings": {
+    "files.eol": "\n",
     "files.exclude": {
       "**/.git": true,
       "**/.svn": true,
@@ -59,7 +60,8 @@
       "editor.useTabStops": false
     },
 
-    // Extensions
+    // Extensions,
+    "prettier.endOfLine": "lf",
     "prettier.eslintIntegration": true,
     "prettier.stylelintIntegration": true,
 
@@ -69,10 +71,6 @@
     "phpcbf.executablePath": "./wpcs/vendor/bin/phpcbf.bat",
     "phpcs.standard": "WordPress",
     "phpcbf.standard": "WordPress",
-
-    "liveServer.settings.host": "localhost",
-    "liveServer.settings.port": 8080,
-    "liveServer.settings.multiRootWorkspaceName": "Include Fussball.de Widgets",
 
     "cSpell.enabledLanguageIds": [
       "asciidoc",
