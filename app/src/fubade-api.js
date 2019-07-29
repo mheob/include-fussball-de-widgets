@@ -75,13 +75,13 @@ window.FussballdeWidgetAPI = () => {
 
   // Divi tab support
   if (document.body.classList.contains('et_divi_theme')) {
-    const diviTabs = document.querySelectorAll('.et_pb_tabs_controls a');
+    const diviTabs = Array.from(document.querySelectorAll('.et_pb_tabs_controls a'));
     if (diviTabs.length > 0) {
       diviTabs.forEach(diviTab => {
         diviTab.addEventListener(
           'click',
           () => {
-            document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe').forEach(iframe => {
+            Array.from(document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe')).forEach(iframe => {
               iframe.src += '';
             });
           },
