@@ -74,19 +74,23 @@ window.FussballdeWidgetAPI = () => {
   );
 
   // Divi tab support
-  const diviTab = document.querySelector('.et_pb_tabs_controls a');
-  if (diviTab) {
-    diviTab.addEventListener(
-      'click',
-      () => {
-        document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe').forEach(iframe => {
-          iframe.src += '';
-        });
-      },
-      false
-    );
+  if (document.body.classList.contains('et_divi_theme')) {
+    const diviTabs = document.querySelectorAll('.et_pb_tabs_controls a');
+    if (diviTabs.length > 0) {
+      diviTabs.forEach(diviTab => {
+        diviTab.addEventListener(
+          'click',
+          () => {
+            document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe').forEach(iframe => {
+              iframe.src += '';
+            });
+          },
+          false
+        );
+      });
+    }
   }
-
+  
   return widgetObj;
 };
 
