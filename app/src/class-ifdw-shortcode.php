@@ -123,8 +123,11 @@ class Ifdw_Shortcode {
 			$atts
 		);
 
+		$log_fired = false;
+
 		if ( 32 !== strlen( $a['api'] ) ) {
-			$this->console_log( false );
+			$this->console_log();
+			$log_fired = true;
 			/* translators: %s: the length of the api */
 			printf( esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ), esc_html( strlen( $a['api'] ) ) );
 			return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
@@ -144,6 +147,11 @@ class Ifdw_Shortcode {
 
 		if ( $this->dev_tools ) {
 			$this->console_log();
+			$log_fired = true;
+		}
+
+		if ( ! $log_fired ) {
+			$this->console_log( false );
 		}
 
 		ob_start();
