@@ -81,9 +81,10 @@ window.FussballdeWidgetAPI = () => {
         diviTab.addEventListener(
           'click',
           () => {
-            Array.from(document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe')).forEach(iframe => {
-              iframe.src += '';
-            });
+            setTimeout(
+              Array.from(document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe')).forEach(iframe => {
+                iframe.src += '';
+              }), 300);
           },
           false
         );
