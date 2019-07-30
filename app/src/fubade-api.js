@@ -16,7 +16,7 @@ const widget = {
   referer: host ? encodeURIComponent(host) : 'unknown'
 };
 
-console.warn("[FUBADE] THIS IS AN DEVELOPMENT BUILD!");
+// console.warn("[FUBADE] THIS IS AN DEVELOPMENT BUILD!");
 
 window.FussballdeWidgetAPI = () => {
   const widgetObj = {
