@@ -94,7 +94,8 @@ class Ifdw_Shortcode {
 			'fubade-api',
 			plugins_url( $js_file, __FILE__ ),
 			[ 'wp-i18n' ],
-			filemtime( dirname( __FILE__ ) . '/' . $js_file ),
+			// *(for dev only) filemtime( dirname( __FILE__ ) . '/' . $js_file ),
+			IFDW_VERSION,
 			true
 		);
 		wp_set_script_translations( 'fubade-api', 'include-fussball-de-widgets' );
@@ -147,7 +148,7 @@ class Ifdw_Shortcode {
 
 		ob_start();
 
-		printf( '<div id="%s" class="include-fussball-de-widgets" data-version="' . esc_html( IFDW_VERSION ) . "\">\n", esc_html( $this->id ) );
+		printf( '<div id="%s" class="include-fussball-de-widgets">' . PHP_EOL, esc_html( $this->id ) );
 		/* translators: %s: the description of the widget */
 		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $this->notice ) );
 		print ( "</div>\n" );
