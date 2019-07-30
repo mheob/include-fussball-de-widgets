@@ -8,15 +8,13 @@ import { version } from '../../package.json';
  */
 
 const { __ } = wp.i18n;
-
 const host = punycode.toASCII(decodeURIComponent(document.location.host));
-
 const widget = {
   url: '//www.fussball.de/widget2',
   referer: host ? encodeURIComponent(host) : 'unknown'
 };
 
-// console.warn("[FUBADE] THIS IS AN DEVELOPMENT BUILD!");
+//*(for dev only) console.warn("[FUBADE] THIS IS AN DEVELOPMENT BUILD!");
 
 window.FussballdeWidgetAPI = () => {
   const widgetObj = {
@@ -73,7 +71,7 @@ window.FussballdeWidgetAPI = () => {
     false
   );
 
-  // Divi tab support
+  /** Divi tab support */
   if (document.body.classList.contains('et_divi_theme')) {
     const diviTabs = Array.from(document.querySelectorAll('.et_pb_tabs_controls a'));
     if (diviTabs.length > 0) {
