@@ -19,6 +19,12 @@ define( 'IFDW_VERSION', '2.2.3-b5' );
 
 
 /**
+ * "Borlabs-Cookie" Initializer.
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/borlabs-cookie.php';
+
+
+/**
  * Block Initializer.
  */
 require_once plugin_dir_path( __FILE__ ) . 'init-block.php';
