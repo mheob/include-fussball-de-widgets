@@ -57,7 +57,7 @@ add_action(
 			filemtime( "$dir/$js_file" ),
 			true
 		);
-		wp_set_script_translations( 'fubade-block-script', IFDW_DOMAIN );
+		wp_set_script_translations( 'fubade-block-script', 'include-fussball-de-widgets' );
 
 		$editor_css = 'css/editor-block.css';
 		wp_register_style(

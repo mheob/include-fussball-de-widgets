@@ -14,8 +14,6 @@ const widget = {
   referer: host ? encodeURIComponent(host) : 'unknown'
 };
 
-const IFDW_DOMAIN = 'include-fussball-de-widgets';
-
 //*(for dev only) console.warn("[FUBADE] THIS IS AN DEVELOPMENT BUILD!");
 
 window.FussballdeWidgetAPI = () => {
@@ -40,14 +38,14 @@ window.FussballdeWidgetAPI = () => {
             );
           }
         } else {
-          console.error(__('Can\'t display the iframe. The DIV is missing: ', IFDW_DOMAIN), targetId);
+          console.error(__('Can\'t display the iframe. The DIV is missing: ', 'include-fussball-de-widgets'), targetId);
           isError = true;
         }
       }
 
       if (isDevTools || isError) {
-        console.info(__('[FUBADE] Plugin Version: ', IFDW_DOMAIN), version);
-        console.info(__('[FUBADE] Website for registration: ', IFDW_DOMAIN), widget.referer);
+        console.info(__('[FUBADE] Plugin Version: ', 'include-fussball-de-widgets'), version);
+        console.info(__('[FUBADE] Website for registration: ', 'include-fussball-de-widgets'), widget.referer);
       }
     }
   };

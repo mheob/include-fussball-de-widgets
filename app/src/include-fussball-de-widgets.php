@@ -14,10 +14,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-/**
- * Setup own constants.
- */
-define( 'IFDW_DOMAIN', 'include-fussball-de-widgets' );
+
 define( 'IFDW_VERSION', '2.2.3-b6' );
 
 
