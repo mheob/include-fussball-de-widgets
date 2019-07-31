@@ -82,7 +82,7 @@ window.FussballdeWidgetAPI = () => {
             setTimeout(
               Array.from(document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe')).forEach(iframe => {
                 iframe.src += '';
-              }), 500);
+              }), 800);
           },
           false
         );
