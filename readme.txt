@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 5.6
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 2.2.3-b6
+Stable tag: 2.3.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,7 +75,7 @@ The latest state of development is available at any time in my [Github repositor
 
 == Changelog ==
 
-= 2.2.3 - 2019-07-27 =
+= 2.3.0 - 2019-07-31 =
 
 = Added =
 
@@ -240,7 +240,7 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 2.2.3 - 2019-07-27 =
+= 2.3.0 - 2019-07-31 =
 
 = Added =
 

@@ -69,7 +69,7 @@ const fubadeConfig = {
   },
   plugins: [
     new CopyPlugin([
-      { from: '*/**.php', to: '../dist/', context: 'app/src' },
+      { from: '**/*.php', to: '../dist/', context: 'app/src' },
       { from: '../../LICENSE', to: './', context: 'app/dist' },
       { from: '../../readme.txt', to: './', context: 'app/dist' }
     ])
