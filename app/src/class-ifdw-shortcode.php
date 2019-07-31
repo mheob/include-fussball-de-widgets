@@ -98,7 +98,7 @@ class Ifdw_Shortcode {
 			IFDW_VERSION,
 			true
 		);
-		wp_set_script_translations( 'fubade-api', 'include-fussball-de-widgets' );
+		wp_set_script_translations( 'fubade-api', IFDW_DOMAIN );
 	}
 
 
@@ -129,8 +129,8 @@ class Ifdw_Shortcode {
 			$this->console_log();
 			$log_fired = true;
 			/* translators: %s: the length of the api */
-			printf( esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ), esc_html( strlen( $a['api'] ) ) );
-			return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
+			printf( esc_html__( "<!-- API length: %s -->\n", IFDW_DOMAIN ), esc_html( strlen( $a['api'] ) ) );
+			return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', IFDW_DOMAIN );
 		}
 
 		$this->api        = sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
@@ -158,7 +158,7 @@ class Ifdw_Shortcode {
 
 		printf( '<div id="%s" class="include-fussball-de-widgets">' . PHP_EOL, esc_html( $this->id ) );
 		/* translators: %s: the description of the widget */
-		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $this->notice ) );
+		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", IFDW_DOMAIN ), esc_html( $this->notice ) );
 		print ( "</div>\n" );
 
 		return ob_get_clean();
@@ -188,10 +188,10 @@ class Ifdw_Shortcode {
 	 */
 	private function console_log( $in_console = true ) {
 		$logging_list = [
-			esc_html__( 'api: ', 'include-fussball-de-widgets' ) . esc_html( $this->api ),
-			esc_html__( 'notice: ', 'include-fussball-de-widgets' ) . esc_html( $this->notice ),
-			esc_html__( 'fullwidth: ', 'include-fussball-de-widgets' ) . esc_html( $this->full_width ),
-			esc_html__( 'devtools: ', 'include-fussball-de-widgets' ) . esc_html( $this->dev_tools ),
+			esc_html__( 'api: ', IFDW_DOMAIN ) . esc_html( $this->api ),
+			esc_html__( 'notice: ', IFDW_DOMAIN ) . esc_html( $this->notice ),
+			esc_html__( 'fullwidth: ', IFDW_DOMAIN ) . esc_html( $this->full_width ),
+			esc_html__( 'devtools: ', IFDW_DOMAIN ) . esc_html( $this->dev_tools ),
 		];
 
 		if ( $in_console ) {

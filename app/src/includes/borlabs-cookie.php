@@ -40,9 +40,9 @@ $content_blocker_html = '<div class="_brlbs-content-blocker">
 		<div class="_brlbs-embed _brlbs-twitter">
 				<img class="_brlbs-thumbnail" src="%%thumbnail%%" alt="%%name%%">
 			<div class="_brlbs-caption">
-				<p>' . __( 'By loading the widget, you agree to the privacy policy of fussball.de.', 'include-fussball-de-widgets' ) . '<br><a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' . __( 'Learn more', 'include-fussball-de-widgets' ) . '</a></p>
-				<p><a class="_brlbs-btn" href="#" data-borlabs-cookie-unblock role="button">' . __( 'Load widget', 'include-fussball-de-widgets' ) . '</a></p>
-				<p><label><input type="checkbox" name="unblockAll" value="1" checked> <small>' . __( 'Always load fussball.de widgets', 'include-fussball-de-widgets' ) . '</small></label></p>
+				<p>' . __( 'By loading the widget, you agree to the privacy policy of fussball.de.', IFDW_DOMAIN ) . '<br><a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' . __( 'Learn more', IFDW_DOMAIN ) . '</a></p>
+				<p><a class="_brlbs-btn" href="#" data-borlabs-cookie-unblock role="button">' . __( 'Load widget', IFDW_DOMAIN ) . '</a></p>
+				<p><label><input type="checkbox" name="unblockAll" value="1" checked> <small>' . __( 'Always load fussball.de widgets', IFDW_DOMAIN ) . '</small></label></p>
 			</div>
 		</div>
 	</div>';
@@ -54,7 +54,7 @@ $content_blocker_html = '<div class="_brlbs-content-blocker">
  */
 BorlabsCookieHelper()->addContentBlocker(
 	'ifdw_fubade',
-	__( 'Fussball.de Widget', 'include-fussball-de-widgets' ),
+	__( 'Fussball.de Widget', IFDW_DOMAIN ),
 	'',
 	'http://www.fussball.de/privacy/',
 	[ 'fussball.de' ],
