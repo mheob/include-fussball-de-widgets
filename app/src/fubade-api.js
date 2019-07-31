@@ -100,8 +100,8 @@ const createIFrame = (parentId, src, isFullWidth) => {
   iframe.frameBorder = 0;
   iframe.setAttribute('src', src);
   iframe.setAttribute('scrolling', 'no');
-  iframe.setAttribute('width', isFullWidth ? '100%' : '900');
-  iframe.setAttribute('height', '500');
+  iframe.setAttribute('width', isFullWidth ? '100%' : '900px');
+  iframe.setAttribute('height', '200px');
   iframe.setAttribute('style', 'border: 1px solid #CECECE;');
 
   parent.innerHTML = '';
