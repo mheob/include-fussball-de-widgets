@@ -161,7 +161,14 @@ class Ifdw_Shortcode {
 		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $this->notice ) );
 		print ( "</div>\n" );
 
-		return ob_get_clean();
+		$content = ob_get_clean();
+
+		// if ( IFDW_BORLABS_COOKIE ) {
+		// 	BorlabsCookieHelper()->blockContent( $content, 'ifdw_fubade', $title = '' );
+		// 	echo '<!-- class-ifdw-shortcode.php after BorlabsCookieHelper()->blockContent(...) -->';
+		// }
+
+		return $content;
 	}
 
 
@@ -202,7 +209,7 @@ class Ifdw_Shortcode {
 			wp_add_inline_script( 'fubade-api', $output, 'after' );
 		} else {
 			foreach ( $logging_list as $logging_item ) {
-				echo '<!--' . wp_json_encode( '[' . esc_html( $this->id ) . '] ' . $logging_item, JSON_HEX_TAG ) . '-->' . PHP_EOL;
+				echo '<!--[' . esc_html( $this->id ) . '] ' . esc_html( $logging_item ) . '-->' . PHP_EOL;
 			}
 		}
 	}
