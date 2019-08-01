@@ -1,40 +1,14 @@
 const path = require('path');
 
-const TerserPlugin = require('terser-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.config');
 
 const commonConfig = {
-  ...defaultConfig,
-  module: {
-    rules: [
-      ...defaultConfig.module.rules,
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'css/[name]-block.css'
-            }
-          },
-          {
-            loader: 'extract-loader'
-          },
-          {
-            loader: 'css-loader?-url'
-          },
-          {
-            loader: 'postcss-loader'
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
-      }
-    ]
-  },
+  ...defaultConfig,  
+  devtool: 'cheap-eval-source-map',
   optimization: {
     minimizer: [
       new TerserPlugin({
@@ -53,19 +27,37 @@ const commonConfig = {
 
 const blockConfig = {
   ...commonConfig,
-  entry: [ './app/src/block/index.js', './app/src/block/editor.scss' ],
+  entry: './app/src/blocks/index.js',
   output: {
     path: path.resolve(__dirname, 'app', 'dist'),
-    filename: 'js/fubade-block.js'
-  }
+    filename: 'assets/js/blocks.js'
+  },
+  module: {
+    rules: [
+      ...defaultConfig.module.rules,
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'blocks-[name].css'
+    })
+  ]
 };
 
 const fubadeConfig = {
   ...commonConfig,
-  entry: './app/src/fubade-api.js',
+  entry: './app/src/assets/js/fubade-api.js',
   output: {
     path: path.resolve(__dirname, 'app', 'dist'),
-    filename: 'js/fubade-api.js'
+    filename: 'assets/js/fubade-api.js'
   },
   plugins: [
     new CopyPlugin([

@@ -80,6 +80,10 @@ class Ifdw_Shortcode {
 	public function __construct() {
 		add_action( 'init', [ $this, 'register_fubade_api' ] );
 		add_shortcode( 'fubade', [ $this, 'render_shortcode' ] );
+
+		if ( IFDW_BORLABS_COOKIE && false ) {
+			add_filter( 'do_shortcode_tag', [ $this, 'borlabs_cookie_block_content' ], 10, 4 );
+		}
 	}
 
 
@@ -161,14 +165,34 @@ class Ifdw_Shortcode {
 		printf( esc_html__( "... the fussball.de widget with the description \"%s\" is currently loading ...\n", 'include-fussball-de-widgets' ), esc_html( $this->notice ) );
 		print ( "</div>\n" );
 
-		$content = ob_get_clean();
+		$output = ob_get_clean();
 
-		// if ( IFDW_BORLABS_COOKIE ) {
-		// 	BorlabsCookieHelper()->blockContent( $content, 'ifdw_fubade', $title = '' );
-		// 	echo '<!-- class-ifdw-shortcode.php after BorlabsCookieHelper()->blockContent(...) -->';
-		// }
+		BorlabsCookieHelper()->blockContent( $output, 'ifdw_fubade', 'TEST' );
 
-		return $content;
+		return $output;
+	}
+
+	/**
+	 * Filters the output created by the shortcode callback.
+	 *
+	 * @param string       $output Shortcode output.
+	 * @param string       $tag Shortcode name.
+	 * @param array|string $attr Shortcode attributes array or empty string.
+	 * @param array        $m Regular expression match array.
+	 *
+	 * @return string
+	 */
+	public function borlabs_cookie_block_content( $output, $tag, $attr, $m ) {
+		if ( 'fubade' !== $tag ) {
+			return $output;
+		}
+
+		$console_output = 'console.info(' . wp_json_encode( '[' . esc_html( $this->id ) . '] ' . $output, JSON_HEX_TAG ) . ');' . PHP_EOL;
+		wp_add_inline_script( 'fubade-api', $console_output, 'after' );
+
+		BorlabsCookieHelper()->blockContent( $output, 'ifdw_fubade', 'TEST' );
+
+		return $output;
 	}
 
 
