@@ -40,7 +40,7 @@ function ifdw_render_fubade_output( $arr ) {
 	$output .= ifdw_create_fubade_iframe( $attr );
 	$output .= '</div>' . PHP_EOL;
 
-	return ob_get_clean();
+	return $output;
 }
 
 
