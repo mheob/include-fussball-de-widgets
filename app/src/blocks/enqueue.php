@@ -22,7 +22,7 @@
 /**
  * Functions to register client-side assets (scripts and stylesheets) for the Gutenberg block.
  *
- * @since   3.0.0
+ * @since 3.0.0
  */
 
 defined( 'ABSPATH' ) || exit();
@@ -69,24 +69,8 @@ function ifdw_register_dynamic_block() {
 			],
 			'editor_script'   => 'fubade-block-script',
 			'editor_style'    => 'fubade-block-style',
-			'render_callback' => 'ifdw_render_block_fubade',
+			// TODO: Test the render_callback.
+			'render_callback' => 'ifdw_render_fubade_output',
 		]
 	);
 };
-
-
-/**
- * Define the dynamic block.
- *
- * @param array $attributes Block attributes.
- *
- * @return string
- *
- * @since 2.0.0
- */
-function ifdw_render_block_fubade( $attributes ) {
-	// TODO: complete restructuring.
-	require_once plugin_dir_path( IFDW_URL ) . 'class-ifdw-shortcode.php';
-
-	return ( new Ifdw_Shortcode() )->render_shortcode( $attributes );
-}

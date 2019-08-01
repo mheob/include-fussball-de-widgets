@@ -58,6 +58,7 @@ window.FussballdeWidgetAPI = () => {
       if ('setHeight' === evt.data.type) {
         currentIframe.setAttribute('height', evt.data.value + 'px');
         currentIframe.style.height = '';
+        currentIframe.style.minHeight = '200px';
       }
 
       if ('setWidth' === evt.data.type) {

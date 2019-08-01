@@ -24,7 +24,7 @@
  *
  * Creates a fubade widget.
  *
- * @since   3.0.0
+ * @since 3.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -149,11 +149,11 @@ class IFDW_Fubade_Widget extends WP_Widget {
 		// WordPress core before_widget hook (always include).
 		echo esc_html( $args['before_widget'] );
 
+		// TODO: Generate the correct fussball.de widget.
+		// *     The current output is only for testing purposes.
 		// Display the widget.
 		echo '<div class="widget-text wp_widget_plugin_box">';
 
-		// TODO: Generate the correct fussball.de widget.
-		// *     The current output is only for testing purposes.
 		if ( $title ) {
 			echo esc_html( $args['before_title'] . $title . $args['after_title'] );
 		}
@@ -169,6 +169,17 @@ class IFDW_Fubade_Widget extends WP_Widget {
 		if ( $devtools ) {
 			echo esc_html( '<p>DEVTOOLS: ' . $devtools . '</p>' );
 		}
+
+		// TODO: Currently only for testing.
+		ifdw_fubade_shortcode(
+			[
+				'id'        => '',
+				'api'       => $api,
+				'notice'    => $title,
+				'fullwidth' => $fullwidth,
+				'devtools'  => $devtools,
+			]
+		);
 
 		echo '</div>';
 

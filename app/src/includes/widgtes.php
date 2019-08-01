@@ -24,7 +24,7 @@
  *
  * Register all widgets from 'Include_Fussball_De_Widgets'.
  *
- * @since   3.0.0
+ * @since 3.0.0
  */
 
 defined( 'ABSPATH' ) || exit;

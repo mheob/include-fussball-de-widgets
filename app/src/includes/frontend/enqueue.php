@@ -22,7 +22,7 @@
 /**
  * Functions to register script for the frontend.
  *
- * @since   3.0.0
+ * @since 3.0.0
  */
 
 defined( 'ABSPATH' ) || exit();

@@ -24,7 +24,7 @@
  *
  * Define and render the fubade shortcode.
  *
- * @since   3.0.0
+ * @since 3.0.0
  */
 
 defined( 'ABSPATH' ) || exit();
@@ -81,33 +81,10 @@ function ifdw_fubade_shortcode( $atts ) {
 		ifdw_console_log( $a, false );
 	}
 
-	$notice_text = '' !== $a['notice']
-		? '... the fussball.de widget with the description "%s" is currently loading ...'
-		: '... the fussball.de widget is currently loading ...';
-
-	ob_start();
-
-	printf( '<div id="%s" class="include-fussball-de-widgets">', esc_html( $a['id'] ) );
-	if ( '' !== $a['notice'] ) {
-		printf(
-			/* translators: %s: the description of the widget */
-			esc_html__(
-				'... the fussball.de widget with the description "%s" is currently loading ...',
-				'include-fussball-de-widgets'
-			),
-			esc_html( $a['notice'] )
-		);
-	} else {
-			esc_html_e( '... the fussball.de widget is currently loading ...', 'include-fussball-de-widgets' );
-	}
-	echo "</div>\n";
-
-	$output = ob_get_clean();
-
-	BorlabsCookieHelper()->blockContent( $output, 'ifdw_fubade', 'TEST' );
-
-	return $output;
+	// TODO: Test the function call.
+	return ifdw_render_fubade_output( $a );
 }
+
 
 /**
  * Register the calling script for the api from fussball.de.
