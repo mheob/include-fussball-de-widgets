@@ -14,22 +14,45 @@
 
 defined( 'ABSPATH' ) || exit;
 
-/* Setup */
+/**
+ * Constants
+ */
 define( 'IFDW_VERSION', '3.0.0' );
 define( 'IFDW_URL', __FILE__ );
 
-/* Includes */
+/**
+ * Includes
+ */
+/* Gutenberg blocks */
 require 'blocks/enqueue.php';
+
+/* Common includes */
 require 'includes/borlabs-cookie.php';
 require 'includes/widgets.php';
-require 'includes/front/enqueue.php';
-require 'includes/shortcodes/fubade.php';
-require 'includes/widgets/class-ifdw-fubade-widget.php';
 
-/* Hooks */
-add_action( 'init', 'ifdw_register_fubade_api' );
-add_action( 'init', 'ifdw_register_dynamic_block' );
-add_action( 'widgets_init', 'ifdw_widgets_init' );
+/* Frontend */
+require 'includes/front/enqueue.php';
 
 /* Shortcodes */
+require 'includes/shortcodes/fubade.php';
+
+/* Widgets */
+require 'includes/widgets/class-ifdw-fubade-widget.php';
+
+/**
+ * Hooks
+ */
+/* Admin area */
+add_action( 'admin_init', 'ifdw_create_borlabs_cookie_content_blocker' );
+
+/* Common initialize */
+add_action( 'init', 'ifdw_register_fubade_api' );
+add_action( 'init', 'ifdw_register_dynamic_block' );
+
+/* Widgets */
+add_action( 'widgets_init', 'ifdw_widgets_init' );
+
+/**
+ * Shortcodes
+ */
 add_shortcode( 'fubade', 'ifdw_fubade_shortcode' );
