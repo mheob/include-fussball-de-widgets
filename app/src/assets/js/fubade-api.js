@@ -93,6 +93,7 @@ window.FussballdeWidgetAPI = () => {
   return widgetObj;
 };
 
+// TODO: Creation of the iframe have to be done in PHP.
 const createIFrame = (parentId, src, isFullWidth) => {
   const iframe = document.createElement('iframe');
   const parent = document.getElementById(parentId);

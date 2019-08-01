@@ -49,6 +49,8 @@ class IFDW_Fubade_Widget extends WP_Widget {
 	/**
 	 * Outputs the options form on admin
 	 *
+	 * @since 3.0.0
+	 *
 	 * @param array $instance The widget options.
 	 */
 	public function form( $instance ) {
@@ -112,10 +114,12 @@ class IFDW_Fubade_Widget extends WP_Widget {
 	/**
 	 * Processing widget options on save
 	 *
+	 * @since 3.0.0
+	 *
 	 * @param array $new_instance The new options.
 	 * @param array $old_instance The previous options.
 	 *
-	 * @return array
+	 * @return array The new options.
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance              = $old_instance;
@@ -130,12 +134,12 @@ class IFDW_Fubade_Widget extends WP_Widget {
 	/**
 	 * Outputs the content of the widget
 	 *
+	 * @since 3.0.0
+	 *
 	 * @param array $args     The Widget arguments.
 	 * @param array $instance The saved values from the database.
 	 */
 	public function widget( $args, $instance ) {
-		// TODO: Generate the correct fussball.de widget.
-
 		// Check the widget options.
 		$title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 		$api       = isset( $instance['api'] ) ? $instance['api'] : '';
@@ -148,6 +152,8 @@ class IFDW_Fubade_Widget extends WP_Widget {
 		// Display the widget.
 		echo '<div class="widget-text wp_widget_plugin_box">';
 
+		// TODO: Generate the correct fussball.de widget.
+		// *     The current output is only for testing purposes.
 		if ( $title ) {
 			echo esc_html( $args['before_title'] . $title . $args['after_title'] );
 		}
