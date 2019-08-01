@@ -50,6 +50,7 @@ function ifdw_fubade_shortcode( $atts ) {
 		$atts
 	);
 
+	// TODO: Switch the logging to a separate file (/includes/frontend/logging.php).
 	$log_fired = false;
 
 	if ( 32 !== strlen( $a['api'] ) ) {
