@@ -30,16 +30,16 @@ defined( 'ABSPATH' ) || exit();
 /**
  * Register the api script for fussball.de.
  *
- * @since 2.2.0
+ * @since 3.0.0
  */
 function register_fubade_api() {
-	$js_file = 'js/fubade-api.js';
+	//phpcs:disable
 	wp_register_script(
-		'fubade-api',
-		plugins_url( 'js/fubade-api.js', IFDW_URL ),
-		[ 'wp-i18n' ],
-		IFDW_VERSION,
+		'fubade-api-dummy',
+		'',
+		'',
+		null,
 		true
 	);
-	wp_set_script_translations( 'fubade-api', 'include-fussball-de-widgets' );
+	//phpcs:enable
 }

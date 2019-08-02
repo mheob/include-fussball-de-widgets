@@ -2,7 +2,7 @@
 /**
  * Plugin Name:    Include Fussball.de Widgets
  * Description:    Easy integration of the Fussball.de widgets (currently in the version since season 2016).
- * Version:        2.3.0
+ * Version:        3.0.0
  * Author:         IT-Service Böhm -- Alexander Böhm
  * Author URI:     http://profiles.wordpress.org/mheob
  * License:        GPLv2
@@ -24,10 +24,11 @@ define( 'IFDW_URL', __FILE__ );
  * Includes
  */
 require 'blocks/enqueue.php';
-require 'includes/borlabs-cookie.php';
 require 'includes/widgets.php';
+require 'includes/backend/borlabs-cookie.php';
 require 'includes/frontend/enqueue.php';
-require 'includes/frontend/render-fubade.php';
+require 'includes/frontend/fubade.php';
+require 'includes/frontend/logging.php';
 require 'includes/shortcodes/fubade.php';
 require 'includes/widgets/class-ifdw-fubade-widget.php';
 

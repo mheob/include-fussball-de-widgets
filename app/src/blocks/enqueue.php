@@ -37,7 +37,7 @@ defined( 'ABSPATH' ) || exit();
  * `fullwidth`: If true, the widget is displaying in the full width.
  * `devtools`: If true, some dev tools are used.
  *
- * @since 2.0.0
+ * @since 3.0.0
  */
 function ifdw_register_dynamic_block() {
 	wp_register_script(
