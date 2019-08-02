@@ -52,7 +52,7 @@ function ifdw_register_dynamic_block() {
 
 	wp_register_style(
 		'fubade-block-style',
-		plugins_url( 'assets/css/block-main.css', IFDW_URL ),
+		plugins_url( 'assets/css/blocks-main.css', IFDW_URL ),
 		[],
 		IFDW_VERSION
 	);
@@ -70,7 +70,7 @@ function ifdw_register_dynamic_block() {
 			'editor_script'   => 'fubade-block-script',
 			'editor_style'    => 'fubade-block-style',
 			// TODO: Test the render_callback.
-			'render_callback' => 'ifdw_render_fubade_output',
+			'render_callback' => 'ifdw_create_fubade_output',
 		]
 	);
 };

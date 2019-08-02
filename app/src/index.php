@@ -19,18 +19,21 @@ defined( 'ABSPATH' ) || exit;
  */
 define( 'IFDW_VERSION', '3.0.0' );
 define( 'IFDW_URL', __FILE__ );
+// phpcs:disable
+define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SERVER_NAME'] ) : '' );
+// phpcs:enable
 
 /**
  * Includes
  */
-require 'blocks/enqueue.php';
-require 'includes/widgets.php';
-require 'includes/backend/borlabs-cookie.php';
-require 'includes/frontend/enqueue.php';
-require 'includes/frontend/fubade.php';
-require 'includes/frontend/logging.php';
-require 'includes/shortcodes/fubade.php';
-require 'includes/widgets/class-ifdw-fubade-widget.php';
+require_once 'blocks/enqueue.php';
+require_once dirname( IFDW_URL ) . '/includes/widgets.php'; // Has to be loaded as early as possible.
+require_once 'includes/backend/borlabs-cookie.php';
+require_once 'includes/frontend/enqueue.php';
+require_once 'includes/frontend/fubade.php';
+require_once 'includes/frontend/logging.php';
+require_once 'includes/shortcodes/fubade.php';
+require_once 'includes/widgets/class-ifdw-fubade-widget.php';
 
 /**
  * Hooks

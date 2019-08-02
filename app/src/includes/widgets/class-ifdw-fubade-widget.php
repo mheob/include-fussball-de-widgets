@@ -43,7 +43,7 @@ class IFDW_Fubade_Widget extends WP_Widget {
 	public function __construct() {
 		$widget_options = [ 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-widgets' ) ];
 
-		parent::__construct( 'IFDW_Fubade_Widget', __( 'Fussball.de Widget', 'include-fussball-de-widgets' ), $widget_options );
+		parent::__construct( 'ifdw_fubade_widget', __( 'Fussball.de Widget', 'include-fussball-de-widgets' ), $widget_options );
 	}
 
 	/**
@@ -91,8 +91,8 @@ class IFDW_Fubade_Widget extends WP_Widget {
 				id="<?php echo esc_attr( $this->get_field_id( 'fullwidth' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'fullwidth' ) ); ?>"
 				type="checkbox"
-				value="1"
-				<?php checked( '1', $instance['fullwidth'] ); ?> />
+				<?php checked( '1', $instance['fullwidth'] ); ?>
+				value="1">
 			<label for="<?php echo esc_attr( $this->get_field_id( 'fullwidth' ) ); ?>">
 				<?php esc_html_e( 'view in full width', 'include-fussball-de-widgets' ); ?>
 			</label>
@@ -102,8 +102,8 @@ class IFDW_Fubade_Widget extends WP_Widget {
 				id="<?php echo esc_attr( $this->get_field_id( 'devtools' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'devtools' ) ); ?>"
 				type="checkbox"
-				value="1"
-				<?php checked( '1', $instance['devtools'] ); ?> />
+				<?php checked( '1', $instance['devtools'] ); ?>
+				value="1">
 			<label for="<?php echo esc_attr( $this->get_field_id( 'devtools' ) ); ?>">
 				<?php esc_html_e( 'output log data to console', 'include-fussball-de-widgets' ); ?>
 			</label>
@@ -125,8 +125,8 @@ class IFDW_Fubade_Widget extends WP_Widget {
 		$instance              = $old_instance;
 		$instance['title']     = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
 		$instance['api']       = isset( $new_instance['api'] ) ? wp_strip_all_tags( $new_instance['api'] ) : '';
-		$instance['fullwidth'] = isset( $new_instance['textarea'] ) ? 1 : false;
-		$instance['devtools']  = isset( $new_instance['checkbox'] ) ? 1 : false;
+		$instance['fullwidth'] = isset( $new_instance['fullwidth'] ) ? 1 : false;
+		$instance['devtools']  = isset( $new_instance['devtools'] ) ? 1 : false;
 
 		return $instance;
 	}
@@ -143,47 +143,31 @@ class IFDW_Fubade_Widget extends WP_Widget {
 		// Check the widget options.
 		$title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 		$api       = isset( $instance['api'] ) ? $instance['api'] : '';
-		$fullwidth = ! empty( $instance['fullwidth'] ) ? $instance['fullwidth'] : false;
-		$devtools  = ! empty( $instance['devtools'] ) ? $instance['devtools'] : false;
+		$fullwidth = ! empty( $instance['fullwidth'] ) ? true : false;
+		$devtools  = ! empty( $instance['devtools'] ) ? true : false;
 
 		// WordPress core before_widget hook (always include).
-		echo esc_html( $args['before_widget'] );
+		// phpcs:disable
+		echo $args['before_widget'] . PHP_EOL;
 
-		// TODO: Generate the correct fussball.de widget.
-		// *     The current output is only for testing purposes.
-		// Display the widget.
-		echo '<div class="widget-text wp_widget_plugin_box">';
+		echo '<div class="widget-text wp_widget_plugin_box">' . PHP_EOL;
 
-		if ( $title ) {
-			echo esc_html( $args['before_title'] . $title . $args['after_title'] );
-		}
+		echo $args['before_title'] . $title . $args['after_title'] . PHP_EOL;
 
-		if ( $api ) {
-			echo esc_html( '<p>API: ' . $api . '</p>' );
-		}
-
-		if ( $fullwidth ) {
-			echo esc_html( '<p>FULLWIDTH: ' . $fullwidth . '</p>' );
-		}
-
-		if ( $devtools ) {
-			echo esc_html( '<p>DEVTOOLS: ' . $devtools . '</p>' );
-		}
-
-		// TODO: Currently only for testing.
-		ifdw_fubade_shortcode(
+		echo ifdw_create_fubade_output(
 			[
 				'id'        => '',
 				'api'       => $api,
 				'notice'    => $title,
 				'fullwidth' => $fullwidth,
 				'devtools'  => $devtools,
-			]
-		);
+				]
+			);
 
-		echo '</div>';
+		echo '</div>' . PHP_EOL;
 
 		// WordPress core after_widget hook (always include).
-		echo esc_html( $args['after_widget'] );
+		echo $args['after_widget'] . PHP_EOL;
+		// phpcs:enable
 	}
 }

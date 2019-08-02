@@ -7,8 +7,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.config');
 
 const commonConfig = {
-  ...defaultConfig,  
-  devtool: 'cheap-eval-source-map',
+  ...defaultConfig,
   optimization: {
     minimizer: [
       new TerserPlugin({
@@ -46,8 +45,10 @@ const blockConfig = {
     ]
   },
   plugins: [
+    ...defaultConfig.plugins,
     new MiniCssExtractPlugin({
-      filename: 'blocks-[name].css'
+      path: path.resolve(__dirname, 'app', 'dist'),
+      filename: 'assets/css/blocks-[name].css'
     })
   ]
 };
@@ -60,6 +61,7 @@ const fubadeConfig = {
     filename: 'assets/js/fubade-api.js'
   },
   plugins: [
+    ...defaultConfig.plugins,
     new CopyPlugin([
       { from: '**/*.php', to: '../dist/', context: 'app/src' },
       { from: '../../LICENSE', to: './', context: 'app/dist' },

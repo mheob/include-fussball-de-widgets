@@ -32,14 +32,13 @@ defined( 'ABSPATH' ) || exit();
  *
  * @since 3.0.0
  */
-function register_fubade_api() {
-	//phpcs:disable
+function ifdw_register_fubade_api() {
 	wp_register_script(
-		'fubade-api-dummy',
-		'',
-		'',
-		null,
+		'fubade-api',
+		plugins_url( 'assets/js/fubade-api.js', IFDW_URL ),
+		[ 'wp-i18n' ],
+		IFDW_VERSION,
 		true
 	);
-	//phpcs:enable
+	wp_set_script_translations( 'fubade-api', 'include-fussball-de-widgets' );
 }

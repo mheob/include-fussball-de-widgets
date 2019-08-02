@@ -52,7 +52,5 @@
     "stylelint-order": "^3.0.1",
     "terser-webpack-plugin": "^1.4.1"
   },
-  "dependencies": {
-    "punycode": "^2.1.1"
-  }
+  "dependencies": {}
 }

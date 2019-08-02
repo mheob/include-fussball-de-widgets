@@ -50,19 +50,6 @@ function ifdw_fubade_shortcode( $atts ) {
 		$atts
 	);
 
-	if ( 32 !== strlen( $a['api'] ) ) {
-		ifdw_console_log( $a );
-		/* translators: %s: the length of the api */
-		printf( esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ), esc_html( strlen( $a['api'] ) ) );
-		return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
-	}
-
-	$a['api']       = sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $a['api'] ) ) );
-	$a['id']        = 'fubade_' . substr( $a['api'], -5 );
-	$a['notice']    = sanitize_text_field( $a['notice'] );
-	$a['fullwidth'] = '1' === $a['fullwidth'] || 'true' === $a['fullwidth'] || true === $a['fullwidth'] ? 1 : 0;
-	$a['devtools']  = '1' === $a['devtools'] || 'true' === $a['devtools'] || true === $a['devtools'] ? 1 : 0;
-
 	// TODO: Test the function calls.
 	return ifdw_create_fubade_output( $a );
 }

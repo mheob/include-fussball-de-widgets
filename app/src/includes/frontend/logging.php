@@ -42,7 +42,7 @@ defined( 'ABSPATH' ) || exit();
 function ifdw_console_log( $arr, $in_console = true ) {
 	$logging_list_generell = [
 		__( '[FUBADE] Plugin Version: ', 'include-fussball-de-widgets' ) . IFDW_VERSION,
-		__( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . get_home_url(),
+		__( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . IFDW_HOST,
 	];
 
 	$logging_list = [
@@ -62,6 +62,9 @@ function ifdw_console_log( $arr, $in_console = true ) {
 		};
 		wp_add_inline_script( 'fubade-api', $output, 'after' );
 	} else {
+		foreach ( $logging_list_generell as $logging_item ) {
+			echo '<!-- ' . wp_json_encode( $logging_item, JSON_HEX_TAG ) . '-->' . PHP_EOL;
+		}
 		foreach ( $logging_list as $logging_item ) {
 			echo '<!-- ' . wp_json_encode( '[' . $arr['id'] . '] ' . $logging_item, JSON_HEX_TAG ) . '-->' . PHP_EOL;
 		}
