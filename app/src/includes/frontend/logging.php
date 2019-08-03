@@ -43,7 +43,6 @@ function ifdw_console_log( $arr, $in_console = true ) {
 	$logging_list_generell = [
 		__( '[FUBADE] Plugin Version: ', 'include-fussball-de-widgets' ) . IFDW_VERSION,
 		__( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . IFDW_HOST,
-		'',
 	];
 
 	$logging_list = [
@@ -51,7 +50,6 @@ function ifdw_console_log( $arr, $in_console = true ) {
 		__( 'notice: ', 'include-fussball-de-widgets' ) . esc_html( $arr['notice'] ),
 		__( 'fullwidth: ', 'include-fussball-de-widgets' ) . esc_html( $arr['fullwidth'] ),
 		__( 'devtools: ', 'include-fussball-de-widgets' ) . esc_html( $arr['devtools'] ),
-		'----------',
 	];
 
 	if ( $in_console ) {
@@ -60,20 +58,27 @@ function ifdw_console_log( $arr, $in_console = true ) {
 			$output .= 'console.info(' . wp_json_encode( $logging_item, JSON_HEX_TAG ) . ');' . PHP_EOL;
 		};
 
+		$output .= "console.info('')" . PHP_EOL;
+
 		foreach ( $logging_list as $logging_item ) {
 			$output .= 'console.info(' . wp_json_encode( '[' . $arr['id'] . '] ' . $logging_item, JSON_HEX_TAG ) . ');' . PHP_EOL;
 		};
+
+		$output .= "console.info('----------')" . PHP_EOL;
+		$output .= "console.info('')" . PHP_EOL;
 
 		wp_add_inline_script( 'fubade-api', $output, 'after' );
 	} else {
 		$message = '<!-- ' . PHP_EOL;
 
 		foreach ( $logging_list_generell as $logging_item ) {
-			$message .= wp_json_encode( $logging_item, JSON_HEX_TAG ) . PHP_EOL;
+			$message .= $logging_item . PHP_EOL;
 		};
 
+		$message .= '' . PHP_EOL;
+
 		foreach ( $logging_list as $logging_item ) {
-			$message .= wp_json_encode( '[' . $arr['id'] . '] ' . $logging_item, JSON_HEX_TAG ) . PHP_EOL;
+			$message .= '[' . $arr['id'] . '] ' . $logging_item . PHP_EOL;
 		};
 
 		$message .= ' -->' . PHP_EOL;
