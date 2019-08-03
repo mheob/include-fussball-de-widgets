@@ -40,8 +40,8 @@ function ifdw_create_borlabs_cookie_content_blocker() {
 
 	/* Setup variables */
 	$content_blocker_html = '<div class="_brlbs-content-blocker">
-	<div class="_brlbs-embed _brlbs-ifdw">
-		<img class="_brlbs-thumbnail" src="%%thumbnail%%" alt="%%name%%">
+	<div class="_brlbs-embed brlbs-ifdw">
+		<img class="_brlbs-thumbnail" src="' . plugins_url( 'assets/images/cb-fubade.png', IFDW_URL ) . '" alt="%%name%%">
 		<div class="_brlbs-caption">
 			<p>' . __( 'By loading the widget, you agree to the privacy policy of fussball.de.', 'include-fussball-de-widgets' ) . '<br><a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' . __( 'Learn more', 'include-fussball-de-widgets' ) . '</a></p>
 			<p><a class="_brlbs-btn" href="#" data-borlabs-cookie-unblock role="button">' . __( 'Load widget', 'include-fussball-de-widgets' ) . '</a></p>
@@ -50,28 +50,27 @@ function ifdw_create_borlabs_cookie_content_blocker() {
 	</div>
 </div>';
 
-	$content_blocker_css = '.BorlabsCookie ._brlbs-ifdw {
-	border: 1px solid #e1e8ed;
-	border-radius: 3px;
-	max-width: 516px;
+	$content_blocker_css = '.BorlabsCookie ._brlbs-content-blocker .brlbs-ifdw ._brlbs-caption a {
+	color: #aaa;
 }
 
-.BorlabsCookie ._brlbs-ifdw a._brlbs-btn {
-	background: #1da1f2;
-	border-radius: 0;
+.BorlabsCookie ._brlbs-content-blocker .brlbs-ifdw ._brlbs-caption a._brlbs-btn {
+	background: #0000a8;
+	color: #fff;
+	border-radius: 50px;
 }
 
-.BorlabsCookie ._brlbs-ifdw a._brlbs-btn:hover {
+.BorlabsCookie ._brlbs-content-blocker .brlbs-ifdw ._brlbs-caption a._brlbs-btn:hover {
 	background: #fff;
-	color: #1da1f2;
+	color: #0000a8;
 }';
 
 	BorlabsCookieHelper()->addContentBlocker(
-		'ifdw_fubade',
+		'fubade',
 		__( 'Fussball.de Widget', 'include-fussball-de-widgets' ),
 		'',
 		'http://www.fussball.de/privacy/',
-		[ 'www.fussball.de' ],
+		[ 'fussball.de', 'www.fussball.de' ],
 		$content_blocker_html,
 		$content_blocker_css,
 		'',

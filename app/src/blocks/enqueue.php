@@ -69,7 +69,6 @@ function ifdw_register_dynamic_block() {
 			],
 			'editor_script'   => 'fubade-block-script',
 			'editor_style'    => 'fubade-block-style',
-			// TODO: Test the render_callback.
 			'render_callback' => 'ifdw_create_fubade_output',
 		]
 	);
