@@ -50,8 +50,8 @@ function ifdw_create_fubade_output( $attr ) {
 		'api'       => sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $attr['api'] ) ) ),
 		'id'        => 'fubade_' . substr( $attr['api'], -5 ),
 		'notice'    => empty( $attr['notice'] ) ? '' : sanitize_text_field( $attr['notice'] ),
-		'fullwidth' => '1' === $attr['fullwidth'] || 'true' === $attr['fullwidth'] || true === $attr['fullwidth'] ? 1 : 0,
-		'devtools'  => '1' === $attr['devtools'] || 'true' === $attr['devtools'] || true === $attr['devtools'] ? 1 : 0,
+		'fullwidth' => '1' === $attr['fullwidth'] || 'true' === $attr['fullwidth'] || true === $attr['fullwidth'] ? true : false,
+		'devtools'  => '1' === $attr['devtools'] || 'true' === $attr['devtools'] || true === $attr['devtools'] ? true : false,
 	];
 
 	if ( $attr['devtools'] ) {
@@ -90,9 +90,10 @@ function ifdw_render_fubade_output( $attr ) {
 	$output .= ifdw_create_fubade_iframe( $attr );
 	$output .= '</div>' . PHP_EOL;
 
-	if ( IFDW_BORLABS_ACTIVE ) {
-		return BorlabsCookieHelper()->blockContent( $output, 'ifdw_fubade' );
-	}
+	// include_once ABSPATH . 'wp-admin/includes/plugin.php';
+	// if ( is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
+	// return BorlabsCookieHelper()->blockContent( $output, 'ifdw_fubade' );
+	// }
 
 	return $output;
 }
@@ -108,7 +109,7 @@ function ifdw_render_fubade_output( $attr ) {
  * @return string
  */
 function ifdw_create_fubade_iframe( $attr ) {
-	// TODO: Perhaps a punycode variant is needed with get_home_url().
+	// TODO: Perhaps a punycode variant is needed with IFDW_HOST.
 	$src    = '//www.fussball.de/widget2/-/schluessel/' . $attr['api'] . '/target/' . $attr['id'] . '/caller/' . IFDW_HOST;
 	$width  = $attr['fullwidth'] ? '100%' : '900px';
 	$height = '200px';

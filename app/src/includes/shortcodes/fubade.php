@@ -50,6 +50,5 @@ function ifdw_fubade_shortcode( $atts ) {
 		$atts
 	);
 
-	// TODO: Test the function calls.
 	return ifdw_create_fubade_output( $a );
 }

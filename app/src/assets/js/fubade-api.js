@@ -1,9 +1,3 @@
-/**
- * fussball.de widgetAPI
- */
-
-// TODO: Perhaps this can be loaded as inline script.
-
 window.FussballdeWidgetAPI = () => {
   const widgetObj = {};
   
