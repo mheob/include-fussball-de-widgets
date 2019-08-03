@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) || exit;
 function ifdw_plugin_action_links( $links, $file ) {
 	if ( plugin_basename( IFDW_URL ) === $file ) {
 		$row_meta = [
-			'docs' => '<a href="' . esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS' ) . '" 
+			'docs' => '<a href="' . esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url' ) . '" 
 										target="_blank"
 										aria-label="' . esc_attr__( 'Plugin Additional Links', 'include-fussball-de-widgets' ) . '">
 										' . esc_html__( 'Donate', 'include-fussball-de-widgets' ) . '

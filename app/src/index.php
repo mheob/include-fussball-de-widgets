@@ -22,7 +22,6 @@ define( 'IFDW_URL', __FILE__ );
 // phpcs:disable
 define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SERVER_NAME'] ) : '' );
 // phpcs:enable
-define( 'IFDW_BORLABS_ACTIVE', is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) );
 
 /**
  * Includes
@@ -41,10 +40,10 @@ require_once 'includes/widgets/class-ifdw-fubade-widget.php';
  * Hooks
  */
 add_action( 'admin_init', 'ifdw_create_borlabs_cookie_content_blocker' );
+add_filter( 'plugin_row_meta', 'ifdw_plugin_action_links', 10, 2 );
 add_action( 'init', 'ifdw_register_fubade_api' );
 add_action( 'init', 'ifdw_register_dynamic_block' );
 add_action( 'widgets_init', 'ifdw_widgets_init' );
-add_filter( 'plugin_row_meta', 'ifdw_plugin_action_links' );
 
 /**
  * Shortcodes
