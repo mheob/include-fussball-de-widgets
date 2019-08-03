@@ -32,21 +32,22 @@ defined( 'ABSPATH' ) || exit();
  *
  * @since 3.0.0
  *
- * @param array $attr The output attributes (`id`, `api`, `notice`, `fullwidth` and `devtools`).
+ * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
  *
  * @return string
  */
 function ifdw_create_fubade_output( $attr ) {
-	$log_fired = false;
+	// TODO: Configure default setting in the admin area.
+	$log_msg = null;
 
 	if ( 32 !== strlen( $attr['api'] ) ) {
-		$log_fired = ifdw_console_log( $attr );
+		$log_msg = ifdw_console_log( $attr );
 		/* translators: %s: the length of the api */
 		printf( esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ), esc_html( strlen( $attr['api'] ) ) );
 		return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
 	}
 
-	$attr = [
+	$new_attr = [
 		'api'       => sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $attr['api'] ) ) ),
 		'id'        => 'fubade_' . substr( $attr['api'], -5 ),
 		'notice'    => empty( $attr['notice'] ) ? '' : sanitize_text_field( $attr['notice'] ),
@@ -54,13 +55,8 @@ function ifdw_create_fubade_output( $attr ) {
 		'devtools'  => '1' === $attr['devtools'] || 'true' === $attr['devtools'] || true === $attr['devtools'] ? true : false,
 	];
 
-	if ( $attr['devtools'] ) {
-		$log_fired = ifdw_console_log( $attr );
-	}
-
-	if ( ! $log_fired ) {
-		$log_fired = ifdw_console_log( $attr, false );
-	}
+	$log_msg             = $new_attr['devtools'] ? ifdw_console_log( $new_attr ) : ifdw_console_log( $new_attr, false );
+	$new_attr['log_msg'] = $log_msg ? $log_msg : null;
 
 	if ( ! wp_script_is( 'fubade-api' ) ) {
 		wp_enqueue_script( 'fubade-api' );
@@ -72,7 +68,7 @@ function ifdw_create_fubade_output( $attr ) {
 		'after'
 	);
 
-	return ifdw_render_fubade_output( $attr );
+	return ifdw_render_fubade_output( $new_attr );
 }
 
 
@@ -81,7 +77,7 @@ function ifdw_create_fubade_output( $attr ) {
  *
  * @since 3.0.0
  *
- * @param array $attr The output attributes (`id`, `api`, `notice`, `fullwidth` and `devtools`).
+ * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
  *
  * @return string
  */
@@ -90,10 +86,17 @@ function ifdw_render_fubade_output( $attr ) {
 	$output .= ifdw_create_fubade_iframe( $attr );
 	$output .= '</div>' . PHP_EOL;
 
+	if ( $attr['log_msg'] ) {
+		$output .= $attr['log_msg'];
+	}
+
+	// TODO: Control the Borlabs-Cookies especially for the widget class.
+	// phpcs:disable
 	// include_once ABSPATH . 'wp-admin/includes/plugin.php';
 	// if ( is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
 	// return BorlabsCookieHelper()->blockContent( $output, 'ifdw_fubade' );
 	// }
+	// phpcs:enable
 
 	return $output;
 }
@@ -104,7 +107,7 @@ function ifdw_render_fubade_output( $attr ) {
  *
  * @since 3.0.0
  *
- * @param array $attr The output attributes (`id`, `api`, `notice`, `fullwidth` and `devtools`).
+ * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
  *
  * @return string
  */

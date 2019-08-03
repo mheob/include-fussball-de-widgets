@@ -36,6 +36,7 @@ registerBlockType('ifdw/fubade', {
   keywords: [ __('fubade', 'include-fussball-de-widgets') ],
   attributes: {
     api: { type: 'string' },
+    id: { type: 'string' },
     notice: { type: 'string' },
     fullwidth: { type: 'boolean' },
     devtools: { type: 'boolean' }
@@ -45,7 +46,7 @@ registerBlockType('ifdw/fubade', {
     const inputId = `${ className }-${ instanceId }`;
 
     if (Object.entries(attributes).length === 0) {
-      setAttributes({ api: '', notice: '', fullwidth: true, devtools: false });
+      setAttributes({ api: '', id: '', notice: '', fullwidth: true, devtools: false });
     }
 
     return [
@@ -104,7 +105,7 @@ registerBlockType('ifdw/fubade', {
             onChange={ newApi => {
               setAttributes({ api: newApi });
               setAttributes({
-                id: `fubade_${ 32 !== newApi.length ? Number(new Date()) : newApi.slice(-5) }`
+                id: `fubade_${ 32 !== newApi.length ? 'ERROR_' + Number(new Date()) : newApi.slice(-5) }`
               });
             } }
             placeholder={ __('Insert API here...', 'include-fussball-de-widgets') }
