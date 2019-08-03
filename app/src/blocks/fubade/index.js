@@ -41,7 +41,7 @@ registerBlockType('ifdw/fubade', {
     devtools: { type: 'boolean' }
   },
   edit: withInstanceId(({ attributes, className, instanceId, setAttributes }) => {
-    const { api, notice, fullwidth = true, devtools = true } = attributes;
+    const { api, notice, fullwidth = true, devtools = false } = attributes;
     const inputId = `${ className }-${ instanceId }`;
 
     return [
