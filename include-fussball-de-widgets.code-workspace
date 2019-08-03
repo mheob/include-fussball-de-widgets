@@ -1,6 +1,9 @@
 {
   "folders": [
     {
+      "path": "app"
+    },
+    {
       "path": "."
     },
     {
@@ -67,7 +70,7 @@
 
     "eslint.autoFixOnSave": true,
 
-    "phpcs.executablePath": "./wpcs/vendor/bin/phpcs.bat",
+    "phpcs.executablePath": "../wpcs/vendor/bin/phpcs.bat",
     "phpcs.standard": "WordPress",
     "phpcbf.executablePath": "./wpcs/vendor/bin/phpcbf.bat",
     "phpcbf.standard": "WordPress",
