@@ -90,8 +90,11 @@ function ifdw_render_fubade_output( $attr ) {
 	$output .= ifdw_create_fubade_iframe( $attr );
 	$output .= '</div>' . PHP_EOL;
 
+	if ( IFDW_BORLABS_ACTIVE ) {
+		return BorlabsCookieHelper()->blockContent( $output, 'ifdw_fubade' );
+	}
+
 	return $output;
-	// return BorlabsCookieHelper()->blockContent( $output, 'ifdw_fubade' );
 }
 
 

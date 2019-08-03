@@ -22,6 +22,7 @@ define( 'IFDW_URL', __FILE__ );
 // phpcs:disable
 define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SERVER_NAME'] ) : '' );
 // phpcs:enable
+define( 'IFDW_BORLABS_ACTIVE', is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) );
 
 /**
  * Includes
@@ -29,6 +30,7 @@ define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SE
 require_once 'blocks/enqueue.php';
 require_once dirname( IFDW_URL ) . '/includes/widgets.php'; // Has to be loaded as early as possible.
 require_once 'includes/backend/borlabs-cookie.php';
+require_once 'includes/backend/plugin-utilities.php';
 require_once 'includes/frontend/enqueue.php';
 require_once 'includes/frontend/fubade.php';
 require_once 'includes/frontend/logging.php';
@@ -42,6 +44,7 @@ add_action( 'admin_init', 'ifdw_create_borlabs_cookie_content_blocker' );
 add_action( 'init', 'ifdw_register_fubade_api' );
 add_action( 'init', 'ifdw_register_dynamic_block' );
 add_action( 'widgets_init', 'ifdw_widgets_init' );
+add_filter( 'plugin_row_meta', 'ifdw_plugin_action_links' );
 
 /**
  * Shortcodes

@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0.0
  */
 function ifdw_create_borlabs_cookie_content_blocker() {
-	if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
+	if ( ! IFDW_BORLABS_ACTIVE ) {
 		return null;
 	}
 
