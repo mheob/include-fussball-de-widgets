@@ -41,8 +41,12 @@ registerBlockType('ifdw/fubade', {
     devtools: { type: 'boolean' }
   },
   edit: withInstanceId(({ attributes, className, instanceId, setAttributes }) => {
-    const { api, notice, fullwidth = true, devtools = false } = attributes;
+    const { api = '', notice = '', fullwidth = true, devtools = false } = attributes;
     const inputId = `${ className }-${ instanceId }`;
+
+    if (Object.entries(attributes).length === 0) {
+      setAttributes({ api: '', notice: '', fullwidth: true, devtools: false });
+    }
 
     return [
       <InspectorControls key="inspector">
@@ -60,8 +64,8 @@ registerBlockType('ifdw/fubade', {
               fullwidth ?
                 __('The widget will be shown in the maximal width.', 'include-fussball-de-widgets') :
                 __(
-                  'The widget will be shown in the width given from fussball.de' +
-                        ' (CSS possible could overwrite this setting).',
+                  'The widget will be shown in the width given from fussball.de ' +
+                  '(CSS possible could overwrite this setting).',
                   'include-fussball-de-widgets'
                 )
             }
