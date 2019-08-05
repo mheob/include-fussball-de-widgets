@@ -2,7 +2,6 @@
 
 All notable changes to this project will be documented in this file.
 
-
 ## [Unreleased]
 
 ### Added
@@ -15,11 +14,11 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Redesign the whole structure.
-- Initialisation of the fussball.de iframe from now on in PHP instead of JavaScript.
+- Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
 
 ### Fixed
 
-- Minor logging issues have been resolved.
+- Logging issues have been resolved.
 
 ## [2.2.2] - 2019-06-20
 
