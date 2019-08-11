@@ -4,6 +4,9 @@
       "path": "."
     },
     {
+      "path": "app"
+    },
+    {
       "path": "node_modules"
     },
     {
@@ -60,17 +63,18 @@
       "editor.useTabStops": false
     },
 
-    // Extensions,
+    // Extensions
     "prettier.endOfLine": "lf",
     "prettier.eslintIntegration": true,
     "prettier.stylelintIntegration": true,
 
     "eslint.autoFixOnSave": true,
 
-    "phpcs.executablePath": "./wpcs/vendor/bin/phpcs.bat",
-    "phpcbf.executablePath": "./wpcs/vendor/bin/phpcbf.bat",
+    "phpcs.executablePath": "/home/alb/tools/code_sniffer/bin/phpcs",
     "phpcs.standard": "WordPress",
+    "phpcbf.executablePath": "/home/alb/tools/code_sniffer/bin/phpcbf",
     "phpcbf.standard": "WordPress",
+    "phpcbf.onsave": true,
 
     "cSpell.enabledLanguageIds": [
       "asciidoc",

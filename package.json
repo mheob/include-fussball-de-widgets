@@ -1,6 +1,6 @@
 {
   "name": "include-fussball-de-widgets",
-  "version": "2.2.3-b6",
+  "version": "3.0.0",
   "description": "A WordPress plugin for easy integration of fussball.de widgets.",
   "repository": {
     "type": "git",
@@ -24,28 +24,25 @@
     "i18n:pot": "wp i18n make-pot app/dist app/dist/languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
     "i18n:json": "wp i18n make-json app/dist/languages/include-fussball-de-widgets-de_DE.po --no-purge",
     "release:clear": "rm -rf .releases/include-fussball-de-widgets/trunk/*",
-    "release:copy": "bash ./tasks/release-copy.sh",
-    "release:github": "bash ./tasks/release-github.sh",
+    "release:copy": "rsync -a ./app/dist/* .releases/include-fussball-de-widgets/trunk/",
+    "release:github": "rsync -a ./app/dist/* .github-releases/include-fussball-de-widgets && cd .github-releases/ && zip -r include-fussball-de-widgets-v3.0.0.zip include-fussball-de-widgets/* && rm -rf include-fussball-de-widgets && cd ..",
     "release": "npm run release:clear && npm run release:copy && npm run release:github"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
   ],
   "devDependencies": {
-    "@wordpress/browserslist-config": "^2.5.0",
-    "@wordpress/scripts": "^3.3.0",
+    "@wordpress/browserslist-config": "^2.6.0",
+    "@wordpress/scripts": "^3.4.0",
     "autoprefixer": "^9.6.1",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.1.0",
     "eslint": "^6.1.0",
-    "eslint-plugin-jest": "^22.14.0",
+    "eslint-plugin-jest": "^22.14.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "extract-loader": "^3.1.0",
-    "file-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
-    "postcss-cli": "^6.1.3",
-    "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
     "prettier-eslint": "^9.0.0",
     "prettier-stylelint": "^0.4.2",
@@ -53,9 +50,7 @@
     "stylelint": "^10.1.0",
     "stylelint-config-wordpress": "^14.0.0",
     "stylelint-order": "^3.0.1",
-    "terser-webpack-plugin": "^1.3.0"
+    "terser-webpack-plugin": "^1.4.1"
   },
-  "dependencies": {
-    "punycode": "^2.1.1"
-  }
+  "dependencies": {}
 }
