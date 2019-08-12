@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Tabs from theme Divi-Theme are now supported.
-- A fussball.de widget can be generated in the WordPress widget area (Apperance -> Widgets).
+- A fussball.de widget can be generated in the WordPress widget area (Appearance -> Widgets).
 - Borlabs-Cookie is supported and a content blocker is added instantly.
 - A donation link to cover my expenses a bit.
 

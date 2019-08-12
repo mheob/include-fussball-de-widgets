@@ -52,7 +52,7 @@ The default value ist `false` or rather `0`.
 
 = What is the `devtools` as `{print devtools}`? =
 
-The PRINT DEVTOOLS can help the creator to get debugging informations. 
+The PRINT DEVTOOLS can help the creator to get debugging information.
 As values are only `true` or `1` possible. 
 The default value ist `false` or rather `0`. 
 **The PRINT DEVTOOLS is optional and can be omitted.**
