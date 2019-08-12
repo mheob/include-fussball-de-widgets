@@ -45,7 +45,6 @@ registerBlockType('ifdw/fubade', {
   edit: withInstanceId(({ attributes, className, instanceId, setAttributes }) => {
     const { api = '', notice = '', fullwidth = true, devtools = false } = attributes;
     const inputId = `${ className }-${ instanceId }`;
-    // noinspection MagicNumberJS
     const apiLength = 32;
 
     if (0 === Object.entries(attributes).length) {
@@ -108,7 +107,6 @@ registerBlockType('ifdw/fubade', {
             id={ inputId }
             onChange={ newApi => {
               setAttributes({ api: newApi });
-              // noinspection NestedFunctionCallJS
               setAttributes({
                 id: `fubade_${ (apiLength === newApi.length ? newApi.slice(-5) : 'ERROR_' + Number(new Date())) }`
               });
