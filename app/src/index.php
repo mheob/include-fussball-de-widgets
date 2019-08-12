@@ -13,6 +13,13 @@
  * @package Include_Fussball_De_Widgets
  */
 
+use IFDW\Backend\BorlabsCookie;
+use IFDW\Frontend\Enqueue;
+use IFDW\Shortcodes\Fubade;
+use IFDW\Utils\PluginActions;
+use IFDW\Utils\Textdomain;
+use IFDW\Widgets\Widgets;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -20,35 +27,50 @@ defined( 'ABSPATH' ) || exit;
  */
 define( 'IFDW_VERSION', '3.0.0' );
 define( 'IFDW_URL', __FILE__ );
-// phpcs:disable
 define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SERVER_NAME'] ) : '' );
-// phpcs:enable
+
 
 /**
- * Includes
+ * Autoloader for all classes in the plugin.
+ *
+ * @param callable $class The class to include.
+ *
+ * @since 3.0.0
  */
-require_once 'blocks/enqueue.php';
-require_once dirname( IFDW_URL ) . '/includes/widgets.php'; // Has to be loaded as early as possible.
-require_once 'includes/textdomain.php';
-require_once 'includes/backend/borlabs-cookie.php';
-require_once 'includes/backend/plugin-utilities.php';
-require_once 'includes/frontend/enqueue.php';
-require_once 'includes/frontend/fubade.php';
-require_once 'includes/frontend/logging.php';
-require_once 'includes/shortcodes/fubade.php';
-require_once 'includes/widgets/class-ifdw-fubade-widget.php';
+/** @noinspection PhpUnused */
+function autolader( $class ) {
+  $class = str_replace( 'IFDW\\', '', $class );
+  $path  = str_replace( '\\', '/', $class ) . '.php';
+
+  if ( ! class_exists( $class ) && file_exists( $path ) ) {
+    /** @noinspection PhpIncludeInspection */
+    require $path;
+  }
+}
+
+try {
+  spl_autoload_register( 'autoloader' );
+} catch ( Exception $e ) {
+  echo $e->getMessage();
+}
+
 
 /**
- * Hooks
+ * Initialize.
  */
-add_action( 'admin_init', 'ifdw_create_borlabs_cookie_content_blocker' );
-add_action( 'plugins_loaded', 'ifdw_load_textdomain' );
-add_action( 'init', 'ifdw_register_fubade_api' );
-add_action( 'init', 'ifdw_register_dynamic_block' );
-add_action( 'widgets_init', 'ifdw_widgets_init' );
-add_filter( 'plugin_row_meta', 'ifdw_plugin_action_links', 10, 2 );
 
-/**
- * Shortcodes
- */
-add_shortcode( 'fubade', 'ifdw_fubade_shortcode' );
+// Utils.
+new PluginActions();
+new Textdomain();
+
+// Backend tools.
+new BorlabsCookie();
+
+// Frontend scripts.
+new Enqueue();
+
+// Shortcodes.
+new Fubade();
+
+// Widgets.
+new Widgets();
