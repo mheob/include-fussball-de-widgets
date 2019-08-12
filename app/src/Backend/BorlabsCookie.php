@@ -28,12 +28,33 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0.0
  */
 class BorlabsCookie {
+  private static $instance = null;
+
+
   /**
    * BorlabsCookie constructor.
+   *
+   * @since 3.0.0
    */
-  public function __construct() {
+  private function __construct() {
     add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
   }
+
+
+  /**
+   * Get the instance.
+   *
+   * @return BorlabsCookie
+   * @since 3.0.0
+   */
+  public static function getInstance() {
+    if ( null === self::$instance ) {
+      self::$instance = new BorlabsCookie();
+    }
+
+    return self::$instance;
+  }
+
 
   /**
    * Check if the Borlabs Cookie plugin is installed and active.

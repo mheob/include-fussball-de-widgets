@@ -21,8 +21,10 @@
 namespace IFDW\Widgets;
 
 use WP_Widget;
+use IFDW\Frontend\Fubade;
 
 defined( 'ABSPATH' ) || exit;
+
 
 /**
  * Class FubadeWidget
@@ -152,13 +154,13 @@ class FubadeWidget extends WP_Widget {
 
     echo $args['before_title'] . $title . $args['after_title'] . PHP_EOL;
 
-    echo ifdw_create_fubade_output( [
-                                      'id'        => '',
-                                      'api'       => $api,
-                                      'notice'    => $title,
-                                      'fullwidth' => $fullwidth,
-                                      'devtools'  => $devtools,
-                                    ] );
+    echo ( new Fubade() )->output( [
+                                     'id'        => '',
+                                     'api'       => $api,
+                                     'notice'    => $title,
+                                     'fullwidth' => $fullwidth,
+                                     'devtools'  => $devtools,
+                                   ] );
 
     echo '</div>' . PHP_EOL;
 

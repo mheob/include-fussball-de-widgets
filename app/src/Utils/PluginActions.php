@@ -27,14 +27,33 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0.0
  */
 class PluginActions {
+  private static $instance = null;
+
+
   /**
-   * Constructor
+   * PluginActions constructor.
    *
-   * @since   3.0.0
+   * @since 3.0.0
    */
-  public function __construct() {
+  private function __construct() {
     add_filter( 'plugin_row_meta', [ $this, 'addLinksToRowMeta' ], 10, 2 );
   }
+
+
+  /**
+   * Get the instance.
+   *
+   * @return PluginActions
+   * @since 3.0.0
+   */
+  public static function getInstance() {
+    if ( null === self::$instance ) {
+      self::$instance = new PluginActions();
+    }
+
+    return self::$instance;
+  }
+
 
   /**
    * Additional links on plugin page.

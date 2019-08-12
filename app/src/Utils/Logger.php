@@ -29,6 +29,7 @@ defined( 'ABSPATH' ) || exit;
 class Logger {
   private static $instance = null;
 
+
   /**
    * Logger constructor.
    */
@@ -47,6 +48,7 @@ class Logger {
 
     return self::$instance;
   }
+
 
   /**
    * Generates a logging output in the browser console or the sourcecode only.

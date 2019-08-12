@@ -14,20 +14,14 @@
  */
 
 use IFDW\Backend\BorlabsCookie;
-use IFDW\Frontend\Enqueue;
+use IFDW\Blocks\Enqueue as EnqueueBlocks;
+use IFDW\Frontend\Enqueue as EnqueueFrontend;
 use IFDW\Shortcodes\Fubade;
 use IFDW\Utils\PluginActions;
 use IFDW\Utils\Textdomain;
 use IFDW\Widgets\Widgets;
 
 defined( 'ABSPATH' ) || exit;
-
-/**
- * Constants
- */
-define( 'IFDW_VERSION', '3.0.0' );
-define( 'IFDW_URL', __FILE__ );
-define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SERVER_NAME'] ) : '' );
 
 
 /**
@@ -38,7 +32,7 @@ define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SE
  * @since 3.0.0
  */
 /** @noinspection PhpUnused */
-function autolader( $class ) {
+function autoloader( $class ) {
   $class = str_replace( 'IFDW\\', '', $class );
   $path  = str_replace( '\\', '/', $class ) . '.php';
 
@@ -51,8 +45,17 @@ function autolader( $class ) {
 try {
   spl_autoload_register( 'autoloader' );
 } catch ( Exception $e ) {
+  // TODO: Log the error.
   echo $e->getMessage();
 }
+
+
+/**
+ * Constants
+ */
+define( 'IFDW_VERSION', '3.0.0' );
+define( 'IFDW_URL', __FILE__ );
+define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SERVER_NAME'] ) : '' );
 
 
 /**
@@ -60,17 +63,20 @@ try {
  */
 
 // Utils.
-new PluginActions();
-new Textdomain();
+PluginActions::getInstance();
+Textdomain::getInstance();
 
 // Backend tools.
-new BorlabsCookie();
+BorlabsCookie::getInstance();
+
+// Block scripts.
+EnqueueBlocks::getInstance();
 
 // Frontend scripts.
-new Enqueue();
+EnqueueFrontend::getInstance();
 
 // Shortcodes.
-new Fubade();
+Fubade::getInstance();
 
 // Widgets.
-new Widgets();
+Widgets::getInstance();

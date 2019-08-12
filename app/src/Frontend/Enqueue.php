@@ -27,19 +27,40 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0.0
  */
 class Enqueue {
+  private static $instance = null;
+
+
   /**
    * Enqueue constructor.
+   *
+   * @since 3.0.0
    */
-  public function __construct() {
+  private function __construct() {
     add_action( 'init', [ $this, 'registerFubadeApi' ] );
   }
+
+
+  /**
+   * Get the instance.
+   *
+   * @return Enqueue
+   * @since 3.0.0
+   */
+  public static function getInstance() {
+    if ( null === self::$instance ) {
+      self::$instance = new Enqueue();
+    }
+
+    return self::$instance;
+  }
+
 
   /**
    * Register the api script for fussball.de.
    *
    * @since 3.0.0
    */
-  function registerFubadeApi() {
+  public function registerFubadeApi() {
     wp_register_script( 'fubade-api',
                         plugins_url( 'assets/js/fubade-api.js', IFDW_URL ),
                         [ 'wp-i18n' ],

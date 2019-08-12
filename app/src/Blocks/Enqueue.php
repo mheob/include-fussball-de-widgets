@@ -31,12 +31,33 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0.0
  */
 class Enqueue {
+  private static $instance = null;
+
+
   /**
    * Enqueue constructor.
+   *
+   * @since 3.0.0
    */
-  public function __construct() {
+  private function __construct() {
     add_action( 'init', [ $this, 'registerDynamicBlock' ] );
   }
+
+
+  /**
+   * Get the instance.
+   *
+   * @return Enqueue
+   * @since 3.0.0
+   */
+  public static function getInstance() {
+    if ( null === self::$instance ) {
+      self::$instance = new Enqueue();
+    }
+
+    return self::$instance;
+  }
+
 
   /**
    * Register the dynamic block.
@@ -48,7 +69,7 @@ class Enqueue {
    *
    * @since 3.0.0
    */
-  function registerDynamicBlock() {
+  public function registerDynamicBlock() {
     wp_register_script( 'fubade-block-script',
                         plugins_url( 'assets/js/blocks.js', IFDW_URL ),
                         [ 'wp-Blocks', 'wp-i18n', 'wp-element' ],

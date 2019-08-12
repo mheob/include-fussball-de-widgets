@@ -28,14 +28,33 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0.0
  */
 class Widgets {
+  private static $instance = null;
+
+
   /**
-   * Constructor
+   * Widgets constructor.
    *
-   * @since   3.0.0
+   * @since 3.0.0
    */
-  public function __construct() {
+  private function __construct() {
     add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
   }
+
+
+  /**
+   * Get the instance.
+   *
+   * @return Widgets
+   * @since 3.0.0
+   */
+  public static function getInstance() {
+    if ( null === self::$instance ) {
+      self::$instance = new Widgets();
+    }
+
+    return self::$instance;
+  }
+
 
   /**
    * Initialize all Widgets

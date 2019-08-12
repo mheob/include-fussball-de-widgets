@@ -28,13 +28,31 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0.0
  */
 class Fubade {
+  private static $instance = null;
+
+
   /**
    * Fubade constructor.
    *
    * @since 3.0.0
    */
-  public function __construct() {
+  private function __construct() {
     add_shortcode( 'fubade', [ $this, 'createShortcode' ] );
+  }
+
+
+  /**
+   * Get the instance.
+   *
+   * @return Fubade
+   * @since 3.0.0
+   */
+  public static function getInstance() {
+    if ( null === self::$instance ) {
+      self::$instance = new Fubade();
+    }
+
+    return self::$instance;
   }
 
 

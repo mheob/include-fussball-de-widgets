@@ -28,11 +28,28 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0.0
  */
 class Textdomain {
+  private static $instance = null;
+
   /**
    * Textdomain constructor.
    */
-  public function __construct() {
+  private function __construct() {
     add_action( 'plugins_loaded', [ $this, 'loadTextdomain' ] );
+  }
+
+
+  /**
+   * Get the instance.
+   *
+   * @return Textdomain
+   * @since 3.0.0
+   */
+  public static function getInstance() {
+    if ( null === self::$instance ) {
+      self::$instance = new Textdomain();
+    }
+
+    return self::$instance;
   }
 
 
@@ -41,7 +58,7 @@ class Textdomain {
    *
    * @since 3.0.0
    */
-  function loadTextdomain() {
+  public function loadTextdomain() {
     load_plugin_textdomain( 'include-fussball-de-Widgets', false, dirname( plugin_basename( IFDW_URL ) ) . '/languages' );
   }
 }
