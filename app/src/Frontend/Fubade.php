@@ -18,10 +18,10 @@
 
 namespace IFDW\Frontend;
 
-use IFDW\Utils\Logger;
+use IFDW\Utils\Logging\ConsoleLogger;
+use IFDW\Utils\Logging\SourceLogger;
 
 defined( 'ABSPATH' ) || exit();
-
 
 /**
  * Class Fubade
@@ -30,9 +30,7 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0.0
  */
 class Fubade {
-  private $attr       = [];
-  private $logMessage = null;
-
+  private $attr = [];
 
   /**
    * Creates the output to the sourcecode.
@@ -46,7 +44,7 @@ class Fubade {
     // TODO: Configure default setting in the admin area.
     $this->attr = $attr;
     if ( 32 !== strlen( $this->attr['api'] ) ) {
-      Logger::getInstance()->log( $this->attr );
+      ConsoleLogger::getInstance()->log( $this->attr );
       /* translators: %s: the length of the api */
       printf( esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-Widgets' ),
               esc_html( strlen( $this->attr['api'] ) ) );
@@ -62,8 +60,6 @@ class Fubade {
       'devtools'  => '1' === $this->attr['devtools'] || 'true' === $this->attr['devtools'] || true === $this->attr['devtools'] ? true : false,
     ];
 
-    $this->logMessage = Logger::getInstance()->log( $this->attr, $this->attr['devtools'] );
-
     if ( ! wp_script_is( 'fubade-api' ) ) {
       wp_enqueue_script( 'fubade-api' );
     }
@@ -72,7 +68,6 @@ class Fubade {
 
     return $this->render();
   }
-
 
   /**
    * Render all the output.
@@ -85,8 +80,10 @@ class Fubade {
     $output .= $this->createIframe();
     $output .= '</div>' . PHP_EOL;
 
-    if ( $this->logMessage ) {
-      $output .= $this->logMessage;
+    if ( $this->attr['devtools'] ) {
+      ConsoleLogger::getInstance()->log( $this->attr );
+    } else {
+      SourceLogger::getInstance()->log( $this->attr );
     }
 
     // TODO: Control the Borlabs-Cookies especially for the widget class.
@@ -97,7 +94,6 @@ class Fubade {
 
     return $output;
   }
-
 
   /**
    * Creates the iframe needed from fussball.de.
