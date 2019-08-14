@@ -25,7 +25,6 @@ use IFDW\Frontend\Fubade;
 
 defined( 'ABSPATH' ) || exit;
 
-
 /**
  * Class FubadeWidget
  * Creates a fubade widget.
@@ -44,7 +43,6 @@ class FubadeWidget extends WP_Widget {
                          __( 'Fussball.de Widget', 'include-fussball-de-Widgets' ),
                          [ 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-Widgets' ) ] );
   }
-
 
   /**
    * Outputs the options form on admin
@@ -111,7 +109,6 @@ class FubadeWidget extends WP_Widget {
     <?php
   }
 
-
   /**
    * Processing widget options on save
    *
@@ -130,7 +127,6 @@ class FubadeWidget extends WP_Widget {
 
     return $instance;
   }
-
 
   /**
    * Outputs the content of the widget

@@ -20,7 +20,6 @@ namespace IFDW\Shortcodes;
 
 defined( 'ABSPATH' ) || exit;
 
-
 /**
  * Class Fubade
  * Define and render the fubade shortcode.
@@ -30,7 +29,6 @@ defined( 'ABSPATH' ) || exit;
 class Fubade {
   private static $instance = null;
 
-
   /**
    * Fubade constructor.
    *
@@ -39,7 +37,6 @@ class Fubade {
   private function __construct() {
     add_shortcode( 'fubade', [ $this, 'createShortcode' ] );
   }
-
 
   /**
    * Get the instance.
@@ -54,7 +51,6 @@ class Fubade {
 
     return self::$instance;
   }
-
 
   /**
    * Render the fubade shortcode

@@ -20,7 +20,6 @@ namespace IFDW\Backend;
 
 defined( 'ABSPATH' ) || exit();
 
-
 /**
  * Class BorlabsCookie
  * Functions to add "Borlabs-Cookie" support.
@@ -30,7 +29,6 @@ defined( 'ABSPATH' ) || exit();
 class BorlabsCookie {
   private static $instance = null;
 
-
   /**
    * BorlabsCookie constructor.
    *
@@ -39,7 +37,6 @@ class BorlabsCookie {
   private function __construct() {
     add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
   }
-
 
   /**
    * Get the instance.
@@ -54,7 +51,6 @@ class BorlabsCookie {
 
     return self::$instance;
   }
-
 
   /**
    * Check if the Borlabs Cookie plugin is installed and active.

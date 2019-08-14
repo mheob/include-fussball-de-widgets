@@ -20,7 +20,6 @@ namespace IFDW\Widgets;
 
 defined( 'ABSPATH' ) || exit;
 
-
 /**
  * Class Widgets
  * Register all Widgets from 'Include_Fussball_De_Widgets'.
@@ -30,7 +29,6 @@ defined( 'ABSPATH' ) || exit;
 class Widgets {
   private static $instance = null;
 
-
   /**
    * Widgets constructor.
    *
@@ -39,7 +37,6 @@ class Widgets {
   private function __construct() {
     add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
   }
-
 
   /**
    * Get the instance.
@@ -54,7 +51,6 @@ class Widgets {
 
     return self::$instance;
   }
-
 
   /**
    * Initialize all Widgets

@@ -20,7 +20,6 @@ namespace IFDW\Utils;
 
 defined( 'ABSPATH' ) || exit;
 
-
 /**
  * Class Textdomain
  * Only needed for the Poedit workflow. The official translations comes from wordpress.org.
@@ -37,7 +36,6 @@ class Textdomain {
     add_action( 'plugins_loaded', [ $this, 'loadTextdomain' ] );
   }
 
-
   /**
    * Get the instance.
    *
@@ -51,7 +49,6 @@ class Textdomain {
 
     return self::$instance;
   }
-
 
   /**
    * Load the plugin textdomain.

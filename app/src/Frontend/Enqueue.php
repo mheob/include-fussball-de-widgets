@@ -29,7 +29,6 @@ defined( 'ABSPATH' ) || exit();
 class Enqueue {
   private static $instance = null;
 
-
   /**
    * Enqueue constructor.
    *
@@ -38,7 +37,6 @@ class Enqueue {
   private function __construct() {
     add_action( 'init', [ $this, 'registerFubadeApi' ] );
   }
-
 
   /**
    * Get the instance.
@@ -53,7 +51,6 @@ class Enqueue {
 
     return self::$instance;
   }
-
 
   /**
    * Register the api script for fussball.de.

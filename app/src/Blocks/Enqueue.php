@@ -23,7 +23,6 @@ use IFDW\Frontend\Fubade;
 
 defined( 'ABSPATH' ) || exit();
 
-
 /**
  * Class Enqueue
  * Functions to register client-side assets (scripts and stylesheets) for the Gutenberg block.
@@ -33,7 +32,6 @@ defined( 'ABSPATH' ) || exit();
 class Enqueue {
   private static $instance = null;
 
-
   /**
    * Enqueue constructor.
    *
@@ -42,7 +40,6 @@ class Enqueue {
   private function __construct() {
     add_action( 'init', [ $this, 'registerDynamicBlock' ] );
   }
-
 
   /**
    * Get the instance.
@@ -57,7 +54,6 @@ class Enqueue {
 
     return self::$instance;
   }
-
 
   /**
    * Register the dynamic block.

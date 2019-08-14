@@ -29,7 +29,6 @@ defined( 'ABSPATH' ) || exit;
 class PluginActions {
   private static $instance = null;
 
-
   /**
    * PluginActions constructor.
    *
@@ -38,7 +37,6 @@ class PluginActions {
   private function __construct() {
     add_filter( 'plugin_row_meta', [ $this, 'addLinksToRowMeta' ], 10, 2 );
   }
-
 
   /**
    * Get the instance.
@@ -53,7 +51,6 @@ class PluginActions {
 
     return self::$instance;
   }
-
 
   /**
    * Additional links on plugin page.
