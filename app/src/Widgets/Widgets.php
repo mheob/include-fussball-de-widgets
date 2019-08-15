@@ -2,53 +2,62 @@
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
- *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * any later version.
- *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
- *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  * @package Include_Fussball_De_Widgets
  */
 
+namespace IFDW\Widgets;
+
+defined( 'ABSPATH' ) || exit;
+
 /**
- * Fubade Shortcode Initializer
- *
- * Define and render the fubade shortcode.
+ * Class Widgets
+ * Register all Widgets from 'Include_Fussball_De_Widgets'.
  *
  * @since 3.0.0
  */
+class Widgets {
+  private static $instance = null;
 
-defined( 'ABSPATH' ) || exit();
+  /**
+   * Widgets constructor.
+   *
+   * @since 3.0.0
+   */
+  private function __construct() {
+    add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
+  }
 
-/**
- * Render the fubade shortcode
- *
- * @since 3.0.0
- *
- * @param array $atts Shortcode attributes (`id`, `api`, `notice`, `fullwidth` and `devtools`).
- *
- * @return string
- */
-function ifdw_fubade_shortcode( $atts ) {
-	$a = shortcode_atts(
-		[
-			'id'        => '',
-			'api'       => '',
-			'notice'    => '',
-			'fullwidth' => '',
-			'devtools'  => '',
-		],
-		$atts
-	);
+  /**
+   * Get the instance.
+   *
+   * @return Widgets
+   * @since 3.0.0
+   */
+  public static function getInstance() {
+    if ( null === self::$instance ) {
+      self::$instance = new Widgets();
+    }
 
-	return ifdw_create_fubade_output( $a );
+    return self::$instance;
+  }
+
+  /**
+   * Initialize all Widgets
+   *
+   * @since   3.0.0
+   */
+  public function registerWidgets() {
+    register_widget( '\\IFDW\\Widgets\\FubadeWidget' );
+  }
 }

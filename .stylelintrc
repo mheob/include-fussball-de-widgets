@@ -1,14 +1,22 @@
 {
-  "extends": ["stylelint-config-wordpress/scss", "prettier-stylelint/index.js"],
-  "plugins": ["stylelint-order"],
+  "extends": [
+    "stylelint-config-wordpress/scss",
+    "prettier-stylelint/index.js"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
   "rules": {
     "max-line-length": 150,
     "declaration-block-no-duplicate-properties": [
       true,
       {
-        "ignore": ["consecutive-duplicates-with-different-values"]
+        "ignore": [
+          "consecutive-duplicates-with-different-values"
+        ]
       }
     ],
+    "indentation": 2,
     "order/order": [
       "at-variables",
       "dollar-variables",
@@ -31,14 +39,12 @@
       "flex-order",
       "flex-pack",
       "flex-align",
-
       "position",
       "z-index",
       "top",
       "right",
       "bottom",
       "left",
-
       "-webkit-box-sizing",
       "-moz-box-sizing",
       "box-sizing",
@@ -122,7 +128,6 @@
       "caption-side",
       "border-spacing",
       "border-collapse",
-
       "outline",
       "outline-width",
       "outline-style",
@@ -211,7 +216,6 @@
       "-webkit-hyphens",
       "-moz-hyphens",
       "hyphens",
-
       "list-style",
       "list-style-position",
       "list-style-type",

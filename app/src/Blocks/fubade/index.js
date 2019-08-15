@@ -10,17 +10,18 @@ import './editor.scss';
 
 const { registerBlockType } = wp.blocks;
 const { PanelBody, TextControl, ToggleControl } = wp.components;
+// noinspection ES6ModulesDependencies,NodeModulesDependencies
 const { withInstanceId } = wp.compose;
 const { InspectorControls, PlainText } = wp.editor;
 const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * Register the dynamic Gutenberg Block for the `Include Fussball.de Widgets`.
  *
- * Registers a new block provided a unique name and an object defining its
- * behavior. Once registered, the block is made editor as an option to any
- * editor interface where blocks are implemented.
+ * Registers a new block provided a unique name and an object defining its behavior. Once registered,
+ * the block is made editor as an option to any editor interface where blocks are implemented.
  *
  * @link https://wordpress.org/gutenberg/handbook/block-api/
  * @param  {string}   name     Block name.
@@ -44,11 +45,13 @@ registerBlockType('ifdw/fubade', {
   edit: withInstanceId(({ attributes, className, instanceId, setAttributes }) => {
     const { api = '', notice = '', fullwidth = true, devtools = false } = attributes;
     const inputId = `${ className }-${ instanceId }`;
+    const apiLength = 32;
 
-    if (Object.entries(attributes).length === 0) {
+    if (0 === Object.entries(attributes).length) {
       setAttributes({ api: '', id: '', notice: '', fullwidth: true, devtools: false });
     }
 
+    // noinspection JSXNamespaceValidation
     return [
       <InspectorControls key="inspector">
         <PanelBody title={ __('Fussball.de Widgets Settings', 'include-fussball-de-widgets') }>
@@ -80,12 +83,12 @@ registerBlockType('ifdw/fubade', {
             help={
               devtools ?
                 __(
-                  'Some debugging informations will be displayed in the browser console.',
+                  'Some debugging information will be displayed in the browser console.',
                   'include-fussball-de-widgets'
                 ) :
-                __('No debugging informations were outputted.', 'include-fussball-de-widgets')
+                __('No debugging information were outputted.', 'include-fussball-de-widgets')
             }
-            label={ __('Show some informations for debugging', 'include-fussball-de-widgets') }
+            label={ __('Show some information for debugging', 'include-fussball-de-widgets') }
             onChange={ isDevTools => {
               setAttributes({ devtools: isDevTools });
             } }
@@ -105,14 +108,14 @@ registerBlockType('ifdw/fubade', {
             onChange={ newApi => {
               setAttributes({ api: newApi });
               setAttributes({
-                id: `fubade_${ 32 !== newApi.length ? 'ERROR_' + Number(new Date()) : newApi.slice(-5) }`
+                id: `fubade_${ (apiLength === newApi.length ? newApi.slice(-5) : 'ERROR_' + Number(new Date())) }`
               });
             } }
             placeholder={ __('Insert API here...', 'include-fussball-de-widgets') }
             value={ api }
           />
         </div>
-        { 'undefined' !== typeof api && 32 === api.length ? (
+        { 'undefined' !== typeof api && apiLength === api.length ? (
           <div className={ `${ className }-shortcode` }>
             { __('The widget should now be able to be displayed in the frontend.', 'include-fussball-de-widgets') }
           </div>
@@ -127,7 +130,6 @@ registerBlockType('ifdw/fubade', {
       </Fragment>
     ];
   }),
-
   save() {
     // Rendering in PHP
     return null;

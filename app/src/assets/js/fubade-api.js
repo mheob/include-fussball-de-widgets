@@ -1,6 +1,6 @@
 window.FussballdeWidgetAPI = () => {
   const widgetObj = {};
-  
+
   window.addEventListener(
     'message',
     evt => {
@@ -22,6 +22,30 @@ window.FussballdeWidgetAPI = () => {
     },
     false
   );
+
+  /** Divi tab support */
+  // noinspection XHTMLIncompatabilitiesJS
+  if (document.body.classList.contains('et_divi_theme')) {
+    const diviTabs = document.querySelectorAll('.et_pb_tabs_controls a');
+    const iframes = document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe');
+    if (0 < diviTabs.length) {
+      Array.from(diviTabs)
+        .forEach(diviTab => {
+          diviTab.addEventListener(
+            'click',
+            () => {
+              // noinspection JSCheckFunctionSignatures
+              setTimeout(
+                Array.from(iframes)
+                  .forEach(iframe => {
+                    iframe.src += '';
+                  }), 800);
+            },
+            false
+          );
+        });
+    }
+  }
 
   return widgetObj;
 };

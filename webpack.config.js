@@ -26,7 +26,7 @@ const commonConfig = {
 
 const blockConfig = {
   ...commonConfig,
-  entry: './app/src/blocks/index.js',
+  entry: './app/src/Blocks/index.js',
   output: {
     path: path.resolve(__dirname, 'app', 'dist'),
     filename: 'assets/js/blocks.js'

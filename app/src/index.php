@@ -13,42 +13,74 @@
  * @package Include_Fussball_De_Widgets
  */
 
+namespace IFDW;
+
+use Exception;
+use IFDW\Backend\BorlabsCookie;
+use IFDW\Blocks\Enqueue as EnqueueBlocks;
+use IFDW\Frontend\Enqueue as EnqueueFrontend;
+use IFDW\Shortcodes\Fubade;
+use IFDW\Utils\{PluginActions, Textdomain};
+use IFDW\Widgets\Widgets;
+
 defined( 'ABSPATH' ) || exit;
+
+/**
+ * Autoloader for all classes in the plugin.
+ *
+ * @param callable $class The class to include.
+ *
+ * @since 3.0.0
+ */
+/** @noinspection PhpUnused */
+function autoloader( $class ) {
+  /* Only autoload classes from this namespace */
+  if ( false === strpos( $class, __NAMESPACE__ ) ) {
+    return;
+  }
+
+  $classPath = str_replace( 'IFDW\\', '', $class );
+  $path      = __DIR__ . '/' . str_replace( '\\', '/', $classPath ) . '.php';
+
+  if ( ! class_exists( $class ) && file_exists( $path ) ) {
+    /** @noinspection PhpIncludeInspection */
+    require $path;
+  }
+}
+
+try {
+  spl_autoload_register( __NAMESPACE__ . '\autoloader' );
+} catch ( Exception $e ) {
+  // TODO: Log the error to a file or other storage.
+  echo $e->getMessage();
+}
 
 /**
  * Constants
  */
 define( 'IFDW_VERSION', '3.0.0' );
 define( 'IFDW_URL', __FILE__ );
-// phpcs:disable
 define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SERVER_NAME'] ) : '' );
-// phpcs:enable
 
 /**
- * Includes
+ * Initialize.
  */
-require_once 'blocks/enqueue.php';
-require_once dirname( IFDW_URL ) . '/includes/widgets.php'; // Has to be loaded as early as possible.
-require_once 'includes/textdomain.php';
-require_once 'includes/backend/borlabs-cookie.php';
-require_once 'includes/backend/plugin-utilities.php';
-require_once 'includes/frontend/enqueue.php';
-require_once 'includes/frontend/fubade.php';
-require_once 'includes/frontend/logging.php';
-require_once 'includes/shortcodes/fubade.php';
-require_once 'includes/widgets/class-ifdw-fubade-widget.php';
 
-/**
- * Hooks
- */
-add_action( 'admin_init', 'ifdw_create_borlabs_cookie_content_blocker' );
-add_action( 'plugins_loaded', 'ifdw_load_textdomain' );
-add_action( 'init', 'ifdw_register_fubade_api' );
-add_action( 'init', 'ifdw_register_dynamic_block' );
-add_action( 'widgets_init', 'ifdw_widgets_init' );
-add_filter( 'plugin_row_meta', 'ifdw_plugin_action_links', 10, 2 );
+// Utils.
+PluginActions::getInstance();
+Textdomain::getInstance();
 
-/**
- * Shortcodes
- */
-add_shortcode( 'fubade', 'ifdw_fubade_shortcode' );
+// Backend tools.
+BorlabsCookie::getInstance();
+
+// Block scripts.
+EnqueueBlocks::getInstance();
+
+// Frontend scripts.
+EnqueueFrontend::getInstance();
+
+// Shortcodes.
+Fubade::getInstance();
+
+// Widgets.
+Widgets::getInstance();
