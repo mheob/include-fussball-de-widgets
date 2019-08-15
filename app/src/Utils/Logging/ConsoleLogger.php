@@ -109,7 +109,6 @@ class ConsoleLogger extends Base {
       $output .= 'console.info(' . wp_json_encode( '[' . $arr['id'] . '] ' . $temp, JSON_HEX_TAG ) . ');' . PHP_EOL;
     }
 
-    $output .= "console.info('----------')" . PHP_EOL;
     $output .= "console.info('')" . PHP_EOL;
 
     wp_add_inline_script( 'fubade-api', $output, 'after' );
