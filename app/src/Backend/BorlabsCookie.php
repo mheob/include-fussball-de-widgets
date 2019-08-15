@@ -68,19 +68,19 @@ class BorlabsCookie {
 		<img class="_brlbs-thumbnail" src="' . plugins_url( 'assets/images/cb-fubade.png', IFDW_URL ) . '" alt="%%name%%">
 		<div class="_brlbs-caption">
 			<p>
-			  ' . __( 'By loading the widget, you agree to the privacy policy of fussball.de.', 'include-fussball-de-Widgets' ) . '<br>
-			  <a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' . __( 'Learn more', 'include-fussball-de-Widgets' ) . '</a>
+				' . __( 'By loading the widget, you agree to the privacy policy of fussball.de.', 'include-fussball-de-Widgets' ) . '<br>
+				<a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' . __( 'Learn more', 'include-fussball-de-Widgets' ) . '</a>
 			</p>
 			<p>
-  			<a class="_brlbs-btn" href="#" data-borlabs-cookie-unblock role="button">
-  			  ' . __( 'Load widget', 'include-fussball-de-Widgets' ) . '
-	  		</a>
+			<a class="_brlbs-btn" href="#" data-borlabs-cookie-unblock role="button">
+					' . __( 'Load widget', 'include-fussball-de-Widgets' ) . '
+				</a>
 			</p>
 			<p>
-			  <label>
-			    <input type="checkbox" name="unblockAll" value="1" checked> 
-			    <small>' . __( 'Always load fussball.de Widgets', 'include-fussball-de-Widgets' ) . '</small>
-			  </label>
+				<label>
+					<input type="checkbox" name="unblockAll" value="1" checked> 
+					<small>' . __( 'Always load fussball.de Widgets', 'include-fussball-de-Widgets' ) . '</small>
+				</label>
 			</p>
 		</div>
 	</div>
