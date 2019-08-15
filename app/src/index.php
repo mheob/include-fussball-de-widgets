@@ -62,7 +62,6 @@ define( 'IFDW_VERSION', '3.0.0' );
 define( 'IFDW_URL', __FILE__ );
 define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SERVER_NAME'] ) : '' );
 
-
 /**
  * Initialize.
  */
