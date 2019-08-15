@@ -58,8 +58,8 @@ class BorlabsCookie {
    * @since 3.0.0
    */
   function createContentBlocker() {
-    if ( ! is_plugin_active( 'borlabs-cookie/BorlabsCookie.php' ) ) {
-      return null;
+    if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
+      return;
     }
 
     /* Setup variables */
