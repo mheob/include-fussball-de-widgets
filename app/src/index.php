@@ -13,6 +13,9 @@
  * @package Include_Fussball_De_Widgets
  */
 
+namespace IFDW;
+
+use Exception;
 use IFDW\Backend\BorlabsCookie;
 use IFDW\Blocks\Enqueue as EnqueueBlocks;
 use IFDW\Frontend\Enqueue as EnqueueFrontend;
@@ -21,7 +24,6 @@ use IFDW\Utils\{PluginActions, Textdomain};
 use IFDW\Widgets\Widgets;
 
 defined( 'ABSPATH' ) || exit;
-
 
 /**
  * Autoloader for all classes in the plugin.
@@ -32,8 +34,13 @@ defined( 'ABSPATH' ) || exit;
  */
 /** @noinspection PhpUnused */
 function autoloader( $class ) {
-  $class = str_replace( 'IFDW\\', '', $class );
-  $path  = str_replace( '\\', '/', $class ) . '.php';
+  /* Only autoload classes from this namespace */
+  if ( false === strpos( $class, __NAMESPACE__ ) ) {
+    return;
+  }
+
+  $classPath = str_replace( 'IFDW\\', '', $class );
+  $path      = __DIR__ . '/' . str_replace( '\\', '/', $classPath ) . '.php';
 
   if ( ! class_exists( $class ) && file_exists( $path ) ) {
     /** @noinspection PhpIncludeInspection */
@@ -42,12 +49,11 @@ function autoloader( $class ) {
 }
 
 try {
-  spl_autoload_register( 'autoloader' );
+  spl_autoload_register( __NAMESPACE__ . '\autoloader' );
 } catch ( Exception $e ) {
   // TODO: Log the error to a file or other storage.
   echo $e->getMessage();
 }
-
 
 /**
  * Constants
