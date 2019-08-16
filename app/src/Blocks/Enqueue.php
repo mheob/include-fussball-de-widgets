@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit();
  * Class Enqueue
  * Functions to register client-side assets (scripts and stylesheets) for the Gutenberg block.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class Enqueue {
   private static $instance = null;
@@ -35,7 +35,7 @@ class Enqueue {
   /**
    * Enqueue constructor.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   private function __construct() {
     add_action( 'init', [ $this, 'registerDynamicBlock' ] );
@@ -45,7 +45,7 @@ class Enqueue {
    * Get the instance.
    *
    * @return Enqueue
-   * @since 3.0.0
+   * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
@@ -63,7 +63,7 @@ class Enqueue {
    * `fullwidth`: If true, the widget is displaying in the full width.
    * `devtools`: If true, some dev tools are used.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   public function registerDynamicBlock() {
     wp_register_script( 'fubade-block-script',

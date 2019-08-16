@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
  * Class SourceLogger
  * Logs information over the used system and plugin to the browser console.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class SourceLogger extends Base {
   private static $instance        = null;
@@ -33,7 +33,7 @@ class SourceLogger extends Base {
   /**
    * Logger constructor.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   private function __construct() {
     parent::__construct();
@@ -43,7 +43,7 @@ class SourceLogger extends Base {
    * Get the instance.
    *
    * @return SourceLogger
-   * @since 3.0.0
+   * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
@@ -58,7 +58,7 @@ class SourceLogger extends Base {
    *
    * @param array $arr The arguments.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   public function log( array $arr ) {
     if ( ! $this->isGeneralLogged ) {
@@ -71,7 +71,7 @@ class SourceLogger extends Base {
   /**
    * Logs the general information, for example from the plugin, WordPress and / or the server.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   protected function logGeneralInfo() {
     $message = '<!-- ' . PHP_EOL;
@@ -92,7 +92,7 @@ class SourceLogger extends Base {
    *
    * @param array $arr The arguments.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   protected function logWidgetInfo( array $arr ) {
     if ( ! isset( $arr['id'] ) ) {

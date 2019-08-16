@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit();
  * Class Enqueue
  * Functions to register script for the Frontend.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class Enqueue {
   private static $instance = null;
@@ -32,7 +32,7 @@ class Enqueue {
   /**
    * Enqueue constructor.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   private function __construct() {
     add_action( 'init', [ $this, 'registerFubadeApi' ] );
@@ -42,7 +42,7 @@ class Enqueue {
    * Get the instance.
    *
    * @return Enqueue
-   * @since 3.0.0
+   * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
@@ -55,7 +55,7 @@ class Enqueue {
   /**
    * Register the api script for fussball.de.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   public function registerFubadeApi() {
     wp_register_script( 'fubade-api',

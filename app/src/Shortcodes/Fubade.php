@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
  * Class Fubade
  * Define and render the fubade shortcode.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class Fubade {
   private static $instance = null;
@@ -32,7 +32,7 @@ class Fubade {
   /**
    * Fubade constructor.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   private function __construct() {
     add_shortcode( 'fubade', [ $this, 'createShortcode' ] );
@@ -42,7 +42,7 @@ class Fubade {
    * Get the instance.
    *
    * @return Fubade
-   * @since 3.0.0
+   * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
@@ -58,7 +58,7 @@ class Fubade {
    * @param array $atts Shortcode attributes (`id`, `api`, `notice`, `fullwidth` and `devtools`).
    *
    * @return string
-   * @since 3.0.0
+   * @since 3.0
    */
   public function createShortcode( $atts ) {
     $a = shortcode_atts( [

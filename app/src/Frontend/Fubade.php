@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit();
  * Class Fubade
  * Creates the output of the widget from `fussball.de`.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class Fubade {
   private $attr = [];
@@ -38,7 +38,7 @@ class Fubade {
    * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
    *
    * @return string
-   * @since 3.0.0
+   * @since 3.0
    */
   public function output( $attr ) {
     // TODO: Configure default setting in the admin area.
@@ -73,7 +73,7 @@ class Fubade {
    * Render all the output.
    *
    * @return string
-   * @since 3.0.0
+   * @since 3.0
    */
   private function render() {
     $output = sprintf( '<div id="%s" class="include-fussball-de-Widgets">', esc_html( $this->attr['id'] ) ) . PHP_EOL;
@@ -99,7 +99,7 @@ class Fubade {
    * Creates the iframe needed from fussball.de.
    *
    * @return string
-   * @since 3.0.0
+   * @since 3.0
    */
   private function createIframe() {
     // TODO: Perhaps a punycode variant is needed with IFDW_HOST.

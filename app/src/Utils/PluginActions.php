@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
  * Class PluginActions
  * Add additional information to the plugin on the plugin page.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class PluginActions {
   private static $instance = null;
@@ -32,7 +32,7 @@ class PluginActions {
   /**
    * PluginActions constructor.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   private function __construct() {
     add_filter( 'plugin_row_meta', [ $this, 'addLinksToRowMeta' ], 10, 2 );
@@ -42,7 +42,7 @@ class PluginActions {
    * Get the instance.
    *
    * @return PluginActions
-   * @since 3.0.0
+   * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
@@ -60,7 +60,7 @@ class PluginActions {
    * @param string $file  The current plugin in the loop of filtering.
    *
    * @return array List of modified plugin meta links.
-   * @since 3.0.0
+   * @since 3.0
    */
   public function addLinksToRowMeta( $links, $file ) {
     if ( $file !== plugin_basename( IFDW_URL ) ) {

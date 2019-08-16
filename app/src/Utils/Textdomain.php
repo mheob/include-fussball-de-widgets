@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
  * Class Textdomain
  * Only needed for the Poedit workflow. The official translations comes from wordpress.org.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class Textdomain {
   private static $instance = null;
@@ -40,7 +40,7 @@ class Textdomain {
    * Get the instance.
    *
    * @return Textdomain
-   * @since 3.0.0
+   * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
@@ -53,7 +53,7 @@ class Textdomain {
   /**
    * Load the plugin textdomain.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   public function loadTextdomain() {
     load_plugin_textdomain( 'include-fussball-de-Widgets', false, dirname( plugin_basename( IFDW_URL ) ) . '/languages' );

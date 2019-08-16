@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
  * Abstract Class Base
  * Config the base attributes for the logging classes.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 abstract class Base {
   protected $generalInfoList = [];
@@ -32,7 +32,7 @@ abstract class Base {
   /**
    * Base constructor.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   protected function __construct() {
     global $wp_version;
@@ -49,14 +49,14 @@ abstract class Base {
    *
    * @param array $arr The arguments.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   abstract public function log( array $arr );
 
   /**
    * Logs the general information, for example from the plugin, WordPress and / or the server.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   abstract protected function logGeneralInfo();
 
@@ -65,7 +65,7 @@ abstract class Base {
    *
    * @param array $arr The arguments.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   abstract protected function logWidgetInfo( array $arr );
 }

@@ -29,14 +29,14 @@ defined( 'ABSPATH' ) || exit;
  * Class FubadeWidget
  * Creates a fubade widget.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class FubadeWidget extends WP_Widget {
   /**
    * The constructor.
    * Set up the Widgets name etc.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   public function __construct() {
     parent::__construct( 'ifdw_fubade_widget',
@@ -49,7 +49,7 @@ class FubadeWidget extends WP_Widget {
    *
    * @param array $instance The widget options.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   public function form( $instance ) {
     // Set the Widgets defaults and Parse current settings with defaults.
@@ -116,7 +116,7 @@ class FubadeWidget extends WP_Widget {
    * @param array $old_instance The previous options.
    *
    * @return array The new options.
-   * @since 3.0.0
+   * @since 3.0
    */
   public function update( $new_instance, $old_instance ) {
     $instance              = $old_instance;
@@ -134,7 +134,7 @@ class FubadeWidget extends WP_Widget {
    * @param array $args     The Widget arguments.
    * @param array $instance The saved values from the database.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   public function widget( $args, $instance ) {
     // Check the widget options.

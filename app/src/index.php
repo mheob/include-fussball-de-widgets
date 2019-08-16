@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @param callable $class The class to include.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 /** @noinspection PhpUnused */
 function autoloader( $class ) {

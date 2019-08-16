@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
  * Class Widgets
  * Register all Widgets from 'Include_Fussball_De_Widgets'.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class Widgets {
   private static $instance = null;
@@ -32,7 +32,7 @@ class Widgets {
   /**
    * Widgets constructor.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
   private function __construct() {
     add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
@@ -42,7 +42,7 @@ class Widgets {
    * Get the instance.
    *
    * @return Widgets
-   * @since 3.0.0
+   * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
