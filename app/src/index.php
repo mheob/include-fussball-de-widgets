@@ -71,7 +71,7 @@ PluginActions::getInstance();
 Textdomain::getInstance();
 
 // Backend tools.
-BorlabsCookie::getInstance();
+BorlabsCookie::getInstance()->addAdminInitAction();
 
 // Block scripts.
 EnqueueBlocks::getInstance();

@@ -24,42 +24,62 @@ defined( 'ABSPATH' ) || exit();
  * Class BorlabsCookie
  * Functions to add "Borlabs-Cookie" support.
  *
- * @since 3.0.0
+ * @since 3.0
  */
 class BorlabsCookie {
+  const CB_ID = 'fubade';
   private static $instance = null;
+  private        $tableNameCookies;
+  private        $tableNameCookieGroups;
 
   /**
    * BorlabsCookie constructor.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
-  private function __construct() {
-    add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
-  }
+  private function __construct() { }
 
   /**
    * Get the instance.
    *
    * @return BorlabsCookie
-   * @since 3.0.0
+   * @since 3.0
    */
-  public static function getInstance() {
+  public static function getInstance(): self {
     if ( null === self::$instance ) {
-      self::$instance = new BorlabsCookie();
+      self::$instance = new self();
     }
 
     return self::$instance;
   }
 
   /**
-   * Check if the Borlabs Cookie plugin is installed and active.
+   * Add the admin init action for creating the content Blocker.
    *
-   * @since 3.0.0
+   * @since 3.0
    */
-  function createContentBlocker() {
-    if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
+  public function addAdminInitAction(): void {
+    add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
+  }
+
+  /**
+   * Create the fubade content-blocker, if not exists already.
+   *
+   * @since 3.0
+   */
+  public function createContentBlocker(): void {
+    if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' )
+         || BorlabsCookieHelper()->getContentBlockerData( self::CB_ID ) ) {
       return;
+    }
+
+    global $wpdb;
+
+    $this->tableNameCookies      = $wpdb->base_prefix . 'borlabs_cookie_cookies';
+    $this->tableNameCookieGroups = $wpdb->base_prefix . 'borlabs_cookie_groups';
+
+    if ( ! $this->checkFubadeCookieExists() ) {
+      $this->addCookie();
     }
 
     /* Setup variables */
@@ -101,7 +121,7 @@ class BorlabsCookie {
 	color: #0000a8;
 }';
 
-    BorlabsCookieHelper()->addContentBlocker( 'fubade',
+    BorlabsCookieHelper()->addContentBlocker( self::CB_ID,
                                               __( 'Fussball.de Widget', 'include-fussball-de-Widgets' ),
                                               '',
                                               'http://www.fussball.de/privacy/',
@@ -113,5 +133,95 @@ class BorlabsCookie {
                                               [],
                                               false,
                                               false );
+  }
+
+  /**
+   * Check if the `fubade` exists.
+   *
+   * @return bool If the fubade cookie exists it is true, otherwise false.
+   * @since 3.0
+   */
+  private function checkFubadeCookieExists(): bool {
+    global $wpdb;
+
+    $cookieId = $wpdb->get_var( $wpdb->prepare( "SELECT `cookie_id` FROM `" . $wpdb->prefix . $this->tableNameCookies
+                                                . "` WHERE `cookie_id` = %s LIMIT 1",
+                                                self::CB_ID ) );
+
+    if ( $cookieId > 0 ) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Add the fubade cookie, if not exists already.
+   *
+   * @since 3.0
+   */
+  private function addCookie(): void {
+    global $wpdb;
+
+    $defaultBlogLanguage = substr( get_option( 'WPLANG', 'en_US' ), 0, 2 ) ?? 'en';
+    $cookieGroupIds      = [];
+
+    $cookieGroups = $wpdb->get_results( '
+        SELECT
+               `id`,
+               `group_id`
+        FROM
+             `' . $this->tableNameCookieGroups . '`
+        WHERE
+              `language` = "' . esc_sql( $defaultBlogLanguage ) . '"
+      ' );
+
+    foreach ( $cookieGroups as $groupData ) {
+      $cookieGroupIds[ $groupData->group_id ] = $groupData->id;
+    }
+
+    /** @noinspection JSUnresolvedFunction */
+    $sqlQuery = "INSERT INTO `" . $this->tableNameCookies . "`
+        (
+            `cookie_id`,
+            `language`,
+            `cookie_group_id`,
+            `service`,
+            `name`,
+            `provider`,
+            `purpose`,
+            `privacy_policy_url`,
+            `hosts`,
+            `cookie_name`,
+            `cookie_expiry`,
+            `opt_in_js`,
+            `position`,
+            `status`,
+            `undeletable`
+        )
+        VALUES
+        (
+            '" . self::CB_ID . "',
+            '" . esc_sql( $defaultBlogLanguage ) . "',
+            '" . esc_sql( $cookieGroupIds['external-media'] ) . "',
+            'Custom',
+            'Fußball.de',
+            'Fußball.de',
+            '" . _x( 'Used to unblock Fußball.de content.', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
+            '" . _x( 'http://www.fussball.de/privacy/', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
+            '" . esc_sql( serialize( [ 'fussball.de', 'www.fussball.de' ] ) ) . "',
+            '" . self::CB_ID . "',
+            '" . _x( 'Unlimited', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
+            '" . esc_sql( '<script>if("object" === typeof window.BorlabsCookie) { window.BorlabsCookie.unblockContentId("'
+                          . self::CB_ID . '"); }</script>' ) . "',
+            82,
+            1,
+            0
+        )
+        ON DUPLICATE KEY UPDATE
+            `undeletable` = VALUES(`undeletable`)
+        ";
+
+    $wpdb->query( $sqlQuery );
   }
 }
