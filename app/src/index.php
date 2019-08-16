@@ -63,12 +63,8 @@ define( 'IFDW_URL', __FILE__ );
 define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SERVER_NAME'] ) : '' );
 
 /**
- * Initialize.
+ * Initialize the hooks.
  */
-
-// Utils.
-PluginActions::getInstance()->addPluginRowMetaFilter();
-Textdomain::getInstance()->addPluginsLoadedAction();
 
 // Backend tools.
 BorlabsCookie::getInstance()->addAdminInitAction();
@@ -81,6 +77,10 @@ EnqueueFrontend::getInstance()->addInitAction();
 
 // Shortcodes.
 Fubade::getInstance()->addShortcode();
+
+// Utils.
+PluginActions::getInstance()->addPluginRowMetaFilter();
+Textdomain::getInstance()->addPluginsLoadedAction();
 
 // Widgets.
 Widgets::getInstance()->addWidgetInitAction();
