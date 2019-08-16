@@ -34,22 +34,29 @@ class Enqueue {
    *
    * @since 3.0
    */
-  private function __construct() {
-    add_action( 'init', [ $this, 'registerFubadeApi' ] );
-  }
+  private function __construct() { }
 
   /**
    * Get the instance.
    *
-   * @return Enqueue
+   * @return self
    * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
-      self::$instance = new Enqueue();
+      self::$instance = new self();
     }
 
     return self::$instance;
+  }
+
+  /**
+   * Add the init action for registering the fubade api.
+   *
+   * @since 3.0
+   */
+  public function addInitAction(): void {
+    add_action( 'init', [ $this, 'registerFubadeApi' ] );
   }
 
   /**

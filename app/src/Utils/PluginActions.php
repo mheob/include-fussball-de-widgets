@@ -34,22 +34,29 @@ class PluginActions {
    *
    * @since 3.0
    */
-  private function __construct() {
-    add_filter( 'plugin_row_meta', [ $this, 'addLinksToRowMeta' ], 10, 2 );
-  }
+  private function __construct() { }
 
   /**
    * Get the instance.
    *
-   * @return PluginActions
+   * @return self
    * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
-      self::$instance = new PluginActions();
+      self::$instance = new self();
     }
 
     return self::$instance;
+  }
+
+  /**
+   * Add the plugin_row_meta filter.
+   *
+   * @since 3.0
+   */
+  public function addPluginRowMetaFilter(): void {
+    add_filter( 'plugin_row_meta', [ $this, 'addLinksToRowMeta' ], 10, 2 );
   }
 
   /**

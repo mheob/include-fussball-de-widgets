@@ -32,22 +32,29 @@ class Textdomain {
   /**
    * Textdomain constructor.
    */
-  private function __construct() {
-    add_action( 'plugins_loaded', [ $this, 'loadTextdomain' ] );
-  }
+  private function __construct() { }
 
   /**
    * Get the instance.
    *
-   * @return Textdomain
+   * @return self
    * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
-      self::$instance = new Textdomain();
+      self::$instance = new self();
     }
 
     return self::$instance;
+  }
+
+  /**
+   * Add the plugins_loaded action.
+   *
+   * @since 3.0
+   */
+  public function addPluginsLoadedAction(): void {
+    add_action( 'plugins_loaded', [ $this, 'loadTextdomain' ] );
   }
 
   /**

@@ -34,22 +34,29 @@ class Widgets {
    *
    * @since 3.0
    */
-  private function __construct() {
-    add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
-  }
+  private function __construct() { }
 
   /**
    * Get the instance.
    *
-   * @return Widgets
+   * @return self
    * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
-      self::$instance = new Widgets();
+      self::$instance = new self();
     }
 
     return self::$instance;
+  }
+
+  /**
+   * Add the widgets_init action.
+   *
+   * @since 3.0
+   */
+  public function addWidgetInitAction(): void {
+    add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
   }
 
   /**

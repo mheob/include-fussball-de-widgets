@@ -34,22 +34,29 @@ class Fubade {
    *
    * @since 3.0
    */
-  private function __construct() {
-    add_shortcode( 'fubade', [ $this, 'createShortcode' ] );
-  }
+  private function __construct() { }
 
   /**
    * Get the instance.
    *
-   * @return Fubade
+   * @return self
    * @since 3.0
    */
   public static function getInstance() {
     if ( null === self::$instance ) {
-      self::$instance = new Fubade();
+      self::$instance = new self();
     }
 
     return self::$instance;
+  }
+
+  /**
+   * Add the fubade shortcode.
+   *
+   * @since 3.0
+   */
+  public function addShortcode(): void {
+    add_shortcode( 'fubade', [ $this, 'createShortcode' ] );
   }
 
   /**

@@ -67,20 +67,20 @@ define( 'IFDW_HOST', isset( $_SERVER['SERVER_NAME'] ) ? wp_unslash( $_SERVER['SE
  */
 
 // Utils.
-PluginActions::getInstance();
-Textdomain::getInstance();
+PluginActions::getInstance()->addPluginRowMetaFilter();
+Textdomain::getInstance()->addPluginsLoadedAction();
 
 // Backend tools.
 BorlabsCookie::getInstance()->addAdminInitAction();
 
 // Block scripts.
-EnqueueBlocks::getInstance();
+EnqueueBlocks::getInstance()->addInitAction();
 
 // Frontend scripts.
-EnqueueFrontend::getInstance();
+EnqueueFrontend::getInstance()->addInitAction();
 
 // Shortcodes.
-Fubade::getInstance();
+Fubade::getInstance()->addShortcode();
 
 // Widgets.
-Widgets::getInstance();
+Widgets::getInstance()->addWidgetInitAction();
