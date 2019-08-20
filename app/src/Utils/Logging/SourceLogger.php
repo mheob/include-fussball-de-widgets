@@ -42,12 +42,12 @@ class SourceLogger extends Base {
   /**
    * Get the instance.
    *
-   * @return SourceLogger
+   * @return self
    * @since 3.0
    */
-  public static function getInstance() {
+  public static function getInstance(): self {
     if ( null === self::$instance ) {
-      self::$instance = new SourceLogger();
+      self::$instance = new self();
     }
 
     return self::$instance;

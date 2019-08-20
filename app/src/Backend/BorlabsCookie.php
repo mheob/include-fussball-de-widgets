@@ -42,7 +42,7 @@ class BorlabsCookie {
   /**
    * Get the instance.
    *
-   * @return BorlabsCookie
+   * @return self
    * @since 3.0
    */
   public static function getInstance(): self {

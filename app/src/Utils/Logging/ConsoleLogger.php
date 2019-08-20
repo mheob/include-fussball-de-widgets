@@ -42,12 +42,12 @@ class ConsoleLogger extends Base {
   /**
    * Get the instance.
    *
-   * @return ConsoleLogger
+   * @return self
    * @since 3.0
    */
-  public static function getInstance() {
+  public static function getInstance(): self {
     if ( null === self::$instance ) {
-      self::$instance = new ConsoleLogger();
+      self::$instance = new self();
     }
 
     return self::$instance;
