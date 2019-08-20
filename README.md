@@ -116,7 +116,7 @@ Ein WordPress-Plugin für die einfache Integration der [fussball.de Widgets](htt
 
 ### Wo kann ich den Website-Schlüssel bekommen?
 
-> Den erforderlichen Ausweis erhalten Sie bei fussball.de in Ihren Widgets (<https://www.fussball.de/account.admin.widgets>). In der Übersicht Ihres Widgets finden Sie den Punkt `Website-Schlüssel`. Dies ist die benötigte Zeichenfolge.
+> Den erforderlichen Ausweis erhältst Du bei fussball.de in Deinen Widgets (<https://www.fussball.de/account.admin.widgets>). In der Übersicht Deines Widgets findest Du den Punkt `Website-Schlüssel`. Dies ist die benötigte Zeichenfolge.
 
 ### Was kann ich machen wenn das Plugin nicht funktioniert?
 
