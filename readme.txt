@@ -2,11 +2,11 @@
 Contributors: mheob
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url
 Tags: soccer, football, widget, fussball.de
-Requires PHP: 5.6
+Requires PHP: 7.0
 Requires at least: 4.8
 Tested up to: 5.2
 Stable tag: 3.0.0
-License: GPLv2
+License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 A WordPress plugin for easy integration of fussball.de widgets.

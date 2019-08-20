@@ -28,7 +28,7 @@
     }
   },
   "rules": {
-    "max-len": ["error", { "code": 120 }],
+    "max-len": ["error", { "code": 130 }],
     "array-bracket-spacing": ["error", "always"],
     "brace-style": ["error", "1tbs"],
     "camelcase": ["error", { "properties": "never" }],
