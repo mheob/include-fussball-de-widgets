@@ -55,14 +55,15 @@ try {
   echo $e->getMessage();
 }
 
-/**
+/*
  * Constants
  */
+
 define( 'IFDW_VERSION', '3.0.0' );
 define( 'IFDW_URL', __FILE__ );
 define( 'IFDW_HOST', Host::cleanHost( $_SERVER['SERVER_NAME'] ?? false ) );
 
-/**
+/*
  * Initialize the hooks.
  */
 
