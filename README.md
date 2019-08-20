@@ -10,7 +10,7 @@ Jump to [DEUTSCH](#deutsch)
 
 ## English
 
-A WordPress plugin for easy integration of fussball.de widgets.
+A WordPress plugin for easy integration of [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1[meinfussball]=1911&cHash=8e54ad110b258ac9679d70637b4ff796#!/).
 
 ## Installation
 
@@ -68,7 +68,7 @@ A WordPress plugin for easy integration of fussball.de widgets.
 
 ## Deutsch
 
-Ein WordPress-Plugin für die einfache Integration der fussball.de Widgets.
+Ein WordPress-Plugin für die einfache Integration der [fussball.de Widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1[meinfussball]=1911&cHash=8e54ad110b258ac9679d70637b4ff796#!/).
 
 ## Installation
 
@@ -118,7 +118,7 @@ Ein WordPress-Plugin für die einfache Integration der fussball.de Widgets.
 
 ### Was kann ich machen wenn das Plugin nicht funktioniert?
 
-> Der erste Anhaltspunkt sollte immer das [offizielle Support-Forum auf wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch die [Issues-Sektion auf Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues) sein.\
+> Der erste Anhaltspunkt sollte immer das [offizielle Support-Forum auf wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch der [Problembereich auf Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues) sein.\
 > \
 > Gerne und oft werden auch die falschen Anführungszeichen verwendet. Hier muss unbedingt das normale `"`-Zeichen verwendet werden.\
 > \
