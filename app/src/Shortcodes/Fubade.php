@@ -67,7 +67,7 @@ class Fubade {
    * @return string
    * @since 3.0
    */
-  public function createShortcode( $atts ) {
+  public function createShortcode( $atts ): string {
     $a = shortcode_atts( [
                            'id'        => '',
                            'api'       => '',

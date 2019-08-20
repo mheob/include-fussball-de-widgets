@@ -51,7 +51,7 @@ class FubadeWidget extends WP_Widget {
    *
    * @since 3.0
    */
-  public function form( $instance ) {
+  public function form( $instance ): void {
     // Set the Widgets defaults and Parse current settings with defaults.
     $defaults = [
       'title'     => '',
@@ -118,7 +118,7 @@ class FubadeWidget extends WP_Widget {
    * @return array The new options.
    * @since 3.0
    */
-  public function update( $new_instance, $old_instance ) {
+  public function update( $new_instance, $old_instance ): array {
     $instance              = $old_instance;
     $instance['title']     = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
     $instance['api']       = isset( $new_instance['api'] ) ? wp_strip_all_tags( $new_instance['api'] ) : '';
@@ -136,7 +136,7 @@ class FubadeWidget extends WP_Widget {
    *
    * @since 3.0
    */
-  public function widget( $args, $instance ) {
+  public function widget( $args, $instance ): void {
     // Check the widget options.
     $title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
     $api       = isset( $instance['api'] ) ? $instance['api'] : '';

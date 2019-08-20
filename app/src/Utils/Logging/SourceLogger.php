@@ -60,7 +60,7 @@ class SourceLogger extends Base {
    *
    * @since 3.0
    */
-  public function log( array $arr ) {
+  public function log( array $arr ): void {
     if ( ! $this->isGeneralLogged ) {
       $this->logGeneralInfo();
     }
@@ -73,7 +73,7 @@ class SourceLogger extends Base {
    *
    * @since 3.0
    */
-  protected function logGeneralInfo() {
+  protected function logGeneralInfo(): void {
     $message = '<!-- ' . PHP_EOL;
 
     foreach ( $this->generalInfoList as $item ) {
@@ -94,7 +94,7 @@ class SourceLogger extends Base {
    *
    * @since 3.0
    */
-  protected function logWidgetInfo( array $arr ) {
+  protected function logWidgetInfo( array $arr ): void {
     if ( ! isset( $arr['id'] ) ) {
       return;
     }

@@ -72,7 +72,7 @@ class Enqueue {
    *
    * @since 3.0
    */
-  public function registerDynamicBlock() {
+  public function registerDynamicBlock(): void {
     wp_register_script( 'fubade-block-script',
                         plugins_url( 'assets/js/blocks.js', IFDW_URL ),
                         [ 'wp-Blocks', 'wp-i18n', 'wp-element' ],

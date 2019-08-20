@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0
  */
 /** @noinspection PhpUnused */
-function autoloader( $class ) {
+function autoloader( $class ): void {
   if ( false === strpos( $class, __NAMESPACE__ ) ) {
     return;
   }

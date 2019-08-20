@@ -51,14 +51,14 @@ abstract class Base {
    *
    * @since 3.0
    */
-  abstract public function log( array $arr );
+  abstract public function log( array $arr ): void;
 
   /**
    * Logs the general information, for example from the plugin, WordPress and / or the server.
    *
    * @since 3.0
    */
-  abstract protected function logGeneralInfo();
+  abstract protected function logGeneralInfo(): void;
 
   /**
    * Logs the information pertaining to a specific widget only.
@@ -67,5 +67,5 @@ abstract class Base {
    *
    * @since 3.0
    */
-  abstract protected function logWidgetInfo( array $arr );
+  abstract protected function logWidgetInfo( array $arr ): void;
 }

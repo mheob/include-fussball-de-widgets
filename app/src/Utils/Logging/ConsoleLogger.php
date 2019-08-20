@@ -60,7 +60,7 @@ class ConsoleLogger extends Base {
    *
    * @since 3.0
    */
-  public function log( array $arr ) {
+  public function log( array $arr ): void {
     if ( ! $this->isGeneralLogged ) {
       $this->logGeneralInfo();
     }
@@ -73,7 +73,7 @@ class ConsoleLogger extends Base {
    *
    * @since 3.0
    */
-  protected function logGeneralInfo() {
+  protected function logGeneralInfo(): void {
     $output = '';
     foreach ( $this->generalInfoList as $item ) {
       $output .= 'console.log(' . wp_json_encode( $item, JSON_HEX_TAG ) . ');' . PHP_EOL;
@@ -93,7 +93,7 @@ class ConsoleLogger extends Base {
    *
    * @since 3.0
    */
-  protected function logWidgetInfo( array $arr ) {
+  protected function logWidgetInfo( array $arr ): void {
     if ( ! isset( $arr['id'] ) ) {
       return;
     }

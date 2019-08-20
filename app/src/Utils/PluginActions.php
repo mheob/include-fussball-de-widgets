@@ -69,7 +69,7 @@ class PluginActions {
    * @return array List of modified plugin meta links.
    * @since 3.0
    */
-  public function addLinksToRowMeta( $links, $file ) {
+  public function addLinksToRowMeta( $links, $file ): array {
     if ( $file !== plugin_basename( IFDW_URL ) ) {
       return $links;
     }

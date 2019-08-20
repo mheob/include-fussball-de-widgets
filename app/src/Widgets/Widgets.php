@@ -64,7 +64,7 @@ class Widgets {
    *
    * @since   3.0.0
    */
-  public function registerWidgets() {
+  public function registerWidgets(): void {
     register_widget( '\\IFDW\\Widgets\\FubadeWidget' );
   }
 }

@@ -55,7 +55,7 @@ class Fubade {
    * @return string
    * @since 3.0
    */
-  public function output( $attr ) {
+  public function output( $attr ): string {
     // TODO: Configure default setting in the admin area.
     $this->setAttr( $attr );
 
@@ -93,7 +93,7 @@ class Fubade {
    * @return string
    * @since 3.0
    */
-  private function render() {
+  private function render(): string {
     $output = sprintf( '<div id="%s" class="include-fussball-de-Widgets">', esc_html( $this->attr['id'] ) ) . PHP_EOL;
     $output .= $this->createIframe();
     $output .= '</div>' . PHP_EOL;
@@ -119,7 +119,7 @@ class Fubade {
    * @return string
    * @since 3.0
    */
-  private function createIframe() {
+  private function createIframe(): string {
     // TODO: Test the punycode variant of the IFDW_HOST.
     $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id'] . '/caller/'
               . IFDW_HOST;
@@ -127,8 +127,6 @@ class Fubade {
     $height = '200px';
     $style  = 'border: 1px solid #CECECE; overflow: hidden';
 
-    $output = "<iframe src='$src' width='$width' height='$height' style='$style'></iframe>" . PHP_EOL;
-
-    return $output;
+    return "<iframe src='$src' width='$width' height='$height' style='$style'></iframe>" . PHP_EOL;
   }
 }
