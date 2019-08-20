@@ -16,11 +16,12 @@ A WordPress plugin for easy integration of [fussball.de widgets](http://training
 
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. You can use the plugin in two ways. As a shortcode and since wordpress version 5 also as an integrated Gutenberg Block.
+1. You can use the plugin in several ways. As a shortcode, WordPress widget and since WordPress version 5 also as an integrated Gutenberg block.
    1. In wordpress versions below 5 use the shortcode like:
       `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe in fullwidth} devtools={print devtools}]`\
       e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
    1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `fubade`.
+   1. Even the usual WordPress widgets are possible.
 
 ## How to use
 
@@ -74,11 +75,12 @@ Ein WordPress-Plugin für die einfache Integration der [fussball.de Widgets](htt
 
 1. Installiere das Fussball.de Widget entweder über das WordPress.org-Plugin-Verzeichnis oder indem Du die Dateien auf Deinen Server hochlädst.
 1. Aktiviere das Plugin über das 'Plugins'-Menü in WordPress.
-1. Du kannst das Plugin auf zwei Arten verwenden. Als Shortcode und seit der WordPress-Version 5 auch als integrierter Gutenberg-Block.
+1. Du kannst das Plugin auf mehrere Arten verwenden. Als Shortcode, WordPress Widget und seit der WordPress-Version 5 auch als integrierter Gutenberg-Block.
    1. Verwende in den WordPress-Versionen unter 5 den folgenden Shortcode:
       `[fubade api="{32-digit API}" notice="{Hinweis}" fullwidth={iframe in voller Breite} devtools={Ausgabe der DevTools}]`\
       z.B. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
    1. In den Versionen seit 5.0 kannst Du den Gutenberg-Block verwenden. Du findest es unter den Widgets oder mit dem Suchmuster `fubade`.
+   1. Auch die gewohnten WordPress widgets sind möglich.
 
 ## Wie benutzt Du das Plugin?
 
