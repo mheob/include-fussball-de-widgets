@@ -65,13 +65,10 @@ registerBlockType('ifdw/fubade', {
           <ToggleControl
             checked={ fullwidth }
             help={
-              fullwidth ?
-                __('The widget will be shown in the maximal width.', 'include-fussball-de-widgets') :
-                __(
-                  'The widget will be shown in the width given from fussball.de ' +
-                  '(CSS possible could overwrite this setting).',
-                  'include-fussball-de-widgets'
-                )
+              fullwidth
+                ? __('The widget will be shown in the maximal width.', 'include-fussball-de-widgets')
+                : __('The widget will be shown in the width given from fussball.de'
+                + '(CSS possible could overwrite this setting).', 'include-fussball-de-widgets')
             }
             label={ __('Show in full width', 'include-fussball-de-widgets') }
             onChange={ newFullwidth => {
@@ -81,12 +78,9 @@ registerBlockType('ifdw/fubade', {
           <ToggleControl
             checked={ devtools }
             help={
-              devtools ?
-                __(
-                  'Some debugging information will be displayed in the browser console.',
-                  'include-fussball-de-widgets'
-                ) :
-                __('No debugging information were outputted.', 'include-fussball-de-widgets')
+              devtools
+                ? __('Some debugging information will be displayed in the browser console.', 'include-fussball-de-widgets')
+                : __('No debugging information were outputted.', 'include-fussball-de-widgets')
             }
             label={ __('Show some information for debugging', 'include-fussball-de-widgets') }
             onChange={ isDevTools => {
@@ -121,10 +115,7 @@ registerBlockType('ifdw/fubade', {
           </div>
         ) : (
           <div className={ `${ className }-shortcode error` }>
-            { __(
-              '!!! The fussball.de API must have a length of exactly 32 characters. !!!',
-              'include-fussball-de-widgets'
-            ) }
+            { __('!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets') }
           </div>
         ) }
       </Fragment>

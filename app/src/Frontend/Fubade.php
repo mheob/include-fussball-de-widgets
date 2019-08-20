@@ -56,8 +56,10 @@ class Fubade {
       'api'       => sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $this->attr['api'] ) ) ),
       'id'        => 'fubade_' . substr( $this->attr['api'], - 5 ),
       'notice'    => empty( $this->attr['notice'] ) ? '' : sanitize_text_field( $this->attr['notice'] ),
-      'fullwidth' => '1' === $this->attr['fullwidth'] || 'true' === $this->attr['fullwidth'] || true === $this->attr['fullwidth'] ? true : false,
-      'devtools'  => '1' === $this->attr['devtools'] || 'true' === $this->attr['devtools'] || true === $this->attr['devtools'] ? true : false,
+      'fullwidth' => '1' === $this->attr['fullwidth'] || 'true' === $this->attr['fullwidth']
+                     || true === $this->attr['fullwidth'] ? true : false,
+      'devtools'  => '1' === $this->attr['devtools'] || 'true' === $this->attr['devtools']
+                     || true === $this->attr['devtools'] ? true : false,
     ];
 
     if ( ! wp_script_is( 'fubade-api' ) ) {
@@ -103,13 +105,13 @@ class Fubade {
    */
   private function createIframe() {
     // TODO: Perhaps a punycode variant is needed with IFDW_HOST.
-    $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id'] . '/caller/' . IFDW_HOST;
+    $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id'] . '/caller/'
+              . IFDW_HOST;
     $width  = $this->attr['fullwidth'] ? '100%' : '900px';
     $height = '200px';
-    $style  = 'border: 1px solid #CECECE;';
+    $style  = 'border: 1px solid #CECECE; overflow: hidden';
 
-    /** @noinspection HtmlDeprecatedAttribute */
-    $output = "<iframe src='$src' frameborder='0' scrolling='no' width='$width' height='$height' style='$style'></iframe>" . PHP_EOL;
+    $output = "<iframe src='$src' width='$width' height='$height' style='$style'></iframe>" . PHP_EOL;
 
     return $output;
   }
