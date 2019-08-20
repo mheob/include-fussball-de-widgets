@@ -75,11 +75,24 @@ The latest state of development is available at any time in my [Github repositor
 
 == Changelog ==
 
-= 2.3.0 - 2019-07-31 =
+= 3.0.0 - 2019-07-20 =
 
 = Added =
 
+* A fussball.de widget can be generated in the WordPress widget area (Appearance -> Widgets).
 * Tabs from theme Divi-Theme are now supported.
+* Borlabs-Cookie support for loading the plugin as an opt-in setting.
+* A donation link to cover my expenses a bit.
+
+= Changed =
+
+* Set the required PHP version up to 7.2.
+* Redesign the whole structure and use OOP from now on.
+* Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
+
+= Fixed =
+
+* Logging issues have been resolved.
 
 = 2.2.2 - 2019-06-20 =
 
@@ -240,11 +253,24 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 3.0.0 - 2019-07-31 =
+= 3.0.0 - 2019-07-20 =
 
 = Added =
 
+* A fussball.de widget can be generated in the WordPress widget area (Appearance -> Widgets).
 * Tabs from theme Divi-Theme are now supported.
+* Borlabs-Cookie support for loading the plugin as an opt-in setting.
+* A donation link to cover my expenses a bit.
+
+= Changed =
+
+* Set the required PHP version up to 7.2.
+* Redesign the whole structure and use OOP from now on.
+* Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
+
+= Fixed =
+
+* Logging issues have been resolved.
 
 == Screenshots ==
 

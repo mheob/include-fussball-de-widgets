@@ -6,14 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Tabs from theme Divi-Theme are now supported.
 - A fussball.de widget can be generated in the WordPress widget area (Appearance -> Widgets).
-- Borlabs-Cookie is supported and a content blocker is added instantly.
+- Tabs from theme Divi-Theme are now supported.
+- Borlabs-Cookie support for loading the plugin as an opt-in setting.
 - A donation link to cover my expenses a bit.
 
 ### Changed
 
-- Redesign the whole structure.
+- Set the required PHP version up to 7.2.
+- Redesign the whole structure and use OOP from now on.
 - Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
 
 ### Fixed
