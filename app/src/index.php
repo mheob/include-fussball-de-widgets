@@ -21,7 +21,7 @@ use IFDW\Backend\BorlabsCookie;
 use IFDW\Blocks\Enqueue as EnqueueBlocks;
 use IFDW\Frontend\Enqueue as EnqueueFrontend;
 use IFDW\Shortcodes\Fubade;
-use IFDW\Utils\{Host, PluginActions, Textdomain};
+use IFDW\Utils\{Host, Logging\ConsoleLogger, PluginActions, Textdomain};
 use IFDW\Widgets\Widgets;
 
 defined( 'ABSPATH' ) || exit;
@@ -51,8 +51,7 @@ function autoloader( $class ): void {
 try {
   spl_autoload_register( __NAMESPACE__ . '\autoloader' );
 } catch ( Exception $e ) {
-  // TODO: Log the error to a file or other storage.
-  echo $e->getMessage();
+  ConsoleLogger::getInstance()->errorLog( $e->getMessage() );
 }
 
 /*

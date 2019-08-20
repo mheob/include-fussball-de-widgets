@@ -69,6 +69,18 @@ class ConsoleLogger extends Base {
   }
 
   /**
+   * Generates a logging output of an error.
+   *
+   * @param string $error The error message.
+   *
+   * @since 3.0
+   */
+  public function errorLog( string $error ): void {
+    $errorMessage = 'console.info(' . wp_json_encode( $error, JSON_HEX_TAG ) . ');' . PHP_EOL;
+    wp_add_inline_script( 'fubade-api', $errorMessage, 'after' );
+  }
+
+  /**
    * Logs the general information, for example from the plugin, WordPress and / or the server.
    *
    * @since 3.0
