@@ -84,3 +84,5 @@ Textdomain::getInstance()->addPluginsLoadedAction();
 
 // Widgets.
 Widgets::getInstance()->addWidgetInitAction();
+
+// TODO: [general] Add an admin area for setting up default settings for new entries.

@@ -77,7 +77,7 @@ class ConsoleLogger extends Base {
    */
   public function errorLog( string $error ): void {
     $errorMessage = 'console.info(' . wp_json_encode( $error, JSON_HEX_TAG ) . ');' . PHP_EOL;
-    wp_add_inline_script( 'fubade-api', $errorMessage, 'after' );
+    wp_add_inline_script( 'jquery', $errorMessage );
   }
 
   /**
@@ -93,7 +93,7 @@ class ConsoleLogger extends Base {
 
     $output .= "console.log('')" . PHP_EOL;
 
-    wp_add_inline_script( 'fubade-api', $output, 'after' );
+    wp_add_inline_script( 'fubade-api', $output );
 
     $this->isGeneralLogged = true;
   }
@@ -123,6 +123,6 @@ class ConsoleLogger extends Base {
 
     $output .= "console.info('')" . PHP_EOL;
 
-    wp_add_inline_script( 'fubade-api', $output, 'after' );
+    wp_add_inline_script( 'fubade-api', $output );
   }
 }

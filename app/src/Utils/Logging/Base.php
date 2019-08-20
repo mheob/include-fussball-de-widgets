@@ -68,4 +68,6 @@ abstract class Base {
    * @since 3.0
    */
   abstract protected function logWidgetInfo( array $arr ): void;
+
+  // TODO: Add a file or database logging system
 }
