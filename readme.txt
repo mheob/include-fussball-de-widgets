@@ -2,7 +2,7 @@
 Contributors: mheob
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url
 Tags: soccer, football, widget, fussball.de
-Requires PHP: 7.0
+Requires PHP: 7.2
 Requires at least: 4.8
 Tested up to: 5.2
 Stable tag: 3.0.0

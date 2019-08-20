@@ -3,7 +3,7 @@
  * Plugin Name:  Include Fussball.de Widgets
  * Description:  Easy integration of the Fussball.de widgets (currently in the version since season 2016).
  * Version:      3.0.0
- * Requires PHP: 7.0
+ * Requires PHP: 7.2
  * Author:       IT-Service Böhm -- Alexander Böhm
  * Author URI:   http://profiles.wordpress.org/mheob
  * License:      GPL2
