@@ -33,6 +33,21 @@ class Fubade {
   private $attr = [];
 
   /**
+   * Set the attribute array
+   *
+   * @param array $attr The attributes for the widget rendering.
+   */
+  public function setAttr( array $attr ): void {
+    $this->attr = [
+      'api'       => $attr['api'] ?? '',
+      'id'        => $attr['id'] ?? 'ERROR_' . time(),
+      'notice'    => $attr['notice'] ?? '',
+      'fullwidth' => $attr['fullwidth'] ?? false,
+      'devtools'  => $attr['devtools'] ?? false
+    ];
+  }
+
+  /**
    * Creates the output to the sourcecode.
    *
    * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
@@ -42,7 +57,8 @@ class Fubade {
    */
   public function output( $attr ) {
     // TODO: Configure default setting in the admin area.
-    $this->attr = $attr;
+    $this->setAttr( $attr );
+
     if ( 32 !== strlen( $this->attr['api'] ) ) {
       ConsoleLogger::getInstance()->log( $this->attr );
       /* translators: %s: the length of the api */
@@ -59,7 +75,7 @@ class Fubade {
       'fullwidth' => '1' === $this->attr['fullwidth'] || 'true' === $this->attr['fullwidth']
                      || true === $this->attr['fullwidth'] ? true : false,
       'devtools'  => '1' === $this->attr['devtools'] || 'true' === $this->attr['devtools']
-                     || true === $this->attr['devtools'] ? true : false,
+                     || true === $this->attr['devtools'] ? true : false
     ];
 
     if ( ! wp_script_is( 'fubade-api' ) ) {
@@ -104,7 +120,7 @@ class Fubade {
    * @since 3.0
    */
   private function createIframe() {
-    // TODO: Perhaps a punycode variant is needed with IFDW_HOST.
+    // TODO: Test the punycode variant of the IFDW_HOST.
     $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id'] . '/caller/'
               . IFDW_HOST;
     $width  = $this->attr['fullwidth'] ? '100%' : '900px';
