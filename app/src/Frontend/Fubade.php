@@ -104,12 +104,6 @@ class Fubade {
       SourceLogger::getInstance()->log( $this->attr );
     }
 
-    // TODO: Control the Borlabs-Cookies especially for the widget class.
-    // include_once ABSPATH . 'wp-admin/includes/plugin.php';
-    // if ( is_plugin_active( 'borlabs-cookie/BorlabsCookie.php' ) ) {
-    // return BorlabsCookieHelper()->blockContent( $output, 'ifdw_fubade' );
-    // }
-
     return $output;
   }
 
@@ -127,6 +121,7 @@ class Fubade {
     $height = '200px';
     $style  = 'border: 1px solid #CECECE; overflow: hidden';
 
-    return "<iframe src='$src' width='$width' height='$height' style='$style'></iframe>" . PHP_EOL;
+    /** @noinspection HtmlDeprecatedAttribute */
+    return "<iframe src='$src' width='$width' height='$height' scrolling='no' style='$style'></iframe>" . PHP_EOL;
   }
 }
