@@ -20,8 +20,9 @@
 
 namespace IFDW\Widgets;
 
-use WP_Widget;
+use IFDW\Backend\BorlabsCookie;
 use IFDW\Frontend\Fubade;
+use WP_Widget;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -139,26 +140,29 @@ class FubadeWidget extends WP_Widget {
   public function widget( $args, $instance ): void {
     // Check the widget options.
     $title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-    $api       = isset( $instance['api'] ) ? $instance['api'] : '';
-    $fullwidth = ! empty( $instance['fullwidth'] ) ? true : false;
-    $devtools  = ! empty( $instance['devtools'] ) ? true : false;
+    $api       = $instance['api'] ?? '';
+    $fullwidth = empty( $instance['fullwidth'] ) ? false : true;
+    $devtools  = empty( $instance['devtools'] ) ? false : true;
 
     // WordPress core before_widget hook (always include).
     echo $args['before_widget'] . PHP_EOL;
 
-    echo '<div class="widget-text wp_widget_plugin_box">' . PHP_EOL;
-
     echo $args['before_title'] . $title . $args['after_title'] . PHP_EOL;
 
-    echo ( new Fubade() )->output( [
-                                     'id'        => '',
-                                     'api'       => $api,
-                                     'notice'    => $title,
-                                     'fullwidth' => $fullwidth,
-                                     'devtools'  => $devtools,
-                                   ] );
+    $output = ( new Fubade() )->output( [
+                                          'id'        => '',
+                                          'api'       => $api,
+                                          'notice'    => $title,
+                                          'fullwidth' => $fullwidth,
+                                          'devtools'  => $devtools,
+                                        ] );
 
-    echo '</div>' . PHP_EOL;
+    include_once ABSPATH . 'wp-admin/includes/plugin.php';
+    if ( is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
+      echo BorlabsCookieHelper()->blockContent( $output, BorlabsCookie::CB_ID );
+    } else {
+      echo $output;
+    }
 
     // WordPress core after_widget hook (always include).
     echo $args['after_widget'] . PHP_EOL;
