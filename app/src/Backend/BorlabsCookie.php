@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit();
 
 /**
  * Class BorlabsCookie
- * Functions to add "Borlabs-Cookie" support.
+ * Functions to add "Borlabs-Cookie" (https://borlabs.io) support.
  *
  * @since 3.0
  */
