@@ -33,21 +33,6 @@ class Fubade {
   private $attr = [];
 
   /**
-   * Set the attribute array
-   *
-   * @param array $attr The attributes for the widget rendering.
-   */
-  public function setAttr( array $attr ): void {
-    $this->attr = [
-      'api'       => $attr['api'] ?? '',
-      'id'        => $attr['id'] ?? 'ERROR_' . time(),
-      'notice'    => $attr['notice'] ?? '',
-      'fullwidth' => $attr['fullwidth'] ?? false,
-      'devtools'  => $attr['devtools'] ?? false
-    ];
-  }
-
-  /**
    * Creates the output to the sourcecode.
    *
    * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
@@ -62,10 +47,15 @@ class Fubade {
     if ( 32 !== strlen( $this->attr['api'] ) ) {
       ConsoleLogger::getInstance()->log( $this->attr );
       /* translators: %s: the length of the api */
-      printf( esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-Widgets' ),
-              esc_html( strlen( $this->attr['api'] ) ) );
+      printf(
+        esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-Widgets' ),
+        esc_html( strlen( $this->attr['api'] ) )
+      );
 
-      return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-Widgets' );
+      return __(
+        '!!! The fussball.de API must have a length of exactly 32 characters. !!!',
+        'include-fussball-de-Widgets'
+      );
     }
 
     $this->attr = [
@@ -85,6 +75,21 @@ class Fubade {
     wp_add_inline_script( 'fubade-api', 'new FussballdeWidgetAPI();', 'after' );
 
     return $this->render();
+  }
+
+  /**
+   * Set the attribute array
+   *
+   * @param array $attr The attributes for the widget rendering.
+   */
+  public function setAttr( array $attr ): void {
+    $this->attr = [
+      'api'       => $attr['api'] ?? '',
+      'id'        => $attr['id'] ?? 'ERROR_' . time(),
+      'notice'    => $attr['notice'] ?? '',
+      'fullwidth' => $attr['fullwidth'] ?? false,
+      'devtools'  => $attr['devtools'] ?? false
+    ];
   }
 
   /**
@@ -115,8 +120,8 @@ class Fubade {
    */
   private function createIframe(): string {
     // TODO: Test the punycode variant of the IFDW_HOST.
-    $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id'] . '/caller/'
-              . IFDW_HOST;
+    $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id']
+              . '/caller/' . IFDW_HOST;
     $width  = $this->attr['fullwidth'] ? '100%' : '900px';
     $height = '200px';
     $style  = 'border: 1px solid #CECECE; overflow: hidden';

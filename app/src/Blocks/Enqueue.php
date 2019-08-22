@@ -73,31 +73,37 @@ class Enqueue {
    * @since 3.0
    */
   public function registerDynamicBlock(): void {
-    wp_register_script( 'fubade-block-script',
-                        plugins_url( 'assets/js/blocks.js', IFDW_URL ),
-                        [ 'wp-Blocks', 'wp-i18n', 'wp-element' ],
-                        IFDW_VERSION,
-                        true );
+    wp_register_script(
+      'fubade-block-script',
+      plugins_url( 'assets/js/blocks.js', IFDW_URL ),
+      [ 'wp-Blocks', 'wp-i18n', 'wp-element' ],
+      IFDW_VERSION,
+      true
+    );
 
     wp_set_script_translations( 'fubade-block-script', 'include-fussball-de-Widgets' );
 
-    wp_register_style( 'fubade-block-style',
-                       plugins_url( 'assets/css/blocks-main.css', IFDW_URL ),
-                       [],
-                       IFDW_VERSION );
+    wp_register_style(
+      'fubade-block-style',
+      plugins_url( 'assets/css/blocks-main.css', IFDW_URL ),
+      [],
+      IFDW_VERSION
+    );
 
-    register_block_type( 'ifdw/fubade',
-                         [
-                           'attributes'      => [
-                             'id'        => [ 'type' => 'string' ],
-                             'api'       => [ 'type' => 'string' ],
-                             'notice'    => [ 'type' => 'string' ],
-                             'fullwidth' => [ 'type' => 'boolean' ],
-                             'devtools'  => [ 'type' => 'boolean' ],
-                           ],
-                           'editor_script'   => 'fubade-block-script',
-                           'editor_style'    => 'fubade-block-style',
-                           'render_callback' => [ new Fubade(), 'output' ],
-                         ] );
+    register_block_type(
+      'ifdw/fubade',
+      [
+        'attributes'      => [
+          'id'        => [ 'type' => 'string' ],
+          'api'       => [ 'type' => 'string' ],
+          'notice'    => [ 'type' => 'string' ],
+          'fullwidth' => [ 'type' => 'boolean' ],
+          'devtools'  => [ 'type' => 'boolean' ],
+        ],
+        'editor_script'   => 'fubade-block-script',
+        'editor_style'    => 'fubade-block-style',
+        'render_callback' => [ new Fubade(), 'output' ],
+      ]
+    );
   }
 }

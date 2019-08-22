@@ -54,6 +54,18 @@ class ConsoleLogger extends Base {
   }
 
   /**
+   * Generates a logging output of an error.
+   *
+   * @param string $error The error message.
+   *
+   * @since 3.0
+   */
+  public function errorLog( string $error ): void {
+    $errorMessage = 'console.info(' . wp_json_encode( $error, JSON_HEX_TAG ) . ');' . PHP_EOL;
+    wp_add_inline_script( 'jquery', $errorMessage );
+  }
+
+  /**
    * Generates a logging output.
    *
    * @param array $arr The arguments.
@@ -66,18 +78,6 @@ class ConsoleLogger extends Base {
     }
 
     $this->logWidgetInfo( $arr );
-  }
-
-  /**
-   * Generates a logging output of an error.
-   *
-   * @param string $error The error message.
-   *
-   * @since 3.0
-   */
-  public function errorLog( string $error ): void {
-    $errorMessage = 'console.info(' . wp_json_encode( $error, JSON_HEX_TAG ) . ');' . PHP_EOL;
-    wp_add_inline_script( 'jquery', $errorMessage );
   }
 
   /**

@@ -18,6 +18,8 @@
 
 namespace IFDW\Utils;
 
+use function idn_to_ascii;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -38,7 +40,7 @@ class Host {
   public static function cleanHost( string $host ): string {
     if ( ! self::$host && $host ) {
       if ( extension_loaded( 'intl' ) ) {
-        $host = \idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
+        $host = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
       }
       self::$host = wp_unslash( $host ) ?? '';
     }

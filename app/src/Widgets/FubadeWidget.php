@@ -40,9 +40,11 @@ class FubadeWidget extends WP_Widget {
    * @since 3.0
    */
   public function __construct() {
-    parent::__construct( 'ifdw_fubade_widget',
-                         __( 'Fussball.de Widget', 'include-fussball-de-Widgets' ),
-                         [ 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-Widgets' ) ] );
+    parent::__construct(
+      'ifdw_fubade_widget',
+      __( 'Fussball.de Widget', 'include-fussball-de-Widgets' ),
+      [ 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-Widgets' ) ]
+    );
   }
 
   /**
@@ -149,13 +151,15 @@ class FubadeWidget extends WP_Widget {
 
     echo $args['before_title'] . $title . $args['after_title'] . PHP_EOL;
 
-    $output = ( new Fubade() )->output( [
-                                          'id'        => '',
-                                          'api'       => $api,
-                                          'notice'    => $title,
-                                          'fullwidth' => $fullwidth,
-                                          'devtools'  => $devtools,
-                                        ] );
+    $output = ( new Fubade() )->output(
+      [
+        'id'        => '',
+        'api'       => $api,
+        'notice'    => $title,
+        'fullwidth' => $fullwidth,
+        'devtools'  => $devtools,
+      ]
+    );
 
     include_once ABSPATH . 'wp-admin/includes/plugin.php';
     if ( is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {

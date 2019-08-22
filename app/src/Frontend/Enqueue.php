@@ -65,11 +65,13 @@ class Enqueue {
    * @since 3.0
    */
   public function registerFubadeApi(): void {
-    wp_register_script( 'fubade-api',
-                        plugins_url( 'assets/js/fubade-api.js', IFDW_URL ),
-                        [ 'wp-i18n' ],
-                        IFDW_VERSION,
-                        true );
+    wp_register_script(
+      'fubade-api',
+      plugins_url( 'assets/js/fubade-api.js', IFDW_URL ),
+      [ 'wp-i18n' ],
+      IFDW_VERSION,
+      true
+    );
     wp_set_script_translations( 'fubade-api', 'include-fussball-de-Widgets' );
   }
 }

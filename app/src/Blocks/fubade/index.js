@@ -79,7 +79,7 @@ registerBlockType('ifdw/fubade', {
             checked={ devtools }
             help={
               devtools
-                ? __('Some debugging information will be displayed in the browser console.', 'include-fussball-de-widgets')
+                ? __('Debugging information will be displayed in the browser console.', 'include-fussball-de-widgets')
                 : __('No debugging information were outputted.', 'include-fussball-de-widgets')
             }
             label={ __('Show some information for debugging', 'include-fussball-de-widgets') }
@@ -115,7 +115,8 @@ registerBlockType('ifdw/fubade', {
           </div>
         ) : (
           <div className={ `${ className }-shortcode error` }>
-            { __('!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets') }
+            { __('!!! The fussball.de API must have a length of exactly 32 characters. !!!',
+              'include-fussball-de-widgets') }
           </div>
         ) }
       </Fragment>

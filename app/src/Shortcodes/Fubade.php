@@ -68,14 +68,16 @@ class Fubade {
    * @since 3.0
    */
   public function createShortcode( $atts ): string {
-    $a = shortcode_atts( [
-                           'id'        => '',
-                           'api'       => '',
-                           'notice'    => '',
-                           'fullwidth' => '',
-                           'devtools'  => '',
-                         ],
-                         $atts );
+    $a = shortcode_atts(
+      [
+        'id'        => '',
+        'api'       => '',
+        'notice'    => '',
+        'fullwidth' => '',
+        'devtools'  => '',
+      ],
+      $atts
+    );
 
     return ( new \IFDW\Frontend\Fubade() )->output( $a );
   }

@@ -74,7 +74,9 @@ class PluginActions {
       return $links;
     }
 
-    $href      = esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url' );
+    $href      = esc_url(
+      'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url'
+    );
     $ariaLabel = esc_attr__( 'Plugin Additional Links', 'include-fussball-de-Widgets' );
     $linkText  = esc_html__( 'Donate', 'include-fussball-de-Widgets' );
     $rowMeta   = [ 'docs' => "<a href=\"$href\" target=\"_blank\" aria-label=\"$ariaLabel\">$linkText</a>" ];
