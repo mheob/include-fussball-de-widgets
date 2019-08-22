@@ -1,7 +1,5 @@
 # Include Fussball.de Widgets
 
-Jump to the [german](#deutsch) version.
-
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![WordPress](https://img.shields.io/wordpress/plugin/tested/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
@@ -9,6 +7,8 @@ Jump to the [german](#deutsch) version.
 [![PayPal donate button](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url)
 
 ## English
+
+Jump to the [german](#deutsch) version.
 
 A WordPress plugin for easy integration of [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1[meinfussball]=1911&cHash=8e54ad110b258ac9679d70637b4ff796#!/).
 
@@ -67,9 +67,9 @@ A WordPress plugin for easy integration of [fussball.de widgets](http://training
 > \
 > The curly braces from my examples above should only show placeholders. These are also included, which is not correct.
 
-Jump to the [english](#english) version.
-
 ## Deutsch
+
+Jump to the [english](#english) version.
 
 Ein WordPress-Plugin für die einfache Integration der [fussball.de Widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1[meinfussball]=1911&cHash=8e54ad110b258ac9679d70637b4ff796#!/).
 
