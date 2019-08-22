@@ -40,7 +40,8 @@ abstract class Base {
       __( '[FUBADE] Plugin Version: ', 'include-fussball-de-Widgets' ) . IFDW_VERSION,
       __( '[FUBADE] Website for registration: ', 'include-fussball-de-Widgets' ) . IFDW_HOST,
       __( '[FUBADE] Wordpress version: ', 'include-fussball-de-Widgets' ) . $wp_version,
-      __( '[FUBADE] PHP version: ', 'include-fussball-de-Widgets' ) . PHP_VERSION
+      __( '[FUBADE] PHP version: ', 'include-fussball-de-Widgets' ) . PHP_VERSION,
+      __( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-Widgets' ) . json_encode( get_loaded_extensions() )
     ];
   }
 
