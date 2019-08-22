@@ -1,5 +1,5 @@
 <?php
-/** @noinspection PhpUnused, PhpMissingParentCallCommonInspection */
+declare( strict_types=1 );
 
 /**
  * Include Fussball.de Widgets

@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 /**
  * Plugin Name:  Include Fussball.de Widgets
  * Description:  Easy integration of the Fussball.de widgets (currently in the version since season 2016).
