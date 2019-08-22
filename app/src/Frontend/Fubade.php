@@ -120,7 +120,7 @@ class Fubade {
    * @since 3.0
    */
   private function createIframe(): string {
-    // TODO: Test the punycode variant of the IFDW_HOST.
+    // TODO: Test the punycode variant of the IFDW_HOST, especially if the php extension INTL is not loaded.
     $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id']
               . '/caller/' . IFDW_HOST;
     $width  = $this->attr['fullwidth'] ? '100%' : '900px';
