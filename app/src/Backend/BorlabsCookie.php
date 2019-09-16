@@ -70,7 +70,7 @@ class BorlabsCookie {
    */
   public function createContentBlocker(): void {
     if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' )
-         && BorlabsCookieHelper()->getContentBlockerData(
+         || BorlabsCookieHelper()->getContentBlockerData(
         self::CB_ID
       ) ) {
       return;
