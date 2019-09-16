@@ -60,7 +60,9 @@ class BorlabsCookie {
    * @since 3.0
    */
   public function addAdminInitAction(): void {
-    add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
+    if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
+      add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
+    }
   }
 
   /**
@@ -69,8 +71,7 @@ class BorlabsCookie {
    * @since 3.0
    */
   public function createContentBlocker(): void {
-    if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' )
-         || BorlabsCookieHelper()->getContentBlockerData( self::CB_ID ) ) {
+    if ( BorlabsCookieHelper()->getContentBlockerData( self::CB_ID ) ) {
       return;
     }
 
@@ -89,14 +90,8 @@ class BorlabsCookie {
 		<img class="_brlbs-thumbnail" src="' . plugins_url( 'assets/images/cb-fubade.png', IFDW_URL ) . '" alt="%%name%%">
 		<div class="_brlbs-caption">
 			<p>
-				' . __(
-        'By loading the widget, you agree to the privacy policy of fussball.de.',
-        'include-fussball-de-widgets'
-      ) . '<br>
-				<a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' . __(
-                'Learn more',
-                'include-fussball-de-widgets'
-              ) . '</a>
+				' . __( 'By loading the widget, you agree to the privacy policy of fussball.de.', 'include-fussball-de-widgets' ) . '<br>
+				<a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' . __( 'Learn more', 'include-fussball-de-widgets' ) . '</a>
 			</p>
 			<p>
 			<a class="_brlbs-btn" href="#" data-borlabs-cookie-unblock role="button">
