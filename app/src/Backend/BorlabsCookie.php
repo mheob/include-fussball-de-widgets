@@ -60,9 +60,7 @@ class BorlabsCookie {
    * @since 3.0
    */
   public function addAdminInitAction(): void {
-    if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
-      add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
-    }
+    add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
   }
 
   /**
@@ -71,7 +69,10 @@ class BorlabsCookie {
    * @since 3.0
    */
   public function createContentBlocker(): void {
-    if ( BorlabsCookieHelper()->getContentBlockerData( self::CB_ID ) ) {
+    if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' )
+         && BorlabsCookieHelper()->getContentBlockerData(
+        self::CB_ID
+      ) ) {
       return;
     }
 
@@ -150,7 +151,7 @@ class BorlabsCookie {
 
     $cookieId = $wpdb->get_var(
       $wpdb->prepare(
-        "SELECT `cookie_id` FROM `" . $wpdb->prefix . $this->tableNameCookies . "` WHERE `cookie_id` = %s LIMIT 1",
+        "SELECT `cookie_id` FROM `" . $this->tableNameCookies . "` WHERE `cookie_id` = %s LIMIT 1",
         self::CB_ID
       )
     );
