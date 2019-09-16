@@ -81,7 +81,7 @@ class Enqueue {
       true
     );
 
-    wp_set_script_translations( 'fubade-block-script', 'include-fussball-de-Widgets' );
+    wp_set_script_translations( 'fubade-block-script', 'include-fussball-de-widgets' );
 
     wp_register_style(
       'fubade-block-style',

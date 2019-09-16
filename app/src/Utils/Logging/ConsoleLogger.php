@@ -118,7 +118,7 @@ class ConsoleLogger extends Base {
         continue;
       }
 
-      $temp   = __( esc_html( $key ) . ": ", "include-fussball-de-Widgets" ) . esc_html( $value );
+      $temp   = __( esc_html( $key ) . ": ", "include-fussball-de-widgets" ) . esc_html( $value );
       $output .= 'console.info(' . wp_json_encode( '[' . $arr['id'] . '] ' . $temp, JSON_HEX_TAG ) . ');' . PHP_EOL;
     }
 

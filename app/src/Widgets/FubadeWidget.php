@@ -41,8 +41,8 @@ class FubadeWidget extends WP_Widget {
   public function __construct() {
     parent::__construct(
       'ifdw_fubade_widget',
-      __( 'Fussball.de Widget', 'include-fussball-de-Widgets' ),
-      [ 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-Widgets' ) ]
+      __( 'Fussball.de Widget', 'include-fussball-de-widgets' ),
+      [ 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-widgets' ) ]
     );
   }
 
@@ -65,7 +65,7 @@ class FubadeWidget extends WP_Widget {
     ?>
     <p>
       <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-        <?php esc_html_e( 'Title: ', 'include-fussball-de-Widgets' ); ?>
+        <?php esc_html_e( 'Title: ', 'include-fussball-de-widgets' ); ?>
       </label>
       <input
           type="text"
@@ -76,7 +76,7 @@ class FubadeWidget extends WP_Widget {
     </p>
     <p>
       <label for="<?php echo esc_attr( $this->get_field_id( 'api' ) ); ?>">
-        <?php esc_html_e( 'API: ', 'include-fussball-de-Widgets' ); ?>
+        <?php esc_html_e( 'API: ', 'include-fussball-de-widgets' ); ?>
       </label>
       <input
           type="text"
@@ -94,7 +94,7 @@ class FubadeWidget extends WP_Widget {
         <?php checked( '1', $instance['fullwidth'] ); ?>
           value="1">
       <label for="<?php echo esc_attr( $this->get_field_id( 'fullwidth' ) ); ?>">
-        <?php esc_html_e( 'view in full width', 'include-fussball-de-Widgets' ); ?>
+        <?php esc_html_e( 'view in full width', 'include-fussball-de-widgets' ); ?>
       </label>
     </p>
     <p>
@@ -105,7 +105,7 @@ class FubadeWidget extends WP_Widget {
         <?php checked( '1', $instance['devtools'] ); ?>
           value="1">
       <label for="<?php echo esc_attr( $this->get_field_id( 'devtools' ) ); ?>">
-        <?php esc_html_e( 'output log data to console', 'include-fussball-de-Widgets' ); ?>
+        <?php esc_html_e( 'output log data to console', 'include-fussball-de-widgets' ); ?>
       </label>
     </p>
     <?php

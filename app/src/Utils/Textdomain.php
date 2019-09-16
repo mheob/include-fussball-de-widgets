@@ -65,7 +65,7 @@ class Textdomain {
    */
   public function loadTextdomain(): void {
     load_plugin_textdomain(
-      'include-fussball-de-Widgets',
+      'include-fussball-de-widgets',
       false,
       dirname( plugin_basename( IFDW_URL ) ) . '/languages'
     );

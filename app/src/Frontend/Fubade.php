@@ -47,16 +47,12 @@ class Fubade {
 
     if ( 32 !== strlen( $this->attr['api'] ) ) {
       ConsoleLogger::getInstance()->log( $this->attr );
-      /* translators: %s: the length of the api */
-      printf(
-        esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-Widgets' ),
-        esc_html( strlen( $this->attr['api'] ) )
-      );
+      printf( // translators: %s: the length of the api
+        esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ),
+        esc_html( strlen( $this->attr['api'] ) ) );
 
-      return __(
-        '!!! The fussball.de API must have a length of exactly 32 characters. !!!',
-        'include-fussball-de-Widgets'
-      );
+      return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!',
+                 'include-fussball-de-widgets' );
     }
 
     $this->attr = [
@@ -100,7 +96,7 @@ class Fubade {
    * @since 3.0
    */
   private function render(): string {
-    $output = sprintf( '<div id="%s" class="include-fussball-de-Widgets">', esc_html( $this->attr['id'] ) ) . PHP_EOL;
+    $output = sprintf( '<div id="%s" class="include-fussball-de-widgets">', esc_html( $this->attr['id'] ) ) . PHP_EOL;
     $output .= $this->createIframe();
     $output .= '</div>' . PHP_EOL;
 
@@ -121,8 +117,8 @@ class Fubade {
    */
   private function createIframe(): string {
     // TODO: Test the punycode variant of the IFDW_HOST, especially if the php extension INTL is not loaded.
-    $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id']
-              . '/caller/' . IFDW_HOST;
+    $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id'] . '/caller/'
+              . IFDW_HOST;
     $width  = $this->attr['fullwidth'] ? '100%' : '900px';
     $height = '200px';
     $style  = 'border: 1px solid #CECECE; overflow: hidden';

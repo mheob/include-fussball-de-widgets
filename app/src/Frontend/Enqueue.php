@@ -73,6 +73,6 @@ class Enqueue {
       IFDW_VERSION,
       true
     );
-    wp_set_script_translations( 'fubade-api', 'include-fussball-de-Widgets' );
+    wp_set_script_translations( 'fubade-api', 'include-fussball-de-widgets' );
   }
 }

@@ -22,8 +22,10 @@
     "lint:js": "wp-scripts lint-js .",
     "lint:pkg-json": "wp-scripts lint-pkg-json .",
     "start": "wp-scripts start",
-    "i18n:pot": "wp i18n make-pot app/dist app/dist/languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
-    "i18n:json": "wp i18n make-json app/dist/languages/include-fussball-de-widgets-de_DE.po --no-purge",
+    "i18n:pot": "wp i18n make-pot app/dist app/languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
+    "i18n:json": "wp i18n make-json app/languages/include-fussball-de-widgets-de_DE.po --no-purge",
+    "i18n:copy": "cpr app/languages app/dist/languages",
+    "i18n": "npm run i18n:json && npm run i18n:copy",
     "release:copy": "cpr app/dist/ .releases/include-fussball-de-widgets/trunk/ -d",
     "release:github": "cpr ./app/dist/ .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets-v3.0.0.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
     "release": "npm run release:copy && npm run release:github"

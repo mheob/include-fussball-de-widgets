@@ -107,7 +107,7 @@ class SourceLogger extends Base {
         continue;
       }
 
-      $temp    = __( esc_html( $key ) . ": ", "include-fussball-de-Widgets" ) . esc_html( $value );
+      $temp    = __( esc_html( $key ) . ": ", "include-fussball-de-widgets" ) . esc_html( $value );
       $message .= '[' . $arr['id'] . '] ' . $temp . PHP_EOL;
     }
 

@@ -91,22 +91,22 @@ class BorlabsCookie {
 			<p>
 				' . __(
         'By loading the widget, you agree to the privacy policy of fussball.de.',
-        'include-fussball-de-Widgets'
+        'include-fussball-de-widgets'
       ) . '<br>
 				<a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' . __(
                 'Learn more',
-                'include-fussball-de-Widgets'
+                'include-fussball-de-widgets'
               ) . '</a>
 			</p>
 			<p>
 			<a class="_brlbs-btn" href="#" data-borlabs-cookie-unblock role="button">
-					' . __( 'Load widget', 'include-fussball-de-Widgets' ) . '
+					' . __( 'Load widget', 'include-fussball-de-widgets' ) . '
 				</a>
 			</p>
 			<p>
 				<label>
 					<input type="checkbox" name="unblockAll" value="1" checked> 
-					<small>' . __( 'Always load fussball.de Widgets', 'include-fussball-de-Widgets' ) . '</small>
+					<small>' . __( 'Always load fussball.de Widgets', 'include-fussball-de-widgets' ) . '</small>
 				</label>
 			</p>
 		</div>
@@ -130,7 +130,7 @@ class BorlabsCookie {
 
     BorlabsCookieHelper()->addContentBlocker(
       self::CB_ID,
-      __( 'Fussball.de Widget', 'include-fussball-de-Widgets' ),
+      __( 'Fussball.de Widget', 'include-fussball-de-widgets' ),
       '',
       'http://www.fussball.de/privacy/',
       [ 'fussball.de', 'www.fussball.de' ],

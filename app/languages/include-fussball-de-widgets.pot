@@ -1,159 +1,147 @@
 # Copyright (C) 2019 IT-Service Böhm -- Alexander Böhm
 # This file is distributed under the same license as the Include Fussball.de Widgets plugin.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Include Fussball.de Widgets 3.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/include-fussball-"
-"de-widgets\n"
-"Language-Team: IT-Service Böhm -- Alexander Böhm\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/include-fussball-de-widgets\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2019-09-16 12:17+0200\n"
-"PO-Revision-Date: 2019-09-16 12:20+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Poedit 2.2.3\n"
 "X-Domain: include-fussball-de-widgets\n"
-"Last-Translator: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: de_DE\n"
-"X-Poedit-Basepath: ../dist\n"
-"X-Poedit-SearchPath-0: .\n"
 
 #. Plugin Name of the plugin
 #: assets/js/blocks.js:1
 msgid "Include Fussball.de Widgets"
-msgstr "Include Fussball.de Widgets"
+msgstr ""
 
 #. Description of the plugin
-msgid ""
-"Easy integration of the Fussball.de widgets (currently in the version since "
-"season 2016)."
+msgid "Easy integration of the Fussball.de widgets (currently in the version since season 2016)."
 msgstr ""
-"Einfaches Einbinden der Fussball.de-Widgets (derzeit in der Version seit "
-"Saison 2016)."
 
 #. Author of the plugin
 msgid "IT-Service Böhm -- Alexander Böhm"
-msgstr "IT-Service Böhm -- Alexander Böhm"
+msgstr ""
 
 #. Author URI of the plugin
 msgid "http://profiles.wordpress.org/mheob"
-msgstr "http://profiles.wordpress.org/mheob"
+msgstr ""
 
 #: Backend/BorlabsCookie.php:92
 msgid "By loading the widget, you agree to the privacy policy of fussball.de."
 msgstr ""
-"Durch das Laden des Widgets stimmen Sie der Datenschutzerklärung von "
-"fussball.de zu."
 
 #: Backend/BorlabsCookie.php:96
 msgid "Learn more"
-msgstr "Mehr erfahren"
+msgstr ""
 
 #: Backend/BorlabsCookie.php:103
 msgid "Load widget"
-msgstr "Widget laden"
+msgstr ""
 
 #: Backend/BorlabsCookie.php:109
 msgid "Always load fussball.de Widgets"
-msgstr "Die fussball.de Widgets immer laden"
+msgstr ""
 
 #: Backend/BorlabsCookie.php:133 Widgets/FubadeWidget.php:44
 #: assets/js/blocks.js:1
 msgid "Fussball.de Widget"
-msgstr "Fussball.de Widget"
+msgstr ""
 
 #. translators: %s: the length of the api
 #: Frontend/Fubade.php:51
 msgid "<!-- API length: %s -->\n"
-msgstr "<!-- API-Länge: %s -->\n"
+msgstr ""
 
 #: Frontend/Fubade.php:54 assets/js/blocks.js:1
-msgid ""
-"!!! The fussball.de API must have a length of exactly 32 characters. !!!"
+msgid "!!! The fussball.de API must have a length of exactly 32 characters. !!!"
 msgstr ""
-"!!! Die fussball.de-API muss eine Länge von genau 32 Zeichen haben. !!!"
 
 #: Utils/Logging/Base.php:41
 msgid "[FUBADE] Plugin Version: "
-msgstr "[FUBADE] Plugin-Version: "
+msgstr ""
 
 #: Utils/Logging/Base.php:42
 msgid "[FUBADE] Website for registration: "
-msgstr "[FUBADE] Website zur Registrierung: "
+msgstr ""
 
 #: Utils/Logging/Base.php:43
 msgid "[FUBADE] Wordpress version: "
-msgstr "[FUBADE] Wordpress-Version: "
+msgstr ""
 
 #: Utils/Logging/Base.php:44
 msgid "[FUBADE] PHP version: "
-msgstr "[FUBADE] PHP-Version: "
+msgstr ""
 
 #: Utils/Logging/Base.php:45
 msgid "[FUBADE] PHP ext loaded: "
-msgstr "[FUBADE] PHP ext geladen: "
+msgstr ""
 
 #: Utils/PluginActions.php:81
 msgid "Plugin Additional Links"
-msgstr "Zusätzliche Plugin-Links"
+msgstr ""
 
 #: Utils/PluginActions.php:82
 msgid "Donate"
-msgstr "Spenden"
+msgstr ""
 
 #: Widgets/FubadeWidget.php:45
 msgid "Displays the fussball.de widget."
-msgstr "Zeigt das fussball.de-Widget an."
+msgstr ""
 
 #: Widgets/FubadeWidget.php:68
 msgid "Title: "
-msgstr "Titel: "
+msgstr ""
 
 #: Widgets/FubadeWidget.php:79
 msgid "API: "
-msgstr "Api: "
+msgstr ""
 
 #: Widgets/FubadeWidget.php:97
 msgid "view in full width"
-msgstr "in voller Breite darstellen"
+msgstr ""
 
 #: Widgets/FubadeWidget.php:108
 msgid "output log data to console"
-msgstr "Logdaten in der Konsole ausgeben"
+msgstr ""
 
 #: assets/js/blocks.js:1
 msgid "Showing the fussball.de widget"
-msgstr "Das fussball.de-Widget anzeigen"
+msgstr ""
 
 #: assets/js/blocks.js:1
 msgid "fubade"
-msgstr "fubade"
+msgstr ""
 
 #: assets/js/blocks.js:1
 msgid "Fussball.de Widgets Settings"
-msgstr "Fussball.de Widgets-Einstellungen"
+msgstr ""
 
 #: assets/js/blocks.js:1
 msgid "Notice"
-msgstr "Hinweis"
+msgstr ""
 
 #: assets/js/blocks.js:1
 msgid "Show in full width"
-msgstr "In voller Breite anzeigen"
+msgstr ""
 
 #: assets/js/blocks.js:1
 msgid "Show some information for debugging"
-msgstr "Anzeigen einiger Informationen zum Debuggen"
+msgstr ""
 
 #: assets/js/blocks.js:1
 msgid "Api:"
-msgstr "Api:"
+msgstr ""
 
 #: assets/js/blocks.js:1
 msgid "Insert API here..."
-msgstr "API hier einfügen..."
+msgstr ""
 
 #: assets/js/blocks.js:1
 msgid "The widget should now be able to be displayed in the frontend."
-msgstr "Das Widget sollte nun im Frontend angezeigt werden können."
+msgstr ""
