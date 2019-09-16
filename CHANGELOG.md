@@ -4,9 +4,24 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.0.0] - 2019-09-16
+
 ### Added
 
+- A fussball.de widget can be generated in the WordPress widget area (Appearance -> Widgets).
 - Tabs from theme Divi-Theme are now supported.
+- Borlabs-Cookie support for loading the plugin as an opt-in setting.
+- A donation link to cover my expenses a bit.
+
+### Changed
+
+- [IMPORTANT] Set the required PHP version up to 7.2.
+- Redesign the whole structure and use OOP from now on.
+- Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
+
+### Fixed
+
+- Logging issues have been resolved.
 
 ## [2.2.2] - 2019-06-20
 
@@ -167,7 +182,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.2...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.0...HEAD
+[2.2.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.2...v3.0.0
 [2.2.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.1...v2.2.2
 [2.2.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.0...v2.2.1
 [2.2.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.1...v2.2.0
