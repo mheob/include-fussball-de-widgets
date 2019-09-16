@@ -49,10 +49,10 @@ class Fubade {
       ConsoleLogger::getInstance()->log( $this->attr );
       printf( // translators: %s: the length of the api
         esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ),
-        esc_html( strlen( $this->attr['api'] ) ) );
+        esc_html( strlen( $this->attr['api'] ) )
+      );
 
-      return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!',
-                 'include-fussball-de-widgets' );
+      return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
     }
 
     $this->attr = [
