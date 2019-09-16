@@ -1,7 +1,5 @@
 # Include Fussball.de Widgets
 
-Jump to [DEUTSCH](#deutsch)
-
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![WordPress](https://img.shields.io/wordpress/plugin/tested/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
@@ -10,17 +8,20 @@ Jump to [DEUTSCH](#deutsch)
 
 ## English
 
-A WordPress plugin for easy integration of fussball.de widgets.
+Jump to the [german](#deutsch) version.
+
+A WordPress plugin for easy integration of [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1[meinfussball]=1911&cHash=8e54ad110b258ac9679d70637b4ff796#!/).
 
 ## Installation
 
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. You can use the plugin in two ways. As a shortcode and since wordpress version 5 also as an integrated Gutenberg Block.
+1. You can use the plugin in several ways. As a shortcode, WordPress widget and since WordPress version 5 also as an integrated Gutenberg block.
    1. In wordpress versions below 5 use the shortcode like:
       `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe in fullwidth} devtools={print devtools}]`\
       e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
    1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `fubade`.
+   1. Even the usual WordPress widgets are possible.
 
 ## How to use
 
@@ -49,7 +50,7 @@ A WordPress plugin for easy integration of fussball.de widgets.
 
 ### What is the `devtools` as `{print devtools}`?
 
-> The PRINT DEVTOOLS can help the creator to get debugging informations.\
+> The PRINT DEVTOOLS can help the creator to get debugging information.\
 > As values are only `true` or `1` possible.\
 > The default value ist `false` or rather `0`.\
 > **The PRINT DEVTOOLS is optional and can be omitted.**
@@ -68,17 +69,20 @@ A WordPress plugin for easy integration of fussball.de widgets.
 
 ## Deutsch
 
-Ein WordPress-Plugin für die einfache Integration der fussball.de Widgets.
+Jump to the [english](#english) version.
+
+Ein WordPress-Plugin für die einfache Integration der [fussball.de Widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1[meinfussball]=1911&cHash=8e54ad110b258ac9679d70637b4ff796#!/).
 
 ## Installation
 
 1. Installiere das Fussball.de Widget entweder über das WordPress.org-Plugin-Verzeichnis oder indem Du die Dateien auf Deinen Server hochlädst.
 1. Aktiviere das Plugin über das 'Plugins'-Menü in WordPress.
-1. Du kannst das Plugin auf zwei Arten verwenden. Als Shortcode und seit der WordPress-Version 5 auch als integrierter Gutenberg-Block.
+1. Du kannst das Plugin auf mehrere Arten verwenden. Als Shortcode, WordPress Widget und seit der WordPress-Version 5 auch als integrierter Gutenberg-Block.
    1. Verwende in den WordPress-Versionen unter 5 den folgenden Shortcode:
       `[fubade api="{32-digit API}" notice="{Hinweis}" fullwidth={iframe in voller Breite} devtools={Ausgabe der DevTools}]`\
       z.B. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
    1. In den Versionen seit 5.0 kannst Du den Gutenberg-Block verwenden. Du findest es unter den Widgets oder mit dem Suchmuster `fubade`.
+   1. Auch die gewohnten WordPress widgets sind möglich.
 
 ## Wie benutzt Du das Plugin?
 
@@ -114,11 +118,11 @@ Ein WordPress-Plugin für die einfache Integration der fussball.de Widgets.
 
 ### Wo kann ich den Website-Schlüssel bekommen?
 
-> Den erforderlichen Ausweis erhalten Sie bei fussball.de in Ihren Widgets (<https://www.fussball.de/account.admin.widgets>). In der Übersicht Ihres Widgets finden Sie den Punkt `Website-Schlüssel`. Dies ist die benötigte Zeichenfolge.
+> Den erforderlichen Ausweis erhältst Du bei fussball.de in Deinen Widgets (<https://www.fussball.de/account.admin.widgets>). In der Übersicht Deines Widgets findest Du den Punkt `Website-Schlüssel`. Dies ist die benötigte Zeichenfolge.
 
 ### Was kann ich machen wenn das Plugin nicht funktioniert?
 
-> Der erste Anhaltspunkt sollte immer das [offizielle Support-Forum auf wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch die [Issues-Sektion auf Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues) sein.\
+> Der erste Anhaltspunkt sollte immer das [offizielle Support-Forum auf wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch der [Problembereich auf Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues) sein.\
 > \
 > Gerne und oft werden auch die falschen Anführungszeichen verwendet. Hier muss unbedingt das normale `"`-Zeichen verwendet werden.\
 > \

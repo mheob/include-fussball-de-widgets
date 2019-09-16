@@ -2,11 +2,11 @@
 Contributors: mheob
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url
 Tags: soccer, football, widget, fussball.de
-Requires PHP: 5.6
+Requires PHP: 7.2
 Requires at least: 4.8
 Tested up to: 5.2
 Stable tag: 3.0.0
-License: GPLv2
+License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 A WordPress plugin for easy integration of fussball.de widgets.
@@ -19,11 +19,12 @@ A WordPress plugin for easy integration of fussball.de widgets.
 
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. You can use the plugin in two ways. As a shortcode and since wordpress version 5 also as an integrated Gutenberg Block.
+1. You can use the plugin in several ways. As a shortcode, WordPress widget and since WordPress version 5 also as an integrated Gutenberg block.
    1. In wordpress versions below 5 use the shortcode like:
       `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe in fullwidth} devtools={print devtools}]`
       e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
    1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `fubade`.
+   1. Even the usual WordPress widgets are possible.
 
 == Frequently Asked Questions ==
 
@@ -52,7 +53,7 @@ The default value ist `false` or rather `0`.
 
 = What is the `devtools` as `{print devtools}`? =
 
-The PRINT DEVTOOLS can help the creator to get debugging informations. 
+The PRINT DEVTOOLS can help the creator to get debugging information.
 As values are only `true` or `1` possible. 
 The default value ist `false` or rather `0`. 
 **The PRINT DEVTOOLS is optional and can be omitted.**
@@ -75,11 +76,24 @@ The latest state of development is available at any time in my [Github repositor
 
 == Changelog ==
 
-= 2.3.0 - 2019-07-31 =
+= 3.0.0 - 2019-09-16 =
 
 = Added =
 
+* A fussball.de widget can be generated in the WordPress widget area (Appearance -> Widgets).
 * Tabs from theme Divi-Theme are now supported.
+* Borlabs-Cookie support for loading the plugin as an opt-in setting.
+* A donation link to cover my expenses a bit.
+
+= Changed =
+
+* [IMPORTANT] Set the required PHP version up to 7.2.
+* Redesign the whole structure and use OOP from now on.
+* Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
+
+= Fixed =
+
+* Logging issues have been resolved.
 
 = 2.2.2 - 2019-06-20 =
 
@@ -240,11 +254,24 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 3.0.0 - 2019-07-31 =
+= 3.0.0 - 2019-09-16 =
 
 = Added =
 
+* A fussball.de widget can be generated in the WordPress widget area (Appearance -> Widgets).
 * Tabs from theme Divi-Theme are now supported.
+* Borlabs-Cookie support for loading the plugin as an opt-in setting.
+* A donation link to cover my expenses a bit.
+
+= Changed =
+
+* [IMPORTANT] Set the required PHP version up to 7.2.
+* Redesign the whole structure and use OOP from now on.
+* Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
+
+= Fixed =
+
+* Logging issues have been resolved.
 
 == Screenshots ==
 
