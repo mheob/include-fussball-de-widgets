@@ -76,7 +76,7 @@ The latest state of development is available at any time in my [Github repositor
 
 == Changelog ==
 
-= 3.0.0 - 2019-07-20 =
+= 3.0.0 - 2019-09-16 =
 
 = Added =
 
@@ -87,7 +87,7 @@ The latest state of development is available at any time in my [Github repositor
 
 = Changed =
 
-* Set the required PHP version up to 7.2.
+* [IMPORTANT] Set the required PHP version up to 7.2.
 * Redesign the whole structure and use OOP from now on.
 * Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
 
@@ -254,7 +254,7 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 3.0.0 - 2019-07-20 =
+= 3.0.0 - 2019-09-16 =
 
 = Added =
 
@@ -265,7 +265,7 @@ The latest state of development is available at any time in my [Github repositor
 
 = Changed =
 
-* Set the required PHP version up to 7.2.
+* [IMPORTANT] Set the required PHP version up to 7.2.
 * Redesign the whole structure and use OOP from now on.
 * Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
 
