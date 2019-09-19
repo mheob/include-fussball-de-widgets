@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.0.1] - 2019-09-19
+
 - Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
 
 ## [3.0.0] - 2019-09-16
@@ -185,7 +187,8 @@ All notable changes to this project will be documented in this file.
 - Initial release.
 
 [unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.0...HEAD
-[2.2.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.2...v3.0.0
+[3.0.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.0...v3.0.1
+[3.0.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.2...v3.0.0
 [2.2.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.1...v2.2.2
 [2.2.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.0...v2.2.1
 [2.2.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.1.1...v2.2.0
