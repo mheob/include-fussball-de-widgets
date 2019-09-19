@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
+
 ## [3.0.0] - 2019-09-16
 
 ### Added

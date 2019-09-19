@@ -76,6 +76,12 @@ The latest state of development is available at any time in my [Github repositor
 
 == Changelog ==
 
+= 3.0.1 - 2019-09-19 =
+
+= Fix =
+
+* Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
+
 = 3.0.0 - 2019-09-16 =
 
 = Added =
@@ -254,24 +260,11 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 3.0.0 - 2019-09-16 =
+= 3.0.1 - 2019-09-19 =
 
-= Added =
+= Fix =
 
-* A fussball.de widget can be generated in the WordPress widget area (Appearance -> Widgets).
-* Tabs from theme Divi-Theme are now supported.
-* Borlabs-Cookie support for loading the plugin as an opt-in setting.
-* A donation link to cover my expenses a bit.
-
-= Changed =
-
-* [IMPORTANT] Set the required PHP version up to 7.2.
-* Redesign the whole structure and use OOP from now on.
-* Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
-
-= Fixed =
-
-* Logging issues have been resolved.
+* Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
 
 == Screenshots ==
 
