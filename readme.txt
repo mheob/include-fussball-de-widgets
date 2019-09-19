@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 7.2
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,12 @@ The curly braces from my examples above should only show placeholders. These are
 The latest state of development is available at any time in my [Github repository](https://github.com/ITS-Boehm/include-fussball-de-widgets/). Look around there.
 
 == Changelog ==
+
+= 3.0.1 - 2019-09-19 =
+
+= Fix =
+
+* Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
 
 = 3.0.0 - 2019-09-16 =
 
@@ -254,24 +260,11 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 3.0.0 - 2019-09-16 =
+= 3.0.1 - 2019-09-19 =
 
-= Added =
+= Fix =
 
-* A fussball.de widget can be generated in the WordPress widget area (Appearance -> Widgets).
-* Tabs from theme Divi-Theme are now supported.
-* Borlabs-Cookie support for loading the plugin as an opt-in setting.
-* A donation link to cover my expenses a bit.
-
-= Changed =
-
-* [IMPORTANT] Set the required PHP version up to 7.2.
-* Redesign the whole structure and use OOP from now on.
-* Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
-
-= Fixed =
-
-* Logging issues have been resolved.
+* Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
 
 == Screenshots ==
 
