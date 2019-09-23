@@ -6,9 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ## [3.0.2] - 2019-09-23
 
+### Fixed
+
 - Add Fusion-Tabs as the same as Divi-Tabs.
 
 ## [3.0.1] - 2019-09-19
+
+### Fixed
 
 - Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
 
