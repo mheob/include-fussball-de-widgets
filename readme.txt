@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 7.2
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 3.0.1
+Stable tag: 3.0.2
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,10 @@ The latest state of development is available at any time in my [Github repositor
 
 == Changelog ==
 
+= 3.0.2 - 2019-09-23 =
+
+* Add Fusion-Tabs as the same as Divi-Tabs.
+
 = 3.0.1 - 2019-09-19 =
 
 = Fix =
@@ -143,25 +147,25 @@ The latest state of development is available at any time in my [Github repositor
 
 * Support for setting up the width of the widget to 100% to of their parent element.
 
-= [2.0.3] - 2019-01-27 =
+= 2.0.3 - 2019-01-27 =
 
 = Fixed =
 
 * Fix an issue, that the Internet Explorer 11 can't load plugin.
 
-= [2.0.2] - 2018-11-28 =
+= 2.0.2 - 2018-11-28 =
 
 = Added =
 
 * Local language files. For the Gutenberg Block they aren't in GlotPress.
 
-= [2.0.1] - 2018-11-24 =
+= 2.0.1 - 2018-11-24 =
 
 = Fixed =
 
 * Fix the "Fatal error: Call to undefined function register_block_type()".
 
-= [2.0.0] - 2018-11-24 =
+= 2.0.0 - 2018-11-24 =
 
 = Added =
 
@@ -173,20 +177,20 @@ The latest state of development is available at any time in my [Github repositor
 * No more input for the ID is needed. It will generate automatically at now.
 * Redesign the whole structure.
 
-= [1.6.1] - 2018-03-26 =
+= 1.6.1 - 2018-03-26 =
 
 = Fixed =
 
 * If the ID is numeric only, a string will added in front.
 
-= [1.6.0] - 2018-03-17 =
+= 1.6.0 - 2018-03-17 =
 
 = Fixed =
 
 * Clean up the ID in the shortcode by using only chars, digits and underscores. This prevents some possible errors.
 * Fix a typo on the loading text.
 
-= [1.5.5] - 2018-02-06 =
+= 1.5.5 - 2018-02-06 =
 
 = Changed =
 
@@ -196,31 +200,31 @@ The latest state of development is available at any time in my [Github repositor
 
 * The Plugin is tested up to wordpress version 4.9.4.
 
-= [1.5.4] - 2018-01-17 =
+= 1.5.4 - 2018-01-17 =
 
 = Added =
 
 * The Plugin is tested up to wordpress version 4.9.2.
 
-= [1.5.3] - 2017-11-13 =
+= 1.5.3 - 2017-11-13 =
 
 = Added =
 
 * The Plugin is tested up to wordpress version 4.9.
 
-= [1.5.2] - 2017-11-01 =
+= 1.5.2 - 2017-11-01 =
 
 = Added =
 
 * The Plugin is tested up to wordpress version 4.8.3.
 
-= [1.5.1] - 2017-08-30 =
+= 1.5.1 - 2017-08-30 =
 
 = Fixed =
 
 * Fix the "uncaught ReferenceError: fubade is not defined".
 
-= [1.5.0] - 2017-08-26 =
+= 1.5.0 - 2017-08-26 =
 
 = Added =
 
@@ -230,25 +234,25 @@ The latest state of development is available at any time in my [Github repositor
 
 * The FAQ are now with much more accurate descriptions.
 
-= [1.4.0] - 2017-08-23 =
+= 1.4.0 - 2017-08-23 =
 
 = Fixed =
 
 * Fix a wrong sequence in the layout of the scripts.
 
-= [1.3.0] - 2017-08-23 =
+= 1.3.0 - 2017-08-23 =
 
 = Fixed =
 
 * Fix some typos.
 
-= [1.2.0] - 2017-08-23 =
+= 1.2.0 - 2017-08-23 =
 
 = Fixed =
 
 * Fix some typos.
 
-= [1.1.0] - 2017-08-23 =
+= 1.1.0 - 2017-08-23 =
 
 = Fixed =
 
@@ -260,11 +264,9 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 3.0.1 - 2019-09-19 =
+= 3.0.2 - 2019-09-23 =
 
-= Fix =
-
-* Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
+* Add Fusion-Tabs as the same as Divi-Tabs.
 
 == Screenshots ==
 
