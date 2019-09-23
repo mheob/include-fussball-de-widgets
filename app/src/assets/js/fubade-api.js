@@ -23,13 +23,14 @@ window.FussballdeWidgetAPI = () => {
     false
   );
 
-  /** Divi tab support */
+  /** Support for Divi-Tabs & Fusion-Tabs */
   // noinspection XHTMLIncompatabilitiesJS
   if (document.body.classList.contains('et_divi_theme')) {
-    const diviTabs = document.querySelectorAll('.et_pb_tabs_controls a');
-    const iframes = document.querySelectorAll('.et_pb_tab_content [id^="fubade_"] > iframe');
-    if (0 < diviTabs.length) {
-      Array.from(diviTabs)
+    const tabs = document.querySelectorAll('.et_pb_tabs_controls a, .fusion-tabs a.tab-link');
+    const iframes = document.querySelectorAll(
+      '.et_pb_tab_content [id^="fubade_"] > iframe, .fusion-tabs .tab_content [id^="fubade_"] > iframe');
+    if (0 < tabs.length) {
+      Array.from(tabs)
         .forEach(diviTab => {
           diviTab.addEventListener(
             'click',

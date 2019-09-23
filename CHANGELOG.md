@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.0.2] - 2019-09-23
+
+- Add Fusion-Tabs as the same as Divi-Tabs.
+
 ## [3.0.1] - 2019-09-19
 
 - Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
@@ -19,7 +23,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- [IMPORTANT] Set the required PHP version up to 7.2.
+- *IMPORTANT* Set the required PHP version up to 7.2.
 - Redesign the whole structure and use OOP from now on.
 - Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
 
@@ -186,7 +190,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.0...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.2...HEAD
+[3.0.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.2...v3.0.0
 [2.2.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.1...v2.2.2
