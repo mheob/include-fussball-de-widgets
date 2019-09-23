@@ -78,11 +78,13 @@ The latest state of development is available at any time in my [Github repositor
 
 = 3.0.2 - 2019-09-23 =
 
+= Fixed =
+
 * Add Fusion-Tabs as the same as Divi-Tabs.
 
 = 3.0.1 - 2019-09-19 =
 
-= Fix =
+= Fixed =
 
 * Warning: Use of undefined constant INTL_IDNA_VARIANT_UTS46
 
