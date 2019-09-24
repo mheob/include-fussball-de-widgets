@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.0.3] - 2019-09-24
+
+### Fixed
+
+- Loading issue when generating the widget via the gutenberg blocks.
+
 ## [3.0.2] - 2019-09-23
 
 ### Fixed
@@ -194,7 +200,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.2...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.3...HEAD
+[3.0.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v2.2.2...v3.0.0
