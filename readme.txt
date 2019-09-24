@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 7.2
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 3.0.3-b1
+Stable tag: 3.0.3
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,12 @@ The curly braces from my examples above should only show placeholders. These are
 The latest state of development is available at any time in my [Github repository](https://github.com/ITS-Boehm/include-fussball-de-widgets/). Look around there.
 
 == Changelog ==
+
+= 3.0.3 - 2019-09-24 =
+
+= Fixed =
+
+* Loading issue when generating the widget via the gutenberg blocks.
 
 = 3.0.2 - 2019-09-23 =
 
@@ -266,9 +272,11 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 3.0.2 - 2019-09-23 =
+= 3.0.3 - 2019-09-24 =
 
-* Add Fusion-Tabs as the same as Divi-Tabs.
+= Fixed =
+
+* Loading Javascript at using tabs.
 
 == Screenshots ==
 
