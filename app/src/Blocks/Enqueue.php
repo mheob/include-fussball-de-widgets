@@ -64,19 +64,18 @@ class Enqueue {
 
   /**
    * Register the dynamic block.
-   * `id`: the id talks between the html and the fussball.de api.
-   * `api`: The official and individuell api snippet from fussball.de.
-   * `notice`: A short description for the user.
-   * `fullwidth`: If true, the widget is displaying in the full width.
-   * `devtools`: If true, some dev tools are used.
    *
    * @since 3.0
    */
   public function registerDynamicBlock(): void {
+    if ( ! function_exists( 'register_block_type' ) ) {
+      return;
+    }
+
     wp_register_script(
       'fubade-block-script',
       plugins_url( 'assets/js/blocks.js', IFDW_URL ),
-      [ 'wp-Blocks', 'wp-i18n', 'wp-element' ],
+      [],
       IFDW_VERSION,
       true
     );
@@ -102,8 +101,20 @@ class Enqueue {
         ],
         'editor_script'   => 'fubade-block-script',
         'editor_style'    => 'fubade-block-style',
-        'render_callback' => [ new Fubade(), 'output' ],
+        'render_callback' => [ $this, 'render' ],
       ]
     );
+  }
+
+  /**
+   * Creates the output to the sourcecode.
+   *
+   * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
+   *
+   * @return string
+   * @since 3.0
+   */
+  public function render( $attr ): string {
+    return ( new Fubade() )->output( $attr );
   }
 }

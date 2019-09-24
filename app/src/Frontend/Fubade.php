@@ -102,7 +102,7 @@ class Fubade {
 
     if ( $this->attr['devtools'] ) {
       ConsoleLogger::getInstance()->log( $this->attr );
-    } else {
+    } elseif ( ! is_admin() ) {
       SourceLogger::getInstance()->log( $this->attr );
     }
 
