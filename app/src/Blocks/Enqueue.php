@@ -67,6 +67,7 @@ class Enqueue {
    *
    * @since 3.0
    */
+  /** @noinspection PhpUnused */
   public function registerDynamicBlock(): void {
     if ( ! function_exists( 'register_block_type' ) ) {
       return;

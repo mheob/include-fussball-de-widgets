@@ -68,6 +68,7 @@ class BorlabsCookie {
    *
    * @since 3.0
    */
+  /** @noinspection PhpUnused */
   public function createContentBlocker(): void {
     if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' )
          || BorlabsCookieHelper()->getContentBlockerData(
