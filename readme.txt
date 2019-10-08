@@ -5,7 +5,7 @@ Tags: soccer, football, widget, fussball.de
 Requires PHP: 7.2
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,17 @@ The curly braces from my examples above should only show placeholders. These are
 The latest state of development is available at any time in my [Github repository](https://github.com/ITS-Boehm/include-fussball-de-widgets/). Look around there.
 
 == Changelog ==
+
+= 3.0.4 - 2019-10-08 =
+
+= Added =
+
+* Error handling during generation of iframe.
+* Highlighting of errors by displaying an alert box.
+
+= Fixed =
+
+* IFDW\Utils\Host::cleanHost() must be of the type string, null given.
 
 = 3.0.3 - 2019-09-24 =
 
@@ -272,11 +283,16 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= 3.0.3 - 2019-09-24 =
+= 3.0.4 - 2019-10-08 =
+
+= Added =
+
+* Error handling during generation of iframe.
+* Highlighting of errors by displaying an alert box.
 
 = Fixed =
 
-* Loading Javascript at using tabs.
+* IFDW\Utils\Host::cleanHost() must be of the type string, null given.
 
 == Screenshots ==
 
