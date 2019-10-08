@@ -1,18 +1,17 @@
 # Copyright (C) 2019 IT-Service Böhm -- Alexander Böhm
 # This file is distributed under the same license as the Include Fussball.de Widgets plugin.
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Include Fussball.de Widgets 3.0.0\n"
+"Project-Id-Version: Include Fussball.de Widgets 3.0.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/include-fussball-de-widgets\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-09-16 12:17+0200\n"
+"POT-Creation-Date: 2019-10-08T11:39:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: WP-CLI 2.3.0\n"
 "X-Domain: include-fussball-de-widgets\n"
 
 #. Plugin Name of the plugin
@@ -32,7 +31,7 @@ msgstr ""
 msgid "http://profiles.wordpress.org/mheob"
 msgstr ""
 
-#: Backend/BorlabsCookie.php:92
+#: Backend/BorlabsCookie.php:95
 msgid "By loading the widget, you agree to the privacy policy of fussball.de."
 msgstr ""
 
@@ -40,26 +39,38 @@ msgstr ""
 msgid "Learn more"
 msgstr ""
 
-#: Backend/BorlabsCookie.php:103
+#: Backend/BorlabsCookie.php:100
 msgid "Load widget"
 msgstr ""
 
-#: Backend/BorlabsCookie.php:109
+#: Backend/BorlabsCookie.php:106
 msgid "Always load fussball.de Widgets"
 msgstr ""
 
-#: Backend/BorlabsCookie.php:133 Widgets/FubadeWidget.php:44
+#: Backend/BorlabsCookie.php:130
+#: Widgets/FubadeWidget.php:44
 #: assets/js/blocks.js:1
 msgid "Fussball.de Widget"
 msgstr ""
 
 #. translators: %s: the length of the api
-#: Frontend/Fubade.php:51
-msgid "<!-- API length: %s -->\n"
+#: Frontend/Fubade.php:69
+msgid ""
+"<!-- API length: %s -->\n"
+""
 msgstr ""
 
-#: Frontend/Fubade.php:54 assets/js/blocks.js:1
+#: Frontend/Fubade.php:116
+#: assets/js/blocks.js:1
 msgid "!!! The fussball.de API must have a length of exactly 32 characters. !!!"
+msgstr ""
+
+#: Frontend/Fubade.php:122
+msgid "The PHP variable <code>$_SERVER[\"SERVER_NAME\"]</code> was not set by the server."
+msgstr ""
+
+#: Frontend/Fubade.php:128
+msgid "An undefined error has occurred."
 msgstr ""
 
 #: Utils/Logging/Base.php:41
@@ -82,11 +93,11 @@ msgstr ""
 msgid "[FUBADE] PHP ext loaded: "
 msgstr ""
 
-#: Utils/PluginActions.php:81
+#: Utils/PluginActions.php:80
 msgid "Plugin Additional Links"
 msgstr ""
 
-#: Utils/PluginActions.php:82
+#: Utils/PluginActions.php:81
 msgid "Donate"
 msgstr ""
 
