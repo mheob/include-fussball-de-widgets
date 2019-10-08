@@ -63,6 +63,7 @@ class Textdomain {
    *
    * @since 3.0
    */
+  /** @noinspection PhpUnused */
   public function loadTextdomain(): void {
     load_plugin_textdomain(
       'include-fussball-de-widgets',

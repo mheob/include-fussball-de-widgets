@@ -65,6 +65,7 @@ class Enqueue {
    *
    * @since 3.0
    */
+  /** @noinspection PhpUnused */
   public function registerFubadeApi(): void {
     wp_register_script(
       'fubade-api',

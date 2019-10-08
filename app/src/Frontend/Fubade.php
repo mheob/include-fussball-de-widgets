@@ -31,6 +31,7 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0
  */
 class Fubade {
+  private const ERROR = [ 'API_LENGTH' => 'api-length', 'SERVER_NAME' => 'no-server-name' ];
   private $attr = [];
 
   /**
@@ -44,16 +45,6 @@ class Fubade {
   public function output( $attr ): string {
     // TODO: Configure default setting in the admin area.
     $this->setAttr( $attr );
-
-    if ( 32 !== strlen( $this->attr['api'] ) ) {
-      ConsoleLogger::getInstance()->log( $this->attr );
-      printf( // translators: %s: the length of the api
-        esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ),
-        esc_html( strlen( $this->attr['api'] ) )
-      );
-
-      return __( '!!! The fussball.de API must have a length of exactly 32 characters. !!!', 'include-fussball-de-widgets' );
-    }
 
     $this->attr = [
       'api'       => sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $this->attr['api'] ) ) ),
@@ -71,7 +62,24 @@ class Fubade {
 
     wp_add_inline_script( 'fubade-api', 'new FussballdeWidgetAPI();', 'after' );
 
-    return $this->render();
+
+    if ( 32 !== strlen( $this->attr['api'] ) ) {
+      ConsoleLogger::getInstance()->log( $this->attr );
+      printf( // translators: %s: the length of the api
+        esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ),
+        esc_html( strlen( $this->attr['api'] ) )
+      );
+
+      return $this->render( self::ERROR['API_LENGTH'] );
+    }
+
+    if ( IFDW_HOST === 'SERVER_NAME-not-set' ) {
+      ConsoleLogger::getInstance()->log( $this->attr );
+
+      return $this->render( self::ERROR['SERVER_NAME'] );
+    }
+
+    return $this->render( null );
   }
 
   /**
@@ -92,12 +100,39 @@ class Fubade {
   /**
    * Render all the output.
    *
+   * @param string|null $error Potential errors.
+   *
    * @return string
    * @since 3.0
    */
-  private function render(): string {
-    $output = sprintf( '<div id="%s" class="include-fussball-de-widgets">', esc_html( $this->attr['id'] ) ) . PHP_EOL;
-    $output .= $this->createIframe();
+  private function render( ?string $error ): string {
+    $divAttributeString = 'id="' . esc_html( $this->attr['id'] ) . '" class="include-fussball-de-widgets"';
+
+    if ( $error ) {
+      $divAttributeString .= ' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
+
+      switch ( $error ) {
+        case self::ERROR['API_LENGTH']:
+          $divContent = __(
+                          '!!! The fussball.de API must have a length of exactly 32 characters. !!!',
+                          'include-fussball-de-widgets'
+                        ) . PHP_EOL;
+          break;
+        case self::ERROR['SERVER_NAME']:
+          $divContent = __(
+                          'The PHP variable <code>$_SERVER["SERVER_NAME"]</code> was not set by the server.',
+                          'include-fussball-de-widgets'
+                        ) . PHP_EOL;
+          break;
+        default:
+          $divContent = __( 'An undefined error has occurred.', 'include-fussball-de-widgets' ) . PHP_EOL;
+      }
+    } else {
+      $divContent = $this->createIframe();
+    }
+
+    $output = "<div $divAttributeString>" . PHP_EOL;
+    $output .= $divContent;
     $output .= '</div>' . PHP_EOL;
 
     if ( $this->attr['devtools'] ) {
@@ -116,9 +151,9 @@ class Fubade {
    * @since 3.0
    */
   private function createIframe(): string {
-    // TODO: Test the punycode variant of the IFDW_HOST, especially if the php extension INTL is not loaded.
-    $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'] . '/target/' . $this->attr['id'] . '/caller/'
-              . IFDW_HOST;
+    $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'];
+    $src    .= '/target/' . $this->attr['id'];
+    $src    .= '/caller/' . IFDW_HOST;
     $width  = $this->attr['fullwidth'] ? '100%' : '900px';
     $height = '200px';
     $style  = 'border: 1px solid #CECECE; overflow: hidden';

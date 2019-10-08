@@ -1,6 +1,6 @@
 {
   "name": "include-fussball-de-widgets",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "A WordPress plugin for easy integration of fussball.de widgets.",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "i18n:copy": "cpr app/languages app/dist/languages",
     "i18n": "npm run i18n:json && npm run i18n:copy",
     "release:copy": "cpr app/dist/ .releases/include-fussball-de-widgets/trunk/ -d",
-    "release:github": "cpr ./app/dist/ .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets-v3.0.3.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
+    "release:github": "cpr ./app/dist/ .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets-v3.0.4.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
     "release": "npm run release:copy && npm run release:github"
   },
   "browserslist": [
@@ -36,15 +36,15 @@
   "devDependencies": {
     "@wordpress/browserslist-config": "^2.6.0",
     "@wordpress/scripts": "^3.4.0",
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.6.4",
     "bestzip": "^2.1.4",
     "copy-webpack-plugin": "^5.0.4",
     "cpr": "^3.0.1",
     "css-loader": "^3.2.0",
-    "eslint": "^6.4.0",
+    "eslint": "^6.5.1",
     "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react": "^7.16.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
