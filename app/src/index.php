@@ -3,7 +3,7 @@ declare( strict_types=1 );
 /**
  * Plugin Name:  Include Fussball.de Widgets
  * Description:  Easy integration of the Fussball.de widgets (currently in the version since season 2016).
- * Version:      3.0.4
+ * Version:      3.0.5
  * Requires PHP: 7.2
  * Author:       IT-Service Böhm -- Alexander Böhm
  * Author URI:   http://profiles.wordpress.org/mheob
@@ -26,6 +26,13 @@ use IFDW\Utils\{Host, Logging\ConsoleLogger, PluginActions, Textdomain};
 use IFDW\Widgets\Widgets;
 
 defined( 'ABSPATH' ) || exit;
+
+/**
+ * Constants
+ */
+
+define( 'IFDW_VERSION', '3.0.5' );
+define( 'IFDW_URL', __FILE__ );
 
 /**
  * Autoloader for all classes in the plugin.
@@ -56,11 +63,9 @@ try {
 }
 
 /*
- * Constants
+ * Additional constants after autoloading the classes
  */
 
-define( 'IFDW_VERSION', '3.0.4' );
-define( 'IFDW_URL', __FILE__ );
 define( 'IFDW_HOST', Host::cleanHost( $_SERVER['SERVER_NAME'] ?? null ) );
 
 /*
