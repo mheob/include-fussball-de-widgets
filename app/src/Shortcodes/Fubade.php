@@ -44,7 +44,7 @@ class Fubade {
    * @since 3.0
    */
   public static function getInstance(): self {
-    if ( null === self::$instance ) {
+    if ( ! self::$instance ) {
       self::$instance = new self();
     }
 
