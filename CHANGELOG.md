@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.0.5] - 2019-10-13
+
+### Fixed
+
+- Due to problems with the WordPress REST API the SourceLogger is deactivated until further notice.
+
 ## [3.0.4] - 2019-10-08
 
 ### Added
