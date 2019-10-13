@@ -42,9 +42,7 @@ class Textdomain {
    * @since 3.0
    */
   public static function getInstance(): self {
-    // TODO: Remove "null ===" with an exclamation mark (!).
-    //       The same is for all class files using getInstance().
-    if ( null === self::$instance ) {
+    if ( ! self::$instance ) {
       self::$instance = new self();
     }
 
