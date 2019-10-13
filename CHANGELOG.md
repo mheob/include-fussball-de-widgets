@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- Refactor "null ===" to exclamation mark syntax
+
 ## [3.0.5] - 2019-10-13
 
 ### Fixed
