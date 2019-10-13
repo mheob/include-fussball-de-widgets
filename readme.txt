@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.8
 Tested up to: 5.2
 Requires PHP: 7.2
-Stable tag: 3.0.4
+Stable tag: 3.0.5
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,10 @@ The latest state of development is available at any time in my [Github repositor
 1. screenshot-1.jpg
 
 == Changelog ==
+= [3.0.5] - 2019-10-13 =
+= Fixed =
+* Due to problems with the WordPress REST API the SourceLogger is deactivated until further notice.
+
 = 3.0.4 - 2019-10-08 =
 = Added =
 * Error handling during generation of iframe.
@@ -211,9 +215,6 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-= 3.0.4 - 2019-10-08 =
-= Added =
-* Error handling during generation of iframe.
-* Highlighting of errors by displaying an alert box.
+= [3.0.5] - 2019-10-13 =
 = Fixed =
-* IFDW\Utils\Host::cleanHost() must be of the type string, null given.
+* Due to problems with the WordPress REST API the SourceLogger is deactivated until further notice.

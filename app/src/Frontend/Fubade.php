@@ -20,7 +20,8 @@ declare( strict_types=1 );
 namespace IFDW\Frontend;
 
 use IFDW\Utils\Logging\ConsoleLogger;
-use IFDW\Utils\Logging\SourceLogger;
+
+//use IFDW\Utils\Logging\SourceLogger;
 
 defined( 'ABSPATH' ) || exit();
 
@@ -61,7 +62,6 @@ class Fubade {
     }
 
     wp_add_inline_script( 'fubade-api', 'new FussballdeWidgetAPI();', 'after' );
-
 
     if ( 32 !== strlen( $this->attr['api'] ) ) {
       ConsoleLogger::getInstance()->log( $this->attr );
@@ -137,8 +137,9 @@ class Fubade {
 
     if ( $this->attr['devtools'] ) {
       ConsoleLogger::getInstance()->log( $this->attr );
-    } elseif ( ! is_admin() ) {
-      SourceLogger::getInstance()->log( $this->attr );
+      // FIXME: Removed in version 3.0.5. SourceLogger make trouble on the WP rest api.
+      //      } elseif ( ! is_admin() ) {
+      //        SourceLogger::getInstance()->log( $this->attr );
     }
 
     return $output;
