@@ -217,7 +217,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.4...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.5...HEAD
+[3.0.5]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.4...v3.0.5
 [3.0.4]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.3...v3.0.4
 [3.0.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.1...v3.0.2
