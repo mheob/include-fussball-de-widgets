@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,6 +16,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW\Widgets;
 
 defined( 'ABSPATH' ) || exit;
@@ -28,44 +28,49 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0
  */
 class Widgets {
-  private static $instance = null;
+	/**
+	 *  The instance.
+	 *
+	 * @var $instance
+	 */
+	private static $instance = null;
 
-  /**
-   * Widgets constructor.
-   *
-   * @since 3.0
-   */
-  private function __construct() { }
+	/**
+	 * Widgets constructor.
+	 *
+	 * @since 3.0
+	 */
+	private function __construct() { }
 
-  /**
-   * Get the instance.
-   *
-   * @return self
-   * @since 3.0
-   */
-  public static function getInstance(): self {
-    if ( ! self::$instance ) {
-      self::$instance = new self();
-    }
+	/**
+	 * Get the instance.
+	 *
+	 * @return self
+	 * @since 3.0
+	 */
+	public static function getInstance(): self {
+		if ( ! self::$instance ) {
+			self::$instance = new self();
+		}
 
-    return self::$instance;
-  }
+		return self::$instance;
+	}
 
-  /**
-   * Add the widgets_init action.
-   *
-   * @since 3.0
-   */
-  public function addWidgetInitAction(): void {
-    add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
-  }
+	/**
+	 * Add the widgets_init action.
+	 *
+	 * @since 3.0
+	 */
+	public function addWidgetInitAction(): void {
+		add_action( 'widgets_init', array( $this, 'registerWidgets' ) );
+	}
 
-  /**
-   * Initialize all Widgets
-   *
-   * @since   3.0.0
-   */
-  public function registerWidgets(): void {
-    register_widget( '\\IFDW\\Widgets\\FubadeWidget' );
-  }
+	/**
+	 * Initialize all Widgets
+	 *
+	 * @since   3.0.0
+	 */
+	public function registerWidgets(): void {
+		register_widget( '\\IFDW\\Widgets\\FubadeWidget' );
+	}
 }

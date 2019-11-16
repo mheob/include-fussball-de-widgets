@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,6 +16,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW\Utils;
 
 defined( 'ABSPATH' ) || exit;
@@ -28,47 +28,51 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0
  */
 class Textdomain {
-  private static $instance = null;
+	/**
+	 * The instance.
+	 *
+	 * @var $instance
+	 */
+	private static $instance = null;
 
-  /**
-   * Textdomain constructor.
-   */
-  private function __construct() { }
+	/**
+	 * Textdomain constructor.
+	 */
+	private function __construct() { }
 
-  /**
-   * Get the instance.
-   *
-   * @return self
-   * @since 3.0
-   */
-  public static function getInstance(): self {
-    if ( ! self::$instance ) {
-      self::$instance = new self();
-    }
+	/**
+	 * Get the instance.
+	 *
+	 * @return self
+	 * @since 3.0
+	 */
+	public static function getInstance(): self {
+		if ( ! self::$instance ) {
+			self::$instance = new self();
+		}
 
-    return self::$instance;
-  }
+		return self::$instance;
+	}
 
-  /**
-   * Add the plugins_loaded action.
-   *
-   * @since 3.0
-   */
-  public function addPluginsLoadedAction(): void {
-    add_action( 'plugins_loaded', [ $this, 'loadTextdomain' ] );
-  }
+	/**
+	 * Add the plugins_loaded action.
+	 *
+	 * @since 3.0
+	 */
+	public function addPluginsLoadedAction(): void {
+		add_action( 'plugins_loaded', [ $this, 'loadTextdomain' ] );
+	}
 
-  /**
-   * Load the plugin textdomain.
-   *
-   * @since 3.0
-   */
-  /** @noinspection PhpUnused */
-  public function loadTextdomain(): void {
-    load_plugin_textdomain(
-      'include-fussball-de-widgets',
-      false,
-      dirname( plugin_basename( IFDW_URL ) ) . '/languages'
-    );
-  }
+	/**
+	 * Load the plugin textdomain.
+	 *
+	 * @since 3.0
+	 */
+	public function loadTextdomain(): void {
+		load_plugin_textdomain(
+			'include-fussball-de-widgets',
+			false,
+			dirname( plugin_basename( IFDW_URL ) ) . '/languages'
+		);
+	}
 }

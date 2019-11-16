@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,6 +16,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW\Backend;
 
 defined( 'ABSPATH' ) || exit();
@@ -28,66 +28,81 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0
  */
 class BorlabsCookie {
-  const CB_ID = 'fubade';
-  private static $instance = null;
-  private        $tableNameCookies;
-  private        $tableNameCookieGroups;
+	const CB_ID = 'fubade';
 
-  /**
-   * BorlabsCookie constructor.
-   *
-   * @since 3.0
-   */
-  private function __construct() { }
+	/**
+	 * The instance.
+	 *
+	 * @var $instance
+	 */
+	private static $instance = null;
 
-  /**
-   * Get the instance.
-   *
-   * @return self
-   * @since 3.0
-   */
-  public static function getInstance(): self {
-    if ( ! self::$instance ) {
-      self::$instance = new self();
-    }
+	/**
+	 * The table cookies.
+	 *
+	 * @var $tableNameCookies
+	 */
+	private $tableNameCookies;
 
-    return self::$instance;
-  }
+	/**
+	 * The table cookieGroups.
+	 *
+	 * @var $tableNameCookieGroups
+	 */
+	private $tableNameCookieGroups;
 
-  /**
-   * Add the admin init action for creating the content Blocker.
-   *
-   * @since 3.0
-   */
-  public function addAdminInitAction(): void {
-    add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
-  }
+	/**
+	 * BorlabsCookie constructor.
+	 *
+	 * @since 3.0
+	 */
+	private function __construct() { }
 
-  /**
-   * Create the fubade content-blocker, if not exists already.
-   *
-   * @since 3.0
-   */
-  /** @noinspection PhpUnused */
-  public function createContentBlocker(): void {
-    if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' )
-         || BorlabsCookieHelper()->getContentBlockerData(
-        self::CB_ID
-      ) ) {
-      return;
-    }
+	/**
+	 * Get the instance.
+	 *
+	 * @return self
+	 * @since 3.0
+	 */
+	public static function getInstance(): self {
+		if ( ! self::$instance ) {
+			self::$instance = new self();
+		}
 
-    global $wpdb;
+		return self::$instance;
+	}
 
-    $this->tableNameCookies      = $wpdb->base_prefix . 'borlabs_cookie_cookies';
-    $this->tableNameCookieGroups = $wpdb->base_prefix . 'borlabs_cookie_groups';
+	/**
+	 * Add the admin init action for creating the content Blocker.
+	 *
+	 * @since 3.0
+	 */
+	public function addAdminInitAction(): void {
+		add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
+	}
 
-    if ( ! $this->checkFubadeCookieExists() ) {
-      $this->addCookie();
-    }
+	/**
+	 * Create the fubade content-blocker, if not exists already.
+	 *
+	 * @since 3.0
+	 */
+	public function createContentBlocker(): void {
+		if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' )
+				|| BorlabsCookieHelper()->getContentBlockerData( self::CB_ID ) ) {
+			return;
+		}
 
-    /* Setup variables */
-    $cbHtml = '<div class="_brlbs-content-blocker">
+		global $wpdb;
+
+		$this->tableNameCookies      = $wpdb->base_prefix . 'borlabs_cookie_cookies';
+		$this->tableNameCookieGroups = $wpdb->base_prefix . 'borlabs_cookie_groups';
+
+		if ( ! $this->checkFubadeCookieExists() ) {
+			$this->addCookie();
+		}
+
+		/* Setup variables */
+		$cbHtml = '<div class="_brlbs-content-blocker">
 	<div class="_brlbs-embed brlbs-ifdw">
 		<img class="_brlbs-thumbnail" src="' . plugins_url( 'assets/images/cb-fubade.png', IFDW_URL ) . '" alt="%%name%%">
 		<div class="_brlbs-caption">
@@ -102,7 +117,7 @@ class BorlabsCookie {
 			</p>
 			<p>
 				<label>
-					<input type="checkbox" name="unblockAll" value="1" checked> 
+					<input type="checkbox" name="unblockAll" value="1" checked>
 					<small>' . __( 'Always load fussball.de Widgets', 'include-fussball-de-widgets' ) . '</small>
 				</label>
 			</p>
@@ -110,7 +125,7 @@ class BorlabsCookie {
 	</div>
 </div>';
 
-    $cbCss = '.BorlabsCookie ._brlbs-content-blocker .brlbs-ifdw ._brlbs-caption a {
+		$cbCss = '.BorlabsCookie ._brlbs-content-blocker .brlbs-ifdw ._brlbs-caption a {
 	color: #aaa;
 }
 
@@ -125,116 +140,126 @@ class BorlabsCookie {
 	color: #0000a8;
 }';
 
-    BorlabsCookieHelper()->addContentBlocker(
-      self::CB_ID,
-      __( 'Fussball.de Widget', 'include-fussball-de-widgets' ),
-      '',
-      'http://www.fussball.de/privacy/',
-      [ 'fussball.de', 'www.fussball.de' ],
-      $cbHtml,
-      $cbCss,
-      '',
-      '',
-      [],
-      false,
-      false
-    );
-  }
+		BorlabsCookieHelper()->addContentBlocker(
+			self::CB_ID,
+			__( 'Fussball.de Widget', 'include-fussball-de-widgets' ),
+			'',
+			'http://www.fussball.de/privacy/',
+			[ 'fussball.de', 'www.fussball.de' ],
+			$cbHtml,
+			$cbCss,
+			'',
+			'',
+			[],
+			false,
+			false
+		);
+	}
 
-  /**
-   * Check if the `fubade` exists.
-   *
-   * @return bool If the fubade cookie exists it is true, otherwise false.
-   * @since 3.0
-   */
-  private function checkFubadeCookieExists(): bool {
-    global $wpdb;
+	/**
+	 * Check if the `fubade` exists.
+	 *
+	 * @return bool If the fubade cookie exists it is true, otherwise false.
+	 * @since 3.0
+	 */
+	private function checkFubadeCookieExists(): bool {
+		global $wpdb;
 
-    $cookieId = $wpdb->get_var(
-      $wpdb->prepare(
-        "SELECT `cookie_id` FROM `" . $this->tableNameCookies . "` WHERE `cookie_id` = %s LIMIT 1",
-        self::CB_ID
-      )
-    );
+		// TODO: use correct database caching.
+    // phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
+    // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching
+		$cookieId = $wpdb->get_var(
+			$wpdb->prepare(
+				'SELECT `cookie_id`
+        FROM `%s`
+        WHERE `cookie_id` = %s
+        LIMIT 1',
+				$this->tableNameCookies,
+				self::CB_ID
+			)
+		);
+    // phpcs:enable
 
-    if ( $cookieId > 0 ) {
-      return true;
-    }
+		if ( $cookieId > 0 ) {
+			return true;
+		}
 
-    return false;
-  }
+		return false;
+	}
 
-  /**
-   * Add the fubade cookie, if not exists already.
-   *
-   * @since 3.0
-   */
-  private function addCookie(): void {
-    global $wpdb;
+	/**
+	 * Add the fubade cookie, if not exists already.
+	 *
+	 * @since 3.0
+	 */
+	private function addCookie(): void {
+		global $wpdb;
 
-    $defaultBlogLanguage = substr( get_option( 'WPLANG', 'en_US' ), 0, 2 ) ?? 'en';
-    $cookieGroupIds      = [];
+		$defaultBlogLanguage = substr( get_option( 'WPLANG', 'en_US' ), 0, 2 ) ?? 'en';
+		$cookieGroupIds      = [];
 
-    $cookieGroups = $wpdb->get_results(
-      '
-        SELECT
-               `id`,
-               `group_id`
-        FROM
-             `' . $this->tableNameCookieGroups . '`
-        WHERE
-              `language` = "' . esc_sql( $defaultBlogLanguage ) . '"
-      '
-    );
+		// TODO: use correct database caching.
+    // phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
+    // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching
+		$cookieGroups = $wpdb->get_results(
+			'SELECT `id`, `group_id`
+      FROM `%s`
+      WHERE `language` = "' . esc_sql( $defaultBlogLanguage ) . '"',
+			$this->tableNameCookieGroups
+		);
+    // phpcs:enable
 
-    foreach ( $cookieGroups as $groupData ) {
-      $cookieGroupIds[ $groupData->group_id ] = $groupData->id;
-    }
+		foreach ( $cookieGroups as $groupData ) {
+			$cookieGroupIds[ $groupData->group_id ] = $groupData->id;
+		}
 
-    /** @noinspection JSUnresolvedFunction */
-    $sqlQuery = "INSERT INTO `" . $this->tableNameCookies . "`
+		$sqlQuery = 'INSERT INTO `' . $this->tableNameCookies . "`
         (
-            `cookie_id`,
-            `language`,
-            `cookie_group_id`,
-            `service`,
-            `name`,
-            `provider`,
-            `purpose`,
-            `privacy_policy_url`,
-            `hosts`,
-            `cookie_name`,
-            `cookie_expiry`,
-            `opt_in_js`,
-            `position`,
-            `status`,
-            `undeletable`
+          `cookie_id`,
+          `language`,
+          `cookie_group_id`,
+          `service`,
+          `name`,
+          `provider`,
+          `purpose`,
+          `privacy_policy_url`,
+          `hosts`,
+          `cookie_name`,
+          `cookie_expiry`,
+          `opt_in_js`,
+          `position`,
+          `status`,
+          `undeletable`
         )
         VALUES
         (
-            '" . self::CB_ID . "',
-            '" . esc_sql( $defaultBlogLanguage ) . "',
-            '" . esc_sql( $cookieGroupIds['external-media'] ) . "',
-            'Custom',
-            'Fußball.de',
-            'Fußball.de',
-            '" . _x( 'Used to unblock Fußball.de content.', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
-            '" . _x( 'http://www.fussball.de/privacy/', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
-            '" . esc_sql( serialize( [ 'fussball.de', 'www.fussball.de' ] ) ) . "',
-            '" . self::CB_ID . "',
-            '" . _x( 'Unlimited', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
-            '" . esc_sql(
-        '<script>if("object" === typeof window.BorlabsCookie) { window.BorlabsCookie.unblockContentId("' . self::CB_ID
-        . '"); }</script>'
-      ) . "',
-            82,
-            1,
-            0
+          '" . self::CB_ID . "',
+          '" . esc_sql( $defaultBlogLanguage ) . "',
+          '" . esc_sql( $cookieGroupIds['external-media'] ) . "',
+          'Custom',
+          'Fußball.de',
+          'Fußball.de',
+          '" . _x( 'Used to unblock Fußball.de content.', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
+          '" . _x( 'http://www.fussball.de/privacy/', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
+          '" . esc_sql( [ 'fussball.de', 'www.fussball.de' ] ) . "',
+          '" . self::CB_ID . "',
+        '" . _x( 'Unlimited', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
+          '" . esc_sql(
+			'<script>if("object" === typeof window.BorlabsCookie) { window.BorlabsCookie.unblockContentId("' . self::CB_ID . '"); }</script>'
+		) . "',
+          82,
+          1,
+          0
         )
         ON DUPLICATE KEY UPDATE
             `undeletable` = VALUES(`undeletable`)
         ";
 
-    $wpdb->query( $sqlQuery );
-  }
+		// TODO: use correct database caching.
+    // phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
+    // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching
+		$wpdb->query( '%s', $sqlQuery );
+    // phpcs:enable
+
+	}
 }

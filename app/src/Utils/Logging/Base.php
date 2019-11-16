@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,6 +16,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW\Utils\Logging;
 
 defined( 'ABSPATH' ) || exit;
@@ -28,48 +28,53 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0
  */
 abstract class Base {
-  protected $generalInfoList = [];
+	/**
+	 * The general info list.
+	 *
+	 * @var $generalInfoList.
+	 */
+	protected $generalInfoList = [];
 
-  /**
-   * Base constructor.
-   *
-   * @since 3.0
-   */
-  protected function __construct() {
-    global $wp_version;
-    $this->generalInfoList = [
-      __( '[FUBADE] Plugin Version: ', 'include-fussball-de-widgets' ) . IFDW_VERSION,
-      __( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . IFDW_HOST,
-      __( '[FUBADE] Wordpress version: ', 'include-fussball-de-widgets' ) . $wp_version,
-      __( '[FUBADE] PHP version: ', 'include-fussball-de-widgets' ) . PHP_VERSION,
-      __( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-widgets' ) . json_encode( get_loaded_extensions() )
-    ];
-  }
+	/**
+	 * Base constructor.
+	 *
+	 * @since 3.0
+	 */
+	protected function __construct() {
+		global $wp_version;
+		$this->generalInfoList = [
+			__( '[FUBADE] Plugin Version: ', 'include-fussball-de-widgets' ) . IFDW_VERSION,
+			__( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . IFDW_HOST,
+			__( '[FUBADE] Wordpress version: ', 'include-fussball-de-widgets' ) . $wp_version,
+			__( '[FUBADE] PHP version: ', 'include-fussball-de-widgets' ) . PHP_VERSION,
+			__( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-widgets' ) . wp_json_encode( get_loaded_extensions() ),
+		];
+	}
 
-  /**
-   * Generates a logging output.
-   *
-   * @param array $arr The arguments.
-   *
-   * @since 3.0
-   */
-  abstract public function log( array $arr ): void;
+	/**
+	 * Generates a logging output.
+	 *
+	 * @param array $arr The arguments.
+	 *
+	 * @since 3.0
+	 */
+	abstract public function log( array $arr ): void;
 
-  /**
-   * Logs the general information, for example from the plugin, WordPress and / or the server.
-   *
-   * @since 3.0
-   */
-  abstract protected function logGeneralInfo(): void;
+	/**
+	 * Logs the general information, for example from the plugin, WordPress and / or the server.
+	 *
+	 * @since 3.0
+	 */
+	abstract protected function logGeneralInfo(): void;
 
-  /**
-   * Logs the information pertaining to a specific widget only.
-   *
-   * @param array $arr The arguments.
-   *
-   * @since 3.0
-   */
-  abstract protected function logWidgetInfo( array $arr ): void;
+	/**
+	 * Logs the information pertaining to a specific widget only.
+	 *
+	 * @param array $arr The arguments.
+	 *
+	 * @since 3.0
+	 */
+	abstract protected function logWidgetInfo( array $arr ): void;
 
-  // TODO: Add a file or database logging system
+	// TODO: Add a file or database logging system.
 }

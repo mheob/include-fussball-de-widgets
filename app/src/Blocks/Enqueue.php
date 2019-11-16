@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,6 +16,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare(strict_types=1);
 namespace IFDW\Blocks;
 
 use IFDW\Frontend\Fubade;
@@ -30,92 +30,97 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0
  */
 class Enqueue {
-  private static $instance = null;
+	/**
+	 * The instance.
+	 *
+	 * @var $instance
+	 */
+	private static $instance = null;
 
-  /**
-   * Enqueue constructor.
-   *
-   * @since 3.0
-   */
-  private function __construct() { }
+	/**
+	 * Enqueue constructor.
+	 *
+	 * @since 3.0
+	 */
+	private function __construct() {
+	}
 
-  /**
-   * Get the instance.
-   *
-   * @return self
-   * @since 3.0
-   */
-  public static function getInstance(): self {
-    if ( ! self::$instance ) {
-      self::$instance = new self();
-    }
+	/**
+	 * Get the instance.
+	 *
+	 * @return self
+	 * @since  3.0
+	 */
+	public static function getInstance(): self {
+		if ( ! self::$instance ) {
+			self::$instance = new self();
+		}
 
-    return self::$instance;
-  }
+		return self::$instance;
+	}
 
-  /**
-   * Add the init action for registering the dynamic block.
-   *
-   * @since 3.0
-   */
-  public function addInitAction(): void {
-    add_action( 'init', [ $this, 'registerDynamicBlock' ] );
-  }
+	/**
+	 * Add the init action for registering the dynamic block.
+	 *
+	 * @since 3.0
+	 */
+	public function addInitAction(): void {
+		add_action( 'init', [ $this, 'registerDynamicBlock' ] );
+	}
 
-  /**
-   * Register the dynamic block.
-   *
-   * @since 3.0
-   */
-  /** @noinspection PhpUnused */
-  public function registerDynamicBlock(): void {
-    if ( ! function_exists( 'register_block_type' ) ) {
-      return;
-    }
+	/**
+	 * Register the dynamic block.
+	 *
+	 * @since 3.0
+	 */
+	public function registerDynamicBlock(): void {
+		if ( ! function_exists( 'register_block_type' ) ) {
+			return;
+		}
 
-    wp_register_script(
-      'fubade-block-script',
-      plugins_url( 'assets/js/blocks.js', IFDW_URL ),
-      [],
-      IFDW_VERSION,
-      true
-    );
+		wp_register_script(
+			'fubade-block-script',
+			plugins_url( 'assets/js/blocks.js', IFDW_URL ),
+			[],
+			IFDW_VERSION,
+			true
+		);
 
-    wp_set_script_translations( 'fubade-block-script', 'include-fussball-de-widgets' );
+		wp_set_script_translations( 'fubade-block-script', 'include-fussball-de-widgets' );
 
-    wp_register_style(
-      'fubade-block-style',
-      plugins_url( 'assets/css/blocks-main.css', IFDW_URL ),
-      [],
-      IFDW_VERSION
-    );
+		wp_register_style(
+			'fubade-block-style',
+			plugins_url( 'assets/css/blocks-main.css', IFDW_URL ),
+			[],
+			IFDW_VERSION
+		);
 
-    register_block_type(
-      'ifdw/fubade',
-      [
-        'attributes'      => [
-          'id'        => [ 'type' => 'string' ],
-          'api'       => [ 'type' => 'string' ],
-          'notice'    => [ 'type' => 'string' ],
-          'fullwidth' => [ 'type' => 'boolean' ],
-          'devtools'  => [ 'type' => 'boolean' ],
-        ],
-        'editor_script'   => 'fubade-block-script',
-        'editor_style'    => 'fubade-block-style',
-        'render_callback' => [ $this, 'render' ],
-      ]
-    );
-  }
+		register_block_type(
+			'ifdw/fubade',
+			[
+				'attributes'      => [
+					'id'        => [ 'type' => 'string' ],
+					'api'       => [ 'type' => 'string' ],
+					'notice'    => [ 'type' => 'string' ],
+					'fullwidth' => [ 'type' => 'boolean' ],
+					'devtools'  => [ 'type' => 'boolean' ],
+				],
+				'editor_script'   => 'fubade-block-script',
+				'editor_style'    => 'fubade-block-style',
+				'render_callback' => [ $this, 'render' ],
+			]
+		);
+	}
 
-  /**
-   * Creates the output to the sourcecode.
-   *
-   * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
-   *
-   * @return string
-   * @since 3.0
-   */
-  public function render( $attr ): string {
-    return ( new Fubade() )->output( $attr );
-  }
+	/**
+	 * Creates the output to the sourcecode.
+	 *
+	 * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
+	 *
+	 * @return string
+	 * @since  3.0
+	 */
+	public function render( $attr ): string {
+		return ( new Fubade() )->output( $attr );
+	}
 }

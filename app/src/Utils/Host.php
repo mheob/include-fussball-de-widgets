@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,6 +16,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_de_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW\Utils;
 
 use function idn_to_ascii;
@@ -29,27 +29,32 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0
  */
 class Host {
-  private static $host;
+	/**
+	 * The host.
+	 *
+	 * @var $host
+	 */
+	private static $host;
 
-  /**
-   * Clean up the hostname.
-   *
-   * @param string|null $host
-   *
-   * @return string The cleared hostname.
-   */
-  public static function cleanHost( ?string $host ): string {
-    if ( ! isset( self::$host ) && is_string( $host ) ) {
-      if ( extension_loaded( 'intl' ) ) {
-        if ( defined( 'INTL_IDNA_VARIANT_UTS46' ) ) {
-          $host = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
-        } else {
-          $host = idn_to_ascii( $host );
-        }
-      }
-      self::$host = wp_unslash( $host ) ?? '';
-    }
+	/**
+	 * Clean up the hostname.
+	 *
+	 * @param string|null $host The host.
+	 *
+	 * @return string The cleared hostname.
+	 */
+	public static function cleanHost( ?string $host ): string {
+		if ( ! isset( self::$host ) && is_string( $host ) ) {
+			if ( extension_loaded( 'intl' ) ) {
+				if ( defined( 'INTL_IDNA_VARIANT_UTS46' ) ) {
+					$host = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
+				} else {
+					$host = idn_to_ascii( $host );
+				}
+			}
+			self::$host = wp_unslash( $host ) ?? '';
+		}
 
-    return self::$host ?? 'SERVER_NAME-not-set';
-  }
+		return self::$host ?? 'SERVER_NAME-not-set';
+	}
 }

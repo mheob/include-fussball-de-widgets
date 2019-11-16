@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Plugin Name:  Include Fussball.de Widgets
  * Description:  Easy integration of the Fussball.de widgets (currently in the version since season 2016).
@@ -15,6 +14,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW;
 
 use Exception;
@@ -41,32 +41,30 @@ define( 'IFDW_URL', __FILE__ );
  *
  * @since 3.0
  */
-/** @noinspection PhpUnused */
 function autoloader( $class ): void {
-  if ( false === strpos( $class, __NAMESPACE__ ) ) {
-    return;
-  }
+	if ( false === strpos( $class, __NAMESPACE__ ) ) {
+		return;
+	}
 
-  $classPath = str_replace( 'IFDW\\', '', $class );
-  $path      = __DIR__ . '/' . str_replace( '\\', '/', $classPath ) . '.php';
+	$classPath = str_replace( 'IFDW\\', '', $class );
+	$path      = __DIR__ . '/' . str_replace( '\\', '/', $classPath ) . '.php';
 
-  if ( ! class_exists( $class ) && file_exists( $path ) ) {
-    /** @noinspection PhpIncludeInspection */
-    require $path;
-  }
+	if ( ! class_exists( $class ) && file_exists( $path ) ) {
+		require $path;
+	}
 }
 
 try {
-  spl_autoload_register( __NAMESPACE__ . '\autoloader' );
+	spl_autoload_register( __NAMESPACE__ . '\autoloader' );
 } catch ( Exception $e ) {
-  ConsoleLogger::getInstance()->errorLog( $e->getMessage() );
+	ConsoleLogger::getInstance()->errorLog( $e->getMessage() );
 }
 
 /*
  * Additional constants after autoloading the classes
  */
-
-define( 'IFDW_HOST', Host::cleanHost( $_SERVER['SERVER_NAME'] ?? null ) );
+// phpcs:disable WordPress.Security.ValidatedSanitizedInput
+define( 'IFDW_HOST', Host::cleanHost( wp_unslash( $_SERVER['SERVER_NAME'] ?? null ) ) );
 
 /*
  * Initialize the hooks.

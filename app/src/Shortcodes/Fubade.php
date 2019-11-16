@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,6 +16,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW\Shortcodes;
 
 defined( 'ABSPATH' ) || exit;
@@ -28,58 +28,63 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0
  */
 class Fubade {
-  private static $instance = null;
+	/**
+	 * The instance.
+	 *
+	 * @var $instance
+	 */
+	private static $instance = null;
 
-  /**
-   * Fubade constructor.
-   *
-   * @since 3.0
-   */
-  private function __construct() { }
+	/**
+	 * Fubade constructor.
+	 *
+	 * @since 3.0
+	 */
+	private function __construct() { }
 
-  /**
-   * Get the instance.
-   *
-   * @return self
-   * @since 3.0
-   */
-  public static function getInstance(): self {
-    if ( ! self::$instance ) {
-      self::$instance = new self();
-    }
+	/**
+	 * Get the instance.
+	 *
+	 * @return self
+	 * @since 3.0
+	 */
+	public static function getInstance(): self {
+		if ( ! self::$instance ) {
+			self::$instance = new self();
+		}
 
-    return self::$instance;
-  }
+		return self::$instance;
+	}
 
-  /**
-   * Add the fubade shortcode.
-   *
-   * @since 3.0
-   */
-  public function addShortcode(): void {
-    add_shortcode( 'fubade', [ $this, 'createShortcode' ] );
-  }
+	/**
+	 * Add the fubade shortcode.
+	 *
+	 * @since 3.0
+	 */
+	public function addShortcode(): void {
+		add_shortcode( 'fubade', [ $this, 'createShortcode' ] );
+	}
 
-  /**
-   * Render the fubade shortcode
-   *
-   * @param array $atts Shortcode attributes (`id`, `api`, `notice`, `fullwidth` and `devtools`).
-   *
-   * @return string
-   * @since 3.0
-   */
-  public function createShortcode( $atts ): string {
-    $a = shortcode_atts(
-      [
-        'id'        => '',
-        'api'       => '',
-        'notice'    => '',
-        'fullwidth' => '',
-        'devtools'  => '',
-      ],
-      $atts
-    );
+	/**
+	 * Render the fubade shortcode
+	 *
+	 * @param array $atts Shortcode attributes (`id`, `api`, `notice`, `fullwidth` and `devtools`).
+	 *
+	 * @return string
+	 * @since 3.0
+	 */
+	public function createShortcode( $atts ): string {
+		$a = shortcode_atts(
+			[
+				'id'        => '',
+				'api'       => '',
+				'notice'    => '',
+				'fullwidth' => '',
+				'devtools'  => '',
+			],
+			$atts
+		);
 
-    return ( new \IFDW\Frontend\Fubade() )->output( $a );
-  }
+		return ( new \IFDW\Frontend\Fubade() )->output( $a );
+	}
 }

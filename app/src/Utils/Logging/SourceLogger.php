@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,6 +16,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW\Utils\Logging;
 
 defined( 'ABSPATH' ) || exit;
@@ -28,91 +28,104 @@ defined( 'ABSPATH' ) || exit;
  * @since 3.0
  */
 class SourceLogger extends Base {
-  private static $instance        = null;
-  private        $isGeneralLogged = false;
+	/**
+	 * The instance.
+	 *
+	 * @var $instance
+	 */
+	private static $instance = null;
 
-  /**
-   * Logger constructor.
-   *
-   * @since 3.0
-   */
-  private function __construct() {
-    parent::__construct();
-  }
+	/**
+	 * True if the general informations are already logged.
+	 *
+	 * @var $instance
+	 */
+	private $isGeneralLogged = false;
 
-  /**
-   * Get the instance.
-   *
-   * @return self
-   * @since 3.0
-   */
-  public static function getInstance(): self {
-    if ( ! self::$instance ) {
-      self::$instance = new self();
-    }
+	// phpcs:disable Generic.CodeAnalysis.UselessOverridingMethod.Found
+	/**
+	 * Logger constructor.
+	 *
+	 * @since 3.0
+	 */
+	private function __construct() {
+		parent::__construct();
+	}
+	// phpcs:enable
 
-    return self::$instance;
-  }
+	/**
+	 * Get the instance.
+	 *
+	 * @return self
+	 * @since 3.0
+	 */
+	public static function getInstance(): self {
+		if ( ! self::$instance ) {
+			self::$instance = new self();
+		}
 
-  /**
-   * Generates a logging output.
-   *
-   * @param array $arr The arguments.
-   *
-   * @since 3.0
-   */
-  public function log( array $arr ): void {
-    if ( ! $this->isGeneralLogged ) {
-      $this->logGeneralInfo();
-    }
+		return self::$instance;
+	}
 
-    $this->logWidgetInfo( $arr );
-  }
+	/**
+	 * Generates a logging output.
+	 *
+	 * @param array $arr The arguments.
+	 *
+	 * @since 3.0
+	 */
+	public function log( array $arr ): void {
+		if ( ! $this->isGeneralLogged ) {
+			$this->logGeneralInfo();
+		}
 
-  /**
-   * Logs the general information, for example from the plugin, WordPress and / or the server.
-   *
-   * @since 3.0
-   */
-  protected function logGeneralInfo(): void {
-    $message = '<!-- ' . PHP_EOL;
+		$this->logWidgetInfo( $arr );
+	}
 
-    foreach ( $this->generalInfoList as $item ) {
-      $message .= $item . PHP_EOL;
-    };
+	/**
+	 * Logs the general information, for example from the plugin, WordPress and / or the server.
+	 *
+	 * @since 3.0
+	 */
+	protected function logGeneralInfo(): void {
+		$message = '<!-- ' . PHP_EOL;
 
-    $message .= ' -->' . PHP_EOL;
+		foreach ( $this->generalInfoList as $item ) {
+			$message .= $item . PHP_EOL;
+		};
 
-    print $message;
+		$message .= ' -->' . PHP_EOL;
 
-    $this->isGeneralLogged = true;
-  }
+		print esc_html( $message );
 
-  /**
-   * Logs the information pertaining to a specific widget only.
-   *
-   * @param array $arr The arguments.
-   *
-   * @since 3.0
-   */
-  protected function logWidgetInfo( array $arr ): void {
-    if ( ! isset( $arr['id'] ) ) {
-      return;
-    }
+		$this->isGeneralLogged = true;
+	}
 
-    $message = '<!-- ' . PHP_EOL;
+	/**
+	 * Logs the information pertaining to a specific widget only.
+	 *
+	 * @param array $arr The arguments.
+	 *
+	 * @since 3.0
+	 */
+	protected function logWidgetInfo( array $arr ): void {
+		if ( ! isset( $arr['id'] ) ) {
+			return;
+		}
 
-    foreach ( $arr as $key => $value ) {
-      if ( "id" === $key ) {
-        continue;
-      }
+		$message = '<!-- ' . PHP_EOL;
 
-      $temp    = __( esc_html( $key ) . ": ", "include-fussball-de-widgets" ) . esc_html( $value );
-      $message .= '[' . $arr['id'] . '] ' . $temp . PHP_EOL;
-    }
+		foreach ( $arr as $key => $value ) {
+			if ( 'id' === $key ) {
+				continue;
+			}
 
-    $message .= ' -->' . PHP_EOL;
+			$temp     = esc_html( $key ) . __( ': ', 'include-fussball-de-widgets' ) . esc_html( $value );
+			$message .= '[' . $arr['id'] . '] ' . $temp . PHP_EOL;
+		}
 
-    print $message;
-  }
+		$message .= ' -->' . PHP_EOL;
+
+		print esc_html( $message );
+	}
 }

@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,11 +16,10 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW\Frontend;
 
 use IFDW\Utils\Logging\ConsoleLogger;
-
-//use IFDW\Utils\Logging\SourceLogger;
 
 defined( 'ABSPATH' ) || exit();
 
@@ -32,134 +30,143 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0
  */
 class Fubade {
-  private const ERROR = [ 'API_LENGTH' => 'api-length', 'SERVER_NAME' => 'no-server-name' ];
-  private $attr = [];
+	private const ERROR = [
+		'API_LENGTH'  => 'api-length',
+		'SERVER_NAME' => 'no-server-name',
+	];
 
-  /**
-   * Creates the output to the sourcecode.
-   *
-   * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
-   *
-   * @return string
-   * @since 3.0
-   */
-  public function output( $attr ): string {
-    // TODO: Configure default setting in the admin area.
-    $this->setAttr( $attr );
+	/**
+	 *  The instance.
+	 *
+	 * @var $instance
+	 */
+	private $attr = [];
 
-    $this->attr = [
-      'api'       => sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $this->attr['api'] ) ) ),
-      'id'        => 'fubade_' . substr( $this->attr['api'], - 5 ),
-      'notice'    => empty( $this->attr['notice'] ) ? '' : sanitize_text_field( $this->attr['notice'] ),
-      'fullwidth' => '1' === $this->attr['fullwidth'] || 'true' === $this->attr['fullwidth']
-                     || true === $this->attr['fullwidth'] ? true : false,
-      'devtools'  => '1' === $this->attr['devtools'] || 'true' === $this->attr['devtools']
-                     || true === $this->attr['devtools'] ? true : false
-    ];
+	/**
+	 * Creates the output to the sourcecode.
+	 *
+	 * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
+	 *
+	 * @return string
+	 * @since 3.0
+	 */
+	public function output( $attr ): string {
+		// TODO: Configure default setting in the admin area.
+		$this->setAttr( $attr );
 
-    if ( ! wp_script_is( 'fubade-api' ) ) {
-      wp_enqueue_script( 'fubade-api' );
-    }
+		$this->attr = [
+			'api'       => sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $this->attr['api'] ) ) ),
+			'id'        => 'fubade_' . substr( $this->attr['api'], - 5 ),
+			'notice'    => empty( $this->attr['notice'] ) ? '' : sanitize_text_field( $this->attr['notice'] ),
+			'fullwidth' => '1' === $this->attr['fullwidth']
+										|| 'true' === $this->attr['fullwidth']
+										|| true === $this->attr['fullwidth']
+										? true : false,
+			'devtools'  => '1' === $this->attr['devtools']
+										|| 'true' === $this->attr['devtools']
+										|| true === $this->attr['devtools']
+										? true : false,
+		];
 
-    wp_add_inline_script( 'fubade-api', 'new FussballdeWidgetAPI();', 'after' );
+		if ( ! wp_script_is( 'fubade-api' ) ) {
+			wp_enqueue_script( 'fubade-api' );
+		}
 
-    if ( 32 !== strlen( $this->attr['api'] ) ) {
-      ConsoleLogger::getInstance()->log( $this->attr );
-      printf( // translators: %s: the length of the api
-        esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ),
-        esc_html( strlen( $this->attr['api'] ) )
-      );
+		wp_add_inline_script( 'fubade-api', 'new FussballdeWidgetAPI();', 'after' );
 
-      return $this->render( self::ERROR['API_LENGTH'] );
-    }
+		if ( strlen( $this->attr['api'] ) !== 32 ) {
+			ConsoleLogger::getInstance()->log( $this->attr );
+			printf( // translators: %s: The length of the api.
+				esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ),
+				esc_html( strlen( $this->attr['api'] ) )
+			);
 
-    if ( IFDW_HOST === 'SERVER_NAME-not-set' ) {
-      ConsoleLogger::getInstance()->log( $this->attr );
+			return $this->render( self::ERROR['API_LENGTH'] );
+		}
 
-      return $this->render( self::ERROR['SERVER_NAME'] );
-    }
+		if ( IFDW_HOST === 'SERVER_NAME-not-set' ) {
+			ConsoleLogger::getInstance()->log( $this->attr );
 
-    return $this->render( null );
-  }
+			return $this->render( self::ERROR['SERVER_NAME'] );
+		}
 
-  /**
-   * Set the attribute array
-   *
-   * @param array $attr The attributes for the widget rendering.
-   */
-  public function setAttr( array $attr ): void {
-    $this->attr = [
-      'api'       => $attr['api'] ?? '',
-      'id'        => $attr['id'] ?? 'ERROR_' . time(),
-      'notice'    => $attr['notice'] ?? '',
-      'fullwidth' => $attr['fullwidth'] ?? false,
-      'devtools'  => $attr['devtools'] ?? false
-    ];
-  }
+		return $this->render( null );
+	}
 
-  /**
-   * Render all the output.
-   *
-   * @param string|null $error Potential errors.
-   *
-   * @return string
-   * @since 3.0
-   */
-  private function render( ?string $error ): string {
-    $divAttributeString = 'id="' . esc_html( $this->attr['id'] ) . '" class="include-fussball-de-widgets"';
+	/**
+	 * Set the attribute array
+	 *
+	 * @param array $attr The attributes for the widget rendering.
+	 */
+	public function setAttr( array $attr ): void {
+		$this->attr = [
+			'api'       => $attr['api'] ?? '',
+			'id'        => $attr['id'] ?? 'ERROR_' . time(),
+			'notice'    => $attr['notice'] ?? '',
+			'fullwidth' => $attr['fullwidth'] ?? false,
+			'devtools'  => $attr['devtools'] ?? false,
+		];
+	}
 
-    if ( $error ) {
-      $divAttributeString .= ' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
+	/**
+	 * Render all the output.
+	 *
+	 * @param string|null $error Potential errors.
+	 *
+	 * @return string
+	 * @since 3.0
+	 */
+	private function render( ?string $error ): string {
+		$divAttributeString = 'id="' . esc_html( $this->attr['id'] ) . '" class="include-fussball-de-widgets"';
 
-      switch ( $error ) {
-        case self::ERROR['API_LENGTH']:
-          $divContent = __(
-                          '!!! The fussball.de API must have a length of exactly 32 characters. !!!',
-                          'include-fussball-de-widgets'
-                        ) . PHP_EOL;
-          break;
-        case self::ERROR['SERVER_NAME']:
-          $divContent = __(
-                          'The PHP variable <code>$_SERVER["SERVER_NAME"]</code> was not set by the server.',
-                          'include-fussball-de-widgets'
-                        ) . PHP_EOL;
-          break;
-        default:
-          $divContent = __( 'An undefined error has occurred.', 'include-fussball-de-widgets' ) . PHP_EOL;
-      }
-    } else {
-      $divContent = $this->createIframe();
-    }
+		if ( $error ) {
+			$divAttributeString .= ' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
 
-    $output = "<div $divAttributeString>" . PHP_EOL;
-    $output .= $divContent;
-    $output .= '</div>' . PHP_EOL;
+			switch ( $error ) {
+				case self::ERROR['API_LENGTH']:
+					$divContent = __(
+						'!!! The fussball.de API must have a length of exactly 32 characters. !!!',
+						'include-fussball-de-widgets'
+					) . PHP_EOL;
+					break;
+				case self::ERROR['SERVER_NAME']:
+					$divContent = __(
+						'The PHP variable <code>$_SERVER["SERVER_NAME"]</code> was not set by the server.',
+						'include-fussball-de-widgets'
+					) . PHP_EOL;
+					break;
+				default:
+					$divContent = __( 'An undefined error has occurred.', 'include-fussball-de-widgets' ) . PHP_EOL;
+			}
+		} else {
+			$divContent = $this->createIframe();
+		}
 
-    if ( $this->attr['devtools'] ) {
-      ConsoleLogger::getInstance()->log( $this->attr );
-      // FIXME: Removed in version 3.0.5. SourceLogger make trouble on the WP rest api.
-      //      } elseif ( ! is_admin() ) {
-      //        SourceLogger::getInstance()->log( $this->attr );
-    }
+		$output  = "<div $divAttributeString>" . PHP_EOL;
+		$output .= $divContent;
+		$output .= '</div>' . PHP_EOL;
 
-    return $output;
-  }
+		if ( $this->attr['devtools'] ) {
+			ConsoleLogger::getInstance()->log( $this->attr );
+		}
 
-  /**
-   * Creates the iframe needed from fussball.de.
-   *
-   * @return string
-   * @since 3.0
-   */
-  private function createIframe(): string {
-    $src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'];
-    $src    .= '/target/' . $this->attr['id'];
-    $src    .= '/caller/' . IFDW_HOST;
-    $width  = $this->attr['fullwidth'] ? '100%' : '900px';
-    $height = '200px';
-    $style  = 'border: 1px solid #CECECE; overflow: hidden';
+		return $output;
+	}
 
-    /** @noinspection HtmlDeprecatedAttribute */
-    return "<iframe src='$src' width='$width' height='$height' scrolling='no' style='$style'></iframe>" . PHP_EOL;
-  }
+	/**
+	 * Creates the iframe needed from fussball.de.
+	 *
+	 * @return string
+	 * @since 3.0
+	 */
+	private function createIframe(): string {
+		$src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'];
+		$src   .= '/target/' . $this->attr['id'];
+		$src   .= '/caller/' . IFDW_HOST;
+		$width  = $this->attr['fullwidth'] ? '100%' : '900px';
+		$height = '200px';
+		$style  = 'border: 1px solid #CECECE; overflow: hidden';
+
+		return "<iframe src='$src' width='$width' height='$height' scrolling='no' style='$style'></iframe>" . PHP_EOL;
+	}
 }

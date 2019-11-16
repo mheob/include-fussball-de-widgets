@@ -6,14 +6,14 @@ window.FussballdeWidgetAPI = () => {
     evt => {
       const currentIframe = document.querySelector('#' + evt.data.container + ' > iframe');
 
-      if ('setHeight' === evt.data.type) {
+      if (evt.data.type === 'setHeight') {
         currentIframe.setAttribute('height', evt.data.value + 'px');
         currentIframe.style.height = '';
         currentIframe.style.minHeight = '200px';
       }
 
-      if ('setWidth' === evt.data.type) {
-        if ('100%' !== currentIframe.getAttribute('width')) {
+      if (evt.data.type === 'setWidth') {
+        if (currentIframe.getAttribute('width') !== '100%') {
           currentIframe.setAttribute('width', evt.data.value + 'px');
         }
 
@@ -24,13 +24,12 @@ window.FussballdeWidgetAPI = () => {
   );
 
   /** Support for Divi-Tabs & Fusion-Tabs */
-  // noinspection XHTMLIncompatabilitiesJS
-  if (document.body.classList.contains('et_divi_theme')
-    || document.body.classList.contains('fusion-body')) {
+  if (document.body.classList.contains('et_divi_theme') ||
+    document.body.classList.contains('fusion-body')) {
     const tabs = document.querySelectorAll('.et_pb_tabs_controls a, .fusion-tabs a.tab-link');
     const iframes = document.querySelectorAll(
       '.et_pb_tab_content [id^="fubade_"] > iframe, .fusion-tabs .tab_content [id^="fubade_"] > iframe');
-    if (0 < tabs.length) {
+    if (tabs.length > 0) {
       Array.from(tabs)
         .forEach(diviTab => {
           diviTab.addEventListener(

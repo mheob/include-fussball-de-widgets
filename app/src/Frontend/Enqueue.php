@@ -1,5 +1,4 @@
 <?php
-declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
  * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
@@ -17,6 +16,7 @@ declare( strict_types=1 );
  * @package Include_Fussball_De_Widgets
  */
 
+declare( strict_types=1 );
 namespace IFDW\Frontend;
 
 defined( 'ABSPATH' ) || exit();
@@ -28,52 +28,57 @@ defined( 'ABSPATH' ) || exit();
  * @since 3.0
  */
 class Enqueue {
-  private static $instance = null;
+	/**
+	 * The instance.
+	 *
+	 * @var $instance
+	 */
+	private static $instance = null;
 
-  /**
-   * Enqueue constructor.
-   *
-   * @since 3.0
-   */
-  private function __construct() { }
+	/**
+	 * Enqueue constructor.
+	 *
+	 * @since 3.0
+	 */
+	private function __construct() { }
 
-  /**
-   * Get the instance.
-   *
-   * @return self
-   * @since 3.0
-   */
-  public static function getInstance(): self {
-    if ( ! self::$instance ) {
-      self::$instance = new self();
-    }
+	/**
+	 * Get the instance.
+	 *
+	 * @return self
+	 * @since 3.0
+	 */
+	public static function getInstance(): self {
+		if ( ! self::$instance ) {
+			self::$instance = new self();
+		}
 
-    return self::$instance;
-  }
+		return self::$instance;
+	}
 
-  /**
-   * Add the init action for registering the fubade api.
-   *
-   * @since 3.0
-   */
-  public function addInitAction(): void {
-    add_action( 'init', [ $this, 'registerFubadeApi' ] );
-  }
+	/**
+	 * Add the init action for registering the fubade api.
+	 *
+	 * @since 3.0
+	 */
+	public function addInitAction(): void {
+		add_action( 'init', [ $this, 'registerFubadeApi' ] );
+	}
 
-  /**
-   * Register the api script for fussball.de.
-   *
-   * @since 3.0
-   */
-  /** @noinspection PhpUnused */
-  public function registerFubadeApi(): void {
-    wp_register_script(
-      'fubade-api',
-      plugins_url( 'assets/js/fubade-api.js', IFDW_URL ),
-      [ 'wp-i18n' ],
-      IFDW_VERSION,
-      true
-    );
-    wp_set_script_translations( 'fubade-api', 'include-fussball-de-widgets' );
-  }
+	/**
+	 * Register the api script for fussball.de.
+	 *
+	 * @since 3.0
+	 */
+	public function registerFubadeApi(): void {
+		wp_register_script(
+			'fubade-api',
+			plugins_url( 'assets/js/fubade-api.js', IFDW_URL ),
+			[ 'wp-i18n' ],
+			IFDW_VERSION,
+			true
+		);
+		wp_set_script_translations( 'fubade-api', 'include-fussball-de-widgets' );
+	}
 }
+
