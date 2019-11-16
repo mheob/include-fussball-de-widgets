@@ -1,7 +1,5 @@
 # Include Fussball.de Widgets
 
-Jump to the [german](#deutsch) version.
-
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![WordPress](https://img.shields.io/wordpress/plugin/tested/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
@@ -69,8 +67,6 @@ A WordPress plugin for easy integration of [fussball.de widgets](http://training
 > Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.\
 > \
 > The curly braces from my examples above should only show placeholders. These are also included, which is not correct.
-
-Jump to the [english](#english) version.
 
 ## Deutsch
 
