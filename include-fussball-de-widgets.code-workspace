@@ -35,17 +35,13 @@
     "files.watcherExclude": {
       "**/node_modules/**": true
     },
-
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "editor.minimap.maxColumn": 100,
     "editor.tabSize": 2,
+    "editor.useTabStops": false,
     "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 120,
 
     "html.format.endWithNewline": true,
     "html.format.wrapAttributes": "aligned-multiple",
-    "html.format.wrapLineLength": 120,
 
     "stylelint.enable": true,
     "css.validate": false,
@@ -65,46 +61,9 @@
 
     // Extensions
     "prettier.endOfLine": "lf",
-    "prettier.eslintIntegration": true,
-    "prettier.stylelintIntegration": true,
 
-    "eslint.autoFixOnSave": true,
-
-    "phpcs.executablePath": "/home/alb/tools/code_sniffer/bin/phpcs",
-    "phpcs.standard": "WordPress",
-    "phpcbf.executablePath": "/home/alb/tools/code_sniffer/bin/phpcbf",
-    "phpcbf.standard": "WordPress",
-    "phpcbf.onsave": true,
-
-    "cSpell.enabledLanguageIds": [
-      "asciidoc",
-      "c",
-      "cpp",
-      "csharp",
-      "css",
-      "go",
-      "handlebars",
-      "html",
-      "ignore",
-      "jade",
-      "javascript",
-      "javascriptreact",
-      "json",
-      "jsonc",
-      "latex",
-      "less",
-      "markdown",
-      "php",
-      "plaintext",
-      "pub",
-      "python",
-      "restructuredtext",
-      "rust",
-      "scss",
-      "text",
-      "typescript",
-      "typescriptreact",
-      "yml"
-    ]
+    "phpcs.standard": "E:\\Dev\\wordpress\\plugins\\include-fussball-de-widgets\\.phpcs.xml.dist",
+    "phpcbf.standard": "E:\\Dev\\wordpress\\plugins\\include-fussball-de-widgets\\.phpcs.xml.dist",
+    "phpcbf.onsave": true
   }
 }
