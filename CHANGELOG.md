@@ -6,7 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Refactor "null ===" to exclamation mark syntax
+- Refactor "null ===" to exclamation mark syntax.
+- Reformat code, so that the coding standards can be better adhered to and thus a faster development is possible.
 
 ## [3.0.5] - 2019-10-13
 
@@ -54,7 +55,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- *IMPORTANT* Set the required PHP version up to 7.2.
+- _IMPORTANT_ Set the required PHP version up to 7.2.
 - Redesign the whole structure and use OOP from now on.
 - Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
 
