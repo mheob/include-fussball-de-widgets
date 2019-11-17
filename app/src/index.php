@@ -40,6 +40,7 @@ define( 'IFDW_URL', __FILE__ );
  * @param callable $class The class to include.
  *
  * @since 3.0
+ * @testFunction testAutoloader
  */
 function autoloader( $class ): void {
 	if ( false === strpos( $class, __NAMESPACE__ ) ) {
@@ -65,6 +66,7 @@ try {
  */
 // phpcs:disable WordPress.Security.ValidatedSanitizedInput
 define( 'IFDW_HOST', Host::cleanHost( wp_unslash( $_SERVER['SERVER_NAME'] ?? null ) ) );
+// phpcs:enable
 
 /*
  * Initialize the hooks.

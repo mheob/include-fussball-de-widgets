@@ -1,0 +1,20 @@
+{
+  "name": "include-fussball-de-widgets",
+  "description": "A WordPress plugin for easy integration of fussball.de widgets.",
+  "require": {
+    "composer/composer": "^1.9"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "phpunit/phpunit": "7.1.5",
+    "squizlabs/php_codesniffer": "^3.5",
+    "wp-coding-standards/wpcs": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "PHPTDD\\": "C:/Program Files/Microsoft VS Code/tests/unit",
+      "IFDW\\": "app/src"
+    }
+  }
+}
