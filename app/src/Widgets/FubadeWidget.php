@@ -42,7 +42,7 @@ class FubadeWidget extends WP_Widget {
 		parent::__construct(
 			'ifdw_fubade_widget',
 			__( 'Fussball.de Widget', 'include-fussball-de-widgets' ),
-			array( 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-widgets' ) )
+			[ 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-widgets' ) ]
 		);
 	}
 
@@ -55,12 +55,12 @@ class FubadeWidget extends WP_Widget {
 	 */
 	public function form( $instance ): void {
 		// Set the Widgets defaults and Parse current settings with defaults.
-		$defaults = array(
+		$defaults = [
 			'title'     => '',
 			'api'       => '',
 			'fullwidth' => '',
 			'devtools'  => '',
-		);
+		];
 		$instance = wp_parse_args( (array) $instance, $defaults );
 		?>
 		<p>
@@ -153,13 +153,13 @@ class FubadeWidget extends WP_Widget {
 		echo $args['before_title'] . $title . $args['after_title'] . PHP_EOL;
 
 		$output = ( new Fubade() )->output(
-			array(
+			[
 				'id'        => '',
 				'api'       => $api,
 				'notice'    => $title,
 				'fullwidth' => $fullwidth,
 				'devtools'  => $devtools,
-			)
+			]
 		);
 
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';

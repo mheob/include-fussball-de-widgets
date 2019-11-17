@@ -62,7 +62,7 @@ class Widgets {
 	 * @since 3.0
 	 */
 	public function addWidgetInitAction(): void {
-		add_action( 'widgets_init', array( $this, 'registerWidgets' ) );
+		add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
 	}
 
 	/**
