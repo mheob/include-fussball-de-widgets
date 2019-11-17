@@ -76,7 +76,7 @@ class PluginActions {
 	 * @since 3.0
 	 * @testFunction testPluginActionsAddLinksToRowMeta
 	 */
-	public function addLinksToRowMeta( $links, $file ): array {
+	public function addLinksToRowMeta( array $links, string $file ): array {
 		if ( plugin_basename( IFDW_URL ) !== $file ) {
 			return $links;
 		}
