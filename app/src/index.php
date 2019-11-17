@@ -40,7 +40,6 @@ define( 'IFDW_URL', __FILE__ );
  * @param callable $class The class to include.
  *
  * @since 3.0
- * @testFunction testAutoloader
  */
 function autoloader( $class ): void {
 	if ( false === strpos( $class, __NAMESPACE__ ) ) {
