@@ -50,7 +50,7 @@ registerBlockType('ifdw/fubade', {
     }
 
     return [
-      <InspectorControls key='inspector'>
+      <InspectorControls key="inspector">
         <PanelBody title={__('Fussball.de Widgets Settings', 'include-fussball-de-widgets')}>
           <TextControl
             label={__('Notice', 'include-fussball-de-widgets')}
@@ -64,8 +64,11 @@ registerBlockType('ifdw/fubade', {
             help={
               fullwidth
                 ? __('The widget will be shown in the maximal width.', 'include-fussball-de-widgets')
-                : __('The widget will be shown in the width given from fussball.de' +
-                  '(CSS possible could overwrite this setting).', 'include-fussball-de-widgets')
+                : __(
+                  'The widget will be shown in the width given from fussball.de' +
+                      '(CSS possible could overwrite this setting).',
+                  'include-fussball-de-widgets'
+                )
             }
             label={__('Show in full width', 'include-fussball-de-widgets')}
             onChange={newFullwidth => {
@@ -86,7 +89,7 @@ registerBlockType('ifdw/fubade', {
           />
         </PanelBody>
       </InspectorControls>,
-      <Fragment key='output'>
+      <Fragment key="output">
         <h4 className={`${className}-header`}>
           {__('Fussball.de Widget', 'include-fussball-de-widgets')}
           {typeof notice === 'undefined' || notice === '' ? '' : `: "${notice}"`}
@@ -94,12 +97,12 @@ registerBlockType('ifdw/fubade', {
         <div className={className}>
           <label htmlFor={inputId}>{__('Api:', 'include-fussball-de-widgets')}</label>
           <PlainText
-            className='input-control'
+            className="input-control"
             id={inputId}
             onChange={newApi => {
               setAttributes({ api: newApi });
               setAttributes({
-                id: `fubade_${(apiLength === newApi.length ? newApi.slice(-5) : 'ERROR_' + Number(new Date()))}`
+                id: `fubade_${apiLength === newApi.length ? newApi.slice(-5) : 'ERROR_' + Number(new Date())}`
               });
             }}
             placeholder={__('Insert API here...', 'include-fussball-de-widgets')}
@@ -112,8 +115,10 @@ registerBlockType('ifdw/fubade', {
           </div>
         ) : (
           <div className={`${className}-shortcode error`}>
-            {__('!!! The fussball.de API must have a length of exactly 32 characters. !!!',
-              'include-fussball-de-widgets')}
+            {__(
+              '!!! The fussball.de API must have a length of exactly 32 characters. !!!',
+              'include-fussball-de-widgets'
+            )}
           </div>
         )}
       </Fragment>

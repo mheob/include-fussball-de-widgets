@@ -22,8 +22,7 @@ namespace IFDW\Frontend;
 defined( 'ABSPATH' ) || exit();
 
 /**
- * Class Enqueue
- * Functions to register script for the Frontend.
+ * Class Enqueue provides functions to register scripts for the Frontend.
  *
  * @since 3.0
  */
@@ -31,9 +30,10 @@ class Enqueue {
 	/**
 	 * The instance.
 	 *
-	 * @var $instance
+	 * @since 3.0
+	 * @var self
 	 */
-	private static $instance = null;
+	private static $instance;
 
 	/**
 	 * Enqueue constructor.
@@ -45,21 +45,18 @@ class Enqueue {
 	/**
 	 * Get the instance.
 	 *
-	 * @return self
 	 * @since 3.0
+	 * @return self The instance of the class.
 	 */
 	public static function getInstance(): self {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
+		return self::$instance ?? new static();
 	}
 
 	/**
 	 * Add the init action for registering the fubade api.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	public function addInitAction(): void {
 		add_action( 'init', [ $this, 'registerFubadeApi' ] );
@@ -69,6 +66,7 @@ class Enqueue {
 	 * Register the api script for fussball.de.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	public function registerFubadeApi(): void {
 		wp_register_script(
@@ -81,4 +79,3 @@ class Enqueue {
 		wp_set_script_translations( 'fubade-api', 'include-fussball-de-widgets' );
 	}
 }
-

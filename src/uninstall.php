@@ -13,44 +13,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Include_Fussball_de_Widgets
+ * @package Include_Fussball_De_Widgets
  */
 
-declare( strict_types=1 );
-namespace IFDW\Utils;
-
-use function idn_to_ascii;
-
-defined( 'ABSPATH' ) || exit;
-
-/**
- * Class Host
- *
- * @since 3.0
- */
-class Host {
-	/**
-	 * The host.
-	 *
-	 * @var $host
-	 */
-	private static $host;
-
-	/**
-	 * Clean up the hostname.
-	 *
-	 * @param string|null $host The host.
-	 *
-	 * @return string The cleared hostname.
-	 */
-	public static function cleanHost( ?string $host ): string {
-		if ( ! isset( self::$host ) && is_string( $host ) ) {
-			if ( extension_loaded( 'intl' ) ) {
-				$host = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
-			}
-			self::$host = wp_unslash( $host ) ?? '';
-		}
-
-		return self::$host ?? 'SERVER_NAME-not-set';
-	}
+// If uninstall not called from WordPress, then exit.
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+	exit;
 }

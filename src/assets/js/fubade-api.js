@@ -24,27 +24,26 @@ window.FussballdeWidgetAPI = () => {
   );
 
   /** Support for Divi-Tabs & Fusion-Tabs */
-  if (document.body.classList.contains('et_divi_theme') ||
-    document.body.classList.contains('fusion-body')) {
+  if (document.body.classList.contains('et_divi_theme') || document.body.classList.contains('fusion-body')) {
     const tabs = document.querySelectorAll('.et_pb_tabs_controls a, .fusion-tabs a.tab-link');
     const iframes = document.querySelectorAll(
-      '.et_pb_tab_content [id^="fubade_"] > iframe, .fusion-tabs .tab_content [id^="fubade_"] > iframe');
+      '.et_pb_tab_content [id^="fubade_"] > iframe, .fusion-tabs .tab_content [id^="fubade_"] > iframe'
+    );
     if (tabs.length > 0) {
-      Array.from(tabs)
-        .forEach(diviTab => {
-          diviTab.addEventListener(
-            'click',
-            () => {
-              // noinspection JSCheckFunctionSignatures
-              setTimeout(
-                Array.from(iframes)
-                  .forEach(iframe => {
-                    iframe.src += '';
-                  }), 800);
-            },
-            false
-          );
-        });
+      Array.from(tabs).forEach(diviTab => {
+        diviTab.addEventListener(
+          'click',
+          () => {
+            setTimeout(
+              Array.from(iframes).forEach(iframe => {
+                iframe.src += '';
+              }),
+              800
+            );
+          },
+          false
+        );
+      });
     }
   }
 

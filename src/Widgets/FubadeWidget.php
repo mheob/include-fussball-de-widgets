@@ -26,14 +26,13 @@ use WP_Widget;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class FubadeWidget
- * Creates a fubade widget.
+ * Class FubadeWidget creates a fubade widget.
  *
  * @since 3.0
  */
 class FubadeWidget extends WP_Widget {
 	/**
-	 * The constructor.
+	 * FubadeWidget constructor.
 	 * Set up the Widgets name etc.
 	 *
 	 * @since 3.0
@@ -49,9 +48,11 @@ class FubadeWidget extends WP_Widget {
 	/**
 	 * Outputs the options form on admin
 	 *
+	 * @since 3.0
+	 *
 	 * @param array $instance The widget options.
 	 *
-	 * @since 3.0
+	 * @return void
 	 */
 	public function form( $instance ): void {
 		// Set the Widgets defaults and Parse current settings with defaults.
@@ -114,11 +115,12 @@ class FubadeWidget extends WP_Widget {
 	/**
 	 * Processing widget options on save
 	 *
+	 * @since 3.0
+	 *
 	 * @param array $new_instance The new options.
 	 * @param array $old_instance The previous options.
 	 *
 	 * @return array The new options.
-	 * @since 3.0
 	 */
 	public function update( $new_instance, $old_instance ): array {
 		$instance              = $old_instance;
@@ -133,14 +135,12 @@ class FubadeWidget extends WP_Widget {
 	/**
 	 * Outputs the content of the widget
 	 *
+	 * @since 3.0
+	 *
 	 * @param array $args     The Widget arguments.
 	 * @param array $instance The saved values from the database.
-	 *
-	 * @since 3.0
 	 */
 	public function widget( $args, $instance ): void {
-	  // phpcs:disable WordPress.Security.EscapeOutput
-
 		// Check the widget options.
 		$title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 		$api       = $instance['api'] ?? '';
@@ -148,9 +148,9 @@ class FubadeWidget extends WP_Widget {
 		$devtools  = empty( $instance['devtools'] ) ? false : true;
 
 		// WordPress core before_widget hook (always include).
-		echo $args['before_widget'] . PHP_EOL;
+		echo esc_html( $args['before_widget'] ) . PHP_EOL;
 
-		echo $args['before_title'] . $title . $args['after_title'] . PHP_EOL;
+		echo esc_html( $args['before_title'] . $title . $args['after_title'] ) . PHP_EOL;
 
 		$output = ( new Fubade() )->output(
 			[
@@ -164,14 +164,12 @@ class FubadeWidget extends WP_Widget {
 
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		if ( is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
-			echo BorlabsCookieHelper()->blockContent( $output, BorlabsCookie::CB_ID );
+			echo esc_html( BorlabsCookieHelper()->blockContent( $output, BorlabsCookie::CB_ID ) );
 		} else {
-			echo $output;
+			echo esc_html( $output );
 		}
 
 		// WordPress core after_widget hook (always include).
-		echo $args['after_widget'] . PHP_EOL;
-
-	  // phpcs:enable
+		echo esc_html( $args['after_widget'] ) . PHP_EOL;
 	}
 }

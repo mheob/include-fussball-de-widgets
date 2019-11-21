@@ -24,8 +24,7 @@ use IFDW\Frontend\Fubade;
 defined( 'ABSPATH' ) || exit();
 
 /**
- * Class Enqueue
- * Functions to register client-side assets (scripts and stylesheets) for the Gutenberg block.
+ * Class Enqueue provides Functions to register client-side assets (scripts and stylesheets) for the Gutenberg block.
  *
  * @since 3.0
  */
@@ -33,36 +32,33 @@ class Enqueue {
 	/**
 	 * The instance.
 	 *
-	 * @var $instance
+	 * @since 3.0
+	 * @var self
 	 */
-	private static $instance = null;
+	private static $instance;
 
 	/**
 	 * Enqueue constructor.
 	 *
 	 * @since 3.0
 	 */
-	private function __construct() {
-	}
+	private function __construct() {}
 
 	/**
 	 * Get the instance.
 	 *
-	 * @return self
-	 * @since  3.0
+	 * @since 3.0
+	 * @return self The instance of the class.
 	 */
 	public static function getInstance(): self {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
+		return self::$instance ?? new static();
 	}
 
 	/**
 	 * Add the init action for registering the dynamic block.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	public function addInitAction(): void {
 		add_action( 'init', [ $this, 'registerDynamicBlock' ] );
@@ -72,6 +68,7 @@ class Enqueue {
 	 * Register the dynamic block.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	public function registerDynamicBlock(): void {
 		if ( ! function_exists( 'register_block_type' ) ) {
@@ -115,12 +112,13 @@ class Enqueue {
 	/**
 	 * Creates the output to the sourcecode.
 	 *
+	 * @since 3.0
+	 *
 	 * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
 	 *
-	 * @return string
-	 * @since  3.0
+	 * @return string The output to the sourcecode.
 	 */
-	public function render( $attr ): string {
+	public function render( array $attr ): string {
 		return ( new Fubade() )->output( $attr );
 	}
 }

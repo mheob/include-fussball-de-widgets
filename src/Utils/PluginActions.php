@@ -22,59 +22,30 @@ namespace IFDW\Utils;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class PluginActions
- * Add additional information to the plugin on the plugin page.
+ * Class PluginActions adds additional information to the plugin on the plugin page.
  *
  * @since 3.0
  */
 class PluginActions {
 	/**
-	 * The instance.
-	 *
-	 * @var $instance
-	 */
-	private static $instance = null;
-
-	/**
-	 * PluginActions constructor.
-	 *
-	 * @since 3.0
-	 */
-	private function __construct() { }
-
-	/**
-	 * Get the instance.
-	 *
-	 * @return self
-	 * @since 3.0
-	 */
-	public static function getInstance(): self {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
-	}
-
-	/**
 	 * Add the plugin_row_meta filter.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	public function addPluginRowMetaFilter(): void {
 		add_filter( 'plugin_row_meta', [ $this, 'addLinksToRowMeta' ], 10, 2 );
 	}
-
 	/**
 	 * Additional links on plugin page.
 	 * Add additional links to the plugin on the plugin page along with meta information.
+	 *
+	 * @since 3.0
 	 *
 	 * @param array  $links List of existing plugin meta links.
 	 * @param string $file  The current plugin in the loop of filtering.
 	 *
 	 * @return array List of modified plugin meta links.
-	 * @since 3.0
-	 * @testFunction testPluginActionsAddLinksToRowMeta
 	 */
 	public function addLinksToRowMeta( array $links, string $file ): array {
 		if ( plugin_basename( IFDW_URL ) !== $file ) {

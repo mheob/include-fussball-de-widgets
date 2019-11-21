@@ -22,8 +22,7 @@ namespace IFDW\Backend;
 defined( 'ABSPATH' ) || exit();
 
 /**
- * Class BorlabsCookie
- * Functions to add "Borlabs-Cookie" (https://borlabs.io) support.
+ * Class BorlabsCookie provides functions to add "Borlabs-Cookie" (https://borlabs.io) support.
  *
  * @since 3.0
  */
@@ -33,21 +32,22 @@ class BorlabsCookie {
 	/**
 	 * The instance.
 	 *
-	 * @var $instance
+	 * @since 3.0
+	 * @var self
 	 */
-	private static $instance = null;
+	private static $instance;
 
 	/**
 	 * The table cookies.
 	 *
-	 * @var $tableNameCookies
+	 * @var string
 	 */
 	private $tableNameCookies;
 
 	/**
 	 * The table cookieGroups.
 	 *
-	 * @var $tableNameCookieGroups
+	 * @var string
 	 */
 	private $tableNameCookieGroups;
 
@@ -61,21 +61,18 @@ class BorlabsCookie {
 	/**
 	 * Get the instance.
 	 *
-	 * @return self
 	 * @since 3.0
+	 * @return self The instance of the class.
 	 */
 	public static function getInstance(): self {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
+		return self::$instance ?? new static();
 	}
 
 	/**
 	 * Add the admin init action for creating the content Blocker.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	public function addAdminInitAction(): void {
 		add_action( 'admin_init', [ $this, 'createContentBlocker' ] );
@@ -85,6 +82,7 @@ class BorlabsCookie {
 	 * Create the fubade content-blocker, if not exists already.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	public function createContentBlocker(): void {
 		if ( ! is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' )
@@ -159,8 +157,8 @@ class BorlabsCookie {
 	/**
 	 * Check if the `fubade` exists.
 	 *
-	 * @return bool If the fubade cookie exists it is true, otherwise false.
 	 * @since 3.0
+	 * @return bool If the fubade cookie exists it is true, otherwise false.
 	 */
 	private function checkFubadeCookieExists(): bool {
 		global $wpdb;
@@ -191,6 +189,7 @@ class BorlabsCookie {
 	 * Add the fubade cookie, if not exists already.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	private function addCookie(): void {
 		global $wpdb;

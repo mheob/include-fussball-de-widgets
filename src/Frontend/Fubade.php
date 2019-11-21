@@ -24,8 +24,7 @@ use IFDW\Utils\Logging\ConsoleLogger;
 defined( 'ABSPATH' ) || exit();
 
 /**
- * Class Fubade
- * Creates the output of the widget from `fussball.de`.
+ * Class Fubade used to create the output of the widget from `fussball.de`.
  *
  * @since 3.0
  */
@@ -36,21 +35,23 @@ class Fubade {
 	];
 
 	/**
-	 *  The instance.
+	 * The attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
 	 *
-	 * @var $instance
+	 * @since 3.0
+	 * @var array
 	 */
 	private $attr = [];
 
 	/**
 	 * Creates the output to the sourcecode.
 	 *
+	 * @since 3.0
+	 *
 	 * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
 	 *
-	 * @return string
-	 * @since 3.0
+	 * @return string The output to the sourcecode.
 	 */
-	public function output( $attr ): string {
+	public function output( array $attr ): string {
 		// TODO: Configure default setting in the admin area.
 		$this->setAttr( $attr );
 
@@ -94,9 +95,13 @@ class Fubade {
 	}
 
 	/**
-	 * Set the attribute array
+	 * Set the attribute array.
 	 *
-	 * @param array $attr The attributes for the widget rendering.
+	 * @since 3.0
+	 *
+	 * @param array $attr The attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`) for the widget rendering.
+	 *
+	 * @return void
 	 */
 	public function setAttr( array $attr ): void {
 		$this->attr = [
@@ -111,10 +116,11 @@ class Fubade {
 	/**
 	 * Render all the output.
 	 *
+	 * @since 3.0
+	 *
 	 * @param string|null $error Potential errors.
 	 *
-	 * @return string
-	 * @since 3.0
+	 * @return string The rendered the output.
 	 */
 	private function render( ?string $error ): string {
 		$divAttributeString = 'id="' . esc_html( $this->attr['id'] ) . '" class="include-fussball-de-widgets"';
@@ -156,8 +162,8 @@ class Fubade {
 	/**
 	 * Creates the iframe needed from fussball.de.
 	 *
-	 * @return string
 	 * @since 3.0
+	 * @return string The iframe.
 	 */
 	private function createIframe(): string {
 		$src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'];

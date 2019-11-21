@@ -17,62 +17,58 @@
  */
 
 declare( strict_types=1 );
-namespace IFDW\Utils;
+namespace IFDW\Widgets;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Textdomain
- * Only needed for the Poedit workflow. The official translations comes from wordpress.org.
+ * Class Widgets register all Widgets from 'Include_Fussball_De_Widgets'.
  *
  * @since 3.0
  */
-class Textdomain {
+class Widgets {
 	/**
 	 * The instance.
 	 *
-	 * @var $instance
+	 * @since 3.0
+	 * @var self
 	 */
-	private static $instance = null;
+	private static $instance;
 
 	/**
-	 * Textdomain constructor.
+	 * Widgets constructor.
+	 *
+	 * @since 3.0
 	 */
 	private function __construct() { }
 
 	/**
 	 * Get the instance.
 	 *
-	 * @return self
 	 * @since 3.0
+	 * @return self The instance of the class.
 	 */
 	public static function getInstance(): self {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
+		return self::$instance ?? new static();
 	}
 
 	/**
-	 * Add the plugins_loaded action.
+	 * Add the widgets_init action.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
-	public function addPluginsLoadedAction(): void {
-		add_action( 'plugins_loaded', [ $this, 'loadTextdomain' ] );
+	public function addWidgetInitAction(): void {
+		add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
 	}
 
 	/**
-	 * Load the plugin textdomain.
+	 * Initialize all Widgets
 	 *
-	 * @since 3.0
+	 * @since 3.0.0
+	 * @return void
 	 */
-	public function loadTextdomain(): void {
-		load_plugin_textdomain(
-			'include-fussball-de-widgets',
-			false,
-			dirname( plugin_basename( IFDW_URL ) ) . '/languages'
-		);
+	public function registerWidgets(): void {
+		register_widget( '\\IFDW\\Widgets\\FubadeWidget' );
 	}
 }

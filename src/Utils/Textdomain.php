@@ -17,74 +17,62 @@
  */
 
 declare( strict_types=1 );
-namespace IFDW\Shortcodes;
+namespace IFDW\Utils;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Fubade
- * Define and render the fubade shortcode.
+ * Class Textdomain register the used textdomain for local usages.
+ *
+ * Only needed for the Poedit workflow. The official translations comes from wordpress.org.
  *
  * @since 3.0
  */
-class Fubade {
+class Textdomain {
 	/**
 	 * The instance.
 	 *
-	 * @var $instance
+	 * @since 3.0
+	 * @var self
 	 */
-	private static $instance = null;
+	private static $instance;
 
 	/**
-	 * Fubade constructor.
-	 *
-	 * @since 3.0
+	 * Textdomain constructor.
 	 */
 	private function __construct() { }
 
 	/**
 	 * Get the instance.
 	 *
-	 * @return self
 	 * @since 3.0
+	 * @return self The instance of the class.
 	 */
 	public static function getInstance(): self {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
+		return self::$instance ?? new static();
 	}
 
 	/**
-	 * Add the fubade shortcode.
+	 * Add the plugins_loaded action.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
-	public function addShortcode(): void {
-		add_shortcode( 'fubade', [ $this, 'createShortcode' ] );
+	public function addPluginsLoadedAction(): void {
+		add_action( 'plugins_loaded', [ $this, 'loadTextdomain' ] );
 	}
 
 	/**
-	 * Render the fubade shortcode
+	 * Load the plugin textdomain.
 	 *
-	 * @param array $atts Shortcode attributes (`id`, `api`, `notice`, `fullwidth` and `devtools`).
-	 *
-	 * @return string
 	 * @since 3.0
+	 * @return void
 	 */
-	public function createShortcode( $atts ): string {
-		$a = shortcode_atts(
-			[
-				'id'        => '',
-				'api'       => '',
-				'notice'    => '',
-				'fullwidth' => '',
-				'devtools'  => '',
-			],
-			$atts
+	public function loadTextdomain(): void {
+		load_plugin_textdomain(
+			'include-fussball-de-widgets',
+			false,
+			dirname( plugin_basename( IFDW_URL ) ) . '/languages'
 		);
-
-		return ( new \IFDW\Frontend\Fubade() )->output( $a );
 	}
 }

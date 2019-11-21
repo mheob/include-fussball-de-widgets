@@ -22,23 +22,25 @@ namespace IFDW\Utils\Logging;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class ConsoleLogger
- * Logs information over the used system and plugin to the browser console.
+ * Class SourceLogger is used to logs information over the used system and plugin to the browser console.
  *
+ * @see IFDW\Utils\Logging\Base
  * @since 3.0
  */
-class ConsoleLogger extends Base {
+class SourceLogger extends Base {
 	/**
 	 * The instance.
 	 *
-	 * @var $instance
+	 * @since 3.0
+	 * @var self
 	 */
-	private static $instance = null;
+	private static $instance;
 
 	/**
 	 * True if the general informations are already logged.
 	 *
-	 * @var $instance
+	 * @since 3.0
+	 * @var boolean
 	 */
 	private $isGeneralLogged = false;
 
@@ -56,35 +58,21 @@ class ConsoleLogger extends Base {
 	/**
 	 * Get the instance.
 	 *
-	 * @return self
 	 * @since 3.0
+	 * @return self The instance of the class.
 	 */
 	public static function getInstance(): self {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
-	}
-
-	/**
-	 * Generates a logging output of an error.
-	 *
-	 * @param string $error The error message.
-	 *
-	 * @since 3.0
-	 */
-	public function errorLog( string $error ): void {
-		$errorMessage = 'console.info(' . wp_json_encode( $error, JSON_HEX_TAG ) . ');' . PHP_EOL;
-		wp_add_inline_script( 'jquery', $errorMessage );
+		return self::$instance ?? new static();
 	}
 
 	/**
 	 * Generates a logging output.
 	 *
+	 * @since 3.0
+	 *
 	 * @param array $arr The arguments.
 	 *
-	 * @since 3.0
+	 * @return void
 	 */
 	public function log( array $arr ): void {
 		if ( ! $this->isGeneralLogged ) {
@@ -98,16 +86,18 @@ class ConsoleLogger extends Base {
 	 * Logs the general information, for example from the plugin, WordPress and / or the server.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	protected function logGeneralInfo(): void {
-		$output = '';
+		$message = '<!-- ' . PHP_EOL;
+
 		foreach ( $this->generalInfoList as $item ) {
-			$output .= 'console.log(' . wp_json_encode( $item, JSON_HEX_TAG ) . ');' . PHP_EOL;
+			$message .= $item . PHP_EOL;
 		};
 
-		$output .= "console.log('')" . PHP_EOL;
+		$message .= ' -->' . PHP_EOL;
 
-		wp_add_inline_script( 'fubade-api', $output );
+		print esc_html( $message );
 
 		$this->isGeneralLogged = true;
 	}
@@ -115,28 +105,30 @@ class ConsoleLogger extends Base {
 	/**
 	 * Logs the information pertaining to a specific widget only.
 	 *
+	 * @since 3.0
+	 *
 	 * @param array $arr The arguments.
 	 *
-	 * @since 3.0
+	 * @return void
 	 */
 	protected function logWidgetInfo( array $arr ): void {
 		if ( ! isset( $arr['id'] ) ) {
 			return;
 		}
 
-		$output = '';
+		$message = '<!-- ' . PHP_EOL;
 
 		foreach ( $arr as $key => $value ) {
 			if ( 'id' === $key ) {
 				continue;
 			}
 
-			$temp    = esc_html( $key ) . __( ': ', 'include-fussball-de-widgets' ) . esc_html( $value );
-			$output .= 'console.info(' . wp_json_encode( '[' . $arr['id'] . '] ' . $temp, JSON_HEX_TAG ) . ');' . PHP_EOL;
+			$temp     = esc_html( $key ) . __( ': ', 'include-fussball-de-widgets' ) . esc_html( $value );
+			$message .= '[' . $arr['id'] . '] ' . $temp . PHP_EOL;
 		}
 
-		$output .= "console.info('')" . PHP_EOL;
+		$message .= ' -->' . PHP_EOL;
 
-		wp_add_inline_script( 'fubade-api', $output );
+		print esc_html( $message );
 	}
 }

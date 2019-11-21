@@ -22,8 +22,7 @@ namespace IFDW\Utils\Logging;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Abstract Class Base
- * Config the base attributes for the logging classes.
+ * Abstract Class Base ist used to config the base attributes for the logging classes.
  *
  * @since 3.0
  */
@@ -31,7 +30,8 @@ abstract class Base {
 	/**
 	 * The general info list.
 	 *
-	 * @var $generalInfoList.
+	 * @since 3.0
+	 * @var array
 	 */
 	protected $generalInfoList = [];
 
@@ -54,9 +54,11 @@ abstract class Base {
 	/**
 	 * Generates a logging output.
 	 *
+	 * @since 3.0
+	 *
 	 * @param array $arr The arguments.
 	 *
-	 * @since 3.0
+	 * @return void
 	 */
 	abstract public function log( array $arr ): void;
 
@@ -64,15 +66,18 @@ abstract class Base {
 	 * Logs the general information, for example from the plugin, WordPress and / or the server.
 	 *
 	 * @since 3.0
+	 * @return void
 	 */
 	abstract protected function logGeneralInfo(): void;
 
 	/**
 	 * Logs the information pertaining to a specific widget only.
 	 *
+	 * @since 3.0
+	 *
 	 * @param array $arr The arguments.
 	 *
-	 * @since 3.0
+	 * @return void
 	 */
 	abstract protected function logWidgetInfo( array $arr ): void;
 

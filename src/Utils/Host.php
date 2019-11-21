@@ -13,64 +13,47 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Include_Fussball_De_Widgets
+ * @package Include_Fussball_de_Widgets
  */
 
 declare( strict_types=1 );
-namespace IFDW\Widgets;
+namespace IFDW\Utils;
+
+use function idn_to_ascii;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Widgets
- * Register all Widgets from 'Include_Fussball_De_Widgets'.
+ * Class Host provides utilities for checking and generating hosting things.
  *
  * @since 3.0
  */
-class Widgets {
+class Host {
 	/**
-	 *  The instance.
+	 * The stored hostname.
 	 *
-	 * @var $instance
+	 * @since 3.1
+	 * @var string
 	 */
-	private static $instance = null;
+	private static $host;
 
 	/**
-	 * Widgets constructor.
+	 * Clean up the hostname.
 	 *
 	 * @since 3.0
-	 */
-	private function __construct() { }
-
-	/**
-	 * Get the instance.
 	 *
-	 * @return self
-	 * @since 3.0
+	 * @param string|null $host The hostname getting from the server.
+	 *
+	 * @return string The cleared hostname.
 	 */
-	public static function getInstance(): self {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
+	public static function cleanHost( ?string $host ): string {
+		if ( ! isset( self::$host ) && is_string( $host ) ) {
+			if ( extension_loaded( 'intl' ) ) {
+				$host = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
+			}
+			self::$host = wp_unslash( $host ) ?? '';
 		}
 
-		return self::$instance;
-	}
-
-	/**
-	 * Add the widgets_init action.
-	 *
-	 * @since 3.0
-	 */
-	public function addWidgetInitAction(): void {
-		add_action( 'widgets_init', [ $this, 'registerWidgets' ] );
-	}
-
-	/**
-	 * Initialize all Widgets
-	 *
-	 * @since   3.0.0
-	 */
-	public function registerWidgets(): void {
-		register_widget( '\\IFDW\\Widgets\\FubadeWidget' );
+		return self::$host ?? 'SERVER_NAME-not-set';
 	}
 }

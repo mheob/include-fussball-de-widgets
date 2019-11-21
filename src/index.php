@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Include Fussball.de Widgets
  * Description:  Easy integration of the Fussball.de widgets (currently in the version since season 2016).
- * Version:      3.0.5
+ * Version:      3.1.0
  * Requires PHP: 7.2
  * Author:       IT-Service Böhm -- Alexander Böhm
  * Author URI:   http://profiles.wordpress.org/mheob
@@ -31,26 +31,28 @@ defined( 'ABSPATH' ) || exit;
  * Constants
  */
 
-define( 'IFDW_VERSION', '3.0.5' );
+define( 'IFDW_VERSION', '3.1.0' );
 define( 'IFDW_URL', __FILE__ );
 
 /**
  * Autoloader for all classes in the plugin.
  *
- * @param callable $class The class to include.
- *
  * @since 3.0
+ *
+ * @param callable $className The class to include.
+ *
+ * @return void
  */
-function autoloader( $class ): void {
-	if ( false === strpos( $class, __NAMESPACE__ ) ) {
+function autoloader( $className ): void {
+	if ( false === strpos( $className, __NAMESPACE__ ) ) {
 		return;
 	}
 
-	$classPath = str_replace( 'IFDW\\', '', $class );
-	$path      = __DIR__ . '/' . str_replace( '\\', '/', $classPath ) . '.php';
+	$classPath = str_replace( 'IFDW\\', '', $className );
+	$path      = __DIR__ . DIRECTORY_SEPARATOR . str_replace( '\\', DIRECTORY_SEPARATOR, $classPath ) . '.php';
 
-	if ( ! class_exists( $class ) && file_exists( $path ) ) {
-		require $path;
+	if ( ! class_exists( $className ) && file_exists( $path ) ) {
+		require_once $path;
 	}
 }
 
