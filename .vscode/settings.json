@@ -1,0 +1,95 @@
+{
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".github*": true,
+    ".releases": true,
+    "assets": true
+  },
+  "files.watcherExclude": {
+    "**/.github": true,
+    "**/.github-releases": true,
+    "**/.releases": true,
+    "**/node_modules/**": true,
+    "**/vendot/**": true
+  },
+
+  "editor.minimap.maxColumn": 100,
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
+  "editor.wordWrap": "on",
+
+  "html.format.wrapAttributes": "aligned-multiple",
+  "html.format.endWithNewline": true,
+
+  "[php]": {
+    "editor.defaultFormatter": "valeryanm.vscode-phpsab",
+    "editor.detectIndentation": true,
+    "editor.useTabStops": true,
+    "editor.insertSpaces": false
+  },
+
+  "[javascript]": {
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.useTabStops": false
+  },
+
+  // Extensions
+  "stylelint.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+
+  "intelephense.files.exclude": [
+    "**/.git/**",
+    "**/.svn/**",
+    "**/.hg/**",
+    "**/CVS/**",
+    "**/.DS_Store/**",
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**"
+  ],
+
+  "php-docblocker.extra": ["@since ${###:3.1}"],
+  "php-docblocker.classTemplate": {
+    "myMessage": {
+      "content": "Class ${###:Clasname}",
+      "gapAfter": true
+    },
+    "extra": {}
+  },
+  "php-docblocker.functionTemplate": {
+    "message": {
+      "gapAfter": true
+    },
+    "extra": {},
+    "param": {
+      "gapBefore": true,
+      "gapAfter": true
+    },
+    "return": {}
+  },
+  "php-docblocker.propertyTemplate": {
+    "message": {
+      "gapAfter": true
+    },
+    "extra": {},
+    "var": {}
+  },
+
+  "phpGettersSetters.spacesAfterParam": 1,
+  "phpGettersSetters.spacesAfterParamVar": 1,
+  "phpGettersSetters.spacesAfterReturn": 1,
+
+  "phpsab.snifferMode": "onType",
+  "phpsab.standard": "./phpcs.xml.dist",
+
+  "prettier.bracketSpacing": true,
+  "prettier.endOfLine": "lf",
+  "prettier.printWidth": 120
+}
