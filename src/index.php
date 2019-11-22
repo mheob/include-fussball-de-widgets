@@ -17,6 +17,23 @@
 declare( strict_types=1 );
 namespace IFDW;
 
+define( 'IFDW_PHP_VERSION', '7.2.0' );
+
+if ( version_compare( phpversion(), IFDW_PHP_VERSION, '<' ) ) {
+	add_action(
+		'admin_notices',
+		function() {
+			echo '<div class="notice notice-error"><p>';
+			printf( // translators: %s: The required PHP version.
+				esc_html__( 'Include Fussball.de Widgets requires PHP %s or higher.', 'include-fussball-de-widgets' ),
+				esc_html( IFDW_PHP_VERSION )
+			);
+			echo '</p></div>';
+		}
+	);
+	return;
+}
+
 use Exception;
 use IFDW\Backend\BorlabsCookie;
 use IFDW\Blocks\Enqueue as EnqueueBlocks;
