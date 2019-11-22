@@ -28,7 +28,8 @@
     "i18n": "npm run i18n:json && npm run i18n:copy",
     "release:copy": "cpr dist/ .releases/include-fussball-de-widgets/trunk/ -d",
     "release:github": "cpr ./dist/ .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets-v3.1.0.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
-    "release": "npm run release:copy && npm run release:github"
+    "release": "npm run release:copy && npm run release:github",
+    "test:cs": "./vendor/bin/phpcs"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"

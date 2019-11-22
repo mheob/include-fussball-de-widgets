@@ -102,11 +102,16 @@ class BorlabsCookie {
 		/* Setup variables */
 		$cbHtml = '<div class="_brlbs-content-blocker">
 	<div class="_brlbs-embed brlbs-ifdw">
-		<img class="_brlbs-thumbnail" src="' . plugins_url( 'assets/images/cb-fubade.png', IFDW_URL ) . '" alt="%%name%%">
+		<img class="_brlbs-thumbnail" src="' .
+			plugins_url( 'assets/images/cb-fubade.png', IFDW_URL ) . '" alt="%%name%%">
 		<div class="_brlbs-caption">
 			<p>
-				' . __( 'By loading the widget, you agree to the privacy policy of fussball.de.', 'include-fussball-de-widgets' ) . '<br>
-				<a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' . __( 'Learn more', 'include-fussball-de-widgets' ) . '</a>
+				' . __(
+				'By loading the widget, you agree to the privacy policy of fussball.de.',
+				'include-fussball-de-widgets'
+			) . '<br>
+				<a href="%%privacy_policy_url%%" target="_blank" rel="nofollow">' .
+					__( 'Learn more', 'include-fussball-de-widgets' ) . '</a>
 			</p>
 			<p>
 			<a class="_brlbs-btn" href="#" data-borlabs-cookie-unblock role="button">
@@ -244,7 +249,11 @@ class BorlabsCookie {
           '" . self::CB_ID . "',
         '" . _x( 'Unlimited', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
           '" . esc_sql(
-			'<script>if("object" === typeof window.BorlabsCookie) { window.BorlabsCookie.unblockContentId("' . self::CB_ID . '"); }</script>'
+			'<script>
+				if("object" === typeof window.BorlabsCookie) {
+					window.BorlabsCookie.unblockContentId("' . self::CB_ID . '");
+				}
+			</script>'
 		) . "',
           82,
           1,

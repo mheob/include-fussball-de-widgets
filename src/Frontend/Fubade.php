@@ -126,7 +126,8 @@ class Fubade {
 		$divAttributeString = 'id="' . esc_html( $this->attr['id'] ) . '" class="include-fussball-de-widgets"';
 
 		if ( $error ) {
-			$divAttributeString .= ' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
+			$divAttributeString .=
+			' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
 
 			switch ( $error ) {
 				case self::ERROR['API_LENGTH']:

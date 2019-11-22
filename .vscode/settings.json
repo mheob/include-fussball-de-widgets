@@ -82,8 +82,10 @@
   "phpGettersSetters.spacesAfterParamVar": 1,
   "phpGettersSetters.spacesAfterReturn": 1,
 
+  "phpsab.executablePathCBF": "./vendor/bin/phpcbf",
+  "phpsab.executablePathCS": "./vendor/bin/phpcs",
   "phpsab.snifferMode": "onType",
-  "phpsab.standard": "./phpcs.xml.dist",
+  "phpsab.standard": "./.phpcs.xml",
 
   "prettier.bracketSpacing": true,
   "prettier.endOfLine": "lf",
