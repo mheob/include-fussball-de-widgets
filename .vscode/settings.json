@@ -11,14 +11,10 @@
     "assets": true
   },
   "files.watcherExclude": {
-    "**/.github": true,
-    "**/.github-releases": true,
-    "**/.releases": true,
     "**/node_modules/**": true,
-    "**/vendot/**": true
+    "**/vendor/**": true
   },
 
-  "editor.minimap.maxColumn": 100,
   "editor.tabSize": 2,
   "editor.useTabStops": false,
   "editor.wordWrap": "on",
