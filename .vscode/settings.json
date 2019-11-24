@@ -11,6 +11,7 @@
     "assets": true
   },
   "files.watcherExclude": {
+    "**/lib/**": true,
     "**/node_modules/**": true,
     "**/vendor/**": true
   },
