@@ -7,5 +7,6 @@
 **/.releases/
 **/dist/
 
-# Test coverage
+# PHPUnit
 **/tests/phpunit/coverage/
+.phpunit.result.cache

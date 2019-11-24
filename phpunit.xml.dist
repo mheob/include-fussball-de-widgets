@@ -5,7 +5,8 @@
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
-         printerClass="Sempro\PHPUnitPrettyPrinter\PrettyPrinter">
+         cacheResult="true"
+         printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer">
 	<testsuites>
 		<testsuite name="default">
 			<directory suffix="Test.php">./tests/phpunit</directory>
@@ -35,5 +36,8 @@
          showUncoveredFiles="true" />
     <log type="testdox-html"
          target="tests/phpunit/coverage/testdox.html" />
+    <!-- <log type="coverage-text"
+         target="php://stdout"
+         showUncoveredFiles="false"/> -->
   </logging>
 </phpunit>
