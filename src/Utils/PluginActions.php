@@ -28,6 +28,31 @@ defined( 'ABSPATH' ) || exit;
  */
 class PluginActions {
 	/**
+	 * The instance.
+	 *
+	 * @since 3.0
+	 * @var self
+	 */
+	private static $instance;
+
+	/**
+	 * The PluginActions constructor.
+	 *
+	 * @since 3.0
+	 */
+	private function __construct() { }
+
+	/**
+	 * Get the instance.
+	 *
+	 * @since 3.0
+	 * @return self The instance of the class.
+	 */
+	public static function getInstance(): self {
+		return self::$instance ?? new static();
+	}
+
+	/**
 	 * Add the plugin_row_meta filter.
 	 *
 	 * @since 3.0
@@ -36,6 +61,7 @@ class PluginActions {
 	public function addPluginRowMetaFilter(): void {
 		add_filter( 'plugin_row_meta', [ $this, 'addLinksToRowMeta' ], 10, 2 );
 	}
+
 	/**
 	 * Additional links on plugin page.
 	 * Add additional links to the plugin on the plugin page along with meta information.
