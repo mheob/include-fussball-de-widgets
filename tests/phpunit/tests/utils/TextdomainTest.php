@@ -87,7 +87,7 @@ final class TextdomainTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testReturnsTheInputArrayWhenPluginPathIsDifferent() : void {
-		// TODO: Write the test.
+		// TODO: Write a more precise test.
 		self::$instance->loadTextdomain();
 		$this->assertTrue( true );
 	}
