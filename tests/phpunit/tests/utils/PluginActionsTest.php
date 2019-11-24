@@ -18,7 +18,7 @@
 
 declare( strict_types=1 );
 
-require __DIR__ . '../../../utils/WP_Hooks.php';
+require_once __DIR__ . '../../../utils/WP_Hooks.php';
 
 use IFDW\Utils\PluginActions;
 use IFDW\Tests\Utils\WP_Hooks;
@@ -46,14 +46,6 @@ final class PluginActionsTest extends WP_UnitTestCase {
 	private static $sampleLinks;
 
 	/**
-	 * The plugin root.
-	 *
-	 * @since 3.1
-	 * @var string
-	 */
-	private static $pluginRoot;
-
-	/**
 	 * Set up the configuration
 	 *
 	 * @since 3.1
@@ -65,11 +57,10 @@ final class PluginActionsTest extends WP_UnitTestCase {
 
 		// Configure the sample data.
 		self::$sampleLinks = [ '<a href="#">FAQ</a>', '<a href="#">Support</a>' ];
-		self::$pluginRoot  = plugin_basename( IFDW_URL );
 	}
 
 	/**
-	 * Tests adding the `plugin_row_meta`is set.
+	 * Tests adding the `plugin_row_meta` is set.
 	 *
 	 * @since 3.1
 	 *
@@ -80,9 +71,7 @@ final class PluginActionsTest extends WP_UnitTestCase {
 	 */
 	public function testPluginRowMetaFilterIsSet(): void {
 		$this->assertFalse( WP_Hooks::hasFilter( 'plugin_row_meta', self::$instance, 'addLinksToRowMeta' ) );
-
 		self::$instance->addPluginRowMetaFilter();
-
 		$this->assertTrue( WP_Hooks::hasFilter( 'plugin_row_meta', self::$instance, 'addLinksToRowMeta' ) );
 	}
 
@@ -115,7 +104,7 @@ final class PluginActionsTest extends WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testReturnsTheUpdatedArrayOfRowMetaLinks(): void {
-		$sampleFunctionCall = self::$instance->addLinksToRowMeta( self::$sampleLinks, self::$pluginRoot );
+		$sampleFunctionCall = self::$instance->addLinksToRowMeta( self::$sampleLinks, plugin_basename( IFDW_URL ) );
 
 		$this->assertIsArray( $sampleFunctionCall );
 		$this->assertEquals( 3, count( $sampleFunctionCall ) );
