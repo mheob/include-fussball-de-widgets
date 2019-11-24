@@ -17,9 +17,7 @@
  */
 
 declare( strict_types=1 );
-namespace IFDW\Tests\Utils;
-
-defined( 'ABSPATH' ) || exit();
+namespace IFDW\PhpUnit\Utils;
 
 /**
  * Class WP_Hooks

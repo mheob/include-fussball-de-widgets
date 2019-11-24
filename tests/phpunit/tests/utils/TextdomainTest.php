@@ -17,18 +17,19 @@
  */
 
 declare( strict_types=1 );
+namespace IFDW\PhpUnit\Tests\Utils;
 
 require_once __DIR__ . '../../../utils/WP_Hooks.php';
 
 use IFDW\Utils\Textdomain;
-use IFDW\Tests\Utils\WP_Hooks;
+use IFDW\PhpUnit\Utils\WP_Hooks;
 
 /**
  * Class TextdomainTest
  *
  * @since 3.1
  */
-final class TextdomainTest extends WP_UnitTestCase {
+final class TextdomainTest extends \WP_UnitTestCase {
 	/**
 	 * The instance.
 	 *
