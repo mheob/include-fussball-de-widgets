@@ -47,7 +47,7 @@ class Host {
 	 * @return string The cleared hostname.
 	 */
 	public static function cleanHost( ?string $host ): string {
-		if ( ! isset( self::$host ) && is_string( $host ) ) {
+		if ( ! isset( self::$host ) && ! empty( $host ) ) {
 			if ( extension_loaded( 'intl' ) ) {
 				$host = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
 			}
