@@ -29,7 +29,10 @@
     "release:copy": "cpr dist/ .releases/include-fussball-de-widgets/trunk/ -d",
     "release:github": "cpr ./dist/ .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets-v3.1.0.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
     "release": "npm run release:copy && npm run release:github",
-    "test:cs": "./vendor/bin/phpcs"
+    "test:cs": "./vendor/bin/phpcs",
+    "test:phpunit": "./vendor/bin/phpunit --no-coverage",
+    "test:phpunit:full": "./vendor/bin/phpunit",
+    "test": "npm run test:cs && npm run test:phpunit:full"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
@@ -59,6 +62,7 @@
     "sass-loader": "^8.0.0",
     "semistandard": "14.2.0",
     "stylelint": "^11.1.1",
+    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-wordpress": "^15.0.0",
     "stylelint-order": "^3.1.1",
     "terser-webpack-plugin": "^2.2.1"

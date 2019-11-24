@@ -85,7 +85,7 @@
   "phpsab.executablePathCBF": "./vendor/bin/phpcbf",
   "phpsab.executablePathCS": "./vendor/bin/phpcs",
   "phpsab.snifferMode": "onType",
-  "phpsab.standard": "./.phpcs.xml",
+  "phpsab.standard": "./.phpcs.xml.dist",
 
   "prettier.bracketSpacing": true,
   "prettier.endOfLine": "lf",
