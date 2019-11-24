@@ -6,3 +6,6 @@
 **/.github-releases/
 **/.releases/
 **/dist/
+
+# Test coverage
+**/tests/phpunit/coverage/
