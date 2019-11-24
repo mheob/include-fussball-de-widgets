@@ -1,0 +1,1192 @@
+<?php
+$coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
+$coverage->setData(array (
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Blocks/Enqueue.php' => 
+  array (
+    54 => 
+    array (
+    ),
+    55 => NULL,
+    64 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    74 => 
+    array (
+    ),
+    75 => 
+    array (
+    ),
+    78 => 
+    array (
+    ),
+    79 => 
+    array (
+    ),
+    80 => 
+    array (
+    ),
+    81 => 
+    array (
+    ),
+    82 => 
+    array (
+    ),
+    83 => 
+    array (
+    ),
+    86 => 
+    array (
+    ),
+    88 => 
+    array (
+    ),
+    89 => 
+    array (
+    ),
+    90 => 
+    array (
+    ),
+    91 => 
+    array (
+    ),
+    92 => 
+    array (
+    ),
+    95 => 
+    array (
+    ),
+    96 => 
+    array (
+    ),
+    98 => 
+    array (
+    ),
+    105 => 
+    array (
+    ),
+    106 => 
+    array (
+    ),
+    107 => 
+    array (
+    ),
+    110 => 
+    array (
+    ),
+    122 => 
+    array (
+    ),
+    123 => NULL,
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Widgets/Widgets.php' => 
+  array (
+    52 => 
+    array (
+    ),
+    53 => NULL,
+    62 => 
+    array (
+    ),
+    63 => 
+    array (
+    ),
+    72 => 
+    array (
+    ),
+    73 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Widgets/FubadeWidget.php' => 
+  array (
+    41 => 
+    array (
+    ),
+    42 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    46 => 
+    array (
+    ),
+    60 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    67 => 
+    array (
+    ),
+    70 => 
+    array (
+    ),
+    81 => 
+    array (
+    ),
+    96 => 
+    array (
+    ),
+    99 => 
+    array (
+    ),
+    107 => 
+    array (
+    ),
+    110 => 
+    array (
+    ),
+    113 => 
+    array (
+    ),
+    126 => 
+    array (
+    ),
+    127 => 
+    array (
+    ),
+    128 => 
+    array (
+    ),
+    129 => 
+    array (
+    ),
+    130 => 
+    array (
+    ),
+    132 => 
+    array (
+    ),
+    133 => NULL,
+    145 => 
+    array (
+    ),
+    146 => 
+    array (
+    ),
+    147 => 
+    array (
+    ),
+    148 => 
+    array (
+    ),
+    151 => 
+    array (
+    ),
+    153 => 
+    array (
+    ),
+    155 => 
+    array (
+    ),
+    157 => 
+    array (
+    ),
+    158 => 
+    array (
+    ),
+    159 => 
+    array (
+    ),
+    160 => 
+    array (
+    ),
+    161 => 
+    array (
+    ),
+    165 => 
+    array (
+    ),
+    166 => 
+    array (
+    ),
+    167 => 
+    array (
+    ),
+    169 => 
+    array (
+    ),
+    173 => 
+    array (
+    ),
+    174 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Backend/BorlabsCookie.php' => 
+  array (
+    68 => 
+    array (
+    ),
+    69 => NULL,
+    78 => 
+    array (
+    ),
+    79 => 
+    array (
+    ),
+    88 => 
+    array (
+    ),
+    89 => 
+    array (
+    ),
+    90 => 
+    array (
+    ),
+    93 => 
+    array (
+    ),
+    95 => 
+    array (
+    ),
+    96 => 
+    array (
+    ),
+    98 => 
+    array (
+    ),
+    99 => 
+    array (
+    ),
+    106 => 
+    array (
+    ),
+    109 => 
+    array (
+    ),
+    110 => 
+    array (
+    ),
+    111 => 
+    array (
+    ),
+    112 => 
+    array (
+    ),
+    114 => 
+    array (
+    ),
+    118 => 
+    array (
+    ),
+    124 => 
+    array (
+    ),
+    131 => 
+    array (
+    ),
+    146 => 
+    array (
+    ),
+    147 => 
+    array (
+    ),
+    148 => 
+    array (
+    ),
+    149 => 
+    array (
+    ),
+    150 => 
+    array (
+    ),
+    151 => 
+    array (
+    ),
+    152 => 
+    array (
+    ),
+    153 => 
+    array (
+    ),
+    154 => 
+    array (
+    ),
+    155 => 
+    array (
+    ),
+    156 => 
+    array (
+    ),
+    157 => 
+    array (
+    ),
+    158 => 
+    array (
+    ),
+    160 => 
+    array (
+    ),
+    169 => 
+    array (
+    ),
+    174 => 
+    array (
+    ),
+    175 => 
+    array (
+    ),
+    176 => 
+    array (
+    ),
+    180 => 
+    array (
+    ),
+    181 => 
+    array (
+    ),
+    186 => 
+    array (
+    ),
+    187 => 
+    array (
+    ),
+    190 => 
+    array (
+    ),
+    191 => NULL,
+    200 => 
+    array (
+    ),
+    202 => 
+    array (
+    ),
+    203 => 
+    array (
+    ),
+    208 => 
+    array (
+    ),
+    211 => 
+    array (
+    ),
+    212 => 
+    array (
+    ),
+    216 => 
+    array (
+    ),
+    217 => 
+    array (
+    ),
+    220 => 
+    array (
+    ),
+    240 => 
+    array (
+    ),
+    241 => 
+    array (
+    ),
+    242 => 
+    array (
+    ),
+    246 => 
+    array (
+    ),
+    247 => 
+    array (
+    ),
+    248 => 
+    array (
+    ),
+    249 => 
+    array (
+    ),
+    250 => 
+    array (
+    ),
+    251 => 
+    array (
+    ),
+    252 => 
+    array (
+    ),
+    253 => 
+    array (
+    ),
+    254 => 
+    array (
+    ),
+    255 => 
+    array (
+    ),
+    256 => 
+    array (
+    ),
+    257 => 
+    array (
+    ),
+    258 => 
+    array (
+    ),
+    259 => 
+    array (
+    ),
+    262 => 
+    array (
+    ),
+    265 => 
+    array (
+    ),
+    276 => 
+    array (
+    ),
+    278 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Textdomain.php' => 
+  array (
+    52 => 
+    array (
+    ),
+    53 => NULL,
+    62 => 
+    array (
+    ),
+    63 => 
+    array (
+    ),
+    72 => 
+    array (
+    ),
+    73 => 
+    array (
+    ),
+    74 => 
+    array (
+    ),
+    75 => 
+    array (
+    ),
+    77 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Frontend/Enqueue.php' => 
+  array (
+    52 => 
+    array (
+    ),
+    53 => NULL,
+    62 => 
+    array (
+    ),
+    63 => 
+    array (
+    ),
+    72 => 
+    array (
+    ),
+    73 => 
+    array (
+    ),
+    74 => 
+    array (
+    ),
+    75 => 
+    array (
+    ),
+    76 => 
+    array (
+    ),
+    77 => 
+    array (
+    ),
+    79 => 
+    array (
+    ),
+    80 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Host.php' => 
+  array (
+    50 => 
+    array (
+    ),
+    51 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    54 => 
+    array (
+    ),
+    57 => 
+    array (
+    ),
+    58 => NULL,
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/index.php' => 
+  array (
+    26 => 
+    array (
+    ),
+    27 => 
+    array (
+    ),
+    28 => 
+    array (
+    ),
+    29 => 
+    array (
+    ),
+    31 => 
+    array (
+    ),
+    32 => 
+    array (
+    ),
+    64 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    68 => 
+    array (
+    ),
+    69 => 
+    array (
+    ),
+    71 => 
+    array (
+    ),
+    72 => 
+    array (
+    ),
+    74 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/PluginActions.php' => 
+  array (
+    52 => 
+    array (
+      0 => 'PluginActionsTest::testPluginRowMetaFilterIsSet',
+      1 => 'PluginActionsTest::testReturnsTheInputArrayWhenPluginPathIsDifferent',
+      2 => 'PluginActionsTest::testReturnsTheUpdatedArrayOfRowMetaLinks',
+    ),
+    53 => NULL,
+    62 => 
+    array (
+      0 => 'PluginActionsTest::testPluginRowMetaFilterIsSet',
+    ),
+    63 => 
+    array (
+      0 => 'PluginActionsTest::testPluginRowMetaFilterIsSet',
+    ),
+    77 => 
+    array (
+      0 => 'PluginActionsTest::testReturnsTheInputArrayWhenPluginPathIsDifferent',
+      1 => 'PluginActionsTest::testReturnsTheUpdatedArrayOfRowMetaLinks',
+    ),
+    78 => 
+    array (
+      0 => 'PluginActionsTest::testReturnsTheInputArrayWhenPluginPathIsDifferent',
+    ),
+    82 => 
+    array (
+      0 => 'PluginActionsTest::testReturnsTheUpdatedArrayOfRowMetaLinks',
+    ),
+    83 => 
+    array (
+      0 => 'PluginActionsTest::testReturnsTheUpdatedArrayOfRowMetaLinks',
+    ),
+    84 => 
+    array (
+      0 => 'PluginActionsTest::testReturnsTheUpdatedArrayOfRowMetaLinks',
+    ),
+    85 => 
+    array (
+      0 => 'PluginActionsTest::testReturnsTheUpdatedArrayOfRowMetaLinks',
+    ),
+    87 => 
+    array (
+      0 => 'PluginActionsTest::testReturnsTheUpdatedArrayOfRowMetaLinks',
+    ),
+    88 => NULL,
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Shortcodes/Fubade.php' => 
+  array (
+    52 => 
+    array (
+    ),
+    53 => NULL,
+    62 => 
+    array (
+    ),
+    63 => 
+    array (
+    ),
+    75 => 
+    array (
+    ),
+    77 => 
+    array (
+    ),
+    83 => 
+    array (
+    ),
+    86 => 
+    array (
+    ),
+    87 => NULL,
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Frontend/Fubade.php' => 
+  array (
+    24 => 
+    array (
+    ),
+    56 => 
+    array (
+    ),
+    58 => 
+    array (
+    ),
+    59 => 
+    array (
+    ),
+    60 => 
+    array (
+    ),
+    61 => 
+    array (
+    ),
+    62 => 
+    array (
+    ),
+    63 => 
+    array (
+    ),
+    64 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    66 => 
+    array (
+    ),
+    67 => 
+    array (
+    ),
+    68 => 
+    array (
+    ),
+    69 => 
+    array (
+    ),
+    70 => 
+    array (
+    ),
+    72 => 
+    array (
+    ),
+    73 => 
+    array (
+    ),
+    74 => 
+    array (
+    ),
+    76 => 
+    array (
+    ),
+    78 => 
+    array (
+    ),
+    79 => 
+    array (
+    ),
+    80 => 
+    array (
+    ),
+    81 => 
+    array (
+    ),
+    82 => 
+    array (
+    ),
+    83 => 
+    array (
+    ),
+    85 => 
+    array (
+    ),
+    86 => 
+    array (
+    ),
+    88 => 
+    array (
+    ),
+    89 => 
+    array (
+    ),
+    91 => 
+    array (
+    ),
+    92 => 
+    array (
+    ),
+    94 => 
+    array (
+    ),
+    95 => 
+    array (
+    ),
+    107 => 
+    array (
+    ),
+    108 => 
+    array (
+    ),
+    109 => 
+    array (
+    ),
+    110 => 
+    array (
+    ),
+    111 => 
+    array (
+    ),
+    112 => 
+    array (
+    ),
+    113 => 
+    array (
+    ),
+    114 => 
+    array (
+    ),
+    126 => 
+    array (
+    ),
+    128 => 
+    array (
+    ),
+    129 => 
+    array (
+    ),
+    130 => 
+    array (
+    ),
+    132 => 
+    array (
+    ),
+    133 => 
+    array (
+    ),
+    134 => 
+    array (
+    ),
+    135 => 
+    array (
+    ),
+    136 => 
+    array (
+    ),
+    137 => 
+    array (
+    ),
+    138 => 
+    array (
+    ),
+    139 => 
+    array (
+    ),
+    140 => 
+    array (
+    ),
+    141 => 
+    array (
+    ),
+    142 => 
+    array (
+    ),
+    143 => 
+    array (
+    ),
+    144 => 
+    array (
+    ),
+    145 => 
+    array (
+    ),
+    146 => 
+    array (
+    ),
+    147 => 
+    array (
+    ),
+    148 => 
+    array (
+    ),
+    149 => 
+    array (
+    ),
+    150 => 
+    array (
+    ),
+    152 => 
+    array (
+    ),
+    153 => 
+    array (
+    ),
+    154 => 
+    array (
+    ),
+    156 => 
+    array (
+    ),
+    157 => 
+    array (
+    ),
+    158 => 
+    array (
+    ),
+    160 => 
+    array (
+    ),
+    161 => 
+    array (
+    ),
+    170 => 
+    array (
+    ),
+    171 => 
+    array (
+    ),
+    172 => 
+    array (
+    ),
+    173 => 
+    array (
+    ),
+    174 => 
+    array (
+    ),
+    175 => 
+    array (
+    ),
+    177 => 
+    array (
+    ),
+    178 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Logging/Base.php' => 
+  array (
+    22 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    45 => 
+    array (
+    ),
+    46 => 
+    array (
+    ),
+    47 => 
+    array (
+    ),
+    48 => 
+    array (
+    ),
+    49 => 
+    array (
+    ),
+    50 => 
+    array (
+    ),
+    51 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    53 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Logging/ConsoleLogger.php' => 
+  array (
+    22 => 
+    array (
+    ),
+    54 => 
+    array (
+    ),
+    55 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    66 => 
+    array (
+    ),
+    78 => 
+    array (
+    ),
+    79 => 
+    array (
+    ),
+    80 => 
+    array (
+    ),
+    92 => 
+    array (
+    ),
+    93 => 
+    array (
+    ),
+    94 => 
+    array (
+    ),
+    96 => 
+    array (
+    ),
+    97 => 
+    array (
+    ),
+    106 => 
+    array (
+    ),
+    107 => 
+    array (
+    ),
+    108 => 
+    array (
+    ),
+    109 => 
+    array (
+    ),
+    111 => 
+    array (
+    ),
+    113 => 
+    array (
+    ),
+    115 => 
+    array (
+    ),
+    116 => 
+    array (
+    ),
+    128 => 
+    array (
+    ),
+    129 => 
+    array (
+    ),
+    130 => 
+    array (
+    ),
+    132 => 
+    array (
+    ),
+    134 => 
+    array (
+    ),
+    135 => 
+    array (
+    ),
+    136 => 
+    array (
+    ),
+    137 => 
+    array (
+    ),
+    139 => 
+    array (
+    ),
+    140 => 
+    array (
+    ),
+    141 => 
+    array (
+    ),
+    142 => 
+    array (
+    ),
+    144 => 
+    array (
+    ),
+    146 => 
+    array (
+    ),
+    147 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Logging/SourceLogger.php' => 
+  array (
+    22 => 
+    array (
+    ),
+    54 => 
+    array (
+    ),
+    55 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    66 => 
+    array (
+    ),
+    78 => 
+    array (
+    ),
+    79 => 
+    array (
+    ),
+    80 => 
+    array (
+    ),
+    82 => 
+    array (
+    ),
+    83 => 
+    array (
+    ),
+    92 => 
+    array (
+    ),
+    94 => 
+    array (
+    ),
+    95 => 
+    array (
+    ),
+    96 => 
+    array (
+    ),
+    98 => 
+    array (
+    ),
+    100 => 
+    array (
+    ),
+    102 => 
+    array (
+    ),
+    103 => 
+    array (
+    ),
+    115 => 
+    array (
+    ),
+    116 => 
+    array (
+    ),
+    117 => 
+    array (
+    ),
+    119 => 
+    array (
+    ),
+    121 => 
+    array (
+    ),
+    122 => 
+    array (
+    ),
+    123 => 
+    array (
+    ),
+    124 => 
+    array (
+    ),
+    126 => 
+    array (
+    ),
+    127 => 
+    array (
+    ),
+    128 => 
+    array (
+    ),
+    130 => 
+    array (
+    ),
+    132 => 
+    array (
+    ),
+    133 => 
+    array (
+    ),
+  ),
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/uninstall.php' => 
+  array (
+    19 => 
+    array (
+    ),
+    20 => 
+    array (
+    ),
+    21 => 
+    array (
+    ),
+  ),
+));
+$coverage->setTests(array (
+  'PluginActionsTest::testPluginRowMetaFilterIsSet' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PluginActionsTest::testReturnsTheInputArrayWhenPluginPathIsDifferent' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PluginActionsTest::testReturnsTheUpdatedArrayOfRowMetaLinks' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'UNCOVERED_FILES_FROM_WHITELIST' => 
+  array (
+    'size' => 'unknown',
+    'status' => -1,
+  ),
+));
+
+$filter = $coverage->filter();
+$filter->setWhitelistedFiles(array (
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Backend/BorlabsCookie.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Blocks/Enqueue.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Frontend/Enqueue.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Frontend/Fubade.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Shortcodes/Fubade.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Host.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Logging/Base.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Logging/ConsoleLogger.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Logging/SourceLogger.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/PluginActions.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Utils/Textdomain.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Widgets/FubadeWidget.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/Widgets/Widgets.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/index.php' => true,
+  '/mnt/e/Dev/wordpress/plugins/ifdw/src/uninstall.php' => true,
+));
+
+return $coverage;

@@ -20,17 +20,17 @@
 
   <logging>
     <log type="coverage-html"
-         target="tests/coverage/html"
+         target="tests/phpunit/coverage/html"
          showUncoveredFiles="true"
          lowUpperBound="60"
          highLowerBound="95" />
     <log type="coverage-clover"
-         target="tests/coverage/clover.xml"
+         target="tests/phpunit/coverage/clover.xml"
          showUncoveredFiles="true" />
     <log type="coverage-php"
-         target="tests/coverage/coverage.serialized"
+         target="tests/phpunit/coverage/coverage.serialized"
          showUncoveredFiles="true" />
     <log type="testdox-html"
-         target="tests/coverage/testdox.html" />
+         target="tests/phpunit/coverage/testdox.html" />
   </logging>
 </phpunit>
