@@ -83,6 +83,7 @@ try {
  * Additional constants after autoloading the classes
  */
 // phpcs:disable WordPress.Security.ValidatedSanitizedInput
+// FIXME: Try the usage of 'getenv( 'SERVER_NAME' )'.
 define( 'IFDW_HOST', Host::cleanHost( wp_unslash( $_SERVER['SERVER_NAME'] ?? null ) ) );
 // phpcs:enable
 

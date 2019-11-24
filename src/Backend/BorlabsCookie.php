@@ -168,7 +168,7 @@ class BorlabsCookie {
 	private function checkFubadeCookieExists(): bool {
 		global $wpdb;
 
-		// TODO: use correct database caching.
+		// FIXME: use correct database caching.
     // phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
     // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching
 		$cookieId = $wpdb->get_var(
@@ -202,7 +202,7 @@ class BorlabsCookie {
 		$defaultBlogLanguage = substr( get_option( 'WPLANG', 'en_US' ), 0, 2 ) ?? 'en';
 		$cookieGroupIds      = [];
 
-		// TODO: use correct database caching.
+		// FIXME: use correct database caching.
     // phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
     // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching
 		$cookieGroups = $wpdb->get_results(
@@ -217,7 +217,7 @@ class BorlabsCookie {
 			$cookieGroupIds[ $groupData->group_id ] = $groupData->id;
 		}
 
-		$sqlQuery = 'INSERT INTO `' . $this->tableNameCookies . "`
+		$sqlQuery = 'INSERT INTO `' . $this->tableNameCookies . '`
         (
           `cookie_id`,
           `language`,
@@ -237,37 +237,43 @@ class BorlabsCookie {
         )
         VALUES
         (
-          '" . self::CB_ID . "',
-          '" . esc_sql( $defaultBlogLanguage ) . "',
-          '" . esc_sql( $cookieGroupIds['external-media'] ) . "',
-          'Custom',
-          'Fußball.de',
-          'Fußball.de',
-          '" . _x( 'Used to unblock Fußball.de content.', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
-          '" . _x( 'http://www.fussball.de/privacy/', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
-          '" . esc_sql( [ 'fussball.de', 'www.fussball.de' ] ) . "',
-          '" . self::CB_ID . "',
-        '" . _x( 'Unlimited', 'Cookie - Default Entry Fußball.de', 'borlabs-cookie' ) . "',
-          '" . esc_sql(
-			'<script>
-				if("object" === typeof window.BorlabsCookie) {
-					window.BorlabsCookie.unblockContentId("' . self::CB_ID . '");
-				}
-			</script>'
-		) . "',
+					\'' . self::CB_ID . '\',
+					\'' . esc_sql( $defaultBlogLanguage ) . '\',
+					\'' . esc_sql( $cookieGroupIds['external - media'] ) . '\',
+					\'Custom\',
+					\'Fußball.de\',
+					\'Fußball.de\',
+					\'' . _x(
+						'Used to unblock fußball.de content.',
+						'Cookie - default Entry Fußball.de',
+						'include-fussball-de-widgets'
+					) . '\',
+					\'' . _x(
+						'http://www.fussball.de/privacy/',
+						'Cookie - Default Entry Fußball.de',
+						'include-fussball-de-widgets'
+					) . '\',
+          \'' . esc_sql( [ 'fussball.de', 'www.fussball.de' ] ) . '\',
+					\'' . self::CB_ID . '\',
+					\'' . _x( 'Unlimited', 'Cookie - Default Entry Fußball.de', 'include-fussball-de-widgets' ) . '\',
+          \'' . esc_sql(
+						'<script>
+							if("object" === typeof window.BorlabsCookie) {
+								window.BorlabsCookie.unblockContentId(\'' . self::CB_ID . '\');
+							}
+						</script>'
+					) . '\',
           82,
           1,
           0
         )
-        ON DUPLICATE KEY UPDATE
-            `undeletable` = VALUES(`undeletable`)
-        ";
+				ON DUPLICATE KEY UPDATE `undeletable` = VALUES(`undeletable`)
+        ';
 
-		// TODO: use correct database caching.
+		// FIXME: use correct database caching.
     // phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
     // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching
-		$wpdb->query( '%s', $sqlQuery );
+			$wpdb->query( '%s', $sqlQuery );
     // phpcs:enable
-
 	}
 }
