@@ -71,7 +71,7 @@ class Enqueue {
 	 * @return void
 	 */
 	public function registerDynamicBlock(): void {
-		if ( ! function_exists( 'register_block_type' ) ) {
+		if ( version_compare( get_bloginfo( 'version' ), '5.0', '<' ) ) {
 			return;
 		}
 
