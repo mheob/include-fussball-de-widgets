@@ -77,17 +77,11 @@ class Fubade {
 
 		if ( strlen( $this->attr['api'] ) !== 32 ) {
 			ConsoleLogger::getInstance()->log( $this->attr );
-			printf( // translators: %s: The length of the api.
-				esc_html__( "<!-- API length: %s -->\n", 'include-fussball-de-widgets' ),
-				esc_html( strlen( $this->attr['api'] ) )
-			);
-
 			return $this->render( self::ERROR['API_LENGTH'] );
 		}
 
 		if ( IFDW_HOST === 'SERVER_NAME-not-set' ) {
 			ConsoleLogger::getInstance()->log( $this->attr );
-
 			return $this->render( self::ERROR['SERVER_NAME'] );
 		}
 
@@ -131,9 +125,13 @@ class Fubade {
 
 			switch ( $error ) {
 				case self::ERROR['API_LENGTH']:
-					$divContent = __(
+					$divContent  = __(
 						'!!! The fussball.de API must have a length of exactly 32 characters. !!!',
 						'include-fussball-de-widgets'
+					) . PHP_EOL;
+					$divContent .= sprintf( // translators: %s: The length of the api.
+						esc_html__( 'Currently the API length is: %s', 'include-fussball-de-widgets' ),
+						esc_html( strlen( $this->attr['api'] ) )
 					) . PHP_EOL;
 					break;
 				case self::ERROR['SERVER_NAME']:
