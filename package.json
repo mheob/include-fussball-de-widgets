@@ -1,6 +1,6 @@
 {
   "name": "include-fussball-de-widgets",
-  "version": "3.0.5",
+  "version": "3.1.0",
   "description": "A WordPress plugin for easy integration of fussball.de widgets.",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/ITS-Boehm/include-fussball-de-widgets#readme",
   "scripts": {
-    "clear": "rimraf app/dist/*",
+    "clear": "rimraf dist/*",
     "build": "wp-scripts build",
     "dev": "npm run clear && npm run build && npm run i18n && @powershell -Command ./tasks/cp-dev-release.ps1",
     "check-engines": "wp-scripts check-engines",
@@ -22,13 +22,17 @@
     "lint:js": "wp-scripts lint-js .",
     "lint:pkg-json": "wp-scripts lint-pkg-json .",
     "start": "wp-scripts start",
-    "i18n:pot": "wp i18n make-pot app/dist app/languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
-    "i18n:json": "wp i18n make-json app/languages/include-fussball-de-widgets-de_DE.po --no-purge",
-    "i18n:copy": "cpr app/languages app/dist/languages",
+    "i18n:pot": "wp i18n make-pot dist languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
+    "i18n:json": "wp i18n make-json languages/include-fussball-de-widgets-de_DE.po --no-purge",
+    "i18n:copy": "cpr languages dist/languages",
     "i18n": "npm run i18n:json && npm run i18n:copy",
-    "release:copy": "cpr app/dist/ .releases/include-fussball-de-widgets/trunk/ -d",
-    "release:github": "cpr ./app/dist/ .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets-v3.0.5.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
-    "release": "npm run release:copy && npm run release:github"
+    "release:copy": "cpr dist/ .releases/include-fussball-de-widgets/trunk/ -d",
+    "release:github": "cpr ./dist/ .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets-v3.1.0.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
+    "release": "npm run release:copy && npm run release:github",
+    "test:cs": "./vendor/bin/phpcs",
+    "test:phpunit": "./vendor/bin/phpunit --no-coverage",
+    "test:phpunit:full": "./vendor/bin/phpunit",
+    "test": "npm run test:cs && npm run test:phpunit:full"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
@@ -41,7 +45,7 @@
     "copy-webpack-plugin": "^5.0.5",
     "cpr": "^3.0.1",
     "css-loader": "^3.2.0",
-    "eslint": "^6.6.0",
+    "eslint": "^6.7.0",
     "eslint-config-semistandard": "^15.0.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-jest": "^23.0.4",
@@ -58,6 +62,7 @@
     "sass-loader": "^8.0.0",
     "semistandard": "14.2.0",
     "stylelint": "^11.1.1",
+    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-wordpress": "^15.0.0",
     "stylelint-order": "^3.1.1",
     "terser-webpack-plugin": "^2.2.1"
