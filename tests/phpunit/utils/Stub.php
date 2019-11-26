@@ -17,7 +17,7 @@
  */
 
 declare( strict_types=1 );
-namespace IFDW\PhpUnit\Utils;
+namespace ITSB\IFDW\PhpUnit\Utils;
 
 use PHPUnit\Framework\MockObject\MockObject;
 

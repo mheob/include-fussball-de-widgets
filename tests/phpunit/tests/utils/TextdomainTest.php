@@ -1,28 +1,20 @@
-<?php
+<?php declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
- * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Include_Fussball_De_Widgets
+ * @package   ITSB\IncludeFussballDeWidgets
+ * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @license   GPL2
+ * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
+ * @copyright 2019 IT Service Böhm -- Alexander Böhm
  */
 
-declare( strict_types=1 );
-namespace IFDW\PhpUnit\Tests\Utils;
+namespace ITSB\IFDW\PhpUnit\Tests\Utils;
 
 require_once __DIR__ . '../../../utils/WP_Hooks.php';
 
-use IFDW\Utils\Textdomain;
-use IFDW\PhpUnit\Utils\WP_Hooks;
+use ITSB\IFDW\PhpUnit\Utils\WP_Hooks;
+use ITSB\IFDW\Utils\{Settings, Textdomain};
 
 /**
  * Class TextdomainTest
@@ -54,10 +46,10 @@ final class TextdomainTest extends \WP_UnitTestCase {
 	 */
 	public function setUp() {
 		// Get the instance.
-		self::$instance = Textdomain::getInstance();
+		self::$instance = new Textdomain();
 
 		// Configure the sample data.
-		self::$pluginRoot = plugin_basename( IFDW_URL );
+		self::$pluginRoot = plugin_basename( Settings::URL );
 	}
 
 	/**
@@ -65,15 +57,15 @@ final class TextdomainTest extends \WP_UnitTestCase {
 	 *
 	 * @since 3.1
 	 *
-	 * @see Textdomain::addPluginsLoadedAction();
+	 * @see Textdomain::addAction();
 	 * @test
 	 *
 	 * @return void
 	 */
 	public function testPluginRowMetaFilterIsSet(): void {
-		$this->assertFalse( WP_Hooks::hasAction( 'plugins_loaded', self::$instance, 'loadTextdomain' ) );
-		self::$instance->addPluginsLoadedAction();
-		$this->assertTrue( WP_Hooks::hasAction( 'plugins_loaded', self::$instance, 'loadTextdomain' ) );
+		$this->assertFalse( WP_Hooks::hasAction( 'plugins_loaded', self::$instance, 'action' ) );
+		self::$instance->addAction();
+		$this->assertTrue( WP_Hooks::hasAction( 'plugins_loaded', self::$instance, 'action' ) );
 	}
 
 	/**
@@ -81,14 +73,14 @@ final class TextdomainTest extends \WP_UnitTestCase {
 	 *
 	 * @since 3.1
 	 *
-	 * @see Textdomain::loadTextdomain();
+	 * @see Textdomain::action();
 	 * @test
 	 *
 	 * @return void
 	 */
 	public function testReturnsTheInputArrayWhenPluginPathIsDifferent() : void {
 		// TODO: Write a more precise test.
-		self::$instance->loadTextdomain();
+		self::$instance->action();
 		$this->assertTrue( true );
 	}
 }

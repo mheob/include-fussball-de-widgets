@@ -1,25 +1,17 @@
-<?php
+<?php declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
- * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Include_Fussball_De_Widgets
+ * @package   ITSB\IncludeFussballDeWidgets
+ * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @license   GPL2
+ * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
+ * @copyright 2019 IT Service Böhm -- Alexander Böhm
  */
 
-declare( strict_types=1 );
-namespace IFDW\Utils\Logging;
+namespace ITSB\IFDW\Utils\Logging;
 
-defined( 'ABSPATH' ) || exit;
+use ITSB\IFDW\Utils\Settings;
 
 /**
  * Abstract Class Base ist used to config the base attributes for the logging classes.
@@ -43,10 +35,10 @@ abstract class Base {
 	protected function __construct() {
 		global $wp_version;
 		$this->generalInfoList = [
-			__( '[FUBADE] Plugin Version: ', 'include-fussball-de-widgets' ) . IFDW_VERSION,
-			__( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . IFDW_HOST,
+			__( '[FUBADE] Plugin Version: ', 'include-fussball-de-widgets' ) . Settings::VERSION,
+			__( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . Settings::getHost(),
 			__( '[FUBADE] Wordpress version: ', 'include-fussball-de-widgets' ) . $wp_version,
-			__( '[FUBADE] PHP version: ', 'include-fussball-de-widgets' ) . PHP_VERSION,
+			__( '[FUBADE] PHP version: ', 'include-fussball-de-widgets' ) . Settings::MIN_PHP,
 			__( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-widgets' ) .
 				wp_json_encode( get_loaded_extensions() )
 		];

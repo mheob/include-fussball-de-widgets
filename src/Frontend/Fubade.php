@@ -1,34 +1,26 @@
-<?php
+<?php declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
- * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Include_Fussball_De_Widgets
+ * @package   ITSB\IncludeFussballDeWidgets
+ * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @license   GPL2
+ * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
+ * @copyright 2019 IT Service Böhm -- Alexander Böhm
  */
 
-declare( strict_types=1 );
-namespace IFDW\Frontend;
+namespace ITSB\IFDW\Frontend;
 
 use IFDW\Utils\Logging\ConsoleLogger;
-
-defined( 'ABSPATH' ) || exit();
+use ITSB\IFDW\Utils\Settings;
 
 /**
- * Class Fubade used to create the output of the widget from `fussball.de`.
+ * The `Fubade` class used to create the output of the widget
+ * from `fussball.de`.
  *
  * @since 3.0
  */
-class Fubade {
+final class Fubade {
 	private const ERROR = [
 		'API_LENGTH'  => 'api-length',
 		'SERVER_NAME' => 'no-server-name',
@@ -47,7 +39,8 @@ class Fubade {
 	 *
 	 * @since 3.0
 	 *
-	 * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
+	 * @param array $attr The output attributes (`api`, `id`, `notice`,
+	 *                    `fullwidth` and `devtools`).
 	 *
 	 * @return string The output to the sourcecode.
 	 */
@@ -80,7 +73,7 @@ class Fubade {
 			return $this->render( self::ERROR['API_LENGTH'] );
 		}
 
-		if ( IFDW_HOST === 'SERVER_NAME-not-set' ) {
+		if ( Settings::getHost() === 'SERVER_NAME-not-set' ) {
 			ConsoleLogger::getInstance()->log( $this->attr );
 			return $this->render( self::ERROR['SERVER_NAME'] );
 		}
@@ -93,7 +86,8 @@ class Fubade {
 	 *
 	 * @since 3.0
 	 *
-	 * @param array $attr The attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`) for the widget rendering.
+	 * @param array $attr The attributes (`api`, `id`, `notice`, `fullwidth`
+	 *                    and `devtools`) for the widget rendering.
 	 *
 	 * @return void
 	 */
@@ -167,7 +161,7 @@ class Fubade {
 	private function createIframe(): string {
 		$src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'];
 		$src   .= '/target/' . $this->attr['id'];
-		$src   .= '/caller/' . IFDW_HOST;
+		$src   .= '/caller/' . Settings::getHost();
 		$width  = $this->attr['fullwidth'] ? '100%' : '900px';
 		$height = '200px';
 		$style  = 'border: 1px solid #CECECE; overflow: hidden';
