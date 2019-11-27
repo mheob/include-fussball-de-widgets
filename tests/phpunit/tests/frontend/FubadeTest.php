@@ -16,7 +16,7 @@ require_once __DIR__ . '../../../Utils/TestHelper.php';
 
 use ITSB\IFDW\Frontend\Fubade;
 use ITSB\IFDW\PhpUnit\Utils\{Mock, TestHelper};
-use ITSB\IFDW\Utils\{Host, Settings};
+use ITSB\IFDW\Utils\Settings;
 
 /**
  * Class FubadeTest
