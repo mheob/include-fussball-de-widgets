@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 - Refactor "null ===" to exclamation mark syntax.
 - Reformat code, so that the coding standards can be better adhered to and thus a faster development is possible.
+- Integrate more test, to prevent possible error.
 
 ## [3.0.5] - 2019-10-13
 
