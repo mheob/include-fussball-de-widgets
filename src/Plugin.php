@@ -35,7 +35,7 @@ final class Plugin {
 	 */
 	public function __construct() {
 		// Check the needed PHP version.
-		CheckHelper::compareWpVersion( Settings::MIN_PHP );
+		CheckHelper::comparePhpVersion( Settings::MIN_PHP );
 
 		// Configure the one time set settings.
 		$this->configureSettings();
