@@ -64,9 +64,10 @@ final class PluginActionsTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testPluginRowMetaFilterIsSet(): void {
-		$this->assertFalse( WP_Hooks::hasFilter( 'plugin_row_meta', self::$instance, 'filter' ) );
-		self::$instance->addFilter();
-		$this->assertTrue( WP_Hooks::hasFilter( 'plugin_row_meta', self::$instance, 'filter' ) );
+		$tag = 'plugin_row_meta';
+		$this->assertFalse( WP_Hooks::hasFilter( $tag, self::$instance, 'filter' ) );
+		self::$instance->addFilter( $tag );
+		$this->assertTrue( WP_Hooks::hasFilter( $tag, self::$instance, 'filter' ) );
 	}
 
 	/**
@@ -80,7 +81,7 @@ final class PluginActionsTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testReturnsTheInputArrayWhenPluginPathIsDifferent() : void {
-		$sampleFunctionCall = self::$instance->filter( self::$links, 'wrong path' );
+		$sampleFunctionCall = self::$instance->filter( [ self::$links, 'wrong path' ] );
 
 		$this->assertIsArray( $sampleFunctionCall );
 		$this->assertSame( self::$links, $sampleFunctionCall );
@@ -98,7 +99,7 @@ final class PluginActionsTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testReturnsTheUpdatedArrayOfRowMetaLinks(): void {
-		$sampleFunctionCall = self::$instance->filter( self::$links, plugin_basename( Settings::URL ) );
+		$sampleFunctionCall = self::$instance->filter( [ self::$links, plugin_basename( Settings::URL ) ] );
 
 		$this->assertIsArray( $sampleFunctionCall );
 		$this->assertEquals( 3, count( $sampleFunctionCall ) );

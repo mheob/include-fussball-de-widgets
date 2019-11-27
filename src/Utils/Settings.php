@@ -11,7 +11,7 @@
 
 namespace ITSB\IFDW\Utils;
 
-use IFDW\Utils\Host;
+use ITSB\IFDW\Utils\Host;
 
 /**
  * The `Settings` class hold all needed global variables and constants.

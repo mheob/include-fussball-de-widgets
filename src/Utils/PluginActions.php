@@ -27,12 +27,14 @@ final class PluginActions extends FilterBase {
 	 *
 	 * @since 3.0
 	 *
-	 * @param array  $links List of existing plugin meta links.
-	 * @param string $file  The current plugin in the loop of filtering.
+	 * @param array $args List of arguments.
 	 *
 	 * @return array List of modified plugin meta links.
 	 */
-	public function filter( array $links, string $file ): array {
+	public function filter( array $args ): array {
+		$links = $args[0];
+		$file  = $args[1];
+
 		if ( plugin_basename( Settings::URL ) !== $file ) {
 			return $links;
 		}

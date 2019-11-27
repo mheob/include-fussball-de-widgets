@@ -11,16 +11,15 @@
 
 namespace ITSB\IFDW\Widgets;
 
-use IFDW\Backend\BorlabsCookie;
-use IFDW\Frontend\Fubade;
-use WP_Widget;
+use ITSB\IFDW\Backend\BorlabsCookie;
+use ITSB\IFDW\Frontend\Fubade;
 
 /**
  * Class FubadeWidget creates a fubade widget.
  *
  * @since 3.0
  */
-class FubadeWidget extends WP_Widget {
+class FubadeWidget extends \WP_Widget {
 	/**
 	 * FubadeWidget constructor.
 	 * Set up the Widgets name etc.

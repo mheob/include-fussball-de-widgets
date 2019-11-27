@@ -54,7 +54,8 @@ final class Plugin {
 	 * @return void
 	 */
 	private function configureSettings(): void {
-		Settings::setHost( esc_url_raw( wp_unslash( $_SERVER['SERVER_NAME'] ?? '' ) ) );
+		$url = esc_url_raw( wp_unslash( $_SERVER['HTTP_HOST'] ?? '' ) );
+		Settings::setHost( substr( $url, strpos( $url, ':' ) + 3 ) );
 	}
 
 	/**
@@ -87,7 +88,7 @@ final class Plugin {
 	 * @return void
 	 */
 	private function addFilter() {
-		( new PluginActions() )->addFilter( 'plugin_row_meta', 10, 2 );
+		( new PluginActions() )->addFilter( 'plugin_row_meta' );
 	}
 
 	/**

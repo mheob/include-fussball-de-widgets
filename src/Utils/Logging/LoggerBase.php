@@ -14,11 +14,12 @@ namespace ITSB\IFDW\Utils\Logging;
 use ITSB\IFDW\Utils\Settings;
 
 /**
- * Abstract Class Base ist used to config the base attributes for the logging classes.
+ * Abstract Class LoggerBase ist used to config the base attributes for
+ * the logging classes.
  *
  * @since 3.0
  */
-abstract class Base {
+abstract class LoggerBase {
 	/**
 	 * The general info list.
 	 *
@@ -56,7 +57,8 @@ abstract class Base {
 	abstract public function log( array $arr ): void;
 
 	/**
-	 * Logs the general information, for example from the plugin, WordPress and / or the server.
+	 * Logs the general information, for example from the plugin, WordPress
+	 * and / or the server.
 	 *
 	 * @since 3.0
 	 * @return void
