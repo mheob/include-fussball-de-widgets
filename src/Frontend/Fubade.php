@@ -73,7 +73,7 @@ final class Fubade {
 			return $this->render( self::ERROR['API_LENGTH'] );
 		}
 
-		if ( Settings::getHost() === 'SERVER_NAME-not-set' ) {
+		if ( strtolower( Settings::getHost() ) === strtolower( 'SERVER_NAME-not-set' ) ) {
 			ConsoleLogger::getInstance()->log( $this->attr );
 			return $this->render( self::ERROR['SERVER_NAME'] );
 		}

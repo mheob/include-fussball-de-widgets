@@ -11,11 +11,12 @@
 
 namespace ITSB\IFDW\PhpUnit\Tests\Frontend;
 
-require_once __DIR__ . '../../../utils/Mock.php';
+require_once __DIR__ . '../../../Utils/Mock.php';
+require_once __DIR__ . '../../../Utils/TestHelper.php';
 
 use ITSB\IFDW\Frontend\Fubade;
-use ITSB\IFDW\PhpUnit\Utils\Mock;
-use ITSB\IFDW\Utils\Host;
+use ITSB\IFDW\PhpUnit\Utils\{Mock, TestHelper};
+use ITSB\IFDW\Utils\{Host, Settings};
 
 /**
  * Class FubadeTest
@@ -84,13 +85,12 @@ final class FubadeTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testRenderOutputIfServerNotError() {
-		$mock = new Mock( $this->getMockBuilder( Host::class )->getMock(), Host::class );
-		$mock->setProperty( 'host', null );
-		Host::cleanHost( null );
+		$mock = new Mock( $this->getMockBuilder( Settings::class )->getMock(), Settings::class );
+		$mock->setProperty( 'host', 'SERVER_NAME-not-set' );
 
-		// TODO: Add test with the IFDW_HOST constants.
 		$expected = 'The PHP variable <code>$_SERVER["SERVER_NAME"]</code> was not set by the server.';
-		// TODO: After correcting the test case remove the NOT in the `assertNotContains` function name.
-		$this->assertNotContains( $expected, $this->instance->output( $this->sampleAttr ) );
+		$this->assertContains( $expected, $this->instance->output( $this->sampleAttr ) );
+
+		TestHelper::restoreHost();
 	}
 }

@@ -18,7 +18,7 @@ use ITSB\IFDW\Utils\Host;
  *
  * @since 3.1
  */
-final class Settings {
+class Settings {
 	public const VERSION = '3.1.0';
 	public const MIN_PHP = '7.2.0';
 	public const PREFIX  = 'itsb.ifdw.';
@@ -44,7 +44,7 @@ final class Settings {
 	/**
 	 * Set the hostname.
 	 *
-	 * @param string $host  The host.
+	 * @param string $host The host.
 	 *
 	 * @return void
 	 */
