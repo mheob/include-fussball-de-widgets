@@ -11,9 +11,9 @@
 
 namespace ITSB\IFDW\PhpUnit\Tests\Utils;
 
-require_once __DIR__ . '../../../utils/Stub.php';
+require_once __DIR__ . '../../../utils/Mock.php';
 
-use ITSB\IFDW\PhpUnit\Utils\Stub;
+use ITSB\IFDW\PhpUnit\Utils\Mock;
 use ITSB\IFDW\Utils\Host;
 
 /**
@@ -35,8 +35,8 @@ final class HostTest extends \WP_UnitTestCase {
 	public function testCleanHostCanNotSet(): void {
 		$expected = 'SERVER_NAME-not-set';
 
-		$stub = new Stub( $this->getMockBuilder( Host::class )->getMock(), Host::class );
-		$stub->setProperty( 'host', null );
+		$mock = new Mock( $this->getMockBuilder( Host::class )->getMock(), Host::class );
+		$mock->setProperty( 'host', null );
 
 		$this->assertEquals( $expected, Host::cleanHost( null ) );
 		$this->assertEquals( $expected, Host::cleanHost( '' ) );
@@ -55,8 +55,8 @@ final class HostTest extends \WP_UnitTestCase {
 	public function testCleanHostIsSet(): void {
 		$expected = 'example.com';
 
-		$stub = new Stub( $this->getMockBuilder( Host::class )->getMock(), Host::class );
-		$stub->setProperty( 'host', null );
+		$mock = new Mock( $this->getMockBuilder( Host::class )->getMock(), Host::class );
+		$mock->setProperty( 'host', null );
 
 		$this->assertEquals( $expected, Host::cleanHost( 'example.com' ) );
 	}

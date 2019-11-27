@@ -22,19 +22,19 @@ namespace ITSB\IFDW\PhpUnit\Utils;
 use PHPUnit\Framework\MockObject\MockObject;
 
 /**
- * Class Stub
+ * Class Mock
  * Helper to override private methods and properties.
  *
  * @since 3.1
  */
-class Stub extends \WP_UnitTestCase {
+class Mock extends \WP_UnitTestCase {
 	/**
-	 * The stub
+	 * The mock
 	 *
 	 * @since 3.1
 	 * @var MockObject
 	 */
-	private $stub;
+	private $mock;
 
 	/**
 	 * The class name.
@@ -53,17 +53,32 @@ class Stub extends \WP_UnitTestCase {
 	private $reflectionClass;
 
 	/**
-	 * Stub constructor
+	 * Mock constructor
 	 *
 	 * @since 3.1
 	 *
-	 * @param MockObject $stub The stub.
+	 * @param MockObject $mock The mock.
 	 * @param string     $className The class name.
 	 */
-	public function __construct( MockObject $stub, string $className ) {
-		$this->stub            = $stub;
+	public function __construct( MockObject $mock, string $className ) {
+		$this->mock            = $mock;
 		$this->className       = $className;
 		$this->reflectionClass = new \ReflectionClass( $this->className );
+	}
+
+	/**
+	 * Gets the value of a private or protected property.
+	 *
+	 * @since 3.1
+	 *
+	 * @param string $property The property.
+	 *
+	 * @return void
+	 */
+	public function getProperty( string $property ): void {
+		$reflectionProperty = $this->reflectionClass->getProperty( $property );
+		$reflectionProperty->setAccessible( true );
+		$reflectionProperty->getValue( $this->mock );
 	}
 
 	/**
@@ -79,6 +94,6 @@ class Stub extends \WP_UnitTestCase {
 	public function setProperty( string $property, ?string $value ): void {
 		$reflectionProperty = $this->reflectionClass->getProperty( $property );
 		$reflectionProperty->setAccessible( true );
-		$reflectionProperty->setValue( $this->stub, $value );
+		$reflectionProperty->setValue( $this->mock, $value );
 	}
 }

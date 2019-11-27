@@ -11,10 +11,10 @@
 
 namespace ITSB\IFDW\PhpUnit\Tests\Frontend;
 
-require_once __DIR__ . '../../../utils/Stub.php';
+require_once __DIR__ . '../../../utils/Mock.php';
 
 use ITSB\IFDW\Frontend\Fubade;
-use ITSB\IFDW\PhpUnit\Utils\Stub;
+use ITSB\IFDW\PhpUnit\Utils\Mock;
 use ITSB\IFDW\Utils\Host;
 
 /**
@@ -84,8 +84,8 @@ final class FubadeTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testRenderOutputIfServerNotError() {
-		$stub = new Stub( $this->getMockBuilder( Host::class )->getMock(), Host::class );
-		$stub->setProperty( 'host', null );
+		$mock = new Mock( $this->getMockBuilder( Host::class )->getMock(), Host::class );
+		$mock->setProperty( 'host', null );
 		Host::cleanHost( null );
 
 		// TODO: Add test with the IFDW_HOST constants.
