@@ -11,7 +11,7 @@
 
 namespace ITSB\IFDW\PhpUnit\Tests\Utils;
 
-require_once __DIR__ . '../../../utils/WP_Hooks.php';
+require_once __DIR__ . '../../../Utils/WP_Hooks.php';
 
 use ITSB\IFDW\Utils\PluginActions;
 use ITSB\IFDW\PhpUnit\Utils\WP_Hooks;

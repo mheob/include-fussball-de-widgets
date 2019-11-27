@@ -44,7 +44,7 @@
       "",
       "namespace ITSB\\IFDW\\PhpUnit\\Tests\\\\${TM_DIRECTORY/^.+\\/(.*)$/$1/};",
       "",
-      "require_once __DIR__ . '../../../utils/WP_Hooks.php';",
+      "require_once __DIR__ . '../../../Utils/WP_Hooks.php';",
       "",
       "use IFDW\\\\${TM_DIRECTORY/^.+\\/(.*)$/$1/}\\\\${2:classToTest};",
       "use IFDW\\PhpUnit\\Utils\\WP_Hooks;",
