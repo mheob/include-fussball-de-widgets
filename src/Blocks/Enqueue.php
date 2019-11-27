@@ -11,6 +11,7 @@
 
 namespace ITSB\IFDW\Blocks;
 
+use ITSB\IFDW\Frontend\Fubade;
 use ITSB\IFDW\Infrastructure\ActionBase;
 use ITSB\IFDW\Utils\Settings;
 

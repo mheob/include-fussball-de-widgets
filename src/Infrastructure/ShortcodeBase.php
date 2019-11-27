@@ -43,7 +43,10 @@ abstract class ShortcodeBase {
 	 * in that order.
 	 *
 	 * @since 3.1
-	 * @return void
+	 *
+	 * @param array $atts An array fo attributes.
+	 *
+	 * @return string The output to the sourcecode.
 	 */
-	abstract public function shortcode(): void;
+	abstract public function shortcode( array $atts ): string;
 }

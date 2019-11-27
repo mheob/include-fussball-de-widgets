@@ -52,9 +52,10 @@ final class EnqueueTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testInitActionIsSet(): void {
-		$this->assertFalse( WP_Hooks::hasAction( 'init', self::$instance, 'action' ) );
-		self::$instance->addAction();
-		$this->assertTrue( WP_Hooks::hasAction( 'init', self::$instance, 'action' ) );
+		$tag = 'init';
+		$this->assertFalse( WP_Hooks::hasAction( $tag, self::$instance, 'action' ) );
+		self::$instance->addAction( $tag );
+		$this->assertTrue( WP_Hooks::hasAction( $tag, self::$instance, 'action' ) );
 	}
 
 	/**

@@ -15,10 +15,10 @@ namespace ITSB\IFDW\Utils\Logging;
  * Class ConsoleLogger is used to logs information over the used system and
  * plugin to the browser console.
  *
- * @see IFDW\Utils\Logging\Base
+ * @see ITSB\IFDW\Utils\Logging\LoggerBase
  * @since 3.0
  */
-class ConsoleLogger extends Base {
+class ConsoleLogger extends LoggerBase {
 	/**
 	 * The instance.
 	 *

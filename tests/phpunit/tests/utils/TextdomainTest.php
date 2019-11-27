@@ -63,9 +63,10 @@ final class TextdomainTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testPluginRowMetaFilterIsSet(): void {
-		$this->assertFalse( WP_Hooks::hasAction( 'plugins_loaded', self::$instance, 'action' ) );
-		self::$instance->addAction();
-		$this->assertTrue( WP_Hooks::hasAction( 'plugins_loaded', self::$instance, 'action' ) );
+		$tag = 'plugins_loaded';
+		$this->assertFalse( WP_Hooks::hasAction( $tag, self::$instance, 'action' ) );
+		self::$instance->addAction( $tag );
+		$this->assertTrue( WP_Hooks::hasAction( $tag, self::$instance, 'action' ) );
 	}
 
 	/**

@@ -11,7 +11,7 @@
 
 namespace ITSB\IFDW\Frontend;
 
-use IFDW\Utils\Logging\ConsoleLogger;
+use ITSB\IFDW\Utils\Logging\ConsoleLogger;
 use ITSB\IFDW\Utils\Settings;
 
 /**

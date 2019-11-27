@@ -26,6 +26,6 @@ class Widgets extends ActionBase {
 	 * @return void
 	 */
 	public function action(): void {
-		register_widget( '\\IFDW\\Widgets\\FubadeWidget' );
+		register_widget( '\\ITSB\\IFDW\\Widgets\\FubadeWidget' );
 	}
 }

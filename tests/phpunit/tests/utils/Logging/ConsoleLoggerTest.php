@@ -35,7 +35,7 @@ final class ConsoleLoggerTest extends \WP_UnitTestCase {
 	 */
 	public function setUp() {
 		// Get the instance.
-		self::$instance = new ConsoleLogger();
+		self::$instance = ConsoleLogger::getInstance();
 	}
 
 	/**

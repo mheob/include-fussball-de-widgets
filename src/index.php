@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Call the autoloader.
-require_once __DIR__ . '/Utils/Autoloader.php';
+require_once __DIR__ . '/Infrastructure/Autoloader.php';
 ( new Infrastructure\Autoloader() )->add_namespace( __NAMESPACE__, __DIR__ )->register();
 
 // Create the plugin instance.

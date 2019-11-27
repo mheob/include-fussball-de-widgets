@@ -63,10 +63,11 @@ final class FubadeTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testFubadeShortcodeIsAdded(): void {
-		remove_shortcode( 'fubade' );
-		$this->assertFalse( shortcode_exists( 'fubade' ) );
-		self::$instance->addShortcode();
-		$this->assertTrue( shortcode_exists( 'fubade' ) );
+		$tag = 'fubade';
+		remove_shortcode( $tag );
+		$this->assertFalse( shortcode_exists( $tag ) );
+		self::$instance->addShortcode( $tag );
+		$this->assertTrue( shortcode_exists( $tag ) );
 	}
 
 	/**

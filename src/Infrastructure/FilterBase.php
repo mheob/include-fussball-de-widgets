@@ -38,20 +38,21 @@ abstract class FilterBase {
 	 *                             the same priority are executed in the order
 	 *                             in which they were added to the action.
 	 *                             Default 10.
-	 * @param int    $acceptedArgs (Optional) The number of arguments the
-	 *                             function accepts. Default 1.
 	 *
 	 * @return void
 	 */
-	public function addFilter( string $tag, int $priority = 10, int $acceptedArgs = 1 ): void {
-		add_filter( $tag, [ $this, 'filter' ], $priority, $acceptedArgs );
+	public function addFilter( string $tag, int $priority = 10 ): void {
+		add_filter( $tag, [ $this, 'filter' ], $priority, 1 );
 	}
 
 	/**
 	 * The filter callback to be run when the filter is applied.
 	 *
 	 * @since 3.1
-	 * @return void
+	 *
+	 * @param array $args List of arguments.
+	 *
+	 * @return array List of modified plugin meta links.
 	 */
-	abstract public function filter(): void;
+	abstract public function filter( array $args ): array;
 }
