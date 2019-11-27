@@ -11,7 +11,7 @@
 
 namespace ITSB\IFDW\PhpUnit\Tests\Utils;
 
-require_once __DIR__ . '../../../utils/Mock.php';
+require_once __DIR__ . '../../../Utils/Mock.php';
 
 use ITSB\IFDW\PhpUnit\Utils\Mock;
 use ITSB\IFDW\Utils\Host;
