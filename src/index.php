@@ -8,7 +8,7 @@
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
  * @copyright 2019 IT Service Böhm -- Alexander Böhm
  *
- * -----------------------------------------------------------------------------
+ * ------------------------------------------------------------------------
  *
  * @wordpress-plugin
  * Plugin Name:  Include Fussball.de Widgets
@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Call the autoloader.
 require_once __DIR__ . '/Infrastructure/Autoloader.php';
-( new Infrastructure\Autoloader() )->add_namespace( __NAMESPACE__, __DIR__ )->register();
+( new Infrastructure\Autoloader() )->addNamespace( __NAMESPACE__, __DIR__ )->register();
 
 // Create the plugin instance.
 $plugin = PluginFactory::create();

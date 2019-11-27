@@ -18,7 +18,7 @@ namespace ITSB\IFDW\Infrastructure;
  */
 final class Autoloader {
 	private const ROOT     = 'root';
-	private const BASE_DIR = 'base_dir';
+	private const BASE_DIR = 'baseDir';
 	private const PREFIX   = 'prefix';
 	private const SUFFIX   = 'suffix';
 
@@ -70,28 +70,38 @@ final class Autoloader {
 	}
 
 	/**
+	 * Returns the Namespaces.
+	 *
+	 * @since 3.1
+	 * @return string[]
+	 */
+	public function getNamespaces() {
+		return $this->namespaces;
+	}
+
+	/**
 	 * Add a specific namespace structure with our custom autoloader.
 	 *
 	 * @since 3.1
 	 *
-	 * @param string $root     Root namespace name.
-	 * @param string $base_dir Directory containing the class files.
-	 * @param string $prefix   (Optional) Prefix to be added before the
-	 *                         class. Defaults to an empty string.
-	 * @param string $suffix   (Optional) Suffix to be added after the
-	 *                         class. Defaults to '.php'.
+	 * @param string $root    Root namespace name.
+	 * @param string $baseDir Directory containing the class files.
+	 * @param string $prefix  (Optional) Prefix to be added before the
+	 *                        class. Defaults to an empty string.
+	 * @param string $suffix  (Optional) Suffix to be added after the
+	 *                        class. Defaults to '.php'.
 	 *
 	 * @return self
 	 */
-	public function add_namespace(
+	public function addNamespace(
 		string $root,
-		string $base_dir,
+		string $baseDir,
 		string $prefix = self::DEFAULT_PREFIX,
 		string $suffix = self::DEFAULT_SUFFIX
 	): self {
 		$this->namespaces[] = [
 			self::ROOT     => $this->normalize_root( $root ),
-			self::BASE_DIR => $this->ensure_trailing_slash( $base_dir ),
+			self::BASE_DIR => $this->ensureTrailingSlash( $baseDir ),
 			self::PREFIX   => $prefix,
 			self::SUFFIX   => $suffix
 		];
@@ -113,15 +123,15 @@ final class Autoloader {
 		// Iterate over namespaces to find a match.
 		foreach ( $this->namespaces as $namespace ) {
 			// Move on if the object does not belong to the current namespace.
-			if ( 0 !== strpos( $class, (string) $namespace[ self::ROOT ] ) ) {
+			if ( 0 !== strpos( $class, $namespace[ self::ROOT ] ) ) {
 				continue;
 			}
 
 			// Remove namespace root level to correspond with root filesystem.
-			$filename = str_replace( (string) $namespace[ self::ROOT ], '', $class );
+			$filename = str_replace( $namespace[ self::ROOT ], '', $class );
 
 			// Remove a leading backslash from the class name.
-			$filename = $this->remove_leading_backslash( $filename );
+			$filename = $this->removeLeadingBackslash( $filename );
 
 			// Replace the namespace separator "\" by the system-dependent
 			// directory separator.
@@ -150,8 +160,8 @@ final class Autoloader {
 	 * @return string Normalized namespace root.
 	 */
 	private function normalize_root( string $root ): string {
-		$root = $this->remove_leading_backslash( $root );
-		$root = $this->ensure_trailing_backslash( $root );
+		$root = $this->removeLeadingBackslash( $root );
+		$root = $this->ensureTrailingBackslash( $root );
 
 		return $root;
 	}
@@ -165,7 +175,7 @@ final class Autoloader {
 	 *
 	 * @return string Modified namespace.
 	 */
-	private function remove_leading_backslash( string $namespace ): string {
+	private function removeLeadingBackslash( string $namespace ): string {
 		return ltrim( $namespace, '\\' );
 	}
 
@@ -176,7 +186,7 @@ final class Autoloader {
 	 *
 	 * @return string Modified namespace.
 	 */
-	private function ensure_trailing_backslash( string $namespace ): string {
+	private function ensureTrailingBackslash( string $namespace ): string {
 		return rtrim( $namespace, '\\' ) . '\\';
 	}
 
@@ -189,7 +199,7 @@ final class Autoloader {
 	 *
 	 * @return string Modified path.
 	 */
-	private function ensure_trailing_slash( string $path ): string {
+	private function ensureTrailingSlash( string $path ): string {
 		return rtrim( $path, '/' ) . '/';
 	}
 }
