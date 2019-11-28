@@ -1,28 +1,21 @@
-<?php
+<?php declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
- * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Include_Fussball_De_Widgets
+ * @package   ITSB\IncludeFussballDeWidgets
+ * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @license   GPL2
+ * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
+ * @copyright 2019 IT Service Böhm -- Alexander Böhm
  */
 
-declare( strict_types=1 );
-namespace IFDW\PhpUnit\Tests\Utils;
+namespace ITSB\IFDW\PhpUnit\Tests\Utils;
 
-require_once __DIR__ . '../../../utils/WP_Hooks.php';
+require_once __DIR__ . '../../../Utils/WP_Hooks.php';
 
-use IFDW\Utils\PluginActions;
-use IFDW\PhpUnit\Utils\WP_Hooks;
+use ITSB\IFDW\Utils\PluginActions;
+use ITSB\IFDW\PhpUnit\Utils\WP_Hooks;
+use ITSB\IFDW\Utils\Settings;
 
 /**
  * Class PluginActionsTest
@@ -44,7 +37,7 @@ final class PluginActionsTest extends \WP_UnitTestCase {
 	 * @since 3.1
 	 * @var array
 	 */
-	private static $sampleLinks;
+	private static $links;
 
 	/**
 	 * Set up the configuration
@@ -54,10 +47,10 @@ final class PluginActionsTest extends \WP_UnitTestCase {
 	 */
 	public function setUp() {
 		// Get the instance.
-		self::$instance = PluginActions::getInstance();
+		self::$instance = new PluginActions();
 
 		// Configure the sample data.
-		self::$sampleLinks = [ '<a href="#">FAQ</a>', '<a href="#">Support</a>' ];
+		self::$links = [ '<a href="#">FAQ</a>', '<a href="#">Support</a>' ];
 	}
 
 	/**
@@ -65,15 +58,16 @@ final class PluginActionsTest extends \WP_UnitTestCase {
 	 *
 	 * @since 3.1
 	 *
-	 * @see PluginActions::addPluginRowMetaFilter();
+	 * @see PluginActions::addFilter();
 	 * @test
 	 *
 	 * @return void
 	 */
 	public function testPluginRowMetaFilterIsSet(): void {
-		$this->assertFalse( WP_Hooks::hasFilter( 'plugin_row_meta', self::$instance, 'addLinksToRowMeta' ) );
-		self::$instance->addPluginRowMetaFilter();
-		$this->assertTrue( WP_Hooks::hasFilter( 'plugin_row_meta', self::$instance, 'addLinksToRowMeta' ) );
+		$tag = 'plugin_row_meta';
+		$this->assertFalse( WP_Hooks::hasFilter( $tag, self::$instance, 'filter' ) );
+		self::$instance->addFilter( $tag );
+		$this->assertTrue( WP_Hooks::hasFilter( $tag, self::$instance, 'filter' ) );
 	}
 
 	/**
@@ -81,16 +75,16 @@ final class PluginActionsTest extends \WP_UnitTestCase {
 	 *
 	 * @since 3.1
 	 *
-	 * @see PluginActions::addLinksToRowMeta();
+	 * @see PluginActions::filter();
 	 * @test
 	 *
 	 * @return void
 	 */
 	public function testReturnsTheInputArrayWhenPluginPathIsDifferent() : void {
-		$sampleFunctionCall = self::$instance->addLinksToRowMeta( self::$sampleLinks, 'wrong path' );
+		$sampleFunctionCall = self::$instance->filter( [ self::$links, 'wrong path' ] );
 
 		$this->assertIsArray( $sampleFunctionCall );
-		$this->assertSame( self::$sampleLinks, $sampleFunctionCall );
+		$this->assertSame( self::$links, $sampleFunctionCall );
 		$this->assertEquals( 2, count( $sampleFunctionCall ) );
 	}
 
@@ -99,13 +93,13 @@ final class PluginActionsTest extends \WP_UnitTestCase {
 	 *
 	 * @since 3.1
 	 *
-	 * @see PluginActions::addLinksToRowMeta();
+	 * @see PluginActions::filter();
 	 * @test
 	 *
 	 * @return void
 	 */
 	public function testReturnsTheUpdatedArrayOfRowMetaLinks(): void {
-		$sampleFunctionCall = self::$instance->addLinksToRowMeta( self::$sampleLinks, plugin_basename( IFDW_URL ) );
+		$sampleFunctionCall = self::$instance->filter( [ self::$links, plugin_basename( Settings::URL ) ] );
 
 		$this->assertIsArray( $sampleFunctionCall );
 		$this->assertEquals( 3, count( $sampleFunctionCall ) );

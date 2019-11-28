@@ -1,25 +1,17 @@
-<?php
+<?php declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
- * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Include_Fussball_De_Widgets
+ * @package   ITSB\IncludeFussballDeWidgets
+ * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @license   GPL2
+ * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
+ * @copyright 2019 IT Service Böhm -- Alexander Böhm
  */
 
-declare( strict_types=1 );
-namespace IFDW\PhpUnit\Tests\Utils;
+namespace ITSB\IFDW\PhpUnit\Tests\Utils;
 
-use IFDW\Shortcodes\Fubade;
+use ITSB\IFDW\Shortcodes\Fubade;
 
 /**
  * Class FubadeTest
@@ -41,7 +33,13 @@ final class FubadeTest extends \WP_UnitTestCase {
 	 * @since 3.1
 	 * @var array
 	 */
-	private static $sampleAtts;
+	private static $sampleAtts = [
+		'api'       => '12345678901234567890123456789012',
+		'id'        => 'fubade_12345',
+		'notice'    => 'my notice',
+		'fullwidth' => true,
+		'devtools'  => true
+	];
 
 	/**
 	 * Set up the configuration
@@ -51,16 +49,7 @@ final class FubadeTest extends \WP_UnitTestCase {
 	 */
 	public function setUp() {
 		// Get the instance.
-		self::$instance = Fubade::getInstance();
-
-		// Configure the sample data.
-		self::$sampleAtts = [
-			'api'       => '12345678901234567890123456789012',
-			'id'        => 'fubade_12345',
-			'notice'    => 'my notice',
-			'fullwidth' => true,
-			'devtools'  => true
-		];
+		self::$instance = new Fubade();
 	}
 
 	/**
@@ -74,10 +63,11 @@ final class FubadeTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testFubadeShortcodeIsAdded(): void {
-		remove_shortcode( 'fubade' );
-		$this->assertFalse( shortcode_exists( 'fubade' ) );
-		self::$instance->addShortcode();
-		$this->assertTrue( shortcode_exists( 'fubade' ) );
+		$tag = 'fubade';
+		remove_shortcode( $tag );
+		$this->assertFalse( shortcode_exists( $tag ) );
+		self::$instance->addShortcode( $tag );
+		$this->assertTrue( shortcode_exists( $tag ) );
 	}
 
 	/**
@@ -85,7 +75,7 @@ final class FubadeTest extends \WP_UnitTestCase {
 	 *
 	 * @since 3.1
 	 *
-	 * @see Fubade::createShortcode();
+	 * @see Fubade::shortcode();
 	 * @test
 	 *
 	 * @return void
@@ -97,6 +87,6 @@ final class FubadeTest extends \WP_UnitTestCase {
 		$expected .= '</div>' . PHP_EOL;
 		// phpcs:enable
 
-		$this->assertEquals( $expected, self::$instance->createShortcode( self::$sampleAtts ) );
+		$this->assertEquals( $expected, self::$instance->shortcode( self::$sampleAtts ) );
 	}
 }

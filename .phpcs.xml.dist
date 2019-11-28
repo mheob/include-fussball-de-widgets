@@ -18,6 +18,7 @@
 	<!-- Rules: Check PHP version compatibility -->
 	<!-- https://github.com/PHPCompatibility/PHPCompatibility#sniffing-your-code-for-compatibility-with-specific-php-versions -->
 	<config name="testVersion" value="7.2-"/>
+
 	<!-- https://github.com/PHPCompatibility/PHPCompatibilityWP -->
 	<rule ref="PHPCompatibilityWP"/>
 
@@ -27,11 +28,12 @@
 	<config name="minimum_supported_wp_version" value="4.8"/>
 
   <rule ref="WordPress">
-    <exclude name="WordPress.Files.FileName" />
-    <exclude name="WordPress.NamingConventions.ValidFunctionName" />
-    <exclude name="WordPress.NamingConventions.ValidVariableName" />
-    <exclude name="WordPress.Arrays.CommaAfterArrayItem.NoComma" />
-    <exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+    <exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+    <exclude name="WordPress.Arrays.CommaAfterArrayItem.NoComma"/>
+    <exclude name="WordPress.Files.FileName"/>
+    <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName"/>
+    <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited"/>
   </rule>
 
 	<rule ref="WordPress.WP.I18n">
@@ -47,11 +49,15 @@
 		</properties>
 	</rule>
 
-  <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
   <rule ref="Generic.Files.LineLength">
-  <properties>
-   <property name="lineLimit" value="120"/>
-   <property name="absoluteLineLimit" value="120"/>
-  </properties>
- </rule>
+    <properties>
+      <property name="lineLimit" value="120"/>
+      <property name="absoluteLineLimit" value="120"/>
+    </properties>
+  </rule>
+
+  <rule ref="Squiz.Commenting.FileComment">
+    <exclude name="Squiz.Commenting.FileComment.Missing"/>
+  </rule>
 </ruleset>

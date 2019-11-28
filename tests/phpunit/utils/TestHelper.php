@@ -9,23 +9,24 @@
  * @copyright 2019 IT Service Böhm -- Alexander Böhm
  */
 
-namespace ITSB\IFDW\Widgets;
+namespace ITSB\IFDW\PhpUnit\Utils;
 
-use ITSB\IFDW\Infrastructure\ActionBase;
+use ITSB\IFDW\Utils\Settings;
 
 /**
- * Class Widgets register all Widgets from 'Include_Fussball_De_Widgets'.
+ * Class TestHelper
  *
- * @since 3.0
+ * @since 3.1
  */
-class Widgets extends ActionBase {
+final class TestHelper {
 	/**
-	 * Initialize all Widgets
+	 * Restore the host to the default value.
 	 *
-	 * @since 3.0.0
+	 * @since 3.1
 	 * @return void
 	 */
-	public function action(): void {
-		register_widget( '\\ITSB\\IFDW\\Widgets\\FubadeWidget' );
+	public static function restoreHost() {
+		$url = esc_url_raw( wp_unslash( $_SERVER['HTTP_HOST'] ?? '' ) );
+		Settings::setHost( substr( $url, strpos( $url, ':' ) + 3 ) );
 	}
 }
