@@ -1,28 +1,20 @@
-<?php
+<?php declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
- * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Include_Fussball_De_Widgets
+ * @package   ITSB\IncludeFussballDeWidgets
+ * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @license   GPL2
+ * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
+ * @copyright 2019 IT Service Böhm -- Alexander Böhm
  */
 
-declare( strict_types=1 );
-namespace IFDW\PhpUnit\Tests\Utils;
+namespace ITSB\IFDW\PhpUnit\Tests\Utils;
 
-require_once __DIR__ . '../../../utils/Stub.php';
+require_once __DIR__ . '../../../Utils/Mock.php';
 
-use IFDW\PhpUnit\Utils\Stub;
-use IFDW\Utils\Host;
+use ITSB\IFDW\PhpUnit\Utils\Mock;
+use ITSB\IFDW\Utils\Host;
 
 /**
  * Class HostTest
@@ -43,8 +35,8 @@ final class HostTest extends \WP_UnitTestCase {
 	public function testCleanHostCanNotSet(): void {
 		$expected = 'SERVER_NAME-not-set';
 
-		$stub = new Stub( $this->getMockBuilder( Host::class )->getMock(), Host::class );
-		$stub->setProperty( 'host', null );
+		$mock = new Mock( $this->getMockBuilder( Host::class )->getMock(), Host::class );
+		$mock->setProperty( 'host', null );
 
 		$this->assertEquals( $expected, Host::cleanHost( null ) );
 		$this->assertEquals( $expected, Host::cleanHost( '' ) );
@@ -63,8 +55,8 @@ final class HostTest extends \WP_UnitTestCase {
 	public function testCleanHostIsSet(): void {
 		$expected = 'example.com';
 
-		$stub = new Stub( $this->getMockBuilder( Host::class )->getMock(), Host::class );
-		$stub->setProperty( 'host', null );
+		$mock = new Mock( $this->getMockBuilder( Host::class )->getMock(), Host::class );
+		$mock->setProperty( 'host', null );
 
 		$this->assertEquals( $expected, Host::cleanHost( 'example.com' ) );
 	}

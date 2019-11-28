@@ -8,10 +8,6 @@
          cacheResult="true"
          printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer">
 
-  <!-- <php>
-    <const name="IFDW_PHP_VERSION" value="9.0.0"/>
-  </php> -->
-
 	<testsuites>
 		<testsuite name="default">
 			<directory suffix="Test.php">./tests/phpunit</directory>

@@ -1,28 +1,20 @@
-<?php
+<?php declare( strict_types=1 );
 /**
  * Include Fussball.de Widgets
- * Copyright (C) 2019 IT-Service Böhm - Alexander Böhm <ab@its-boehm.de>
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Include_Fussball_De_Widgets
+ * @package   ITSB\IncludeFussballDeWidgets
+ * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @license   GPL2
+ * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
+ * @copyright 2019 IT Service Böhm -- Alexander Böhm
  */
 
-declare( strict_types=1 );
-namespace IFDW\PhpUnit\Tests\Blocks;
+namespace ITSB\IFDW\PhpUnit\Tests\Blocks;
 
-require_once __DIR__ . '../../../utils/WP_Hooks.php';
+require_once __DIR__ . '../../../Utils/WP_Hooks.php';
 
-use IFDW\Blocks\Enqueue;
-use IFDW\PhpUnit\Utils\WP_Hooks;
+use ITSB\IFDW\Blocks\Enqueue;
+use ITSB\IFDW\PhpUnit\Utils\WP_Hooks;
 
 /**
  * Class EnqueueTest
@@ -46,7 +38,7 @@ final class EnqueueTest extends \WP_UnitTestCase {
 	 */
 	public function setUp() {
 		// Get the instance.
-		self::$instance = Enqueue::getInstance();
+		self::$instance = new Enqueue();
 	}
 
 	/**
@@ -54,15 +46,16 @@ final class EnqueueTest extends \WP_UnitTestCase {
 	 *
 	 * @since 3.1
 	 *
-	 * @see Enqueue::addInitAction();
+	 * @see Enqueue::addAction();
 	 * @test
 	 *
 	 * @return void
 	 */
 	public function testInitActionIsSet(): void {
-		$this->assertFalse( WP_Hooks::hasAction( 'init', self::$instance, 'registerDynamicBlock' ) );
-		self::$instance->addInitAction();
-		$this->assertTrue( WP_Hooks::hasAction( 'init', self::$instance, 'registerDynamicBlock' ) );
+		$tag = 'init';
+		$this->assertFalse( WP_Hooks::hasAction( $tag, self::$instance, 'action' ) );
+		self::$instance->addAction( $tag );
+		$this->assertTrue( WP_Hooks::hasAction( $tag, self::$instance, 'action' ) );
 	}
 
 	/**
@@ -70,7 +63,7 @@ final class EnqueueTest extends \WP_UnitTestCase {
 	 *
 	 * @since 3.1
 	 *
-	 * @see Enqueue::registerDynamicBlock();
+	 * @see Enqueue::action();
 	 * @test
 	 *
 	 * @return void
@@ -80,7 +73,7 @@ final class EnqueueTest extends \WP_UnitTestCase {
 		wp_deregister_style( 'fubade-block-style' );
 		unregister_block_type( 'ifdw/fubade' );
 
-		self::$instance->registerDynamicBlock();
+		self::$instance->action();
 
 		// TODO: Write a more precise test.
 		$this->assertTrue( true );
@@ -91,7 +84,7 @@ final class EnqueueTest extends \WP_UnitTestCase {
 	 *
 	 * @since 3.1
 	 *
-	 * @see Enqueue::registerDynamicBlock();
+	 * @see Enqueue::action();
 	 * @test
 	 *
 	 * @return void
@@ -100,7 +93,7 @@ final class EnqueueTest extends \WP_UnitTestCase {
 		global $wp_version;
 		$wp_version = '4.9.0';
 		unregister_block_type( 'ifdw/fubade' );
-		self::$instance->registerDynamicBlock();
+		self::$instance->action();
 
 		// TODO: Write a more precise test.
 		$this->assertTrue( true );

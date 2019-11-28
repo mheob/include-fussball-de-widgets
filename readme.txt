@@ -75,7 +75,7 @@ The latest state of development is available at any time in my [Github repositor
 1. screenshot-1.jpg
 
 == Changelog ==
-= [3.0.5] - 2019-10-13 =
+= 3.0.5 - 2019-10-13 =
 = Fixed =
 * Due to problems with the WordPress REST API the SourceLogger is deactivated until further notice.
 
@@ -216,5 +216,5 @@ The latest state of development is available at any time in my [Github repositor
 
 == Upgrade Notice ==
 
-= [3.1.0] - 2019-11-25 =
+= 3.1.0 - 2019-11-25 =
 !!! Die Upgrade Notiz sollte dieses Aussehen besitzen. !!!
