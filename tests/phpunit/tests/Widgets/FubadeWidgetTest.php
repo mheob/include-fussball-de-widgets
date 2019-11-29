@@ -112,5 +112,70 @@ final class FubadeWidgetTest extends \WP_UnitTestCase {
 
 		$this->expectOutputString( $expected );
 		self::$instance->widget( $args, $this->updatedAttributes );
+
+		// TODO: Check BorlabsCookie is loaded.
+	}
+
+	/**
+	 * Test the form output contains the expected string.
+	 *
+	 * @since 3.1
+	 *
+	 * @see FubadeWidget::form()
+	 * @test
+	 *
+	 * @return void
+	 */
+	public function testFormOutputContainsExpectedString() {
+		$expected  = '<p>';
+		$expected .= '<label for="TITLE">';
+		$expected .= 'Title: ';
+		$expected .= '</label>';
+		$expected .= '<input';
+		$expected .= 'type="text"';
+		$expected .= 'class="widefat"';
+		$expected .= 'id="ID';
+		$expected .= 'name="TITLE"';
+		$expected .= 'value="TITLE">';
+		$expected .= '</p>';
+
+		$expected .= '<p>';
+		$expected .= '<label for="API">';
+		$expected .= 'API: ';
+		$expected .= '</label>';
+		$expected .= '<input';
+		$expected .= 'type="text"';
+		$expected .= 'class="widefat"';
+		$expected .= 'pattern="[A-Za-z0-9]{32}"';
+		$expected .= 'id="ID';
+		$expected .= 'name="API"';
+		$expected .= 'value="API">';
+		$expected .= '</p>';
+
+		$expected .= '<p>';
+		$expected .= '<input';
+		$expected .= 'id="FULL_WIDTH';
+		$expected .= 'name="FULL_WIDTH"';
+		$expected .= 'type="checkbox"';
+		$expected .= 'value="1">';
+		$expected .= '<label for="FULL_WIDTH">';
+		$expected .= 'FULL_WIDTH: ';
+		$expected .= '</label>';
+		$expected .= '</p>';
+
+		$expected .= '<p>';
+		$expected .= '<input';
+		$expected .= 'id="DEVTOOLS';
+		$expected .= 'name="DEVTOOLS"';
+		$expected .= 'type="checkbox"';
+		$expected .= 'checked';
+		$expected .= 'value="1">';
+		$expected .= '<label for="DEVTOOLS">';
+		$expected .= 'DEVTOOLS: ';
+		$expected .= '</label>';
+		$expected .= '</p>';
+
+		$this->expectOutputString( $expected );
+		self::$instance->form( $this->updatedAttributes );
 	}
 }
