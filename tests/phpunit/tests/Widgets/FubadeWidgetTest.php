@@ -63,6 +63,62 @@ final class FubadeWidgetTest extends \WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the form output contains the expected string.
+	 *
+	 * @since 3.1
+	 *
+	 * @see FubadeWidget::form()
+	 * @test
+	 *
+	 * @return void
+	 */
+	public function testFormOutputContainsExpectedString() {
+		$expected  = '		<p>' . PHP_EOL;
+		$expected .= '			<label for="widget-ifdw_fubade_widget--title">' . PHP_EOL;
+		$expected .= '				Title: 			</label>' . PHP_EOL;
+		$expected .= '			<input' . PHP_EOL;
+		$expected .= '				type="text"' . PHP_EOL;
+		$expected .= '				class="widefat"' . PHP_EOL;
+		$expected .= '				id="widget-ifdw_fubade_widget--title"' . PHP_EOL;
+		$expected .= '				name="widget-ifdw_fubade_widget[][title]"' . PHP_EOL;
+		$expected .= '				value="Fussball.de Widget">' . PHP_EOL;
+		$expected .= '		</p>' . PHP_EOL;
+		$expected .= '		<p>' . PHP_EOL;
+		$expected .= '			<label for="widget-ifdw_fubade_widget--api">' . PHP_EOL;
+		$expected .= '				API: 			</label>' . PHP_EOL;
+		$expected .= '			<input' . PHP_EOL;
+		$expected .= '				type="text"' . PHP_EOL;
+		$expected .= '				class="widefat"' . PHP_EOL;
+		$expected .= '				pattern="[A-Za-z0-9]{32}"' . PHP_EOL;
+		$expected .= '				id="widget-ifdw_fubade_widget--api"' . PHP_EOL;
+		$expected .= '				name="widget-ifdw_fubade_widget[][api]"' . PHP_EOL;
+		$expected .= '				value="12345678901234567890123456789012">' . PHP_EOL;
+		$expected .= '		</p>' . PHP_EOL;
+		$expected .= '		<p>' . PHP_EOL;
+		$expected .= '			<input' . PHP_EOL;
+		$expected .= '				id="widget-ifdw_fubade_widget--fullwidth"' . PHP_EOL;
+		$expected .= '				name="widget-ifdw_fubade_widget[][fullwidth]"' . PHP_EOL;
+		$expected .= '				type="checkbox"' . PHP_EOL;
+		$expected .= '								value="1">' . PHP_EOL;
+		$expected .= '			<label for="widget-ifdw_fubade_widget--fullwidth">' . PHP_EOL;
+		$expected .= '				view in full width			</label>' . PHP_EOL;
+		$expected .= '		</p>' . PHP_EOL;
+		$expected .= '		<p>' . PHP_EOL;
+		$expected .= '			<input' . PHP_EOL;
+		$expected .= '				id="widget-ifdw_fubade_widget--devtools"' . PHP_EOL;
+		$expected .= '				name="widget-ifdw_fubade_widget[][devtools]"' . PHP_EOL;
+		$expected .= '				type="checkbox"' . PHP_EOL;
+		$expected .= '				 checked=\'checked\'				value="1">' . PHP_EOL;
+		$expected .= '			<label for="widget-ifdw_fubade_widget--devtools">' . PHP_EOL;
+		$expected .= '				output log data to console			</label>' . PHP_EOL;
+		$expected .= '		</p>' . PHP_EOL;
+		$expected .= '		';
+
+		$this->expectOutputString( $expected );
+		self::$instance->form( $this->updatedAttributes );
+	}
+
+	/**
 	 * Test the updated instance array should contains special values.
 	 *
 	 * @since 3.1
@@ -177,5 +233,20 @@ final class FubadeWidgetTest extends \WP_UnitTestCase {
 
 		$this->expectOutputString( $expected );
 		self::$instance->form( $this->updatedAttributes );
+	}
+
+	/**
+	 * Test the borlabs-cookie plugin is outputting it's content blocker.
+	 *
+	 * @since 3.1
+	 *
+	 * @see FubadeWidget::widget()
+	 * @test
+	 *
+	 * @return void
+	 */
+	public function testBorlabsCookiePluginIsOutputtingContentBlocker() {
+		// TODO: Integrate Test.
+		$this->assertTrue( true );
 	}
 }
