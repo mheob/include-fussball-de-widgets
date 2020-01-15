@@ -10,9 +10,8 @@
       "request": "launch",
       "port": 9000,
       "pathMappings": {
-        "/mnt/c/": "c:/",
-        "/mnt/d/": "d:/",
-        "/mnt/e/": "e:/"
+        "/var/www/mysite.local/": "${workspaceFolder}",
+        "${workspaceFolder}": "${workspaceFolder}"
       }
     },
     {

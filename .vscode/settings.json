@@ -35,9 +35,6 @@
     "editor.detectIndentation": false,
     "editor.useTabStops": false
   },
-
-  // Extensions
-  "stylelint.enable": true,
   "css.validate": false,
   "scss.validate": false,
 

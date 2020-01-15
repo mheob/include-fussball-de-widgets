@@ -3,7 +3,7 @@
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "shinnn.stylelint",
+    // "shinnn.stylelint",
     "neilbrayfield.php-docblocker",
     "phproberto.vscode-php-getters-setters",
     "bmewburn.vscode-intelephense-client",

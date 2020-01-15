@@ -1,7 +1,6 @@
 extends:
   - prettier-stylelint/index.js
   - stylelint-config-rational-order
-  - stylelint-config-wordpress/scss
 rules:
   max-line-length: 120
   declaration-block-no-duplicate-properties:
