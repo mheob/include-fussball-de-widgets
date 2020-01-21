@@ -23,15 +23,21 @@ window.FussballdeWidgetAPI = () => {
     false
   );
 
-  /** Support for Divi-Tabs & Fusion-Tabs */
-  if (document.body.classList.contains('et_divi_theme') || document.body.classList.contains('fusion-body')) {
-    const tabs = document.querySelectorAll('.et_pb_tabs_controls a, .fusion-tabs a.tab-link');
+  /** Support for Divi-Tabs, Fusion-Tabs and Kadence-Blocks-Tabs */
+  if (
+    document.body.classList.contains('et_divi_theme') ||
+    document.body.classList.contains('fusion-body') ||
+    document.querySelectorAll('.wp-block-kadence-tabs').length > 0
+  ) {
+    const tabs = document.querySelectorAll('.et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a');
     const iframes = document.querySelectorAll(
-      '.et_pb_tab_content [id^="fubade_"] > iframe, .fusion-tabs .tab_content [id^="fubade_"] > iframe'
+      '.et_pb_tab_content [id^="fubade_"] > iframe, ' +
+        '.fusion-tabs .tab_content [id^="fubade_"] > iframe, ' +
+        '.wp-block-kadence-tab [id^="fubade_"] > iframe'
     );
     if (tabs.length > 0) {
-      Array.from(tabs).forEach(diviTab => {
-        diviTab.addEventListener(
+      Array.from(tabs).forEach(tab => {
+        tab.addEventListener(
           'click',
           () => {
             setTimeout(
@@ -40,6 +46,7 @@ window.FussballdeWidgetAPI = () => {
               }),
               800
             );
+            console.log('Tab clicked', tab);
           },
           false
         );
