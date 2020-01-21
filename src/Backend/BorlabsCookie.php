@@ -180,8 +180,6 @@ class BorlabsCookie extends ActionBase {
 			$cookieGroupIds[ $groupData->group_id ] = $groupData->id;
 		}
 
-		var_dump( $cookieGroupIds );
-
 		// phpcs:disable Squiz.Strings.DoubleQuoteUsage
 		$sqlQuery = "INSERT INTO `" . $this->tableNameCookies . "`
 			(
@@ -226,7 +224,5 @@ class BorlabsCookie extends ActionBase {
 
 		// FIXME: use correct database caching.
 		$wpdb->query( $sqlQuery );
-
-		var_dump( $sqlQuery );
 	}
 }
