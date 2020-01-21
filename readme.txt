@@ -3,7 +3,7 @@ Contributors: mheob
 Tags: soccer, football, widget, fussball.de
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url
 Requires at least: 4.8
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 7.2
 Stable tag: 3.1.0
 License: GPL2
@@ -223,7 +223,5 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-* Add KadenceBlock-Tabs as the same as Divi-Tabs and Fusion-Tabs.
-* Refactor "null ===" to exclamation mark syntax.
-* Reformat code, so that the coding standards can be better adhered to and thus a faster development is possible.
-* Integrate more test, to prevent possible error.
+= 3.1.0 - 2020-01-21 =
+Add KadenceBlock-Tabs Support and restructure the code.

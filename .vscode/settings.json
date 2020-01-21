@@ -42,10 +42,9 @@
     "**/.git/**",
     "**/.svn/**",
     "**/.hg/**",
-    "**/CVS/**",
     "**/.DS_Store/**",
+    "**/dist/**",
     "**/node_modules/**",
-    "**/bower_components/**",
     "**/vendor/**"
   ],
   "intelephense.files.maxSize": 3000000,
