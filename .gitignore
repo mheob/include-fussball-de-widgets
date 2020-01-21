@@ -1,56 +1,12 @@
-### Linux template
-*~
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
-
-### MacOs template
-.DS_Store
-
-### Windows template
-# Windows thumbnail cache files
-Thumbs.db
-
-# Dump file
-*.stackdump
-
-# Folder config file
-[Dd]esktop.ini
-.directory
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows shortcuts
-*.lnk
-
-### User-specific stuff
-# IDE
-.idea
-*.sublime-project
-*.sublime-workspace
-.cache
-.project
-.settings
-
-# NPM / YARN
-# package-lock.json
-# yarn.lock
-node_modules
-
-# Numerous always-ignore extensions
-*.diff
-*.err
-*.log
-*.orig
-*.rej
-*.swo
-*.swp
-*.vi
-*.zip
+# Package manager
+**/node_modules/
+**/vendor/
 
 # Compiled stuff
-**/build/**
-**/dist/**
-**/.releases/**
-**/.github-releases/**
+**/.github-releases/
+**/.releases/
+**/dist/
+
+# PHPUnit
+**/tests/phpunit/coverage/
+.phpunit.result.cache

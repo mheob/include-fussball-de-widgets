@@ -1,0 +1,166 @@
+{
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".github*": true,
+    ".releases": true,
+    "assets": true
+  },
+  "files.watcherExclude": {
+    "**/lib/**": true,
+    "**/node_modules/**": true,
+    "**/vendor/**": true
+  },
+
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
+  "editor.wordWrap": "on",
+
+  "html.format.wrapAttributes": "aligned-multiple",
+  "html.format.endWithNewline": true,
+
+  "[php]": {
+    "editor.defaultFormatter": "valeryanm.vscode-phpsab",
+    "editor.detectIndentation": true,
+    "editor.useTabStops": true,
+    "editor.insertSpaces": false
+  },
+
+  "[javascript]": {
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.useTabStops": false
+  },
+  "css.validate": false,
+  "scss.validate": false,
+
+  "intelephense.files.exclude": [
+    "**/.git/**",
+    "**/.svn/**",
+    "**/.hg/**",
+    "**/CVS/**",
+    "**/.DS_Store/**",
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**"
+  ],
+  "intelephense.files.maxSize": 3000000,
+  "intelephense.stubs": [
+    "apache",
+    "bcmath",
+    "bz2",
+    "calendar",
+    "com_dotnet",
+    "Core",
+    "ctype",
+    "curl",
+    "date",
+    "dba",
+    "dom",
+    "enchant",
+    "exif",
+    "FFI",
+    "fileinfo",
+    "filter",
+    "fpm",
+    "ftp",
+    "gd",
+    "gettext",
+    "gmp",
+    "hash",
+    "iconv",
+    "imap",
+    "intl",
+    "json",
+    "ldap",
+    "libxml",
+    "mbstring",
+    "meta",
+    "mysqli",
+    "oci8",
+    "odbc",
+    "openssl",
+    "pcntl",
+    "pcre",
+    "PDO",
+    "pdo_ibm",
+    "pdo_mysql",
+    "pdo_pgsql",
+    "pdo_sqlite",
+    "pgsql",
+    "Phar",
+    "posix",
+    "pspell",
+    "readline",
+    "Reflection",
+    "session",
+    "shmop",
+    "SimpleXML",
+    "snmp",
+    "soap",
+    "sockets",
+    "sodium",
+    "SPL",
+    "sqlite3",
+    "standard",
+    "superglobals",
+    "sysvmsg",
+    "sysvsem",
+    "sysvshm",
+    "tidy",
+    "tokenizer",
+    "wordpress",
+    "xml",
+    "xmlreader",
+    "xmlrpc",
+    "xmlwriter",
+    "xsl",
+    "Zend OPcache",
+    "zip",
+    "zlib"
+  ],
+
+  "php-docblocker.extra": ["@since ${###:3.1}"],
+  "php-docblocker.classTemplate": {
+    "myMessage": {
+      "content": "Class ${###:Clasname}",
+      "gapAfter": true
+    },
+    "extra": {}
+  },
+  "php-docblocker.functionTemplate": {
+    "message": {
+      "gapAfter": true
+    },
+    "extra": {},
+    "param": {
+      "gapBefore": true,
+      "gapAfter": true
+    },
+    "return": {}
+  },
+  "php-docblocker.propertyTemplate": {
+    "message": {
+      "gapAfter": true
+    },
+    "extra": {},
+    "var": {}
+  },
+
+  "phpGettersSetters.spacesAfterParam": 1,
+  "phpGettersSetters.spacesAfterParamVar": 1,
+  "phpGettersSetters.spacesAfterReturn": 1,
+
+  "phpsab.executablePathCBF": "./vendor/bin/phpcbf",
+  "phpsab.executablePathCS": "./vendor/bin/phpcs",
+  "phpsab.snifferMode": "onType",
+  "phpsab.standard": "./.phpcs.xml.dist",
+
+  "prettier.bracketSpacing": true,
+  "prettier.endOfLine": "lf",
+  "prettier.printWidth": 120
+}

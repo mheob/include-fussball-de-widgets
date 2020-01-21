@@ -16,7 +16,7 @@ const commonConfig = {
             unused: false
           },
           mangle: {
-            reserved: [ 'FussballdeWidgetAPI', '__' ]
+            reserved: ['FussballdeWidgetAPI', '__']
           }
         }
       })
@@ -26,9 +26,9 @@ const commonConfig = {
 
 const blockConfig = {
   ...commonConfig,
-  entry: './app/src/Blocks/index.js',
+  entry: './src/Blocks/index.js',
   output: {
-    path: path.resolve(__dirname, 'app', 'dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'assets/js/blocks.js'
   },
   module: {
@@ -36,18 +36,14 @@ const blockConfig = {
       ...defaultConfig.module.rules,
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [
     ...defaultConfig.plugins,
     new MiniCssExtractPlugin({
-      path: path.resolve(__dirname, 'app', 'dist'),
+      path: path.resolve(__dirname, 'dist'),
       filename: 'assets/css/blocks-[name].css'
     })
   ]
@@ -55,20 +51,20 @@ const blockConfig = {
 
 const fubadeConfig = {
   ...commonConfig,
-  entry: './app/src/assets/js/fubade-api.js',
+  entry: './src/assets/js/fubade-api.js',
   output: {
-    path: path.resolve(__dirname, 'app', 'dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'assets/js/fubade-api.js'
   },
   plugins: [
     ...defaultConfig.plugins,
     new CopyPlugin([
-      { from: '**/*.php', to: '../dist/', context: 'app/src' },
-      { from: '*/images/*', to: '../dist/', context: 'app/src' },
-      { from: '../../LICENSE', to: './', context: 'app/dist' },
-      { from: '../../readme.txt', to: './', context: 'app/dist' }
+      { from: '**/*.php', to: '../dist/', context: 'src' },
+      { from: '*/images/*', to: '../dist/', context: 'src' },
+      { from: '../LICENSE', to: './', context: 'dist' },
+      { from: '../readme.txt', to: './', context: 'dist' }
     ])
   ]
 };
 
-module.exports = [ blockConfig, fubadeConfig ];
+module.exports = [blockConfig, fubadeConfig];

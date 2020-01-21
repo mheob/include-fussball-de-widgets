@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.1.0] - 2020-01-21
+
+### Added
+
+- Add KadenceBlock-Tabs as the same as Divi-Tabs and Fusion-Tabs.
+
+### Changed
+
+- Refactor "null ===" to exclamation mark syntax.
+- Reformat code, so that the coding standards can be better adhered to and thus a faster development is possible.
+- Integrate more test, to prevent possible error.
+
 ## [3.0.5] - 2019-10-13
 
 ### Fixed
@@ -29,7 +41,7 @@ All notable changes to this project will be documented in this file.
 
 ## [3.0.2] - 2019-09-23
 
-### Fixed
+### Added
 
 - Add Fusion-Tabs as the same as Divi-Tabs.
 
@@ -50,7 +62,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- *IMPORTANT* Set the required PHP version up to 7.2.
+- _IMPORTANT_ Set the required PHP version up to 7.2.
 - Redesign the whole structure and use OOP from now on.
 - Initialization of the fussball.de iframe from now on in PHP instead of JavaScript.
 
@@ -217,7 +229,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.5...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.0...HEAD
+[3.1.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.5...v3.1.0
 [3.0.5]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.4...v3.0.5
 [3.0.4]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.3...v3.0.4
 [3.0.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.2...v3.0.3
