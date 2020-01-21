@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.1.1] - 2020-01-21
+
+### Fixed
+
+- Fix update issues on the wordpress backend.
+
 ## [3.1.0] - 2020-01-21
 
 ### Added
@@ -229,7 +235,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.0...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.1...HEAD
+[3.1.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.0...v3.1.1
 [3.1.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.5...v3.1.0
 [3.0.5]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.4...v3.0.5
 [3.0.4]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.3...v3.0.4

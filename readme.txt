@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.8
 Tested up to: 5.3
 Requires PHP: 7.2
-Stable tag: 3.1.0
+Stable tag: 3.1.1
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,10 @@ The latest state of development is available at any time in my [Github repositor
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.1.1 - 2020-01-21 =
+= Fixed =
+* Fix update issues on the wordpress backend.
+
 = 3.1.0 - 2020-01-21 =
 = Added =
 * Add KadenceBlock-Tabs as the same as Divi-Tabs and Fusion-Tabs.
@@ -223,5 +227,5 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-= 3.1.0 - 2020-01-21 =
-Add KadenceBlock-Tabs Support and restructure the code.
+= 3.1.1 - 2020-01-21 =
+Fix update issues on the wordpress backend.
