@@ -137,9 +137,9 @@ class FubadeWidget extends \WP_Widget {
 		$devtools  = empty( $instance['devtools'] ) ? false : true;
 
 		// WordPress core before_widget hook (always include).
-		echo esc_html( $args['before_widget'] ) . PHP_EOL;
+		echo $args['before_widget'] . PHP_EOL;
 
-		echo esc_html( $args['before_title'] . $title . $args['after_title'] ) . PHP_EOL;
+		echo $args['before_title'] . $title . $args['after_title'] . PHP_EOL;
 
 		$output = ( new Fubade() )->output(
 			[
@@ -151,14 +151,13 @@ class FubadeWidget extends \WP_Widget {
 			]
 		);
 
-		include_once ABSPATH . 'wp-admin/includes/plugin.php';
-		if ( is_plugin_active( 'borlabs-cookie/borlabs-cookie.php' ) ) {
-			echo esc_html( BorlabsCookieHelper()->blockContent( $output, BorlabsCookie::CB_ID ) );
+		if ( ( new BorlabsCookie() )->checkBorlabsCookieIsActivated() ) {
+			echo BorlabsCookieHelper()->blockContent( $output, BorlabsCookie::CB_ID );
 		} else {
-			echo esc_html( $output );
+			echo $output;
 		}
 
 		// WordPress core after_widget hook (always include).
-		echo esc_html( $args['after_widget'] ) . PHP_EOL;
+		echo $args['after_widget'] . PHP_EOL;
 	}
 }

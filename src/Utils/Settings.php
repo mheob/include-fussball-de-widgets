@@ -40,29 +40,6 @@ class Settings {
 	private static $host;
 
 	/**
-	 * Get the the value of hostname.
-	 *
-	 * @since 3.1
-	 * @return string
-	 */
-	public static function getHost(): string {
-		return self::$host;
-	}
-
-	/**
-	 * Set the the value of hostname.
-	 *
-	 * @since 3.1
-	 *
-	 * @param string $host The host.
-	 *
-	 * @return void
-	 */
-	public static function setHost( string $host ): void {
-		self::$host = Host::cleanHost( $host ?? null );
-	}
-
-	/**
 	 * Get the value of plugin name.
 	 *
 	 * @since 3.1
@@ -83,5 +60,28 @@ class Settings {
 	 */
 	public static function setPluginName( $pluginName ) {
 		self::$pluginName = $pluginName;
+	}
+
+	/**
+	 * Get the the value of hostname.
+	 *
+	 * @since 3.1
+	 * @return string
+	 */
+	public static function getHost(): string {
+		return self::$host;
+	}
+
+	/**
+	 * Set the the value of hostname.
+	 *
+	 * @since 3.1
+	 *
+	 * @param string $host The host.
+	 *
+	 * @return void
+	 */
+	public static function setHost( string $host ): void {
+		self::$host = Host::cleanHost( $host ?? null );
 	}
 }
