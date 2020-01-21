@@ -75,6 +75,11 @@ The latest state of development is available at any time in my [Github repositor
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.1.2 - 2020-01-21 =
+= Fixed =
+* The Fubade widget (under Design->Widgets).
+* The BorlabsCookie integration.
+
 = 3.1.1 - 2020-01-21 =
 = Fixed =
 * Fix update issues on the wordpress backend.
@@ -227,5 +232,7 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-= 3.1.1 - 2020-01-21 =
-Fix update issues on the wordpress backend.
+= 3.1.2 - 2020-01-21 =
+= Fixed =
+* The Fubade widget (under Design->Widgets).
+* The BorlabsCookie integration.

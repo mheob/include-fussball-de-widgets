@@ -19,7 +19,7 @@ use ITSB\IFDW\Utils\Host;
  * @since 3.1
  */
 class Settings {
-	public const VERSION = '3.1.1';
+	public const VERSION = '3.1.2';
 	public const MIN_PHP = '7.2.0';
 	public const PREFIX  = 'itsb.ifdw.';
 

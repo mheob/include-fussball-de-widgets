@@ -1,6 +1,6 @@
 {
   "name": "include-fussball-de-widgets",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "A WordPress plugin for easy integration of fussball.de widgets.",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "i18n:copy": "cpr languages dist/languages",
     "i18n": "npm run i18n:json && npm run i18n:copy",
     "release:copy": "cpr dist/ .releases/include-fussball-de-widgets/trunk/ -d",
-    "release:github": "cpr ./dist/ .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets-v3.1.1.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
+    "release:github": "cpr ./dist/ .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets-v3.1.2.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
     "release": "npm run release:copy && npm run release:github",
     "test:cs": "./vendor/bin/phpcs",
     "test:phpunit": "./vendor/bin/phpunit --no-coverage",
