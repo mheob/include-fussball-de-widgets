@@ -29,20 +29,22 @@ abstract class FilterBase {
 	 *
 	 * @since 3.0
 	 *
-	 * @param string $tag          The name of the filter to hook the callback
-	 *                             to.
-	 * @param int    $priority     (Optional) Used to specify the order in
-	 *                             the functions associated with a particular
-	 *                             action are executed. Lower numbers correspond
-	 *                             with earlier execution, and functions with
-	 *                             the same priority are executed in the order
-	 *                             in which they were added to the action.
-	 *                             Default 10.
-	 *
+	 * @param string $tag           The name of the filter to hook the callback
+	 *                              to.
+	 * @param int    $acceptedArgs  (Optional) The number of arguments the
+	 *                              function accepts.
+	 *                              Default 1
+	 * @param int    $priority      (Optional) Used to specify the order in
+	 *                              the functions associated with a particular
+	 *                              action are executed. Lower numbers correspond
+	 *                              with earlier execution, and functions with
+	 *                              the same priority are executed in the order
+	 *                              in which they were added to the action.
+	 *                              Default 10.
 	 * @return void
 	 */
-	public function addFilter( string $tag, int $priority = 10 ): void {
-		add_filter( $tag, [ $this, 'filter' ], $priority, 1 );
+	public function addFilter( string $tag, int $acceptedArgs = 1, int $priority = 10 ): void {
+		add_filter( $tag, [ $this, 'filter' ], $priority, $acceptedArgs );
 	}
 
 	/**
@@ -50,9 +52,9 @@ abstract class FilterBase {
 	 *
 	 * @since 3.1
 	 *
-	 * @param array $args List of arguments.
+	 * @param mixed $args List of arguments.
 	 *
 	 * @return array List of modified plugin meta links.
 	 */
-	abstract public function filter( array $args ): array;
+	abstract public function filter( ...$args ): array;
 }

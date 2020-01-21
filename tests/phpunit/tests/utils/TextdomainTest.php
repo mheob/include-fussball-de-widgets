@@ -49,7 +49,7 @@ final class TextdomainTest extends \WP_UnitTestCase {
 		self::$instance = new Textdomain();
 
 		// Configure the sample data.
-		self::$pluginRoot = plugin_basename( Settings::URL );
+		self::$pluginRoot = plugin_basename( Settings::getPluginName() );
 	}
 
 	/**

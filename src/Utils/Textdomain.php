@@ -32,7 +32,7 @@ final class Textdomain extends ActionBase {
 		load_plugin_textdomain(
 			'include-fussball-de-widgets',
 			false,
-			dirname( plugin_basename( Settings::URL ) ) . '/languages'
+			dirname( plugin_basename( Settings::getPluginName() ) ) . '/languages'
 		);
 	}
 }

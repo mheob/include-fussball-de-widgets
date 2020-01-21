@@ -11,7 +11,7 @@ import './editor.scss';
 const { registerBlockType } = wp.blocks;
 const { PanelBody, TextControl, ToggleControl } = wp.components;
 const { withInstanceId } = wp.compose;
-const { InspectorControls, PlainText } = wp.editor;
+const { InspectorControls, PlainText } = wp.blockEditor;
 const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 

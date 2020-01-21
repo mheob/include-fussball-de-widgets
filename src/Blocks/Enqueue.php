@@ -35,7 +35,7 @@ final class Enqueue extends ActionBase {
 
 		wp_register_script(
 			'fubade-block-script',
-			plugins_url( 'assets/js/blocks.js', Settings::URL ),
+			plugins_url( 'assets/js/blocks.js', Settings::getPluginName() ),
 			[],
 			Settings::VERSION,
 			true
@@ -45,7 +45,7 @@ final class Enqueue extends ActionBase {
 
 		wp_register_style(
 			'fubade-block-style',
-			plugins_url( 'assets/css/blocks-main.css', Settings::URL ),
+			plugins_url( 'assets/css/blocks-main.css', Settings::getPluginName() ),
 			[],
 			Settings::VERSION
 		);

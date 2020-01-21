@@ -22,7 +22,14 @@ class Settings {
 	public const VERSION = '3.1.0';
 	public const MIN_PHP = '7.2.0';
 	public const PREFIX  = 'itsb.ifdw.';
-	public const URL     = __FILE__;
+
+	/**
+	 * The name of this plugin.
+	 *
+	 * @since 3.1
+	 * @var string
+	 */
+	private static $pluginName;
 
 	/**
 	 * The hostname of the WordPress running system.
@@ -33,8 +40,9 @@ class Settings {
 	private static $host;
 
 	/**
-	 * Get the hostname.
+	 * Get the the value of hostname.
 	 *
+	 * @since 3.1
 	 * @return string
 	 */
 	public static function getHost(): string {
@@ -42,7 +50,9 @@ class Settings {
 	}
 
 	/**
-	 * Set the hostname.
+	 * Set the the value of hostname.
+	 *
+	 * @since 3.1
 	 *
 	 * @param string $host The host.
 	 *
@@ -50,5 +60,28 @@ class Settings {
 	 */
 	public static function setHost( string $host ): void {
 		self::$host = Host::cleanHost( $host ?? null );
+	}
+
+	/**
+	 * Get the value of plugin name.
+	 *
+	 * @since 3.1
+	 * @return string
+	 */
+	public static function getPluginName() {
+		return self::$pluginName;
+	}
+
+	/**
+	 * Set the value of plugin name.
+	 *
+	 * @since 3.1
+	 *
+	 * @param string $host The host.
+	 *
+	 * @return self
+	 */
+	public static function setPluginName( $pluginName ) {
+		self::$pluginName = $pluginName;
 	}
 }

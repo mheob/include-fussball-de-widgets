@@ -99,7 +99,7 @@ final class PluginActionsTest extends \WP_UnitTestCase {
 	 * @return void
 	 */
 	public function testReturnsTheUpdatedArrayOfRowMetaLinks(): void {
-		$sampleFunctionCall = self::$instance->filter( [ self::$links, plugin_basename( Settings::URL ) ] );
+		$sampleFunctionCall = self::$instance->filter( [ self::$links, plugin_basename( Settings::getPluginName() ) ] );
 
 		$this->assertIsArray( $sampleFunctionCall );
 		$this->assertEquals( 3, count( $sampleFunctionCall ) );

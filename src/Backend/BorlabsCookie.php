@@ -62,7 +62,7 @@ class BorlabsCookie extends ActionBase {
 		$cbHtml = '<div class="_brlbs-content-blocker">
 	<div class="_brlbs-embed brlbs-ifdw">
 		<img class="_brlbs-thumbnail" src="' .
-			plugins_url( 'assets/images/cb-fubade.png', Settings::URL ) . '" alt="%%name%%">
+			plugins_url( 'assets/images/cb-fubade.png', Settings::getPluginName() ) . '" alt="%%name%%">
 		<div class="_brlbs-caption">
 			<p>
 				' . __(

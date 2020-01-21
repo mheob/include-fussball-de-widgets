@@ -30,7 +30,7 @@ final class Enqueue extends ActionBase {
 	public function action(): void {
 		wp_register_script(
 			'fubade-api',
-			plugins_url( 'assets/js/fubade-api.js', Settings::URL ),
+			plugins_url( 'assets/js/fubade-api.js', Settings::getPluginName() ),
 			[ 'wp-i18n' ],
 			Settings::VERSION,
 			true
