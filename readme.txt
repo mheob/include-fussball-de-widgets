@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.8
 Tested up to: 5.2
 Requires PHP: 7.2
-Stable tag: 3.0.5
+Stable tag: 3.1.0
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,14 @@ The latest state of development is available at any time in my [Github repositor
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.1.0 - 2020-01-21 =
+= Added =
+* Add KadenceBlock-Tabs as the same as Divi-Tabs and Fusion-Tabs.
+= Changed =
+* Refactor "null ===" to exclamation mark syntax.
+* Reformat code, so that the coding standards can be better adhered to and thus a faster development is possible.
+* Integrate more test, to prevent possible error.
+
 = 3.0.5 - 2019-10-13 =
 = Fixed =
 * Due to problems with the WordPress REST API the SourceLogger is deactivated until further notice.
@@ -91,7 +99,7 @@ The latest state of development is available at any time in my [Github repositor
 * Loading issue when generating the widget via the gutenberg blocks.
 
 = 3.0.2 - 2019-09-23 =
-= Fixed =
+= Added =
 * Add Fusion-Tabs as the same as Divi-Tabs.
 
 = 3.0.1 - 2019-09-19 =
@@ -215,6 +223,7 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-
-= 3.1.0 - 2019-11-25 =
-!!! Die Upgrade Notiz sollte dieses Aussehen besitzen. !!!
+* Add KadenceBlock-Tabs as the same as Divi-Tabs and Fusion-Tabs.
+* Refactor "null ===" to exclamation mark syntax.
+* Reformat code, so that the coding standards can be better adhered to and thus a faster development is possible.
+* Integrate more test, to prevent possible error.
