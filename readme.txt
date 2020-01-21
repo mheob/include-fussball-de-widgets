@@ -3,9 +3,9 @@ Contributors: mheob
 Tags: soccer, football, widget, fussball.de
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url
 Requires at least: 4.8
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 7.2
-Stable tag: 3.1.0
+Stable tag: 3.1.1
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,15 @@ The latest state of development is available at any time in my [Github repositor
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.1.2 - 2020-01-21 =
+= Fixed =
+* The Fubade widget (under Design->Widgets).
+* The BorlabsCookie integration.
+
+= 3.1.1 - 2020-01-21 =
+= Fixed =
+* Fix update issues on the wordpress backend.
+
 = 3.1.0 - 2020-01-21 =
 = Added =
 * Add KadenceBlock-Tabs as the same as Divi-Tabs and Fusion-Tabs.
@@ -223,7 +232,7 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-* Add KadenceBlock-Tabs as the same as Divi-Tabs and Fusion-Tabs.
-* Refactor "null ===" to exclamation mark syntax.
-* Reformat code, so that the coding standards can be better adhered to and thus a faster development is possible.
-* Integrate more test, to prevent possible error.
+= 3.1.2 - 2020-01-21 =
+= Fixed =
+* The Fubade widget (under Design->Widgets).
+* The BorlabsCookie integration.
