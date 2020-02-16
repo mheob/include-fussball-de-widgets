@@ -19,7 +19,7 @@ use ITSB\IFDW\Utils\Host;
  * @since 3.1
  */
 class Settings {
-	public const VERSION = '3.1.2';
+	public const VERSION = '3.1.3';
 	public const MIN_PHP = '7.2.0';
 	public const PREFIX  = 'itsb.ifdw.';
 
@@ -77,11 +77,11 @@ class Settings {
 	 *
 	 * @since 3.1
 	 *
-	 * @param string $host The host.
+	 * @param string|null $host The host.
 	 *
 	 * @return void
 	 */
-	public static function setHost( string $host ): void {
+	public static function setHost( ?string $host ): void {
 		self::$host = Host::cleanHost( $host ?? null );
 	}
 }

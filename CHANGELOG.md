@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.1.3] - 2020-02-16
+
+### Fixed
+
+- The `$_SERVER['SERVER_NAME']` is set to a default value to prevent an error during wp-cli updates.
+
 ## [3.1.2] - 2020-01-21
 
 ### Fixed
@@ -242,7 +248,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.2...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.3...HEAD
+[3.1.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.2...v3.1.3
 [3.1.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.1...v3.1.2
 [3.1.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.0...v3.1.1
 [3.1.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.0.5...v3.1.0
