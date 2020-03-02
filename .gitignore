@@ -1,12 +1,12 @@
 # Package manager
-**/node_modules/
-**/vendor/
+node_modules
+vendor
 
 # Compiled stuff
-**/.github-releases/
-**/.releases/
-**/dist/
+.github-releases
+.releases
+dist
 
 # PHPUnit
-**/tests/phpunit/coverage/
+tests/phpunit/coverage
 .phpunit.result.cache

@@ -1,1 +1,14 @@
- */**/*.min.css
+# Special files
+**/*.min.css
+
+# Package manager
+node_modules
+vendor
+
+# Compiled stuff
+.github-releases
+.releases
+dist
+
+# PHPUnit
+tests
