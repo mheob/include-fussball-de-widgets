@@ -16,11 +16,12 @@
     "clear": "rimraf dist/*",
     "build": "wp-scripts build",
     "dev": "npm run clear && npm run build && npm run i18n && node ./tasks/cp-dev-release.js",
-    "check-engines": "wp-scripts check-engines",
-    "check-licenses": "wp-scripts check-licenses --production",
-    "lint:css": "wp-scripts lint-style '**/*.css'",
-    "lint:js": "wp-scripts lint-js .",
-    "lint:pkg-json": "wp-scripts lint-pkg-json .",
+    "lint:css": "stylelint 'src/**/*.scss'",
+    "lint:css:fix": "stylelint 'src/**/*.scss' --fix",
+    "lint:js": "eslint 'src/**/*.js'",
+    "lint:js:fix": "prettier-eslint \"$PWD/src/**/*.js\" --write",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:fix": "concurrently \"npm:lint:*:fix\"",
     "start": "wp-scripts start",
     "i18n:pot": "wp i18n make-pot dist languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
     "i18n:json": "wp i18n make-json languages/include-fussball-de-widgets-de_DE.po --no-purge",
@@ -37,9 +38,18 @@
   "browserslist": [
     "extends @wordpress/browserslist-config"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.css": "stylelint 'src/**/*.css' --fix",
+    "*.js": "prettier-eslint \"$PWD/src/**/*.js\" --write"
+  },
   "devDependencies": {
     "@wordpress/browserslist-config": "^2.6.0",
-    "@wordpress/scripts": "^6.2.0",
+    "@wordpress/scripts": "^7.1.2",
     "autoprefixer": "^9.7.4",
     "bestzip": "^2.1.5",
     "copy-webpack-plugin": "^5.1.1",
@@ -48,23 +58,27 @@
     "eslint": "^6.8.0",
     "eslint-config-semistandard": "^15.0.0",
     "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-jest": "^23.7.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-standard": "^4.0.1",
-    "mini-css-extract-plugin": "^0.8.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
-    "prettier-eslint": "^9.0.0",
-    "prettier-standard": "15.0.1",
+    "prettier-eslint": "^9.0.1",
+    "prettier-standard": "16.1.0",
     "prettier-stylelint": "^0.4.2",
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
     "semistandard": "14.2.0",
-    "stylelint": "^11.1.1",
+    "stylelint": "^13.2.0",
     "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-wordpress": "^15.0.0",
-    "stylelint-order": "^3.1.1",
+    "stylelint-config-wordpress": "^16.0.0",
+    "stylelint-order": "^4.0.0",
     "terser-webpack-plugin": "^2.3.5"
   },
   "dependencies": {}
