@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33a62f078872230bd2618bac2690b421",
+    "content-hash": "d25fe7849a35adc3703c91c824ef9f18",
     "packages": [],
     "packages-dev": [
         {
@@ -98,16 +98,16 @@
         },
         {
             "name": "codedungeon/phpunit-result-printer",
-            "version": "0.25.1",
+            "version": "0.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikeerickson/phpunit-pretty-result-printer.git",
-                "reference": "4a689ac40366eb4adf166cf4676da7ef30d82315"
+                "reference": "70efe139f174954392582103355a1b4a3d9022e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/4a689ac40366eb4adf166cf4676da7ef30d82315",
-                "reference": "4a689ac40366eb4adf166cf4676da7ef30d82315",
+                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/70efe139f174954392582103355a1b4a3d9022e5",
+                "reference": "70efe139f174954392582103355a1b4a3d9022e5",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                 "symfony/yaml": "^2.7|^3.0|^4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "7.5.*",
+                "phpunit/phpunit": "8.0.*",
                 "spatie/phpunit-watcher": "^1.6"
             },
             "type": "library",
@@ -147,7 +147,7 @@
                 "result-printer",
                 "testing"
             ],
-            "time": "2019-02-01T19:13:43+00:00"
+            "time": "2019-02-28T18:52:43+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -1807,16 +1807,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.14.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "fbdeaec0df06cf3d51c93de80c7eb76e271f5a38"
+                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/fbdeaec0df06cf3d51c93de80c7eb76e271f5a38",
-                "reference": "fbdeaec0df06cf3d51c93de80c7eb76e271f5a38",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
                 "shasum": ""
             },
             "require": {
@@ -1828,7 +1828,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14-dev"
+                    "dev-master": "1.15-dev"
                 }
             },
             "autoload": {
@@ -1861,20 +1861,20 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2020-01-13T11:15:53+00:00"
+            "time": "2020-02-27T09:26:54+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.4.5",
+            "version": "v4.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "94d005c176db2080e98825d98e01e8b311a97a88"
+                "reference": "43d7a46b1f80b4fd2ecfac4a9a4cc1f22d029fbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/94d005c176db2080e98825d98e01e8b311a97a88",
-                "reference": "94d005c176db2080e98825d98e01e8b311a97a88",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/43d7a46b1f80b4fd2ecfac4a9a4cc1f22d029fbb",
+                "reference": "43d7a46b1f80b4fd2ecfac4a9a4cc1f22d029fbb",
                 "shasum": ""
             },
             "require": {
@@ -1920,7 +1920,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2020-02-03T10:46:43+00:00"
+            "time": "2020-03-16T08:56:54+00:00"
         },
         {
             "name": "theseer/tokenizer",
