@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3551624645b953499d7003e24fb970e7",
+    "content-hash": "e567a13bfb7fab28815e1123c67195cb",
     "packages": [],
     "packages-dev": [
         {
@@ -98,16 +98,16 @@
         },
         {
             "name": "codedungeon/phpunit-result-printer",
-            "version": "0.25.1",
+            "version": "0.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikeerickson/phpunit-pretty-result-printer.git",
-                "reference": "4a689ac40366eb4adf166cf4676da7ef30d82315"
+                "reference": "b1321647ef3eacfb145fcc9559483b22d0c86cfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/4a689ac40366eb4adf166cf4676da7ef30d82315",
-                "reference": "4a689ac40366eb4adf166cf4676da7ef30d82315",
+                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/b1321647ef3eacfb145fcc9559483b22d0c86cfe",
+                "reference": "b1321647ef3eacfb145fcc9559483b22d0c86cfe",
                 "shasum": ""
             },
             "require": {
@@ -115,10 +115,10 @@
                 "codedungeon/php-cli-colors": "^1.10.2",
                 "hassankhan/config": "^0.11.2",
                 "php": "^7.1",
+                "phpunit/phpunit": "^8.0|^9.0",
                 "symfony/yaml": "^2.7|^3.0|^4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "7.5.*",
                 "spatie/phpunit-watcher": "^1.6"
             },
             "type": "library",
@@ -147,7 +147,7 @@
                 "result-printer",
                 "testing"
             ],
-            "time": "2019-02-01T19:13:43+00:00"
+            "time": "2020-02-29T21:59:20+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -1978,16 +1978,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.4.5",
+            "version": "v4.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "94d005c176db2080e98825d98e01e8b311a97a88"
+                "reference": "43d7a46b1f80b4fd2ecfac4a9a4cc1f22d029fbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/94d005c176db2080e98825d98e01e8b311a97a88",
-                "reference": "94d005c176db2080e98825d98e01e8b311a97a88",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/43d7a46b1f80b4fd2ecfac4a9a4cc1f22d029fbb",
+                "reference": "43d7a46b1f80b4fd2ecfac4a9a4cc1f22d029fbb",
                 "shasum": ""
             },
             "require": {
@@ -2033,7 +2033,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2020-02-03T10:46:43+00:00"
+            "time": "2020-03-16T08:56:54+00:00"
         },
         {
             "name": "theseer/tokenizer",
