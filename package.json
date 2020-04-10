@@ -75,7 +75,7 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
     "semistandard": "14.2.0",
-    "stylelint": "^13.3.0",
+    "stylelint": "^13.3.1",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-wordpress": "^16.0.0",
     "stylelint-order": "^4.0.0",
