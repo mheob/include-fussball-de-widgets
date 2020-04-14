@@ -21,6 +21,14 @@ namespace ITSB\IFDW\Utils;
  */
 final class CheckHelper {
 	/**
+	 * The minimum WP version.
+	 *
+	 * @since 3.2
+	 * @var string
+	 */
+	private static $wpVersion;
+
+	/**
 	 * The minimum PHP version.
 	 *
 	 * @since 3.1
@@ -29,21 +37,25 @@ final class CheckHelper {
 	private static $phpVersion;
 
 	/**
-	 * Checks the needed PHP version is used.
+	 * Checks the needed WordPress and PHP version is used.
 	 *
-	 * @since 3.1
-	 * @param string $phpVersion The minimum PHP version.
-	 * @return boolean True, if the minimum PHP version is used; otherwise false
+	 * @since 3.2
+	 * @param string $wpVersion     The minimum WordPress version.
+	 * @param string $phpVersion    The minimum PHP version.
+	 * @return boolean              True, if the minimum WordPress and
+	 *                              PHP version is used; otherwise false.
 	 */
-	public static function comparePhpVersion( string $phpVersion ): bool {
+	public static function versionsInvalid( string $wpVersion, string $phpVersion ): bool {
+		global $wp_version;
+		self::$wpVersion  = $wpVersion;
 		self::$phpVersion = $phpVersion;
 
-		if ( version_compare( phpversion(), self::$phpVersion, '>=' ) ) {
-			return true;
+		if ( version_compare( phpversion(), self::$phpVersion, '<' )
+			&& version_compare( $wp_version, self::$wpVersion, '<' ) ) {
+				return false;
 		}
 
-		add_action( 'admin_notices', 'self::createNotice' );
-		return false;
+		return true;
 	}
 
 	/**
@@ -54,11 +66,12 @@ final class CheckHelper {
 	 */
 	public static function createNotice() {
 		echo '<div class="notice notice-error"><p>';
-		printf( // translators: %s: The required PHP version.
+		printf( // translators: %1$s: The required WP version, %2$s: The required PHP version.
 			esc_html__(
-				'Include Fussball.de Widgets requires PHP %s or higher.',
+				'Include Fussball.de Widgets requires WP %1$s and PHP %2$s or higher.',
 				'include-fussball-de-widgets'
 			),
+			esc_html( self::$wpVersion ),
 			esc_html( self::$phpVersion )
 		);
 		echo '</p></div>';
