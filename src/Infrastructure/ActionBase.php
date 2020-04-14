@@ -26,7 +26,6 @@ abstract class ActionBase {
 	 * Add the init action for registering the fubade api.
 	 *
 	 * @since 3.0
-	 *
 	 * @param string $tag          The name of the action to hook the callback
 	 *                             to.
 	 * @param int    $priority     (Optional) Used to specify the order in
@@ -38,7 +37,6 @@ abstract class ActionBase {
 	 *                             Default 10.
 	 * @param int    $acceptedArgs (Optional) The number of arguments the
 	 *                             function accepts. Default 1.
-	 *
 	 * @return void
 	 */
 	public function addAction( string $tag, int $priority = 10, int $acceptedArgs = 1 ): void {

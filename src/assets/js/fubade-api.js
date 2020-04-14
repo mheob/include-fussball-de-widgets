@@ -3,7 +3,7 @@ window.FussballdeWidgetAPI = () => {
 
   window.addEventListener(
     'message',
-    evt => {
+    (evt) => {
       const currentIframe = document.querySelector('#' + evt.data.container + ' > iframe');
 
       if (evt.data.type === 'setHeight') {
@@ -36,12 +36,12 @@ window.FussballdeWidgetAPI = () => {
         '.wp-block-kadence-tab [id^="fubade_"] > iframe'
     );
     if (tabs.length > 0) {
-      Array.from(tabs).forEach(tab => {
+      Array.from(tabs).forEach((tab) => {
         tab.addEventListener(
           'click',
           () => {
             setTimeout(
-              Array.from(iframes).forEach(iframe => {
+              Array.from(iframes).forEach((iframe) => {
                 iframe.src += '';
               }),
               800

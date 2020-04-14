@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.8
 Tested up to: 5.4
 Requires PHP: 7.2
-Stable tag: 3.1.3
+Stable tag: 3.2.0
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,15 @@ The latest state of development is available at any time in my [Github repositor
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.2.0 - 2020-04-14 =
+= Added =
+* Prevent the plugin activation, if the wp or php version is incorrect.
+= Fixed =
+* The output of the used php version in the logger section is now set correctly.
+= Changed =
+* The internal documention is updated.
+* Improve the linting in the development files.
+
 = 3.1.3 - 2020-02-16 =
 = Fixed =
 * The `$_SERVER['SERVER_NAME']` is set to a default value to prevent an error during wp-cli updates.
@@ -236,4 +245,4 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-The `$_SERVER['SERVER_NAME']` is set to a default value to prevent an error during wp-cli updates.
+The output of the used php version in the logger section is now set correctly.

@@ -26,9 +26,7 @@ final class PluginActions extends FilterBase {
 	 * information.
 	 *
 	 * @since 3.0
-	 *
-	 * @param mixed $args List of arguments.
-	 *
+	 * @param mixed ...$args List of arguments.
 	 * @return array List of modified plugin meta links.
 	 */
 	public function filter( ...$args ): array {

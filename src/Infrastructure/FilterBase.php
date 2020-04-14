@@ -28,12 +28,11 @@ abstract class FilterBase {
 	 * Add the init filter for registering the fubade api.
 	 *
 	 * @since 3.0
-	 *
 	 * @param string $tag           The name of the filter to hook the callback
 	 *                              to.
 	 * @param int    $acceptedArgs  (Optional) The number of arguments the
 	 *                              function accepts.
-	 *                              Default 1
+	 *                              Default 1.
 	 * @param int    $priority      (Optional) Used to specify the order in
 	 *                              the functions associated with a particular
 	 *                              action are executed. Lower numbers correspond
@@ -51,9 +50,7 @@ abstract class FilterBase {
 	 * The filter callback to be run when the filter is applied.
 	 *
 	 * @since 3.1
-	 *
-	 * @param mixed $args List of arguments.
-	 *
+	 * @param mixed ...$args List of arguments.
 	 * @return array List of modified plugin meta links.
 	 */
 	abstract public function filter( ...$args ): array;

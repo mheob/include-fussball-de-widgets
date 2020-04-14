@@ -21,48 +21,22 @@ namespace ITSB\IFDW\Utils;
  */
 final class CheckHelper {
 	/**
-	 * The minimum PHP version.
+	 * Checks the needed WordPress and PHP version is used.
 	 *
-	 * @since 3.1
-	 * @var string
+	 * @since 3.2
+	 * @param string $wpVersion     The minimum WordPress version.
+	 * @param string $phpVersion    The minimum PHP version.
+	 * @return boolean              True, if the minimum WordPress and
+	 *                              PHP version is used; otherwise false.
 	 */
-	private static $phpVersion;
+	public static function versionsAreInvalid( string $wpVersion, string $phpVersion ): bool {
+		global $wp_version;
 
-	/**
-	 * Checks the needed PHP version is used.
-	 *
-	 * @since 3.1
-	 *
-	 * @param string $phpVersion The minimum PHP version.
-	 *
-	 * @return boolean True, if the minimum PHP version is used; otherwise false
-	 */
-	public static function comparePhpVersion( string $phpVersion ): bool {
-		self::$phpVersion = $phpVersion;
-
-		if ( version_compare( phpversion(), self::$phpVersion, '>=' ) ) {
-			return true;
+		if ( version_compare( phpversion(), $phpVersion, '>=' )
+			&& version_compare( $wp_version, $wpVersion, '>=' ) ) {
+				return false;
 		}
 
-		add_action( 'admin_notices', 'self::createNotice' );
-		return false;
-	}
-
-	/**
-	 * The callback creates the admin notice if the PHP version is not compatible.
-	 *
-	 * @since 3.1
-	 * @return void
-	 */
-	public static function createNotice() {
-		echo '<div class="notice notice-error"><p>';
-		printf( // translators: %s: The required PHP version.
-			esc_html__(
-				'Include Fussball.de Widgets requires PHP %s or higher.',
-				'include-fussball-de-widgets'
-			),
-			esc_html( self::$phpVersion )
-		);
-		echo '</p></div>';
+		return true;
 	}
 }

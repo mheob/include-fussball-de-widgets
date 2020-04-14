@@ -15,7 +15,7 @@ use ITSB\IFDW\Backend\BorlabsCookie;
 use ITSB\IFDW\Blocks\Enqueue as BlockEnqueue;
 use ITSB\IFDW\Frontend\Enqueue as FrontendEnqueue;
 use ITSB\IFDW\Shortcodes\Fubade;
-use ITSB\IFDW\Utils\{CheckHelper, PluginActions, Settings, Textdomain};
+use ITSB\IFDW\Utils\{Activation, PluginActions, Settings, Textdomain};
 use ITSB\IFDW\Widgets\Widgets;
 
 /**
@@ -34,8 +34,10 @@ final class Plugin {
 	 * @since 3.1
 	 */
 	public function __construct() {
-		// Check the needed PHP version.
-		CheckHelper::comparePhpVersion( Settings::MIN_PHP );
+		// Activate the plugin.
+		if ( is_admin() ) {
+			( new Activation() )->addActivationHook();
+		}
 
 		// Configure the one time set settings.
 		$this->configureSettings();

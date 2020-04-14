@@ -39,7 +39,7 @@ abstract class LoggerBase {
 			__( '[FUBADE] Plugin Version: ', 'include-fussball-de-widgets' ) . Settings::VERSION,
 			__( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . Settings::getHost(),
 			__( '[FUBADE] Wordpress version: ', 'include-fussball-de-widgets' ) . $wp_version,
-			__( '[FUBADE] PHP version: ', 'include-fussball-de-widgets' ) . Settings::MIN_PHP,
+			__( '[FUBADE] PHP version: ', 'include-fussball-de-widgets' ) . phpversion(),
 			__( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-widgets' ) .
 				wp_json_encode( get_loaded_extensions() )
 		];
@@ -49,9 +49,7 @@ abstract class LoggerBase {
 	 * Generates a logging output.
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $arr The arguments.
-	 *
 	 * @return void
 	 */
 	abstract public function log( array $arr ): void;
@@ -69,9 +67,7 @@ abstract class LoggerBase {
 	 * Logs the information pertaining to a specific widget only.
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $arr The arguments.
-	 *
 	 * @return void
 	 */
 	abstract protected function logWidgetInfo( array $arr ): void;
