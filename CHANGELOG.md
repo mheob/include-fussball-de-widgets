@@ -6,10 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- The internal documention is updated.
+- The output of the used php version in the logger section is now set correctly.
 
 ### Changed
 
+- The internal documention is updated.
 - Improve the linting in the development files.
 
 ## [3.1.3] - 2020-02-16

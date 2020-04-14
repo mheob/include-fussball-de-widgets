@@ -77,8 +77,9 @@ The latest state of development is available at any time in my [Github repositor
 == Changelog ==
 = 3.1.4 - 2020-04-XX =
 = Fixed =
-* The internal documention is updated.
+* The output of the used php version in the logger section is now set correctly.
 = Changed =
+* The internal documention is updated.
 * Improve the linting in the development files.
 
 = 3.1.3 - 2020-02-16 =
@@ -242,4 +243,4 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-The `$_SERVER['SERVER_NAME']` is set to a default value to prevent an error during wp-cli updates.
+The output of the used php version in the logger section is now set correctly.
