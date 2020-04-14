@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.2.0] - 2020-04-14
+
+### Added
+
+- Prevent the plugin activation, if the wp or php version is incorrect.
+
 ### Fixed
 
 - The output of the used php version in the logger section is now set correctly.
@@ -257,7 +263,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.3...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.3...v3.2.0
 [3.1.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.2...v3.1.3
 [3.1.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.1...v3.1.2
 [3.1.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.0...v3.1.1
