@@ -38,9 +38,7 @@ class FubadeWidget extends \WP_Widget {
 	 * Outputs the options form on admin
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $instance The widget options.
-	 *
 	 * @return void
 	 */
 	public function form( $instance ): void {
@@ -105,10 +103,8 @@ class FubadeWidget extends \WP_Widget {
 	 * Processing widget options on save
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $new_instance The new options.
 	 * @param array $old_instance The previous options.
-	 *
 	 * @return array The new options.
 	 */
 	public function update( $new_instance, $old_instance ): array {
@@ -125,7 +121,6 @@ class FubadeWidget extends \WP_Widget {
 	 * Outputs the content of the widget
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $args     The Widget arguments.
 	 * @param array $instance The saved values from the database.
 	 */

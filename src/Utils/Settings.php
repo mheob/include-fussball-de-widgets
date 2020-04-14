@@ -19,7 +19,7 @@ use ITSB\IFDW\Utils\Host;
  * @since 3.1
  */
 class Settings {
-	public const VERSION = '3.1.3';
+	public const VERSION = '3.1.4';
 	public const MIN_PHP = '7.2.0';
 	public const PREFIX  = 'itsb.ifdw.';
 
@@ -53,10 +53,8 @@ class Settings {
 	 * Set the value of plugin name.
 	 *
 	 * @since 3.1
-	 *
-	 * @param string $host The host.
-	 *
-	 * @return self
+	 * @param string $pluginName The plugin name.
+	 * @return void
 	 */
 	public static function setPluginName( $pluginName ) {
 		self::$pluginName = $pluginName;
@@ -76,9 +74,7 @@ class Settings {
 	 * Set the the value of hostname.
 	 *
 	 * @since 3.1
-	 *
 	 * @param string|null $host The host.
-	 *
 	 * @return void
 	 */
 	public static function setHost( ?string $host ): void {

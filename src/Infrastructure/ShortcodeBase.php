@@ -26,9 +26,7 @@ abstract class ShortcodeBase {
 	 * Add the init shortcode for registering the fubade api.
 	 *
 	 * @since 3.0
-	 *
 	 * @param string $tag The name of the shortcode to generate.
-	 *
 	 * @return void
 	 */
 	public function addShortcode( string $tag ): void {
@@ -43,9 +41,7 @@ abstract class ShortcodeBase {
 	 * in that order.
 	 *
 	 * @since 3.1
-	 *
 	 * @param array $atts An array fo attributes.
-	 *
 	 * @return string The output to the sourcecode.
 	 */
 	abstract public function shortcode( array $atts ): string;

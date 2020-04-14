@@ -32,9 +32,7 @@ final class CheckHelper {
 	 * Checks the needed PHP version is used.
 	 *
 	 * @since 3.1
-	 *
 	 * @param string $phpVersion The minimum PHP version.
-	 *
 	 * @return boolean True, if the minimum PHP version is used; otherwise false
 	 */
 	public static function comparePhpVersion( string $phpVersion ): bool {

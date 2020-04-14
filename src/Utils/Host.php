@@ -29,9 +29,7 @@ class Host {
 	 * Clean up the hostname.
 	 *
 	 * @since 3.0
-	 *
 	 * @param string|null $host The hostname getting from the server.
-	 *
 	 * @return string The cleared hostname.
 	 */
 	public static function cleanHost( ?string $host ): string {

@@ -49,9 +49,7 @@ class ConsoleLogger extends LoggerBase {
 	 * Generates a logging output of an error.
 	 *
 	 * @since 3.0
-	 *
 	 * @param string $error The error message.
-	 *
 	 * @return void
 	 */
 	public function errorLog( string $error ): void {
@@ -63,9 +61,7 @@ class ConsoleLogger extends LoggerBase {
 	 * Generates a logging output.
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $arr The arguments.
-	 *
 	 * @return void
 	 */
 	public function log( array $arr ): void {
@@ -100,9 +96,7 @@ class ConsoleLogger extends LoggerBase {
 	 * Logs the information pertaining to a specific widget only.
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $arr The arguments.
-	 *
 	 * @return void
 	 */
 	protected function logWidgetInfo( array $arr ): void {

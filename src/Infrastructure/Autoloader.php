@@ -90,7 +90,6 @@ final class Autoloader {
 	 *                        class. Defaults to an empty string.
 	 * @param string $suffix  (Optional) Suffix to be added after the
 	 *                        class. Defaults to '.php'.
-	 *
 	 * @return self
 	 */
 	public function addNamespace(
@@ -114,9 +113,7 @@ final class Autoloader {
 	 * system.
 	 *
 	 * @since 3.1
-	 *
 	 * @param string $class The class that got requested by the spl_autoloader.
-	 *
 	 * @return void
 	 */
 	public function autoload( string $class ): void {
@@ -154,9 +151,7 @@ final class Autoloader {
 	 * Normalize a namespace root.
 	 *
 	 * @since 3.1
-	 *
 	 * @param string $root Namespace root that needs to be normalized.
-	 *
 	 * @return string Normalized namespace root.
 	 */
 	private function normalize_root( string $root ): string {
@@ -170,9 +165,7 @@ final class Autoloader {
 	 * Remove a leading backslash from a namespace.
 	 *
 	 * @since 3.1
-	 *
 	 * @param string $namespace Namespace to remove the leading backslash from.
-	 *
 	 * @return string Modified namespace.
 	 */
 	private function removeLeadingBackslash( string $namespace ): string {
@@ -183,7 +176,6 @@ final class Autoloader {
 	 * Make sure a namespace ends with a trailing backslash.
 	 *
 	 * @param string $namespace Namespace to check the trailing backslash of.
-	 *
 	 * @return string Modified namespace.
 	 */
 	private function ensureTrailingBackslash( string $namespace ): string {
@@ -194,9 +186,7 @@ final class Autoloader {
 	 * Make sure a path ends with a trailing slash.
 	 *
 	 * @since 3.1
-	 *
 	 * @param string $path Path to check the trailing slash of.
-	 *
 	 * @return string Modified path.
 	 */
 	private function ensureTrailingSlash( string $path ): string {

@@ -41,7 +41,6 @@ final class Fubade {
 	 *
 	 * @param array $attr The output attributes (`api`, `id`, `notice`,
 	 *                    `fullwidth` and `devtools`).
-	 *
 	 * @return string The output to the sourcecode.
 	 */
 	public function output( array $attr ): string {
@@ -85,10 +84,8 @@ final class Fubade {
 	 * Set the attribute array.
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $attr The attributes (`api`, `id`, `notice`, `fullwidth`
 	 *                    and `devtools`) for the widget rendering.
-	 *
 	 * @return void
 	 */
 	public function setAttr( array $attr ): void {
@@ -105,9 +102,7 @@ final class Fubade {
 	 * Render all the output.
 	 *
 	 * @since 3.0
-	 *
 	 * @param string|null $error Potential errors.
-	 *
 	 * @return string The rendered the output.
 	 */
 	private function render( ?string $error ): string {

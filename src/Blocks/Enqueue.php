@@ -71,10 +71,8 @@ final class Enqueue extends ActionBase {
 	 * Creates the output to the sourcecode.
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $attr The output attributes (`api`, `id`, `notice`,
 	 *                    `fullwidth` and `devtools`).
-	 *
 	 * @return string The output to the sourcecode.
 	 */
 	public function render( array $attr ): string {

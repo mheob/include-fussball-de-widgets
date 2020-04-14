@@ -38,7 +38,6 @@ abstract class ActionBase {
 	 *                             Default 10.
 	 * @param int    $acceptedArgs (Optional) The number of arguments the
 	 *                             function accepts. Default 1.
-	 *
 	 * @return void
 	 */
 	public function addAction( string $tag, int $priority = 10, int $acceptedArgs = 1 ): void {

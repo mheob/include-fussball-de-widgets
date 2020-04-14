@@ -49,9 +49,7 @@ abstract class LoggerBase {
 	 * Generates a logging output.
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $arr The arguments.
-	 *
 	 * @return void
 	 */
 	abstract public function log( array $arr ): void;
@@ -69,9 +67,7 @@ abstract class LoggerBase {
 	 * Logs the information pertaining to a specific widget only.
 	 *
 	 * @since 3.0
-	 *
 	 * @param array $arr The arguments.
-	 *
 	 * @return void
 	 */
 	abstract protected function logWidgetInfo( array $arr ): void;
