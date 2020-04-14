@@ -28,7 +28,6 @@ abstract class FilterBase {
 	 * Add the init filter for registering the fubade api.
 	 *
 	 * @since 3.0
-	 *
 	 * @param string $tag           The name of the filter to hook the callback
 	 *                              to.
 	 * @param int    $acceptedArgs  (Optional) The number of arguments the

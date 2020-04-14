@@ -26,7 +26,6 @@ abstract class ActionBase {
 	 * Add the init action for registering the fubade api.
 	 *
 	 * @since 3.0
-	 *
 	 * @param string $tag          The name of the action to hook the callback
 	 *                             to.
 	 * @param int    $priority     (Optional) Used to specify the order in
