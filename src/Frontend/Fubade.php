@@ -44,7 +44,7 @@ final class Fubade {
 	 * @return string The output to the sourcecode.
 	 */
 	public function output( array $attr ): string {
-		// TODO [$5e95fbd5c099020007a01c47]: Configure default setting in the admin area.
+		// TODO [#33]: Configure default setting in the admin area.
 		$this->setAttr( $attr );
 
 		$this->attr = [
