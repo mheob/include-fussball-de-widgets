@@ -34,5 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once __DIR__ . '/Infrastructure/Autoloader.php';
 ( new Infrastructure\Autoloader() )->addNamespace( __NAMESPACE__, __DIR__ )->register();
 
+define( 'IFDW_FILE', __FILE__ );
+
 // Create the plugin instance.
 $plugin = PluginFactory::create();

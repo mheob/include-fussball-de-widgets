@@ -20,26 +20,13 @@ use ITSB\IFDW\Utils\CheckHelper;
  */
 final class Activation {
 	/**
-	 * The name of the plugin.
-	 *
-	 * @since 3.2
-	 * @var string
-	 */
-	private $pluginName;
-
-	/**
 	 * Set the activation hook for a plugin.
 	 *
-	 * When a plugin is activated, the action ‘activate_include_fussball_de_widgets’ hook is
-	 * called.
-	 *
 	 * @since 3.2
-	 * @param string $file The filename of the plugin including the path.
 	 * @return void
 	 */
-	public function addActivationHook( string $file ): void {
-		$this->pluginName = $file;
-		register_activation_hook( $this->pluginName, [ $this, 'activate' ] );
+	public function addActivationHook(): void {
+		register_activation_hook( IFDW_FILE, [ $this, 'activate' ] );
 	}
 
 	/**
@@ -49,9 +36,17 @@ final class Activation {
 	 * @return void
 	 */
 	public function activate(): void {
-		if ( CheckHelper::versionsInvalid( Settings::MIN_WP, Settings::MIN_PHP ) ) {
-			add_action( 'admin_notices', 'CheckHelper::createNotice' );
-			deactivate_plugins( basename( $this->pluginName ) );
+		if ( CheckHelper::versionsAreInvalid( Settings::MIN_WP, Settings::MIN_PHP ) ) {
+			die(
+				sprintf(
+					/* phpcs:disable Generic.Files.LineLength */
+					/* translators: %1$s: The required WP version - %2$s: The required PHP version */
+					esc_html__( 'Include Fussball.de Widgets requires WordPress %1$s and PHP %2$s or higher.', 'include-fussball-de-widgets' ),
+					esc_html( Settings::MIN_WP ),
+					esc_html( Settings::MIN_PHP )
+					/* phpcs:enable */
+				)
+			);
 		}
 	}
 }

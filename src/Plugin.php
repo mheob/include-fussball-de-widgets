@@ -35,7 +35,9 @@ final class Plugin {
 	 */
 	public function __construct() {
 		// Activate the plugin.
-		( new Activation() )->addActivationHook( __FILE__ );
+		if ( is_admin() ) {
+			( new Activation() )->addActivationHook();
+		}
 
 		// Configure the one time set settings.
 		$this->configureSettings();
