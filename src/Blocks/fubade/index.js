@@ -54,7 +54,7 @@ registerBlockType('ifdw/fubade', {
         <PanelBody title={__('Fussball.de Widgets Settings', 'include-fussball-de-widgets')}>
           <TextControl
             label={__('Notice', 'include-fussball-de-widgets')}
-            onChange={newNotice => {
+            onChange={(newNotice) => {
               setAttributes({ notice: newNotice });
             }}
             value={notice}
@@ -71,7 +71,7 @@ registerBlockType('ifdw/fubade', {
                 )
             }
             label={__('Show in full width', 'include-fussball-de-widgets')}
-            onChange={newFullwidth => {
+            onChange={(newFullwidth) => {
               setAttributes({ fullwidth: newFullwidth });
             }}
           />
@@ -83,7 +83,7 @@ registerBlockType('ifdw/fubade', {
                 : __('No debugging information were outputted.', 'include-fussball-de-widgets')
             }
             label={__('Show some information for debugging', 'include-fussball-de-widgets')}
-            onChange={isDevTools => {
+            onChange={(isDevTools) => {
               setAttributes({ devtools: isDevTools });
             }}
           />
@@ -99,7 +99,7 @@ registerBlockType('ifdw/fubade', {
           <PlainText
             className="input-control"
             id={inputId}
-            onChange={newApi => {
+            onChange={(newApi) => {
               setAttributes({ api: newApi });
               setAttributes({
                 id: `fubade_${apiLength === newApi.length ? newApi.slice(-5) : 'ERROR_' + Number(new Date())}`

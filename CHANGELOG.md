@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+
+- The internal documention is updated.
+
+### Changed
+
+- Improve the linting in the development files.
+
 ## [3.1.3] - 2020-02-16
 
 ### Fixed
