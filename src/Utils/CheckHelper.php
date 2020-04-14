@@ -66,13 +66,13 @@ final class CheckHelper {
 	 */
 	public static function createNotice() {
 		echo '<div class="notice notice-error"><p>';
-		printf( // translators: %1$s: The required WP version, %2$s: The required PHP version.
-			esc_html__(
-				'Include Fussball.de Widgets requires WP %1$s and PHP %2$s or higher.',
-				'include-fussball-de-widgets'
-			),
+		printf(
+			/* phpcs:disable Generic.Files.LineLength */
+			/* translators: %1$s: The required WP version - %2$s: The required PHP version */
+			esc_html__( 'Include Fussball.de Widgets requires WP %1$s and PHP %2$s or higher.', 'include-fussball-de-widgets' ),
 			esc_html( self::$wpVersion ),
 			esc_html( self::$phpVersion )
+			/* phpcs:enable */
 		);
 		echo '</p></div>';
 	}

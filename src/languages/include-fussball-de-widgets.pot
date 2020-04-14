@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Include Fussball.de Widgets\n"
-"POT-Creation-Date: 2020-04-14 15:16+0200\n"
-"PO-Revision-Date: 2020-04-14 15:16+0200\n"
+"POT-Creation-Date: 2020-04-14 15:43+0200\n"
+"PO-Revision-Date: 2020-04-14 15:19+0200\n"
 "Last-Translator: Alexander Böhm <ab@its-boehm.de>\n"
 "Language-Team: Alexander Böhm <ab@its-boehm.de>\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +114,8 @@ msgstr ""
 msgid "An undefined error has occurred."
 msgstr ""
 
-#: Utils/CheckHelper.php:71
+#. translators: %1$s: The required WP version - %2$s: The required PHP version
+#: Utils/CheckHelper.php:72
 #, php-format
 msgid "Include Fussball.de Widgets requires WP %1$s and PHP %2$s or higher."
 msgstr ""

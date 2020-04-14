@@ -1,11 +1,9 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Include Fussball.de Widgets\n"
-"POT-Creation-Date: 2020-04-14 15:16+0200\n"
-"PO-Revision-Date: 2020-04-14 15:16+0200\n"
-"Last-Translator: Alexander Böhm <ab@its-boehm.de>\n"
+"POT-Creation-Date: 2020-04-14 15:43+0200\n"
+"PO-Revision-Date: 2020-04-14 15:59+0200\n"
 "Language-Team: Alexander Böhm <ab@its-boehm.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,169 +14,179 @@ msgstr ""
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: Alexander Böhm <ab@its-boehm.de>\n"
+"Language: de_DE\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #: Backend/BorlabsCookie.php:72
 msgid "By loading the widget, you agree to the privacy policy of fussball.de."
 msgstr ""
+"Mit dem Laden des Widgets erklären Sie sich mit den Datenschutzbestimmungen "
+"von fussball.de einverstanden."
 
 #: Backend/BorlabsCookie.php:76
 msgid "Learn more"
-msgstr ""
+msgstr "Mehr erfahren"
 
 #: Backend/BorlabsCookie.php:80
 msgid "Load widget"
-msgstr ""
+msgstr "Widget laden"
 
 #: Backend/BorlabsCookie.php:86
 msgid "Always load fussball.de Widgets"
-msgstr ""
+msgstr "Die fussball.de Widgets immer laden"
 
 #: Backend/BorlabsCookie.php:110 Widgets/FubadeWidget.php:32
 msgid "Fussball.de Widget"
-msgstr ""
+msgstr "Fussball.de Widget"
 
 #: Backend/BorlabsCookie.php:210
 msgctxt "Cookie - Default Entry Fußball.de"
 msgid "Used to unblock Fußball.de content."
-msgstr ""
+msgstr "Dient zur Freigabe von Fußball.de-Inhalten."
 
 #: Backend/BorlabsCookie.php:211
 msgctxt "Cookie - Default Entry Fußball.de"
 msgid "http://www.fussball.de/privacy/"
-msgstr ""
+msgstr "http://www.fussball.de/privacy/"
 
 #: Backend/BorlabsCookie.php:214
 msgctxt "Cookie - Default Entry Fußball.de"
 msgid "Unlimited"
-msgstr ""
+msgstr "Unbegrenzt"
 
 #. Plugin Name of the plugin/theme
 #: Blocks/fubade/index.js:31
 msgid "Include Fussball.de Widgets"
-msgstr ""
+msgstr "Include Fussball.de Widgets (Fussball.de Widgets einbinden)"
 
 #: Blocks/fubade/index.js:32
 msgid "Showing the fussball.de widget"
-msgstr ""
+msgstr "Das fussball.de-Widget anzeigen"
 
 #: Blocks/fubade/index.js:35
 msgid "fubade"
-msgstr ""
+msgstr "fubade"
 
 #: Blocks/fubade/index.js:54
 msgid "Fussball.de Widgets Settings"
-msgstr ""
+msgstr "Fussball.de Widgets-Einstellungen"
 
 #: Blocks/fubade/index.js:56
 msgid "Notice"
-msgstr ""
+msgstr "Hinweis"
 
 #: Blocks/fubade/index.js:82
 msgid "Debugging information will be displayed in the browser console."
-msgstr ""
+msgstr "Debugging-Informationen werden in der Browser-Konsole angezeigt."
 
 #: Blocks/fubade/index.js:83
 msgid "No debugging information were outputted."
-msgstr ""
+msgstr "Es wurden keine Debugging-Informationen ausgegeben."
 
 #: Blocks/fubade/index.js:85
 msgid "Show some information for debugging"
-msgstr ""
+msgstr "Einige Informationen zum Debuggen anzeigen"
 
 #: Blocks/fubade/index.js:98
 msgid "Api:"
-msgstr ""
+msgstr "Api:"
 
 #: Frontend/Fubade.php:118
 msgid ""
 "!!! The fussball.de API must have a length of exactly 32 characters. !!!"
 msgstr ""
+"!!! Die fussball.de API muss eine Länge von genau 32 Zeichen haben. !!!"
 
 #. translators: %s: The length of the api.
 #: Frontend/Fubade.php:122
 #, php-format
 msgid "Currently the API length is: %s"
-msgstr ""
+msgstr "Derzeit beträgt die API-Länge: %s"
 
 #: Frontend/Fubade.php:128
 msgid ""
 "The PHP variable <code>$_SERVER[\"SERVER_NAME\"]</code> was not set by the "
 "server."
 msgstr ""
+"Die PHP-Variable <code>$_SERVER[“SERVER_NAME”]</code> wurde vom Server "
+"nicht gesetzt."
 
 #: Frontend/Fubade.php:133
 msgid "An undefined error has occurred."
-msgstr ""
+msgstr "Es ist ein undefinierter Fehler aufgetreten."
 
-#: Utils/CheckHelper.php:71
+#. translators: %1$s: The required WP version - %2$s: The required PHP version
+#: Utils/CheckHelper.php:72
 #, php-format
 msgid "Include Fussball.de Widgets requires WP %1$s and PHP %2$s or higher."
 msgstr ""
+"Die Einbindung von Fussball.de-Widgets erfordert WP %1$s und PHP %2$s oder "
+"höher."
 
 #: Utils/Logging/LoggerBase.php:39
 msgid "[FUBADE] Plugin Version: "
-msgstr ""
+msgstr "[FUBADE] Plugin-Version: "
 
 #: Utils/Logging/LoggerBase.php:40
 msgid "[FUBADE] Website for registration: "
-msgstr ""
+msgstr "[FUBADE] Website zur Registrierung: "
 
 #: Utils/Logging/LoggerBase.php:41
 msgid "[FUBADE] Wordpress version: "
-msgstr ""
+msgstr "[FUBADE] Wordpress-Version: "
 
 #: Utils/Logging/LoggerBase.php:42
 msgid "[FUBADE] PHP version: "
-msgstr ""
+msgstr "[FUBADE] PHP-Version: "
 
 #: Utils/Logging/LoggerBase.php:43
 msgid "[FUBADE] PHP ext loaded: "
-msgstr ""
+msgstr "[FUBADE] PHP ext geladen: "
 
 #: Utils/PluginActions.php:42
 msgid "Plugin Additional Links"
-msgstr ""
+msgstr "Zusätzliche Plugin-Links"
 
 #: Utils/PluginActions.php:43
 msgid "Donate"
-msgstr ""
+msgstr "Spenden"
 
 #: Widgets/FubadeWidget.php:33
 msgid "Displays the fussball.de widget."
-msgstr ""
+msgstr "Zeigt das fussball.de-Widget an."
 
 #: Widgets/FubadeWidget.php:56
 msgid "Title: "
-msgstr ""
+msgstr "Titel: "
 
 #: Widgets/FubadeWidget.php:67
 msgid "API: "
-msgstr ""
+msgstr "Api: "
 
 #: Widgets/FubadeWidget.php:85
 msgid "view in full width"
-msgstr ""
+msgstr "in voller Breite darstellen"
 
 #: Widgets/FubadeWidget.php:96
 msgid "output log data to console"
-msgstr ""
+msgstr "Logdaten in der Konsole ausgeben"
 
 #. Plugin URI of the plugin/theme
 msgid "https://wordpress.org/plugins/include-fussball-de-widgets/"
-msgstr ""
+msgstr "https://wordpress.org/plugins/include-fussball-de-widgets/"
 
 #. Description of the plugin/theme
 msgid "Easy integration of the Fussball.de widgets."
-msgstr ""
+msgstr "Einfache Integration der Fussball.de-Widgets."
 
 #. Author of the plugin/theme
 msgid "IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>"
-msgstr ""
+msgstr "IT-Service Böhm -- Alexander Böhm ab@its-boehm.de>"
 
 #. Author URI of the plugin/theme
 msgid "http://profiles.wordpress.org/mheob"
-msgstr ""
+msgstr "http://profiles.wordpress.org/mheob"

@@ -118,7 +118,7 @@ final class Fubade {
 						'!!! The fussball.de API must have a length of exactly 32 characters. !!!',
 						'include-fussball-de-widgets'
 					) . PHP_EOL;
-					$divContent .= sprintf( // translators: %s: The length of the api.
+					$divContent .= sprintf( /* translators: %s: The length of the api. */
 						esc_html__( 'Currently the API length is: %s', 'include-fussball-de-widgets' ),
 						esc_html( strlen( $this->attr['api'] ) )
 					) . PHP_EOL;

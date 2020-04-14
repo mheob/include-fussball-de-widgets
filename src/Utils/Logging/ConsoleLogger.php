@@ -111,7 +111,7 @@ class ConsoleLogger extends LoggerBase {
 				continue;
 			}
 
-			$temp       = esc_html( $key ) . __( ': ', 'include-fussball-de-widgets' ) . esc_html( $value );
+			$temp       = esc_html( $key ) . ': ' . esc_html( $value );
 			$outputBody = wp_json_encode( '[' . $arr['id'] . '] ' . $temp, JSON_HEX_TAG );
 			$output    .= "console.info($outputBody);" . PHP_EOL;
 		}
