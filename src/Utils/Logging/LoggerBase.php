@@ -72,5 +72,5 @@ abstract class LoggerBase {
 	 */
 	abstract protected function logWidgetInfo( array $arr ): void;
 
-	// TODO: Add a file or database logging system.
+	// TODO [$5e95fbd5c099020007a01c48]: Add a file or database logging system.
 }
