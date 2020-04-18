@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@wordpress/browserslist-config": "^2.6.0",
-    "@wordpress/scripts": "^7.2.0",
+    "@wordpress/scripts": "^8.0.1",
     "autoprefixer": "^9.7.6",
     "bestzip": "^2.1.5",
     "copy-webpack-plugin": "^5.1.1",
