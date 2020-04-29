@@ -125,6 +125,7 @@ final class Fubade {
 					break;
 				case self::ERROR['SERVER_NAME']:
 					$divContent = __(
+						// TODO: Rename $_SERVER["SERVER_NAME"] to $_SERVER["HTTP_HOST"] in each place.
 						'The PHP variable <code>$_SERVER["SERVER_NAME"]</code> was not set by the server.',
 						'include-fussball-de-widgets'
 					) . PHP_EOL;
