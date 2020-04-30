@@ -61,4 +61,8 @@
   <rule ref="Squiz.Commenting.FileComment">
     <exclude name="Squiz.Commenting.FileComment.Missing"/>
   </rule>
+
+  <rule ref="Squiz.Commenting.InlineComment">
+    <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+  </rule>
 </ruleset>
