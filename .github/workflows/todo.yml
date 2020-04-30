@@ -2,6 +2,7 @@ name: Todo to Issue
 
 on:
   - push
+  - pull_request
 
 jobs:
   collectTODO:
