@@ -22,8 +22,8 @@ use ITSB\IFDW\Utils\Settings;
  */
 final class Fubade {
 	private const ERROR = [
-		'API_LENGTH'  => 'api-length',
-		'SERVER_NAME' => 'no-server-name',
+		'API_LENGTH' => 'api-length',
+		'HTTP_HOST'  => 'no-server-name',
 	];
 
 	/**
@@ -72,9 +72,9 @@ final class Fubade {
 			return $this->render( self::ERROR['API_LENGTH'] );
 		}
 
-		if ( strtolower( Settings::getHost() ) === strtolower( 'SERVER_NAME-not-set' ) ) {
+		if ( strtolower( Settings::getHost() ) === strtolower( Settings::SERVER_NAME_DUMMY ) ) {
 			ConsoleLogger::getInstance()->log( $this->attr );
-			return $this->render( self::ERROR['SERVER_NAME'] );
+			return $this->render( self::ERROR['HTTP_HOST'] );
 		}
 
 		return $this->render( null );
@@ -123,10 +123,9 @@ final class Fubade {
 						esc_html( strlen( $this->attr['api'] ) )
 					) . PHP_EOL;
 					break;
-				case self::ERROR['SERVER_NAME']:
+				case self::ERROR['HTTP_HOST']:
 					$divContent = __(
-						// TODO [#43]: Rename $_SERVER["SERVER_NAME"] to $_SERVER["HTTP_HOST"] in each place.
-						'The PHP variable <code>$_SERVER["SERVER_NAME"]</code> was not set by the server.',
+						'The PHP variable <code>$_SERVER["HTTP_HOST"]</code> was not set by the server.',
 						'include-fussball-de-widgets'
 					) . PHP_EOL;
 					break;
