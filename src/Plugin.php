@@ -56,6 +56,7 @@ final class Plugin {
 	 * @return void
 	 */
 	private function configureSettings(): void {
+		// TODO: Create an exception for `localhost`
 		$url = esc_url_raw( wp_unslash( $_SERVER['HTTP_HOST'] ?? '' ) );
 		Settings::setHost( substr( $url, strpos( $url, ':' ) + 3 ) ?: null );
 		Settings::setPluginName( plugin_basename( __DIR__ . '/index.php' ) );
