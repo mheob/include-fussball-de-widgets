@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Include Fussball.de Widgets\n"
-"POT-Creation-Date: 2020-04-14 17:13+0200\n"
-"PO-Revision-Date: 2020-04-14 17:14+0200\n"
+"POT-Creation-Date: 2020-04-30 18:28+0200\n"
+"PO-Revision-Date: 2020-04-30 18:28+0200\n"
 "Last-Translator: Alexander Böhm <ab@its-boehm.de>\n"
 "Language-Team: Alexander Böhm <ab@its-boehm.de>\n"
 "Language: de_DE\n"
@@ -109,10 +109,10 @@ msgstr "Derzeit beträgt die API-Länge: %s"
 
 #: Frontend/Fubade.php:128
 msgid ""
-"The PHP variable <code>$_SERVER[\"SERVER_NAME\"]</code> was not set by the "
+"The PHP variable <code>$_SERVER[\"HTTP_HOST\"]</code> was not set by the "
 "server."
 msgstr ""
-"Die PHP-Variable <code>$_SERVER[“SERVER_NAME”]</code> wurde vom Server nicht "
+"Die PHP-Variable <code>$_SERVER[“HTTP_HOST”]</code> wurde vom Server nicht "
 "gesetzt."
 
 #: Frontend/Fubade.php:133

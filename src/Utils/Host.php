@@ -40,6 +40,6 @@ class Host {
 			self::$host = wp_unslash( $host ) ?? '';
 		}
 
-		return self::$host ?? 'SERVER_NAME-not-set';
+		return self::$host ?? Settings::SERVER_NAME_DUMMY;
 	}
 }
