@@ -75,10 +75,21 @@ class Settings {
 	 * Set the the value of hostname.
 	 *
 	 * @since 3.1
-	 * @param string|null $host The host.
 	 * @return void
 	 */
-	public static function setHost( ?string $host ): void {
-		self::$host = Host::cleanHost( $host ?? null );
+	public static function setHost(): void {
+		// phpcs:disable
+		$port = $_SERVER['SERVER_PORT'] ?? null;
+		$host = $_SERVER['HTTP_HOST'] ?? '';
+		// phpcs:enable
+
+		if ( ! $port || ( '80' !== $port && '443' !== $port )
+			|| '' === $host || 'localhost' === $host || '127.0.01' === $host ) {
+			self::$host = 'localhost';
+			return;
+		}
+
+		$url        = esc_url_raw( wp_unslash( $host ?? '' ) );
+		self::$host = Host::cleanHost( substr( $url, strpos( $url, ':' ) + 3 ) ?: null );
 	}
 }
