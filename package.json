@@ -15,7 +15,7 @@
   "scripts": {
     "clear": "rimraf dist",
     "build": "rimraf dist && wp-scripts build && npm run i18n",
-    "dev": "npm run clear && npm run build && npm run i18n && node ./tasks/cp-dev-release.js",
+    "dev": "npm run build && node ./tasks/cp-dev-release.js",
     "lint:css": "stylelint 'src/**/*.scss'",
     "lint:css:fix": "stylelint 'src/**/*.scss' --fix",
     "lint:js": "eslint 'src/**/*.js'",
