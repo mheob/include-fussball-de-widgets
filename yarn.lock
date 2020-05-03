@@ -33,7 +33,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:>=7.2.2, @babel/core@npm:>=7.9.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.7.5, @babel/core@npm:^7.9.0":
+"@babel/core@npm:>=7.2.2, @babel/core@npm:>=7.9.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.7.5, @babel/core@npm:^7.9.0, @babel/core@npm:^7.9.6":
   version: 7.9.6
   resolution: "@babel/core@npm:7.9.6"
   dependencies:
@@ -2324,7 +2324,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wordpress/dependency-extraction-webpack-plugin@npm:^2.5.0":
+"@wordpress/dependency-extraction-webpack-plugin@npm:^2.5.0, @wordpress/dependency-extraction-webpack-plugin@npm:^2.6.0":
   version: 2.6.0
   resolution: "@wordpress/dependency-extraction-webpack-plugin@npm:2.6.0"
   dependencies:
@@ -8662,11 +8662,15 @@ fsevents@^2.1.2:
   version: 0.0.0-use.local
   resolution: "include-fussball-de-widgets@workspace:."
   dependencies:
+    "@babel/core": ^7.9.6
+    "@wordpress/babel-preset-default": ^4.12.1
     "@wordpress/browserslist-config": ^2.6.0
+    "@wordpress/dependency-extraction-webpack-plugin": ^2.6.0
     "@wordpress/scripts": ^8.0.1
     "@yarnpkg/pnpify": ^2.0.0-rc.22
     autoprefixer: ^9.7.6
     babel-eslint: ^10.1.0
+    babel-loader: ^8.1.0
     bestzip: ^2.1.5
     copy-webpack-plugin: ^5.1.1
     cpr: ^3.0.1
@@ -8682,6 +8686,7 @@ fsevents@^2.1.2:
     eslint-plugin-react: ^7.19.0
     eslint-plugin-standard: ^4.0.1
     husky: ^4.2.5
+    indent-string: ^4.0.0
     lint-staged: ^10.2.0
     mini-css-extract-plugin: ^0.9.0
     node-sass: ^4.14.0
@@ -8698,6 +8703,11 @@ fsevents@^2.1.2:
     stylelint-config-wordpress: ^16.0.0
     stylelint-order: ^4.0.0
     terser-webpack-plugin: ^2.3.6
+    thread-loader: ^2.1.3
+    webpack: ^4.43.0
+    webpack-bundle-analyzer: ^3.7.0
+    webpack-cli: ^3.3.11
+    webpack-livereload-plugin: ^2.3.0
   languageName: unknown
   linkType: soft
 
@@ -18038,7 +18048,7 @@ typescript@^3.2.1:
   languageName: node
   linkType: hard
 
-"webpack-bundle-analyzer@npm:^3.6.1":
+"webpack-bundle-analyzer@npm:^3.6.1, webpack-bundle-analyzer@npm:^3.7.0":
   version: 3.7.0
   resolution: "webpack-bundle-analyzer@npm:3.7.0"
   dependencies:
@@ -18115,7 +18125,7 @@ typescript@^3.2.1:
   languageName: node
   linkType: hard
 
-"webpack@npm:4.43.0, webpack@npm:^4.42.0, webpack@npm:^4.8.3":
+"webpack@npm:4.43.0, webpack@npm:^4.42.0, webpack@npm:^4.43.0, webpack@npm:^4.8.3":
   version: 4.43.0
   resolution: "webpack@npm:4.43.0"
   dependencies:
