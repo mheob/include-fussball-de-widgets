@@ -1,8 +1,17 @@
+<!-- markdownlint-disable MD024 -->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+
+## [3.2.1] - 2020-01-05
+
+### Fixed
+
+- Load the plugin even if the port is not set to 80 or 443 in a localhost environment.
+- The error message if if the host is not set is corrected to `$_SERVER["HTTP_HOST"]`.
 
 ## [3.2.0] - 2020-04-14
 
@@ -263,7 +272,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.2.0...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.2.1...HEAD
+[3.2.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.2.0...v3.2.1
 [3.2.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.3...v3.2.0
 [3.1.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.2...v3.1.3
 [3.1.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.1...v3.1.2

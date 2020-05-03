@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.8
 Tested up to: 5.4
 Requires PHP: 7.2
-Stable tag: 3.2.0
+Stable tag: 3.2.1
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,11 @@ The latest state of development is available at any time in my [Github repositor
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.2.1 - 2020-05-01 =
+= Fixed =
+* Load the plugin even if the port is not set to 80 or 443 in a localhost environment.
+* The error message if if the host is not set is corrected to `$_SERVER["HTTP_HOST"]`.
+
 = 3.2.0 - 2020-04-14 =
 = Added =
 * Prevent the plugin activation, if the wp or php version is incorrect.
@@ -245,4 +250,4 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-The output of the used php version in the logger section is now set correctly.
+Load the plugin even if the port is not set to 80 or 443 in a localhost environment.

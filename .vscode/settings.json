@@ -15,21 +15,17 @@
     "**/node_modules/**": true,
     "**/vendor/**": true
   },
-
   "editor.tabSize": 2,
   "editor.useTabStops": false,
   "editor.wordWrap": "on",
-
   "html.format.wrapAttributes": "aligned-multiple",
   "html.format.endWithNewline": true,
-
   "[php]": {
     "editor.defaultFormatter": "valeryanm.vscode-phpsab",
     "editor.detectIndentation": true,
     "editor.useTabStops": true,
     "editor.insertSpaces": false
   },
-
   "[javascript]": {
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
@@ -37,7 +33,6 @@
   },
   "css.validate": false,
   "scss.validate": false,
-
   "intelephense.files.exclude": [
     "**/.git/**",
     "**/.svn/**",
@@ -124,8 +119,9 @@
     "zip",
     "zlib"
   ],
-
-  "php-docblocker.extra": ["@since ${###:3.1}"],
+  "php-docblocker.extra": [
+    "@since ${###:3.1}"
+  ],
   "php-docblocker.classTemplate": {
     "myMessage": {
       "content": "Class ${###:Clasname}",
@@ -151,17 +147,17 @@
     "extra": {},
     "var": {}
   },
-
   "phpGettersSetters.spacesAfterParam": 1,
   "phpGettersSetters.spacesAfterParamVar": 1,
   "phpGettersSetters.spacesAfterReturn": 1,
-
   "phpsab.executablePathCBF": "./vendor/bin/phpcbf",
   "phpsab.executablePathCS": "./vendor/bin/phpcs",
   "phpsab.snifferMode": "onType",
   "phpsab.standard": "./.phpcs.xml.dist",
-
   "prettier.bracketSpacing": true,
   "prettier.endOfLine": "lf",
-  "prettier.printWidth": 120
+  "prettier.printWidth": 120,
+  "eslint.nodePath": ".vscode/pnpify",
+  "prettier.prettierPath": ".vscode/pnpify/prettier/index.js",
+  "stylelint.stylelintPath": ".vscode/pnpify/stylelint/lib/index.js"
 }
