@@ -1,0 +1,10 @@
+extends:
+  - prettier-stylelint/index.js
+  - stylelint-config-rational-order
+
+rules:
+  max-line-length: 120
+  declaration-block-no-duplicate-properties:
+    - true
+    - ignore: [consecutive-duplicates-with-different-values]
+  indentation: 2

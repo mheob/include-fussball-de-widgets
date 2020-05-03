@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 /**
  * BLOCK: Include_Fussball_De_Widgets
  *
@@ -46,7 +47,13 @@ registerBlockType('ifdw/fubade', {
     const apiLength = 32;
 
     if (Object.entries(attributes).length === 0) {
-      setAttributes({ api: '', id: '', notice: '', fullwidth: true, devtools: false });
+      setAttributes({
+        api: '',
+        id: '',
+        notice: '',
+        fullwidth: true,
+        devtools: false
+      });
     }
 
     return [
@@ -59,22 +66,24 @@ registerBlockType('ifdw/fubade', {
             }}
             value={notice}
           />
+          {/* eslint-disable indent */}
           <ToggleControl
             checked={fullwidth}
             help={
               fullwidth
                 ? __('The widget will be shown in the maximal width.', 'include-fussball-de-widgets')
                 : __(
-                  'The widget will be shown in the width given from fussball.de' +
+                    'The widget will be shown in the width given from fussball.de' +
                       '(CSS possible could overwrite this setting).',
-                  'include-fussball-de-widgets'
-                )
+                    'include-fussball-de-widgets'
+                  )
             }
             label={__('Show in full width', 'include-fussball-de-widgets')}
             onChange={(newFullwidth) => {
               setAttributes({ fullwidth: newFullwidth });
             }}
           />
+          {/* eslint-enable indent */}
           <ToggleControl
             checked={devtools}
             help={
@@ -124,7 +133,7 @@ registerBlockType('ifdw/fubade', {
       </Fragment>
     ];
   }),
-  save () {
+  save() {
     // Rendering in PHP
     return null;
   }
