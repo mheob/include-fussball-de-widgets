@@ -44,7 +44,8 @@
     }
   },
   "lint-staged": {
-    "*.css": "stylelint 'src/**/*.css' --fix"
+    "*.css": "stylelint 'src/**/*.css' --fix",
+    "*.js": "prettier-eslint \"$PWD/src/**/*.js\" --write"
   },
   "devDependencies": {
     "@wordpress/browserslist-config": "^2.6.0",
