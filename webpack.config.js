@@ -4,10 +4,11 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.config');
+const defaultConfig = require('./wordpress.webpack.config');
 
 const commonConfig = {
   ...defaultConfig,
+  mode: 'production',
   optimization: {
     minimizer: [
       new TerserPlugin({
@@ -35,7 +36,7 @@ const blockConfig = {
     rules: [
       ...defaultConfig.module.rules,
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.s[ac]ss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
     ]
