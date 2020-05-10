@@ -871,7 +871,7 @@ module.exports = {
               var _assign = __webpack_require__(10);
               var checkPropTypes = __webpack_require__(11);
 
-              // TODO: this is special because it gets imported during build.
+              // TODO [$5eb7c3e596f1d10007201864]: this is special because it gets imported during build.
 
               var ReactVersion = '16.8.4';
 
@@ -1487,7 +1487,7 @@ module.exports = {
                   // These should not be included in production.
                   ReactDebugCurrentFrame: ReactDebugCurrentFrame,
                   // Shim for React DOM 16.0.0 which still destructured (but not used) this.
-                  // TODO: remove in React 17.0.
+                  // TODO [$5eb7c3e596f1d10007201865]: remove in React 17.0.
                   ReactComponentTreeHook: {}
                 });
               }
@@ -1879,7 +1879,7 @@ module.exports = {
               }
 
               /**
-               * TODO: Test that a single child and an array with one item have the same key
+               * TODO [$5eb7c3e596f1d10007201866]: Test that a single child and an array with one item have the same key
                * pattern.
                */
 
@@ -2503,7 +2503,7 @@ module.exports = {
                       )
                     : void 0;
 
-                  // TODO: add a more generic warning for invalid values.
+                  // TODO [$5eb7c3e596f1d10007201867]: add a more generic warning for invalid values.
                   if (Context._context !== undefined) {
                     var realContext = Context._context;
                     // Don't deduplicate because this legitimately causes bugs
@@ -2839,7 +2839,7 @@ module.exports = {
                 var element = createElement.apply(this, arguments);
 
                 // The result can be nullish if a mock or a custom function is used.
-                // TODO: Drop this when these are no longer allowed as the type argument.
+                // TODO [$5eb7c3e596f1d10007201868]: Drop this when these are no longer allowed as the type argument.
                 if (element == null) {
                   return element;
                 }
@@ -2913,7 +2913,7 @@ module.exports = {
               // Trace which interactions trigger each commit.
 
               // Only used in www builds.
-              // TODO: true? Here it might just be false.
+              // TODO [$5eb7c3e596f1d10007201869]: true? Here it might just be false.
 
               // Only used in www builds.
 
@@ -2990,7 +2990,7 @@ module.exports = {
 
               var React$3 = (React$2 && React) || React$2;
 
-              // TODO: decide on the top-level export form.
+              // TODO [$5eb7c3e596f1d1000720186a]: decide on the top-level export form.
               // This is hacky but makes it work with both Rollup and Jest.
               var react = React$3.default || React$3;
 
@@ -3813,7 +3813,7 @@ module.exports = {
           };
 
           module.exports = main(process.stdout);
-          // TODO: Remove this for the next major release
+          // TODO [$5eb7c3e596f1d1000720186b]: Remove this for the next major release
           module.exports.default = module.exports;
           module.exports.stderr = main(process.stderr);
           module.exports.create = main;
@@ -4015,7 +4015,7 @@ module.exports = {
           const mimicFn = __webpack_require__(20);
 
           module.exports = (fn, opts) => {
-            // TODO: Remove this in v3
+            // TODO [$5eb7c3e596f1d1000720186c]: Remove this in v3
             if (opts === true) {
               throw new TypeError('The second argument is now an options object');
             }
@@ -4058,7 +4058,7 @@ module.exports = {
           'use strict';
 
           module.exports = (to, from) => {
-            // TODO: use `Reflect.ownKeys()` when targeting Node.js 6
+            // TODO [$5eb7c3e596f1d1000720186d]: use `Reflect.ownKeys()` when targeting Node.js 6
             for (const prop of Object.getOwnPropertyNames(from).concat(Object.getOwnPropertySymbols(from))) {
               Object.defineProperty(to, prop, Object.getOwnPropertyDescriptor(from, prop));
             }
@@ -6306,7 +6306,7 @@ module.exports = {
 
               /* eslint-disable no-var */
 
-              // TODO: Use symbols?
+              // TODO [$5eb7c3e596f1d1000720186e]: Use symbols?
               var ImmediatePriority = 1;
               var UserBlockingPriority = 2;
               var NormalPriority = 3;
@@ -6764,7 +6764,7 @@ module.exports = {
               // we're backgrounded we prefer for that work to happen so that the page
               // continues to load in the background. So we also schedule a 'setTimeout' as
               // a fallback.
-              // TODO: Need a better heuristic for backgrounded work.
+              // TODO [$5eb7c3e596f1d1000720186f]: Need a better heuristic for backgrounded work.
               var ANIMATION_FRAME_TIMEOUT = 100;
               var rAFID;
               var rAFTimeoutID;
@@ -6847,7 +6847,7 @@ module.exports = {
                 };
               } else {
                 if (typeof console !== 'undefined') {
-                  // TODO: Remove fb.me link
+                  // TODO [$5eb7c3e596f1d10007201870]: Remove fb.me link
                   if (typeof localRequestAnimationFrame !== 'function') {
                     console.error(
                       "This browser doesn't support requestAnimationFrame. " +
@@ -6978,7 +6978,7 @@ module.exports = {
                     port.postMessage(undefined);
                   } else if (!isAnimationFrameScheduled) {
                     // If rAF didn't already schedule one, we need to schedule a frame.
-                    // TODO: If this rAF doesn't materialize because the browser throttles, we
+                    // TODO [$5eb7c3e596f1d10007201871]: If this rAF doesn't materialize because the browser throttles, we
                     // might want to still have setTimeout trigger rIC as a backup to ensure
                     // that we keep performing work.
                     isAnimationFrameScheduled = true;
@@ -7365,7 +7365,7 @@ module.exports = {
                   }
                 }
                 if (node.tag === HostRoot) {
-                  // TODO: Check if this was a nested HostRoot when used with
+                  // TODO [$5eb7c3e596f1d10007201872]: Check if this was a nested HostRoot when used with
                   // renderContainerIntoSubtree.
                   return MOUNTED;
                 }
@@ -7875,7 +7875,7 @@ module.exports = {
                 typeof performance.clearMeasures === 'function';
 
               // Keep track of current fiber so that we know the path to unwind on pause.
-              // TODO: this looks the same as nextUnitOfWork in scheduler. Can we unify them?
+              // TODO [$5eb7c3e596f1d10007201873]: this looks the same as nextUnitOfWork in scheduler. Can we unify them?
               var currentFiber = null;
               // If we're in the middle of user code, which fiber and method is it?
               // Reusing `currentFiber` would be confusing for this because user code fiber
@@ -8763,11 +8763,11 @@ module.exports = {
                   var testSet = new Set([nonExtensibleObject]);
                   // This is necessary for Rollup to not consider these unused.
                   // https://github.com/rollup/rollup/issues/1771
-                  // TODO: we can remove these if Rollup fixes the bug.
+                  // TODO [$5eb7c3e596f1d10007201874]: we can remove these if Rollup fixes the bug.
                   testMap.set(0, 0);
                   testSet.add(0);
                 } catch (e) {
-                  // TODO: Consider warning about bad polyfills
+                  // TODO [$5eb7c3e596f1d10007201875]: Consider warning about bad polyfills
                   hasBadMapPolyfill = true;
                 }
               }
@@ -9099,7 +9099,7 @@ module.exports = {
                 }
 
                 var fiber = createFiber(Profiler, pendingProps, key, mode | ProfileMode);
-                // TODO: The Profiler fiber shouldn't have a type. It has a tag.
+                // TODO [$5eb7c3e596f1d10007201876]: The Profiler fiber shouldn't have a type. It has a tag.
                 fiber.elementType = REACT_PROFILER_TYPE;
                 fiber.type = REACT_PROFILER_TYPE;
                 fiber.expirationTime = expirationTime;
@@ -9110,7 +9110,7 @@ module.exports = {
               function createFiberFromMode(pendingProps, mode, expirationTime, key) {
                 var fiber = createFiber(Mode, pendingProps, key, mode);
 
-                // TODO: The Mode fiber shouldn't have a type. It has a tag.
+                // TODO [$5eb7c3e596f1d10007201877]: The Mode fiber shouldn't have a type. It has a tag.
                 var type = (mode & ConcurrentMode) === NoContext ? REACT_STRICT_MODE_TYPE : REACT_CONCURRENT_MODE_TYPE;
                 fiber.elementType = type;
                 fiber.type = type;
@@ -9122,7 +9122,7 @@ module.exports = {
               function createFiberFromSuspense(pendingProps, mode, expirationTime, key) {
                 var fiber = createFiber(SuspenseComponent, pendingProps, key, mode);
 
-                // TODO: The SuspenseComponent fiber shouldn't have a type. It has a tag.
+                // TODO [$5eb7c3e596f1d10007201878]: The SuspenseComponent fiber shouldn't have a type. It has a tag.
                 var type = REACT_SUSPENSE_TYPE;
                 fiber.elementType = type;
                 fiber.type = type;
@@ -9139,7 +9139,7 @@ module.exports = {
 
               function createFiberFromHostInstanceForDeletion() {
                 var fiber = createFiber(HostComponent, null, null, NoContext);
-                // TODO: These should not need a type.
+                // TODO [$5eb7c3e596f1d10007201879]: These should not need a type.
                 fiber.elementType = 'DELETED';
                 fiber.type = 'DELETED';
                 return fiber;
@@ -9208,7 +9208,7 @@ module.exports = {
                 return target;
               }
 
-              // TODO: This should be lifted into the renderer.
+              // TODO [$5eb7c3e596f1d1000720187a]: This should be lifted into the renderer.
 
               // The following attributes are only used by interaction tracing builds.
               // They enable interactions to be associated with their async work,
@@ -9506,7 +9506,7 @@ module.exports = {
               /**
                * Same as invokeGuardedCallback, but instead of returning an error, it stores
                * it in a global so it can be rethrown by `rethrowCaughtError` later.
-               * TODO: See if caughtError and rethrowError can be unified.
+               * TODO [$5eb7c3e596f1d1000720187b]: See if caughtError and rethrowError can be unified.
                *
                * @param {String} name of the guard to use for logging or debugging
                * @param {Function} func The function to invoke
@@ -9928,7 +9928,7 @@ module.exports = {
 
               var ReactFiberInstrumentation_1 = ReactFiberInstrumentation;
 
-              // TODO: Offscreen updates should never suspend. However, a promise that
+              // TODO [$5eb7c3e596f1d1000720187c]: Offscreen updates should never suspend. However, a promise that
               // suspended inside an offscreen subtree should be able to ping at the priority
               // of the outer render.
 
@@ -10098,7 +10098,7 @@ module.exports = {
               function markPingedPriorityLevel(root, pingedTime) {
                 root.didError = false;
 
-                // TODO: When we add back resuming, we need to ensure the progressed work
+                // TODO [$5eb7c3e596f1d1000720187d]: When we add back resuming, we need to ensure the progressed work
                 // is thrown out and not reused during the restarted render. One way to
                 // invalidate the progressed work is to restart at expirationTime + 1.
                 var latestPingedTime = root.latestPingedTime;
@@ -11523,7 +11523,7 @@ module.exports = {
                     return null;
                   }
 
-                  // TODO: For the shouldClone case, this could be micro-optimized a bit by
+                  // TODO [$5eb7c3e596f1d1000720187e]: For the shouldClone case, this could be micro-optimized a bit by
                   // assuming that after the first child we've already added everything.
                   var childToDelete = currentFirstChild;
                   while (childToDelete !== null) {
@@ -11892,7 +11892,7 @@ module.exports = {
                     }
                     var newFiber = updateSlot(returnFiber, oldFiber, newChildren[newIdx], expirationTime);
                     if (newFiber === null) {
-                      // TODO: This breaks on empty slots like null children. That's
+                      // TODO [$5eb7c3e596f1d1000720187f]: This breaks on empty slots like null children. That's
                       // unfortunate because it triggers the slow path all the time. We need
                       // a better way to communicate whether this was a miss or null,
                       // boolean, undefined, etc.
@@ -11910,10 +11910,10 @@ module.exports = {
                     }
                     lastPlacedIndex = placeChild(newFiber, lastPlacedIndex, newIdx);
                     if (previousNewFiber === null) {
-                      // TODO: Move out of the loop. This only happens for the first run.
+                      // TODO [$5eb7c3e596f1d10007201880]: Move out of the loop. This only happens for the first run.
                       resultingFirstChild = newFiber;
                     } else {
-                      // TODO: Defer siblings if we're not at the right index for this slot.
+                      // TODO [$5eb7c3e596f1d10007201881]: Defer siblings if we're not at the right index for this slot.
                       // I.e. if we had null values before, then we want to defer this
                       // for each null value. However, we also don't want to call updateSlot
                       // with the previous one.
@@ -11939,7 +11939,7 @@ module.exports = {
                       }
                       lastPlacedIndex = placeChild(_newFiber, lastPlacedIndex, newIdx);
                       if (previousNewFiber === null) {
-                        // TODO: Move out of the loop. This only happens for the first run.
+                        // TODO [$5eb7c3e596f1d10007201882]: Move out of the loop. This only happens for the first run.
                         resultingFirstChild = _newFiber;
                       } else {
                         previousNewFiber.sibling = _newFiber;
@@ -12077,7 +12077,7 @@ module.exports = {
                     }
                     var newFiber = updateSlot(returnFiber, oldFiber, step.value, expirationTime);
                     if (newFiber === null) {
-                      // TODO: This breaks on empty slots like null children. That's
+                      // TODO [$5eb7c3e596f1d10007201883]: This breaks on empty slots like null children. That's
                       // unfortunate because it triggers the slow path all the time. We need
                       // a better way to communicate whether this was a miss or null,
                       // boolean, undefined, etc.
@@ -12095,10 +12095,10 @@ module.exports = {
                     }
                     lastPlacedIndex = placeChild(newFiber, lastPlacedIndex, newIdx);
                     if (previousNewFiber === null) {
-                      // TODO: Move out of the loop. This only happens for the first run.
+                      // TODO [$5eb7c3e596f1d10007201884]: Move out of the loop. This only happens for the first run.
                       resultingFirstChild = newFiber;
                     } else {
-                      // TODO: Defer siblings if we're not at the right index for this slot.
+                      // TODO [$5eb7c3e596f1d10007201885]: Defer siblings if we're not at the right index for this slot.
                       // I.e. if we had null values before, then we want to defer this
                       // for each null value. However, we also don't want to call updateSlot
                       // with the previous one.
@@ -12124,7 +12124,7 @@ module.exports = {
                       }
                       lastPlacedIndex = placeChild(_newFiber3, lastPlacedIndex, newIdx);
                       if (previousNewFiber === null) {
-                        // TODO: Move out of the loop. This only happens for the first run.
+                        // TODO [$5eb7c3e596f1d10007201886]: Move out of the loop. This only happens for the first run.
                         resultingFirstChild = _newFiber3;
                       } else {
                         previousNewFiber.sibling = _newFiber3;
@@ -12194,7 +12194,7 @@ module.exports = {
                   var key = element.key;
                   var child = currentFirstChild;
                   while (child !== null) {
-                    // TODO: If key === null and child.key === null, then this only applies to
+                    // TODO [$5eb7c3e596f1d10007201887]: If key === null and child.key === null, then this only applies to
                     // the first item in the list.
                     if (child.key === key) {
                       if (
@@ -12246,7 +12246,7 @@ module.exports = {
                   var key = portal.key;
                   var child = currentFirstChild;
                   while (child !== null) {
-                    // TODO: If key === null and child.key === null, then this only applies to
+                    // TODO [$5eb7c3e596f1d10007201888]: If key === null and child.key === null, then this only applies to
                     // the first item in the list.
                     if (child.key === key) {
                       if (
@@ -12965,7 +12965,7 @@ module.exports = {
                       hook.memoizedState = newState;
                       // Don't persist the state accumlated from the render phase updates to
                       // the base state unless the queue is empty.
-                      // TODO: Not sure if this is the desired semantics, but it's what we
+                      // TODO [$5eb7c3e596f1d10007201889]: Not sure if this is the desired semantics, but it's what we
                       // do for gDSFP. I can't remember why.
                       if (hook.baseUpdate === queue.last) {
                         hook.baseState = newState;
@@ -13207,7 +13207,7 @@ module.exports = {
                     : void 0;
                 }
 
-                // TODO: If deps are provided, should we skip comparing the ref itself?
+                // TODO [$5eb7c3e596f1d1000720188a]: If deps are provided, should we skip comparing the ref itself?
                 var effectDeps = deps !== null && deps !== undefined ? deps.concat([ref]) : null;
 
                 return mountEffectImpl(
@@ -13230,7 +13230,7 @@ module.exports = {
                     : void 0;
                 }
 
-                // TODO: If deps are provided, should we skip comparing the ref itself?
+                // TODO [$5eb7c3e596f1d1000720188b]: If deps are provided, should we skip comparing the ref itself?
                 var effectDeps = deps !== null && deps !== undefined ? deps.concat([ref]) : null;
 
                 return updateEffectImpl(
@@ -14120,7 +14120,7 @@ module.exports = {
                   hostContext,
                   fiber
                 );
-                // TODO: Type this specific to this type of component.
+                // TODO [$5eb7c3e596f1d1000720188c]: Type this specific to this type of component.
                 fiber.updateQueue = updatePayload;
                 // If the update payload indicates that there is a change or if there
                 // is a new ref we mark this as an update.
@@ -14227,7 +14227,7 @@ module.exports = {
                 // We only do this deeper than head and body since they tend to have random
                 // other nodes in them. We also ignore components with pure text content in
                 // side of them.
-                // TODO: Better heuristic.
+                // TODO [$5eb7c3e596f1d1000720188d]: Better heuristic.
                 if (
                   fiber.tag !== HostComponent ||
                   (type !== 'head' && type !== 'body' && !shouldSetTextContent(type, fiber.memoizedProps))
@@ -14318,7 +14318,7 @@ module.exports = {
               }
 
               function updateForwardRef(current$$1, workInProgress, Component, nextProps, renderExpirationTime) {
-                // TODO: current can be non-null here even if the component
+                // TODO [$5eb7c3e596f1d1000720188e]: current can be non-null here even if the component
                 // hasn't yet mounted. This happens after the first render suspends.
                 // We'll need to figure out if this is fine or can cause issues.
 
@@ -14490,7 +14490,7 @@ module.exports = {
                 updateExpirationTime,
                 renderExpirationTime
               ) {
-                // TODO: current can be non-null here even if the component
+                // TODO [$5eb7c3e596f1d1000720188f]: current can be non-null here even if the component
                 // hasn't yet mounted. This happens when the inner render suspends.
                 // We'll need to figure out if this is fine or can cause issues.
 
@@ -14740,7 +14740,7 @@ module.exports = {
                   // unmount all the children. componentDidCatch will schedule an update to
                   // re-render a fallback. This is temporary until we migrate everyone to
                   // the new API.
-                  // TODO: Warn in a future release.
+                  // TODO [$5eb7c3e596f1d10007201890]: Warn in a future release.
                   nextChildren = null;
 
                   if (enableProfilerTimer) {
@@ -14773,7 +14773,7 @@ module.exports = {
                 }
 
                 // Memoize state using the values we just used to render.
-                // TODO: Restructure so we never read values from the instance.
+                // TODO [$5eb7c3e596f1d10007201891]: Restructure so we never read values from the instance.
                 workInProgress.memoizedState = instance.state;
 
                 // The context might have changed so we need to recalculate it.
@@ -14832,7 +14832,7 @@ module.exports = {
                   // This is a bit of a hack. We track the host root as a placement to
                   // know that we're currently in a mounting state. That way isMounted
                   // works as expected. We must reset this before committing.
-                  // TODO: Delete this when we delete isMounted and findDOMNode.
+                  // TODO [$5eb7c3e596f1d10007201892]: Delete this when we delete isMounted and findDOMNode.
                   workInProgress.effectTag |= Placement;
 
                   // Ensure that children mount into this root without tracking
@@ -15369,7 +15369,7 @@ module.exports = {
                       // If this render doesn't suspend, we need to delete the fallback
                       // children. Wait until the complete phase, after we've confirmed the
                       // fallback is no longer needed.
-                      // TODO: Would it be better to store the fallback fragment on
+                      // TODO [$5eb7c3e596f1d10007201893]: Would it be better to store the fallback fragment on
                       // the stateNode?
 
                       // Continue rendering the children, like we normally do.
@@ -15508,7 +15508,7 @@ module.exports = {
                   return workInProgress.child;
                 } else {
                   // Something suspended. Leave the existing children in place.
-                  // TODO: In non-concurrent mode, should we commit the nodes we have hydrated so far?
+                  // TODO [$5eb7c3e596f1d10007201894]: In non-concurrent mode, should we commit the nodes we have hydrated so far?
                   workInProgress.child = null;
                   return null;
                 }
@@ -15522,7 +15522,7 @@ module.exports = {
                   // but at commit. Therefore we need to track insertions which the normal
                   // flow doesn't do during mount. This doesn't happen at the root because
                   // the root always starts with a "current" with a null child.
-                  // TODO: Consider unifying this with how the root works.
+                  // TODO [$5eb7c3e596f1d10007201895]: Consider unifying this with how the root works.
                   workInProgress.child = reconcileChildFibers(workInProgress, null, nextChildren, renderExpirationTime);
                 } else {
                   reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
@@ -15651,7 +15651,7 @@ module.exports = {
                 var childExpirationTime = workInProgress.childExpirationTime;
                 if (childExpirationTime < renderExpirationTime) {
                   // The children don't have any work either. We can skip them.
-                  // TODO: Once we add back resuming, we should check if the children are
+                  // TODO [$5eb7c3e596f1d10007201896]: Once we add back resuming, we should check if the children are
                   // a work-in-progress set. If so, we need to transfer their effects.
                   return null;
                 } else {
@@ -16059,7 +16059,7 @@ module.exports = {
                           // Schedule a force update on the work-in-progress.
                           var update = createUpdate(renderExpirationTime);
                           update.tag = ForceUpdate;
-                          // TODO: Because we don't have a work-in-progress, this will add the
+                          // TODO [$5eb7c3e596f1d10007201897]: Because we don't have a work-in-progress, this will add the
                           // update to the current fiber, too, which means it will persist even if
                           // this render is thrown away. Since it's a race condition, not sure it's
                           // worth fixing.
@@ -16330,7 +16330,7 @@ module.exports = {
                   firstUpdate: currentQueue.firstUpdate,
                   lastUpdate: currentQueue.lastUpdate,
 
-                  // TODO: With resuming, if we bail out and resuse the child tree, we should
+                  // TODO [$5eb7c3e596f1d10007201898]: With resuming, if we bail out and resuse the child tree, we should
                   // keep these effects.
                   firstCapturedUpdate: null,
                   lastCapturedUpdate: null,
@@ -16447,7 +16447,7 @@ module.exports = {
                 if (workInProgressQueue === null) {
                   workInProgressQueue = workInProgress.updateQueue = createUpdateQueue(workInProgress.memoizedState);
                 } else {
-                  // TODO: I put this here rather than createWorkInProgress so that we don't
+                  // TODO [$5eb7c3e596f1d10007201899]: I put this here rather than createWorkInProgress so that we don't
                   // clone the queue unnecessarily. There's probably a better way to
                   // structure this.
                   workInProgressQueue = ensureWorkInProgressQueueIsAClone(workInProgress, workInProgressQueue);
@@ -16795,11 +16795,11 @@ module.exports = {
 
                   // If we get updated because one of our children updated, we don't
                   // have newProps so we'll have to reuse them.
-                  // TODO: Split the update API as separate for the props vs. children.
+                  // TODO [$5eb7c3e596f1d1000720189a]: Split the update API as separate for the props vs. children.
                   // Even better would be if children weren't special cased at all tho.
                   var instance = workInProgress.stateNode;
                   var currentHostContext = getHostContext();
-                  // TODO: Experiencing an error where oldProps is null. Suggests a host
+                  // TODO [$5eb7c3e596f1d1000720189b]: Experiencing an error where oldProps is null. Suggests a host
                   // component is hitting the resume path. Figure out why. Possibly
                   // related to `hidden`.
                   var updatePayload = prepareUpdate(
@@ -16810,7 +16810,7 @@ module.exports = {
                     rootContainerInstance,
                     currentHostContext
                   );
-                  // TODO: Type this specific to this type of component.
+                  // TODO [$5eb7c3e596f1d1000720189c]: Type this specific to this type of component.
                   workInProgress.updateQueue = updatePayload;
                   // If the update payload indicates that there is a change or if there
                   // is a new ref we mark this as an update. All the work is done in commitWork.
@@ -17157,7 +17157,7 @@ module.exports = {
                       // that weren't hydrated.
                       popHydrationState(workInProgress);
                       // This resets the hacky state to fix isMounted before committing.
-                      // TODO: Delete this when we delete isMounted and findDOMNode.
+                      // TODO [$5eb7c3e596f1d1000720189d]: Delete this when we delete isMounted and findDOMNode.
                       workInProgress.effectTag &= ~Placement;
                     }
                     updateHostContainer(workInProgress);
@@ -17186,13 +17186,13 @@ module.exports = {
                       }
 
                       var currentHostContext = getHostContext();
-                      // TODO: Move createInstance to beginWork and keep it on a context
+                      // TODO [$5eb7c3e596f1d1000720189e]: Move createInstance to beginWork and keep it on a context
                       // "stack" as the parent. Then append children as we go in beginWork
                       // or completeWork depending on we want to add then top->down or
                       // bottom->up. Top->down is faster in IE11.
                       var wasHydrated = popHydrationState(workInProgress);
                       if (wasHydrated) {
-                        // TODO: Move this and createInstance step into the beginPhase
+                        // TODO [$5eb7c3e596f1d1000720189f]: Move this and createInstance step into the beginPhase
                         // to consolidate.
                         if (prepareToHydrateHostInstance(workInProgress, rootContainerInstance, currentHostContext)) {
                           // If changes to the hydrated node needs to be applied at the
@@ -17280,7 +17280,7 @@ module.exports = {
                     if (current !== null && !nextDidTimeout && prevDidTimeout) {
                       // We just switched from the fallback to the normal children. Delete
                       // the fallback.
-                      // TODO: Would it be better to store the fallback fragment on
+                      // TODO [$5eb7c3e596f1d100072018a0]: Would it be better to store the fallback fragment on
                       var currentFallbackChild = current.child.sibling;
                       if (currentFallbackChild !== null) {
                         // Deletions go at the beginning of the return fiber's effect list
@@ -17561,7 +17561,7 @@ module.exports = {
                         var instance = finishedWork.stateNode;
                         // We could update instance props and state here,
                         // but instead we rely on them being set during last render.
-                        // TODO: revisit this when we implement resuming.
+                        // TODO [$5eb7c3e596f1d100072018a1]: revisit this when we implement resuming.
                         {
                           if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
                             !(instance.props === finishedWork.memoizedProps)
@@ -17708,7 +17708,7 @@ module.exports = {
                         startPhaseTimer(finishedWork, 'componentDidMount');
                         // We could update instance props and state here,
                         // but instead we rely on them being set during last render.
-                        // TODO: revisit this when we implement resuming.
+                        // TODO [$5eb7c3e596f1d100072018a2]: revisit this when we implement resuming.
                         {
                           if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
                             !(instance.props === finishedWork.memoizedProps)
@@ -17746,7 +17746,7 @@ module.exports = {
                         startPhaseTimer(finishedWork, 'componentDidUpdate');
                         // We could update instance props and state here,
                         // but instead we rely on them being set during last render.
-                        // TODO: revisit this when we implement resuming.
+                        // TODO [$5eb7c3e596f1d100072018a3]: revisit this when we implement resuming.
                         {
                           if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
                             !(instance.props === finishedWork.memoizedProps)
@@ -17807,7 +17807,7 @@ module.exports = {
                       }
                       // We could update instance props and state here,
                       // but instead we rely on them being set during last render.
-                      // TODO: revisit this when we implement resuming.
+                      // TODO [$5eb7c3e596f1d100072018a4]: revisit this when we implement resuming.
                       commitUpdateQueue(finishedWork, updateQueue, instance, committedExpirationTime);
                     }
                     return;
@@ -18022,7 +18022,7 @@ module.exports = {
                     return;
                   }
                   case HostPortal: {
-                    // TODO: this is recursive.
+                    // TODO [$5eb7c3e596f1d100072018a5]: this is recursive.
                     // We are also not using this parent because
                     // the portal will get pushed immediately.
                     if (supportsMutation) {
@@ -18426,7 +18426,7 @@ module.exports = {
                       // this case.
                       var oldProps = current$$1 !== null ? current$$1.memoizedProps : newProps;
                       var type = finishedWork.type;
-                      // TODO: Type the updateQueue to be specific to host components.
+                      // TODO [$5eb7c3e596f1d100072018a6]: Type the updateQueue to be specific to host components.
                       var updatePayload = finishedWork.updateQueue;
                       finishedWork.updateQueue = null;
                       if (updatePayload !== null) {
@@ -18559,7 +18559,7 @@ module.exports = {
                       // To preserve the preexisting retry behavior of error boundaries,
                       // we keep track of which ones already failed during this batch.
                       // This gets reset before we yield back to the browser.
-                      // TODO: Warn in strict mode if getDerivedStateFromError is
+                      // TODO [$5eb7c3e596f1d100072018a7]: Warn in strict mode if getDerivedStateFromError is
                       // not defined.
                       markLegacyErrorBoundaryAsFailed(this);
                     }
@@ -18793,7 +18793,7 @@ module.exports = {
                     _workInProgress = _workInProgress.return;
                   } while (_workInProgress !== null);
                   // No boundary was found. Fallthrough to error mode.
-                  // TODO: Use invariant so the message is stripped in prod?
+                  // TODO [$5eb7c3e596f1d100072018a8]: Use invariant so the message is stripped in prod?
                   value = new Error(
                     (getComponentName(sourceFiber.type) || 'A React component') +
                       ' suspended while rendering, but no fallback UI was specified.\n' +
@@ -18875,7 +18875,7 @@ module.exports = {
                     return workInProgress;
                   }
                   case HostComponent: {
-                    // TODO: popHydrationState
+                    // TODO [$5eb7c3e596f1d100072018a9]: popHydrationState
                     popHostContext(workInProgress);
                     return null;
                   }
@@ -18890,7 +18890,7 @@ module.exports = {
                   }
                   case DehydratedSuspenseComponent: {
                     if (enableSuspenseServerRenderer) {
-                      // TODO: popHydrationState
+                      // TODO [$5eb7c3e596f1d100072018aa]: popHydrationState
                       var _effectTag3 = workInProgress.effectTag;
                       if (_effectTag3 & ShouldCapture) {
                         workInProgress.effectTag = (_effectTag3 & ~ShouldCapture) | DidCapture;
@@ -19050,7 +19050,7 @@ module.exports = {
                     typeof thrownValue.then === 'function'
                   ) {
                     // Don't replay promises. Treat everything else like an error.
-                    // TODO: Need to figure out a different strategy if/when we add
+                    // TODO [$5eb7c3e596f1d100072018ab]: Need to figure out a different strategy if/when we add
                     // support for catching other types.
                     return;
                   }
@@ -19171,7 +19171,7 @@ module.exports = {
                       commitPlacement(nextEffect);
                       // Clear the "placement" from effect tag so that we know that this is inserted, before
                       // any life-cycles like componentDidMount gets called.
-                      // TODO: findDOMNode doesn't rely on this any more but isMounted
+                      // TODO [$5eb7c3e596f1d100072018ac]: findDOMNode doesn't rely on this any more but isMounted
                       // does and isMounted is deprecated anyway so we should be able
                       // to kill this.
                       nextEffect.effectTag &= ~Placement;
@@ -19511,7 +19511,7 @@ module.exports = {
                   // we enter rootWithPendingPassiveEffects commit phase before then.
                   var callback = commitPassiveEffects.bind(null, root, firstEffect);
                   if (enableSchedulerTracing) {
-                    // TODO: Avoid this extra callback by mutating the tracing ref directly,
+                    // TODO [$5eb7c3e596f1d100072018ad]: Avoid this extra callback by mutating the tracing ref directly,
                     // like we do at the beginning of commitRoot. I've opted not to do that
                     // here because that code is still in flux.
                     callback = tracing.unstable_wrap(callback);
@@ -20030,7 +20030,7 @@ module.exports = {
                         }
                       }
 
-                      // TODO: we already know this isn't true in some cases.
+                      // TODO [$5eb7c3e596f1d100072018ae]: we already know this isn't true in some cases.
                       // At least this shows a nicer error message until we figure out the cause.
                       // https://github.com/facebook/react/issues/12449#issuecomment-386727431
                       !(nextUnitOfWork !== null)
@@ -20181,7 +20181,7 @@ module.exports = {
                   var msUntilTimeout = nextLatestAbsoluteTimeoutMs - currentTimeMs;
                   msUntilTimeout = msUntilTimeout < 0 ? 0 : msUntilTimeout;
 
-                  // TODO: Account for the Just Noticeable Difference
+                  // TODO [$5eb7c3e596f1d100072018af]: Account for the Just Noticeable Difference
 
                   var _rootExpirationTime2 = root.expirationTime;
                   onSuspend(root, rootWorkInProgress, _suspendedExpirationTime2, _rootExpirationTime2, msUntilTimeout);
@@ -20296,7 +20296,7 @@ module.exports = {
                 // Keep track of the lowest pending interactive expiration time. This
                 // allows us to synchronously flush all interactive updates
                 // when needed.
-                // TODO: Move this to renderer?
+                // TODO [$5eb7c3e596f1d100072018b0]: Move this to renderer?
                 if (
                   priorityLevel === scheduler.unstable_UserBlockingPriority &&
                   (lowestPriorityPendingInteractiveExpirationTime === NoWork ||
@@ -20534,7 +20534,7 @@ module.exports = {
                 });
               }
 
-              // TODO: Everything below this is written as if it has been lifted to the
+              // TODO [$5eb7c3e596f1d100072018b1]: Everything below this is written as if it has been lifted to the
               // renderers. I'll do this in a follow-up.
 
               // Linked-list of roots
@@ -20706,7 +20706,7 @@ module.exports = {
                   return;
                 }
 
-                // TODO: Get rid of Sync and use current time?
+                // TODO [$5eb7c3e596f1d100072018b2]: Get rid of Sync and use current time?
                 if (expirationTime === Sync) {
                   performSyncWork();
                 } else {
@@ -20749,7 +20749,7 @@ module.exports = {
                     if (remainingExpirationTime === NoWork) {
                       // This root no longer has work. Remove it from the scheduler.
 
-                      // TODO: This check is redudant, but Flow is confused by the branch
+                      // TODO [$5eb7c3e596f1d100072018b3]: This check is redudant, but Flow is confused by the branch
                       // below where we set lastScheduledRoot to null, even though we break
                       // from the loop right after.
                       !(previousScheduledRoot !== null && lastScheduledRoot !== null)
@@ -20804,7 +20804,7 @@ module.exports = {
                 nextFlushedExpirationTime = highestPriorityWork;
               }
 
-              // TODO: This wrapper exists because many of the older tests (the ones that use
+              // TODO [$5eb7c3e596f1d100072018b4]: This wrapper exists because many of the older tests (the ones that use
               // flushDeferredPri) rely on the number of times `shouldYield` is called. We
               // should get rid of it.
               var didYield = false;
@@ -20963,7 +20963,7 @@ module.exports = {
                 // Check if this is async work or sync/expired work.
                 if (!isYieldy) {
                   // Flush work without yielding.
-                  // TODO: Non-yieldy work does not necessarily imply expired work. A renderer
+                  // TODO [$5eb7c3e596f1d100072018b5]: Non-yieldy work does not necessarily imply expired work. A renderer
                   // may want to perform some work without yielding, but also without
                   // requiring the root to complete (by triggering placeholders).
 
@@ -21077,7 +21077,7 @@ module.exports = {
                 }
               }
 
-              // TODO: Batching should be implemented at the renderer level, not inside
+              // TODO [$5eb7c3e596f1d100072018b6]: Batching should be implemented at the renderer level, not inside
               // the reconciler.
               function batchedUpdates(fn, a) {
                 var previousIsBatchingUpdates = isBatchingUpdates;
@@ -21092,7 +21092,7 @@ module.exports = {
                 }
               }
 
-              // TODO: Batching should be implemented at the renderer level, not inside
+              // TODO [$5eb7c3e596f1d100072018b7]: Batching should be implemented at the renderer level, not inside
               // the reconciler.
               function unbatchedUpdates(fn, a) {
                 if (isBatchingUpdates && !isUnbatchingUpdates) {
@@ -21106,7 +21106,7 @@ module.exports = {
                 return fn(a);
               }
 
-              // TODO: Batching should be implemented at the renderer level, not within
+              // TODO [$5eb7c3e596f1d100072018b8]: Batching should be implemented at the renderer level, not within
               // the reconciler.
               function flushSync(fn, a) {
                 !!isRendering
@@ -21240,7 +21240,7 @@ module.exports = {
               }
 
               function updateContainerAtExpirationTime(element, container, parentComponent, expirationTime, callback) {
-                // TODO: If this is a nested container, this won't be the root.
+                // TODO [$5eb7c3e596f1d100072018b9]: If this is a nested container, this won't be the root.
                 var current$$1 = container.current;
 
                 {
@@ -21456,7 +21456,7 @@ module.exports = {
               // `react-reconciler/inline-typed` (which *is*) for the current renderer.
               // On CI, we run Flow checks for each renderer separately.
 
-              // TODO: decide on the top-level export form.
+              // TODO [$5eb7c3e596f1d100072018ba]: decide on the top-level export form.
               // This is hacky but makes it work with both Rollup and Jest.
               var reactReconciler = ReactFiberReconciler.default || ReactFiberReconciler;
 
@@ -21516,7 +21516,7 @@ module.exports = {
               var enableSchedulerTracing = true;
 
               // Only used in www builds.
-              // TODO: true? Here it might just be false.
+              // TODO [$5eb7c3e596f1d100072018bb]: true? Here it might just be false.
 
               // Only used in www builds.
 
@@ -21930,7 +21930,7 @@ module.exports = {
 
               /* eslint-disable no-var */
 
-              // TODO: Use symbols?
+              // TODO [$5eb7c3e596f1d100072018bc]: Use symbols?
               var ImmediatePriority = 1;
               var UserBlockingPriority = 2;
               var NormalPriority = 3;
@@ -22388,7 +22388,7 @@ module.exports = {
               // we're backgrounded we prefer for that work to happen so that the page
               // continues to load in the background. So we also schedule a 'setTimeout' as
               // a fallback.
-              // TODO: Need a better heuristic for backgrounded work.
+              // TODO [$5eb7c3e596f1d100072018bd]: Need a better heuristic for backgrounded work.
               var ANIMATION_FRAME_TIMEOUT = 100;
               var rAFID;
               var rAFTimeoutID;
@@ -22471,7 +22471,7 @@ module.exports = {
                 };
               } else {
                 if (typeof console !== 'undefined') {
-                  // TODO: Remove fb.me link
+                  // TODO [$5eb7c3e596f1d100072018be]: Remove fb.me link
                   if (typeof localRequestAnimationFrame !== 'function') {
                     console.error(
                       "This browser doesn't support requestAnimationFrame. " +
@@ -22602,7 +22602,7 @@ module.exports = {
                     port.postMessage(undefined);
                   } else if (!isAnimationFrameScheduled) {
                     // If rAF didn't already schedule one, we need to schedule a frame.
-                    // TODO: If this rAF doesn't materialize because the browser throttles, we
+                    // TODO [$5eb7c3e596f1d100072018bf]: If this rAF doesn't materialize because the browser throttles, we
                     // might want to still have setTimeout trigger rIC as a backup to ensure
                     // that we keep performing work.
                     isAnimationFrameScheduled = true;
