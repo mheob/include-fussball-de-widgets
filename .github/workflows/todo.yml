@@ -1,8 +1,14 @@
 name: Todo to Issue
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - develop
+      - 'feature/**'
+  pull_request:
+    branches:
+      - develop
+      - 'feature/**'
 
 jobs:
   collectTODO:
