@@ -2308,9 +2308,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wordpress/babel-preset-default@npm:^4.12.1":
-  version: 4.12.1
-  resolution: "@wordpress/babel-preset-default@npm:4.12.1"
+"@wordpress/babel-preset-default@npm:^4.13.0":
+  version: 4.13.0
+  resolution: "@wordpress/babel-preset-default@npm:4.13.0"
   dependencies:
     "@babel/core": ^7.9.0
     "@babel/plugin-transform-react-jsx": ^7.9.4
@@ -2319,10 +2319,10 @@ __metadata:
     "@babel/runtime": ^7.9.2
     "@wordpress/babel-plugin-import-jsx-pragma": ^2.5.0
     "@wordpress/browserslist-config": ^2.6.0
-    "@wordpress/element": ^2.13.1
+    "@wordpress/element": ^2.14.0
     "@wordpress/warning": ^1.1.0
     core-js: ^3.6.4
-  checksum: 3/212a236ec2c61b78fbd866f4a0122b6f86807a9e9c0102f8bc64159adb107856c31935ef5e2157a381fee374f0c59e24ebf1f6b7fba3a320f70b1706d06f3627
+  checksum: 3/f2e25412c77bc9abd73e70a25f0c13ab53db0105a277a562d93872fe4ba1e9f8ff008b6ef90fbb324b20022a3a7994a5941955a00c5caa20989c8916b523eb4b
   languageName: node
   linkType: hard
 
@@ -2344,16 +2344,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wordpress/element@npm:^2.13.1":
-  version: 2.13.1
-  resolution: "@wordpress/element@npm:2.13.1"
+"@wordpress/element@npm:^2.14.0":
+  version: 2.14.0
+  resolution: "@wordpress/element@npm:2.14.0"
   dependencies:
     "@babel/runtime": ^7.9.2
     "@wordpress/escape-html": ^1.8.0
     lodash: ^4.17.15
     react: ^16.9.0
     react-dom: ^16.9.0
-  checksum: 3/cc8fc543754126fdc57d2a6d7aebe490fea3bbcd58142143d23a9a7d172e8d4dcebf0456f019c7b61c98f42f887afc2dbb134887c9dfbcd586e17063ef922067
+  checksum: 3/daaa8cb2f8a7615ca4368c5c87d7e7a6812a544962bd29b5a2f963ee0af227ab966da06d1f5dd4a9c019602e14d49fcf5dfe6c08af67f46f67c7242f63b11167
   languageName: node
   linkType: hard
 
@@ -2366,9 +2366,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wordpress/eslint-plugin@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@wordpress/eslint-plugin@npm:5.1.0"
+"@wordpress/eslint-plugin@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@wordpress/eslint-plugin@npm:6.0.0"
   dependencies:
     "@wordpress/prettier-config": ^0.2.0
     babel-eslint: ^10.1.0
@@ -2384,7 +2384,7 @@ __metadata:
     requireindex: ^1.2.0
   peerDependencies:
     eslint: 6.x
-  checksum: 3/fb52ea141198ff6dec1bb9f2a638a6850d6ff2662cc2c9ebc1617f3238c209f4928035f3c2958e21d1017a0afc6191a34f0a72f49db7fd64ebdb851e46c3f649
+  checksum: 3/e0bbcabf3b13b082010861846163b9a1404cb71c11ccb1db410f1547e1dd40731affaf10dbbe2411528c09160632cfee5419aca147400f1a1975661731fbd55f
   languageName: node
   linkType: hard
 
@@ -2433,14 +2433,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wordpress/scripts@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "@wordpress/scripts@npm:9.0.0"
+"@wordpress/scripts@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "@wordpress/scripts@npm:9.1.0"
   dependencies:
     "@svgr/webpack": ^5.2.0
-    "@wordpress/babel-preset-default": ^4.12.1
+    "@wordpress/babel-preset-default": ^4.13.0
     "@wordpress/dependency-extraction-webpack-plugin": ^2.6.0
-    "@wordpress/eslint-plugin": ^5.1.0
+    "@wordpress/eslint-plugin": ^6.0.0
     "@wordpress/jest-preset-default": ^6.0.0
     "@wordpress/npm-package-json-lint-config": ^3.0.0
     "@wordpress/prettier-config": ^0.2.0
@@ -2479,7 +2479,7 @@ __metadata:
     webpack-livereload-plugin: ^2.3.0
   bin:
     wp-scripts: ./bin/wp-scripts.js
-  checksum: 3/6d22e9514bc8a0dfe8c7f9b57c773b961a6b4db5535265ab446f684ffadd91e55ded34cbb56435afa8d768e50a19645dfb7e64fb02bb93900c53fb471ba0a17c
+  checksum: 3/6710297868cc3b7d3833d523ca8a3238a3a78f51154791b15bc3e0963e5e05918ee8ef64fd4ff3f8e129e9b091392f4f04f648ffc070ba80ad85df8d0446d2d6
   languageName: node
   linkType: hard
 
@@ -6242,7 +6242,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^23.10.0, eslint-plugin-jest@npm:^23.8.2":
+"eslint-plugin-jest@npm:^23.11.0":
+  version: 23.11.0
+  resolution: "eslint-plugin-jest@npm:23.11.0"
+  dependencies:
+    "@typescript-eslint/experimental-utils": ^2.5.0
+  peerDependencies:
+    eslint: ">=5"
+  checksum: 3/13bb92eaa7de2f6bd374b95fee2ffe8af384461ef563e15a07f57ff2c7afa2dcb58a72d9dbfa5a6207df09ebe22f8d7a68c69694f6a2f1c2cbcf0bd7f53709a0
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-jest@npm:^23.8.2":
   version: 23.10.0
   resolution: "eslint-plugin-jest@npm:23.10.0"
   dependencies:
@@ -6379,6 +6390,27 @@ __metadata:
   peerDependencies:
     eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
   checksum: 3/3e5b7bd3b2ea663716fd2518efd1eed359712711a3c0284ed04e5955e6b7019151d8b54dddad2a9116a54e251dd180bf5ba0ccf34a80ffbe8f4d535a0d03e6b3
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-react@npm:^7.20.0":
+  version: 7.20.0
+  resolution: "eslint-plugin-react@npm:7.20.0"
+  dependencies:
+    array-includes: ^3.1.1
+    doctrine: ^2.1.0
+    has: ^1.0.3
+    jsx-ast-utils: ^2.2.3
+    object.entries: ^1.1.1
+    object.fromentries: ^2.0.2
+    object.values: ^1.1.1
+    prop-types: ^15.7.2
+    resolve: ^1.15.1
+    string.prototype.matchall: ^4.0.2
+    xregexp: ^4.3.0
+  peerDependencies:
+    eslint: ^3 || ^4 || ^5 || ^6 || ^7
+  checksum: 3/7033e1a422c1eddd7a3ef58ae1af83d142fac7fce70682facc3e37031b0fcb8509b9f91bdab1235ef47b35e0bf1c459134f906bc059c37ddc654f6fb37bcc1e0
   languageName: node
   linkType: hard
 
@@ -8699,10 +8731,10 @@ fsevents@^2.1.2:
   resolution: "include-fussball-de-widgets@workspace:."
   dependencies:
     "@babel/core": ^7.9.6
-    "@wordpress/babel-preset-default": ^4.12.1
+    "@wordpress/babel-preset-default": ^4.13.0
     "@wordpress/browserslist-config": ^2.6.0
     "@wordpress/dependency-extraction-webpack-plugin": ^2.6.0
-    "@wordpress/scripts": ^9.0.0
+    "@wordpress/scripts": ^9.1.0
     "@yarnpkg/pnpify": ^2.0.0-rc.22
     autoprefixer: ^9.7.6
     babel-eslint: ^10.1.0
@@ -8715,11 +8747,11 @@ fsevents@^2.1.2:
     eslint-config-semistandard: ^15.0.0
     eslint-config-standard: ^14.1.1
     eslint-plugin-import: ^2.20.2
-    eslint-plugin-jest: ^23.10.0
+    eslint-plugin-jest: ^23.11.0
     eslint-plugin-jsx-a11y: ^6.2.3
     eslint-plugin-node: ^11.1.0
     eslint-plugin-promise: ^4.2.1
-    eslint-plugin-react: ^7.19.0
+    eslint-plugin-react: ^7.20.0
     eslint-plugin-standard: ^4.0.1
     husky: ^4.2.5
     indent-string: ^4.0.0
