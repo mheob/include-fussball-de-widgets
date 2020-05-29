@@ -3451,7 +3451,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^9.0.0, autoprefixer@npm:^9.4.5, autoprefixer@npm:^9.7.6":
+"autoprefixer@npm:^9.0.0, autoprefixer@npm:^9.4.5, autoprefixer@npm:^9.7.6, autoprefixer@npm:^9.8.0":
   version: 9.8.0
   resolution: "autoprefixer@npm:9.8.0"
   dependencies:
@@ -8986,7 +8986,7 @@ fsevents@^1.2.7:
     "@wordpress/dependency-extraction-webpack-plugin": ^2.6.0
     "@wordpress/scripts": ^10.0.0
     "@yarnpkg/pnpify": ^2.0.0-rc.22
-    autoprefixer: ^9.7.6
+    autoprefixer: ^9.8.0
     babel-eslint: ^10.1.0
     babel-loader: ^8.1.0
     bestzip: ^2.1.5
@@ -9005,7 +9005,7 @@ fsevents@^1.2.7:
     eslint-plugin-standard: ^4.0.1
     husky: ^4.2.5
     indent-string: ^4.0.0
-    lint-staged: ^10.2.6
+    lint-staged: ^10.2.7
     mini-css-extract-plugin: ^0.9.0
     node-sass: ^4.14.1
     prettier: ^2.0.5
@@ -10828,7 +10828,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^10.2.6":
+"lint-staged@npm:^10.2.7":
   version: 10.2.7
   resolution: "lint-staged@npm:10.2.7"
   dependencies:
