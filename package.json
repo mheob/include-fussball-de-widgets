@@ -48,7 +48,7 @@
     "*.js": "prettier-eslint \"$PWD/src/**/*.js\" --write"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.1",
+    "@babel/core": "^7.10.2",
     "@wordpress/babel-preset-default": "^4.14.0",
     "@wordpress/browserslist-config": "^2.6.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.6.0",
