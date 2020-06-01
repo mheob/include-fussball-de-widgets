@@ -11153,7 +11153,7 @@ stylelint-config-recommended-scss@^3.2.0:
   dependencies:
     stylelint-config-recommended "^2.2.0"
 
-stylelint-config-recommended-scss@^4.1.0:
+stylelint-config-recommended-scss@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-recommended-scss/-/stylelint-config-recommended-scss-4.2.0.tgz#3ad3fc858215cfd16a0f90aecf1ac0ea8a3e6971"
   dependencies:
@@ -11175,13 +11175,13 @@ stylelint-config-wordpress@^13.1.0:
     stylelint-config-recommended-scss "^3.2.0"
     stylelint-scss "^3.3.0"
 
-stylelint-config-wordpress@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-wordpress/-/stylelint-config-wordpress-16.0.0.tgz#65229406adedfc887708af16073697e987c7e5a4"
+stylelint-config-wordpress@^17.0.0:
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-wordpress/-/stylelint-config-wordpress-17.0.0.tgz#26014da588b8e8f60e11af841ee16ec28490ae97"
   dependencies:
     stylelint-config-recommended "^3.0.0"
-    stylelint-config-recommended-scss "^4.1.0"
-    stylelint-scss "^3.13.0"
+    stylelint-config-recommended-scss "^4.2.0"
+    stylelint-scss "^3.17.2"
 
 stylelint-order@^2.2.1:
   version "2.2.1"
@@ -11199,7 +11199,7 @@ stylelint-order@^4.0.0:
     postcss "^7.0.26"
     postcss-sorting "^5.0.1"
 
-stylelint-scss@^3.13.0, stylelint-scss@^3.3.0:
+stylelint-scss@^3.17.2, stylelint-scss@^3.3.0:
   version "3.17.2"
   resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.17.2.tgz#4d849a153f9241834396f5880db2c3c964def4e3"
   dependencies:

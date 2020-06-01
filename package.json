@@ -85,7 +85,7 @@
     "semistandard": "14.2.0",
     "stylelint": "^13.5.0",
     "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-wordpress": "^16.0.0",
+    "stylelint-config-wordpress": "^17.0.0",
     "stylelint-order": "^4.0.0",
     "terser-webpack-plugin": "^3.0.2",
     "thread-loader": "^2.1.3",
