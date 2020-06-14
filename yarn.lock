@@ -8588,6 +8588,12 @@ p-limit@^2.0.0, p-limit@^2.2.0, p-limit@^2.3.0:
   dependencies:
     p-try "^2.0.0"
 
+p-limit@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-3.0.1.tgz#584784ac0722d1aed09f19f90ed2999af6ce2839"
+  dependencies:
+    p-try "^2.0.0"
+
 p-locate@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/p-locate/-/p-locate-2.0.0.tgz#20a0103b222a70c8fd39cc2e580680f3dde5ec43"
@@ -10518,6 +10524,12 @@ serialize-javascript@^3.1.0:
   dependencies:
     randombytes "^2.1.0"
 
+serialize-javascript@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-4.0.0.tgz#b525e1238489a5ecfc42afacc3fe99e666f4b1aa"
+  dependencies:
+    randombytes "^2.1.0"
+
 serve-static@1.14.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.14.1.tgz#666e636dc4f010f7ef29970a88a674320898b2f9"
@@ -11551,16 +11563,16 @@ terser-webpack-plugin@^1.4.3:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser-webpack-plugin@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-3.0.3.tgz#23bda2687b197f878a743373b9411d917adc2e45"
+terser-webpack-plugin@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-3.0.4.tgz#45569bfacff6681ba733abb493e8865d4d87080f"
   dependencies:
     cacache "^15.0.4"
     find-cache-dir "^3.3.1"
     jest-worker "^26.0.0"
-    p-limit "^2.3.0"
+    p-limit "^3.0.1"
     schema-utils "^2.6.6"
-    serialize-javascript "^3.1.0"
+    serialize-javascript "^4.0.0"
     source-map "^0.6.1"
     terser "^4.6.13"
     webpack-sources "^1.4.3"
