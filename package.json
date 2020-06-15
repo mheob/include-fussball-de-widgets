@@ -95,6 +95,6 @@
     "webpack-livereload-plugin": "^2.3.0"
   },
   "dependencies": {
-    "@yarnpkg/pnpify": "^2.0.0-rc.23"
+    "@yarnpkg/pnpify": "^2.0.0-rc.24"
   }
 }

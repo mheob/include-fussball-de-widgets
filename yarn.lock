@@ -1787,15 +1787,15 @@
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
 
-"@yarnpkg/core@^2.0.0-rc.28":
-  version "2.0.0-rc.28"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/core/-/core-2.0.0-rc.28.tgz#0fbd7c59c5bb3427fb51d7dea21b50e579c82e66"
+"@yarnpkg/core@^2.0.0-rc.29":
+  version "2.0.0-rc.29"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/core/-/core-2.0.0-rc.29.tgz#3c588f3c4109209d844db3e893cebeddfa382ae3"
   dependencies:
     "@yarnpkg/fslib" "^2.0.0-rc.21"
     "@yarnpkg/json-proxy" "^2.0.0-rc.8"
     "@yarnpkg/libzip" "^2.0.0-rc.12"
     "@yarnpkg/parsers" "^2.0.0-rc.12"
-    "@yarnpkg/pnp" "^2.0.0-rc.21"
+    "@yarnpkg/pnp" "^2.0.0-rc.22"
     "@yarnpkg/shell" "^2.0.0-rc.12"
     camelcase "^5.3.1"
     chalk "^3.0.0"
@@ -1841,22 +1841,24 @@
   dependencies:
     js-yaml "^3.10.0"
 
-"@yarnpkg/pnp@^2.0.0-rc.21":
-  version "2.0.0-rc.21"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/pnp/-/pnp-2.0.0-rc.21.tgz#d63ea24028e1f363ff90814df23dcae48324051e"
+"@yarnpkg/pnp@^2.0.0-rc.22":
+  version "2.0.0-rc.22"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/pnp/-/pnp-2.0.0-rc.22.tgz#85e525956aa899eda1863dc2b9dc0ce54b4d3237"
   dependencies:
     "@types/node" "^13.7.0"
     "@yarnpkg/fslib" "^2.0.0-rc.21"
 
-"@yarnpkg/pnpify@^2.0.0-rc.23":
-  version "2.0.0-rc.23"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/pnpify/-/pnpify-2.0.0-rc.23.tgz#a40a3f1349623eb0e57d9567335c2f7db6007ab6"
+"@yarnpkg/pnpify@^2.0.0-rc.24":
+  version "2.0.0-rc.24"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/pnpify/-/pnpify-2.0.0-rc.24.tgz#38bce4e00ed27ebc1c1d187dab4092328b2f082a"
   dependencies:
-    "@yarnpkg/core" "^2.0.0-rc.28"
+    "@yarnpkg/core" "^2.0.0-rc.29"
     "@yarnpkg/fslib" "^2.0.0-rc.21"
+    "@yarnpkg/parsers" "^2.0.0-rc.12"
     chalk "^3.0.0"
+    clipanion "^2.4.0"
     comment-json "^2.2.0"
-    cross-spawn "7.0.3"
+    lodash "^4.17.15"
 
 "@yarnpkg/shell@^2.0.0-rc.12":
   version "2.0.0-rc.12"
