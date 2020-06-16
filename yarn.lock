@@ -1640,9 +1640,9 @@
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@wordpress/browserslist-config/-/browserslist-config-2.6.0.tgz#00074a1cb1ba979ba7ac5afc4e322bc8447035d1"
 
-"@wordpress/dependency-extraction-webpack-plugin@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/dependency-extraction-webpack-plugin/-/dependency-extraction-webpack-plugin-2.6.0.tgz#13d34513f9fecbef37b8f93d36111c440850ed5c"
+"@wordpress/dependency-extraction-webpack-plugin@^2.6.0", "@wordpress/dependency-extraction-webpack-plugin@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/dependency-extraction-webpack-plugin/-/dependency-extraction-webpack-plugin-2.7.0.tgz#7e0c1db973a246cc7ebadbfce10e1a610655d3ec"
   dependencies:
     json2php "^0.0.4"
     webpack "^4.8.3"
