@@ -1617,7 +1617,7 @@
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@wordpress/babel-plugin-import-jsx-pragma/-/babel-plugin-import-jsx-pragma-2.6.0.tgz#0b2ee40d1a8d1bda40aadb417b27ff6f82881258"
 
-"@wordpress/babel-preset-default@^4.14.0", "@wordpress/babel-preset-default@^4.15.0":
+"@wordpress/babel-preset-default@^4.15.0":
   version "4.15.0"
   resolved "https://registry.yarnpkg.com/@wordpress/babel-preset-default/-/babel-preset-default-4.15.0.tgz#1806a6f27a77061701028484385ace7d534f60ce"
   dependencies:
@@ -7130,9 +7130,9 @@ lint-staged@9.4.3:
     string-argv "^0.3.0"
     stringify-object "^3.3.0"
 
-lint-staged@^10.2.10:
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.2.10.tgz#f0f78bf8786bbe90e1775a0dc540f7f12b6a79b2"
+lint-staged@^10.2.11:
+  version "10.2.11"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.2.11.tgz#713c80877f2dc8b609b05bc59020234e766c9720"
   dependencies:
     chalk "^4.0.0"
     cli-truncate "2.1.0"
