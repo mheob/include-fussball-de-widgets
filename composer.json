@@ -7,7 +7,7 @@
     "wp-coding-standards/wpcs": "^2.2",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.6",
-    "codedungeon/phpunit-result-printer": "^0.27"
+    "codedungeon/phpunit-result-printer": "^0.28"
   },
   "autoload": {
     "psr-4": {
