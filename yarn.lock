@@ -1637,9 +1637,9 @@
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/@wordpress/base-styles/-/base-styles-1.10.0.tgz#a1badc23bf39d504672d2e182ceac3034102ea46"
 
-"@wordpress/browserslist-config@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/browserslist-config/-/browserslist-config-2.6.0.tgz#00074a1cb1ba979ba7ac5afc4e322bc8447035d1"
+"@wordpress/browserslist-config@^2.6.0", "@wordpress/browserslist-config@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/browserslist-config/-/browserslist-config-2.7.0.tgz#37e39ede39bec5a540dc93b96569787025aadc83"
 
 "@wordpress/dependency-extraction-webpack-plugin@^2.7.0":
   version "2.7.0"
