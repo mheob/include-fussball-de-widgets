@@ -82,7 +82,7 @@
     "prettier-stylelint": "^0.4.2",
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
-    "semistandard": "14.2.0",
+    "semistandard": "14.2.2",
     "stylelint": "^13.6.1",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-wordpress": "^17.0.0",
