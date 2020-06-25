@@ -4200,9 +4200,13 @@ eslint-config-prettier@^6.10.1:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-config-semistandard@15.0.0, eslint-config-semistandard@^15.0.0:
+eslint-config-semistandard@15.0.0:
   version "15.0.0"
   resolved "https://registry.yarnpkg.com/eslint-config-semistandard/-/eslint-config-semistandard-15.0.0.tgz#d8eefccfac4ca9cbc508d38de6cb8fd5e7a72fa9"
+
+eslint-config-semistandard@^15.0.1:
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-semistandard/-/eslint-config-semistandard-15.0.1.tgz#a868397af8fb26d1bb6b907aa9d575d385581099"
 
 eslint-config-standard-jsx@8.1.0:
   version "8.1.0"
