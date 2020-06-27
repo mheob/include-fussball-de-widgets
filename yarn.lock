@@ -1674,10 +1674,6 @@
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@wordpress/base-styles/-/base-styles-1.11.0.tgz#653923af323def903d6c1d73d4fa3b739f55eb5a"
 
-"@wordpress/browserslist-config@^2.6.0", "@wordpress/browserslist-config@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/browserslist-config/-/browserslist-config-2.7.0.tgz#37e39ede39bec5a540dc93b96569787025aadc83"
-
 "@wordpress/browserslist-config@^2.7.0":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@wordpress/browserslist-config/-/browserslist-config-2.7.0.tgz#37e39ede39bec5a540dc93b96569787025aadc83"
@@ -4244,9 +4240,9 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-import@^2.21.2:
-  version "2.21.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.21.2.tgz#8fef77475cc5510801bedc95f84b932f7f334a7c"
+eslint-plugin-import@^2.22.0:
+  version "2.22.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.22.0.tgz#92f7736fe1fde3e2de77623c838dd992ff5ffb7e"
   dependencies:
     array-includes "^3.1.1"
     array.prototype.flat "^1.2.3"
