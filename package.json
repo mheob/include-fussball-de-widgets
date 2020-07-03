@@ -81,7 +81,7 @@
     "prettier-standard": "16.3.0",
     "prettier-stylelint": "^0.4.2",
     "rimraf": "^3.0.2",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^9.0.0",
     "semistandard": "14.2.2",
     "stylelint": "^13.6.1",
     "stylelint-config-rational-order": "^0.1.2",
