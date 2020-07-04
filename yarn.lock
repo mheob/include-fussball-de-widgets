@@ -7111,6 +7111,10 @@ kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
 
+klona@^1.1.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/klona/-/klona-1.1.2.tgz#a79e292518a5a5412ec8d097964bff1571a64db0"
+
 known-css-properties@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.11.0.tgz#0da784f115ea77c76b81536d7052e90ee6c86a8a"
@@ -10361,11 +10365,11 @@ sass-loader@^8.0.2:
     schema-utils "^2.6.1"
     semver "^6.3.0"
 
-sass-loader@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-9.0.0.tgz#06f2624c8d9efc2d989997d351aaad2d46ee1b44"
+sass-loader@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-9.0.1.tgz#8ae96ebb0e9debc3748064d32e43596719814c40"
   dependencies:
-    clone-deep "^4.0.1"
+    klona "^1.1.1"
     loader-utils "^2.0.0"
     neo-async "^2.6.1"
     schema-utils "^2.7.0"
