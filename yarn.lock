@@ -1721,9 +1721,9 @@
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@wordpress/babel-plugin-import-jsx-pragma/-/babel-plugin-import-jsx-pragma-2.7.0.tgz#30fcdb6bb3a3eb37f551021aac338918455782eb"
 
-"@wordpress/babel-preset-default@^4.15.0", "@wordpress/babel-preset-default@^4.16.0":
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/babel-preset-default/-/babel-preset-default-4.16.0.tgz#a382d5cec7be84f5b8b5721ec946356a93796754"
+"@wordpress/babel-preset-default@^4.15.0", "@wordpress/babel-preset-default@^4.17.0":
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/babel-preset-default/-/babel-preset-default-4.17.0.tgz#02b7e22c86ae16669def96a2ef520518954ddf82"
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/plugin-transform-react-jsx" "^7.9.4"
@@ -1732,13 +1732,13 @@
     "@babel/runtime" "^7.9.2"
     "@wordpress/babel-plugin-import-jsx-pragma" "^2.7.0"
     "@wordpress/browserslist-config" "^2.7.0"
-    "@wordpress/element" "^2.15.0"
+    "@wordpress/element" "^2.16.0"
     "@wordpress/warning" "^1.2.0"
     core-js "^3.6.4"
 
-"@wordpress/base-styles@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/base-styles/-/base-styles-1.11.0.tgz#653923af323def903d6c1d73d4fa3b739f55eb5a"
+"@wordpress/base-styles@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/base-styles/-/base-styles-2.0.0.tgz#0b3428df2af8deb406c8ec7dd2c6c2d10f6056e1"
 
 "@wordpress/browserslist-config@^2.7.0":
   version "2.7.0"
@@ -1752,9 +1752,9 @@
     webpack "^4.8.3"
     webpack-sources "^1.3.0"
 
-"@wordpress/element@^2.15.0":
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/element/-/element-2.15.0.tgz#53489c52c0cfb5a18364a75529e26a08493f3bf5"
+"@wordpress/element@^2.16.0":
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/element/-/element-2.16.0.tgz#8196a74a6a9049eed2a5b7a51eb696fd553bbf4c"
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@wordpress/escape-html" "^1.9.0"
@@ -1808,11 +1808,11 @@
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@wordpress/npm-package-json-lint-config/-/npm-package-json-lint-config-3.1.0.tgz#e06d7c8c70fb4fc38947f35a195e49dc058fe9d1"
 
-"@wordpress/postcss-plugins-preset@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/postcss-plugins-preset/-/postcss-plugins-preset-1.2.0.tgz#f2bde46846d345aabe6814cb4801e1715fc90715"
+"@wordpress/postcss-plugins-preset@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/postcss-plugins-preset/-/postcss-plugins-preset-1.3.0.tgz#5144d148af584d0426b32697870788b943046eff"
   dependencies:
-    "@wordpress/base-styles" "^1.11.0"
+    "@wordpress/base-styles" "^2.0.0"
     "@wordpress/postcss-themes" "^2.6.0"
     autoprefixer "^9.4.5"
     postcss-custom-properties "^9.1.1"
@@ -1827,17 +1827,17 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@wordpress/prettier-config/-/prettier-config-0.3.0.tgz#82bb85dd30ca4ae23f1c8cd4f12295e428aa4eed"
 
-"@wordpress/scripts@^12.0.0":
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/scripts/-/scripts-12.0.0.tgz#207d220464bbb9c1b55bde5ed95f461279945168"
+"@wordpress/scripts@^12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/scripts/-/scripts-12.1.0.tgz#17c9479d7b559445cec8d2974ca2292e4842cb63"
   dependencies:
     "@svgr/webpack" "^5.2.0"
-    "@wordpress/babel-preset-default" "^4.16.0"
+    "@wordpress/babel-preset-default" "^4.17.0"
     "@wordpress/dependency-extraction-webpack-plugin" "^2.8.0"
     "@wordpress/eslint-plugin" "^7.1.0"
     "@wordpress/jest-preset-default" "^6.2.0"
     "@wordpress/npm-package-json-lint-config" "^3.1.0"
-    "@wordpress/postcss-plugins-preset" "^1.2.0"
+    "@wordpress/postcss-plugins-preset" "^1.3.0"
     "@wordpress/prettier-config" "^0.3.0"
     babel-jest "^25.3.0"
     babel-loader "^8.1.0"
@@ -1867,6 +1867,7 @@
     source-map-loader "^0.2.4"
     stylelint "^13.6.0"
     stylelint-config-wordpress "^17.0.0"
+    terser-webpack-plugin "^3.0.3"
     thread-loader "^2.1.3"
     url-loader "^3.0.0"
     webpack "^4.42.0"
@@ -11493,7 +11494,7 @@ terser-webpack-plugin@^1.4.3:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser-webpack-plugin@^3.0.6:
+terser-webpack-plugin@^3.0.3, terser-webpack-plugin@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-3.0.6.tgz#db0a108bbdd3680d72c9b491fbabad09ba207b99"
   dependencies:
