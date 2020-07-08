@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
-    "@wordpress/babel-preset-default": "^4.15.0",
+    "@wordpress/babel-preset-default": "^4.17.0",
     "@wordpress/browserslist-config": "^2.7.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.7.0",
     "@wordpress/scripts": "^12.0.0",
