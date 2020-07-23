@@ -11,7 +11,7 @@
 
 Jump to the [german](#deutsch) version.
 
-A WordPress plugin for easy integration of [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1[meinfussball]=1911&cHash=8e54ad110b258ac9679d70637b4ff796#!/).
+A WordPress plugin for easy integration of [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1%5Bmeinfussball%5D=1911&cHash=8e54ad110b258ac9679d70637b4ff796).
 
 ## Installation
 
@@ -72,7 +72,7 @@ A WordPress plugin for easy integration of [fussball.de widgets](http://training
 
 Jump to the [english](#english) version.
 
-Ein WordPress-Plugin für die einfache Integration der [fussball.de Widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1[meinfussball]=1911&cHash=8e54ad110b258ac9679d70637b4ff796#!/).
+Ein WordPress-Plugin für die einfache Integration der [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1%5Bmeinfussball%5D=1911&cHash=8e54ad110b258ac9679d70637b4ff796).
 
 ## Installation
 
