@@ -12,7 +12,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 A WordPress plugin for easy integration of fussball.de widgets.
 
 == Description ==
-A WordPress plugin for easy integration of fussball.de widgets.
+A WordPress plugin for easy integration of [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1%5Bmeinfussball%5D=1911&cHash=8e54ad110b258ac9679d70637b4ff796).
 
 == Installation ==
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
