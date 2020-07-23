@@ -6462,20 +6462,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-semistandard@npm:^15.0.1":
-  version: 15.0.1
-  resolution: "eslint-config-semistandard@npm:15.0.1"
-  peerDependencies:
-    eslint: ">=6.0.1"
-    eslint-config-standard: ">=14.1.0"
-    eslint-plugin-import: ">=2.18.0"
-    eslint-plugin-node: ">=9.1.0"
-    eslint-plugin-promise: ">=4.2.1"
-    eslint-plugin-standard: ">=4.0.0"
-  checksum: 3/2550dfd3f9f4151f52cbbc072dc835d0fbc7582e83715f47f743d31bceabcaffd616dbb8facbcbe804181ea3c387511a4ad608efe109508867e05404a5fcd3c7
-  languageName: node
-  linkType: hard
-
 "eslint-config-standard-jsx@npm:8.1.0":
   version: 8.1.0
   resolution: "eslint-config-standard-jsx@npm:8.1.0"
@@ -9041,7 +9027,6 @@ fsevents@^1.2.7:
     cpr: ^3.0.1
     css-loader: ^3.6.0
     eslint: ^7.5.0
-    eslint-config-semistandard: ^15.0.1
     eslint-config-standard: ^14.1.1
     eslint-plugin-import: ^2.22.0
     eslint-plugin-jest: ^23.18.0

@@ -61,7 +61,6 @@
     "cpr": "^3.0.1",
     "css-loader": "^3.6.0",
     "eslint": "^7.5.0",
-    "eslint-config-semistandard": "^15.0.1",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.18.0",

@@ -48,6 +48,6 @@ const icon = (
       />
     </g>
   </svg>
-);
+)
 
-export default icon;
+export default icon

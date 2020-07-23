@@ -6,7 +6,7 @@ extends:
   - plugin:react/recommended
   - plugin:jsx-a11y/recommended
   - plugin:jest/recommended
-  - semistandard
+  - standard
 
 plugins:
   - react
@@ -38,4 +38,5 @@ parserOptions:
 
 rules:
   max-len: [error, { code: 120 }]
+  quotes: ["error", "double"]
   space-before-function-paren: 0
