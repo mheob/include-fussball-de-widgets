@@ -10432,9 +10432,9 @@ scss-tokenizer@^0.2.3:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
 
-semistandard@14.2.2:
-  version "14.2.2"
-  resolved "https://registry.yarnpkg.com/semistandard/-/semistandard-14.2.2.tgz#eadbb8b2f7817f04de5558665ef3b9df4a719ef6"
+semistandard@14.2.3:
+  version "14.2.3"
+  resolved "https://registry.yarnpkg.com/semistandard/-/semistandard-14.2.3.tgz#30a9622477cd49a09ecdd97e5c0b970269ae626f"
   dependencies:
     eslint "~6.8.0"
     eslint-config-semistandard "15.0.0"
