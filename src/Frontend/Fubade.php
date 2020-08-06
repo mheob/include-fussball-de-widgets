@@ -13,6 +13,7 @@ namespace ITSB\IFDW\Frontend;
 
 use ITSB\IFDW\Utils\Logging\ConsoleLogger;
 use ITSB\IFDW\Utils\Settings;
+use ITSB\IFDW\Utils\StringHelper;
 
 /**
  * The `Fubade` class used to create the output of the widget
@@ -49,7 +50,9 @@ final class Fubade {
 
 		$this->attr = [
 			'api'       => sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $this->attr['api'] ) ) ),
-			'id'        => 'fubade_' . substr( $this->attr['api'], - 5 ),
+			'id'        => StringHelper::startsWith( $this->attr['id'], 'fubade-' )
+										? sanitize_text_field( $this->attr['id'] )
+										: 'fubade-' . random_int( 10, 99 ) . '-' . substr( $this->attr['api'], -5 ),
 			'notice'    => empty( $this->attr['notice'] ) ? '' : sanitize_text_field( $this->attr['notice'] ),
 			'fullwidth' => '1' === $this->attr['fullwidth']
 										|| 'true' === $this->attr['fullwidth']

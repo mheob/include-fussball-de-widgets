@@ -109,9 +109,11 @@ registerBlockType("ifdw/fubade", {
             className="input-control"
             id={inputId}
             onChange={(newApi) => {
-              setAttributes({ api: newApi })
               setAttributes({
-                id: `fubade_${apiLength === newApi.length ? newApi.slice(-5) : "ERROR_" + Number(new Date())}`
+                api: newApi,
+                id: `fubade-${instanceId}-${
+                  apiLength === newApi.length ? newApi.slice(-5) : "ERROR_" + Number(new Date())
+                }`
               })
             }}
             placeholder={__("Insert API here...", "include-fussball-de-widgets")}
