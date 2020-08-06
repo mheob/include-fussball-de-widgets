@@ -3,7 +3,7 @@ Contributors: mheob
 Tags: soccer, football, widget, fussball.de
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url
 Requires at least: 4.8
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 7.2
 Stable tag: 3.2.1
 License: GPL2
@@ -71,10 +71,18 @@ The curly braces from my examples above should only show placeholders. These are
 
 The latest state of development is available at any time in my [Github repository](https://github.com/ITS-Boehm/include-fussball-de-widgets/). Look around there.
 
+= Support of other plugins =
+
+This plugin support Borlabs Cookie since its version 2.0.
+
 == Screenshots ==
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.3.0 - 2020-08-06 =
+= Added =
+* Prevent generation of duplicated ids
+
 = 3.2.1 - 2020-05-01 =
 = Fixed =
 * Load the plugin even if the port is not set to 80 or 443 in a localhost environment.
@@ -250,4 +258,4 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-Load the plugin even if the port is not set to 80 or 443 in a localhost environment.
+Prevent generation of duplicated ids

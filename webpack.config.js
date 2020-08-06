@@ -1,5 +1,6 @@
 const path = require("path")
 
+const PnpWebpackPlugin = require("pnp-webpack-plugin")
 const CopyPlugin = require("copy-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const TerserPlugin = require("terser-webpack-plugin")
@@ -22,6 +23,12 @@ const commonConfig = {
         }
       })
     ]
+  },
+  resolve: {
+    plugins: [PnpWebpackPlugin]
+  },
+  resolveLoader: {
+    plugins: [PnpWebpackPlugin.moduleLoader(module)]
   }
 }
 
@@ -32,22 +39,31 @@ const blockConfig = {
     path: path.resolve(__dirname, "dist"),
     filename: "assets/js/blocks.js"
   },
-  module: {
-    rules: [
-      ...defaultConfig.module.rules,
-      {
-        test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-      }
-    ]
-  },
   plugins: [
     ...defaultConfig.plugins,
     new MiniCssExtractPlugin({
       path: path.resolve(__dirname, "dist"),
       filename: "assets/css/blocks-[name].css"
     })
-  ]
+  ],
+  module: {
+    rules: [
+      ...defaultConfig.module.rules,
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: require.resolve("sass-loader"),
+            options: {
+              implementation: require("sass")
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
 
 const fubadeConfig = {
@@ -59,12 +75,14 @@ const fubadeConfig = {
   },
   plugins: [
     ...defaultConfig.plugins,
-    new CopyPlugin([
-      { from: "**/*.php", to: "../dist/", context: "src" },
-      { from: "*/images/*", to: "../dist/", context: "src" },
-      { from: "../LICENSE", to: "./", context: "dist" },
-      { from: "../readme.txt", to: "./", context: "dist" }
-    ])
+    new CopyPlugin({
+      patterns: [
+        { from: "**/*.php", to: "../dist/", context: "src" },
+        { from: "*/images/*", to: "../dist/", context: "src" },
+        { from: "../LICENSE", to: "./", context: "dist" },
+        { from: "../readme.txt", to: "./", context: "dist" }
+      ]
+    })
   ]
 }
 
