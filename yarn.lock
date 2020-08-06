@@ -5039,6 +5039,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chokidar@npm:>=2.0.0 <4.0.0, chokidar@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "chokidar@npm:3.4.1"
+  dependencies:
+    anymatch: ~3.1.1
+    braces: ~3.0.2
+    fsevents: ~2.1.2
+    glob-parent: ~5.1.0
+    is-binary-path: ~2.1.0
+    is-glob: ~4.0.1
+    normalize-path: ~3.0.0
+    readdirp: ~3.4.0
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  checksum: 3/fdbeae89bdd7832acb0b7a5192b7d6ec1a81aff915609b0b6ff110e58fa211d793fed16ce41ccd9d4c6c7786db1b97cd88984bfe2b87303f04aa6bf0f31feaaa
+  languageName: node
+  linkType: hard
+
 "chokidar@npm:^2.1.8":
   version: 2.1.8
   resolution: "chokidar@npm:2.1.8"
@@ -5059,25 +5078,6 @@ __metadata:
     fsevents:
       optional: true
   checksum: 3/0758dcc7c6c7ace5924cf3c68088210932d391ab41026376b0adb8e07013ac87232e029f13468dfc9ca4dd59adae62a2b7eaedebb6c4e4f0ba92cbf3ac9e3721
-  languageName: node
-  linkType: hard
-
-"chokidar@npm:^3.4.1":
-  version: 3.4.1
-  resolution: "chokidar@npm:3.4.1"
-  dependencies:
-    anymatch: ~3.1.1
-    braces: ~3.0.2
-    fsevents: ~2.1.2
-    glob-parent: ~5.1.0
-    is-binary-path: ~2.1.0
-    is-glob: ~4.0.1
-    normalize-path: ~3.0.0
-    readdirp: ~3.4.0
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  checksum: 3/fdbeae89bdd7832acb0b7a5192b7d6ec1a81aff915609b0b6ff110e58fa211d793fed16ce41ccd9d4c6c7786db1b97cd88984bfe2b87303f04aa6bf0f31feaaa
   languageName: node
   linkType: hard
 
@@ -9991,13 +9991,14 @@ fsevents@^1.2.7:
     indent-string: ^4.0.0
     lint-staged: ^10.2.11
     mini-css-extract-plugin: ^0.9.0
-    node-sass: ^4.14.1
+    pnp-webpack-plugin: ^1.6.4
     prettier: ^2.0.5
     prettier-eslint: ^11.0.0
     prettier-eslint-cli: ^5.0.0
     prettier-standard: 16.4.1
     prettier-stylelint: ^0.4.2
     rimraf: ^3.0.2
+    sass: ^1.26.10
     sass-loader: ^9.0.3
     semantic-release: ^17.1.1
     stylelint: ^13.6.1
@@ -13965,7 +13966,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"node-sass@npm:^4.13.1, node-sass@npm:^4.14.1":
+"node-sass@npm:^4.13.1":
   version: 4.14.1
   resolution: "node-sass@npm:4.14.1"
   dependencies:
@@ -15381,6 +15382,15 @@ fsevents@^1.2.7:
   version: 1.1.0
   resolution: "pn@npm:1.1.0"
   checksum: 3/7df19be13c86dfab22e8484590480e49d496b270430a731be0bb40cea8a16c29e45188a7303d7c57b7140754f807877b0c10aa95400ad30a7ad4fb3f7d132381
+  languageName: node
+  linkType: hard
+
+"pnp-webpack-plugin@npm:^1.6.4":
+  version: 1.6.4
+  resolution: "pnp-webpack-plugin@npm:1.6.4"
+  dependencies:
+    ts-pnp: ^1.1.6
+  checksum: 3/39a484182f8fc08cb1420d4a5ccf16457c6498a4546bfbad9e00df7238ba7d98796e9aa6f82a4e803a627860409ffed491a55c5a1384e09bed60cefeb618586d
   languageName: node
   linkType: hard
 
@@ -17749,6 +17759,17 @@ resolve@1.15.1:
   languageName: node
   linkType: hard
 
+"sass@npm:^1.26.10":
+  version: 1.26.10
+  resolution: "sass@npm:1.26.10"
+  dependencies:
+    chokidar: ">=2.0.0 <4.0.0"
+  bin:
+    sass: sass.js
+  checksum: 3/001da3a0fa57087f92fc48f7fa9a0f832d6c0ac8a4377df485a555c9db4749bba3fe3da8e46eb015439cb4d40bc1add1f704523914152f5a18f2358bd58f51d9
+  languageName: node
+  linkType: hard
+
 "sax@npm:~1.2.4":
   version: 1.2.4
   resolution: "sax@npm:1.2.4"
@@ -19935,6 +19956,18 @@ resolve@1.15.1:
   version: 1.0.1
   resolution: "tryer@npm:1.0.1"
   checksum: 3/0d0fa95e8a3b518d5dc51442cf9dc185ebbc534173c4bf74c3fd4e118489b6a2f00765040c893d37dcabbe5dd401ddf5729cdba9857a50e2aabc614f42702341
+  languageName: node
+  linkType: hard
+
+"ts-pnp@npm:^1.1.6":
+  version: 1.2.0
+  resolution: "ts-pnp@npm:1.2.0"
+  peerDependencies:
+    typescript: "*"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 3/78341a27939de565e2754ff65ebb689743c16e3295528089d143c08d91842cf9029c3d6b3c95a9a20854a114a7904329d02c710d63f7ce4dbf671b8a3e560ac1
   languageName: node
   linkType: hard
 

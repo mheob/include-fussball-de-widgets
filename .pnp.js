@@ -97,13 +97,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "mini-css-extract-plugin",
           "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.9.0"
         ],
-        ["node-sass", "npm:4.14.1"],
+        ["pnp-webpack-plugin", "npm:1.6.4"],
         ["prettier", "npm:2.0.5"],
         ["prettier-eslint", "npm:11.0.0"],
         ["prettier-eslint-cli", "npm:5.0.0"],
         ["prettier-standard", "npm:16.4.1"],
         ["prettier-stylelint", "npm:0.4.2"],
         ["rimraf", "npm:3.0.2"],
+        ["sass", "npm:1.26.10"],
         [
           "sass-loader",
           "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.3"
@@ -215,13 +216,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "mini-css-extract-plugin",
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.9.0"
                   ],
-                  ["node-sass", "npm:4.14.1"],
+                  ["pnp-webpack-plugin", "npm:1.6.4"],
                   ["prettier", "npm:2.0.5"],
                   ["prettier-eslint", "npm:11.0.0"],
                   ["prettier-eslint-cli", "npm:5.0.0"],
                   ["prettier-standard", "npm:16.4.1"],
                   ["prettier-stylelint", "npm:0.4.2"],
                   ["rimraf", "npm:3.0.2"],
+                  ["sass", "npm:1.26.10"],
                   [
                     "sass-loader",
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.3"
@@ -17414,13 +17416,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "mini-css-extract-plugin",
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.9.0"
                   ],
-                  ["node-sass", "npm:4.14.1"],
+                  ["pnp-webpack-plugin", "npm:1.6.4"],
                   ["prettier", "npm:2.0.5"],
                   ["prettier-eslint", "npm:11.0.0"],
                   ["prettier-eslint-cli", "npm:5.0.0"],
                   ["prettier-standard", "npm:16.4.1"],
                   ["prettier-stylelint", "npm:0.4.2"],
                   ["rimraf", "npm:3.0.2"],
+                  ["sass", "npm:1.26.10"],
                   [
                     "sass-loader",
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.3"
@@ -25861,6 +25864,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          "pnp-webpack-plugin",
+          [
+            [
+              "npm:1.6.4",
+              {
+                packageLocation:
+                  "./.yarn/cache/pnp-webpack-plugin-npm-1.6.4-c497046afc-3.zip/node_modules/pnp-webpack-plugin/",
+                packageDependencies: [
+                  ["pnp-webpack-plugin", "npm:1.6.4"],
+                  [
+                    "ts-pnp",
+                    "virtual:c497046afcbefb679e3fe12575088ec12205b913a36c3d158b27e7cd646d448426540ab27ba98e54ddb75b1ed97de7e3ce5dc0158c9ba4e76ce942c87e5d02d8#npm:1.2.0"
+                  ]
+                ],
+                linkType: "HARD"
+              }
+            ]
+          ]
+        ],
+        [
           "portfinder",
           [
             [
@@ -29461,6 +29484,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          "sass",
+          [
+            [
+              "npm:1.26.10",
+              {
+                packageLocation: "./.yarn/cache/sass-npm-1.26.10-3da25ce4be-3.zip/node_modules/sass/",
+                packageDependencies: [
+                  ["sass", "npm:1.26.10"],
+                  ["chokidar", "npm:3.4.1"]
+                ],
+                linkType: "HARD"
+              }
+            ]
+          ]
+        ],
+        [
           "sass-graph",
           [
             [
@@ -29496,8 +29535,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["klona", "npm:1.1.2"],
                   ["loader-utils", "npm:2.0.0"],
                   ["neo-async", "npm:2.6.2"],
-                  ["node-sass", "npm:4.14.1"],
-                  ["sass", null],
+                  ["node-sass", null],
+                  ["sass", "npm:1.26.10"],
                   ["schema-utils", "npm:2.7.0"],
                   ["semver", "npm:7.3.2"],
                   [
@@ -33068,6 +33107,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               {
                 packageLocation: "./.yarn/cache/tryer-npm-1.0.1-f48ab9ec32-3.zip/node_modules/tryer/",
                 packageDependencies: [["tryer", "npm:1.0.1"]],
+                linkType: "HARD"
+              }
+            ]
+          ]
+        ],
+        [
+          "ts-pnp",
+          [
+            [
+              "virtual:c497046afcbefb679e3fe12575088ec12205b913a36c3d158b27e7cd646d448426540ab27ba98e54ddb75b1ed97de7e3ce5dc0158c9ba4e76ce942c87e5d02d8#npm:1.2.0",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/ts-pnp-virtual-abd2827f29/0/cache/ts-pnp-npm-1.2.0-43620de7df-3.zip/node_modules/ts-pnp/",
+                packageDependencies: [
+                  [
+                    "ts-pnp",
+                    "virtual:c497046afcbefb679e3fe12575088ec12205b913a36c3d158b27e7cd646d448426540ab27ba98e54ddb75b1ed97de7e3ce5dc0158c9ba4e76ce942c87e5d02d8#npm:1.2.0"
+                  ],
+                  ["typescript", null]
+                ],
+                packagePeers: ["typescript"],
                 linkType: "HARD"
               }
             ]
