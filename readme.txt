@@ -3,7 +3,7 @@ Contributors: mheob
 Tags: soccer, football, widget, fussball.de
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url
 Requires at least: 4.8
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 7.2
 Stable tag: 3.2.1
 License: GPL2
@@ -12,7 +12,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 A WordPress plugin for easy integration of fussball.de widgets.
 
 == Description ==
-A WordPress plugin for easy integration of fussball.de widgets.
+A WordPress plugin for easy integration of [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1%5Bmeinfussball%5D=1911&cHash=8e54ad110b258ac9679d70637b4ff796).
 
 == Installation ==
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
@@ -71,10 +71,18 @@ The curly braces from my examples above should only show placeholders. These are
 
 The latest state of development is available at any time in my [Github repository](https://github.com/ITS-Boehm/include-fussball-de-widgets/). Look around there.
 
+= Support of other plugins =
+
+This plugin support Borlabs Cookie since its version 2.0.
+
 == Screenshots ==
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.3.0 - 2020-08-06 =
+= Added =
+* Prevent generation of duplicated ids
+
 = 3.2.1 - 2020-05-01 =
 = Fixed =
 * Load the plugin even if the port is not set to 80 or 443 in a localhost environment.
@@ -250,4 +258,4 @@ The latest state of development is available at any time in my [Github repositor
 * Initial release.
 
 == Upgrade Notice ==
-Load the plugin even if the port is not set to 80 or 443 in a localhost environment.
+Prevent generation of duplicated ids

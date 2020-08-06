@@ -6,7 +6,7 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    ".github*": true,
+    ".github-*": true,
     ".releases": true,
     "assets": true
   },
@@ -119,9 +119,7 @@
     "zip",
     "zlib"
   ],
-  "php-docblocker.extra": [
-    "@since ${###:3.1}"
-  ],
+  "php-docblocker.extra": ["@since ${###:3.1}"],
   "php-docblocker.classTemplate": {
     "myMessage": {
       "content": "Class ${###:Clasname}",

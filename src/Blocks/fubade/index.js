@@ -6,15 +6,15 @@
  * Dynamic block, renders and saves the same content.
  */
 
-import icon from './icon';
-import './editor.scss';
+import icon from "./icon"
+import "./editor.scss"
 
-const { registerBlockType } = wp.blocks;
-const { PanelBody, TextControl, ToggleControl } = wp.components;
-const { withInstanceId } = wp.compose;
-const { InspectorControls, PlainText } = wp.blockEditor;
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
+const { registerBlockType } = wp.blocks
+const { PanelBody, TextControl, ToggleControl } = wp.components
+const { withInstanceId } = wp.compose
+const { InspectorControls, PlainText } = wp.blockEditor
+const { Fragment } = wp.element
+const { __ } = wp.i18n
 
 /**
  * Register the dynamic Gutenberg Block for the `Include Fussball.de Widgets`.
@@ -28,41 +28,41 @@ const { __ } = wp.i18n;
  * @return {WPBlock}           The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType('ifdw/fubade', {
-  title: __('Include Fussball.de Widgets', 'include-fussball-de-widgets'),
-  description: __('Showing the fussball.de widget', 'include-fussball-de-widgets'),
-  category: 'widgets',
+registerBlockType("ifdw/fubade", {
+  title: __("Include Fussball.de Widgets", "include-fussball-de-widgets"),
+  description: __("Showing the fussball.de widget", "include-fussball-de-widgets"),
+  category: "widgets",
   icon,
-  keywords: [__('fubade', 'include-fussball-de-widgets')],
+  keywords: [__("fubade", "include-fussball-de-widgets")],
   attributes: {
-    api: { type: 'string' },
-    id: { type: 'string' },
-    notice: { type: 'string' },
-    fullwidth: { type: 'boolean' },
-    devtools: { type: 'boolean' }
+    api: { type: "string" },
+    id: { type: "string" },
+    notice: { type: "string" },
+    fullwidth: { type: "boolean" },
+    devtools: { type: "boolean" }
   },
   edit: withInstanceId(({ attributes, className, instanceId, setAttributes }) => {
-    const { api = '', notice = '', fullwidth = true, devtools = false } = attributes;
-    const inputId = `${className}-${instanceId}`;
-    const apiLength = 32;
+    const { api = "", notice = "", fullwidth = true, devtools = false } = attributes
+    const inputId = `${className}-${instanceId}`
+    const apiLength = 32
 
     if (Object.entries(attributes).length === 0) {
       setAttributes({
-        api: '',
-        id: '',
-        notice: '',
+        api: "",
+        id: "",
+        notice: "",
         fullwidth: true,
         devtools: false
-      });
+      })
     }
 
     return [
       <InspectorControls key="inspector">
-        <PanelBody title={__('Fussball.de Widgets Settings', 'include-fussball-de-widgets')}>
+        <PanelBody title={__("Fussball.de Widgets Settings", "include-fussball-de-widgets")}>
           <TextControl
-            label={__('Notice', 'include-fussball-de-widgets')}
+            label={__("Notice", "include-fussball-de-widgets")}
             onChange={(newNotice) => {
-              setAttributes({ notice: newNotice });
+              setAttributes({ notice: newNotice })
             }}
             value={notice}
           />
@@ -71,16 +71,16 @@ registerBlockType('ifdw/fubade', {
             checked={fullwidth}
             help={
               fullwidth
-                ? __('The widget will be shown in the maximal width.', 'include-fussball-de-widgets')
+                ? __("The widget will be shown in the maximal width.", "include-fussball-de-widgets")
                 : __(
-                    'The widget will be shown in the width given from fussball.de' +
-                      '(CSS possible could overwrite this setting).',
-                    'include-fussball-de-widgets'
+                    "The widget will be shown in the width given from fussball.de" +
+                      "(CSS possible could overwrite this setting).",
+                    "include-fussball-de-widgets"
                   )
             }
-            label={__('Show in full width', 'include-fussball-de-widgets')}
+            label={__("Show in full width", "include-fussball-de-widgets")}
             onChange={(newFullwidth) => {
-              setAttributes({ fullwidth: newFullwidth });
+              setAttributes({ fullwidth: newFullwidth })
             }}
           />
           {/* eslint-enable indent */}
@@ -88,53 +88,55 @@ registerBlockType('ifdw/fubade', {
             checked={devtools}
             help={
               devtools
-                ? __('Debugging information will be displayed in the browser console.', 'include-fussball-de-widgets')
-                : __('No debugging information were outputted.', 'include-fussball-de-widgets')
+                ? __("Debugging information will be displayed in the browser console.", "include-fussball-de-widgets")
+                : __("No debugging information were outputted.", "include-fussball-de-widgets")
             }
-            label={__('Show some information for debugging', 'include-fussball-de-widgets')}
+            label={__("Show some information for debugging", "include-fussball-de-widgets")}
             onChange={(isDevTools) => {
-              setAttributes({ devtools: isDevTools });
+              setAttributes({ devtools: isDevTools })
             }}
           />
         </PanelBody>
       </InspectorControls>,
       <Fragment key="output">
         <h4 className={`${className}-header`}>
-          {__('Fussball.de Widget', 'include-fussball-de-widgets')}
-          {typeof notice === 'undefined' || notice === '' ? '' : `: "${notice}"`}
+          {__("Fussball.de Widget", "include-fussball-de-widgets")}
+          {typeof notice === "undefined" || notice === "" ? "" : `: "${notice}"`}
         </h4>
         <div className={className}>
-          <label htmlFor={inputId}>{__('Api:', 'include-fussball-de-widgets')}</label>
+          <label htmlFor={inputId}>{__("Api:", "include-fussball-de-widgets")}</label>
           <PlainText
             className="input-control"
             id={inputId}
             onChange={(newApi) => {
-              setAttributes({ api: newApi });
               setAttributes({
-                id: `fubade_${apiLength === newApi.length ? newApi.slice(-5) : 'ERROR_' + Number(new Date())}`
-              });
+                api: newApi,
+                id: `fubade-${instanceId}-${
+                  apiLength === newApi.length ? newApi.slice(-5) : "ERROR_" + Number(new Date())
+                }`
+              })
             }}
-            placeholder={__('Insert API here...', 'include-fussball-de-widgets')}
+            placeholder={__("Insert API here...", "include-fussball-de-widgets")}
             value={api}
           />
         </div>
-        {typeof api !== 'undefined' && apiLength === api.length ? (
+        {typeof api !== "undefined" && apiLength === api.length ? (
           <div className={`${className}-shortcode`}>
-            {__('The widget should now be able to be displayed in the frontend.', 'include-fussball-de-widgets')}
+            {__("The widget should now be able to be displayed in the frontend.", "include-fussball-de-widgets")}
           </div>
         ) : (
           <div className={`${className}-shortcode error`}>
             {__(
-              '!!! The fussball.de API must have a length of exactly 32 characters. !!!',
-              'include-fussball-de-widgets'
+              "!!! The fussball.de API must have a length of exactly 32 characters. !!!",
+              "include-fussball-de-widgets"
             )}
           </div>
         )}
       </Fragment>
-    ];
+    ]
   }),
   save() {
     // Rendering in PHP
-    return null;
+    return null
   }
-});
+})
