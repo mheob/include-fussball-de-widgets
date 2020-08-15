@@ -6109,9 +6109,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "css-loader@npm:4.2.0"
+"css-loader@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "css-loader@npm:4.2.1"
   dependencies:
     camelcase: ^6.0.0
     cssesc: ^3.0.0
@@ -6128,7 +6128,7 @@ __metadata:
     semver: ^7.3.2
   peerDependencies:
     webpack: ^4.27.0 || ^5.0.0
-  checksum: 3/cb813eb5eeb46fb970e3d1d692ccdedcec5f1b16f7a6bd9e29284afb60e50b20fd982d229f993b6c2f3563824bbbd90cdb7dc536e252e51208cc46a79c1bcc80
+  checksum: 3/bd8188efac141352371d3c87e90b6c5658018fa2e9438a22ad38e7a3896e492edb535ae7fe7e56e4c14e43ccc88fbb3a235a0929d4f9302bbf12215687edc9fa
   languageName: node
   linkType: hard
 
@@ -7441,7 +7441,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.20.0, eslint-plugin-react@npm:^7.20.5":
+"eslint-plugin-react@npm:^7.20.0":
   version: 7.20.5
   resolution: "eslint-plugin-react@npm:7.20.5"
   dependencies:
@@ -7459,6 +7459,27 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7
   checksum: 3/389568417db3f3974db23eb2adfe814fa67190cd134f4d7549867f8d654863d572ba2ef7782a5698b3a6e34b469113174c328f2f6dcc08b1a5899131a07580a5
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-react@npm:^7.20.6":
+  version: 7.20.6
+  resolution: "eslint-plugin-react@npm:7.20.6"
+  dependencies:
+    array-includes: ^3.1.1
+    array.prototype.flatmap: ^1.2.3
+    doctrine: ^2.1.0
+    has: ^1.0.3
+    jsx-ast-utils: ^2.4.1
+    object.entries: ^1.1.2
+    object.fromentries: ^2.0.2
+    object.values: ^1.1.1
+    prop-types: ^15.7.2
+    resolve: ^1.17.0
+    string.prototype.matchall: ^4.0.2
+  peerDependencies:
+    eslint: ^3 || ^4 || ^5 || ^6 || ^7
+  checksum: 3/e962f31c322f9b1a41187ef20c0c59cb0ca4185959d8a5345132512cc041d760d25fc6576e5763b86fcc01cb8918328400b793b184035384650b22e02c6f2c24
   languageName: node
   linkType: hard
 
@@ -7619,7 +7640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.1.0, eslint@npm:^7.6.0":
+"eslint@npm:^7.1.0":
   version: 7.6.0
   resolution: "eslint@npm:7.6.0"
   dependencies:
@@ -7662,6 +7683,52 @@ __metadata:
   bin:
     eslint: bin/eslint.js
   checksum: 3/1b73da24232b5796a84caac4d01e39fecc6b89690e0c27b33570f898cb7f6b5d41ed255db9d8880d2eb85cda03d2379d6667abdb8a2d05c45fd17abc0beca8a6
+  languageName: node
+  linkType: hard
+
+"eslint@npm:^7.7.0":
+  version: 7.7.0
+  resolution: "eslint@npm:7.7.0"
+  dependencies:
+    "@babel/code-frame": ^7.0.0
+    ajv: ^6.10.0
+    chalk: ^4.0.0
+    cross-spawn: ^7.0.2
+    debug: ^4.0.1
+    doctrine: ^3.0.0
+    enquirer: ^2.3.5
+    eslint-scope: ^5.1.0
+    eslint-utils: ^2.1.0
+    eslint-visitor-keys: ^1.3.0
+    espree: ^7.2.0
+    esquery: ^1.2.0
+    esutils: ^2.0.2
+    file-entry-cache: ^5.0.1
+    functional-red-black-tree: ^1.0.1
+    glob-parent: ^5.0.0
+    globals: ^12.1.0
+    ignore: ^4.0.6
+    import-fresh: ^3.0.0
+    imurmurhash: ^0.1.4
+    is-glob: ^4.0.0
+    js-yaml: ^3.13.1
+    json-stable-stringify-without-jsonify: ^1.0.1
+    levn: ^0.4.1
+    lodash: ^4.17.19
+    minimatch: ^3.0.4
+    natural-compare: ^1.4.0
+    optionator: ^0.9.1
+    progress: ^2.0.0
+    regexpp: ^3.1.0
+    semver: ^7.2.1
+    strip-ansi: ^6.0.0
+    strip-json-comments: ^3.1.0
+    table: ^5.2.3
+    text-table: ^0.2.0
+    v8-compile-cache: ^2.0.3
+  bin:
+    eslint: bin/eslint.js
+  checksum: 3/6f47e20ec67a8ad58ed79ad350373142fb30387f4b9847f43943d80a2307e74252ea8739a9f53ec850ef5eaf689103c3d7b8bbc71e04e06444687cfda51fe3b7
   languageName: node
   linkType: hard
 
@@ -9976,21 +10043,21 @@ fsevents@^1.2.7:
     commitizen: ^4.1.2
     copy-webpack-plugin: ^6.0.3
     cpr: ^3.0.1
-    css-loader: ^4.2.0
+    css-loader: ^4.2.1
     cz-conventional-changelog: ^3.2.0
-    eslint: ^7.6.0
+    eslint: ^7.7.0
     eslint-config-standard: ^14.1.1
     eslint-plugin-import: ^2.22.0
     eslint-plugin-jest: ^23.20.0
     eslint-plugin-jsx-a11y: ^6.3.1
     eslint-plugin-node: ^11.1.0
     eslint-plugin-promise: ^4.2.1
-    eslint-plugin-react: ^7.20.5
+    eslint-plugin-react: ^7.20.6
     eslint-plugin-standard: ^4.0.1
     husky: ^4.2.5
     indent-string: ^4.0.0
     lint-staged: ^10.2.11
-    mini-css-extract-plugin: ^0.9.0
+    mini-css-extract-plugin: ^0.10.0
     pnp-webpack-plugin: ^1.6.4
     prettier: ^2.0.5
     prettier-eslint: ^11.0.0
@@ -10005,7 +10072,7 @@ fsevents@^1.2.7:
     stylelint-config-rational-order: ^0.1.2
     stylelint-config-wordpress: ^17.0.0
     stylelint-order: ^4.1.0
-    terser-webpack-plugin: ^4.0.0
+    terser-webpack-plugin: ^4.1.0
     thread-loader: ^2.1.3
     webpack: ^4.44.1
     webpack-bundle-analyzer: ^3.8.0
@@ -11484,6 +11551,17 @@ fsevents@^1.2.7:
     merge-stream: ^2.0.0
     supports-color: ^7.0.0
   checksum: 3/ec735534aa8295909383d4a9d0866724c7b98ea38bd3a0c5b061031c037d00dcb32ec7c5b1b77dfb45023b345aa2eaadc876574940bbe21cbc660a9113382d5f
+  languageName: node
+  linkType: hard
+
+"jest-worker@npm:^26.3.0":
+  version: 26.3.0
+  resolution: "jest-worker@npm:26.3.0"
+  dependencies:
+    "@types/node": "*"
+    merge-stream: ^2.0.0
+    supports-color: ^7.0.0
+  checksum: 3/6b7190ef8f6e0dec1a2ed865624e45bc7a7d18795911890423813d1972521abe6f1f2e57076070cb70efa3b5f1b5cf54f33bc7e0bcda41d04341df47f0487d59
   languageName: node
   linkType: hard
 
@@ -13443,6 +13521,20 @@ fsevents@^1.2.7:
   version: 1.0.1
   resolution: "min-indent@npm:1.0.1"
   checksum: 3/c3aeea46bc432e6ce69b86717e98fbb544e338abb5e3c93cfa196c427e3d5a4a6ee4f76e6931a9e424fb53e83451b90fc417ce7db04440a92d68369704ad11d1
+  languageName: node
+  linkType: hard
+
+"mini-css-extract-plugin@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "mini-css-extract-plugin@npm:0.10.0"
+  dependencies:
+    loader-utils: ^1.1.0
+    normalize-url: 1.9.1
+    schema-utils: ^1.0.0
+    webpack-sources: ^1.1.0
+  peerDependencies:
+    webpack: ^4.4.0 || ^5.0.0
+  checksum: 3/2e133cdd20e9de9acbaffc1820be4124432fe6b44078ab08f1eab4b632656ca9e226afb14e4703db8b873435aadecb4b5fa750e1dd439ed370f22897df247aad
   languageName: node
   linkType: hard
 
@@ -19608,13 +19700,13 @@ resolve@1.15.1:
   languageName: node
   linkType: hard
 
-"terser-webpack-plugin@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "terser-webpack-plugin@npm:4.0.0"
+"terser-webpack-plugin@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "terser-webpack-plugin@npm:4.1.0"
   dependencies:
     cacache: ^15.0.5
     find-cache-dir: ^3.3.1
-    jest-worker: ^26.2.1
+    jest-worker: ^26.3.0
     p-limit: ^3.0.2
     schema-utils: ^2.6.6
     serialize-javascript: ^4.0.0
@@ -19623,7 +19715,7 @@ resolve@1.15.1:
     webpack-sources: ^1.4.3
   peerDependencies:
     webpack: ^4.0.0 || ^5.0.0
-  checksum: 3/213246310f464f8216a3b99cfb5333083369a89b2bc8d1e834315ac5fdc7411672ba617b0202cce055d0ea2a99bf3a5a78b13006251f6ab3c9b0b6911dfc6c95
+  checksum: 3/87c3bffc707722895e3f6e742582ef50e0d28115df0257b54826d9f4c42b841ddcd87bb82ac944e6395541ae36fade2b8cf50609fce3f55c99080c6a580f5d10
   languageName: node
   linkType: hard
 
