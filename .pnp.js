@@ -30,7 +30,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ignorePatternData: "(^(?:\\.vscode\\/pnpify(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
       fallbackExclusionList: [["include-fussball-de-widgets", ["workspace:."]]],
       fallbackPool: [
-        ["@babel/core", "npm:7.11.1"],
+        ["@babel/core", "npm:7.11.4"],
+        [
+          "@semantic-release/changelog",
+          "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1"
+        ],
         ["@wordpress/babel-preset-default", "npm:4.17.0"],
         ["@wordpress/browserslist-config", "npm:2.7.0"],
         ["@wordpress/dependency-extraction-webpack-plugin", "npm:2.8.0"],
@@ -149,7 +153,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               {
                 packageLocation: "./",
                 packageDependencies: [
-                  ["@babel/core", "npm:7.11.1"],
+                  ["@babel/core", "npm:7.11.4"],
+                  [
+                    "@semantic-release/changelog",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1"
+                  ],
                   ["@wordpress/babel-preset-default", "npm:4.17.0"],
                   ["@wordpress/browserslist-config", "npm:2.7.0"],
                   ["@wordpress/dependency-extraction-webpack-plugin", "npm:2.8.0"],
@@ -376,6 +384,35 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 ],
                 linkType: "HARD"
               }
+            ],
+            [
+              "npm:7.11.4",
+              {
+                packageLocation: "./.yarn/cache/@babel-core-npm-7.11.4-1b3bf26563-3.zip/node_modules/@babel/core/",
+                packageDependencies: [
+                  ["@babel/core", "npm:7.11.4"],
+                  ["@babel/code-frame", "npm:7.10.4"],
+                  ["@babel/generator", "npm:7.11.4"],
+                  ["@babel/helper-module-transforms", "npm:7.11.0"],
+                  ["@babel/helpers", "npm:7.10.4"],
+                  ["@babel/parser", "npm:7.11.4"],
+                  ["@babel/template", "npm:7.10.4"],
+                  ["@babel/traverse", "npm:7.11.0"],
+                  ["@babel/types", "npm:7.11.0"],
+                  ["convert-source-map", "npm:1.7.0"],
+                  [
+                    "debug",
+                    "virtual:f97e87ce5c078d09fc4187e51128c0b4e6d65e6ffc1d9c4aa1addf154ab797eb9b519b8b4202754bea5d95fe88e15fd3426b3e05808bd29b6ed4b061efc87658#npm:4.2.0"
+                  ],
+                  ["gensync", "npm:1.0.0-beta.1"],
+                  ["json5", "npm:2.1.3"],
+                  ["lodash", "npm:4.17.19"],
+                  ["resolve", "patch:resolve@npm%3A1.17.0#builtin<compat/resolve>::version=1.17.0&hash=e7677c"],
+                  ["semver", "npm:5.7.1"],
+                  ["source-map", "npm:0.5.7"]
+                ],
+                linkType: "HARD"
+              }
             ]
           ]
         ],
@@ -389,6 +426,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   "./.yarn/cache/@babel-generator-npm-7.11.0-e3fecb0d13-3.zip/node_modules/@babel/generator/",
                 packageDependencies: [
                   ["@babel/generator", "npm:7.11.0"],
+                  ["@babel/types", "npm:7.11.0"],
+                  ["jsesc", "npm:2.5.2"],
+                  ["source-map", "npm:0.5.7"]
+                ],
+                linkType: "HARD"
+              }
+            ],
+            [
+              "npm:7.11.4",
+              {
+                packageLocation:
+                  "./.yarn/cache/@babel-generator-npm-7.11.4-1b12b2d728-3.zip/node_modules/@babel/generator/",
+                packageDependencies: [
+                  ["@babel/generator", "npm:7.11.4"],
                   ["@babel/types", "npm:7.11.0"],
                   ["jsesc", "npm:2.5.2"],
                   ["source-map", "npm:0.5.7"]
@@ -915,6 +966,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               {
                 packageLocation: "./.yarn/cache/@babel-parser-npm-7.11.2-62c898a129-3.zip/node_modules/@babel/parser/",
                 packageDependencies: [["@babel/parser", "npm:7.11.2"]],
+                linkType: "HARD"
+              }
+            ],
+            [
+              "npm:7.11.4",
+              {
+                packageLocation: "./.yarn/cache/@babel-parser-npm-7.11.4-62d0d355bd-3.zip/node_modules/@babel/parser/",
+                packageDependencies: [["@babel/parser", "npm:7.11.4"]],
                 linkType: "HARD"
               }
             ],
@@ -4065,6 +4124,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["zenObservable", null]
                 ],
                 packagePeers: ["rxjs", "zenObservable"],
+                linkType: "HARD"
+              }
+            ]
+          ]
+        ],
+        [
+          "@semantic-release/changelog",
+          [
+            [
+              "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/@semantic-release-changelog-virtual-7cf198201a/0/cache/@semantic-release-changelog-npm-5.0.1-6a4fde8bb8-3.zip/node_modules/@semantic-release/changelog/",
+                packageDependencies: [
+                  [
+                    "@semantic-release/changelog",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1"
+                  ],
+                  ["@semantic-release/error", "npm:2.2.0"],
+                  ["aggregate-error", "npm:3.0.1"],
+                  ["fs-extra", "npm:9.0.1"],
+                  ["lodash", "npm:4.17.19"],
+                  ["semantic-release", "npm:17.1.1"]
+                ],
+                packagePeers: ["semantic-release"],
                 linkType: "HARD"
               }
             ]
@@ -8006,7 +8090,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "babel-loader",
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:8.1.0"
                   ],
-                  ["@babel/core", "npm:7.11.1"],
+                  ["@babel/core", "npm:7.11.4"],
                   ["find-cache-dir", "npm:2.1.0"],
                   ["loader-utils", "npm:1.4.0"],
                   ["mkdirp", "npm:0.5.5"],
@@ -17517,7 +17601,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation: "./",
                 packageDependencies: [
                   ["include-fussball-de-widgets", "workspace:."],
-                  ["@babel/core", "npm:7.11.1"],
+                  ["@babel/core", "npm:7.11.4"],
+                  [
+                    "@semantic-release/changelog",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1"
+                  ],
                   ["@wordpress/babel-preset-default", "npm:4.17.0"],
                   ["@wordpress/browserslist-config", "npm:2.7.0"],
                   ["@wordpress/dependency-extraction-webpack-plugin", "npm:2.8.0"],
@@ -38553,7 +38641,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           value: true
         })
         var ErrorCode
-
         ;(function (ErrorCode) {
           ErrorCode["API_ERROR"] = "API_ERROR"
           ErrorCode["BLACKLISTED"] = "BLACKLISTED"

@@ -83,8 +83,7 @@ class Settings {
 		$host = $_SERVER['HTTP_HOST'] ?? '';
 		// phpcs:enable
 
-		if ( ! $port || ( '80' !== $port && '443' !== $port )
-			|| '' === $host || 'localhost' === $host || '127.0.01' === $host ) {
+		if ( ! $port || ! $host || '' === $host || 'localhost' === $host || '127.0.01' === $host ) {
 			self::$host = 'localhost';
 			return;
 		}
