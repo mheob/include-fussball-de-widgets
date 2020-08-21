@@ -102,6 +102,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.10.0"
         ],
         ["pnp-webpack-plugin", "npm:1.6.4"],
+        [
+          "postcss-html",
+          "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.0"
+        ],
+        [
+          "postcss-syntax",
+          "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.2"
+        ],
         ["prettier", "npm:2.0.5"],
         ["prettier-eslint", "npm:11.0.0"],
         ["prettier-eslint-cli", "npm:5.0.0"],
@@ -225,6 +233,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.10.0"
                   ],
                   ["pnp-webpack-plugin", "npm:1.6.4"],
+                  [
+                    "postcss-html",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.0"
+                  ],
+                  [
+                    "postcss-syntax",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.2"
+                  ],
                   ["prettier", "npm:2.0.5"],
                   ["prettier-eslint", "npm:11.0.0"],
                   ["prettier-eslint-cli", "npm:5.0.0"],
@@ -17673,6 +17689,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.10.0"
                   ],
                   ["pnp-webpack-plugin", "npm:1.6.4"],
+                  [
+                    "postcss-html",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.0"
+                  ],
+                  [
+                    "postcss-syntax",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.2"
+                  ],
                   ["prettier", "npm:2.0.5"],
                   ["prettier-eslint", "npm:11.0.0"],
                   ["prettier-eslint-cli", "npm:5.0.0"],
@@ -26296,6 +26320,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               }
             ],
             [
+              "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.0",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/postcss-html-virtual-6dbd16fcc3/0/cache/postcss-html-npm-0.36.0-29df05b0a1-3.zip/node_modules/postcss-html/",
+                packageDependencies: [
+                  [
+                    "postcss-html",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.0"
+                  ],
+                  ["htmlparser2", "npm:3.10.1"],
+                  ["postcss", null],
+                  [
+                    "postcss-syntax",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.2"
+                  ]
+                ],
+                packagePeers: ["postcss", "postcss-syntax"],
+                linkType: "HARD"
+              }
+            ],
+            [
               "virtual:b1d588b7c002723ffd8ecf7a5b45874c32397ddb6912631ef12c8aa2ecfe3a63e90b8abdff7f38d24a1734fde7340ce27c2f051d2588f42691f32782d929c889#npm:0.12.0",
               {
                 packageLocation:
@@ -26837,6 +26882,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["postcss-less", "npm:3.1.4"],
                   ["postcss-markdown", null],
                   ["postcss-scss", "npm:2.1.1"]
+                ],
+                packagePeers: [
+                  "postcss",
+                  "postcss-html",
+                  "postcss-jsx",
+                  "postcss-less",
+                  "postcss-markdown",
+                  "postcss-scss"
+                ],
+                linkType: "HARD"
+              }
+            ],
+            [
+              "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.2",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/postcss-syntax-virtual-955bf75fcf/0/cache/postcss-syntax-npm-0.36.2-ef243fe3b7-3.zip/node_modules/postcss-syntax/",
+                packageDependencies: [
+                  [
+                    "postcss-syntax",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.2"
+                  ],
+                  ["postcss", null],
+                  [
+                    "postcss-html",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.0"
+                  ],
+                  ["postcss-jsx", null],
+                  ["postcss-less", null],
+                  ["postcss-markdown", null],
+                  ["postcss-scss", null]
                 ],
                 packagePeers: [
                   "postcss",
