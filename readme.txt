@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.8
 Tested up to: 5.5
 Requires PHP: 7.2
-Stable tag: 3.3.0
+Stable tag: 3.3.2
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,9 +79,17 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.3.2 - 2020-08-21 =
+== Fixed ==
+* Add the correct version number to the readme and plugin files.
+
+= 3.3.1] - 2020-08-21 =
+== Fixed ==
+* Don't check for the correct server port, only whether the server port is set.
+
 = 3.3.0 - 2020-08-06 =
 = Added =
-* Prevent generation of duplicated ids
+* Prevent generation of duplicated ids.
 
 = 3.2.1 - 2020-05-01 =
 = Fixed =
@@ -258,4 +266,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-Prevent generation of duplicated ids
+Add the correct version number to the readme and plugin files
