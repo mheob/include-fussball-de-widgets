@@ -11,6 +11,7 @@
 
 namespace ITSB\IFDW\Utils;
 
+use ITSB\IFDW\Utils\Logging\ConsoleLogger;
 use ITSB\IFDW\Utils\Host;
 
 /**
@@ -82,6 +83,13 @@ class Settings {
 		$port = $_SERVER['SERVER_PORT'] ?? null;
 		$host = $_SERVER['HTTP_HOST'] ?? '';
 		// phpcs:enable
+
+		// TODO: Only for temporary testing!
+		echo '$port:' . $port;
+		echo '$host:' . $host;
+		// $output  = 'console.log($port: ' . $port . ');' . PHP_EOL;
+		// $output .= 'console.log($host: ' . $host . ');' . PHP_EOL;
+		// wp_add_inline_script( 'dump-server-vars', $output );
 
 		if ( ! $port || ! $host || '' === $host || 'localhost' === $host || '127.0.01' === $host ) {
 			self::$host = 'localhost';
