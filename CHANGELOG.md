@@ -6,11 +6,23 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.3.2] - 2020-08-21
+
+### Fixed
+
+- Add the correct version number to the readme and plugin files.
+
+## [3.3.1] - 2020-08-21
+
+### Fixed
+
+- Don't check for the correct server port, only whether the server port is set.
+
 ## [3.3.0] - 2020-08-06
 
 ### Added
 
-- Prevent generation of duplicated ids
+- Prevent the generation of duplicated ids.
 
 ## [3.2.1] - 2020-01-05
 
@@ -278,7 +290,9 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.0...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.2...HEAD
+[3.3.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.1...v3.3.2
+[3.3.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.2.1...v3.3.0
 [3.2.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.2.0...v3.2.1
 [3.2.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.1.3...v3.2.0
