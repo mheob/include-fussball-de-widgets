@@ -80,11 +80,11 @@ This plugin support Borlabs Cookie since its version 2.0.
 
 == Changelog ==
 = 3.3.2 - 2020-08-21 =
-== Fixed ==
+= Fixed =
 * Add the correct version number to the readme and plugin files.
 
-= 3.3.1] - 2020-08-21 =
-== Fixed ==
+= 3.3.1 - 2020-08-21 =
+= Fixed =
 * Don't check for the correct server port, only whether the server port is set.
 
 = 3.3.0 - 2020-08-06 =
