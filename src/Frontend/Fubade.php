@@ -68,6 +68,10 @@ final class Fubade {
 			wp_enqueue_script( 'fubade-api' );
 		}
 
+		if ( $this->attr['devtools'] ) {
+			wp_localize_script( 'fubade-api', 'attr', [ 'devtools' => $this->attr['devtools'] ] );
+		}
+
 		wp_add_inline_script( 'fubade-api', 'new FussballdeWidgetAPI();', 'after' );
 
 		if ( strlen( $this->attr['api'] ) !== 32 ) {

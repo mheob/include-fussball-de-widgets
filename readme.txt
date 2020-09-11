@@ -79,6 +79,10 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.3.3 - 2020-09-11 =
+= Fixed =
+* Only show the console log statement, if hte devtools are activated.
+
 = 3.3.2 - 2020-08-21 =
 = Fixed =
 * Add the correct version number to the readme and plugin files.
@@ -266,4 +270,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-Add the correct version number to the readme and plugin files
+Only show the console log statement, if hte devtools are activated.
