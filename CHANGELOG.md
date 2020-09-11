@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.3.3] - 2020-09-11
+
+## Fixed
+
+- Only show the console log statement, if hte devtools are activated.
+
 ## [3.3.2] - 2020-08-21
 
 ### Fixed
@@ -290,7 +296,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.2...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.3...HEAD
+[3.3.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.2...v3.3.3
 [3.3.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.1...v3.3.2
 [3.3.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.2.1...v3.3.0

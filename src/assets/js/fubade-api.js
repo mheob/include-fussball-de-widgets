@@ -1,10 +1,17 @@
 window.FussballdeWidgetAPI = () => {
   const widgetObj = {}
 
+  // eslint-disable-next-line no-undef
+  const devTools = typeof attr !== "undefined" && !!attr.devtools
+
   window.addEventListener(
     "message",
     (evt) => {
-      const currentIframe = document.querySelector("#" + evt.data.container + " > iframe")
+      if (devTools) console.log("window.FussballdeWidgetAPI -> evt.data.container", evt.data.container)
+
+      const currentIframe = document.querySelector("#" + evt.data.container + " iframe")
+
+      if (!currentIframe) return
 
       if (evt.data.type === "setHeight") {
         currentIframe.setAttribute("height", evt.data.value + "px")
@@ -30,11 +37,7 @@ window.FussballdeWidgetAPI = () => {
     document.querySelectorAll(".wp-block-kadence-tabs").length > 0
   ) {
     const tabs = document.querySelectorAll(".et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a")
-    const iframes = document.querySelectorAll(
-      `.et_pb_tab_content [id^="fubade_"] > iframe,
-       .fusion-tabs .tab_content [id^="fubade_"] > iframe,
-       .wp-block-kadence-tab [id^="fubade_"] > iframe`
-    )
+    const iframes = document.querySelectorAll("iframe")
     if (tabs.length > 0) {
       Array.from(tabs).forEach((tab) => {
         tab.addEventListener(
@@ -46,7 +49,10 @@ window.FussballdeWidgetAPI = () => {
               }),
               800
             )
-            console.log("Tab clicked", tab)
+            if (devTools) {
+              console.log("window.FussballdeWidgetAPI -> tab", tab)
+              console.log("window.FussballdeWidgetAPI -> iframes", iframes)
+            }
           },
           false
         )
