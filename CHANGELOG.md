@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.3.4] - 2020-09-25
+
+## Fixed
+
+- Set the default value of `INTL_IDNA_VARIANT_UTS46` manually if it is not set from the server.
+
 ## [3.3.3] - 2020-09-11
 
 ## Fixed
@@ -296,7 +302,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release.
 
-[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.3...HEAD
+[unreleased]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.4...HEAD
+[3.3.4]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.3...v3.3.4
 [3.3.3]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.2...v3.3.3
 [3.3.2]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.1...v3.3.2
 [3.3.1]: https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.0...v3.3.1

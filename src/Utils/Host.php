@@ -35,7 +35,7 @@ class Host {
 	public static function cleanHost( ?string $host ): string {
 		if ( ! isset( self::$host ) && ! empty( $host ) ) {
 			if ( extension_loaded( 'intl' ) ) {
-				$host = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
+				$host = idn_to_ascii( $host, IDNA_DEFAULT ?? 0, INTL_IDNA_VARIANT_UTS46 ?? 1 );
 			}
 			self::$host = wp_unslash( $host ) ?? '';
 		}

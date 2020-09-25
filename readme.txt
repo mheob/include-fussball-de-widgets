@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.8
 Tested up to: 5.5
 Requires PHP: 7.2
-Stable tag: 3.3.3
+Stable tag: 3.3.4-beta.1
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,10 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.3.4 - 2020-09-25 =
+= Fixed =
+* Set the default value of `INTL_IDNA_VARIANT_UTS46` manually if it is not set from the server.
+
 = 3.3.3 - 2020-09-11 =
 = Fixed =
 * Only show the console log statement, if hte devtools are activated.
@@ -270,4 +274,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-Only show the console log statement, if hte devtools are activated.
+Set the default value of INTL_IDNA_VARIANT_UTS46 manually if it is not set from the server.
