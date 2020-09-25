@@ -26,43 +26,43 @@ A WordPress plugin for easy integration of [fussball.de widgets](http://training
 
 ## How to use
 
-### How should I write the shortcode?
+### How should I write the shortcode
 
 > `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe in fullwidth} devtools={print devtools}]`\
 > e.g. like:\
 > `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
 
-### What is the `api` as `{32-digit API}`?
+### What is the `api` as `{32-digit API}`
 
 > Here the 32-digit ID must be entered from the official Fußball.de-Widget.\
 > **The API is required.**
 
-### What is the `notice` as `{description}`?
+### What is the `notice` as `{description}`
 
 > The description can be entered according to your own wishes.\
 > **The NOTICE is optional and can be omitted.**
 
-### What is the `fullwidth` as `{iframe in fullwidth}`?
+### What is the `fullwidth` as `{iframe in fullwidth}`
 
 > The IFRAME WIDTH can be set to the full width of 100% to the parent element.\
 > As values are only `true` or `1` possible.\
 > The default value ist `false` or rather `0`.\
 > **The IFRAME WIDTH is optional and can be omitted.**
 
-### What is the `devtools` as `{print devtools}`?
+### What is the `devtools` as `{print devtools}`
 
 > The PRINT DEVTOOLS can help the creator to get debugging information.\
 > As values are only `true` or `1` possible.\
 > The default value ist `false` or rather `0`.\
 > **The PRINT DEVTOOLS is optional and can be omitted.**
 
-### Where can I get the official ID?
+### Where can I get the official ID
 
 > You can get the required ID when you are at fussball.de at your widgets (<https://www.fussball.de/account.admin.widgets>). In the overview of your widget you find the point `Website-Schlüssel`. This is the needed string.
 
-### What can I do if the plugin does not work?
+### What can I do if the plugin does not work
 
-> The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues).\
+> The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on Github](https://github.com/mheob/include-fussball-de-widgets/issues).\
 > \
 > Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.\
 > \
@@ -89,45 +89,45 @@ Ein WordPress-Plugin für die einfache Integration der [fussball.de widgets](htt
    1. In den Versionen seit 5.0 kannst Du den Gutenberg-Block verwenden. Du findest es unter den Widgets oder mit dem Suchmuster `fubade`.
    1. Auch die gewohnten WordPress widgets sind möglich.
 
-## Wie benutzt Du das Plugin?
+## Wie benutzt Du das Plugin
 
-### Wie soll ich den Shortcode schreiben?
+### Wie soll ich den Shortcode schreiben
 
 > `[fubade api="{32-digit API}" notice="{Hinweis}" fullwidth={iframe in voller Breite} devtools={Ausgabe der DevTools}]`\
 > also z.B. so:\
 > `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullwidth=true devtools=false]`
 
-### Was ist die `api` als `{32-stellige API}`?
+### Was ist die `api` als `{32-stellige API}`
 
 > Hier muss die 32-stellige ID (der Website-Schlüssel) aus dem offiziellen Fußball.de-Widget eingegeben werden.\
 > **Die API ist erforderlich.**
 
-### Was ist der `notice` als `{Hinweis}`?
+### Was ist der `notice` als `{Hinweis}`
 
 > Die Beschreibung kann nach eigenen Wünschen eingegeben werden.\
 > **HINWEIS ist optional und kann weggelassen werden.**
 
-### Was ist die `fullwidth` als `{iframe in voller Breite}`?
+### Was ist die `fullwidth` als `{iframe in voller Breite}`
 
 > Die IFRAME IN VOLLER BREITE kann für das übergeordnete Element auf die volle Breite von 100% eingestellt werden.\
 > Als Werte sind nur `true` oder `1` möglich.\
 > Der Standardwert ist `false` bzw. `0`.\
 > **IFRAME IN VOLLER BREITE ist optional und kann weggelassen werden.**
 
-### Was ist das `devtools` als `{Ausgabe der DevTools}`?
+### Was ist das `devtools` als `{Ausgabe der DevTools}`
 
 > Die PRINT DEVTOOLS können dem Ersteller helfen, Debugging-Informationen abzurufen.\
 > Als Werte sind nur `true` oder `1` möglich.\
 > Der Standardwert ist `false` bzw. `0`.\
 > **AUSGABE DER DEVTOOLS ist optional und kann weggelassen werden.**
 
-### Wo kann ich den Website-Schlüssel bekommen?
+### Wo kann ich den Website-Schlüssel bekommen
 
 > Den erforderlichen Ausweis erhältst Du bei fussball.de in Deinen Widgets (<https://www.fussball.de/account.admin.widgets>). In der Übersicht Deines Widgets findest Du den Punkt `Website-Schlüssel`. Dies ist die benötigte Zeichenfolge.
 
-### Was kann ich machen wenn das Plugin nicht funktioniert?
+### Was kann ich machen wenn das Plugin nicht funktioniert
 
-> Der erste Anhaltspunkt sollte immer das [offizielle Support-Forum auf wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch der [Problembereich auf Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues) sein.\
+> Der erste Anhaltspunkt sollte immer das [offizielle Support-Forum auf wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch der [Problembereich auf Github](https://github.com/mheob/include-fussball-de-widgets/issues) sein.\
 > \
 > Gerne und oft werden auch die falschen Anführungszeichen verwendet. Hier muss unbedingt das normale `"`-Zeichen verwendet werden.\
 > \

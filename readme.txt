@@ -61,7 +61,7 @@ You can get the required ID when you are at fussball.de at your widgets (<https:
 
 = What can I do if the plugin does not work? =
 
-The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues).
+The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on Github](https://github.com/mheob/include-fussball-de-widgets/issues).
 
 Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.
 
@@ -69,7 +69,7 @@ The curly braces from my examples above should only show placeholders. These are
 
 = How can I participate in the development? =
 
-The latest state of development is available at any time in my [Github repository](https://github.com/ITS-Boehm/include-fussball-de-widgets/). Look around there.
+The latest state of development is available at any time in my [Github repository](https://github.com/mheob/include-fussball-de-widgets/). Look around there.
 
 = Support of other plugins =
 
