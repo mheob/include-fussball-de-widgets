@@ -1,3 +1,11 @@
+## [3.3.4-beta.1](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.3...v3.3.4-beta.1) (2020-09-26)
+
+
+### Bug Fixes
+
+* **intl:** check `INTL_IDNA_VARIANT_UTS46` is a string ([672c695](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/672c695291c0c64857e06bf4046628e80c2c825a))
+* **intl:** set default value of `INTL_IDNA_VARIANT_UTS46` ([6c6d7df](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/6c6d7dfd51cfbae76e6674550ac02af25b24c4e6))
+
 ## [3.3.4] - 2020-09-25
 
 ## Fixed
