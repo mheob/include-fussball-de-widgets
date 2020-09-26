@@ -1,3 +1,10 @@
+## [3.3.4-beta.4](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.4-beta.3...v3.3.4-beta.4) (2020-09-26)
+
+
+### Bug Fixes
+
+* **intl:** syntax error is fixed ([997449b](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/997449b180ad3b0fffc04b53b2eca3a8cf432fb7))
+
 ## [3.3.4-beta.3](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.4-beta.2...v3.3.4-beta.3) (2020-09-26)
 
 
