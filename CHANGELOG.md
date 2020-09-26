@@ -1,11 +1,3 @@
-<!-- markdownlint-disable MD024 -->
-
-# Changelog
-
-All notable changes to this project will be documented in this file.
-
-## [Unreleased]
-
 ## [3.3.4] - 2020-09-25
 
 ## Fixed
