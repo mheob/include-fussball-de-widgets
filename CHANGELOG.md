@@ -1,3 +1,14 @@
+## [3.3.4](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.3...v3.3.4) (2020-09-26)
+
+
+### Bug Fixes
+
+* **intl:** call the idn_to_ascii function with silence php errors ([dab7b3d](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/dab7b3d72e6d770786b8a6d301a737b3ff8f0c24)), closes [#336](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues/336)
+* **intl:** check `INTL_IDNA_VARIANT_UTS46` is a string ([672c695](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/672c695291c0c64857e06bf4046628e80c2c825a))
+* **intl:** only check `INTL_IDNA_VARIANT_UTS46` is an int ([fdf2852](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/fdf285289a57f800629ae58be80559c6d1b8cdb5)), closes [#336](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues/336)
+* **intl:** set default value of `INTL_IDNA_VARIANT_UTS46` ([6c6d7df](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/6c6d7dfd51cfbae76e6674550ac02af25b24c4e6))
+* **intl:** syntax error is fixed ([997449b](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/997449b180ad3b0fffc04b53b2eca3a8cf432fb7))
+
 ## [3.3.4-beta.4](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.4-beta.3...v3.3.4-beta.4) (2020-09-26)
 
 
