@@ -35,6 +35,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "@semantic-release/changelog",
           "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1"
         ],
+        [
+          "@semantic-release/git",
+          "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.0"
+        ],
         ["@wordpress/babel-preset-default", "npm:4.18.1"],
         ["@wordpress/browserslist-config", "npm:2.7.0"],
         ["@wordpress/dependency-extraction-webpack-plugin", "npm:2.8.0"],
@@ -126,7 +130,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:10.0.2"
         ],
         ["semantic-release", "npm:17.1.2"],
-        ["stylelint", "npm:13.7.1"],
+        ["stylelint", "npm:13.7.2"],
         ["stylelint-config-rational-order", "npm:0.1.2"],
         [
           "stylelint-config-wordpress",
@@ -169,6 +173,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   [
                     "@semantic-release/changelog",
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1"
+                  ],
+                  [
+                    "@semantic-release/git",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.0"
                   ],
                   ["@wordpress/babel-preset-default", "npm:4.18.1"],
                   ["@wordpress/browserslist-config", "npm:2.7.0"],
@@ -261,7 +269,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:10.0.2"
                   ],
                   ["semantic-release", "npm:17.1.2"],
-                  ["stylelint", "npm:13.7.1"],
+                  ["stylelint", "npm:13.7.2"],
                   ["stylelint-config-rational-order", "npm:0.1.2"],
                   [
                     "stylelint-config-wordpress",
@@ -4510,6 +4518,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          "@semantic-release/git",
+          [
+            [
+              "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.0",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/@semantic-release-git-virtual-219331b092/0/cache/@semantic-release-git-npm-9.0.0-28528be7a6-3.zip/node_modules/@semantic-release/git/",
+                packageDependencies: [
+                  [
+                    "@semantic-release/git",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.0"
+                  ],
+                  ["@semantic-release/error", "npm:2.2.0"],
+                  ["aggregate-error", "npm:3.0.1"],
+                  [
+                    "debug",
+                    "virtual:f97e87ce5c078d09fc4187e51128c0b4e6d65e6ffc1d9c4aa1addf154ab797eb9b519b8b4202754bea5d95fe88e15fd3426b3e05808bd29b6ed4b061efc87658#npm:4.2.0"
+                  ],
+                  ["dir-glob", "npm:3.0.1"],
+                  ["execa", "npm:4.0.3"],
+                  ["lodash", "npm:4.17.19"],
+                  ["micromatch", "npm:4.0.2"],
+                  ["p-reduce", "npm:2.1.0"],
+                  ["semantic-release", "npm:17.1.2"]
+                ],
+                packagePeers: ["semantic-release"],
+                linkType: "HARD"
+              }
+            ]
+          ]
+        ],
+        [
           "@semantic-release/github",
           [
             [
@@ -4690,20 +4730,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               }
             ],
             [
-              "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.37.2",
+              "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.37.2",
               {
                 packageLocation:
-                  "./.yarn/$$virtual/@stylelint-postcss-css-in-js-virtual-05de79fb2e/0/cache/@stylelint-postcss-css-in-js-npm-0.37.2-8a19c1b9be-3.zip/node_modules/@stylelint/postcss-css-in-js/",
+                  "./.yarn/$$virtual/@stylelint-postcss-css-in-js-virtual-4b459694cf/0/cache/@stylelint-postcss-css-in-js-npm-0.37.2-8a19c1b9be-3.zip/node_modules/@stylelint/postcss-css-in-js/",
                 packageDependencies: [
                   [
                     "@stylelint/postcss-css-in-js",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.37.2"
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.37.2"
                   ],
                   ["@babel/core", "npm:7.11.1"],
                   ["postcss", "npm:7.0.32"],
                   [
                     "postcss-syntax",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.2"
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.2"
                   ]
                 ],
                 packagePeers: ["postcss", "postcss-syntax"],
@@ -4738,19 +4778,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               }
             ],
             [
-              "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.1",
+              "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.1",
               {
                 packageLocation:
-                  "./.yarn/$$virtual/@stylelint-postcss-markdown-virtual-6475221076/0/cache/@stylelint-postcss-markdown-npm-0.36.1-b68ba6782d-3.zip/node_modules/@stylelint/postcss-markdown/",
+                  "./.yarn/$$virtual/@stylelint-postcss-markdown-virtual-3a013ccd8f/0/cache/@stylelint-postcss-markdown-npm-0.36.1-b68ba6782d-3.zip/node_modules/@stylelint/postcss-markdown/",
                 packageDependencies: [
                   [
                     "@stylelint/postcss-markdown",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.1"
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.1"
                   ],
                   ["postcss", "npm:7.0.32"],
                   [
                     "postcss-syntax",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.2"
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.2"
                   ],
                   ["remark", "npm:12.0.1"],
                   ["unist-util-find-all-after", "npm:3.0.1"]
@@ -18544,6 +18584,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "@semantic-release/changelog",
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1"
                   ],
+                  [
+                    "@semantic-release/git",
+                    "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.0"
+                  ],
                   ["@wordpress/babel-preset-default", "npm:4.18.1"],
                   ["@wordpress/browserslist-config", "npm:2.7.0"],
                   ["@wordpress/dependency-extraction-webpack-plugin", "npm:2.8.0"],
@@ -18635,7 +18679,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:10.0.2"
                   ],
                   ["semantic-release", "npm:17.1.2"],
-                  ["stylelint", "npm:13.7.1"],
+                  ["stylelint", "npm:13.7.2"],
                   ["stylelint-config-rational-order", "npm:0.1.2"],
                   [
                     "stylelint-config-wordpress",
@@ -27869,27 +27913,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               }
             ],
             [
-              "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.0",
-              {
-                packageLocation:
-                  "./.yarn/$$virtual/postcss-html-virtual-b73f515329/0/cache/postcss-html-npm-0.36.0-29df05b0a1-3.zip/node_modules/postcss-html/",
-                packageDependencies: [
-                  [
-                    "postcss-html",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.0"
-                  ],
-                  ["htmlparser2", "npm:3.10.1"],
-                  ["postcss", "npm:7.0.32"],
-                  [
-                    "postcss-syntax",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.2"
-                  ]
-                ],
-                packagePeers: ["postcss", "postcss-syntax"],
-                linkType: "HARD"
-              }
-            ],
-            [
               "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.0",
               {
                 packageLocation:
@@ -27938,6 +27961,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   "postcss-scss",
                   "sugarss"
                 ],
+                linkType: "HARD"
+              }
+            ],
+            [
+              "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.0",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/postcss-html-virtual-4e8996d6cd/0/cache/postcss-html-npm-0.36.0-29df05b0a1-3.zip/node_modules/postcss-html/",
+                packageDependencies: [
+                  [
+                    "postcss-html",
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.0"
+                  ],
+                  ["htmlparser2", "npm:3.10.1"],
+                  ["postcss", "npm:7.0.32"],
+                  [
+                    "postcss-syntax",
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.2"
+                  ]
+                ],
+                packagePeers: ["postcss", "postcss-syntax"],
                 linkType: "HARD"
               }
             ]
@@ -28465,37 +28509,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               }
             ],
             [
-              "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.2",
-              {
-                packageLocation:
-                  "./.yarn/$$virtual/postcss-syntax-virtual-4a0a85b551/0/cache/postcss-syntax-npm-0.36.2-ef243fe3b7-3.zip/node_modules/postcss-syntax/",
-                packageDependencies: [
-                  [
-                    "postcss-syntax",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.2"
-                  ],
-                  ["postcss", "npm:7.0.32"],
-                  [
-                    "postcss-html",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.0"
-                  ],
-                  ["postcss-jsx", null],
-                  ["postcss-less", "npm:3.1.4"],
-                  ["postcss-markdown", null],
-                  ["postcss-scss", "npm:2.1.1"]
-                ],
-                packagePeers: [
-                  "postcss",
-                  "postcss-html",
-                  "postcss-jsx",
-                  "postcss-less",
-                  "postcss-markdown",
-                  "postcss-scss"
-                ],
-                linkType: "HARD"
-              }
-            ],
-            [
               "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:0.36.2",
               {
                 packageLocation:
@@ -28514,6 +28527,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["postcss-less", null],
                   ["postcss-markdown", null],
                   ["postcss-scss", null]
+                ],
+                packagePeers: [
+                  "postcss",
+                  "postcss-html",
+                  "postcss-jsx",
+                  "postcss-less",
+                  "postcss-markdown",
+                  "postcss-scss"
+                ],
+                linkType: "HARD"
+              }
+            ],
+            [
+              "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.2",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/postcss-syntax-virtual-14d3286a05/0/cache/postcss-syntax-npm-0.36.2-ef243fe3b7-3.zip/node_modules/postcss-syntax/",
+                packageDependencies: [
+                  [
+                    "postcss-syntax",
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.2"
+                  ],
+                  ["postcss", "npm:7.0.32"],
+                  [
+                    "postcss-html",
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.0"
+                  ],
+                  ["postcss-jsx", null],
+                  ["postcss-less", "npm:3.1.4"],
+                  ["postcss-markdown", null],
+                  ["postcss-scss", "npm:2.1.1"]
                 ],
                 packagePeers: [
                   "postcss",
@@ -33689,18 +33733,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               }
             ],
             [
-              "npm:13.7.1",
+              "npm:13.7.2",
               {
-                packageLocation: "./.yarn/cache/stylelint-npm-13.7.1-58aca9216f-3.zip/node_modules/stylelint/",
+                packageLocation: "./.yarn/cache/stylelint-npm-13.7.2-dd066448e6-3.zip/node_modules/stylelint/",
                 packageDependencies: [
-                  ["stylelint", "npm:13.7.1"],
+                  ["stylelint", "npm:13.7.2"],
                   [
                     "@stylelint/postcss-css-in-js",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.37.2"
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.37.2"
                   ],
                   [
                     "@stylelint/postcss-markdown",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.1"
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.1"
                   ],
                   ["autoprefixer", "npm:9.8.6"],
                   ["balanced-match", "npm:1.0.0"],
@@ -33732,7 +33776,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["postcss", "npm:7.0.32"],
                   [
                     "postcss-html",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.0"
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.0"
                   ],
                   ["postcss-less", "npm:3.1.4"],
                   ["postcss-media-query-parser", "npm:0.2.3"],
@@ -33743,7 +33787,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["postcss-selector-parser", "npm:6.0.2"],
                   [
                     "postcss-syntax",
-                    "virtual:58aca9216f04fce187954ed05420abb45e52bb369d238c33caf46673b16bb0f987111371659ffa40a5a2a411a6dd8cfd2189eac240ec27f30e788a6b9eb291dd#npm:0.36.2"
+                    "virtual:dd066448e6bdfd8d4a85b43a2cc1e227e91c0311eb9519cbd3c79cd89535f26368d6d15d804ca6d2ca4bcee85197080cd0947c33c9bd542924e7ca4aabef79db#npm:0.36.2"
                   ],
                   ["postcss-value-parser", "npm:4.1.0"],
                   ["resolve-from", "npm:5.0.0"],
@@ -33924,7 +33968,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "stylelint-config-recommended",
                     "virtual:44c6629df422fb44759b59f13e46ee88129f4b56a76ee87813a69fe0b0f9d96696c63aa500537009168b938b03c0aef2c2471410820f5becc64736dcb3745bed#npm:3.0.0"
                   ],
-                  ["stylelint", "npm:13.7.1"]
+                  ["stylelint", "npm:13.7.2"]
                 ],
                 packagePeers: ["stylelint"],
                 linkType: "HARD"
@@ -33961,7 +34005,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "stylelint-config-recommended-scss",
                     "virtual:44c6629df422fb44759b59f13e46ee88129f4b56a76ee87813a69fe0b0f9d96696c63aa500537009168b938b03c0aef2c2471410820f5becc64736dcb3745bed#npm:4.2.0"
                   ],
-                  ["stylelint", "npm:13.7.1"],
+                  ["stylelint", "npm:13.7.2"],
                   [
                     "stylelint-config-recommended",
                     "virtual:44c6629df422fb44759b59f13e46ee88129f4b56a76ee87813a69fe0b0f9d96696c63aa500537009168b938b03c0aef2c2471410820f5becc64736dcb3745bed#npm:3.0.0"
@@ -34042,7 +34086,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "stylelint-config-wordpress",
                     "virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:17.0.0"
                   ],
-                  ["stylelint", "npm:13.7.1"],
+                  ["stylelint", "npm:13.7.2"],
                   [
                     "stylelint-config-recommended",
                     "virtual:44c6629df422fb44759b59f13e46ee88129f4b56a76ee87813a69fe0b0f9d96696c63aa500537009168b938b03c0aef2c2471410820f5becc64736dcb3745bed#npm:3.0.0"
@@ -34078,7 +34122,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["lodash", "npm:4.17.19"],
                   ["postcss", "npm:7.0.32"],
                   ["postcss-sorting", "npm:5.0.1"],
-                  ["stylelint", "npm:13.7.1"]
+                  ["stylelint", "npm:13.7.2"]
                 ],
                 packagePeers: ["stylelint"],
                 linkType: "HARD"
@@ -34123,7 +34167,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["postcss-resolve-nested-selector", "npm:0.1.1"],
                   ["postcss-selector-parser", "npm:6.0.2"],
                   ["postcss-value-parser", "npm:4.1.0"],
-                  ["stylelint", "npm:13.7.1"]
+                  ["stylelint", "npm:13.7.2"]
                 ],
                 packagePeers: ["stylelint"],
                 linkType: "HARD"
@@ -40692,6 +40736,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           value: true
         })
         var ErrorCode
+
         ;(function (ErrorCode) {
           ErrorCode["API_ERROR"] = "API_ERROR"
           ErrorCode["BLACKLISTED"] = "BLACKLISTED"

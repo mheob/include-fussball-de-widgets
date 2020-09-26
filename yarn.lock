@@ -2231,6 +2231,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@semantic-release/git@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@semantic-release/git@npm:9.0.0"
+  dependencies:
+    "@semantic-release/error": ^2.1.0
+    aggregate-error: ^3.0.0
+    debug: ^4.0.0
+    dir-glob: ^3.0.0
+    execa: ^4.0.0
+    lodash: ^4.17.4
+    micromatch: ^4.0.0
+    p-reduce: ^2.0.0
+  peerDependencies:
+    semantic-release: ">=16.0.0 <18.0.0"
+  checksum: 3/8a96bc9e44f537b77515761b1958467b218e294eba7091c1b5e2ce8dd5390e60da9c87e7a91d097d1f24709f0ef980b9657d51a04ca01fbf23207fab9a425b00
+  languageName: node
+  linkType: hard
+
 "@semantic-release/github@npm:^7.0.0":
   version: 7.0.7
   resolution: "@semantic-release/github@npm:7.0.7"
@@ -10776,6 +10794,7 @@ fsevents@^1.2.7:
   dependencies:
     "@babel/core": ^7.11.6
     "@semantic-release/changelog": ^5.0.1
+    "@semantic-release/git": ^9.0.0
     "@wordpress/babel-preset-default": ^4.18.1
     "@wordpress/browserslist-config": ^2.7.0
     "@wordpress/dependency-extraction-webpack-plugin": ^2.8.0
@@ -10816,7 +10835,7 @@ fsevents@^1.2.7:
     sass: ^1.26.11
     sass-loader: ^10.0.2
     semantic-release: ^17.1.2
-    stylelint: ^13.7.1
+    stylelint: ^13.7.2
     stylelint-config-rational-order: ^0.1.2
     stylelint-config-wordpress: ^17.0.0
     stylelint-order: ^4.1.0
@@ -14676,7 +14695,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2":
+"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2":
   version: 4.0.2
   resolution: "micromatch@npm:4.0.2"
   dependencies:
@@ -20607,9 +20626,9 @@ resolve@1.15.1:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^13.7.1":
-  version: 13.7.1
-  resolution: "stylelint@npm:13.7.1"
+"stylelint@npm:^13.7.2":
+  version: 13.7.2
+  resolution: "stylelint@npm:13.7.2"
   dependencies:
     "@stylelint/postcss-css-in-js": ^0.37.2
     "@stylelint/postcss-markdown": ^0.36.1
@@ -20661,7 +20680,7 @@ resolve@1.15.1:
     write-file-atomic: ^3.0.3
   bin:
     stylelint: bin/stylelint.js
-  checksum: 3/09111dd7a84ec640c68f73e33e3791a7129706a384bbb581bac575b336bf290debd89b25a452d6b4fc85ed8abe97acf750e5807ddf8d970e09cbe2f7714b8427
+  checksum: 3/9c9de5ba60ca8e0ccae7a4b44698724fde4dd6aca897389e0e39d7749dad7e083bc52f1fa03f4bcbc438cba758ce759db8415735c8e30cf5d4db5ccf7c510aff
   languageName: node
   linkType: hard
 
