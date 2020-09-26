@@ -35,10 +35,6 @@ class Host {
 	public static function cleanHost( ?string $host ): string {
 		if ( ! isset( self::$host ) && ! empty( $host ) ) {
 			if ( extension_loaded( 'intl' ) ) {
-				// $idna_options = is_int( IDNA_DEFAULT ) ? IDNA_DEFAULT : 0;
-				// $idna_variant = is_int( INTL_IDNA_VARIANT_UTS46 ) ? INTL_IDNA_VARIANT_UTS46 : 1;
-				// $host         = @idn_to_ascii( $host, $idna_options, $idna_variant );
-
 				// phpcs:disable
 				if ( version_compare( phpversion(), Settings::MIN_PHP, '>=' ) ) {
 					$host = @idn_to_ascii( $host );
