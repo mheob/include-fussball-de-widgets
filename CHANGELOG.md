@@ -1,3 +1,10 @@
+## [3.3.4-beta.3](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.4-beta.2...v3.3.4-beta.3) (2020-09-26)
+
+
+### Bug Fixes
+
+* **intl:** call the idn_to_ascii function with silence php errors ([dab7b3d](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/dab7b3d72e6d770786b8a6d301a737b3ff8f0c24)), closes [#336](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues/336)
+
 ## [3.3.4-beta.3](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.4-beta.1...v3.3.4-beta.3) (2020-09-26)
 
 ### Bug Fixes
