@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.8
 Tested up to: 5.5
 Requires PHP: 7.2
-Stable tag: 3.3.2
+Stable tag: 3.3.4
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,7 +61,7 @@ You can get the required ID when you are at fussball.de at your widgets (<https:
 
 = What can I do if the plugin does not work? =
 
-The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on Github](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues).
+The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on Github](https://github.com/mheob/include-fussball-de-widgets/issues).
 
 Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.
 
@@ -69,7 +69,7 @@ The curly braces from my examples above should only show placeholders. These are
 
 = How can I participate in the development? =
 
-The latest state of development is available at any time in my [Github repository](https://github.com/ITS-Boehm/include-fussball-de-widgets/). Look around there.
+The latest state of development is available at any time in my [Github repository](https://github.com/mheob/include-fussball-de-widgets/). Look around there.
 
 = Support of other plugins =
 
@@ -79,6 +79,10 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.3.4 - 2020-09-25 =
+= Fixed =
+* Call the `idn_to_ascii` function without parameter to fix an issue on Mittwald server.
+
 = 3.3.3 - 2020-09-11 =
 = Fixed =
 * Only show the console log statement, if hte devtools are activated.
@@ -270,4 +274,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-Only show the console log statement, if hte devtools are activated.
+* Call the `idn_to_ascii` function without parameter to fix an issue on Mittwald server.

@@ -35,11 +35,18 @@ class Host {
 	public static function cleanHost( ?string $host ): string {
 		if ( ! isset( self::$host ) && ! empty( $host ) ) {
 			if ( extension_loaded( 'intl' ) ) {
-				$host = idn_to_ascii( $host, IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46 );
-			}
-			self::$host = wp_unslash( $host ) ?? '';
-		}
+				// phpcs:disable
+				if ( version_compare( phpversion(), Settings::MIN_PHP, '>=' ) ) {
+					$host = @idn_to_ascii( $host );
+				} else {
+					$host = idn_to_ascii( $host );
+				}
+				// phpcs:enable
 
-		return self::$host ?? Settings::SERVER_NAME_DUMMY;
+				self::$host = wp_unslash( $host ) ?? '';
+			}
+
+			return self::$host ?? Settings::SERVER_NAME_DUMMY;
+		}
 	}
 }
