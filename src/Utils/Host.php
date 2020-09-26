@@ -23,7 +23,7 @@ class Host {
 	 * @since 3.1
 	 * @var string
 	 */
-private static $host;
+	private static $host;
 
 	/**
 	 * Clean up the hostname.
@@ -32,24 +32,25 @@ private static $host;
 	 * @param string|null $host The hostname getting from the server.
 	 * @return string The cleared hostname.
 	 */
-public static function cleanHost( ?string $host ): string {
-	if ( ! isset( self::$host ) && ! empty( $host ) ) {
-		if ( extension_loaded( 'intl' ) ) {
-			// $idna_options = is_int( IDNA_DEFAULT ) ? IDNA_DEFAULT : 0;
-			// $idna_variant = is_int( INTL_IDNA_VARIANT_UTS46 ) ? INTL_IDNA_VARIANT_UTS46 : 1;
-			// $host         = @idn_to_ascii( $host, $idna_options, $idna_variant );
+	public static function cleanHost( ?string $host ): string {
+		if ( ! isset( self::$host ) && ! empty( $host ) ) {
+			if ( extension_loaded( 'intl' ) ) {
+				// $idna_options = is_int( IDNA_DEFAULT ) ? IDNA_DEFAULT : 0;
+				// $idna_variant = is_int( INTL_IDNA_VARIANT_UTS46 ) ? INTL_IDNA_VARIANT_UTS46 : 1;
+				// $host         = @idn_to_ascii( $host, $idna_options, $idna_variant );
 
-			// phpcs:disable
-			if ( version_compare( phpversion(), Settings::MIN_PHP, '>=' ) ) {
-				$host = @idn_to_ascii( $host );
-			} else {
-				$host = idn_to_ascii( $host );
-			}
-			// phpcs:enable
+				// phpcs:disable
+				if ( version_compare( phpversion(), Settings::MIN_PHP, '>=' ) ) {
+					$host = @idn_to_ascii( $host );
+				} else {
+					$host = idn_to_ascii( $host );
+				}
+				// phpcs:enable
 
 				self::$host = wp_unslash( $host ) ?? '';
-		}
+			}
 
-		return self::$host ?? Settings::SERVER_NAME_DUMMY;
+			return self::$host ?? Settings::SERVER_NAME_DUMMY;
+		}
 	}
 }
