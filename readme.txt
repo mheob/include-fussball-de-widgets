@@ -1,7 +1,7 @@
 === Include Fussball.de Widgets ===
 Contributors: mheob
 Tags: soccer, football, widget, fussball.de
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6AM3N8GGMTQS&source=url
+Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
 Tested up to: 5.5
 Requires PHP: 7.2
