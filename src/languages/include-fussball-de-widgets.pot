@@ -178,7 +178,7 @@ msgid "Easy integration of the Fussball.de widgets."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>"
+msgid "Alexander Böhm <ab@its-boehm.de>"
 msgstr ""
 
 #. Author URI of the plugin/theme

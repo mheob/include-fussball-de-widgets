@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
 Tested up to: 5.5
 Requires PHP: 7.2
-Stable tag: 3.3.4
+Stable tag: 3.3.5
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,10 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.3.5 - 2020-10-14 =
+= Fixed =
+* Set the server name even 'intl' is not active.
+
 = 3.3.4 - 2020-09-25 =
 = Fixed =
 * Call the `idn_to_ascii` function without parameter to fix an issue on Mittwald server.
@@ -274,4 +278,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-* Call the `idn_to_ascii` function without parameter to fix an issue on Mittwald server.
+* Set the server name even 'intl' is not active.

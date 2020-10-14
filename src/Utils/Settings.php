@@ -3,10 +3,10 @@
  * Include Fussball.de Widgets
  *
  * @package   ITSB\IncludeFussballDeWidgets
- * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @author    Alexander Böhm <ab@its-boehm.de>
  * @license   GPL2
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
- * @copyright 2019 IT Service Böhm -- Alexander Böhm
+ * @copyright 2019 Alexander Böhm
  */
 
 namespace ITSB\IFDW\Utils;
@@ -19,7 +19,7 @@ use ITSB\IFDW\Utils\Host;
  * @since 3.1
  */
 class Settings {
-	public const VERSION           = '3.3.4';
+	public const VERSION           = '3.3.5';
 	public const MIN_PHP           = '7.2.0';
 	public const MIN_WP            = '4.8';
 	public const SERVER_NAME_DUMMY = 'HTTP_HOST-not-set';
