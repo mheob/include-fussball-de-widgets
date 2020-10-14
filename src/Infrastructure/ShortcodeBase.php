@@ -3,10 +3,10 @@
  * Include Fussball.de Widgets
  *
  * @package   ITSB\IncludeFussballDeWidgets
- * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @author    Alexander Böhm <ab@its-boehm.de>
  * @license   GPL2
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
- * @copyright 2019 IT Service Böhm -- Alexander Böhm
+ * @copyright 2019 Alexander Böhm
  */
 
 namespace ITSB\IFDW\Infrastructure;
