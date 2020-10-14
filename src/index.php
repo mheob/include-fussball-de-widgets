@@ -3,10 +3,10 @@
  * Include Fussball.de Widgets
  *
  * @package   ITSB\IncludeFussballDeWidgets
- * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @author    Alexander Böhm <ab@its-boehm.de>
  * @license   GPL2
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
- * @copyright 2019 IT Service Böhm -- Alexander Böhm
+ * @copyright 2019 Alexander Böhm
  *
  * ------------------------------------------------------------------------
  *
@@ -14,9 +14,9 @@
  * Plugin Name:  Include Fussball.de Widgets
  * Plugin Uri:   https://wordpress.org/plugins/include-fussball-de-widgets/
  * Description:  Easy integration of the Fussball.de widgets.
- * Version:      3.3.4
+ * Version:      3.3.5
  * Requires PHP: 7.2
- * Author:       IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * Author:       Alexander Böhm <ab@its-boehm.de>
  * Author URI:   http://profiles.wordpress.org/mheob
  * Text Domain:  include-fussball-de-widgets
  * Domain Path:  /languages

@@ -3,10 +3,10 @@
  * Include Fussball.de Widgets
  *
  * @package   ITSB\IncludeFussballDeWidgets
- * @author    IT Service Böhm -- Alexander Böhm <ab@its-boehm.de>
+ * @author    Alexander Böhm <ab@its-boehm.de>
  * @license   GPL2
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
- * @copyright 2019 IT Service Böhm -- Alexander Böhm
+ * @copyright 2019 Alexander Böhm
  */
 
 namespace ITSB\IFDW\Utils;
@@ -33,20 +33,16 @@ class Host {
 	 * @return string The cleared hostname.
 	 */
 	public static function cleanHost( ?string $host ): string {
-		if ( ! isset( self::$host ) && ! empty( $host ) ) {
-			if ( extension_loaded( 'intl' ) ) {
-				// phpcs:disable
-				if ( version_compare( phpversion(), Settings::MIN_PHP, '>=' ) ) {
-					$host = @idn_to_ascii( $host );
-				} else {
-					$host = idn_to_ascii( $host );
-				}
-				// phpcs:enable
-
-				self::$host = wp_unslash( $host ) ?? '';
+		if ( ! isset( self::$host ) && ! empty( $host ) && extension_loaded( 'intl' ) ) {
+			// phpcs:disable
+			if ( version_compare( phpversion(), Settings::MIN_PHP, '>=' ) ) {
+				$host = @idn_to_ascii( $host );
+			} else {
+				$host = idn_to_ascii( $host );
 			}
-
-			return self::$host ?? Settings::SERVER_NAME_DUMMY;
+			// phpcs:enable
 		}
+
+		return wp_unslash( $host ) ?? Settings::SERVER_NAME_DUMMY;
 	}
 }
