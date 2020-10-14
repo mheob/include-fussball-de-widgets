@@ -1,3 +1,11 @@
+## [3.3.5](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.4...v3.3.5) (2020-10-14)
+
+
+### Bug Fixes
+
+* **intl:** set the server name even 'intl' is not active ([38206dd](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/38206dd0e580feedb1a8a33140f1068deb8a6d33))
+* **intl:** set the server name even 'intl' is not active ([#354](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues/354)) ([60cd35e](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/60cd35e99b73a2d02e5de362ab7d43da266f2187))
+
 ## [3.3.4](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.3...v3.3.4) (2020-09-26)
 
 
