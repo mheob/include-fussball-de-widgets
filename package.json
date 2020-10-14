@@ -12,7 +12,7 @@
     "url": "https://github.com/ITS-Boehm/include-fussball-de-widgets.git"
   },
   "license": "GPL-2.0-or-later",
-  "author": "IT-Service Böhm -- Alexander Böhm",
+  "author": "Alexander Böhm",
   "scripts": {
     "build": "rimraf dist && webpack && yarn run i18n",
     "clear": "rimraf dist",
