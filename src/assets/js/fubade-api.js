@@ -2,29 +2,29 @@ window.FussballdeWidgetAPI = () => {
   const widgetObj = {}
 
   // eslint-disable-next-line no-undef
-  const devTools = typeof attr !== "undefined" && !!attr.devtools
+  const devTools = typeof attr !== 'undefined' && !!attr.devtools
 
   window.addEventListener(
-    "message",
+    'message',
     (evt) => {
-      if (devTools) console.log("window.FussballdeWidgetAPI -> evt.data.container", evt.data.container)
+      if (devTools) console.log('window.FussballdeWidgetAPI -> evt.data.container', evt.data.container)
 
-      const currentIframe = document.querySelector("#" + evt.data.container + " iframe")
+      const currentIframe = document.querySelector('#' + evt.data.container + ' iframe')
 
       if (!currentIframe) return
 
-      if (evt.data.type === "setHeight") {
-        currentIframe.setAttribute("height", evt.data.value + "px")
-        currentIframe.style.height = ""
-        currentIframe.style.minHeight = "200px"
+      if (evt.data.type === 'setHeight') {
+        currentIframe.setAttribute('height', evt.data.value + 'px')
+        currentIframe.style.height = ''
+        currentIframe.style.minHeight = '200px'
       }
 
-      if (evt.data.type === "setWidth") {
-        if (currentIframe.getAttribute("width") !== "100%") {
-          currentIframe.setAttribute("width", evt.data.value + "px")
+      if (evt.data.type === 'setWidth') {
+        if (currentIframe.getAttribute('width') !== '100%') {
+          currentIframe.setAttribute('width', evt.data.value + 'px')
         }
 
-        currentIframe.style.width = ""
+        currentIframe.style.width = ''
       }
     },
     false
@@ -32,26 +32,26 @@ window.FussballdeWidgetAPI = () => {
 
   /** Support for Divi-Tabs, Fusion-Tabs and Kadence-Blocks-Tabs */
   if (
-    document.body.classList.contains("et_divi_theme") ||
-    document.body.classList.contains("fusion-body") ||
-    document.querySelectorAll(".wp-block-kadence-tabs").length > 0
+    document.body.classList.contains('et_divi_theme') ||
+    document.body.classList.contains('fusion-body') ||
+    document.querySelectorAll('.wp-block-kadence-tabs').length > 0
   ) {
-    const tabs = document.querySelectorAll(".et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a")
-    const iframes = document.querySelectorAll("iframe")
+    const tabs = document.querySelectorAll('.et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a')
+    const iframes = document.querySelectorAll('iframe')
     if (tabs.length > 0) {
       Array.from(tabs).forEach((tab) => {
         tab.addEventListener(
-          "click",
+          'click',
           () => {
             setTimeout(
               Array.from(iframes).forEach((iframe) => {
-                iframe.src += ""
+                iframe.src += ''
               }),
               800
             )
             if (devTools) {
-              console.log("window.FussballdeWidgetAPI -> tab", tab)
-              console.log("window.FussballdeWidgetAPI -> iframes", iframes)
+              console.log('window.FussballdeWidgetAPI -> tab', tab)
+              console.log('window.FussballdeWidgetAPI -> iframes', iframes)
             }
           },
           false
