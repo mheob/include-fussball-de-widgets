@@ -38,5 +38,5 @@ parserOptions:
 
 rules:
   max-len: [error, { code: 120 }]
-  quotes: ["error", "double"]
+  quotes: ['error', 'single']
   space-before-function-paren: 0

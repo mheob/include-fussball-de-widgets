@@ -1,25 +1,27 @@
 version: 2
 updates:
   - package-ecosystem: composer
-    directory: "/"
+    directory: '/'
     schedule:
-      interval: daily
-      time: "04:05"
+      interval: weekly
+      day: sunday
+      time: '04:45'
       timezone: Europe/Berlin
-    open-pull-requests-limit: 10
-    target-branch: develop
+    open-pull-requests-limit: 5
+    target-branch: updates/deps
     reviewers:
       - mheob
     assignees:
       - mheob
   - package-ecosystem: npm
-    directory: "/"
+    directory: '/'
     schedule:
-      interval: daily
-      time: "04:10"
+      interval: weekly
+      day: sunday
+      time: '04:50'
       timezone: Europe/Berlin
-    open-pull-requests-limit: 10
-    target-branch: develop
+    open-pull-requests-limit: 5
+    target-branch: updates/deps
     reviewers:
       - mheob
     assignees:
