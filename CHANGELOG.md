@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.5...v3.4.0) (2020-11-02)
+
+
+### Features
+
+* **tabs:** add Shortcode-Ultimate as same as Divi-Tabs ([#359](https://github.com/ITS-Boehm/include-fussball-de-widgets/issues/359)) ([4833d98](https://github.com/ITS-Boehm/include-fussball-de-widgets/commit/4833d98730683c7c7b45e01404294645b698ee9f))
+
 ## [3.3.5](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.4...v3.3.5) (2020-10-14)
 
 
