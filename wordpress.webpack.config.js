@@ -1,30 +1,30 @@
 /**
  * External dependencies
  */
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
-const LiveReloadPlugin = require("webpack-livereload-plugin")
-const path = require("path")
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const LiveReloadPlugin = require('webpack-livereload-plugin')
+const path = require('path')
 
 /**
  * WordPress dependencies
  */
-const DependencyExtractionWebpackPlugin = require("@wordpress/dependency-extraction-webpack-plugin")
+const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin')
 
-const isProduction = process.env.NODE_ENV === "production"
-const mode = isProduction ? "production" : "development"
+const isProduction = process.env.NODE_ENV === 'production'
+const mode = isProduction ? 'production' : 'development'
 
 const config = {
   mode,
   entry: {
-    index: path.resolve(process.cwd(), "src", "index.js")
+    index: path.resolve(process.cwd(), 'src', 'index.js')
   },
   output: {
-    filename: "[name].js",
-    path: path.resolve(process.cwd(), "build")
+    filename: '[name].js',
+    path: path.resolve(process.cwd(), 'build')
   },
   resolve: {
     alias: {
-      "lodash-es": "lodash"
+      'lodash-es': 'lodash'
     }
   },
   module: {
@@ -33,9 +33,9 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
-          require.resolve("thread-loader"),
+          require.resolve('thread-loader'),
           {
-            loader: require.resolve("babel-loader"),
+            loader: require.resolve('babel-loader'),
             options: {
               // Babel uses a directory within local node_modules
               // by default. Use the environment variable option
@@ -47,7 +47,7 @@ const config = {
               ...{
                 babelrc: false,
                 configFile: false,
-                presets: [require.resolve("@wordpress/babel-preset-default")]
+                presets: [require.resolve('@wordpress/babel-preset-default')]
               }
             }
           }

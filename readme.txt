@@ -79,6 +79,10 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.4.0 - 2020-11-02 =
+= Added =
+* Add Shortcode-Ultimate as the same as Divi-Tabs, Fusion-Tabs and KadenceBlock-Tabs.
+
 = 3.3.5 - 2020-10-14 =
 = Fixed =
 * Set the server name even 'intl' is not active.
@@ -278,4 +282,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-* Set the server name even 'intl' is not active.
+* Add Shortcode-Ultimate as the same as Divi-Tabs, Fusion-Tabs and KadenceBlock-Tabs.
