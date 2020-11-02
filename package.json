@@ -3,13 +3,13 @@
   "version": "0.0.0-development",
   "private": true,
   "description": "A WordPress plugin for easy integration of fussball.de widgets.",
-  "homepage": "https://github.com/ITS-Boehm/include-fussball-de-widgets#readme",
+  "homepage": "https://github.com/mheob/include-fussball-de-widgets#readme",
   "bugs": {
-    "url": "https://github.com/ITS-Boehm/include-fussball-de-widgets/issues"
+    "url": "https://github.com/mheob/include-fussball-de-widgets/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ITS-Boehm/include-fussball-de-widgets.git"
+    "url": "https://github.com/mheob/include-fussball-de-widgets.git"
   },
   "license": "GPL-2.0-or-later",
   "author": "Alexander Böhm",
@@ -116,19 +116,6 @@
     "access": "restricted"
   },
   "release": {
-    "branches": [
-      "main",
-      {
-        "name": "next",
-        "prerelease": "beta"
-      }
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/github",
-      "@semantic-release/git"
-    ]
+    "extends": ".releaserc.json"
   }
 }
