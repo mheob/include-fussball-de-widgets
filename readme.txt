@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
 Tested up to: 5.5
 Requires PHP: 7.2
-Stable tag: 3.3.5
+Stable tag: 3.4.0
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
