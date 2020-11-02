@@ -5,4 +5,4 @@
  * @package Include_Fussball_De_Widgets
  */
 
-import "./fubade"
+import './fubade'
