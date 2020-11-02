@@ -25,7 +25,7 @@
     "lint": "yarn run lint:css && yarn run lint:js",
     "lint:css": "stylelint 'src/**/*.scss'",
     "lint:css:fix": "stylelint 'src/**/*.scss' --fix",
-    "lint:fix": "concurrently \"yarn:lint:*:fix\"",
+    "lint:fix": "yarn run lint:css:fix && yarn run lint:js:fix",
     "lint:js": "eslint 'src/**/*.js'",
     "lint:js:fix": "prettier-eslint \"$PWD/src/**/*.js\" --write",
     "release": "yarn run build && yarn run release:copy && yarn run release:github",

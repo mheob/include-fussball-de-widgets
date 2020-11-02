@@ -120,6 +120,7 @@ registerBlockType('ifdw/fubade', {
             value={api}
           />
         </div>
+        {/* eslint-disable-next-line multiline-ternary */}
         {typeof api !== 'undefined' && apiLength === api.length ? (
           <div className={`${className}-shortcode`}>
             {__('The widget should now be able to be displayed in the frontend.', 'include-fussball-de-widgets')}
