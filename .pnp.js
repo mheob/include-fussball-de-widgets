@@ -36,8 +36,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1'
         ],
         [
+          '@semantic-release/commit-analyzer',
+          'virtual:bb5bc3dcd9feb52e63846a4f57dd689e0ab3bfeb7981a3f742238501291ee57f9438af8407b8b5b3d7f5e505eecb5d11c65894df072701bea1cd1b1ecce8afd6#npm:8.0.1'
+        ],
+        [
           '@semantic-release/git',
           'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.0'
+        ],
+        [
+          '@semantic-release/github',
+          'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.1.1'
+        ],
+        [
+          '@semantic-release/npm',
+          'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.0.6'
+        ],
+        [
+          '@semantic-release/release-notes-generator',
+          'virtual:bb5bc3dcd9feb52e63846a4f57dd689e0ab3bfeb7981a3f742238501291ee57f9438af8407b8b5b3d7f5e505eecb5d11c65894df072701bea1cd1b1ecce8afd6#npm:9.0.1'
         ],
         ['@wordpress/babel-preset-default', 'npm:4.19.0'],
         ['@wordpress/browserslist-config', 'npm:2.7.0'],
@@ -175,8 +191,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1'
                   ],
                   [
+                    '@semantic-release/commit-analyzer',
+                    'virtual:bb5bc3dcd9feb52e63846a4f57dd689e0ab3bfeb7981a3f742238501291ee57f9438af8407b8b5b3d7f5e505eecb5d11c65894df072701bea1cd1b1ecce8afd6#npm:8.0.1'
+                  ],
+                  [
                     '@semantic-release/git',
                     'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.0'
+                  ],
+                  [
+                    '@semantic-release/github',
+                    'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.1.1'
+                  ],
+                  [
+                    '@semantic-release/npm',
+                    'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.0.6'
+                  ],
+                  [
+                    '@semantic-release/release-notes-generator',
+                    'virtual:bb5bc3dcd9feb52e63846a4f57dd689e0ab3bfeb7981a3f742238501291ee57f9438af8407b8b5b3d7f5e505eecb5d11c65894df072701bea1cd1b1ecce8afd6#npm:9.0.1'
                   ],
                   ['@wordpress/babel-preset-default', 'npm:4.19.0'],
                   ['@wordpress/browserslist-config', 'npm:2.7.0'],
@@ -6181,6 +6213,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@semantic-release/github',
           [
             [
+              'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.1.1',
+              {
+                packageLocation:
+                  './.yarn/$$virtual/@semantic-release-github-virtual-1a5531ab86/0/cache/@semantic-release-github-npm-7.1.1-f7a8e0a19d-3.zip/node_modules/@semantic-release/github/',
+                packageDependencies: [
+                  [
+                    '@semantic-release/github',
+                    'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.1.1'
+                  ],
+                  ['@octokit/rest', 'npm:17.11.2'],
+                  ['@semantic-release/error', 'npm:2.2.0'],
+                  ['aggregate-error', 'npm:3.0.1'],
+                  ['bottleneck', 'npm:2.19.5'],
+                  [
+                    'debug',
+                    'virtual:f97e87ce5c078d09fc4187e51128c0b4e6d65e6ffc1d9c4aa1addf154ab797eb9b519b8b4202754bea5d95fe88e15fd3426b3e05808bd29b6ed4b061efc87658#npm:4.2.0'
+                  ],
+                  ['dir-glob', 'npm:3.0.1'],
+                  ['fs-extra', 'npm:9.0.1'],
+                  ['globby', 'npm:11.0.1'],
+                  ['http-proxy-agent', 'npm:4.0.1'],
+                  ['https-proxy-agent', 'npm:5.0.0'],
+                  ['issue-parser', 'npm:6.0.0'],
+                  ['lodash', 'npm:4.17.19'],
+                  ['mime', 'npm:2.4.6'],
+                  ['p-filter', 'npm:2.1.0'],
+                  ['p-retry', 'npm:4.2.0'],
+                  ['semantic-release', 'npm:17.2.2'],
+                  ['url-join', 'npm:4.0.1']
+                ],
+                packagePeers: ['semantic-release'],
+                linkType: 'HARD'
+              }
+            ],
+            [
               'virtual:bb5bc3dcd9feb52e63846a4f57dd689e0ab3bfeb7981a3f742238501291ee57f9438af8407b8b5b3d7f5e505eecb5d11c65894df072701bea1cd1b1ecce8afd6#npm:7.0.7',
               {
                 packageLocation:
@@ -6220,6 +6287,35 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [
           '@semantic-release/npm',
           [
+            [
+              'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.0.6',
+              {
+                packageLocation:
+                  './.yarn/$$virtual/@semantic-release-npm-virtual-b569fb9cf7/0/cache/@semantic-release-npm-npm-7.0.6-7963a2019c-3.zip/node_modules/@semantic-release/npm/',
+                packageDependencies: [
+                  [
+                    '@semantic-release/npm',
+                    'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.0.6'
+                  ],
+                  ['@semantic-release/error', 'npm:2.2.0'],
+                  ['aggregate-error', 'npm:3.0.1'],
+                  ['execa', 'npm:4.0.3'],
+                  ['fs-extra', 'npm:9.0.1'],
+                  ['lodash', 'npm:4.17.19'],
+                  ['nerf-dart', 'npm:1.0.0'],
+                  ['normalize-url', 'npm:5.1.0'],
+                  ['npm', 'npm:6.14.8'],
+                  ['rc', 'npm:1.2.8'],
+                  ['read-pkg', 'npm:5.2.0'],
+                  ['registry-auth-token', 'npm:4.2.0'],
+                  ['semantic-release', 'npm:17.2.2'],
+                  ['semver', 'npm:7.3.2'],
+                  ['tempy', 'npm:0.5.0']
+                ],
+                packagePeers: ['semantic-release'],
+                linkType: 'HARD'
+              }
+            ],
             [
               'virtual:bb5bc3dcd9feb52e63846a4f57dd689e0ab3bfeb7981a3f742238501291ee57f9438af8407b8b5b3d7f5e505eecb5d11c65894df072701bea1cd1b1ecce8afd6#npm:7.0.5',
               {
@@ -20538,8 +20634,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:5.0.1'
                   ],
                   [
+                    '@semantic-release/commit-analyzer',
+                    'virtual:bb5bc3dcd9feb52e63846a4f57dd689e0ab3bfeb7981a3f742238501291ee57f9438af8407b8b5b3d7f5e505eecb5d11c65894df072701bea1cd1b1ecce8afd6#npm:8.0.1'
+                  ],
+                  [
                     '@semantic-release/git',
                     'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:9.0.0'
+                  ],
+                  [
+                    '@semantic-release/github',
+                    'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.1.1'
+                  ],
+                  [
+                    '@semantic-release/npm',
+                    'virtual:61d134e696b74dfdfa252189b4083b57aae2d790f91da361b0837eada17c844b964ab1c4a07de47a9f549b26cc1930639340731ebb0fa0b43983fbc8e51eda0c#npm:7.0.6'
+                  ],
+                  [
+                    '@semantic-release/release-notes-generator',
+                    'virtual:bb5bc3dcd9feb52e63846a4f57dd689e0ab3bfeb7981a3f742238501291ee57f9438af8407b8b5b3d7f5e505eecb5d11c65894df072701bea1cd1b1ecce8afd6#npm:9.0.1'
                   ],
                   ['@wordpress/babel-preset-default', 'npm:4.19.0'],
                   ['@wordpress/browserslist-config', 'npm:2.7.0'],
@@ -27945,6 +28057,139 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 ],
                 linkType: 'HARD'
               }
+            ],
+            [
+              'npm:6.14.8',
+              {
+                packageLocation: './.yarn/unplugged/npm-npm-6.14.8-ab3e9dc4ed/node_modules/npm/',
+                packageDependencies: [
+                  ['npm', 'npm:6.14.8'],
+                  ['JSONStream', 'npm:1.3.5'],
+                  ['abbrev', 'npm:1.1.1'],
+                  ['ansicolors', 'npm:0.3.2'],
+                  ['ansistyles', 'npm:0.1.3'],
+                  ['aproba', 'npm:2.0.0'],
+                  ['archy', 'npm:1.0.0'],
+                  ['bin-links', 'npm:1.1.8'],
+                  ['bluebird', 'npm:3.7.2'],
+                  ['byte-size', 'npm:5.0.1'],
+                  ['cacache', 'npm:12.0.4'],
+                  ['call-limit', 'npm:1.1.1'],
+                  ['chownr', 'npm:1.1.4'],
+                  ['ci-info', 'npm:2.0.0'],
+                  ['cli-columns', 'npm:3.1.2'],
+                  ['cli-table3', 'npm:0.5.1'],
+                  ['cmd-shim', 'npm:3.0.3'],
+                  ['columnify', 'npm:1.5.4'],
+                  ['config-chain', 'npm:1.1.12'],
+                  ['debuglog', 'npm:1.0.1'],
+                  ['detect-indent', 'npm:5.0.0'],
+                  ['detect-newline', 'npm:2.1.0'],
+                  ['dezalgo', 'npm:1.0.3'],
+                  ['editor', 'npm:1.0.0'],
+                  ['figgy-pudding', 'npm:3.5.2'],
+                  ['find-npm-prefix', 'npm:1.0.2'],
+                  ['fs-vacuum', 'npm:1.2.10'],
+                  ['fs-write-stream-atomic', 'npm:1.0.10'],
+                  ['gentle-fs', 'npm:2.3.1'],
+                  ['glob', 'npm:7.1.6'],
+                  ['graceful-fs', 'npm:4.2.4'],
+                  ['has-unicode', 'npm:2.0.1'],
+                  ['hosted-git-info', 'npm:2.8.8'],
+                  ['iferr', 'npm:1.0.2'],
+                  ['imurmurhash', 'npm:0.1.4'],
+                  ['infer-owner', 'npm:1.0.4'],
+                  ['inflight', 'npm:1.0.6'],
+                  ['inherits', 'npm:2.0.4'],
+                  ['ini', 'npm:1.3.5'],
+                  ['init-package-json', 'npm:1.10.3'],
+                  ['is-cidr', 'npm:3.1.1'],
+                  ['json-parse-better-errors', 'npm:1.0.2'],
+                  ['lazy-property', 'npm:1.0.0'],
+                  ['libcipm', 'npm:4.0.8'],
+                  ['libnpm', 'npm:3.0.1'],
+                  ['libnpmaccess', 'npm:3.0.2'],
+                  ['libnpmhook', 'npm:5.0.3'],
+                  ['libnpmorg', 'npm:1.0.1'],
+                  ['libnpmsearch', 'npm:2.0.2'],
+                  ['libnpmteam', 'npm:1.0.2'],
+                  ['libnpx', 'npm:10.2.4'],
+                  ['lock-verify', 'npm:2.2.1'],
+                  ['lockfile', 'npm:1.0.4'],
+                  ['lodash._baseindexof', 'npm:3.1.0'],
+                  ['lodash._baseuniq', 'npm:4.6.0'],
+                  ['lodash._bindcallback', 'npm:3.0.1'],
+                  ['lodash._cacheindexof', 'npm:3.0.2'],
+                  ['lodash._createcache', 'npm:3.1.2'],
+                  ['lodash._getnative', 'npm:3.9.1'],
+                  ['lodash.clonedeep', 'npm:4.5.0'],
+                  ['lodash.restparam', 'npm:3.6.1'],
+                  ['lodash.union', 'npm:4.6.0'],
+                  ['lodash.uniq', 'npm:4.5.0'],
+                  ['lodash.without', 'npm:4.4.0'],
+                  ['lru-cache', 'npm:5.1.1'],
+                  ['meant', 'npm:1.0.2'],
+                  ['mississippi', 'npm:3.0.0'],
+                  ['mkdirp', 'npm:0.5.5'],
+                  ['move-concurrently', 'npm:1.0.1'],
+                  ['node-gyp', 'npm:5.1.1'],
+                  ['nopt', 'npm:4.0.3'],
+                  ['normalize-package-data', 'npm:2.5.0'],
+                  ['npm-audit-report', 'npm:1.3.3'],
+                  ['npm-cache-filename', 'npm:1.0.2'],
+                  ['npm-install-checks', 'npm:3.0.2'],
+                  ['npm-lifecycle', 'npm:3.1.5'],
+                  ['npm-package-arg', 'npm:6.1.1'],
+                  ['npm-packlist', 'npm:1.4.8'],
+                  ['npm-pick-manifest', 'npm:3.0.2'],
+                  ['npm-profile', 'npm:4.0.4'],
+                  ['npm-registry-fetch', 'npm:4.0.7'],
+                  ['npm-user-validate', 'npm:1.0.0'],
+                  ['npmlog', 'npm:4.1.2'],
+                  ['once', 'npm:1.4.0'],
+                  ['opener', 'npm:1.5.1'],
+                  ['osenv', 'npm:0.1.5'],
+                  ['pacote', 'npm:9.5.12'],
+                  ['path-is-inside', 'npm:1.0.2'],
+                  ['promise-inflight', 'npm:1.0.1'],
+                  ['qrcode-terminal', 'npm:0.12.0'],
+                  ['query-string', 'npm:6.13.1'],
+                  ['qw', 'npm:1.0.1'],
+                  ['read', 'npm:1.0.7'],
+                  ['read-cmd-shim', 'npm:1.0.5'],
+                  ['read-installed', 'npm:4.0.3'],
+                  ['read-package-json', 'npm:2.1.1'],
+                  ['read-package-tree', 'npm:5.3.1'],
+                  ['readable-stream', 'npm:3.6.0'],
+                  ['readdir-scoped-modules', 'npm:1.1.0'],
+                  ['request', 'npm:2.88.2'],
+                  ['retry', 'npm:0.12.0'],
+                  ['rimraf', 'npm:2.7.1'],
+                  ['safe-buffer', 'npm:5.1.2'],
+                  ['semver', 'npm:5.7.1'],
+                  ['sha', 'npm:3.0.0'],
+                  ['slide', 'npm:1.1.6'],
+                  ['sorted-object', 'npm:2.0.1'],
+                  ['sorted-union-stream', 'npm:2.1.3'],
+                  ['ssri', 'npm:6.0.1'],
+                  ['stringify-package', 'npm:1.0.1'],
+                  ['tar', 'npm:4.4.13'],
+                  ['text-table', 'npm:0.2.0'],
+                  ['tiny-relative-date', 'npm:1.3.0'],
+                  ['uid-number', 'npm:0.0.6'],
+                  ['umask', 'npm:1.1.0'],
+                  ['unique-filename', 'npm:1.1.1'],
+                  ['unpipe', 'npm:1.0.0'],
+                  ['update-notifier', 'npm:2.5.0'],
+                  ['uuid', 'npm:3.4.0'],
+                  ['validate-npm-package-license', 'npm:3.0.4'],
+                  ['validate-npm-package-name', 'npm:3.0.0'],
+                  ['which', 'npm:1.3.1'],
+                  ['worker-farm', 'npm:1.7.0'],
+                  ['write-file-atomic', 'npm:2.4.3']
+                ],
+                linkType: 'HARD'
+              }
             ]
           ]
         ],
@@ -28186,6 +28431,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   './.yarn/cache/npm-registry-fetch-npm-4.0.5-106a4e1b63-3.zip/node_modules/npm-registry-fetch/',
                 packageDependencies: [
                   ['npm-registry-fetch', 'npm:4.0.5'],
+                  ['JSONStream', 'npm:1.3.5'],
+                  ['bluebird', 'npm:3.7.2'],
+                  ['figgy-pudding', 'npm:3.5.2'],
+                  ['lru-cache', 'npm:5.1.1'],
+                  ['make-fetch-happen', 'npm:5.0.2'],
+                  ['npm-package-arg', 'npm:6.1.1'],
+                  ['safe-buffer', 'npm:5.2.1']
+                ],
+                linkType: 'HARD'
+              }
+            ],
+            [
+              'npm:4.0.7',
+              {
+                packageLocation:
+                  './.yarn/cache/npm-registry-fetch-npm-4.0.7-161b939ca2-3.zip/node_modules/npm-registry-fetch/',
+                packageDependencies: [
+                  ['npm-registry-fetch', 'npm:4.0.7'],
                   ['JSONStream', 'npm:1.3.5'],
                   ['bluebird', 'npm:3.7.2'],
                   ['figgy-pudding', 'npm:3.5.2'],

@@ -2424,7 +2424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/commit-analyzer@npm:^8.0.0":
+"@semantic-release/commit-analyzer@npm:8.0.1, @semantic-release/commit-analyzer@npm:^8.0.0":
   version: 8.0.1
   resolution: "@semantic-release/commit-analyzer@npm:8.0.1"
   dependencies:
@@ -2466,6 +2466,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@semantic-release/github@npm:7.1.1":
+  version: 7.1.1
+  resolution: "@semantic-release/github@npm:7.1.1"
+  dependencies:
+    "@octokit/rest": ^17.0.0
+    "@semantic-release/error": ^2.2.0
+    aggregate-error: ^3.0.0
+    bottleneck: ^2.18.1
+    debug: ^4.0.0
+    dir-glob: ^3.0.0
+    fs-extra: ^9.0.0
+    globby: ^11.0.0
+    http-proxy-agent: ^4.0.0
+    https-proxy-agent: ^5.0.0
+    issue-parser: ^6.0.0
+    lodash: ^4.17.4
+    mime: ^2.4.3
+    p-filter: ^2.0.0
+    p-retry: ^4.0.0
+    url-join: ^4.0.0
+  peerDependencies:
+    semantic-release: ">=16.0.0 <18.0.0"
+  checksum: 3/202f7c91203bac4cf928a093c72f16a84acc7326a10711c64fdbaa89787f175ddac383b05166d18d42464d308378ed1d58ae84b81abf45ce79490bbb579c3f8e
+  languageName: node
+  linkType: hard
+
 "@semantic-release/github@npm:^7.0.0":
   version: 7.0.7
   resolution: "@semantic-release/github@npm:7.0.7"
@@ -2492,6 +2518,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@semantic-release/npm@npm:7.0.6":
+  version: 7.0.6
+  resolution: "@semantic-release/npm@npm:7.0.6"
+  dependencies:
+    "@semantic-release/error": ^2.2.0
+    aggregate-error: ^3.0.0
+    execa: ^4.0.0
+    fs-extra: ^9.0.0
+    lodash: ^4.17.15
+    nerf-dart: ^1.0.0
+    normalize-url: ^5.0.0
+    npm: ^6.13.0
+    rc: ^1.2.8
+    read-pkg: ^5.0.0
+    registry-auth-token: ^4.0.0
+    semver: ^7.1.2
+    tempy: ^0.5.0
+  peerDependencies:
+    semantic-release: ">=16.0.0 <18.0.0"
+  checksum: 3/0c1996913fbc2f9bc8a83f55c3cad76231850d3de4dde8ce43a1a7a9c27184808228f33db2b8742ffed798154f2791d4e1bdb88868a53a4f79927b7858395668
+  languageName: node
+  linkType: hard
+
 "@semantic-release/npm@npm:^7.0.0":
   version: 7.0.5
   resolution: "@semantic-release/npm@npm:7.0.5"
@@ -2515,7 +2564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/release-notes-generator@npm:^9.0.0":
+"@semantic-release/release-notes-generator@npm:9.0.1, @semantic-release/release-notes-generator@npm:^9.0.0":
   version: 9.0.1
   resolution: "@semantic-release/release-notes-generator@npm:9.0.1"
   dependencies:
@@ -11251,7 +11300,11 @@ fsevents@^1.2.7:
   dependencies:
     "@babel/core": 7.12.3
     "@semantic-release/changelog": 5.0.1
+    "@semantic-release/commit-analyzer": 8.0.1
     "@semantic-release/git": 9.0.0
+    "@semantic-release/github": 7.1.1
+    "@semantic-release/npm": 7.0.6
+    "@semantic-release/release-notes-generator": 9.0.1
     "@wordpress/babel-preset-default": 4.19.0
     "@wordpress/browserslist-config": 2.7.0
     "@wordpress/dependency-extraction-webpack-plugin": 2.8.0
@@ -14932,7 +14985,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"meant@npm:~1.0.1":
+"meant@npm:^1.0.2, meant@npm:~1.0.1":
   version: 1.0.2
   resolution: "meant@npm:1.0.2"
   checksum: 3/71f8ffc2485f7e53401f1083b16d210be6c63534720cff977d0f44f74bc98e2ba7c1c40927af95202b580c56d7747a632fab229b398f046b7f365f2f1b59bf54
@@ -16142,6 +16195,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"npm-registry-fetch@npm:^4.0.7":
+  version: 4.0.7
+  resolution: "npm-registry-fetch@npm:4.0.7"
+  dependencies:
+    JSONStream: ^1.3.4
+    bluebird: ^3.5.1
+    figgy-pudding: ^3.4.1
+    lru-cache: ^5.1.1
+    make-fetch-happen: ^5.0.0
+    npm-package-arg: ^6.1.0
+    safe-buffer: ^5.2.0
+  checksum: 3/bfe19d4b3f11588682c019245823895df2f73f07f75c8442bfc5afec297c696ce3f6c3f741ad73e6e51e4f6629122dee5f8852b40b970a97a6e01af90fe5fa7c
+  languageName: node
+  linkType: hard
+
 "npm-run-path@npm:^2.0.0":
   version: 2.0.2
   resolution: "npm-run-path@npm:2.0.2"
@@ -16307,6 +16375,140 @@ fsevents@^1.2.7:
     npm: bin/npm-cli.js
     npx: bin/npx-cli.js
   checksum: 3/256d5d091c0196171cd356501472cff88e017687483a799247d207c329f8e320d2cd3a9bf22e0c9e0571b03c6e69ef6fa4c0d1fe894cbfb1fe59295d1cff0420
+  languageName: node
+  linkType: hard
+
+"npm@npm:^6.13.0":
+  version: 6.14.8
+  resolution: "npm@npm:6.14.8"
+  dependencies:
+    JSONStream: ^1.3.5
+    abbrev: ~1.1.1
+    ansicolors: ~0.3.2
+    ansistyles: ~0.1.3
+    aproba: ^2.0.0
+    archy: ~1.0.0
+    bin-links: ^1.1.8
+    bluebird: ^3.5.5
+    byte-size: ^5.0.1
+    cacache: ^12.0.3
+    call-limit: ^1.1.1
+    chownr: ^1.1.4
+    ci-info: ^2.0.0
+    cli-columns: ^3.1.2
+    cli-table3: ^0.5.1
+    cmd-shim: ^3.0.3
+    columnify: ~1.5.4
+    config-chain: ^1.1.12
+    debuglog: "*"
+    detect-indent: ~5.0.0
+    detect-newline: ^2.1.0
+    dezalgo: ~1.0.3
+    editor: ~1.0.0
+    figgy-pudding: ^3.5.1
+    find-npm-prefix: ^1.0.2
+    fs-vacuum: ~1.2.10
+    fs-write-stream-atomic: ~1.0.10
+    gentle-fs: ^2.3.1
+    glob: ^7.1.6
+    graceful-fs: ^4.2.4
+    has-unicode: ~2.0.1
+    hosted-git-info: ^2.8.8
+    iferr: ^1.0.2
+    imurmurhash: "*"
+    infer-owner: ^1.0.4
+    inflight: ~1.0.6
+    inherits: ^2.0.4
+    ini: ^1.3.5
+    init-package-json: ^1.10.3
+    is-cidr: ^3.0.0
+    json-parse-better-errors: ^1.0.2
+    lazy-property: ~1.0.0
+    libcipm: ^4.0.8
+    libnpm: ^3.0.1
+    libnpmaccess: ^3.0.2
+    libnpmhook: ^5.0.3
+    libnpmorg: ^1.0.1
+    libnpmsearch: ^2.0.2
+    libnpmteam: ^1.0.2
+    libnpx: ^10.2.4
+    lock-verify: ^2.1.0
+    lockfile: ^1.0.4
+    lodash._baseindexof: "*"
+    lodash._baseuniq: ~4.6.0
+    lodash._bindcallback: "*"
+    lodash._cacheindexof: "*"
+    lodash._createcache: "*"
+    lodash._getnative: "*"
+    lodash.clonedeep: ~4.5.0
+    lodash.restparam: "*"
+    lodash.union: ~4.6.0
+    lodash.uniq: ~4.5.0
+    lodash.without: ~4.4.0
+    lru-cache: ^5.1.1
+    meant: ^1.0.2
+    mississippi: ^3.0.0
+    mkdirp: ^0.5.5
+    move-concurrently: ^1.0.1
+    node-gyp: ^5.1.0
+    nopt: ^4.0.3
+    normalize-package-data: ^2.5.0
+    npm-audit-report: ^1.3.3
+    npm-cache-filename: ~1.0.2
+    npm-install-checks: ^3.0.2
+    npm-lifecycle: ^3.1.5
+    npm-package-arg: ^6.1.1
+    npm-packlist: ^1.4.8
+    npm-pick-manifest: ^3.0.2
+    npm-profile: ^4.0.4
+    npm-registry-fetch: ^4.0.7
+    npm-user-validate: ~1.0.0
+    npmlog: ~4.1.2
+    once: ~1.4.0
+    opener: ^1.5.1
+    osenv: ^0.1.5
+    pacote: ^9.5.12
+    path-is-inside: ~1.0.2
+    promise-inflight: ~1.0.1
+    qrcode-terminal: ^0.12.0
+    query-string: ^6.8.2
+    qw: ~1.0.1
+    read: ~1.0.7
+    read-cmd-shim: ^1.0.5
+    read-installed: ~4.0.3
+    read-package-json: ^2.1.1
+    read-package-tree: ^5.3.1
+    readable-stream: ^3.6.0
+    readdir-scoped-modules: ^1.1.0
+    request: ^2.88.0
+    retry: ^0.12.0
+    rimraf: ^2.7.1
+    safe-buffer: ^5.1.2
+    semver: ^5.7.1
+    sha: ^3.0.0
+    slide: ~1.1.6
+    sorted-object: ~2.0.1
+    sorted-union-stream: ~2.1.3
+    ssri: ^6.0.1
+    stringify-package: ^1.0.1
+    tar: ^4.4.13
+    text-table: ~0.2.0
+    tiny-relative-date: ^1.3.0
+    uid-number: 0.0.6
+    umask: ~1.1.0
+    unique-filename: ^1.1.1
+    unpipe: ~1.0.0
+    update-notifier: ^2.5.0
+    uuid: ^3.3.3
+    validate-npm-package-license: ^3.0.4
+    validate-npm-package-name: ~3.0.0
+    which: ^1.3.1
+    worker-farm: ^1.7.0
+    write-file-atomic: ^2.4.3
+  bin:
+    npm: bin/npm-cli.js
+    npx: bin/npx-cli.js
+  checksum: 3/968f8b720d891b595f9505afbe46ae0c53a8131c97d5e0106893d83444686b607fa4b6cb18d765345de7fd635f3f198c728f1a1a4fc642b12f27dade23ce95f7
   languageName: node
   linkType: hard
 
