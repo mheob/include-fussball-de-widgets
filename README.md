@@ -8,6 +8,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
 [![Dependency Status](https://david-dm.org/mheob/include-fussball-de-widgets.svg?style=flat-square)](https://david-dm.org/mheob/include-fussball-de-widgets)
 [![devDependency Status](https://david-dm.org/mheob/include-fussball-de-widgets/dev-status.svg?style=flat-square)](https://david-dm.org/mheob/include-fussball-de-widgets?type=dev)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/mheob/include-fussball-de-widgets.svg?logo=lgtm&logoWidth=18&style=flat-square)](https://lgtm.com/projects/g/mheob/include-fussball-de-widgets/context:javascript)
 
 [![GitHub Sponsor](https://img.shields.io/badge/Sponsors-333333.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/sponsors/mheob)
 [![PayPal donate button](https://img.shields.io/badge/Paypal-Donate-_.svg?style=flat-square&color=003087&logo=paypal)](https://www.paypal.me/mheob)
