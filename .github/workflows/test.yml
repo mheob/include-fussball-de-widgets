@@ -1,4 +1,4 @@
-name: Lint CSS and JS
+name: Test CI
 
 on: [push, pull_request]
 

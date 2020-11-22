@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD024 -->
+
 # Include Fussball.de Widgets
 
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
@@ -5,10 +7,10 @@
 [![Wordpress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Installs](https://img.shields.io/wordpress/plugin/installs/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
-[![Dependency Status](https://david-dm.org/mheob/include-fussball-de-widgets.svg?style=flat-square)](https://david-dm.org/mheob/include-fussball-de-widgets)
-[![devDependency Status](https://david-dm.org/mheob/include-fussball-de-widgets/dev-status.svg?style=flat-square)](https://david-dm.org/mheob/include-fussball-de-widgets?type=dev)
+[![Test CI](https://img.shields.io/github/workflow/status/mheob/include-fussball-de-widgets/Test%20CI?label=Test%20CI&logo=github&style=flat-square)](https://github.com/mheob/include-fussball-de-widgets)
+[![Release CI](https://img.shields.io/github/workflow/status/mheob/include-fussball-de-widgets/Release%20CI?label=Release%20CI&logo=github&style=flat-square)](https://github.com/mheob/include-fussball-de-widgets)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/mheob/include-fussball-de-widgets.svg?logo=lgtm&logoWidth=18&style=flat-square)](https://lgtm.com/projects/g/mheob/include-fussball-de-widgets/context:javascript)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standardjs-brightgreen.svg?style=flat-square)](https://standardjs.com)
 
 [![GitHub Sponsor](https://img.shields.io/badge/Sponsors-333333.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/sponsors/mheob)
 [![PayPal donate button](https://img.shields.io/badge/Paypal-Donate-_.svg?style=flat-square&color=003087&logo=paypal)](https://www.paypal.me/mheob)
