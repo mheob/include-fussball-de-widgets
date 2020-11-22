@@ -125,11 +125,13 @@ class FubadeWidget extends \WP_Widget {
 	 * @param array $instance The saved values from the database.
 	 */
 	public function widget( $args, $instance ): void {
+		// phpcs:disable
 		// Check the widget options.
 		$title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 		$api       = $instance['api'] ?? '';
 		$fullwidth = empty( $instance['fullwidth'] ) ? false : true;
 		$devtools  = empty( $instance['devtools'] ) ? false : true;
+
 
 		// WordPress core before_widget hook (always include).
 		echo $args['before_widget'] . PHP_EOL;
@@ -154,5 +156,6 @@ class FubadeWidget extends \WP_Widget {
 
 		// WordPress core after_widget hook (always include).
 		echo $args['after_widget'] . PHP_EOL;
+		// phpcs:enable
 	}
 }
