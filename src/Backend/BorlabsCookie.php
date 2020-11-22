@@ -1,4 +1,5 @@
 <?php declare( strict_types=1 );
+		// phpcs:disable
 /**
  * Include Fussball.de Widgets
  *
@@ -142,6 +143,7 @@ class BorlabsCookie extends ActionBase {
 	 * @return bool If the fubade cookie exists it is true, otherwise false.
 	 */
 	private function checkFubadeCookieExists(): bool {
+
 		// FIXME: use correct database caching.
 		global $wpdb;
 		$cookieId = $wpdb->get_var(
@@ -220,7 +222,7 @@ class BorlabsCookie extends ActionBase {
 				1,
 				0
 			) ON DUPLICATE KEY UPDATE `undeletable` = VALUES(`undeletable`)";
-		// phpcs:enable
+		// phpcs:enable Squiz.Strings.DoubleQuoteUsage
 
 		// FIXME: use correct database caching.
 		$wpdb->query( $sqlQuery );

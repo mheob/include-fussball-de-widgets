@@ -1,25 +1,17 @@
-name: Release CI
+name: Test CI
 
-on:
-  push:
-    branches:
-      - main
-      - next
-  pull_request:
-    branches:
-      - main
-      - next
+on: [push, pull_request]
 
 jobs:
-  release:
-    name: Release
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Check out Git repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -36,13 +28,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install dependencies
+      - name: Install Node.js dependencies
         run: yarn install
 
-      - name: Release
+      - name: Run linters
+        run: yarn run lint
         env:
           CI: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn run semantic-release
+          NODE_AUTH_TOKEN: ${{ secrets.GPR_ACCESS_TOKEN }}

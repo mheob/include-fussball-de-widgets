@@ -1,12 +1,6 @@
 # Package manager
 node_modules
 vendor
-.yarn/*
-!.yarn/cache
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
 
 # Compiled stuff
 .github-releases
