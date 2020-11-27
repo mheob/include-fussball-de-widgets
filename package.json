@@ -70,7 +70,7 @@
     "@wordpress/browserslist-config": "2.7.0",
     "@wordpress/dependency-extraction-webpack-plugin": "2.8.0",
     "@wordpress/scripts": "12.5.0",
-    "autoprefixer": "10.0.2",
+    "autoprefixer": "10.0.4",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.1",
     "bestzip": "2.1.7",
