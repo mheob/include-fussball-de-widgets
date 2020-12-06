@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ac48d378b34f68f72c455d1965aefd9",
+    "content-hash": "e2985b13958fc4008c2f387ee4073885",
     "packages": [],
     "packages-dev": [
         {
@@ -58,16 +58,16 @@
         },
         {
             "name": "codedungeon/php-cli-colors",
-            "version": "1.11.0",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikeerickson/php-cli-colors.git",
-                "reference": "9f60ac692cc790755dad47b01c1d607fe5f43b94"
+                "reference": "cb32f427dc4206a8a2b3d14b7c8ad4fb7c884f75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikeerickson/php-cli-colors/zipball/9f60ac692cc790755dad47b01c1d607fe5f43b94",
-                "reference": "9f60ac692cc790755dad47b01c1d607fe5f43b94",
+                "url": "https://api.github.com/repos/mikeerickson/php-cli-colors/zipball/cb32f427dc4206a8a2b3d14b7c8ad4fb7c884f75",
+                "reference": "cb32f427dc4206a8a2b3d14b7c8ad4fb7c884f75",
                 "shasum": ""
             },
             "require-dev": {
@@ -89,7 +89,7 @@
                     "email": "codedungeon@gmail.com"
                 }
             ],
-            "description": "PHP Package for using color output in CLI commands",
+            "description": "Liven up you PHP Console Apps with standard colors",
             "homepage": "https://github.com/mikeerickson/php-cli-colors",
             "keywords": [
                 "color",
@@ -100,29 +100,29 @@
             ],
             "support": {
                 "issues": "https://github.com/mikeerickson/php-cli-colors/issues",
-                "source": "https://github.com/mikeerickson/php-cli-colors/tree/master"
+                "source": "https://github.com/mikeerickson/php-cli-colors/tree/1.12.0"
             },
-            "time": "2019-12-29T22:29:29+00:00"
+            "time": "2020-12-03T21:21:36+00:00"
         },
         {
             "name": "codedungeon/phpunit-result-printer",
-            "version": "0.29.3",
+            "version": "0.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikeerickson/phpunit-pretty-result-printer.git",
-                "reference": "4d075a3cb6574ee9466bd66b648aca8b2a967e4b"
+                "reference": "03a58b4c1911ef0c34a8ec3815dd830593a7e4cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/4d075a3cb6574ee9466bd66b648aca8b2a967e4b",
-                "reference": "4d075a3cb6574ee9466bd66b648aca8b2a967e4b",
+                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/03a58b4c1911ef0c34a8ec3815dd830593a7e4cf",
+                "reference": "03a58b4c1911ef0c34a8ec3815dd830593a7e4cf",
                 "shasum": ""
             },
             "require": {
                 "2bj/phanybar": "^1.0",
                 "codedungeon/php-cli-colors": "^1.10.2",
                 "hassankhan/config": "^0.11.2|^1.0|^2.0",
-                "php": "^7.1",
+                "php": "^7.1 | ^8.0",
                 "symfony/yaml": "^2.7|^3.0|^4.0|^5.0"
             },
             "require-dev": {
@@ -156,9 +156,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mikeerickson/phpunit-pretty-result-printer/issues",
-                "source": "https://github.com/mikeerickson/phpunit-pretty-result-printer/tree/0.29.3"
+                "source": "https://github.com/mikeerickson/phpunit-pretty-result-printer/tree/0.30.0"
             },
-            "time": "2020-09-23T15:57:12+00:00"
+            "time": "2020-12-02T17:07:49+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -2572,16 +2572,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.1.8",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "f284e032c3cefefb9943792132251b79a6127ca6"
+                "reference": "bb73619b2ae5121bbbcd9f191dfd53ded17ae598"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/f284e032c3cefefb9943792132251b79a6127ca6",
-                "reference": "f284e032c3cefefb9943792132251b79a6127ca6",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/bb73619b2ae5121bbbcd9f191dfd53ded17ae598",
+                "reference": "bb73619b2ae5121bbbcd9f191dfd53ded17ae598",
                 "shasum": ""
             },
             "require": {
@@ -2627,7 +2627,7 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.1.8"
+                "source": "https://github.com/symfony/yaml/tree/v5.2.0"
             },
             "funding": [
                 {
@@ -2643,7 +2643,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T12:03:25+00:00"
+            "time": "2020-11-28T10:57:20+00:00"
         },
         {
             "name": "theseer/tokenizer",
