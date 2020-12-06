@@ -56,7 +56,7 @@
     "extends @wordpress/browserslist-config"
   ],
   "dependencies": {
-    "@yarnpkg/pnpify": "2.3.3"
+    "@yarnpkg/pnpify": "2.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.9",
