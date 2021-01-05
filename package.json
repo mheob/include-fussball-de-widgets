@@ -69,7 +69,7 @@
     "@wordpress/babel-preset-default": "4.20.0",
     "@wordpress/browserslist-config": "2.7.0",
     "@wordpress/dependency-extraction-webpack-plugin": "2.9.0",
-    "@wordpress/scripts": "12.6.0",
+    "@wordpress/scripts": "12.6.1",
     "autoprefixer": "10.1.0",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.2",
