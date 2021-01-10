@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66395b4b9197f8acbdaaec1ec5745d43",
+    "content-hash": "fde1392315f6fbda1b7666d147d814d9",
     "packages": [],
     "packages-dev": [
         {
@@ -106,16 +106,16 @@
         },
         {
             "name": "codedungeon/phpunit-result-printer",
-            "version": "0.30.0",
+            "version": "0.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikeerickson/phpunit-pretty-result-printer.git",
-                "reference": "03a58b4c1911ef0c34a8ec3815dd830593a7e4cf"
+                "reference": "a361009eeb7078c1478ba835976f7722a4952870"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/03a58b4c1911ef0c34a8ec3815dd830593a7e4cf",
-                "reference": "03a58b4c1911ef0c34a8ec3815dd830593a7e4cf",
+                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/a361009eeb7078c1478ba835976f7722a4952870",
+                "reference": "a361009eeb7078c1478ba835976f7722a4952870",
                 "shasum": ""
             },
             "require": {
@@ -156,9 +156,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mikeerickson/phpunit-pretty-result-printer/issues",
-                "source": "https://github.com/mikeerickson/phpunit-pretty-result-printer/tree/0.30.0"
+                "source": "https://github.com/mikeerickson/phpunit-pretty-result-printer/tree/0.30.1"
             },
-            "time": "2020-12-02T17:07:49+00:00"
+            "time": "2020-12-24T20:19:03+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
