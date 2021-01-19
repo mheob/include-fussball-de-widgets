@@ -105,7 +105,7 @@
     "sass": "1.32.2",
     "sass-loader": "10.1.0",
     "semantic-release": "17.3.1",
-    "stylelint": "13.8.0",
+    "stylelint": "13.9.0",
     "stylelint-config-rational-order": "0.1.2",
     "stylelint-config-wordpress": "17.0.0",
     "stylelint-order": "4.1.0",
