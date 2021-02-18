@@ -102,7 +102,7 @@
     "prettier-standard": "16.4.1",
     "prettier-stylelint": "0.4.2",
     "rimraf": "3.0.2",
-    "sass": "1.32.5",
+    "sass": "1.32.7",
     "sass-loader": "11.0.1",
     "semantic-release": "17.3.7",
     "stylelint": "13.10.0",
