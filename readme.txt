@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
 Tested up to: 5.6
 Requires PHP: 7.2
-Stable tag: 3.4.0
+Stable tag: 3.5.0
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,10 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.5.0 - 2021-02-18 =
+= Added =
+* Add WPBakery Page Builder exception for loading inside tabs.
+
 = 3.4.0 - 2020-11-02 =
 = Added =
 * Add Shortcode-Ultimate as the same as Divi-Tabs, Fusion-Tabs and KadenceBlock-Tabs.
@@ -282,4 +286,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-* Add Shortcode-Ultimate as the same as Divi-Tabs, Fusion-Tabs and KadenceBlock-Tabs.
+* Add WPBakery Page Builder exception for loading inside tabs.

@@ -30,15 +30,16 @@ window.FussballdeWidgetAPI = () => {
     false
   )
 
-  /** Support for Divi-Tabs, Fusion-Tabs and Kadence-Blocks-Tabs, Shortcodes Ultimate */
+  // Support for Divi-Tabs, Fusion-Tabs, Kadence-Blocks-Tabs, Shortcodes Ultimate, WPBakery Page Builder
   if (
     document.body.classList.contains('et_divi_theme') ||
     document.body.classList.contains('fusion-body') ||
     document.querySelectorAll('.wp-block-kadence-tabs').length > 0 ||
-    document.querySelectorAll('.su-spoiler').length > 0
+    document.querySelectorAll('.su-spoiler').length > 0 ||
+    document.querySelectorAll('.vc_tta-tabs').length > 0
   ) {
     const tabs = document.querySelectorAll(
-      '.et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a, .su-spoiler-title'
+      '.et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a, .su-spoiler-title, .vc_tta-tab a'
     )
     const iframes = document.querySelectorAll('iframe')
     if (tabs.length > 0) {
