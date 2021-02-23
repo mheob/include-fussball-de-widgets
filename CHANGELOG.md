@@ -1,3 +1,10 @@
+# [3.5.0](https://github.com/mheob/include-fussball-de-widgets/compare/v3.4.0...v3.5.0) (2021-02-23)
+
+
+### Features
+
+* **tabs:** add support for WPBakery Page Builder Tabs ([#450](https://github.com/mheob/include-fussball-de-widgets/issues/450)) ([17baa65](https://github.com/mheob/include-fussball-de-widgets/commit/17baa65bb7a643025bd983ba874e16f2fd9c0911))
+
 # [3.4.0](https://github.com/ITS-Boehm/include-fussball-de-widgets/compare/v3.3.5...v3.4.0) (2020-11-02)
 
 
