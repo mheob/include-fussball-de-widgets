@@ -6,6 +6,7 @@
 [![WordPress](https://img.shields.io/wordpress/plugin/tested/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![Wordpress Plugin Installs](https://img.shields.io/wordpress/plugin/installs/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
+[![WordPress Plugin Rating](https://img.shields.io/wordpress/plugin/rating/include-fussball-de-widgets?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 
 [![Test CI](https://img.shields.io/github/workflow/status/mheob/include-fussball-de-widgets/Test%20CI?label=Test%20CI&logo=github&style=flat-square)](https://github.com/mheob/include-fussball-de-widgets)
 [![Release CI](https://img.shields.io/github/workflow/status/mheob/include-fussball-de-widgets/Release%20CI?label=Release%20CI&logo=github&style=flat-square)](https://github.com/mheob/include-fussball-de-widgets)
