@@ -601,6 +601,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.12.13"
 
+"@babel/plugin-syntax-typescript@^7.12.13":
+  version "7.12.13"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.12.13.tgz#9dff111ca64154cef0f4dc52cf843d9f12ce4474"
+  integrity sha512-cHP3u1JiUiG2LFDKbXnwVad81GvfyIOmCD6HIEId6ojrY0Drfy2q1jw7BwN7dE84+kTnBjLkXoL3IEy/3JPu2w==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.12.13"
+
 "@babel/plugin-transform-arrow-functions@^7.13.0":
   version "7.13.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.13.0.tgz#10a59bebad52d637a027afa692e8d5ceff5e3dae"
@@ -886,6 +893,15 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.12.13"
 
+"@babel/plugin-transform-typescript@^7.13.0":
+  version "7.13.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.13.0.tgz#4a498e1f3600342d2a9e61f60131018f55774853"
+  integrity sha512-elQEwluzaU8R8dbVuW2Q2Y8Nznf7hnjM7+DSCd14Lo5fF63C9qNLbwZYbmZrtV9/ySpSUpkRpQXvJb6xyu4hCQ==
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.13.0"
+    "@babel/helper-plugin-utils" "^7.13.0"
+    "@babel/plugin-syntax-typescript" "^7.12.13"
+
 "@babel/plugin-transform-unicode-escapes@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-unicode-escapes/-/plugin-transform-unicode-escapes-7.12.13.tgz#840ced3b816d3b5127dd1d12dcedc5dead1a5e74"
@@ -996,6 +1012,15 @@
     "@babel/plugin-transform-react-jsx" "^7.12.13"
     "@babel/plugin-transform-react-jsx-development" "^7.12.12"
     "@babel/plugin-transform-react-pure-annotations" "^7.12.1"
+
+"@babel/preset-typescript@^7.12.7":
+  version "7.13.0"
+  resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.13.0.tgz#ab107e5f050609d806fbb039bec553b33462c60a"
+  integrity sha512-LXJwxrHy0N3f6gIJlYbLta1D9BDtHpQeqwzM0LIfjDlr6UE/D5Mc7W4iDiQzaE+ks0sTjT26ArcHWnJVt0QiHw==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.13.0"
+    "@babel/helper-validator-option" "^7.12.17"
+    "@babel/plugin-transform-typescript" "^7.13.0"
 
 "@babel/runtime-corejs3@^7.10.2":
   version "7.13.3"
@@ -2510,7 +2535,24 @@
   resolved "https://registry.yarnpkg.com/@wordpress/babel-plugin-import-jsx-pragma/-/babel-plugin-import-jsx-pragma-3.0.1.tgz#43a91eb79df1b5d8936d354a5ec3e3507472948e"
   integrity sha512-vwd43RNda63/URoAQ+CnLiEkgYG+yYe6S19sWGQ/ekPeORFh7l8J/1MgegPBSt/w5fPQ8UK2DUgavTU0AElPKg==
 
-"@wordpress/babel-preset-default@5.0.1", "@wordpress/babel-preset-default@^5.0.1":
+"@wordpress/babel-preset-default@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/babel-preset-default/-/babel-preset-default-5.1.0.tgz#a84dfaa8889a0d958864c93ae127fa7340c3bc54"
+  integrity sha512-bWA0s2QiilhGks2A73cbMrPFALXXdK7AvNEApYSsM6UJLTKNSGalNHfWu6wkVIa5Rvx/SJ7G6rOX4ofju1fwCA==
+  dependencies:
+    "@babel/core" "^7.12.9"
+    "@babel/plugin-transform-react-jsx" "^7.12.7"
+    "@babel/plugin-transform-runtime" "^7.12.1"
+    "@babel/preset-env" "^7.12.7"
+    "@babel/preset-typescript" "^7.12.7"
+    "@babel/runtime" "^7.12.5"
+    "@wordpress/babel-plugin-import-jsx-pragma" "^3.0.1"
+    "@wordpress/browserslist-config" "^3.0.1"
+    "@wordpress/element" "^2.20.0"
+    "@wordpress/warning" "^1.4.0"
+    core-js "^3.6.4"
+
+"@wordpress/babel-preset-default@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@wordpress/babel-preset-default/-/babel-preset-default-5.0.1.tgz#7b1f4158e9ae4e1261a2435e3defb57a02982f7d"
   integrity sha512-wbTWlx3nJe1KvFt+5pWoCaU/LW1PjCDKtG97nse888++1xXGycCI40rOzyPjhCfwN9VehE9unWEC8+C1FRwyZQ==
@@ -2536,7 +2578,15 @@
   resolved "https://registry.yarnpkg.com/@wordpress/browserslist-config/-/browserslist-config-3.0.1.tgz#5e60c63ce6122e077811cb7d401e6489815f7827"
   integrity sha512-l0c/X8w2v+NBShzEoykLuaLQNo1qiAONnPKXfIeiI145zAdjA5e8zMR0sUTDVsCxVfqfd2tH+D4wuhf68T3+Aw==
 
-"@wordpress/dependency-extraction-webpack-plugin@3.0.1", "@wordpress/dependency-extraction-webpack-plugin@^3.0.1":
+"@wordpress/dependency-extraction-webpack-plugin@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/dependency-extraction-webpack-plugin/-/dependency-extraction-webpack-plugin-3.1.0.tgz#1640e8d8b83b22e3a136f82ff5217ab6ae9bcca6"
+  integrity sha512-lxdQ6qkHFiL1y7C/tHi/pxnFMaBa4AzBI/NcQ2+yJXwUqO746KYO9A6zEueQxa3mpEH3kT4r98C/p+MEf8xAsg==
+  dependencies:
+    json2php "^0.0.4"
+    webpack-sources "^2.2.0"
+
+"@wordpress/dependency-extraction-webpack-plugin@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@wordpress/dependency-extraction-webpack-plugin/-/dependency-extraction-webpack-plugin-3.0.1.tgz#e5f4a71682e61ea27ce5bb5a5643e9ecf876cc5a"
   integrity sha512-F9HmlRhKZrchX/+tOdbhEr6ooMhUqJQ6W3IA46aZHuJYdSQnT0j3pTmEuhSN9+TZgkuPqpzvLIDUzB1qq1ayNg==
@@ -2557,10 +2607,30 @@
     react "^16.13.1"
     react-dom "^16.13.1"
 
+"@wordpress/element@^2.20.0":
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/element/-/element-2.20.0.tgz#782ab99441ab467a35329e97ca281931d3156c68"
+  integrity sha512-6sZQSvyhnD0MHmZ9w6t3k6E1mw1y6AbwJ0pGBmm8Kqnsv4oeZpYCmriwwceCufZLLRS1icFB5VGZRIdvMWRMPA==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@types/react" "^16.9.0"
+    "@types/react-dom" "^16.9.0"
+    "@wordpress/escape-html" "^1.12.0"
+    lodash "^4.17.19"
+    react "^16.13.1"
+    react-dom "^16.13.1"
+
 "@wordpress/escape-html@^1.11.1":
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/@wordpress/escape-html/-/escape-html-1.11.1.tgz#831b54ad20d9cf55f1b6d97adfdc0dd1ba024913"
   integrity sha512-kthpdAijVY1tSGnSy1kuKM5+L/u7uxzSBNDusqKcfeSgczfHlfKwkkA82SMHzsSR/WicXDaWBfcEMqfb4PENiQ==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
+"@wordpress/escape-html@^1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/escape-html/-/escape-html-1.12.0.tgz#f69f0ecf5bd545223a6543cc58507b130e7a78d1"
+  integrity sha512-T+HiRDlm3UcPnbV00g3Qclea0SIopHd7d+xSSRfblhEhoiCDC5GTdjUAbrtMGZov46PHhHEl1/iN3oMv+mlWXQ==
   dependencies:
     "@babel/runtime" "^7.12.5"
 
@@ -2695,6 +2765,11 @@
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@wordpress/warning/-/warning-1.3.1.tgz#67ff34034277249ffc9d360c88e77824f7be5615"
   integrity sha512-MdZ/4k2KmdH4h71KfKUXPCm8eR4fnD1t9W70vIX5+MsdiA7uplkwcDWxybITYVOmVT0Zk4F5CJ29AcsJAvtgZg==
+
+"@wordpress/warning@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/warning/-/warning-1.4.0.tgz#29b9852e813e1ea153e956dc1c3839041c4f339c"
+  integrity sha512-Qem8mDHbP/KTX8m/g1k9pU772bxn9KnfMLx8B77ZL0T9VmMHOeBggQj0AEIr0BD18zimY6IzuE+XnE8mlkyzYw==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
