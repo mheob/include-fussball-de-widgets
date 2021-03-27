@@ -68,7 +68,7 @@
     "commitizen": "4.2.3",
     "copy-webpack-plugin": "7.0.0",
     "cpr": "3.0.1",
-    "css-loader": "5.0.2",
+    "css-loader": "5.2.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.20.0",
     "eslint-config-standard": "16.0.2",
