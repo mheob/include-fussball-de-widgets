@@ -42,7 +42,6 @@ const blockConfig = {
   plugins: [
     ...defaultConfig.plugins,
     new MiniCssExtractPlugin({
-      path: path.resolve(__dirname, 'dist'),
       filename: 'assets/css/blocks-[name].css'
     })
   ],
