@@ -92,9 +92,9 @@
     "prettier-standard": "^16.4.1",
     "prettier-stylelint": "^0.4.2",
     "rimraf": "^3.0.2",
-    "sass": "^1.37.5",
+    "sass": "^1.38.0",
     "sass-loader": "^11.1.1",
-    "semantic-release": "^17.4.4",
+    "semantic-release": "^17.4.5",
     "stylelint": "^13.13.1",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-wordpress": "^17.0.0",
@@ -103,7 +103,7 @@
     "thread-loader": "^3.0.4",
     "webpack": "^5.50.0",
     "webpack-bundle-analyzer": "^4.4.2",
-    "webpack-cli": "^4.7.2",
+    "webpack-cli": "^4.8.0",
     "webpack-livereload-plugin": "^3.0.2"
   },
   "publishConfig": {
