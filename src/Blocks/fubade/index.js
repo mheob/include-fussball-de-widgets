@@ -1,4 +1,3 @@
-/* eslint-disable import/no-duplicates */
 /**
  * BLOCK: Include_Fussball_De_Widgets
  *
@@ -6,8 +5,9 @@
  * Dynamic block, renders and saves the same content.
  */
 
-import icon from './icon'
 import './editor.scss'
+
+import icon from './icon'
 
 const { registerBlockType } = wp.blocks
 const { PanelBody, TextControl, ToggleControl } = wp.components

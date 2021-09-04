@@ -3,16 +3,15 @@ root: true
 parser: babel-eslint
 
 extends:
+  - eslint:recommended
   - plugin:react/recommended
   - plugin:jsx-a11y/recommended
   - plugin:jest/recommended
-  - standard
 
 plugins:
   - react
   - jsx-a11y
   - jest
-  - standard
 
 settings:
   react:

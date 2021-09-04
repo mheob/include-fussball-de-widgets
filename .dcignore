@@ -1,6 +1,3 @@
-# Special files
-**/*.min.css
-
 # Package manager
 node_modules
 vendor
@@ -10,5 +7,3 @@ vendor
 .releases
 dist
 
-# PHPUnit
-tests
