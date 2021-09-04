@@ -1,7 +1,0 @@
-{
-  "extends": ["config:base"],
-  "baseBranches": ["develop"],
-  "assignees": ["mheob"],
-  "reviewers": ["mheob"],
-  "labels": ["dependencies"]
-}
