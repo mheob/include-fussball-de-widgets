@@ -14,31 +14,28 @@
   "license": "GPL-2.0-or-later",
   "author": "Alexander Böhm",
   "scripts": {
-    "build": "rimraf dist && webpack && yarn run i18n",
+    "prepare": "husky install",
+    "prebuild": "npm run clear",
+    "postbuild": "npm run i18n",
+    "build": "NODE_ENV=production webpack",
     "clear": "rimraf dist",
     "commit": "git-cz",
-    "dev": "yarn run build && node ./tasks/cp-dev-release.js",
-    "i18n": "yarn run i18n:json && yarn run i18n:copy",
+    "predev": "npm run clear",
+    "postdev": "node ./tasks/cp-dev-release.js",
+    "dev": "NODE_ENV=development webpack",
+    "i18n": "npm run i18n:json && npm run i18n:copy",
     "i18n:copy": "cpr src/languages dist/languages -d",
     "i18n:json": "wp i18n make-json src/languages/include-fussball-de-widgets-de_DE.po --no-purge",
     "i18n:pot": "wp i18n make-pot dist languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
-    "lint": "yarn run lint:css && yarn run lint:js",
-    "lint:css": "stylelint 'src/**/*.scss'",
-    "lint:css:fix": "stylelint 'src/**/*.scss' --fix",
-    "lint:fix": "yarn run lint:css:fix && yarn run lint:js:fix",
-    "lint:js": "eslint 'src/**/*.js'",
-    "lint:js:fix": "prettier-eslint \"$PWD/src/**/*.js\" --write",
+    "lint": "eslint 'src/**/*.js'",
+    "lint:fix": "prettier-eslint \"$PWD/src/**/*.js\" --write",
     "hooks": "./init-gitkraken-hooks.sh",
-    "postinstall": "husky install",
-    "release": "yarn run build && yarn run release:copy && yarn run release:github",
+    "release": "npm run build && npm run release:copy && npm run release:github",
     "release:copy": "cpr dist .releases/include-fussball-de-widgets/trunk/ -d",
     "release:github": "cpr dist .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
     "semantic-release": "semantic-release",
     "start": "wp-scripts start",
-    "test": "yarn run test:cs && yarn run test:phpunit:full",
-    "test:cs": "./vendor/bin/phpcs",
-    "test:phpunit": "./vendor/bin/phpunit --no-coverage",
-    "test:phpunit:full": "./vendor/bin/phpunit"
+    "test": "./vendor/bin/phpcs"
   },
   "config": {
     "commitizen": {
@@ -49,7 +46,6 @@
     "extends @wordpress/browserslist-config"
   ],
   "devDependencies": {
-    "@babel/core": "^7.15.0",
     "@hkdobrev/run-if-changed": "^0.3.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
@@ -57,18 +53,14 @@
     "@semantic-release/github": "^7.2.3",
     "@semantic-release/npm": "^7.1.3",
     "@semantic-release/release-notes-generator": "^9.0.3",
-    "@wordpress/babel-preset-default": "^5.2.2",
-    "@wordpress/browserslist-config": "^3.0.3",
-    "@wordpress/dependency-extraction-webpack-plugin": "^3.2.1",
-    "@wordpress/scripts": "^15.0.1",
-    "autoprefixer": "^10.3.3",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.2",
+    "@wordpress/block-editor": "^7.0.1",
+    "@wordpress/blocks": "^11.0.1",
+    "@wordpress/i18n": "^4.2.1",
+    "@wordpress/scripts": "^18.0.0",
     "bestzip": "^2.2.0",
     "commitizen": "^4.2.4",
-    "copy-webpack-plugin": "^8.1.1",
+    "copy-webpack-plugin": "^9.0.1",
     "cpr": "^3.0.1",
-    "css-loader": "^5.2.7",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
@@ -80,31 +72,12 @@
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-standard": "^5.0.0",
     "husky": "^7.0.2",
-    "indent-string": "^5.0.0",
-    "jest": "^27.1.0",
-    "mini-css-extract-plugin": "^1.6.2",
-    "pnp-webpack-plugin": "^1.7.0",
-    "postcss-html": "^0.36.0",
-    "postcss-syntax": "^0.36.2",
     "prettier": "^2.3.2",
-    "prettier-eslint": "^12.0.0",
+    "prettier-eslint": "^13.0.0",
     "prettier-eslint-cli": "^5.0.1",
-    "prettier-standard": "^16.4.1",
-    "prettier-stylelint": "^0.4.2",
+    "prettier-standard": "^15.0.1",
     "rimraf": "^3.0.2",
-    "sass": "^1.39.0",
-    "sass-loader": "^11.1.1",
-    "semantic-release": "^17.4.7",
-    "stylelint": "^13.13.1",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-wordpress": "^17.0.0",
-    "stylelint-order": "^4.1.0",
-    "terser-webpack-plugin": "^5.2.0",
-    "thread-loader": "^3.0.4",
-    "webpack": "^5.51.1",
-    "webpack-bundle-analyzer": "^4.4.2",
-    "webpack-cli": "^4.8.0",
-    "webpack-livereload-plugin": "^3.0.2"
+    "semantic-release": "^17.4.7"
   },
   "publishConfig": {
     "access": "restricted"
@@ -113,17 +86,11 @@
     "extends": "./.releaserc.json"
   },
   "run-if-changed": {
-    "yarn.lock": [
-      "yarn install"
+    "package-lock.json": [
+      "npm install"
     ],
     "composer.lock": [
       "composer install"
-    ],
-    "cms/composer.lock": [
-      "cd cms && composer install"
-    ],
-    "config/husky/**/*": [
-      "yarn hooks"
     ]
   }
 }
