@@ -1,13 +1,12 @@
-window.FussballdeWidgetAPI = () => {
-  const widgetObj = {}
+/* global attr */
 
-  // eslint-disable-next-line no-undef
+window.fussballDeWidgetAPI = () => {
   const devTools = typeof attr !== 'undefined' && !!attr.devtools
 
   window.addEventListener(
     'message',
     (evt) => {
-      if (devTools) console.log('window.FussballdeWidgetAPI -> evt.data.container', evt.data.container)
+      if (devTools) console.info('window.fussballDeWidgetAPI -> evt.data.container', evt.data.container)
 
       const currentIframe = document.querySelector('#' + evt.data.container + ' iframe')
 
@@ -54,8 +53,8 @@ window.FussballdeWidgetAPI = () => {
               800
             )
             if (devTools) {
-              console.log('window.FussballdeWidgetAPI -> tab', tab)
-              console.log('window.FussballdeWidgetAPI -> iframes', iframes)
+              console.info('window.fussballDeWidgetAPI -> tab', tab)
+              console.info('window.fussballDeWidgetAPI -> iframes', iframes)
             }
           },
           false
@@ -63,6 +62,4 @@ window.FussballdeWidgetAPI = () => {
       })
     }
   }
-
-  return widgetObj
 }

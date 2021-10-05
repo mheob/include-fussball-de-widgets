@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
 Tested up to: 5.8
 Requires PHP: 7.2
-Stable tag: 3.5.0
+Stable tag: 3.6.0
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,11 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.6.0 - 2021-10-05 =
+= Added =
+* Add the possibility for using custom css classes.
+* Add `wp-blocks` class to increase css hierarchy.
+
 = 3.5.0 - 2021-02-18 =
 = Added =
 * Add WPBakery Page Builder exception for loading inside tabs.
@@ -286,4 +291,5 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-* Add WPBakery Page Builder exception for loading inside tabs.
+* Add the possibility for using custom css classes.
+* Add `wp-blocks` class to increase css hierarchy.

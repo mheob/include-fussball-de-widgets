@@ -37,12 +37,13 @@ registerBlockType('ifdw/fubade', {
   attributes: {
     api: { type: 'string' },
     id: { type: 'string' },
+    classes: { type: 'string' },
     notice: { type: 'string' },
     fullwidth: { type: 'boolean' },
     devtools: { type: 'boolean' }
   },
   edit: withInstanceId(({ attributes, className, instanceId, setAttributes }) => {
-    const { api = '', notice = '', fullwidth = true, devtools = false } = attributes
+    const { api = '', classes = '', notice = '', fullwidth = true, devtools = false } = attributes
     const inputId = `${className}-${instanceId}`
     const apiLength = 32
 
@@ -50,6 +51,7 @@ registerBlockType('ifdw/fubade', {
       setAttributes({
         api: '',
         id: '',
+        classes: '',
         notice: '',
         fullwidth: true,
         devtools: false
@@ -60,13 +62,21 @@ registerBlockType('ifdw/fubade', {
       <InspectorControls key="inspector">
         <PanelBody title={__('Fussball.de Widgets Settings', 'include-fussball-de-widgets')}>
           <TextControl
+            label={__('CSS-Classes', 'include-fussball-de-widgets')}
+            onChange={(newClasses) => {
+              setAttributes({ classes: newClasses })
+            }}
+            value={classes}
+          />
+
+          <TextControl
             label={__('Notice', 'include-fussball-de-widgets')}
             onChange={(newNotice) => {
               setAttributes({ notice: newNotice })
             }}
             value={notice}
           />
-          {/* eslint-disable indent */}
+
           <ToggleControl
             checked={fullwidth}
             help={
@@ -83,7 +93,7 @@ registerBlockType('ifdw/fubade', {
               setAttributes({ fullwidth: newFullwidth })
             }}
           />
-          {/* eslint-enable indent */}
+
           <ToggleControl
             checked={devtools}
             help={
@@ -98,13 +108,16 @@ registerBlockType('ifdw/fubade', {
           />
         </PanelBody>
       </InspectorControls>,
+
       <Fragment key="output">
         <h4 className={`${className}-header`}>
           {__('Fussball.de Widget', 'include-fussball-de-widgets')}
           {typeof notice === 'undefined' || notice === '' ? '' : `: "${notice}"`}
         </h4>
+
         <div className={className}>
           <label htmlFor={inputId}>{__('Api:', 'include-fussball-de-widgets')}</label>
+
           <PlainText
             className="input-control"
             id={inputId}
@@ -120,7 +133,7 @@ registerBlockType('ifdw/fubade', {
             value={api}
           />
         </div>
-        {/* eslint-disable-next-line multiline-ternary */}
+
         {typeof api !== 'undefined' && apiLength === api.length ? (
           <div className={`${className}-shortcode`}>
             {__('The widget should now be able to be displayed in the frontend.', 'include-fussball-de-widgets')}
@@ -136,6 +149,7 @@ registerBlockType('ifdw/fubade', {
       </Fragment>
     ]
   }),
+
   save() {
     // Rendering in PHP
     return null

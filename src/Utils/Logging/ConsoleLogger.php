@@ -82,10 +82,10 @@ class ConsoleLogger extends LoggerBase {
 	protected function logGeneralInfo(): void {
 		$output = '';
 		foreach ( $this->generalInfoList as $item ) {
-			$output .= 'console.log(' . wp_json_encode( $item, JSON_HEX_TAG ) . ');' . PHP_EOL;
+			$output .= 'console.info(' . wp_json_encode( $item, JSON_HEX_TAG ) . ');' . PHP_EOL;
 		};
 
-		$output .= "console.log('')" . PHP_EOL;
+		$output .= "console.info('')" . PHP_EOL;
 
 		wp_add_inline_script( 'fubade-api', $output );
 
