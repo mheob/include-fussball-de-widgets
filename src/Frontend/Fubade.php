@@ -27,7 +27,7 @@ final class Fubade {
 	];
 
 	/**
-	 * The attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
+	 * The attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
 	 *
 	 * @since 3.0
 	 * @var array
@@ -39,7 +39,7 @@ final class Fubade {
 	 *
 	 * @since 3.0
 	 *
-	 * @param array $attr The output attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
+	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
 	 * @return string The output to the sourcecode.
 	 */
 	public function output( array $attr ): string {
@@ -51,6 +51,7 @@ final class Fubade {
 			'id'        => StringHelper::startsWith( $this->attr['id'], 'fubade-' )
 										? sanitize_text_field( $this->attr['id'] )
 										: 'fubade-' . random_int( 10, 99 ) . '-' . substr( $this->attr['api'], -5 ),
+			'classes'   => empty( $this->attr['classes'] ) ? '' : sanitize_text_field( $this->attr['classes'] ),
 			'notice'    => empty( $this->attr['notice'] ) ? '' : sanitize_text_field( $this->attr['notice'] ),
 			'fullwidth' => '1' === $this->attr['fullwidth']
 										|| 'true' === $this->attr['fullwidth']
@@ -89,13 +90,15 @@ final class Fubade {
 	 * Set the attribute array.
 	 *
 	 * @since 3.0
-	 * @param array $attr The attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`) for the widget rendering.
+	 * @param array $attr The attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`)
+	 *                    for the widget rendering.
 	 * @return void
 	 */
 	private function setAttr( array $attr ): void {
 		$this->attr = [
 			'api'       => $attr['api'] ?? '',
 			'id'        => $attr['id'] ?? 'ERROR_' . time(),
+			'classes'   => $attr['classes'] ?? '',
 			'notice'    => $attr['notice'] ?? '',
 			'fullwidth' => $attr['fullwidth'] ?? false,
 			'devtools'  => $attr['devtools'] ?? false,
@@ -110,25 +113,26 @@ final class Fubade {
 	 * @return string The rendered the output.
 	 */
 	private function render( ?string $error ): string {
+		$idAttribute = ' id="' . esc_attr( $this->attr['id'] ) . '"';
+
+		$classAttribute = ' class="include-fussball-de-widgets';
+		if ( '' !== $this->attr['classes'] ) {
+			$classAttribute .= ' ' . esc_attr( $this->attr['classes'] ) . '"';
+		}
+		$classAttribute .= '"';
+
 		if ( $error ) {
 			$content        = $this->getErrorOutput( $error );
 			$styleAttribute =
 			' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
 		} else {
-			$content = $this->createIframe();
+			$content        = $this->createIframe();
+			$styleAttribute = '';
 		}
 
-		$openingDiv = '<div id="' . esc_html( $this->attr['id'] ) . '" class="include-fussball-de-widgets"';
-		if ( $styleAttribute ) {
-			$openingDiv .= $styleAttribute;
-		}
-		$openingDiv .= '>';
-
-		$closingDiv = '</div>';
-
-		$output  = $openingDiv . PHP_EOL;
+		$output  = '<div' . $idAttribute . $classAttribute . $styleAttribute . '>' . PHP_EOL;
 		$output .= "\t" . $content . PHP_EOL;
-		$output .= $closingDiv . PHP_EOL;
+		$output .= '</div>' . PHP_EOL;
 
 		if ( $this->attr['devtools'] ) {
 			ConsoleLogger::getInstance()->log( $this->attr );
