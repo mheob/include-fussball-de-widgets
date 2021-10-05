@@ -1,7 +1,8 @@
+/* global attr */
+
 window.FussballdeWidgetAPI = () => {
   const widgetObj = {}
 
-  // eslint-disable-next-line no-undef
   const devTools = typeof attr !== 'undefined' && !!attr.devtools
 
   window.addEventListener(

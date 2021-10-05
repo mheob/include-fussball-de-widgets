@@ -23,6 +23,7 @@
   },
   "css.validate": false,
   "scss.validate": false,
+  "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.files.exclude": [
     "**/.git/**",
     "**/.svn/**",
