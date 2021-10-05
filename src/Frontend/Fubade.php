@@ -70,7 +70,7 @@ final class Fubade {
 			wp_localize_script( 'fubade-api', 'attr', [ 'devtools' => $this->attr['devtools'] ] );
 		}
 
-		wp_add_inline_script( 'fubade-api', 'new FussballdeWidgetAPI();', 'after' );
+		wp_add_inline_script( 'fubade-api', 'fussballDeWidgetAPI();', 'after' );
 
 		if ( strlen( $this->attr['api'] ) !== 32 ) {
 			ConsoleLogger::getInstance()->log( $this->attr );

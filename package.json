@@ -21,7 +21,7 @@
     "clear": "rimraf dist",
     "commit": "git-cz",
     "predev": "npm run clear",
-    "postdev": "node ./tasks/cp-dev-release.js",
+    "postdev": "npm run i18n && node ./tasks/cp-dev-release.js",
     "dev": "NODE_ENV=development webpack",
     "i18n": "npm run i18n:json && npm run i18n:copy",
     "i18n:copy": "cpr src/languages dist/languages -d",

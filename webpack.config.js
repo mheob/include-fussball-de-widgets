@@ -34,7 +34,7 @@ const commonConfig = {
         terserOptions: {
           output: { comments: /translators:/i },
           compress: { passes: 2 },
-          mangle: { reserved: ['FussballdeWidgetAPI', '__', '_n', '_nx', '_x'] }
+          mangle: { reserved: ['fussballDeWidgetAPI', '__', '_n', '_nx', '_x'] }
         },
         extractComments: false
       })
