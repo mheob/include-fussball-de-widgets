@@ -82,6 +82,7 @@ This plugin support Borlabs Cookie since its version 2.0.
 = 3.6.0 - 2021-10-05 =
 = Added =
 * Add the possibility for using custom css classes.
+* Add `wp-blocks` class to increase css hierarchy.
 
 = 3.5.0 - 2021-02-18 =
 = Added =
@@ -291,3 +292,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 
 == Upgrade Notice ==
 * Add the possibility for using custom css classes.
+* Add `wp-blocks` class to increase css hierarchy.
