@@ -1,3 +1,19 @@
+# [3.6.0-next.2](https://github.com/mheob/include-fussball-de-widgets/compare/v3.6.0-next.1...v3.6.0-next.2) (2021-10-07)
+
+
+### Bug Fixes
+
+* get fresh iframe list on every click if widget is behind a tab ([259021d](https://github.com/mheob/include-fussball-de-widgets/commit/259021d3c2d7f1d71e052f5203668f7a3ed26702))
+
+# [3.6.0-next.1](https://github.com/mheob/include-fussball-de-widgets/compare/v3.5.0...v3.6.0-next.1) (2021-10-07)
+
+
+### Features
+
+* add `Olevmedia Shortcode` exception for loading inside tabs ([#524](https://github.com/mheob/include-fussball-de-widgets/issues/524)) ([352169d](https://github.com/mheob/include-fussball-de-widgets/commit/352169d0ca92b3582ebd567d82638e13c3d87333))
+* add possibility for using custom css classes ([#521](https://github.com/mheob/include-fussball-de-widgets/issues/521)) ([a22bcce](https://github.com/mheob/include-fussball-de-widgets/commit/a22bcce0c66df60763aa9328e713461eecb131a8))
+* **styles:** add `wp-blocks` class to increase css hierarchy ([#519](https://github.com/mheob/include-fussball-de-widgets/issues/519)) ([3ee2020](https://github.com/mheob/include-fussball-de-widgets/commit/3ee2020210716c9e353f98f0ad3250fd99a10925))
+
 # [3.5.0](https://github.com/mheob/include-fussball-de-widgets/compare/v3.4.0...v3.5.0) (2021-02-23)
 
 
