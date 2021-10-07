@@ -3,9 +3,9 @@ Contributors: mheob
 Tags: soccer, football, fussball, gutenberg, widget, fussball.de
 Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
-Tested up to: 5.6
+Tested up to: 5.8
 Requires PHP: 7.2
-Stable tag: 3.5.0
+Stable tag: 3.6.0-beta.1
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,12 @@ e.g. like:
 
 Here the 32-digit ID must be entered from the official Fußball.de-Widget.
 **The API is required.**
+
+= What is the `classes` as spaces separated `{CSS classes}` =
+
+Custom CSS classes can be added to each widget to design it manually.
+For example, this can be used to set a fixed height or something similar.
+**The CLASSES are optional and can be omitted.**
 
 = What is the `notice` as `{description}`? =
 
@@ -79,6 +85,12 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.6.0 - 2021-10-05 =
+= Added =
+* Add the possibility for using custom css classes.
+* Add `wp-blocks` class to increase css hierarchy.
+* Add Olevmedia Shortcode exception for loading inside tabs.
+
 = 3.5.0 - 2021-02-18 =
 = Added =
 * Add WPBakery Page Builder exception for loading inside tabs.
@@ -286,4 +298,6 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-* Add WPBakery Page Builder exception for loading inside tabs.
+* Add the possibility for using custom css classes.
+* Add `wp-blocks` class to increase css hierarchy.
+* Add Olevmedia Shortcode exception for loading inside tabs.

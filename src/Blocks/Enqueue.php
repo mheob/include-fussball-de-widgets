@@ -56,6 +56,7 @@ final class Enqueue extends ActionBase {
 				'attributes'      => [
 					'id'        => [ 'type' => 'string' ],
 					'api'       => [ 'type' => 'string' ],
+					'classes'   => [ 'type' => 'string' ],
 					'notice'    => [ 'type' => 'string' ],
 					'fullwidth' => [ 'type' => 'boolean' ],
 					'devtools'  => [ 'type' => 'boolean' ],
@@ -71,8 +72,7 @@ final class Enqueue extends ActionBase {
 	 * Creates the output to the sourcecode.
 	 *
 	 * @since 3.0
-	 * @param array $attr The output attributes (`api`, `id`, `notice`,
-	 *                    `fullwidth` and `devtools`).
+	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
 	 * @return string The output to the sourcecode.
 	 */
 	public function render( array $attr ): string {

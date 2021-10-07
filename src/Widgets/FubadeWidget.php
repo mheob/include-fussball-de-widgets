@@ -44,8 +44,9 @@ class FubadeWidget extends \WP_Widget {
 	public function form( $instance ): void {
 		// Set the Widgets defaults and Parse current settings with defaults.
 		$defaults = [
-			'title'     => '',
 			'api'       => '',
+			'classes'   => '',
+			'title'     => '',
 			'fullwidth' => '',
 			'devtools'  => '',
 		];
@@ -55,43 +56,68 @@ class FubadeWidget extends \WP_Widget {
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 				<?php esc_html_e( 'Title: ', 'include-fussball-de-widgets' ); ?>
 			</label>
+
 			<input
 				type="text"
 				class="widefat"
 				id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
-				value="<?php echo esc_attr( $instance['title'] ); ?>">
+				value="<?php echo esc_attr( $instance['title'] ); ?>"
+			/>
 		</p>
+
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'api' ) ); ?>">
 				<?php esc_html_e( 'API: ', 'include-fussball-de-widgets' ); ?>
 			</label>
+
 			<input
 				type="text"
 				class="widefat"
 				pattern="[A-Za-z0-9]{32}"
 				id="<?php echo esc_attr( $this->get_field_id( 'api' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'api' ) ); ?>"
-				value="<?php echo esc_attr( $instance['api'] ); ?>">
+				value="<?php echo esc_attr( $instance['api'] ); ?>"
+			/>
 		</p>
+
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'classes' ) ); ?>">
+				<?php esc_html_e( 'CSS-Classes: ', 'include-fussball-de-widgets' ); ?>
+			</label>
+
+			<input
+				type="text"
+				class="widefat"
+				id="<?php echo esc_attr( $this->get_field_id( 'classes' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'classes' ) ); ?>"
+				value="<?php echo esc_attr( $instance['classes'] ); ?>"
+			/>
+		</p>
+
 		<p>
 			<input
 				id="<?php echo esc_attr( $this->get_field_id( 'fullwidth' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'fullwidth' ) ); ?>"
 				type="checkbox"
 				<?php checked( '1', $instance['fullwidth'] ); ?>
-				value="1">
+				value="1"
+			/>
+
 			<label for="<?php echo esc_attr( $this->get_field_id( 'fullwidth' ) ); ?>">
 				<?php esc_html_e( 'view in full width', 'include-fussball-de-widgets' ); ?>
 			</label>
 		</p>
+
 		<p>
 			<input
 				id="<?php echo esc_attr( $this->get_field_id( 'devtools' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'devtools' ) ); ?>"
 				type="checkbox"
 				<?php checked( '1', $instance['devtools'] ); ?>
-				value="1">
+				value="1"
+			/>
+
 			<label for="<?php echo esc_attr( $this->get_field_id( 'devtools' ) ); ?>">
 				<?php esc_html_e( 'output log data to console', 'include-fussball-de-widgets' ); ?>
 			</label>
@@ -109,8 +135,9 @@ class FubadeWidget extends \WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ): array {
 		$instance              = $old_instance;
-		$instance['title']     = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
 		$instance['api']       = isset( $new_instance['api'] ) ? wp_strip_all_tags( $new_instance['api'] ) : '';
+		$instance['classes']   = isset( $new_instance['classes'] ) ? wp_strip_all_tags( $new_instance['classes'] ) : '';
+		$instance['title']     = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
 		$instance['fullwidth'] = isset( $new_instance['fullwidth'] ) ? 1 : false;
 		$instance['devtools']  = isset( $new_instance['devtools'] ) ? 1 : false;
 
@@ -127,8 +154,9 @@ class FubadeWidget extends \WP_Widget {
 	public function widget( $args, $instance ): void {
 		// phpcs:disable
 		// Check the widget options.
-		$title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 		$api       = $instance['api'] ?? '';
+		$classes   = isset( $instance['classes'] ) ? apply_filters( 'widget_title', $instance['classes'] ) : '';
+		$title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 		$fullwidth = empty( $instance['fullwidth'] ) ? false : true;
 		$devtools  = empty( $instance['devtools'] ) ? false : true;
 
@@ -140,8 +168,9 @@ class FubadeWidget extends \WP_Widget {
 
 		$output = ( new Fubade() )->output(
 			[
-				'id'        => '',
 				'api'       => $api,
+				'id'        => '',
+				'classes'   => $classes,
 				'notice'    => $title,
 				'fullwidth' => $fullwidth,
 				'devtools'  => $devtools,

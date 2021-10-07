@@ -1,15 +1,5 @@
 {
   "files.eol": "\n",
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    ".github-*": true,
-    ".releases": true,
-    "assets": true
-  },
   "files.watcherExclude": {
     "**/lib/**": true,
     "**/node_modules/**": true,
@@ -33,6 +23,7 @@
   },
   "css.validate": false,
   "scss.validate": false,
+  "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.files.exclude": [
     "**/.git/**",
     "**/.svn/**",

@@ -11,7 +11,6 @@
 [![Test CI](https://img.shields.io/github/workflow/status/mheob/include-fussball-de-widgets/Test%20CI?label=Test%20CI&logo=github&style=flat-square)](https://github.com/mheob/include-fussball-de-widgets)
 [![Release CI](https://img.shields.io/github/workflow/status/mheob/include-fussball-de-widgets/Release%20CI?label=Release%20CI&logo=github&style=flat-square)](https://github.com/mheob/include-fussball-de-widgets)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/mheob/include-fussball-de-widgets.svg?logo=lgtm&logoWidth=18&style=flat-square)](https://lgtm.com/projects/g/mheob/include-fussball-de-widgets/context:javascript)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standardjs-brightgreen.svg?style=flat-square)](https://standardjs.com)
 
 [![GitHub Sponsor](https://img.shields.io/badge/Sponsors-333333.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/sponsors/mheob)
 [![PayPal donate button](https://img.shields.io/badge/Paypal-Donate-_.svg?style=flat-square&color=003087&logo=paypal)](https://www.paypal.me/mheob)
@@ -46,6 +45,12 @@ A WordPress plugin for easy integration of [fussball.de widgets](http://training
 
 > Here the 32-digit ID must be entered from the official Fußball.de-Widget.\
 > **The API is required.**
+
+### What is the `classes` as spaces separated `{CSS classes}`
+
+> Custom CSS classes can be added to each widget to design it manually.\
+> For example, this can be used to set a fixed height or something similar.\
+> **The CLASSES are optional and can be omitted.**
 
 ### What is the `notice` as `{description}`
 
@@ -111,6 +116,12 @@ Ein WordPress-Plugin für die einfache Integration der [fussball.de widgets](htt
 
 > Hier muss die 32-stellige ID (der Website-Schlüssel) aus dem offiziellen Fußball.de-Widget eingegeben werden.\
 > **Die API ist erforderlich.**
+
+### Was ist `classes` als Leerzeichen getrennte `{CSS-Klassen}`
+
+> Zu jedem Widget können eigene CSS Klassen hinzugefügt werden, um es manuell zu gestalten.\
+> Zum Beispiel kann so eine feste Höhe oder etwas ähnliches eingestellt werden.\
+> **Die CSS KLASSEN sind optional und können weggelassen werden.**
 
 ### Was ist der `notice` als `{Hinweis}`
 

@@ -16,8 +16,7 @@ use ITSB\IFDW\Utils\Settings;
 use ITSB\IFDW\Utils\StringHelper;
 
 /**
- * The `Fubade` class used to create the output of the widget
- * from `fussball.de`.
+ * The `Fubade` class used to create the output of the widget from `fussball.de`.
  *
  * @since 3.0
  */
@@ -28,7 +27,7 @@ final class Fubade {
 	];
 
 	/**
-	 * The attributes (`api`, `id`, `notice`, `fullwidth` and `devtools`).
+	 * The attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
 	 *
 	 * @since 3.0
 	 * @var array
@@ -40,8 +39,7 @@ final class Fubade {
 	 *
 	 * @since 3.0
 	 *
-	 * @param array $attr The output attributes (`api`, `id`, `notice`,
-	 *                    `fullwidth` and `devtools`).
+	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
 	 * @return string The output to the sourcecode.
 	 */
 	public function output( array $attr ): string {
@@ -53,6 +51,7 @@ final class Fubade {
 			'id'        => StringHelper::startsWith( $this->attr['id'], 'fubade-' )
 										? sanitize_text_field( $this->attr['id'] )
 										: 'fubade-' . random_int( 10, 99 ) . '-' . substr( $this->attr['api'], -5 ),
+			'classes'   => empty( $this->attr['classes'] ) ? '' : sanitize_text_field( $this->attr['classes'] ),
 			'notice'    => empty( $this->attr['notice'] ) ? '' : sanitize_text_field( $this->attr['notice'] ),
 			'fullwidth' => '1' === $this->attr['fullwidth']
 										|| 'true' === $this->attr['fullwidth']
@@ -72,7 +71,7 @@ final class Fubade {
 			wp_localize_script( 'fubade-api', 'attr', [ 'devtools' => $this->attr['devtools'] ] );
 		}
 
-		wp_add_inline_script( 'fubade-api', 'new FussballdeWidgetAPI();', 'after' );
+		wp_add_inline_script( 'fubade-api', 'fussballDeWidgetAPI();', 'after' );
 
 		if ( strlen( $this->attr['api'] ) !== 32 ) {
 			ConsoleLogger::getInstance()->log( $this->attr );
@@ -91,14 +90,15 @@ final class Fubade {
 	 * Set the attribute array.
 	 *
 	 * @since 3.0
-	 * @param array $attr The attributes (`api`, `id`, `notice`, `fullwidth`
-	 *                    and `devtools`) for the widget rendering.
+	 * @param array $attr The attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`)
+	 *                    for the widget rendering.
 	 * @return void
 	 */
-	public function setAttr( array $attr ): void {
+	private function setAttr( array $attr ): void {
 		$this->attr = [
 			'api'       => $attr['api'] ?? '',
 			'id'        => $attr['id'] ?? 'ERROR_' . time(),
+			'classes'   => $attr['classes'] ?? '',
 			'notice'    => $attr['notice'] ?? '',
 			'fullwidth' => $attr['fullwidth'] ?? false,
 			'devtools'  => $attr['devtools'] ?? false,
@@ -113,38 +113,25 @@ final class Fubade {
 	 * @return string The rendered the output.
 	 */
 	private function render( ?string $error ): string {
-		$divAttributeString = 'id="' . esc_html( $this->attr['id'] ) . '" class="include-fussball-de-widgets"';
+		$idAttribute = ' id="' . esc_attr( $this->attr['id'] ) . '"';
+
+		$classAttribute = ' class="include-fussball-de-widgets';
+		if ( '' !== $this->attr['classes'] ) {
+			$classAttribute .= ' ' . esc_attr( $this->attr['classes'] ) . '"';
+		}
+		$classAttribute .= '"';
 
 		if ( $error ) {
-			$divAttributeString .=
+			$content        = $this->getErrorOutput( $error );
+			$styleAttribute =
 			' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
-
-			switch ( $error ) {
-				case self::ERROR['API_LENGTH']:
-					$divContent  = __(
-						'!!! The fussball.de API must have a length of exactly 32 characters. !!!',
-						'include-fussball-de-widgets'
-					) . PHP_EOL;
-					$divContent .= sprintf( /* translators: %s: The length of the api. */
-						esc_html__( 'Currently the API length is: %s', 'include-fussball-de-widgets' ),
-						esc_html( strlen( $this->attr['api'] ) )
-					) . PHP_EOL;
-					break;
-				case self::ERROR['HTTP_HOST']:
-					$divContent = __(
-						'The PHP variable <code>$_SERVER["HTTP_HOST"]</code> was not set by the server.',
-						'include-fussball-de-widgets'
-					) . PHP_EOL;
-					break;
-				default:
-					$divContent = __( 'An undefined error has occurred.', 'include-fussball-de-widgets' ) . PHP_EOL;
-			}
 		} else {
-			$divContent = $this->createIframe();
+			$content        = $this->createIframe();
+			$styleAttribute = '';
 		}
 
-		$output  = "<div $divAttributeString>" . PHP_EOL;
-		$output .= $divContent;
+		$output  = '<div' . $idAttribute . $classAttribute . $styleAttribute . '>' . PHP_EOL;
+		$output .= "\t" . $content . PHP_EOL;
 		$output .= '</div>' . PHP_EOL;
 
 		if ( $this->attr['devtools'] ) {
@@ -152,6 +139,35 @@ final class Fubade {
 		}
 
 		return $output;
+	}
+
+	/**
+	 * Returns the error output content.
+	 *
+	 * @since 3.6
+	 * @param string|null $error Potential errors.
+	 * @return string The error output content.
+	 */
+	private function getErrorOutput( ?string $error ): string {
+		switch ( $error ) {
+			case self::ERROR['API_LENGTH']:
+				$output  = __(
+					'!!! The fussball.de API must have a length of exactly 32 characters. !!!',
+					'include-fussball-de-widgets'
+				) . PHP_EOL;
+				$output .= sprintf( /* translators: %s: The length of the api. */
+					esc_html__( 'Currently the API length is: %s', 'include-fussball-de-widgets' ),
+					esc_html( strlen( $this->attr['api'] ) )
+				);
+				return $output;
+			case self::ERROR['HTTP_HOST']:
+				return __(
+					'The PHP variable <code>$_SERVER["HTTP_HOST"]</code> was not set by the server.',
+					'include-fussball-de-widgets'
+				);
+		}
+
+		return __( 'An undefined error has occurred.', 'include-fussball-de-widgets' );
 	}
 
 	/**
@@ -165,9 +181,9 @@ final class Fubade {
 		$src   .= '/target/' . $this->attr['id'];
 		$src   .= '/caller/' . Settings::getHost();
 		$width  = $this->attr['fullwidth'] ? '100%' : '900px';
-		$height = '200px';
-		$style  = 'border: 1px solid #CECECE; overflow: hidden';
+		$height = '100%';
+		$style  = 'border: 1px solid #CECECE; overflow: hidden; min-height: 200px;';
 
-		return "<iframe src='$src' width='$width' height='$height' scrolling='no' style='$style'></iframe>" . PHP_EOL;
+		return "<iframe src='$src' width='$width' height='$height' scrolling='no' style='$style'></iframe>";
 	}
 }

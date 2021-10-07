@@ -10,20 +10,12 @@ $white: #fff;
 $fubade_green: #9c3;
 $error_color: #af1f1f;
 
-.wp-block-ifdw-fubade {
+.wp-block .wp-block-ifdw-fubade {
   display: flex;
   flex-direction: row;
   padding: 14px;
   font-size: 13px;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen-Sans,
-    Ubuntu,
-    Cantarell,
-    "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
     sans-serif;
   background-color: #f8f9f9;
 

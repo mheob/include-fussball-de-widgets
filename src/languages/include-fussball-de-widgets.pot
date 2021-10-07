@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Include Fussball.de Widgets\n"
-"POT-Creation-Date: 2020-10-14 08:30+0200\n"
+"POT-Creation-Date: 2021-10-05 16:33+0200\n"
 "PO-Revision-Date: 2020-04-14 15:19+0200\n"
 "Last-Translator: Alexander Böhm <ab@its-boehm.de>\n"
 "Language-Team: Alexander Böhm <ab@its-boehm.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: index.php\n"
@@ -21,37 +21,37 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: Backend/BorlabsCookie.php:72
+#: Backend/BorlabsCookie.php:73
 msgid "By loading the widget, you agree to the privacy policy of fussball.de."
 msgstr ""
 
-#: Backend/BorlabsCookie.php:76
+#: Backend/BorlabsCookie.php:77
 msgid "Learn more"
 msgstr ""
 
-#: Backend/BorlabsCookie.php:80
+#: Backend/BorlabsCookie.php:81
 msgid "Load widget"
 msgstr ""
 
-#: Backend/BorlabsCookie.php:86
+#: Backend/BorlabsCookie.php:87
 msgid "Always load fussball.de Widgets"
 msgstr ""
 
-#: Backend/BorlabsCookie.php:110 Widgets/FubadeWidget.php:32
+#: Backend/BorlabsCookie.php:111 Widgets/FubadeWidget.php:32
 msgid "Fussball.de Widget"
 msgstr ""
 
-#: Backend/BorlabsCookie.php:210
+#: Backend/BorlabsCookie.php:212
 msgctxt "Cookie - Default Entry Fußball.de"
 msgid "Used to unblock Fußball.de content."
 msgstr ""
 
-#: Backend/BorlabsCookie.php:211
+#: Backend/BorlabsCookie.php:213
 msgctxt "Cookie - Default Entry Fußball.de"
 msgid "http://www.fussball.de/privacy/"
 msgstr ""
 
-#: Backend/BorlabsCookie.php:214
+#: Backend/BorlabsCookie.php:216
 msgctxt "Cookie - Default Entry Fußball.de"
 msgid "Unlimited"
 msgstr ""
@@ -69,58 +69,62 @@ msgstr ""
 msgid "fubade"
 msgstr ""
 
-#: Blocks/fubade/index.js:61
+#: Blocks/fubade/index.js:62
 msgid "Fussball.de Widgets Settings"
 msgstr ""
 
-#: Blocks/fubade/index.js:63
+#: Blocks/fubade/index.js:64
+msgid "CSS-Classes"
+msgstr ""
+
+#: Blocks/fubade/index.js:72
 msgid "Notice"
 msgstr ""
 
-#: Blocks/fubade/index.js:74
+#: Blocks/fubade/index.js:83
 msgid "The widget will be shown in the maximal width."
 msgstr ""
 
-#: Blocks/fubade/index.js:76
+#: Blocks/fubade/index.js:85
 msgid ""
 "The widget will be shown in the width given from fussball.de(CSS possible "
 "could overwrite this setting)."
 msgstr ""
 
-#: Blocks/fubade/index.js:81
+#: Blocks/fubade/index.js:90
 msgid "Show in full width"
 msgstr ""
 
-#: Blocks/fubade/index.js:91
+#: Blocks/fubade/index.js:100
 msgid "Debugging information will be displayed in the browser console."
 msgstr ""
 
-#: Blocks/fubade/index.js:92
+#: Blocks/fubade/index.js:101
 msgid "No debugging information were outputted."
 msgstr ""
 
-#: Blocks/fubade/index.js:94
+#: Blocks/fubade/index.js:103
 msgid "Show some information for debugging"
 msgstr ""
 
-#: Frontend/Fubade.php:125
+#: Frontend/Fubade.php:155
 msgid ""
 "!!! The fussball.de API must have a length of exactly 32 characters. !!!"
 msgstr ""
 
 #. translators: %s: The length of the api.
-#: Frontend/Fubade.php:129
+#: Frontend/Fubade.php:159
 #, php-format
 msgid "Currently the API length is: %s"
 msgstr ""
 
-#: Frontend/Fubade.php:135
+#: Frontend/Fubade.php:165
 msgid ""
 "The PHP variable <code>$_SERVER[\"HTTP_HOST\"]</code> was not set by the "
 "server."
 msgstr ""
 
-#: Frontend/Fubade.php:140
+#: Frontend/Fubade.php:170
 msgid "An undefined error has occurred."
 msgstr ""
 
@@ -163,19 +167,23 @@ msgstr ""
 msgid "Displays the fussball.de widget."
 msgstr ""
 
-#: Widgets/FubadeWidget.php:56
+#: Widgets/FubadeWidget.php:57
 msgid "Title: "
 msgstr ""
 
-#: Widgets/FubadeWidget.php:67
+#: Widgets/FubadeWidget.php:71
 msgid "API: "
 msgstr ""
 
-#: Widgets/FubadeWidget.php:85
+#: Widgets/FubadeWidget.php:86
+msgid "CSS-Classes: "
+msgstr ""
+
+#: Widgets/FubadeWidget.php:108
 msgid "view in full width"
 msgstr ""
 
-#: Widgets/FubadeWidget.php:96
+#: Widgets/FubadeWidget.php:122
 msgid "output log data to console"
 msgstr ""
 
