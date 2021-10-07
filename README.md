@@ -46,6 +46,12 @@ A WordPress plugin for easy integration of [fussball.de widgets](http://training
 > Here the 32-digit ID must be entered from the official Fußball.de-Widget.\
 > **The API is required.**
 
+### What is the `classes` as spaces separated `{CSS classes}`
+
+> Custom CSS classes can be added to each widget to design it manually.\
+> For example, this can be used to set a fixed height or something similar.\
+> **The CLASSES are optional and can be omitted.**
+
 ### What is the `notice` as `{description}`
 
 > The description can be entered according to your own wishes.\
@@ -110,6 +116,12 @@ Ein WordPress-Plugin für die einfache Integration der [fussball.de widgets](htt
 
 > Hier muss die 32-stellige ID (der Website-Schlüssel) aus dem offiziellen Fußball.de-Widget eingegeben werden.\
 > **Die API ist erforderlich.**
+
+### Was ist `classes` als Leerzeichen getrennte `{CSS-Klassen}`
+
+> Zu jedem Widget können eigene CSS Klassen hinzugefügt werden, um es manuell zu gestalten.\
+> Zum Beispiel kann so eine feste Höhe oder etwas ähnliches eingestellt werden.\
+> **Die CSS KLASSEN sind optional und können weggelassen werden.**
 
 ### Was ist der `notice` als `{Hinweis}`
 

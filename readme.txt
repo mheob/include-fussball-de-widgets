@@ -36,6 +36,12 @@ e.g. like:
 Here the 32-digit ID must be entered from the official Fußball.de-Widget.
 **The API is required.**
 
+= What is the `classes` as spaces separated `{CSS classes}` =
+
+Custom CSS classes can be added to each widget to design it manually.
+For example, this can be used to set a fixed height or something similar.
+**The CLASSES are optional and can be omitted.**
+
 = What is the `notice` as `{description}`? =
 
 The description can be entered according to your own wishes.

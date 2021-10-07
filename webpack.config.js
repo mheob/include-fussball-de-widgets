@@ -42,12 +42,6 @@ const commonConfig = {
   },
   module: {
     rules: [
-      !isProduction && {
-        test: /\.js$/,
-        exclude: [/node_modules/],
-        use: require.resolve('source-map-loader'),
-        enforce: 'pre'
-      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -67,6 +61,15 @@ const commonConfig = {
   },
   stats: { children: false },
   devtool: !isProduction && (process.env.WP_DEVTOOL || 'source-map')
+}
+
+if (!isProduction) {
+  commonConfig.module.rules.unshift({
+    test: /\.js$/,
+    exclude: [/node_modules/],
+    use: require.resolve('source-map-loader'),
+    enforce: 'pre'
+  })
 }
 
 const blockConfig = {
