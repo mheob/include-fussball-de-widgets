@@ -1,3 +1,10 @@
+# [3.6.0-next.2](https://github.com/mheob/include-fussball-de-widgets/compare/v3.6.0-next.1...v3.6.0-next.2) (2021-10-07)
+
+
+### Bug Fixes
+
+* get fresh iframe list on every click if widget is behind a tab ([259021d](https://github.com/mheob/include-fussball-de-widgets/commit/259021d3c2d7f1d71e052f5203668f7a3ed26702))
+
 # [3.6.0-next.1](https://github.com/mheob/include-fussball-de-widgets/compare/v3.5.0...v3.6.0-next.1) (2021-10-07)
 
 
