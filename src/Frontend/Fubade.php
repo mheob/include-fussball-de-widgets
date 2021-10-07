@@ -181,8 +181,8 @@ final class Fubade {
 		$src   .= '/target/' . $this->attr['id'];
 		$src   .= '/caller/' . Settings::getHost();
 		$width  = $this->attr['fullwidth'] ? '100%' : '900px';
-		$height = '200px';
-		$style  = 'border: 1px solid #CECECE; overflow: hidden';
+		$height = '100%';
+		$style  = 'border: 1px solid #CECECE; overflow: hidden; min-height: 200px;';
 
 		return "<iframe src='$src' width='$width' height='$height' scrolling='no' style='$style'></iframe>";
 	}
