@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
 Tested up to: 5.8
 Requires PHP: 7.2
-Stable tag: 3.6.0
+Stable tag: 3.6.0-beta.1
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,6 +89,7 @@ This plugin support Borlabs Cookie since its version 2.0.
 = Added =
 * Add the possibility for using custom css classes.
 * Add `wp-blocks` class to increase css hierarchy.
+* Add Olevmedia Shortcode exception for loading inside tabs.
 
 = 3.5.0 - 2021-02-18 =
 = Added =
@@ -299,3 +300,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 == Upgrade Notice ==
 * Add the possibility for using custom css classes.
 * Add `wp-blocks` class to increase css hierarchy.
+* Add Olevmedia Shortcode exception for loading inside tabs.
