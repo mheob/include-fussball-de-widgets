@@ -44,17 +44,17 @@ window.fussballDeWidgetAPI = () => {
       // eslint-disable-next-line max-len
       '.et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a, .su-spoiler-title, .vc_tta-tab a, .omsc-tabs-control a'
     )
-    const iframes = document.querySelectorAll('iframe')
     if (tabs.length > 0) {
       Array.from(tabs).forEach((tab) => {
         tab.addEventListener(
           'click',
           () => {
+            const iframes = document.querySelectorAll('iframe')
             setTimeout(
               Array.from(iframes).forEach((iframe) => {
                 iframe.src += ''
               }),
-              800
+              700
             )
             if (devTools) {
               console.info('window.fussballDeWidgetAPI -> tab', tab)

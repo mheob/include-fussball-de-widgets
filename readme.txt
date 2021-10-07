@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
 Tested up to: 5.8
 Requires PHP: 7.2
-Stable tag: 3.6.0-beta.1
+Stable tag: 3.6.0-next.2
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,7 +134,7 @@ This plugin support Borlabs Cookie since its version 2.0.
 = Fixed =
 * The output of the used php version in the logger section is now set correctly.
 = Changed =
-* The internal documention is updated.
+* The internal documentation is updated.
 * Improve the linting in the development files.
 
 = 3.1.3 - 2020-02-16 =
