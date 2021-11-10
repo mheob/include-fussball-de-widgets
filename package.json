@@ -53,7 +53,7 @@
     "@semantic-release/github": "^8.0.2",
     "@semantic-release/npm": "^8.0.2",
     "@semantic-release/release-notes-generator": "^10.0.2",
-    "@wordpress/block-editor": "^7.0.4",
+    "@wordpress/block-editor": "^8.0.0",
     "@wordpress/blocks": "^11.1.2",
     "@wordpress/i18n": "^4.2.3",
     "@wordpress/scripts": "^19.0.0",
