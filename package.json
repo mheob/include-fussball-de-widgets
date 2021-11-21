@@ -59,7 +59,7 @@
     "@wordpress/scripts": "^19.1.0",
     "bestzip": "^2.2.0",
     "commitizen": "^4.2.4",
-    "copy-webpack-plugin": "^9.0.1",
+    "copy-webpack-plugin": "^10.0.0",
     "cpr": "^3.0.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.2.0",
