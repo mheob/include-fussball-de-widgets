@@ -56,7 +56,7 @@
     "@wordpress/block-editor": "^8.0.13",
     "@wordpress/blocks": "^11.1.5",
     "@wordpress/i18n": "^4.2.4",
-    "@wordpress/scripts": "^19.2.3",
+    "@wordpress/scripts": "^20.0.0",
     "bestzip": "^2.2.0",
     "commitizen": "^4.2.4",
     "copy-webpack-plugin": "^10.2.1",
