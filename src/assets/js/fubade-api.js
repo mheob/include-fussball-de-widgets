@@ -35,6 +35,7 @@ window.fussballDeWidgetAPI = () => {
   if (
     document.body.classList.contains('et_divi_theme') ||
     document.body.classList.contains('fusion-body') ||
+    document.body.classList.contains('elementor-page') ||
     document.querySelectorAll('.wp-block-kadence-tabs').length > 0 ||
     document.querySelectorAll('.su-spoiler').length > 0 ||
     document.querySelectorAll('.vc_tta-tabs').length > 0 ||
@@ -42,7 +43,7 @@ window.fussballDeWidgetAPI = () => {
   ) {
     const tabs = document.querySelectorAll(
       // eslint-disable-next-line max-len
-      '.et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a, .su-spoiler-title, .vc_tta-tab a, .omsc-tabs-control a'
+      '.et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a, .su-spoiler-title, .vc_tta-tab a, .omsc-tabs-control a, .elementor-tab-title, .elementor-toggle'
     )
     if (tabs.length > 0) {
       Array.from(tabs).forEach((tab) => {

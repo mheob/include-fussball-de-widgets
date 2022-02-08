@@ -3,9 +3,9 @@ Contributors: mheob
 Tags: soccer, football, fussball, gutenberg, widget, fussball.de
 Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 7.2
-Stable tag: 3.6.0
+Stable tag: 3.7.0
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,10 @@ This plugin support Borlabs Cookie since its version 2.0.
 1. screenshot-1.jpg
 
 == Changelog ==
+= 3.7.0 - 2022-02-08 =
+= Added =
+* Add Elementor Toggle exception for loading inside tabs.
+
 = 3.6.0 - 2021-10-05 =
 = Added =
 * Add the possibility for using custom css classes.
@@ -298,6 +302,4 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
-* Add the possibility for using custom css classes.
-* Add `wp-blocks` class to increase css hierarchy.
-* Add Olevmedia Shortcode exception for loading inside tabs.
+* Add Elementor Toggle exception for loading inside tabs.
