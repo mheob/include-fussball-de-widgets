@@ -1,12 +1,9 @@
 version = 1
 
-[[analyzers]]
-name = "php"
-enabled = true
-
-[[analyzers]]
-name = "shell"
-enabled = true
+test_patterns = [
+  "src/**/*.js",
+  "src/**/*.php"
+]
 
 [[analyzers]]
 name = "javascript"
