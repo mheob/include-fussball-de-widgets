@@ -30,6 +30,7 @@
     "lint": "eslint 'src/**/*.js'",
     "lint:fix": "prettier-eslint \"$PWD/src/**/*.js\" --write",
     "hooks": "./init-gitkraken-hooks.sh",
+    "run-if-changed": "run-if-changed",
     "release": "npm run build && npm run release:copy && npm run release:github",
     "release:copy": "cpr dist .releases/include-fussball-de-widgets/trunk/ -d",
     "release:github": "cpr dist .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
