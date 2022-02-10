@@ -1,3 +1,10 @@
+# [3.7.0-next.1](https://github.com/mheob/include-fussball-de-widgets/compare/v3.6.0...v3.7.0-next.1) (2022-02-08)
+
+
+### Features
+
+* add `Elementor Toggle` exception for loading inside tabs ([#569](https://github.com/mheob/include-fussball-de-widgets/issues/569)) ([9a170b3](https://github.com/mheob/include-fussball-de-widgets/commit/9a170b30b7b2d952f7d460f4d655b44e6f235909)), closes [#556](https://github.com/mheob/include-fussball-de-widgets/issues/556) [#534](https://github.com/mheob/include-fussball-de-widgets/issues/534)
+
 # [3.6.0](https://github.com/mheob/include-fussball-de-widgets/compare/v3.5.0...v3.6.0) (2021-10-07)
 
 

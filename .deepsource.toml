@@ -1,0 +1,10 @@
+version = 1
+
+test_patterns = [
+  "src/**/*.js",
+  "src/**/*.php"
+]
+
+[[analyzers]]
+name = "javascript"
+enabled = true
