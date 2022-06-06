@@ -3,7 +3,7 @@ Contributors: mheob
 Tags: soccer, football, fussball, gutenberg, widget, fussball.de
 Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 7.2
 Stable tag: 3.7.0
 License: GPL2
