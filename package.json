@@ -55,7 +55,7 @@
     "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@wordpress/block-editor": "^10.5.0",
-    "@wordpress/blocks": "^11.21.0",
+    "@wordpress/blocks": "^12.0.0",
     "@wordpress/i18n": "^4.22.0",
     "@wordpress/scripts": "^24.6.0",
     "bestzip": "^2.2.1",
