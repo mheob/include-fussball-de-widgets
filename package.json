@@ -59,7 +59,7 @@
     "@wordpress/i18n": "^4.25.0",
     "@wordpress/scripts": "^25.2.0",
     "bestzip": "^2.2.1",
-    "commitizen": "^4.2.6",
+    "commitizen": "^4.3.0",
     "copy-webpack-plugin": "^11.0.0",
     "cpr": "^3.0.1",
     "cz-conventional-changelog": "^3.3.0",
@@ -75,8 +75,8 @@
     "prettier": "^2.8.3",
     "prettier-eslint": "^15.0.1",
     "prettier-eslint-cli": "^7.1.0",
-    "rimraf": "^4.1.1",
-    "semantic-release": "^20.0.2"
+    "rimraf": "^4.1.2",
+    "semantic-release": "^20.1.0"
   },
   "publishConfig": {
     "access": "restricted"
