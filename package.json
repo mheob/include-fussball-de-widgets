@@ -76,7 +76,7 @@
     "prettier-eslint": "^15.0.1",
     "prettier-eslint-cli": "^7.1.0",
     "rimraf": "^5.0.0",
-    "semantic-release": "^21.0.1"
+    "semantic-release": "^21.0.2"
   },
   "publishConfig": {
     "access": "restricted"
