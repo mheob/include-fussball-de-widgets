@@ -8,13 +8,14 @@
 [![Wordpress Plugin Installs](https://img.shields.io/wordpress/plugin/installs/include-fussball-de-widgets.svg?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 [![WordPress Plugin Rating](https://img.shields.io/wordpress/plugin/rating/include-fussball-de-widgets?style=flat-square)](https://wordpress.org/plugins/include-fussball-de-widgets)
 
-[![Test CI](https://img.shields.io/github/workflow/status/mheob/include-fussball-de-widgets/Test%20CI?label=Test%20CI&logo=github&style=flat-square)](https://github.com/mheob/include-fussball-de-widgets)
-[![Release CI](https://img.shields.io/github/workflow/status/mheob/include-fussball-de-widgets/Release%20CI?label=Release%20CI&logo=github&style=flat-square)](https://github.com/mheob/include-fussball-de-widgets)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/mheob/include-fussball-de-widgets.svg?logo=lgtm&logoWidth=18&style=flat-square)](https://lgtm.com/projects/g/mheob/include-fussball-de-widgets/context:javascript)
+[![Test CI](https://img.shields.io/github/actions/workflow/status/mheob/include-fussball-de-widgets/test.yml?style=flat-square&logo=github&label=Test%20CI)](https://github.com/mheob/include-fussball-de-widgets/actions/workflows/test.yml)
+[![Release CI](https://img.shields.io/github/actions/workflow/status/mheob/include-fussball-de-widgets/release.yml?style=flat-square&logo=github&label=Release%20CI)](https://github.com/mheob/include-fussball-de-widgets/actions/workflows/release.yml)
+[![CodeQL](https://img.shields.io/github/actions/workflow/status/mheob/include-fussball-de-widgets/test.yml?style=flat-square&logo=github&label=CodeQL)](https://github.com/mheob/include-fussball-de-widgets/actions/workflows/codeql-analysis.yml)
 
 [![GitHub Sponsor](https://img.shields.io/badge/Sponsors-333333.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/sponsors/mheob)
 [![PayPal donate button](https://img.shields.io/badge/Paypal-Donate-_.svg?style=flat-square&color=003087&logo=paypal)](https://www.paypal.me/mheob)
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-ff813f.svg?style=flat-square&logo=buy%20me%20a%20coffee&logoColor=white)](https://www.buymeacoffee.com/mheob)
+[![Ko-Fi](https://img.shields.io/badge/Ko--Fi-ffffff?style=flat-square&logo=ko-fi)](https://ko-fi.com/mheob)
 
 ## English
 
