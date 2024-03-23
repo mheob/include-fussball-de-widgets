@@ -2397,7 +2397,7 @@ packages:
       html-entities: 2.3.3
       loader-utils: 2.0.4
       react-refresh: 0.10.0
-      schema-utils: 3.1.2
+      schema-utils: 3.3.0
       source-map: 0.7.4
       webpack: 5.84.0(webpack-cli@4.10.0)
       webpack-dev-server: 4.15.0(webpack-cli@4.10.0)(webpack@5.84.0)
@@ -3431,7 +3431,7 @@ packages:
     resolution: {integrity: sha512-nbq2mvc/tBrK9zQQuItvjJl++GTN5j06DaPtp3hZCpngmG6Q3xoyEmd0TwZI0gAy/G1X0zhGBbr2imsGFdFV0g==}
     dependencies:
       '@types/estree': 1.0.1
-      '@types/json-schema': 7.0.11
+      '@types/json-schema': 7.0.13
     dev: true
 
   /@types/eslint@8.44.3:
@@ -3508,10 +3508,6 @@ packages:
       '@types/node': 20.8.0
       '@types/tough-cookie': 4.0.3
       parse5: 7.1.2
-    dev: true
-
-  /@types/json-schema@7.0.11:
-    resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
 
   /@types/json-schema@7.0.13:
@@ -3890,7 +3886,7 @@ packages:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.50.0)
-      '@types/json-schema': 7.0.11
+      '@types/json-schema': 7.0.13
       '@types/semver': 7.5.0
       '@typescript-eslint/scope-manager': 5.59.7
       '@typescript-eslint/types': 5.59.7
@@ -13970,16 +13966,7 @@ packages:
     resolution: {integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==}
     engines: {node: '>= 8.9.0'}
     dependencies:
-      '@types/json-schema': 7.0.11
-      ajv: 6.12.6
-      ajv-keywords: 3.5.2(ajv@6.12.6)
-    dev: true
-
-  /schema-utils@3.1.2:
-    resolution: {integrity: sha512-pvjEHOgWc9OWA/f/DE3ohBWTD6EleVLf7iFUkoSwAxttdBhB9QUebQgxER2kWueOvRJXPHNnyrvvh9eZINB8Eg==}
-    engines: {node: '>= 10.13.0'}
-    dependencies:
-      '@types/json-schema': 7.0.11
+      '@types/json-schema': 7.0.13
       ajv: 6.12.6
       ajv-keywords: 3.5.2(ajv@6.12.6)
     dev: true
@@ -13997,7 +13984,7 @@ packages:
     resolution: {integrity: sha512-lELhBAAly9NowEsX0yZBlw9ahZG+sK/1RJ21EpzdYHKEs13Vku3LJ+MIPhh4sMs0oCCeufZQEQbMekiA4vuVIQ==}
     engines: {node: '>= 12.13.0'}
     dependencies:
-      '@types/json-schema': 7.0.11
+      '@types/json-schema': 7.0.13
       ajv: 8.12.0
       ajv-formats: 2.1.1(ajv@8.12.0)
       ajv-keywords: 5.1.0(ajv@8.12.0)
@@ -15058,7 +15045,7 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.19
       jest-worker: 27.5.1
-      schema-utils: 3.1.2
+      schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.17.6
       webpack: 5.84.0(webpack-cli@4.10.0)
@@ -15082,7 +15069,7 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.19
       jest-worker: 27.5.1
-      schema-utils: 3.1.2
+      schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.17.6
       webpack: 5.88.2(webpack-cli@4.10.0)
@@ -15665,7 +15652,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       mime-types: 2.1.35
-      schema-utils: 3.1.2
+      schema-utils: 3.3.0
       webpack: 5.84.0(webpack-cli@4.10.0)
     dev: true
 
@@ -15958,8 +15945,8 @@ packages:
       webpack-merge: 5.9.0
     dev: true
 
-  /webpack-dev-middleware@5.3.3(webpack@5.84.0):
-    resolution: {integrity: sha512-hj5CYrY0bZLB+eTO+x/j67Pkrquiy7kWepMHmUMoPsmcUaeEnQJqFzHJOyxgWlq746/wUuA64p9ta34Kyb01pA==}
+  /webpack-dev-middleware@5.3.4(webpack@5.84.0):
+    resolution: {integrity: sha512-BVdTqhhs+0IfoeAf7EoH5WE+exCmqGerHfDM0IL096Px60Tq2Mn9MAbnaGUe6HiMa41KMCYF19gyzZmBcq/o4Q==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
@@ -16015,7 +16002,7 @@ packages:
       spdy: 4.0.2
       webpack: 5.84.0(webpack-cli@4.10.0)
       webpack-cli: 4.10.0(webpack@5.88.2)
-      webpack-dev-middleware: 5.3.3(webpack@5.84.0)
+      webpack-dev-middleware: 5.3.4(webpack@5.84.0)
       ws: 8.13.0
     transitivePeerDependencies:
       - bufferutil
@@ -16066,7 +16053,7 @@ packages:
       loader-runner: 4.3.0
       mime-types: 2.1.35
       neo-async: 2.6.2
-      schema-utils: 3.1.2
+      schema-utils: 3.3.0
       tapable: 2.2.1
       terser-webpack-plugin: 5.3.9(webpack@5.84.0)
       watchpack: 2.4.0
