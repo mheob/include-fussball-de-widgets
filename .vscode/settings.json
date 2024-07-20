@@ -9,7 +9,7 @@
 		"**/.svn/**",
 		"**/.hg/**",
 		"**/.github-release/**",
-		"**/.release/**",
+		"**/.releases/**",
 		"**/.DS_Store/**",
 		"**/dist/**",
 		"**/node_modules/**",

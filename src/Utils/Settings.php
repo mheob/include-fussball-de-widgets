@@ -22,7 +22,7 @@ use ITSB\IFDW\Utils\Host;
  */
 class Settings {
 	public const VERSION           = '4.0.0';
-	public const MIN_PHP           = '7.2.0';
+	public const MIN_PHP           = '7.4.0';
 	public const MIN_WP            = '4.8';
 	public const SERVER_NAME_DUMMY = 'HTTP_HOST-not-set';
 
