@@ -1,5 +1,5 @@
 /**
- * The main file for all the gutenberg Blocks.
+ * The main file for all the Gutenberg Blocks.
  *
  * @package
  */

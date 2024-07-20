@@ -70,7 +70,7 @@ You can get the required ID when you are at fussball.de at your widgets (<https:
 
 = What can I do if the plugin does not work? =
 
-The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on Github](https://github.com/mheob/include-fussball-de-widgets/issues).
+The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on GitHub](https://github.com/mheob/include-fussball-de-widgets/issues).
 
 Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.
 
@@ -78,7 +78,7 @@ The curly braces from my examples above should only show placeholders. These are
 
 = How can I participate in the development? =
 
-The latest state of development is available at any time in my [Github repository](https://github.com/mheob/include-fussball-de-widgets/). Look around there.
+The latest state of development is available at any time in my [GitHub repository](https://github.com/mheob/include-fussball-de-widgets/). Look around there.
 
 = Support of other plugins =
 
@@ -114,7 +114,7 @@ This plugin support Borlabs Cookie since its version 2.0.
 
 = 3.3.4 - 2020-09-25 =
 = Fixed =
-* Call the `idn_to_ascii` function without parameter to fix an issue on Mittwald server.
+* Call the `idn_to_ascii` function without parameter to fix an issue on Mitwald server.
 
 = 3.3.3 - 2020-09-11 =
 = Fixed =
@@ -180,7 +180,7 @@ This plugin support Borlabs Cookie since its version 2.0.
 
 = 3.0.3 - 2019-09-24 =
 = Fixed =
-* Loading issue when generating the widget via the gutenberg blocks.
+* Loading issue when generating the widget via the Gutenberg blocks.
 
 = 3.0.2 - 2019-09-23 =
 = Added =

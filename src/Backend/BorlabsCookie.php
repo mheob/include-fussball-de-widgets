@@ -1,5 +1,6 @@
 <?php
-		// phpcs:disable
+// phpcs:disable
+// cspell:disable
 /**
  * Include Fussball.de Widgets
  *

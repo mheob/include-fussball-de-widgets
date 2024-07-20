@@ -1,1 +1,4 @@
-bun run lint:fix
+[ -n "$CI" ] && exit 0
+
+bunx lint-staged
+bun run cspell
