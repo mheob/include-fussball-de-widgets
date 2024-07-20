@@ -21,41 +21,6 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: Backend/BorlabsCookie.php:73
-msgid "By loading the widget, you agree to the privacy policy of fussball.de."
-msgstr ""
-
-#: Backend/BorlabsCookie.php:77
-msgid "Learn more"
-msgstr ""
-
-#: Backend/BorlabsCookie.php:81
-msgid "Load widget"
-msgstr ""
-
-#: Backend/BorlabsCookie.php:87
-msgid "Always load fussball.de Widgets"
-msgstr ""
-
-#: Backend/BorlabsCookie.php:111 Widgets/FubadeWidget.php:32
-msgid "Fussball.de Widget"
-msgstr ""
-
-#: Backend/BorlabsCookie.php:212
-msgctxt "Cookie - Default Entry Fußball.de"
-msgid "Used to unblock Fußball.de content."
-msgstr ""
-
-#: Backend/BorlabsCookie.php:213
-msgctxt "Cookie - Default Entry Fußball.de"
-msgid "http://www.fussball.de/privacy/"
-msgstr ""
-
-#: Backend/BorlabsCookie.php:216
-msgctxt "Cookie - Default Entry Fußball.de"
-msgid "Unlimited"
-msgstr ""
-
 #. Plugin Name of the plugin/theme
 #: Blocks/fubade/index.js:32
 msgid "Include Fussball.de Widgets"

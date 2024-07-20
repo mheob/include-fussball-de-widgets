@@ -13,7 +13,6 @@ declare( strict_types=1 );
 
 namespace ITSB\IFDW;
 
-use ITSB\IFDW\Backend\BorlabsCookie;
 use ITSB\IFDW\Blocks\Enqueue as BlockEnqueue;
 use ITSB\IFDW\Frontend\Enqueue as FrontendEnqueue;
 use ITSB\IFDW\Shortcodes\Fubade;
@@ -45,7 +44,6 @@ final class Plugin {
 		$this->configureSettings();
 
 		// Add the hooks.
-		$this->addAdminActions();
 		$this->addActions();
 		$this->addFilter();
 		$this->addShortcode();
@@ -60,16 +58,6 @@ final class Plugin {
 	private function configureSettings(): void {
 		Settings::setHost();
 		Settings::setPluginName( plugin_basename( __DIR__ . '/index.php' ) );
-	}
-
-	/**
-	 * Adds all admin action hooks.
-	 *
-	 * @since 3.1
-	 * @return void
-	 */
-	private function addAdminActions(): void {
-		( new BorlabsCookie() )->addAction( 'admin_init' );
 	}
 
 	/**

@@ -5,6 +5,7 @@
 	<!-- What to scan -->
 	<file>./src</file>
   <exclude-pattern>/dist/</exclude-pattern>
+  <exclude-pattern>/.releases/</exclude-pattern>
 
 	<!-- How to scan -->
 	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->

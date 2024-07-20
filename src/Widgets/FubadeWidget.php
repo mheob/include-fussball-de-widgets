@@ -13,7 +13,6 @@ declare( strict_types=1 );
 
 namespace ITSB\IFDW\Widgets;
 
-use ITSB\IFDW\Backend\BorlabsCookie;
 use ITSB\IFDW\Frontend\Fubade;
 
 /**
@@ -179,11 +178,7 @@ class FubadeWidget extends \WP_Widget {
 			]
 		);
 
-		if ( ( new BorlabsCookie() )->checkBorlabsCookieIsActivated() ) {
-			echo BorlabsCookieHelper()->blockContent( $output, BorlabsCookie::CB_ID );
-		} else {
-			echo $output;
-		}
+		echo $output;
 
 		// WordPress core after_widget hook (always include).
 		echo $args['after_widget'] . PHP_EOL;
