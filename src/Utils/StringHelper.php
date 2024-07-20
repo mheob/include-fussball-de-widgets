@@ -1,4 +1,4 @@
-<?php declare( strict_types=1 );
+<?php
 /**
  * Include Fussball.de Widgets
  *
@@ -8,6 +8,8 @@
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
  * @copyright 2020 Alexander Böhm
  */
+
+declare( strict_types=1 );
 
 namespace ITSB\IFDW\Utils;
 
@@ -22,12 +24,12 @@ final class StringHelper {
 	 *
 	 * @since 3.3
 	 *
-	 * @param string $string        The string to check.
-	 * @param string $startString   The string to start with.
+	 * @param string $text          The string to check.
+	 * @param string $startText     The string to start with.
 	 * @return boolean
 	 */
-	public static function startsWith( string $string, string $startString ): bool {
-		return ( substr( $string, 0, strlen( $startString ) ) === $startString );
+	public static function startsWith( string $text, string $startText ): bool {
+		return substr( $text, 0, strlen( $startText ) ) === $startText;
 	}
 
 	/**
@@ -35,11 +37,11 @@ final class StringHelper {
 	 *
 	 * @since 3.3
 	 *
-	 * @param string $string      The string to check.
-	 * @param string $endString   The string to end with.
+	 * @param string $text        The string to check.
+	 * @param string $endText     The string to end with.
 	 * @return boolean
 	 */
-	public static function endsWith( string $string, string $endString ): bool {
-		return ( substr( $string, 0, -strlen( $endString ) ) === $endString );
+	public static function endsWith( string $text, string $endText ): bool {
+		return substr( $text, 0, -strlen( $endText ) ) === $endText;
 	}
 }

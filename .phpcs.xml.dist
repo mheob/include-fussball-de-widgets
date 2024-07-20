@@ -17,7 +17,7 @@
 
 	<!-- Rules: Check PHP version compatibility -->
 	<!-- https://github.com/PHPCompatibility/PHPCompatibility#sniffing-your-code-for-compatibility-with-specific-php-versions -->
-	<config name="testVersion" value="7.2-"/>
+	<config name="testVersion" value="8.0-"/>
 
 	<!-- https://github.com/PHPCompatibility/PHPCompatibilityWP -->
 	<rule ref="PHPCompatibilityWP"/>
@@ -29,11 +29,11 @@
 
   <rule ref="WordPress">
     <exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+    <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
     <exclude name="WordPress.Arrays.CommaAfterArrayItem.NoComma"/>
     <exclude name="WordPress.Files.FileName"/>
     <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
     <exclude name="WordPress.NamingConventions.ValidVariableName"/>
-    <exclude name="WordPress.PHP.DisallowShortTernary"/>
     <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited"/>
   </rule>
 

@@ -1,9 +1,0 @@
-# Package manager
-node_modules
-vendor
-
-# Compiled stuff
-.github-releases
-.releases
-dist
-

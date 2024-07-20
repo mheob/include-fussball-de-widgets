@@ -1,4 +1,4 @@
-<?php declare( strict_types=1 );
+<?php
 /**
  * Include Fussball.de Widgets
  *
@@ -8,6 +8,8 @@
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
  * @copyright 2019 Alexander Böhm
  */
+
+declare( strict_types=1 );
 
 namespace ITSB\IFDW\Blocks;
 

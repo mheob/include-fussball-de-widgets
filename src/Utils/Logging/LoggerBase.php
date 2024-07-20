@@ -1,4 +1,4 @@
-<?php declare( strict_types=1 );
+<?php
 /**
  * Include Fussball.de Widgets
  *
@@ -8,6 +8,8 @@
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
  * @copyright 2019 Alexander Böhm
  */
+
+declare( strict_types=1 );
 
 namespace ITSB\IFDW\Utils\Logging;
 
@@ -41,7 +43,7 @@ abstract class LoggerBase {
 			__( '[FUBADE] Wordpress version: ', 'include-fussball-de-widgets' ) . $wp_version,
 			__( '[FUBADE] PHP version: ', 'include-fussball-de-widgets' ) . phpversion(),
 			__( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-widgets' ) .
-				wp_json_encode( get_loaded_extensions() )
+				wp_json_encode( get_loaded_extensions() ),
 		];
 	}
 

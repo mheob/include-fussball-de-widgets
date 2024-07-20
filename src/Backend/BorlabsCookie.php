@@ -1,4 +1,4 @@
-<?php declare( strict_types=1 );
+<?php
 		// phpcs:disable
 /**
  * Include Fussball.de Widgets
@@ -9,6 +9,8 @@
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
  * @copyright 2019 Alexander Böhm
  */
+
+declare( strict_types=1 );
 
 namespace ITSB\IFDW\Backend;
 
@@ -170,7 +172,6 @@ class BorlabsCookie extends ActionBase {
 		$defaultBlogLanguage = substr( get_option( 'WPLANG', 'en_US' ), 0, 2 ) ?? 'en';
 		$cookieGroupIds      = [];
 
-		// FIXME: use correct database caching.
 		global $wpdb;
 		$cookieGroups = $wpdb->get_results(
 			'SELECT	`id`, `group_id`
@@ -224,7 +225,6 @@ class BorlabsCookie extends ActionBase {
 			) ON DUPLICATE KEY UPDATE `undeletable` = VALUES(`undeletable`)";
 		// phpcs:enable Squiz.Strings.DoubleQuoteUsage
 
-		// FIXME: use correct database caching.
 		$wpdb->query( $sqlQuery );
 	}
 }

@@ -1,4 +1,4 @@
-<?php declare( strict_types=1 );
+<?php
 /**
  * Include Fussball.de Widgets
  *
@@ -8,6 +8,8 @@
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
  * @copyright 2019 Alexander Böhm
  */
+
+declare( strict_types=1 );
 
 namespace ITSB\IFDW;
 
@@ -66,7 +68,7 @@ final class Plugin {
 	 * @since 3.1
 	 * @return void
 	 */
-	private function addAdminActions() {
+	private function addAdminActions(): void {
 		( new BorlabsCookie() )->addAction( 'admin_init' );
 	}
 
@@ -76,7 +78,7 @@ final class Plugin {
 	 * @since 3.1
 	 * @return void
 	 */
-	private function addActions() {
+	private function addActions(): void {
 		( new BlockEnqueue() )->addAction( 'init' );
 		( new FrontendEnqueue() )->addAction( 'init' );
 		( new Textdomain() )->addAction( 'plugins_loaded' );
@@ -89,7 +91,7 @@ final class Plugin {
 	 * @since 3.1
 	 * @return void
 	 */
-	private function addFilter() {
+	private function addFilter(): void {
 		( new PluginActions() )->addFilter( 'plugin_row_meta', 2 );
 	}
 
@@ -99,7 +101,7 @@ final class Plugin {
 	 * @since 3.1
 	 * @return void
 	 */
-	private function addShortcode() {
+	private function addShortcode(): void {
 		( new Fubade() )->addShortcode( 'fubade' );
 	}
 }

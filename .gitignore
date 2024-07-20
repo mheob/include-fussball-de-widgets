@@ -11,5 +11,3 @@ dist
 tests/phpunit/coverage
 .phpunit.result.cache
 
-# DeepCode
-.dccache
