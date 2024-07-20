@@ -80,10 +80,6 @@ The curly braces from my examples above should only show placeholders. These are
 
 The latest state of development is available at any time in my [GitHub repository](https://github.com/mheob/include-fussball-de-widgets/). Look around there.
 
-= Support of other plugins =
-
-This plugin support Borlabs Cookie since its version 2.0.
-
 == Screenshots ==
 
 1. screenshot-1.jpg

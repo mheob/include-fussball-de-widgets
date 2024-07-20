@@ -90,10 +90,6 @@ A WordPress plugin for easy integration of
 > \
 > The curly braces from my examples above should only show placeholders. These are also included, which is not correct.
 
-### Support of other plugins
-
-> This plugin support Borlabs Cookie since its version 2.0.
-
 ## Deutsch
 
 Jump to the [english](#english) version.
@@ -169,7 +165,3 @@ Ein WordPress-Plugin für die einfache Integration der
 > \
 > Die geschweiften Klammern aus meinen Beispielen weiter oben sollen nur Platzhalter anzeigen. Auch diese werden gerne mal mit
 > eingefügt, was nicht korrekt ist.
-
-### Unterstützung anderer Plugins
-
-> Dieses Plugin unterstützt Borlabs Cookie seit seiner Version 2.0.
