@@ -1,95 +1,76 @@
 {
-  "name": "include-fussball-de-widgets",
-  "version": "0.0.0-development",
-  "private": true,
-  "description": "A WordPress plugin for easy integration of fussball.de widgets.",
-  "homepage": "https://github.com/mheob/include-fussball-de-widgets#readme",
-  "bugs": {
-    "url": "https://github.com/mheob/include-fussball-de-widgets/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mheob/include-fussball-de-widgets.git"
-  },
-  "license": "GPL-2.0-or-later",
-  "author": "Alexander Böhm",
-  "scripts": {
-    "prepare": "husky install",
-    "prebuild": "npm run clear",
-    "postbuild": "npm run i18n",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack",
-    "clear": "rimraf dist",
-    "commit": "git-cz",
-    "predev": "npm run clear",
-    "postdev": "npm run i18n && node ./tasks/cp-dev-release.js",
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=development webpack",
-    "i18n": "npm run i18n:json && npm run i18n:copy",
-    "i18n:copy": "cpr src/languages dist/languages -d",
-    "i18n:json": "wp i18n make-json src/languages/include-fussball-de-widgets-de_DE.po --no-purge",
-    "i18n:pot": "wp i18n make-pot dist languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
-    "lint": "eslint 'src/**/*.js'",
-    "lint:fix": "prettier-eslint \"$PWD/src/**/*.js\" --write",
-    "hooks": "./init-gitkraken-hooks.sh",
-    "run-if-changed": "run-if-changed",
-    "release": "npm run build && npm run release:copy && npm run release:github",
-    "release:copy": "cpr dist .releases/include-fussball-de-widgets/trunk/ -d",
-    "release:github": "cpr dist .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd ..",
-    "semantic-release": "semantic-release",
-    "start": "wp-scripts start",
-    "test": "./vendor/bin/phpcs"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "browserslist": [
-    "extends @wordpress/browserslist-config"
-  ],
-  "devDependencies": {
-    "@hkdobrev/run-if-changed": "^0.3.1",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^11.0.0",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^9.2.1",
-    "@semantic-release/npm": "^11.0.0",
-    "@semantic-release/release-notes-generator": "^12.0.0",
-    "@wordpress/block-editor": "^12.10.0",
-    "@wordpress/blocks": "^12.19.0",
-    "@wordpress/i18n": "^4.42.0",
-    "@wordpress/scripts": "^26.13.0",
-    "bestzip": "^2.2.1",
-    "commitizen": "^4.3.0",
-    "copy-webpack-plugin": "^11.0.0",
-    "cpr": "^3.0.1",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.50.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jest": "^27.4.2",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.33.2",
-    "husky": "^8.0.3",
-    "prettier": "^3.0.3",
-    "prettier-eslint": "^15.0.1",
-    "prettier-eslint-cli": "^7.1.0",
-    "rimraf": "^5.0.5",
-    "semantic-release": "^22.0.5"
-  },
-  "publishConfig": {
-    "access": "restricted"
-  },
-  "release": {
-    "extends": "./.releaserc.json"
-  },
-  "run-if-changed": {
-    "package-lock.json": [
-      "npm install"
-    ],
-    "composer.lock": [
-      "composer install"
-    ]
-  }
+	"name": "include-fussball-de-widgets",
+	"version": "4.0.0",
+	"description": "A WordPress plugin for easy integration of fussball.de widgets.",
+	"homepage": "https://github.com/mheob/include-fussball-de-widgets#readme",
+	"bugs": {
+		"url": "https://github.com/mheob/include-fussball-de-widgets/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mheob/include-fussball-de-widgets.git"
+	},
+	"license": "GPL-2.0-or-later",
+	"author": "Alexander Böhm",
+	"type": "module",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "NODE_ENV=production webpack",
+		"clear": "rimraf dist",
+		"dev": "NODE_ENV=development webpack",
+		"format": "prettier --write \"**/*.{cjs,js,mjs,ts,json,md,mdx,yaml,yml}\"",
+		"i18n": "bun run i18n:json && bun run i18n:copy",
+		"i18n:copy": "cpr src/languages dist/languages -d",
+		"i18n:json": "wp i18n make-json src/languages/include-fussball-de-widgets-de_DE.po --no-purge",
+		"i18n:pot": "wp i18n make-pot dist languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"postbuild": "bun run i18n",
+		"postdev": "bun run i18n && node ./tasks/cp-dev-release.js",
+		"prebuild": "bun run clear",
+		"predev": "bun run clear",
+		"release": "bun run build && bun run release:copy && bun run release:github",
+		"release:copy": "cpr dist .releases/include-fussball-de-widgets/trunk/ -d",
+		"release:github": "cpr dist .github-releases/include-fussball-de-widgets -d && cd .github-releases/ && bestzip include-fussball-de-widgets.zip include-fussball-de-widgets && rimraf include-fussball-de-widgets && cd .."
+	},
+	"dependencies": {
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@mheob/eslint-config": "^6.1.1",
+		"@mheob/prettier-config": "^3.3.1",
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/commit-analyzer": "^13.0.0",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/github": "^10.1.0",
+		"@semantic-release/npm": "^12.0.1",
+		"@semantic-release/release-notes-generator": "^14.0.1",
+		"@wordpress/babel-preset-default": "^8.3.0",
+		"@wordpress/block-editor": "^13.3.0",
+		"@wordpress/blocks": "^13.3.0",
+		"@wordpress/components": "^28.3.0",
+		"@wordpress/compose": "^7.3.0",
+		"@wordpress/element": "^6.3.0",
+		"@wordpress/i18n": "^5.3.0",
+		"@wordpress/postcss-plugins-preset": "^5.3.0",
+		"babel-loader": "^9.1.3",
+		"bestzip": "^2.2.1",
+		"copy-webpack-plugin": "^12.0.2",
+		"cpr": "^3.0.1",
+		"css-loader": "^7.1.2",
+		"cssnano": "^7.0.4",
+		"eslint": "^9.7.0",
+		"mini-css-extract-plugin": "^2.9.0",
+		"postcss-loader": "^8.1.1",
+		"prettier": "^3.3.3",
+		"rimraf": "^6.0.1",
+		"sass": "^1.77.8",
+		"sass-loader": "^14.2.1",
+		"semantic-release": "^24.0.0",
+		"source-map-loader": "^5.0.0",
+		"terser-webpack-plugin": "^5.3.10",
+		"webpack": "^5.93.0",
+		"webpack-cli": "^5.1.4"
+	}
 }

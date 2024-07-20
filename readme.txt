@@ -1,20 +1,22 @@
 === Include Fussball.de Widgets ===
 Contributors: mheob
-Tags: soccer, football, fussball, gutenberg, widget, fussball.de
+Tags: soccer, fussball.de, fussball, block, widget
 Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
-Tested up to: 6.4
-Requires PHP: 7.2
-Stable tag: 3.7.0
+Tested up to: 6.6
+Requires PHP: 7.4
+Stable tag: 4.0.0
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 A WordPress plugin for easy integration of fussball.de widgets.
 
 == Description ==
+
 A WordPress plugin for easy integration of [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1%5Bmeinfussball%5D=1911&cHash=8e54ad110b258ac9679d70637b4ff796).
 
 == Installation ==
+
 1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. You can use the plugin in several ways. As a shortcode, WordPress widget and since WordPress version 5 also as an integrated Gutenberg block.
@@ -25,6 +27,7 @@ A WordPress plugin for easy integration of [fussball.de widgets](http://training
    1. Even the usual WordPress widgets are possible.
 
 == Frequently Asked Questions ==
+
 = How should I write the shortcode? =
 
 `[fubade api="{32-digit API}" notice="{description}" fullwidth={iframe in fullwidth} devtools={print devtools}]`
@@ -82,9 +85,11 @@ The latest state of development is available at any time in my [Github repositor
 This plugin support Borlabs Cookie since its version 2.0.
 
 == Screenshots ==
+
 1. screenshot-1.jpg
 
 == Changelog ==
+
 = 3.7.0 - 2022-02-08 =
 = Added =
 * Add Elementor Toggle exception for loading inside tabs.
@@ -302,4 +307,5 @@ This plugin support Borlabs Cookie since its version 2.0.
 * Initial release.
 
 == Upgrade Notice ==
+
 * Add Elementor Toggle exception for loading inside tabs.

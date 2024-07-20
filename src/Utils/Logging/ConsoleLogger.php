@@ -1,4 +1,4 @@
-<?php declare( strict_types=1 );
+<?php
 /**
  * Include Fussball.de Widgets
  *
@@ -8,6 +8,8 @@
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
  * @copyright 2019 Alexander Böhm
  */
+
+declare( strict_types=1 );
 
 namespace ITSB\IFDW\Utils\Logging;
 
@@ -83,7 +85,7 @@ class ConsoleLogger extends LoggerBase {
 		$output = '';
 		foreach ( $this->generalInfoList as $item ) {
 			$output .= 'console.info(' . wp_json_encode( $item, JSON_HEX_TAG ) . ');' . PHP_EOL;
-		};
+		}
 
 		$output .= "console.info('')" . PHP_EOL;
 

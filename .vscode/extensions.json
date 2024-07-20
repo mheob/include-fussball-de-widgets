@@ -1,13 +1,13 @@
 {
-  "recommendations": [
-    "editorconfig.editorconfig",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "neilbrayfield.php-docblocker",
-    "phproberto.vscode-php-getters-setters",
-    "bmewburn.vscode-intelephense-client",
-    "valeryanm.vscode-phpsab",
-    "johnbillion.vscode-wordpress-hooks",
-    "wordpresstoolbox.wordpress-toolbox"
-  ]
+	"recommendations": [
+		"editorconfig.editorconfig",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"neilbrayfield.php-docblocker",
+		"phproberto.vscode-php-getters-setters",
+		"bmewburn.vscode-intelephense-client",
+		"valeryanm.vscode-phpsab",
+		"johnbillion.vscode-wordpress-hooks",
+		"wordpresstoolbox.wordpress-toolbox"
+	]
 }

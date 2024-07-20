@@ -1,4 +1,4 @@
-<?php declare( strict_types=1 );
+<?php
 /**
  * Include Fussball.de Widgets
  *
@@ -14,7 +14,7 @@
  * Plugin Name:  Include Fussball.de Widgets
  * Plugin Uri:   https://wordpress.org/plugins/include-fussball-de-widgets/
  * Description:  Easy integration of the Fussball.de widgets.
- * Version:      3.7.0
+ * Version:      4.0.0
  * Requires PHP: 7.2
  * Author:       Alexander Böhm <ab@its-boehm.de>
  * Author URI:   http://profiles.wordpress.org/mheob
@@ -24,10 +24,12 @@
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
  */
 
+declare( strict_types=1 );
+
 namespace ITSB\IFDW;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	die();
+	exit; // Use exit instead of die for better readability
 }
 
 // Call the autoloader.

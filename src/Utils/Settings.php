@@ -1,4 +1,4 @@
-<?php declare( strict_types=1 );
+<?php
 /**
  * Include Fussball.de Widgets
  *
@@ -8,6 +8,8 @@
  * @link      https://wordpress.org/plugins/include-fussball-de-widgets/
  * @copyright 2019 Alexander Böhm
  */
+
+declare( strict_types=1 );
 
 namespace ITSB\IFDW\Utils;
 
@@ -19,7 +21,7 @@ use ITSB\IFDW\Utils\Host;
  * @since 3.1
  */
 class Settings {
-	public const VERSION           = '3.7.0';
+	public const VERSION           = '4.0.0';
 	public const MIN_PHP           = '7.2.0';
 	public const MIN_WP            = '4.8';
 	public const SERVER_NAME_DUMMY = 'HTTP_HOST-not-set';
@@ -89,6 +91,7 @@ class Settings {
 		}
 
 		$url        = esc_url_raw( wp_unslash( $host ?? '' ) );
-		self::$host = Host::cleanHost( substr( $url, strpos( $url, ':' ) + 3 ) ?: null );
+		$cleanedUrl = substr( $url, strpos( $url, ':' ) + 3 );
+		self::$host = Host::cleanHost( false !== $cleanedUrl ? $cleanedUrl : null );
 	}
 }
