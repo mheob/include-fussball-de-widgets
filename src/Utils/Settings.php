@@ -27,7 +27,7 @@ class Settings {
 	public const SERVER_NAME_DUMMY = 'HTTP_HOST-not-set';
 
 	/**
-	 * The name of this plugin.
+	 * The plugin name.
 	 *
 	 * @since 3.1
 	 * @var string
@@ -35,7 +35,7 @@ class Settings {
 	private static $pluginName;
 
 	/**
-	 * The hostname of the WordPress running system.
+	 * The hostname of the current server.
 	 *
 	 * @since 3.1
 	 * @var string
@@ -46,38 +46,40 @@ class Settings {
 	 * Get the value of plugin name.
 	 *
 	 * @since 3.1
-	 * @return string
+	 * @return string The plugin name.
 	 */
 	public static function getPluginName() {
 		return self::$pluginName;
 	}
 
 	/**
-	 * Set the value of plugin name.
+	 * Sets the plugin name.
 	 *
 	 * @since 3.1
-	 * @param string $pluginName The plugin name.
-	 * @return void
+	 * @param string $pluginName The plugin name to set.
 	 */
 	public static function setPluginName( $pluginName ) {
 		self::$pluginName = $pluginName;
 	}
 
 	/**
-	 * Get the the value of hostname.
+	 * Gets the hostname of the current server.
 	 *
 	 * @since 3.1
-	 * @return string
+	 * @return string The hostname of the current server.
 	 */
 	public static function getHost(): string {
 		return self::$host;
 	}
 
 	/**
-	 * Set the the value of hostname.
+	 * Sets the hostname of the current server.
+	 *
+	 * This method attempts to retrieve the hostname from the `$_SERVER` superglobal.
+	 * If the hostname is not set or is a local hostname, it defaults to 'localhost'.
+	 * Otherwise, it cleans and returns the hostname.
 	 *
 	 * @since 3.1
-	 * @return void
 	 */
 	public static function setHost(): void {
 		// phpcs:disable

@@ -27,33 +27,32 @@ namespace ITSB\IFDW\Infrastructure;
  */
 abstract class FilterBase {
 	/**
-	 * Add the init filter for registering the fubade api.
+	 * Adds a filter to the WordPress filter system.
+	 *
+	 * This method allows the class to register a filter callback that will be executed
+	 * when the specified filter tag is applied. The callback method is defined in the
+	 * `filter()` abstract method.
 	 *
 	 * @since 3.0
-	 * @param string $tag           The name of the filter to hook the callback
-	 *                              to.
-	 * @param int    $acceptedArgs  (Optional) The number of arguments the
-	 *                              function accepts.
-	 *                              Default 1.
-	 * @param int    $priority      (Optional) Used to specify the order in
-	 *                              the functions associated with a particular
-	 *                              action are executed. Lower numbers correspond
-	 *                              with earlier execution, and functions with
-	 *                              the same priority are executed in the order
-	 *                              in which they were added to the action.
-	 *                              Default 10.
-	 * @return void
+	 * @param string $tag           The name of the filter to add the callback to.
+	 * @param int    $acceptedArgs  The number of arguments the callback accepts.
+	 * @param int    $priority      The priority at which the callback is executed.
 	 */
 	public function addFilter( string $tag, int $acceptedArgs = 1, int $priority = 10 ): void {
 		add_filter( $tag, [ $this, 'filter' ], $priority, $acceptedArgs );
 	}
 
 	/**
-	 * The filter callback to be run when the filter is applied.
+	 * Filters the provided arguments and returns the modified array.
+	 *
+	 * This method must be implemented by concrete subclasses to provide the
+	 * actual filtering logic. The number of arguments accepted by the filter
+	 * is determined by the `$acceptedArgs` parameter passed to the `addFilter()`
+	 * method.
 	 *
 	 * @since 3.1
-	 * @param mixed ...$args List of arguments.
-	 * @return array List of modified plugin meta links.
+	 * @param mixed ...$args The arguments to be filtered.
+	 * @return array The filtered arguments.
 	 */
 	abstract public function filter( ...$args ): array;
 }

@@ -30,7 +30,13 @@ use ITSB\IFDW\Widgets\Widgets;
  */
 final class Plugin {
 	/**
-	 * Generate the plugin instance.
+	 * Constructs the Plugin class and configures the plugin's settings, actions, filters
+	 * and shortcodes.
+	 *
+	 * This method is responsible for:
+	 * - Activating the plugin if the current context is the admin area.
+	 * - Configuring the plugin's one-time settings.
+	 * - Adding the plugin's actions, filters, and shortcodes.
 	 *
 	 * @since 3.1
 	 */
@@ -50,10 +56,11 @@ final class Plugin {
 	}
 
 	/**
-	 * Configure the one time set settings.
+	 * Configures the plugin's one-time settings.
+	 *
+	 * This method sets the host and plugin name for the plugin.
 	 *
 	 * @since 3.1
-	 * @return void
 	 */
 	private function configureSettings(): void {
 		Settings::setHost();
@@ -61,10 +68,15 @@ final class Plugin {
 	}
 
 	/**
-	 * Adds all action hooks.
+	 * Adds all necessary actions for the plugin.
+	 *
+	 * This method adds the following actions:
+	 * - Initializes the block enqueue functionality
+	 * - Initializes the frontend enqueue functionality
+	 * - Loads the plugin's text domain
+	 * - Registers the plugin's widgets
 	 *
 	 * @since 3.1
-	 * @return void
 	 */
 	private function addActions(): void {
 		( new BlockEnqueue() )->addAction( 'init' );
@@ -74,20 +86,24 @@ final class Plugin {
 	}
 
 	/**
-	 * Adds all filter hooks.
+	 * Adds a filter to the plugin's row meta.
+	 *
+	 * This method adds a filter to the 'plugin_row_meta' filter hook, which allows the plugin
+	 * to add additional metadata to its row in the WordPress plugins list.
 	 *
 	 * @since 3.1
-	 * @return void
 	 */
 	private function addFilter(): void {
 		( new PluginActions() )->addFilter( 'plugin_row_meta', 2 );
 	}
 
 	/**
-	 * Adds all shortcode hooks.
+	 * Adds a shortcode to the plugin.
+	 *
+	 * This method adds the 'fubade' shortcode to the plugin, which is handled by the
+	 * `Fubade` class.
 	 *
 	 * @since 3.1
-	 * @return void
 	 */
 	private function addShortcode(): void {
 		( new Fubade() )->addShortcode( 'fubade' );

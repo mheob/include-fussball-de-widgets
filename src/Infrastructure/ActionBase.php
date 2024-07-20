@@ -25,31 +25,31 @@ namespace ITSB\IFDW\Infrastructure;
  */
 abstract class ActionBase {
 	/**
-	 * Add the init action for registering the fubade api.
+	 * Adds an action to the WordPress action system.
+	 *
+	 * This method registers a callback function to be executed when the specified
+	 * action tag is triggered. The callback function is bound to the current
+	 * instance of the `ActionBase` class.
 	 *
 	 * @since 3.0
-	 * @param string $tag          The name of the action to hook the callback
-	 *                             to.
-	 * @param int    $priority     (Optional) Used to specify the order in
-	 *                             the functions associated with a particular
-	 *                             action are executed. Lower numbers correspond
-	 *                             with earlier execution, and functions with
-	 *                             the same priority are executed in the order
-	 *                             in which they were added to the action.
-	 *                             Default 10.
-	 * @param int    $acceptedArgs (Optional) The number of arguments the
-	 *                             function accepts. Default 1.
-	 * @return void
+	 * @param string $tag           The name of the action to which the callback function should
+	 *                              be added.
+	 * @param int    $priority      Optional. The priority at which the function should be fired.
+	 *                              Default is 10.
+	 * @param int    $acceptedArgs  Optional. The number of arguments the callback function should
+	 *                              accept. Default is 1.
 	 */
 	public function addAction( string $tag, int $priority = 10, int $acceptedArgs = 1 ): void {
 		add_action( $tag, [ $this, 'action' ], $priority, $acceptedArgs );
 	}
 
 	/**
-	 * The action callback to be run when the action is applied.
+	 * Executes the action logic.
+	 *
+	 * This method should be implemented by concrete subclasses of `ActionBase` to define the
+	 * specific behavior of the action.
 	 *
 	 * @since 3.1
-	 * @return void
 	 */
 	abstract public function action(): void;
 }

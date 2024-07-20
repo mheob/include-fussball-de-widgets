@@ -20,19 +20,25 @@ namespace ITSB\IFDW\Utils;
  */
 class Host {
 	/**
-	 * The stored hostname.
+	 * Stores the cleaned host string.
 	 *
-	 * @since 3.1
-	 * @var string
+	 * This property is used to cache the cleaned host string returned by the `cleanHost()` method.
+	 *
+	 * @since 3.0
+	 * @var ?string
 	 */
 	private static $host;
 
 	/**
-	 * Clean up the hostname.
+	 * Cleans the provided host string.
 	 *
-	 * @since 3.0
-	 * @param string|null $host The hostname getting from the server.
-	 * @return string The cleared hostname.
+	 * If the host is not set and the `intl` extension is loaded, the function will attempt to
+	 * convert the host to ASCII using `idn_to_ascii()`. The minimum required PHP version for this
+	 * is defined in the `Settings` class.
+	 *
+	 * @param ?string $host The host string to clean.
+	 * @return string The cleaned host string, or a dummy value from the `Settings` class if the
+	 *                host could not be cleaned.
 	 */
 	public static function cleanHost( ?string $host ): string {
 		if ( ! isset( self::$host ) && ! empty( $host ) && extension_loaded( 'intl' ) ) {

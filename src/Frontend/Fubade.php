@@ -36,25 +36,34 @@ final class Fubade {
 	 */
 	private $attr = [];
 
+
 	/**
-	 * Creates the output to the sourcecode.
+	 * Outputs the widget content based on the provided attributes.
 	 *
 	 * @since 3.0
-	 *
-	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
-	 * @return string The output to the sourcecode.
+	 * @param array $attr The attributes for the widget rendering
+	 *                    (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
+	 * @return string The rendered widget content.
 	 */
 	public function output( array $attr ): string {
-		// TODO [#33]: Configure default setting in the admin area.
 		$this->setAttr( $attr );
 
 		$this->attr = [
-			'api'       => sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $this->attr['api'] ) ) ),
+			'api'       => sanitize_text_field(
+				strtoupper(
+					preg_replace( '/[^\w]/', '', $this->attr['api'] )
+				)
+			),
 			'id'        => StringHelper::startsWith( $this->attr['id'], 'fubade-' )
 										? sanitize_text_field( $this->attr['id'] )
+										// phpcs:ignore
 										: 'fubade-' . random_int( 10, 99 ) . '-' . substr( $this->attr['api'], -5 ),
-			'classes'   => empty( $this->attr['classes'] ) ? '' : sanitize_text_field( $this->attr['classes'] ),
-			'notice'    => empty( $this->attr['notice'] ) ? '' : sanitize_text_field( $this->attr['notice'] ),
+			'classes'   => empty( $this->attr['classes'] )
+										? ''
+										: sanitize_text_field( $this->attr['classes'] ),
+			'notice'    => empty( $this->attr['notice'] )
+										? ''
+										: sanitize_text_field( $this->attr['notice'] ),
 			'fullWidth' => '1' === $this->attr['fullWidth']
 										|| 'true' === $this->attr['fullWidth']
 										|| true === $this->attr['fullWidth']
@@ -89,12 +98,11 @@ final class Fubade {
 	}
 
 	/**
-	 * Set the attribute array.
+	 * Sets the attributes for the widget rendering.
 	 *
 	 * @since 3.0
-	 * @param array $attr The attributes (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`)
-	 *                    for the widget rendering.
-	 * @return void
+	 * @param array $attr The attributes for the widget rendering
+	 *                    (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
 	 */
 	private function setAttr( array $attr ): void {
 		$this->attr = [
@@ -108,11 +116,11 @@ final class Fubade {
 	}
 
 	/**
-	 * Render all the output.
+	 * Renders the widget output.
 	 *
 	 * @since 3.0
-	 * @param string|null $error Potential errors.
-	 * @return string The rendered the output.
+	 * @param string|null $error Potential errors to display.
+	 * @return string The rendered widget output.
 	 */
 	private function render( ?string $error ): string {
 		$idAttribute = ' id="' . esc_attr( $this->attr['id'] ) . '"';
@@ -126,6 +134,7 @@ final class Fubade {
 		if ( $error ) {
 			$content        = $this->getErrorOutput( $error );
 			$styleAttribute =
+			// phpcs:ignore
 			' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
 		} else {
 			$content        = $this->createIframe();
@@ -144,11 +153,11 @@ final class Fubade {
 	}
 
 	/**
-	 * Returns the error output content.
+	 * Generates the error output for the widget.
 	 *
 	 * @since 3.6
-	 * @param string|null $error Potential errors.
-	 * @return string The error output content.
+	 * @param string|null $error The error message to display.
+	 * @return string The error output HTML.
 	 */
 	private function getErrorOutput( ?string $error ): string {
 		switch ( $error ) {
@@ -164,6 +173,7 @@ final class Fubade {
 				return $output;
 			case self::ERROR['HTTP_HOST']:
 				return __(
+					// phpcs:ignore
 					'The PHP variable <code>$_SERVER["HTTP_HOST"]</code> was not set by the server.',
 					'include-fussball-de-widgets'
 				);
@@ -173,10 +183,10 @@ final class Fubade {
 	}
 
 	/**
-	 * Creates the iframe needed from fussball.de.
+	 * Generates an iframe element with the fussball.de widget.
 	 *
 	 * @since 3.0
-	 * @return string The iframe.
+	 * @return string The HTML for the iframe element.
 	 */
 	private function createIframe(): string {
 		$src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'];
@@ -185,7 +195,8 @@ final class Fubade {
 		$width  = $this->attr['fullWidth'] ? '100%' : '900px';
 		$height = '100%';
 		$style  = 'border: 1px solid #CECECE; overflow: hidden; min-height: 200px;';
+		$attrs  = "src='$src' width='$width' height='$height' scrolling='no' style='$style'";
 
-		return "<iframe src='$src' width='$width' height='$height' scrolling='no' style='$style'></iframe>";
+		return "<iframe $attrs></iframe>";
 	}
 }

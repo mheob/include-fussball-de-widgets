@@ -24,10 +24,13 @@ use ITSB\IFDW\Infrastructure\ActionBase;
  */
 final class Textdomain extends ActionBase {
 	/**
-	 * Load the plugin textdomain.
+	 * Loads the plugin's textdomain for localization.
+	 *
+	 * This method is called to load the textdomain for the plugin, which allows for
+	 * localized strings to be used throughout the plugin. The textdomain is loaded
+	 * from the 'languages' directory relative to the plugin's main file.
 	 *
 	 * @since 3.0
-	 * @return void
 	 */
 	public function action(): void {
 		load_plugin_textdomain(

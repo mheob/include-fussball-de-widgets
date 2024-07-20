@@ -22,11 +22,15 @@ use ITSB\IFDW\Infrastructure\ShortcodeBase;
  */
 final class Fubade extends ShortcodeBase {
 	/**
-	 * Render the fubade shortcode
+	 * Renders the fubade shortcode.
+	 *
+	 * This method is responsible for processing the shortcode attributes and rendering
+	 * the fubade widget.
 	 *
 	 * @since 3.0
-	 * @param array $atts Shortcode attributes (`id`, `api`, `classes`, `notice`, `fullWidth` and `devtools`).
-	 * @return string The output to the sourcecode.
+	 * @param array $atts Shortcode attributes
+	 *                    (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
+	 * @return string The rendered fubade widget.
 	 */
 	public function shortcode( array $atts ): string {
 		$a = shortcode_atts(

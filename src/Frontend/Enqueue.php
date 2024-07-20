@@ -17,17 +17,20 @@ use ITSB\IFDW\Infrastructure\ActionBase;
 use ITSB\IFDW\Utils\Settings;
 
 /**
- * The `Enqueue` class provides functions to register scripts for the
- * Frontend.
+ * The `Enqueue` class provides functions to register scripts for the Frontend.
  *
  * @since 3.0
  */
 final class Enqueue extends ActionBase {
 	/**
-	 * Register the api script for fussball.de.
+	 * Registers the fubade-api script for the frontend.
+	 *
+	 * This function registers the fubade-api script, which is used to interact with the
+	 * Fussball.de API. The script is registered with the 'fubade-api' handle and has a dependency
+	 * on the 'wp-i18n' script. The script version is set to the plugin version defined in the
+	 * Settings class.
 	 *
 	 * @since 3.0
-	 * @return void
 	 */
 	public function action(): void {
 		wp_register_script(

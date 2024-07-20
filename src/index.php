@@ -29,7 +29,7 @@ declare( strict_types=1 );
 namespace ITSB\IFDW;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Use exit instead of die for better readability
+	exit;
 }
 
 // Call the autoloader.

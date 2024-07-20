@@ -22,8 +22,9 @@ use ITSB\IFDW\Frontend\Fubade;
  */
 class FubadeWidget extends \WP_Widget {
 	/**
-	 * FubadeWidget constructor.
-	 * Set up the Widgets name etc.
+	 * Constructs a new instance of the FubadeWidget class.
+	 *
+	 * This constructor initializes the widget with the appropriate ID, title, and description.
 	 *
 	 * @since 3.0
 	 */
@@ -31,16 +32,19 @@ class FubadeWidget extends \WP_Widget {
 		parent::__construct(
 			'ifdw_fubade_widget',
 			__( 'Fussball.de Widget', 'include-fussball-de-widgets' ),
+		// phpcs:ignore Generic.Files.LineLength
 			[ 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-widgets' ) ]
 		);
 	}
 
 	/**
-	 * Outputs the options form on admin
+	 * Renders the widget form in the WordPress admin area.
+	 *
+	 * This method is called when the widget is displayed in the admin area, allowing the user
+	 * to configure the widget's settings.
 	 *
 	 * @since 3.0
-	 * @param array $instance The widget options.
-	 * @return void
+	 * @param array $instance The current settings for this widget instance.
 	 */
 	public function form( $instance ): void {
 		// Set the Widgets defaults and Parse current settings with defaults.
@@ -127,32 +131,34 @@ class FubadeWidget extends \WP_Widget {
 	}
 
 	/**
-	 * Processing widget options on save
+	 * Updates the widget instance with the new values provided.
 	 *
 	 * @since 3.0
-	 * @param array $new_instance The new options.
-	 * @param array $old_instance The previous options.
-	 * @return array The new options.
+	 * @param array $new_instance The new instance values.
+	 * @param array $old_instance The old instance values.
+	 * @return array The updated instance values.
 	 */
 	public function update( $new_instance, $old_instance ): array {
+		/* phpcs:disable Generic.Files.LineLength */
 		$instance              = $old_instance;
 		$instance['api']       = isset( $new_instance['api'] ) ? wp_strip_all_tags( $new_instance['api'] ) : '';
 		$instance['classes']   = isset( $new_instance['classes'] ) ? wp_strip_all_tags( $new_instance['classes'] ) : '';
 		$instance['title']     = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
 		$instance['fullWidth'] = isset( $new_instance['fullWidth'] ) ? 1 : false;
 		$instance['devtools']  = isset( $new_instance['devtools'] ) ? 1 : false;
+		/* phpcs:disable */
 
 		return $instance;
 	}
 
 	/**
-	 * Outputs the content of the widget
-	 *
-	 * @since 3.0
-	 * @param array $args     The Widget arguments.
-	 * @param array $instance The saved values from the database.
-	 */
-	public function widget( $args, $instance ): void {
+  * Renders the widget output.
+  *
+	* @since 3.0
+  * @param array $args     Widget arguments.
+  * @param array $instance Widget settings.
+  */
+  public function widget( $args, $instance ): void {
 		// phpcs:disable
 		// Check the widget options.
 		$api       = $instance['api'] ?? '';
@@ -175,8 +181,8 @@ class FubadeWidget extends \WP_Widget {
 				'notice'    => $title,
 				'fullWidth' => $fullWidth,
 				'devtools'  => $devtools,
-			]
-		);
+				]
+			);
 
 		echo $output;
 

@@ -22,37 +22,37 @@ namespace ITSB\IFDW\Utils\Logging;
  */
 class ConsoleLogger extends LoggerBase {
 	/**
-	 * The instance.
+	 * The singleton instance of the ConsoleLogger class.
 	 *
 	 * @since 3.0
-	 * @var self
+	 * @var ConsoleLogger
 	 */
 	private static $instance;
 
 	/**
-	 * True if the general information are already logged.
+	 * Indicates whether the general information has already been logged.
 	 *
 	 * @since 3.0
-	 * @var boolean
+	 * @var bool
 	 */
 	private $isGeneralLogged = false;
 
+
 	/**
-	 * Get the instance.
+	 * Returns the singleton instance of the ConsoleLogger class.
 	 *
 	 * @since 3.0
-	 * @return self The instance of the class.
+	 * @return ConsoleLogger The singleton instance of the ConsoleLogger class.
 	 */
 	public static function getInstance(): self {
 		return self::$instance ?? new static();
 	}
 
 	/**
-	 * Generates a logging output of an error.
+	 * Logs an error message to the browser console.
 	 *
 	 * @since 3.0
-	 * @param string $error The error message.
-	 * @return void
+	 * @param string $error The error message to log.
 	 */
 	public function errorLog( string $error ): void {
 		$errorMessage = 'console.info(' . wp_json_encode( $error, JSON_HEX_TAG ) . ');' . PHP_EOL;
@@ -60,11 +60,14 @@ class ConsoleLogger extends LoggerBase {
 	}
 
 	/**
-	 * Generates a logging output.
+	 * Logs information about a specific widget.
+	 *
+	 * This method logs various information about a widget, such as its ID and other properties,
+	 * to the browser console. If the general information has not been logged yet, it will be
+	 * logged first before logging the widget-specific information.
 	 *
 	 * @since 3.0
-	 * @param array $arr The arguments.
-	 * @return void
+	 * @param array $arr The arguments containing the widget information to log.
 	 */
 	public function log( array $arr ): void {
 		if ( ! $this->isGeneralLogged ) {
@@ -75,11 +78,13 @@ class ConsoleLogger extends LoggerBase {
 	}
 
 	/**
-	 * Logs the general information, for example from the plugin, WordPress
-	 * and / or the server.
+	 * Logs general information to the browser console.
+	 *
+	 * This method logs various general information to the browser console.
+	 * If the general information has not been logged yet, it will be logged here.
+	 * The general information is stored in the `$generalInfoList` property.
 	 *
 	 * @since 3.0
-	 * @return void
 	 */
 	protected function logGeneralInfo(): void {
 		$output = '';
@@ -95,11 +100,14 @@ class ConsoleLogger extends LoggerBase {
 	}
 
 	/**
-	 * Logs the information pertaining to a specific widget only.
+	 * Logs information about a specific widget.
+	 *
+	 * This method logs various information about a widget, such as its ID and other properties,
+	 * to the browser console. If the general information has not been logged yet, it will be
+	 * logged first before logging the widget-specific information.
 	 *
 	 * @since 3.0
-	 * @param array $arr The arguments.
-	 * @return void
+	 * @param array $arr The arguments containing the widget information to log.
 	 */
 	protected function logWidgetInfo( array $arr ): void {
 		if ( ! isset( $arr['id'] ) ) {

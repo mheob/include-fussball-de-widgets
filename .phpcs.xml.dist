@@ -54,8 +54,8 @@
   <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
   <rule ref="Generic.Files.LineLength">
     <properties>
-      <property name="lineLimit" value="120"/>
-      <property name="absoluteLineLimit" value="120"/>
+      <property name="lineLimit" value="100"/>
+      <property name="absoluteLineLimit" value="100"/>
     </properties>
   </rule>
 

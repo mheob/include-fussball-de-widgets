@@ -25,13 +25,16 @@ use ITSB\IFDW\Utils\Settings;
  */
 final class Enqueue extends ActionBase {
 	/**
-	 * Register the dynamic block.
+	 * Registers the Fubade Gutenberg block and its associated assets.
+	 *
+	 * This method is responsible for registering the Fubade block with WordPress,
+	 * including the block's JavaScript and CSS assets. It also sets up the
+	 * necessary translations for the block.
 	 *
 	 * @since 3.0
-	 * @return void
 	 */
 	public function action(): void {
-		if ( version_compare( get_bloginfo( 'version' ), '5.0', '<' ) ) {
+		if ( version_compare( get_bloginfo( 'version' ), '4.8', '<' ) ) {
 			return;
 		}
 
@@ -71,11 +74,12 @@ final class Enqueue extends ActionBase {
 	}
 
 	/**
-	 * Creates the output to the sourcecode.
+	 * Renders the Fubade block.
 	 *
 	 * @since 3.0
-	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
-	 * @return string The output to the sourcecode.
+	 * @param array $attr The block attributes
+	 *                    (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
+	 * @return string The rendered block output.
 	 */
 	public function render( array $attr ): string {
 		return ( new Fubade() )->output( $attr );
