@@ -30,7 +30,7 @@ class ConsoleLogger extends LoggerBase {
 	private static $instance;
 
 	/**
-	 * True if the general informations are already logged.
+	 * True if the general information are already logged.
 	 *
 	 * @since 3.0
 	 * @var boolean

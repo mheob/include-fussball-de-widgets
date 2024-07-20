@@ -84,7 +84,7 @@ A WordPress plugin for easy integration of
 
 > The first clue should always be the
 > [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the
-> [Issues section on Github](https://github.com/mheob/include-fussball-de-widgets/issues).\
+> [Issues section on GitHub](https://github.com/mheob/include-fussball-de-widgets/issues).\
 > \
 > Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.\
 > \
@@ -162,7 +162,7 @@ Ein WordPress-Plugin für die einfache Integration der
 
 > Der erste Anhaltspunkt sollte immer das
 > [offizielle Support-Forum auf wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) oder auch der
-> [Problembereich auf Github](https://github.com/mheob/include-fussball-de-widgets/issues) sein.\
+> [Problembereich auf GitHub](https://github.com/mheob/include-fussball-de-widgets/issues) sein.\
 > \
 > Gerne und oft werden auch die falschen Anführungszeichen verwendet. Hier muss unbedingt das normale `"`-Zeichen verwendet
 > werden.\

@@ -18,8 +18,7 @@ use ITSB\IFDW\Infrastructure\ActionBase;
 /**
  * The `Textdomain` class register the used textdomain for local usages.
  *
- * Only needed for the Poedit workflow. The official translations comes
- * from wordpress.org.
+ * Only needed for the Poedit workflow. The official translations comes from wordpress.org.
  *
  * @since 3.0
  */
