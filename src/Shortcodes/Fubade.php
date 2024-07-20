@@ -25,7 +25,7 @@ final class Fubade extends ShortcodeBase {
 	 * Render the fubade shortcode
 	 *
 	 * @since 3.0
-	 * @param array $atts Shortcode attributes (`id`, `api`, `classes`, `notice`, `fullwidth` and `devtools`).
+	 * @param array $atts Shortcode attributes (`id`, `api`, `classes`, `notice`, `fullWidth` and `devtools`).
 	 * @return string The output to the sourcecode.
 	 */
 	public function shortcode( array $atts ): string {
@@ -35,7 +35,7 @@ final class Fubade extends ShortcodeBase {
 				'api'       => '',
 				'classes'   => '',
 				'notice'    => '',
-				'fullwidth' => '',
+				'fullWidth' => '',
 				'devtools'  => '',
 			],
 			$atts

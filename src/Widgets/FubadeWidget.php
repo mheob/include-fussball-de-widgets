@@ -48,7 +48,7 @@ class FubadeWidget extends \WP_Widget {
 			'api'       => '',
 			'classes'   => '',
 			'title'     => '',
-			'fullwidth' => '',
+			'fullWidth' => '',
 			'devtools'  => '',
 		];
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -98,14 +98,14 @@ class FubadeWidget extends \WP_Widget {
 
 		<p>
 			<input
-				id="<?php echo esc_attr( $this->get_field_id( 'fullwidth' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'fullwidth' ) ); ?>"
+				id="<?php echo esc_attr( $this->get_field_id( 'fullWidth' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'fullWidth' ) ); ?>"
 				type="checkbox"
-				<?php checked( '1', $instance['fullwidth'] ); ?>
+				<?php checked( '1', $instance['fullWidth'] ); ?>
 				value="1"
 			/>
 
-			<label for="<?php echo esc_attr( $this->get_field_id( 'fullwidth' ) ); ?>">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'fullWidth' ) ); ?>">
 				<?php esc_html_e( 'view in full width', 'include-fussball-de-widgets' ); ?>
 			</label>
 		</p>
@@ -139,7 +139,7 @@ class FubadeWidget extends \WP_Widget {
 		$instance['api']       = isset( $new_instance['api'] ) ? wp_strip_all_tags( $new_instance['api'] ) : '';
 		$instance['classes']   = isset( $new_instance['classes'] ) ? wp_strip_all_tags( $new_instance['classes'] ) : '';
 		$instance['title']     = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
-		$instance['fullwidth'] = isset( $new_instance['fullwidth'] ) ? 1 : false;
+		$instance['fullWidth'] = isset( $new_instance['fullWidth'] ) ? 1 : false;
 		$instance['devtools']  = isset( $new_instance['devtools'] ) ? 1 : false;
 
 		return $instance;
@@ -158,7 +158,7 @@ class FubadeWidget extends \WP_Widget {
 		$api       = $instance['api'] ?? '';
 		$classes   = isset( $instance['classes'] ) ? apply_filters( 'widget_title', $instance['classes'] ) : '';
 		$title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-		$fullwidth = empty( $instance['fullwidth'] ) ? false : true;
+		$fullWidth = empty( $instance['fullWidth'] ) ? false : true;
 		$devtools  = empty( $instance['devtools'] ) ? false : true;
 
 
@@ -173,7 +173,7 @@ class FubadeWidget extends \WP_Widget {
 				'id'        => '',
 				'classes'   => $classes,
 				'notice'    => $title,
-				'fullwidth' => $fullwidth,
+				'fullWidth' => $fullWidth,
 				'devtools'  => $devtools,
 			]
 		);

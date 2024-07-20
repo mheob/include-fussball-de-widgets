@@ -33,14 +33,14 @@ registerBlockType('ifdw/fubade', {
 		api: { type: 'string' },
 		classes: { type: 'string' },
 		devtools: { type: 'boolean' },
-		fullwidth: { type: 'boolean' },
+		fullWidth: { type: 'boolean' },
 		id: { type: 'string' },
 		notice: { type: 'string' },
 	},
 	category: 'widgets',
 	description: __('Showing the fussball.de widget', 'include-fussball-de-widgets'),
 	edit: withInstanceId(({ attributes, className, instanceId, setAttributes }) => {
-		const { api = '', classes = '', devtools = false, fullwidth = true, notice = '' } = attributes;
+		const { api = '', classes = '', devtools = false, fullWidth = true, notice = '' } = attributes;
 		const inputId = `${className}-${instanceId}`;
 		const apiLength = 32;
 
@@ -49,7 +49,7 @@ registerBlockType('ifdw/fubade', {
 				api: '',
 				classes: '',
 				devtools: false,
-				fullwidth: true,
+				fullWidth: true,
 				id: '',
 				notice: '',
 			});
@@ -76,7 +76,7 @@ registerBlockType('ifdw/fubade', {
 
 					<ToggleControl
 						help={
-							fullwidth
+							fullWidth
 								? __(
 										'The widget will be shown in the maximal width.',
 										'include-fussball-de-widgets',
@@ -87,10 +87,10 @@ registerBlockType('ifdw/fubade', {
 										'include-fussball-de-widgets',
 									)
 						}
-						onChange={newFullwidth => {
-							setAttributes({ fullwidth: newFullwidth });
+						onChange={newFullWidth => {
+							setAttributes({ fullWidth: newFullWidth });
 						}}
-						checked={fullwidth}
+						checked={fullWidth}
 						label={__('Show in full width', 'include-fussball-de-widgets')}
 					/>
 

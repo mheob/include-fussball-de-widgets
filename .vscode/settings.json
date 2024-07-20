@@ -1,7 +1,8 @@
 {
 	"html.format.wrapAttributes": "aligned-multiple",
 	"[php]": {
-		"editor.defaultFormatter": "valeryanm.vscode-phpsab"
+		"editor.defaultFormatter": "valeryanm.vscode-phpsab",
+		"editor.formatOnSave": true
 	},
 	"intelephense.diagnostics.undefinedFunctions": false,
 	"intelephense.files.exclude": [

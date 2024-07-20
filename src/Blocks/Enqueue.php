@@ -60,7 +60,7 @@ final class Enqueue extends ActionBase {
 					'api'       => [ 'type' => 'string' ],
 					'classes'   => [ 'type' => 'string' ],
 					'notice'    => [ 'type' => 'string' ],
-					'fullwidth' => [ 'type' => 'boolean' ],
+					'fullWidth' => [ 'type' => 'boolean' ],
 					'devtools'  => [ 'type' => 'boolean' ],
 				],
 				'editor_script'   => 'fubade-block-script',
@@ -74,7 +74,7 @@ final class Enqueue extends ActionBase {
 	 * Creates the output to the sourcecode.
 	 *
 	 * @since 3.0
-	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
+	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
 	 * @return string The output to the sourcecode.
 	 */
 	public function render( array $attr ): string {

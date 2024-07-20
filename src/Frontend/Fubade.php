@@ -29,7 +29,7 @@ final class Fubade {
 	];
 
 	/**
-	 * The attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
+	 * The attributes (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
 	 *
 	 * @since 3.0
 	 * @var array
@@ -41,7 +41,7 @@ final class Fubade {
 	 *
 	 * @since 3.0
 	 *
-	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
+	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
 	 * @return string The output to the sourcecode.
 	 */
 	public function output( array $attr ): string {
@@ -55,9 +55,9 @@ final class Fubade {
 										: 'fubade-' . random_int( 10, 99 ) . '-' . substr( $this->attr['api'], -5 ),
 			'classes'   => empty( $this->attr['classes'] ) ? '' : sanitize_text_field( $this->attr['classes'] ),
 			'notice'    => empty( $this->attr['notice'] ) ? '' : sanitize_text_field( $this->attr['notice'] ),
-			'fullwidth' => '1' === $this->attr['fullwidth']
-										|| 'true' === $this->attr['fullwidth']
-										|| true === $this->attr['fullwidth']
+			'fullWidth' => '1' === $this->attr['fullWidth']
+										|| 'true' === $this->attr['fullWidth']
+										|| true === $this->attr['fullWidth']
 										? true : false,
 			'devtools'  => '1' === $this->attr['devtools']
 										|| 'true' === $this->attr['devtools']
@@ -92,7 +92,7 @@ final class Fubade {
 	 * Set the attribute array.
 	 *
 	 * @since 3.0
-	 * @param array $attr The attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`)
+	 * @param array $attr The attributes (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`)
 	 *                    for the widget rendering.
 	 * @return void
 	 */
@@ -102,7 +102,7 @@ final class Fubade {
 			'id'        => $attr['id'] ?? 'ERROR_' . time(),
 			'classes'   => $attr['classes'] ?? '',
 			'notice'    => $attr['notice'] ?? '',
-			'fullwidth' => $attr['fullwidth'] ?? false,
+			'fullWidth' => $attr['fullWidth'] ?? false,
 			'devtools'  => $attr['devtools'] ?? false,
 		];
 	}
@@ -182,7 +182,7 @@ final class Fubade {
 		$src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'];
 		$src   .= '/target/' . $this->attr['id'];
 		$src   .= '/caller/' . Settings::getHost();
-		$width  = $this->attr['fullwidth'] ? '100%' : '900px';
+		$width  = $this->attr['fullWidth'] ? '100%' : '900px';
 		$height = '100%';
 		$style  = 'border: 1px solid #CECECE; overflow: hidden; min-height: 200px;';
 
