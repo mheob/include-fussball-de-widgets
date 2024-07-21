@@ -1,169 +1,175 @@
+# Copyright (C) 2024 Alexander Böhm <ab@its-boehm.de>
+# This file is distributed under the GPL2.
 #, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Include Fussball.de Widgets\n"
-"POT-Creation-Date: 2021-10-05 16:33+0200\n"
-"PO-Revision-Date: 2020-04-14 15:19+0200\n"
-"Last-Translator: Alexander Böhm <ab@its-boehm.de>\n"
-"Language-Team: Alexander Böhm <ab@its-boehm.de>\n"
+"Project-Id-Version: Include Fussball.de Widgets 4.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/include-fussball-de-widgets\n"
+"POT-Creation-Date: 2024-07-21 12:17+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: index.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Domain: include-fussball-de-widgets\n"
 
-#. Plugin Name of the plugin/theme
-#: Blocks/fubade/index.js:32
+#. Plugin Name of the plugin
+#: index.php Blocks/fubade/index.js:167
 msgid "Include Fussball.de Widgets"
 msgstr ""
 
-#: Blocks/fubade/index.js:33
-msgid "Showing the fussball.de widget"
+#. Plugin URI of the plugin
+#: index.php
+msgid "https://wordpress.org/plugins/include-fussball-de-widgets/"
 msgstr ""
 
-#: Blocks/fubade/index.js:36
-msgid "fubade"
+#. Description of the plugin
+#: index.php
+msgid "Easy integration of the Fussball.de widgets."
 msgstr ""
 
-#: Blocks/fubade/index.js:62
-msgid "Fussball.de Widgets Settings"
+#. Author of the plugin
+#: index.php
+msgid "Alexander Böhm <ab@its-boehm.de>"
 msgstr ""
 
-#: Blocks/fubade/index.js:64
-msgid "CSS-Classes"
+#. Author URI of the plugin
+#: index.php
+msgid "http://profiles.wordpress.org/mheob"
 msgstr ""
 
-#: Blocks/fubade/index.js:72
-msgid "Notice"
-msgstr ""
-
-#: Blocks/fubade/index.js:83
-msgid "The widget will be shown in the maximal width."
-msgstr ""
-
-#: Blocks/fubade/index.js:85
-msgid ""
-"The widget will be shown in the width given from fussball.de(CSS possible "
-"could overwrite this setting)."
-msgstr ""
-
-#: Blocks/fubade/index.js:90
-msgid "Show in full width"
-msgstr ""
-
-#: Blocks/fubade/index.js:100
-msgid "Debugging information will be displayed in the browser console."
-msgstr ""
-
-#: Blocks/fubade/index.js:101
-msgid "No debugging information were outputted."
-msgstr ""
-
-#: Blocks/fubade/index.js:103
-msgid "Show some information for debugging"
-msgstr ""
-
-#: Frontend/Fubade.php:155
-msgid ""
-"!!! The fussball.de API must have a length of exactly 32 characters. !!!"
+#: Frontend/Fubade.php:170 Blocks/fubade/index.js:151
+msgid "!! The fussball.de API must have a length of exactly 32 or 36 characters. !!"
 msgstr ""
 
 #. translators: %s: The length of the api.
-#: Frontend/Fubade.php:159
-#, php-format
+#: Frontend/Fubade.php:175
 msgid "Currently the API length is: %s"
 msgstr ""
 
-#: Frontend/Fubade.php:165
-msgid ""
-"The PHP variable <code>$_SERVER[\"HTTP_HOST\"]</code> was not set by the "
-"server."
+#: Frontend/Fubade.php:180
+msgid "!! The fussball.de API with a length of 36 characters must be a valid UUID. !!"
 msgstr ""
 
-#: Frontend/Fubade.php:170
+#: Frontend/Fubade.php:186
+msgid "The PHP variable <code>$_SERVER[\"HTTP_HOST\"]</code> was not set by the server."
+msgstr ""
+
+#: Frontend/Fubade.php:192
 msgid "An undefined error has occurred."
 msgstr ""
 
 #. translators: %1$s: The required WP version - %2$s: The required PHP version
-#: Utils/Activation.php:44
-#, php-format
-msgid ""
-"Include Fussball.de Widgets requires WordPress %1$s and PHP %2$s or higher."
+#: Utils/Activation.php:48
+msgid "Include Fussball.de Widgets requires WordPress %1$s and PHP %2$s or higher."
 msgstr ""
 
-#: Utils/Logging/LoggerBase.php:39
+#: Utils/Logging/LoggerBase.php:44
 msgid "[FUBADE] Plugin Version: "
 msgstr ""
 
-#: Utils/Logging/LoggerBase.php:40
+#: Utils/Logging/LoggerBase.php:45
 msgid "[FUBADE] Website for registration: "
 msgstr ""
 
-#: Utils/Logging/LoggerBase.php:41
+#: Utils/Logging/LoggerBase.php:46
 msgid "[FUBADE] Wordpress version: "
 msgstr ""
 
-#: Utils/Logging/LoggerBase.php:42
+#: Utils/Logging/LoggerBase.php:47
 msgid "[FUBADE] PHP version: "
 msgstr ""
 
-#: Utils/Logging/LoggerBase.php:43
+#: Utils/Logging/LoggerBase.php:48
 msgid "[FUBADE] PHP ext loaded: "
 msgstr ""
 
-#: Utils/PluginActions.php:42
+#: Utils/PluginActions.php:45
 msgid "Plugin Additional Links"
 msgstr ""
 
-#: Utils/PluginActions.php:43
+#: Utils/PluginActions.php:46
 msgid "Donate"
 msgstr ""
 
-#: Widgets/FubadeWidget.php:33
+#: Widgets/FubadeWidget.php:34 Blocks/fubade/index.js:118
+msgid "Fussball.de Widget"
+msgstr ""
+
+#: Widgets/FubadeWidget.php:36
 msgid "Displays the fussball.de widget."
 msgstr ""
 
-#: Widgets/FubadeWidget.php:57
+#: Widgets/FubadeWidget.php:62
 msgid "Title: "
 msgstr ""
 
-#: Widgets/FubadeWidget.php:71
+#: Widgets/FubadeWidget.php:76
 msgid "API: "
 msgstr ""
 
-#: Widgets/FubadeWidget.php:86
+#: Widgets/FubadeWidget.php:91
 msgid "CSS-Classes: "
 msgstr ""
 
-#: Widgets/FubadeWidget.php:108
+#: Widgets/FubadeWidget.php:113
 msgid "view in full width"
 msgstr ""
 
-#: Widgets/FubadeWidget.php:122
+#: Widgets/FubadeWidget.php:127
 msgid "output log data to console"
 msgstr ""
 
-#. Plugin URI of the plugin/theme
-msgid "https://wordpress.org/plugins/include-fussball-de-widgets/"
+#: Blocks/fubade/index.js:41
+msgid "Showing the fussball.de widget"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid "Easy integration of the Fussball.de widgets."
+#: Blocks/fubade/index.js:61
+msgid "Fussball.de Widgets Settings"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Alexander Böhm <ab@its-boehm.de>"
+#: Blocks/fubade/index.js:66
+msgid "CSS-Classes"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://profiles.wordpress.org/mheob"
+#: Blocks/fubade/index.js:74
+msgid "Notice"
+msgstr ""
+
+#: Blocks/fubade/index.js:81
+msgid "The widget will be shown in the maximal width."
+msgstr ""
+
+#: Blocks/fubade/index.js:95
+msgid "Show in full width"
+msgstr ""
+
+#: Blocks/fubade/index.js:101
+msgid "Debugging information will be displayed in the browser console."
+msgstr ""
+
+#: Blocks/fubade/index.js:105
+msgid "No debugging information were outputted."
+msgstr ""
+
+#: Blocks/fubade/index.js:111
+msgid "Show some information for debugging"
+msgstr ""
+
+#: Blocks/fubade/index.js:123
+msgid "Api:"
+msgstr ""
+
+#: Blocks/fubade/index.js:136
+msgid "Insert API here..."
+msgstr ""
+
+#: Blocks/fubade/index.js:144
+msgid "The widget should now be able to be displayed in the frontend."
+msgstr ""
+
+#: Blocks/fubade/index.js:161
+msgid "fubade"
 msgstr ""

@@ -42,4 +42,18 @@ final class StringHelper {
 	public static function endsWith( string $text, string $endText ): bool {
 		return substr( $text, 0, -strlen( $endText ) ) === $endText;
 	}
+
+
+	/**
+	 * Check if the given string is a valid UUID.
+	 *
+	 * @since 4.0
+	 * @param string $uuid The string to check for a valid UUID.
+	 * @return bool True if the input string is a valid UUID, false otherwise.
+	 */
+	public static function isValidUUID( string $uuid ): bool {
+		// Regular expression pattern for valid UUIDs
+		$pattern = '/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i';
+		return preg_match( $pattern, $uuid ) === 1;
+	}
 }

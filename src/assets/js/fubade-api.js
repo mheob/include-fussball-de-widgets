@@ -1,71 +1,61 @@
-/* global attr */
-/* eslint-disable no-console */
+import './fubade-api.legacy.js';
 
-window.fussballDeWidgetAPI = () => {
-	const devTools = typeof attr !== 'undefined' && !!attr.devtools;
+(function initialize() {
+	const containerClass = 'fussballde_widget';
 
-	window.addEventListener(
-		'message',
-		evt => {
-			if (devTools) {
-				console.info('window.fussballDeWidgetAPI -> evt.data.container', evt.data.container);
-			}
+	function generateSecureRandomId(length) {
+		const randomValues = new Uint32Array(length);
+		window.crypto.getRandomValues(randomValues);
 
-			const currentIframe = document.querySelector(`#${evt.data.container} iframe`);
+		const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+		let result = '';
+		for (let i = 0; i < length; i++) {
+			const randomIndex = randomValues[i] % characters.length;
+			result += characters[randomIndex];
+		}
+		return result;
+	}
 
-			if (!currentIframe) return;
+	function initializeWidget(container) {
+		const widgetId = container.getAttribute('data-id');
+		const widgetType = container.getAttribute('data-type');
 
-			if (evt.data.type === 'setHeight') {
-				currentIframe.setAttribute('height', `${evt.data.value}px`);
-				currentIframe.style.height = '';
-				currentIframe.style.minHeight = '200px';
-			}
+		if (container && widgetId) {
+			const iframeName = `${generateSecureRandomId(4)}_fussballde_widget-${widgetId}`;
+			const iframe = document.createElement('iframe');
+			iframe.setAttribute('src', `https://next.fussball.de/widget/${widgetType}/${widgetId}`);
+			iframe.setAttribute('name', iframeName);
+			iframe.style.width = '100%';
+			iframe.style.border = 'none';
+			iframe.setAttribute('frameborder', '0');
+			iframe.setAttribute('scrolling', 'no');
 
-			if (evt.data.type === 'setWidth') {
-				if (currentIframe.getAttribute('width') !== '100%') {
-					currentIframe.setAttribute('width', `${evt.data.value}px`);
+			container.appendChild(iframe);
+
+			window.addEventListener('message', function (event) {
+				if (
+					event.data.type === 'fussballde_widget:resize' &&
+					// eslint-disable-next-line eqeqeq
+					event.data.iframeName == iframeName
+				) {
+					iframe.style.height = `${event.data.height}px`;
 				}
-
-				currentIframe.style.width = '';
-			}
-		},
-		false,
-	);
-
-	// Support for Divi-Tabs, Fusion-Tabs, Kadence-Blocks-Tabs, Shortcodes Ultimate,
-	//             WPBakery Page Builder, Olevmedia Shortcode
-	if (
-		document.body.classList.contains('et_divi_theme') ||
-		document.body.classList.contains('fusion-body') ||
-		document.body.classList.contains('elementor-page') ||
-		document.querySelectorAll('.wp-block-kadence-tabs').length > 0 ||
-		document.querySelectorAll('.su-spoiler').length > 0 ||
-		document.querySelectorAll('.vc_tta-tabs').length > 0 ||
-		document.querySelectorAll('.omsc-tabs-control').length > 0
-	) {
-		const tabs = document.querySelectorAll(
-			'.et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a, .su-spoiler-title, .vc_tta-tab a, .omsc-tabs-control a, .elementor-tab-title, .elementor-toggle',
-		);
-		if (tabs.length > 0) {
-			Array.from(tabs).forEach(tab => {
-				tab.addEventListener(
-					'click',
-					() => {
-						const iFrames = document.querySelectorAll('iframe');
-						setTimeout(
-							Array.from(iFrames).forEach(iFrame => {
-								iFrame.src += '';
-							}),
-							700,
-						);
-						if (devTools) {
-							console.info('window.fussballDeWidgetAPI -> tab', tab);
-							console.info('window.fussballDeWidgetAPI -> iFrames', iFrames);
-						}
-					},
-					false,
-				);
 			});
+		} else {
+			console.error(`Widget container not initialized: #${widgetId}`);
 		}
 	}
-};
+
+	function loadWidgets() {
+		const containers = Array.from(document.getElementsByClassName(containerClass));
+		containers.forEach(element => {
+			initializeWidget(element);
+		});
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', loadWidgets);
+	} else {
+		loadWidgets();
+	}
+})();

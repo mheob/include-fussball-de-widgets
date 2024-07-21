@@ -1,3 +1,6 @@
+# MacOs
+.DS_Store
+
 # Package manager
 node_modules
 vendor

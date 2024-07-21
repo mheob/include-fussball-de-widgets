@@ -45,8 +45,7 @@ abstract class LoggerBase {
 			__( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . Settings::getHost(),
 			__( '[FUBADE] Wordpress version: ', 'include-fussball-de-widgets' ) . $wp_version,
 			__( '[FUBADE] PHP version: ', 'include-fussball-de-widgets' ) . phpversion(),
-			__( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-widgets' ) .
-				wp_json_encode( get_loaded_extensions() ),
+			__( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-widgets' ) . wp_json_encode( get_loaded_extensions() ),
 			/* phpcs:enable */
 		];
 	}

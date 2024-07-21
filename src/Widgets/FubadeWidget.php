@@ -43,14 +43,14 @@ class FubadeWidget extends \WP_Widget {
 	 * This method is called when the widget is displayed in the admin area, allowing the user
 	 * to configure the widget's settings.
 	 *
-	 * @since 3.0
+	 * @since 4.0
 	 * @param array $instance The current settings for this widget instance.
 	 */
 	public function form( $instance ): void {
 		// Set the Widgets defaults and Parse current settings with defaults.
 		$defaults = [
 			'api'       => '',
-			'classes'   => '',
+			'type'      => '',
 			'title'     => '',
 			'fullWidth' => '',
 			'devtools'  => '',
@@ -79,10 +79,23 @@ class FubadeWidget extends \WP_Widget {
 			<input
 				type="text"
 				class="widefat"
-				pattern="[A-Za-z0-9]{32}"
 				id="<?php echo esc_attr( $this->get_field_id( 'api' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'api' ) ); ?>"
 				value="<?php echo esc_attr( $instance['api'] ); ?>"
+			/>
+		</p>
+
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'type' ) ); ?>">
+				<?php esc_html_e( 'Type: ', 'include-fussball-de-widgets' ); ?>
+			</label>
+
+			<input
+				type="text"
+				class="widefat"
+				id="<?php echo esc_attr( $this->get_field_id( 'type' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'type' ) ); ?>"
+				value="<?php echo esc_attr( $instance['type'] ); ?>"
 			/>
 		</p>
 
@@ -142,6 +155,7 @@ class FubadeWidget extends \WP_Widget {
 		/* phpcs:disable Generic.Files.LineLength */
 		$instance              = $old_instance;
 		$instance['api']       = isset( $new_instance['api'] ) ? wp_strip_all_tags( $new_instance['api'] ) : '';
+		$instance['type']      = isset( $new_instance['type'] ) ? wp_strip_all_tags( $new_instance['type'] ) : '';
 		$instance['classes']   = isset( $new_instance['classes'] ) ? wp_strip_all_tags( $new_instance['classes'] ) : '';
 		$instance['title']     = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
 		$instance['fullWidth'] = isset( $new_instance['fullWidth'] ) ? 1 : false;
@@ -162,6 +176,7 @@ class FubadeWidget extends \WP_Widget {
 		// phpcs:disable
 		// Check the widget options.
 		$api       = $instance['api'] ?? '';
+		$type      = isset( $instance['type'] ) ? apply_filters( 'widget_title', $instance['type'] ) : '';
 		$classes   = isset( $instance['classes'] ) ? apply_filters( 'widget_title', $instance['classes'] ) : '';
 		$title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 		$fullWidth = empty( $instance['fullWidth'] ) ? false : true;
@@ -177,6 +192,7 @@ class FubadeWidget extends \WP_Widget {
 			[
 				'api'       => $api,
 				'id'        => '',
+				'type'      => $type,
 				'classes'   => $classes,
 				'notice'    => $title,
 				'fullWidth' => $fullWidth,

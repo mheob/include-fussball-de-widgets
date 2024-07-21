@@ -27,9 +27,9 @@ final class Fubade extends ShortcodeBase {
 	 * This method is responsible for processing the shortcode attributes and rendering
 	 * the fubade widget.
 	 *
-	 * @since 3.0
+	 * @since 4.0
 	 * @param array $atts Shortcode attributes
-	 *                    (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
+	 *                    (`api`, `id`, `type`, `classes`, `notice`, `fullWidth` and `devtools`).
 	 * @return string The rendered fubade widget.
 	 */
 	public function shortcode( array $atts ): string {
@@ -37,6 +37,7 @@ final class Fubade extends ShortcodeBase {
 			[
 				'id'        => '',
 				'api'       => '',
+				'type'      => '',
 				'classes'   => '',
 				'notice'    => '',
 				'fullWidth' => '',
