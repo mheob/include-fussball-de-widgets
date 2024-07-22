@@ -31,10 +31,10 @@ final class Enqueue extends ActionBase {
 	 * including the block's JavaScript and CSS assets. It also sets up the
 	 * necessary translations for the block.
 	 *
-	 * @since 3.0
+	 * @since 4.0
 	 */
 	public function action(): void {
-		if ( version_compare( get_bloginfo( 'version' ), '4.8', '<' ) ) {
+		if ( version_compare( get_bloginfo( 'version' ), Settings::MIN_WP, '<' ) ) {
 			return;
 		}
 
@@ -61,6 +61,7 @@ final class Enqueue extends ActionBase {
 				'attributes'      => [
 					'id'        => [ 'type' => 'string' ],
 					'api'       => [ 'type' => 'string' ],
+					'type'      => [ 'type' => 'string' ],
 					'classes'   => [ 'type' => 'string' ],
 					'notice'    => [ 'type' => 'string' ],
 					'fullWidth' => [ 'type' => 'boolean' ],

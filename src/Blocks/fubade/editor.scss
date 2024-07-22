@@ -7,52 +7,54 @@
 // Colors.
 $black: #000;
 $white: #fff;
+$gray: #999;;
 $fubade_green: #9c3;
 $error_color: #af1f1f;
 
-.wp-block .wp-block-ifdw-fubade {
-  display: flex;
-  flex-direction: row;
-  padding: 14px;
-  font-size: 13px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
-    sans-serif;
-  background-color: #f8f9f9;
+.wp-block:has(.wp-block-ifdw-fubade) {
+	.wp-block-ifdw-fubade {
+		padding: 0.75rem;
+		background-color: $white;
+		border: 1px solid $black;
 
-  label {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    margin-right: 8px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
+		&__main {
+			display: grid;
+			grid-template-columns: auto 1fr;
+			gap: 0.5rem;
+			margin: 0.5rem 0;
+		}
 
-  &-header,
-  &-shortcode {
-    padding: 0 0.5em;
-    color: $white;
-    text-align: center;
-    background-color: $fubade_green;
-  }
+		label {
+			font-weight: bold;
+			white-space: nowrap;
+		}
 
-  &-header {
-    margin: 0;
-    font-size: 1em !important;
-    font-style: italic;
-  }
+		textarea {
+			padding: 0 0.5rem;
+			border: 1px solid $gray;
+			border-radius: 0;
+		}
 
-  &-shortcode {
-    color: $black;
-    font-size: 0.5em;
-    font-family: monospace;
+		&__header,
+		&__footer {
+			padding: 0.5rem;
+			color: $white;
+			text-align: center;
+			background-color: $fubade_green;
+		}
 
-    &.error {
-      margin: 0;
-      padding: 0 0.5em;
-      color: $white;
-      background-color: $error_color;
-      border: none;
-    }
-  }
+		&__header {
+			margin: 0;
+			font-style: italic;
+		}
+
+		&__footer {
+			font-size: 0.75rem;
+			font-family: monospace;
+
+			&--error {
+				background-color: $error_color;
+			}
+		}
+	}
 }

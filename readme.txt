@@ -1,6 +1,6 @@
 === Include Fussball.de Widgets ===
 Contributors: mheob
-Tags: soccer, fussball.de, fussball, block, widget
+Tags: soccer, fussball.de, fussball, gutenberg, widget
 Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
 Tested up to: 6.6

@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Include Fussball.de Widgets 4.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/include-fussball-"
 "de-widgets\n"
-"POT-Creation-Date: 2024-07-21 12:17+0200\n"
-"PO-Revision-Date: 2024-07-21 12:25+0200\n"
+"POT-Creation-Date: 2024-07-22T14:04:08+00:00\n"
+"PO-Revision-Date: 2024-07-22 16:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Domain: include-fussball-de-widgets\n"
 
 #. Plugin Name of the plugin
-#: index.php Blocks/fubade/index.js:167
+#: index.php Blocks/fubade/index.js:193
 msgid "Include Fussball.de Widgets"
 msgstr "Include Fussball.de Widgets"
 
@@ -41,7 +41,7 @@ msgstr "Alexander Böhm ab@its-boehm.de>"
 msgid "http://profiles.wordpress.org/mheob"
 msgstr "http://profiles.wordpress.org/mheob"
 
-#: Frontend/Fubade.php:170 Blocks/fubade/index.js:151
+#: Frontend/Fubade.php:246 Blocks/fubade/index.js:177
 msgid ""
 "!! The fussball.de API must have a length of exactly 32 or 36 characters. !!"
 msgstr ""
@@ -49,11 +49,11 @@ msgstr ""
 "haben. !!"
 
 #. translators: %s: The length of the api.
-#: Frontend/Fubade.php:175
+#: Frontend/Fubade.php:251
 msgid "Currently the API length is: %s"
 msgstr "Derzeit beträgt die API-Länge: %s"
 
-#: Frontend/Fubade.php:180
+#: Frontend/Fubade.php:256
 msgid ""
 "!! The fussball.de API with a length of 36 characters must be a valid "
 "UUID. !!"
@@ -61,7 +61,7 @@ msgstr ""
 "!! Die fussball.de API mit einer Länge von 36 Zeichen muss eine gültige "
 "UUID sein. !!"
 
-#: Frontend/Fubade.php:186
+#: Frontend/Fubade.php:262
 msgid ""
 "The PHP variable <code>$_SERVER[\"HTTP_HOST\"]</code> was not set by the "
 "server."
@@ -69,7 +69,7 @@ msgstr ""
 "Die PHP-Variable <code>$_SERVER[“HTTP_HOST”]</code> wurde vom Server nicht "
 "gesetzt."
 
-#: Frontend/Fubade.php:192
+#: Frontend/Fubade.php:268
 msgid "An undefined error has occurred."
 msgstr "Es ist ein undefinierter Fehler aufgetreten."
 
@@ -109,7 +109,7 @@ msgstr "Zusätzliche Plugin-Links"
 msgid "Donate"
 msgstr "Spenden"
 
-#: Widgets/FubadeWidget.php:34 Blocks/fubade/index.js:118
+#: Widgets/FubadeWidget.php:34 Blocks/fubade/index.js:126
 msgid "Fussball.de Widget"
 msgstr "Fussball.de Widget"
 
@@ -125,15 +125,19 @@ msgstr "Titel: "
 msgid "API: "
 msgstr "API: "
 
-#: Widgets/FubadeWidget.php:91
+#: Widgets/FubadeWidget.php:90
+msgid "Type: "
+msgstr "Typ: "
+
+#: Widgets/FubadeWidget.php:104
 msgid "CSS-Classes: "
 msgstr "CSS-Klassen: "
 
-#: Widgets/FubadeWidget.php:113
+#: Widgets/FubadeWidget.php:126
 msgid "view in full width"
 msgstr "in voller Breite darstellen"
 
-#: Widgets/FubadeWidget.php:127
+#: Widgets/FubadeWidget.php:140
 msgid "output log data to console"
 msgstr "Logdaten in der Konsole ausgeben"
 
@@ -141,50 +145,58 @@ msgstr "Logdaten in der Konsole ausgeben"
 msgid "Showing the fussball.de widget"
 msgstr "Das fussball.de-Widget anzeigen"
 
-#: Blocks/fubade/index.js:61
+#: Blocks/fubade/index.js:69
 msgid "Fussball.de Widgets Settings"
 msgstr "Fussball.de Widgets-Einstellungen"
 
-#: Blocks/fubade/index.js:66
+#: Blocks/fubade/index.js:74
 msgid "CSS-Classes"
 msgstr "CSS-Klassen"
 
-#: Blocks/fubade/index.js:74
+#: Blocks/fubade/index.js:82
 msgid "Notice"
 msgstr "Hinweis"
 
-#: Blocks/fubade/index.js:81
+#: Blocks/fubade/index.js:89
 msgid "The widget will be shown in the maximal width."
 msgstr "Das Widget wird in der maximalen Breite angezeigt."
 
-#: Blocks/fubade/index.js:95
+#: Blocks/fubade/index.js:103
 msgid "Show in full width"
 msgstr "In voller Breite anzeigen"
 
-#: Blocks/fubade/index.js:101
+#: Blocks/fubade/index.js:109
 msgid "Debugging information will be displayed in the browser console."
 msgstr "Debugging-Informationen werden in der Browser-Konsole angezeigt."
 
-#: Blocks/fubade/index.js:105
+#: Blocks/fubade/index.js:113
 msgid "No debugging information were outputted."
 msgstr "Es wurden keine Debugging-Informationen ausgegeben."
 
-#: Blocks/fubade/index.js:111
+#: Blocks/fubade/index.js:119
 msgid "Show some information for debugging"
 msgstr "Einige Informationen zum Debuggen anzeigen"
 
-#: Blocks/fubade/index.js:123
+#: Blocks/fubade/index.js:131
 msgid "Api:"
 msgstr "Api:"
 
-#: Blocks/fubade/index.js:136
-msgid "Insert API here..."
-msgstr "API hier einfügen…"
-
 #: Blocks/fubade/index.js:144
+msgid "Insert \"data-id\" here..."
+msgstr "Hier \"data-id\" einfügen..."
+
+#: Blocks/fubade/index.js:151
+msgid "Type:"
+msgstr "Type:"
+
+#: Blocks/fubade/index.js:160
+msgid "Insert \"data-type\" here..."
+msgstr "Hier “data-type” einfügen..."
+
+#: Blocks/fubade/index.js:170
 msgid "The widget should now be able to be displayed in the frontend."
 msgstr "Das Widget sollte jetzt im Frontend angezeigt werden können."
 
-#: Blocks/fubade/index.js:161
+#: Blocks/fubade/index.js:187
 msgid "fubade"
 msgstr "fubade"
