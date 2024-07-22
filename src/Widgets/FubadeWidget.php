@@ -146,7 +146,7 @@ class FubadeWidget extends \WP_Widget {
 	/**
 	 * Updates the widget instance with the new values provided.
 	 *
-	 * @since 3.0
+	 * @since 4.0
 	 * @param array $new_instance The new instance values.
 	 * @param array $old_instance The old instance values.
 	 * @return array The updated instance values.

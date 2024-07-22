@@ -1,6 +1,6 @@
 === Include Fussball.de Widgets ===
 Contributors: mheob
-Tags: soccer, fussball.de, fussball, gutenberg, widget
+Tags: fussball.de, fussball, gutenberg, widget
 Donate link: https://www.paypal.me/mheob
 Requires at least: 4.8
 Tested up to: 6.6
@@ -13,68 +13,101 @@ A WordPress plugin for easy integration of fussball.de widgets.
 
 == Description ==
 
-A WordPress plugin for easy integration of [fussball.de widgets](http://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1%5Bmeinfussball%5D=1911&cHash=8e54ad110b258ac9679d70637b4ff796).
+A WordPress plugin for the easy integration of the [fussball.de widgets](https://training-service.fussball.de/vereinsmitarbeiter/pressesprecherin/artikel/?tx_meinfussball_pi1%5Bmeinfussball%5D=1911#!/).
+
+Integrate the fussball.de widgets with the help of one of the three helpers
+
+- the classic [shortcode](https://developer.wordpress.org/plugins/shortcodes/),
+- as [WordPress widget](https://wordpress.org/documentation/article/manage-wordpress-widgets/),
+- or as [Gutenberg Block](https://wordpress.org/documentation/article/block-based-widgets-editor/).
+
+All three variants are supported. For the "old" widgets from [fussball.de](https://fussball.de) and the new type from [next.fussball.de](https://next.fussball.de). The integration process is almost identical for both types.
 
 == Installation ==
 
-1. Install the Fussball.de Widget either via the WordPress.org plugin directory, or by uploading the files to your server.
-1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. You can use the plugin in several ways. As a shortcode, WordPress widget and since WordPress version 5 also as an integrated Gutenberg block.
-   1. In wordpress versions below 5 use the shortcode like:
-      `[fubade api="{32-digit API}" notice="{description}" fullWidth={iframe in fullWidth} devtools={print devtools}]`
-      e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullWidth=true devtools=false]`
-   1. In versions since 5.0, you can use the Gutenberg block. You can find it under the widgets or with the search pattern `fubade`.
-   1. Even the usual WordPress widgets are possible.
+1. Install the Fussball.de widget either via the WordPress.org plugin directory or by uploading the files to your server.
+1. Activate the plugin via the 'Plugins' menu in WordPress.
+1. You can use the plugin in several ways. As a shortcode, WordPress widget and also as an integrated Gutenberg block.
+   1. Use the following shortcode
+      1. For the old version: `[fubade api="{32-digit API}" notice="{Note}" fullWidth={iframe in full width} devtools={output of DevTools}]` e.g. `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullWidth=true devtools=false]`
+      1. For the new variant: `[fubade api="{36-digit data-id}" type="{data-type}" notice="{note}" fullWidth={iframe in full width} devtools={output of DevTools}]` e.g. `[fubade api="299e1496-abcd-abcd-1234-8880c7270477" notice="Standings U19" fullWidth=true devtools=false]`
+   1. Use the Gutenberg block with the search pattern `/fubade`.
+   1. The usual WordPress widgets are also possible.
 
 == Frequently Asked Questions ==
 
-= How should I write the shortcode? =
 
-`[fubade api="{32-digit API}" notice="{description}" fullWidth={iframe in fullWidth} devtools={print devtools}]`
-e.g. like:
-`[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullWidth=true devtools=false]`
+= Where can I get the website key (old version) =
 
-= What is the `api` as `{32-digit API}`? =
+You can get the required key from fussball.de in your widgets (<https://www.fussball.de/account.admin.widgets>). In the overview
+of your widget you will find the item `Website key`. This is the required character string.
 
-Here the 32-digit ID must be entered from the official Fußball.de-Widget.
+= Where do I get the necessary information (new variant) =
+
+You can obtain the required data from next.fussball.de in your widgets (<https://next.fussball.de/widgets>). There you click on
+the button "to widget". Then click on "Show code" in the left column. The lower code block contains the necessary information. For
+example like this:
+
+```html
+<div class="soccer_widget" data-id="299e1496-abcd-abcd-1234-8880c7270477" data-type="table" />
+```
+
+= How should I write the shortcode (old variant) =
+
+`[fubade api="{32-digit API}" notice="{Note}" fullWidth={iframe in full width} devtools={output of the DevTools}]` e.g. like this: `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullWidth=true devtools=false]`
+The fields `notice`, `fullWidth` and `devtools` are optional and do not have to be set.
+
+= How should I write the shortcode (new variant) =
+
+`[fubade api="{36-digit data-id}" type="{data-type}" notice="{notice}" fullWidth={iframe in full width} devtools={output of the DevTools}]` e.g.`[fubade api="299e1496-abcd-abcd-1234-8880c7270477" notice="Standings U19" fullWidth=true devtools=false]`
+The fields `notice`, `fullWidth` and `devtools` are optional and do not have to be set.
+
+= What is the `api` (old: `{32-digit API}`) =
+
+The 32-digit ID (the website key) from the official Fußball.de widget must be entered here.
 **The API is required.**
 
-= What is the `classes` as spaces separated `{CSS classes}` =
+= What is the `api` (new: `{36-digit data-id}`) =
 
-Custom CSS classes can be added to each widget to design it manually.
-For example, this can be used to set a fixed height or something similar.
-**The CLASSES are optional and can be omitted.**
+The 36-digit ID (found as `data-id`) from the official Fußball.de widget must be entered here.
+**The API is required.**
 
-= What is the `notice` as `{description}`? =
+= What is the `type` (only new: `{data-type}`) =
+
+The 36-digit ID (found as `data-id`) from the official Fußball.de widget must be entered here.
+**The TYPE is only available for the new widget. It is required there.**
+
+= What is `classes` as space-separated `{CSS classes}`? =
+
+You can add your own CSS classes to each widget to design it manually. For example, a fixed height or something similar can be set.
+**The CSS CLASSES are optional and can be omitted.**
+
+= What is the `notice` as `{note}`? =
 
 The description can be entered according to your own wishes.
-**The NOTICE is optional and can be omitted.**
+**NOTE is optional and can be omitted.**
 
-= What is the `fullWidth` as `{iframe in fullWidth}`? =
+= What is the `fullWidth` as `{iframe in full width}` =
 
-The IFRAME WIDTH can be set to the full width of 100% to the parent element.
-As values are only `true` or `1` possible.
-The default value ist `false` or rather `0`.
-**The IFRAME WIDTH is optional and can be omitted.**
+The IFRAME IN FULL WIDTH can be set to the full width of 100% for the parent element.
+Only `true` or `1` are possible as values.
+The default value is `false` or `0`.
+**IFRAME IN FULL WIDTH is optional and can be omitted.**
 
-= What is the `devtools` as `{print devtools}`? =
+= What is the `devtools` as `{output of the DevTools}`? =
 
-The PRINT DEVTOOLS can help the creator to get debugging information.
-As values are only `true` or `1` possible.
-The default value ist `false` or rather `0`.
-**The PRINT DEVTOOLS is optional and can be omitted.**
+The PRINT DEVTOOLS can help the creator to retrieve debugging information.
+Only `true` or `1` are possible as values.
+The default value is `false` or `0`.
+**DEVTOOLS output is optional and can be omitted.**
 
-= Where can I get the official ID? =
+= What can I do if the plugin does not work =
 
-You can get the required ID when you are at fussball.de at your widgets (<https://www.fussball.de/account.admin.widgets>). In the overview of your widget you find the point `Website-Schlüssel`. This is the needed string.
+The first point of reference should always be the [official support forum on wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or also the [problem area on GitHub](https://github.com/mheob/include-fussball-de-widgets/issues).
 
-= What can I do if the plugin does not work? =
+The wrong quotation marks are also often used. The normal `"` character must be used here.
 
-The first clue should always be the [official support forum at wordpress.org](https://wordpress.org/support/plugin/include-fussball-de-widgets) or the [Issues section on GitHub](https://github.com/mheob/include-fussball-de-widgets/issues).
-
-Likewise and often the wrong quotes are used. It is essential to use the normal `"` sign.
-
-The curly braces from my examples above should only show placeholders. These are also included, which is not correct.
+The curly brackets from my examples above should only indicate placeholders. These are also often inserted with which is not correct.
 
 = How can I participate in the development? =
 
@@ -82,7 +115,7 @@ The latest state of development is available at any time in my [GitHub repositor
 
 == Screenshots ==
 
-1. screenshot-1.jpg
+1. fubade-widget.png
 
 == Changelog ==
 

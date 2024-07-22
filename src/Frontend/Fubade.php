@@ -62,10 +62,10 @@ final class Fubade {
 			'notice'    => empty( $this->attr['notice'] )
 										? ''
 										: sanitize_text_field( $this->attr['notice'] ),
-			'fullWidth' => '1' === $this->attr['fullWidth']
-										|| 'true' === $this->attr['fullWidth']
-										|| true === $this->attr['fullWidth']
-										? true : false,
+			'fullWidth' => '0' === $this->attr['fullWidth']
+										|| 'false' === $this->attr['fullWidth']
+										|| false === $this->attr['fullWidth']
+										? false : true,
 			'devtools'  => '1' === $this->attr['devtools']
 										|| 'true' === $this->attr['devtools']
 										|| true === $this->attr['devtools']
@@ -129,6 +129,7 @@ final class Fubade {
 	 * This method creates the `id`, `class`, and `style` attributes for the widget
 	 * element based on the widget's attributes.
 	 *
+	 * @since 4.0
 	 * @return string The HTML attributes for the widget element.
 	 */
 	private function getElementAttributes(): string {
@@ -272,7 +273,7 @@ final class Fubade {
 	/**
 	 * Generates an iframe element with the fussball.de widget.
 	 *
-	 * @since 3.0
+	 * @since 4.0
 	 * @return string The HTML for the iframe element.
 	 */
 	private function createIframe(): string {
