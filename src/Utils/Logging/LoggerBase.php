@@ -23,7 +23,8 @@ use ITSB\IFDW\Utils\Settings;
  */
 abstract class LoggerBase {
 	/**
-	 * The general info list.
+	 * An array of general information to be logged, such as plugin version, website for
+	 * registration, WordPress version, PHP version, and loaded PHP extensions.
 	 *
 	 * @since 3.0
 	 * @var array
@@ -31,48 +32,45 @@ abstract class LoggerBase {
 	protected $generalInfoList = [];
 
 	/**
-	 * Base constructor.
+	 * Initializes the general information list for logging, including the plugin version,
+	 * website for registration, WordPress version, PHP version, and loaded PHP extensions.
 	 *
 	 * @since 3.0
 	 */
 	protected function __construct() {
 		global $wp_version;
 		$this->generalInfoList = [
+			/* phpcs:disable Generic.Files.LineLength */
 			__( '[FUBADE] Plugin Version: ', 'include-fussball-de-widgets' ) . Settings::VERSION,
 			__( '[FUBADE] Website for registration: ', 'include-fussball-de-widgets' ) . Settings::getHost(),
 			__( '[FUBADE] Wordpress version: ', 'include-fussball-de-widgets' ) . $wp_version,
 			__( '[FUBADE] PHP version: ', 'include-fussball-de-widgets' ) . phpversion(),
-			__( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-widgets' ) .
-				wp_json_encode( get_loaded_extensions() ),
+			__( '[FUBADE] PHP ext loaded: ', 'include-fussball-de-widgets' ) . wp_json_encode( get_loaded_extensions() ),
+			/* phpcs:enable */
 		];
 	}
 
 	/**
-	 * Generates a logging output.
+	 * Logs the provided array of arguments.
 	 *
 	 * @since 3.0
-	 * @param array $arr The arguments.
-	 * @return void
+	 * @param array $arr The arguments to log.
 	 */
 	abstract public function log( array $arr ): void;
 
 	/**
-	 * Logs the general information, for example from the plugin, WordPress
-	 * and / or the server.
+	 * Logs the general information for the plugin, including the plugin version,
+	 * website for registration, WordPress version, PHP version, and loaded PHP extensions.
 	 *
 	 * @since 3.0
-	 * @return void
 	 */
 	abstract protected function logGeneralInfo(): void;
 
 	/**
-	 * Logs the information pertaining to a specific widget only.
+	 * Logs the provided array of widget-related information.
 	 *
 	 * @since 3.0
-	 * @param array $arr The arguments.
-	 * @return void
+	 * @param array $arr The widget-related information to log.
 	 */
 	abstract protected function logWidgetInfo( array $arr ): void;
-
-	// TODO [#34]: Add a file or database logging system.
 }

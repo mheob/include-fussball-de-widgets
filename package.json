@@ -23,7 +23,7 @@
 		"i18n": "bun run i18n:json && bun run i18n:copy",
 		"i18n:copy": "cpr src/languages dist/languages -d",
 		"i18n:json": "wp i18n make-json src/languages/include-fussball-de-widgets-de_DE.po --no-purge",
-		"i18n:pot": "wp i18n make-pot dist languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
+		"i18n:pot": "wp i18n make-pot src src/languages/include-fussball-de-widgets.pot --slug=include-fussball-de-widgets --domain=include-fussball-de-widgets --package-name=\"Include Fussball.de Widgets\"",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"postbuild": "bun run i18n",

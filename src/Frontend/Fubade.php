@@ -26,44 +26,54 @@ final class Fubade {
 	private const ERROR = [
 		'API_LENGTH' => 'api-length',
 		'HTTP_HOST'  => 'no-server-name',
+		'UUID'       => 'uuid',
 	];
 
 	/**
-	 * The attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
+	 * The attributes (`api`, `id`, `classes`, `notice`, `fullWidth` and `devtools`).
 	 *
 	 * @since 3.0
 	 * @var array
 	 */
 	private $attr = [];
 
+
 	/**
-	 * Creates the output to the sourcecode.
+	 * Outputs the widget content based on the provided attributes.
 	 *
-	 * @since 3.0
-	 *
-	 * @param array $attr The output attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`).
-	 * @return string The output to the sourcecode.
+	 * @since 4.0
+	 * @param array $attr The attributes for the widget rendering
+	 *                    (`api`, `id`, `type`, `classes`, `notice`, `fullWidth` and `devtools`).
+	 * @return string The rendered widget content.
 	 */
 	public function output( array $attr ): string {
-		// TODO [#33]: Configure default setting in the admin area.
 		$this->setAttr( $attr );
 
 		$this->attr = [
-			'api'       => sanitize_text_field( strtoupper( preg_replace( '/[^\w]/', '', $this->attr['api'] ) ) ),
+			'api'       => sanitize_text_field( trim( $this->attr['api'] ) ),
 			'id'        => StringHelper::startsWith( $this->attr['id'], 'fubade-' )
-										? sanitize_text_field( $this->attr['id'] )
+										? sanitize_text_field( trim( $this->attr['id'] ) )
+										// phpcs:ignore Generic.Files.LineLength
 										: 'fubade-' . random_int( 10, 99 ) . '-' . substr( $this->attr['api'], -5 ),
-			'classes'   => empty( $this->attr['classes'] ) ? '' : sanitize_text_field( $this->attr['classes'] ),
-			'notice'    => empty( $this->attr['notice'] ) ? '' : sanitize_text_field( $this->attr['notice'] ),
-			'fullwidth' => '1' === $this->attr['fullwidth']
-										|| 'true' === $this->attr['fullwidth']
-										|| true === $this->attr['fullwidth']
-										? true : false,
+			'type'      => sanitize_text_field( trim( $this->attr['type'] ) ),
+			'classes'   => empty( $this->attr['classes'] )
+										? ''
+										: sanitize_text_field( $this->attr['classes'] ),
+			'notice'    => empty( $this->attr['notice'] )
+										? ''
+										: sanitize_text_field( $this->attr['notice'] ),
+			'fullWidth' => '0' === $this->attr['fullWidth']
+										|| 'false' === $this->attr['fullWidth']
+										|| false === $this->attr['fullWidth']
+										? false : true,
 			'devtools'  => '1' === $this->attr['devtools']
 										|| 'true' === $this->attr['devtools']
 										|| true === $this->attr['devtools']
 										? true : false,
+			'isLegacy'  => 32 === strlen( $this->attr['api'] ) ? true : false,
 		];
+
+		$api = $this->attr['api'];
 
 		if ( ! wp_script_is( 'fubade-api' ) ) {
 			wp_enqueue_script( 'fubade-api' );
@@ -75,9 +85,14 @@ final class Fubade {
 
 		wp_add_inline_script( 'fubade-api', 'fussballDeWidgetAPI();', 'after' );
 
-		if ( strlen( $this->attr['api'] ) !== 32 ) {
+		if ( strlen( $api ) !== 32 && strlen( $api ) !== 36 ) {
 			ConsoleLogger::getInstance()->log( $this->attr );
 			return $this->render( self::ERROR['API_LENGTH'] );
+		}
+
+		if ( strlen( $api ) === 36 && ! StringHelper::isValidUUID( $api ) ) {
+			ConsoleLogger::getInstance()->log( $this->attr );
+			return $this->render( self::ERROR['UUID'] );
 		}
 
 		if ( strtolower( Settings::getHost() ) === strtolower( Settings::SERVER_NAME_DUMMY ) ) {
@@ -89,33 +104,36 @@ final class Fubade {
 	}
 
 	/**
-	 * Set the attribute array.
+	 * Sets the attributes for the widget rendering.
 	 *
-	 * @since 3.0
-	 * @param array $attr The attributes (`api`, `id`, `classes`, `notice`, `fullwidth` and `devtools`)
-	 *                    for the widget rendering.
-	 * @return void
+	 * @since 4.0
+	 * @param array $attr The attributes for the widget rendering
+	 *                    (`api`, `id`, `type`, `classes`, `notice`, `fullWidth` and `devtools`).
 	 */
 	private function setAttr( array $attr ): void {
 		$this->attr = [
 			'api'       => $attr['api'] ?? '',
 			'id'        => $attr['id'] ?? 'ERROR_' . time(),
+			'type'      => $attr['type'] ?? '',
 			'classes'   => $attr['classes'] ?? '',
 			'notice'    => $attr['notice'] ?? '',
-			'fullwidth' => $attr['fullwidth'] ?? false,
+			'fullWidth' => $attr['fullWidth'] ?? false,
 			'devtools'  => $attr['devtools'] ?? false,
+			'isLegacy'  => $attr['isLegacy'] ?? true,
 		];
 	}
 
 	/**
-	 * Render all the output.
+	 * Generates the HTML attributes for the widget element.
 	 *
-	 * @since 3.0
-	 * @param string|null $error Potential errors.
-	 * @return string The rendered the output.
+	 * This method creates the `id`, `class`, and `style` attributes for the widget
+	 * element based on the widget's attributes.
+	 *
+	 * @since 4.0
+	 * @return string The HTML attributes for the widget element.
 	 */
-	private function render( ?string $error ): string {
-		$idAttribute = ' id="' . esc_attr( $this->attr['id'] ) . '"';
+	private function getElementAttributes(): string {
+		$idAttribute = 'id="' . esc_attr( $this->attr['id'] ) . '"';
 
 		$classAttribute = ' class="include-fussball-de-widgets';
 		if ( '' !== $this->attr['classes'] ) {
@@ -123,38 +141,111 @@ final class Fubade {
 		}
 		$classAttribute .= '"';
 
-		if ( $error ) {
-			$content        = $this->getErrorOutput( $error );
-			$styleAttribute =
-			' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
-		} else {
-			$content        = $this->createIframe();
-			$styleAttribute = '';
-		}
+		$styleAttribute = '';
 
-		$output  = '<div' . $idAttribute . $classAttribute . $styleAttribute . '>' . PHP_EOL;
-		$output .= "\t" . $content . PHP_EOL;
-		$output .= '</div>' . PHP_EOL;
+		return $idAttribute . $classAttribute . $styleAttribute;
+	}
+
+	/**
+	 * Renders the widget output.
+	 *
+	 * @since 4.0
+	 * @param string|null $error Potential errors to display.
+	 * @return string The rendered widget output.
+	 */
+	private function render( ?string $error ): string {
+		if ( $error ) {
+			return $this->renderError( $error );
+		}
 
 		if ( $this->attr['devtools'] ) {
 			ConsoleLogger::getInstance()->log( $this->attr );
 		}
 
+		if ( $this->attr['isLegacy'] ) {
+			return $this->renderLegacy();
+		}
+
+		return $this->renderCurrent();
+	}
+
+	/**
+	 * Renders the error output for the widget.
+	 *
+	 * @since 4.0
+	 * @param string $error The error message to display.
+	 * @return string The error output HTML.
+	 */
+	private function renderError( string $error ): string {
+		$styleAttribute =
+		// phpcs:ignore Generic.Files.LineLength
+		' style="padding:1rem;background-color:#f2dede;color:#a94442;border:1px solid #ebccd1;border-radius:4px"';
+		$content = $this->getErrorOutput( $error );
+
+		$output  = '<div' . $styleAttribute . '>' . PHP_EOL;
+		$output .= "\t" . $content . PHP_EOL;
+		$output .= '</div>' . PHP_EOL;
+
+		ConsoleLogger::getInstance()->log( $this->attr );
+
 		return $output;
 	}
 
 	/**
-	 * Returns the error output content.
+	 * Generates an HTML output for the legacy version of the fussball.de widget.
 	 *
-	 * @since 3.6
-	 * @param string|null $error Potential errors.
-	 * @return string The error output content.
+	 * This method creates an iframe element with the fussball.de widget and wraps it
+	 * in a div element with the appropriate attributes. It also logs the widget attributes
+	 * if the 'devtools' option is enabled.
+	 *
+	 * @since 4.0
+	 * @return string The HTML output for the legacy version of the widget.
+	 */
+	private function renderLegacy(): string {
+		$content = $this->createIframe();
+
+		$output  = '<div ' . $this->getElementAttributes() . '>' . PHP_EOL;
+		$output .= "\t" . $content . PHP_EOL;
+		$output .= '</div>' . PHP_EOL;
+
+		return $output;
+	}
+
+	/**
+	 * Generates the HTML output for the current version of the fussball.de widget.
+	 *
+	 * This method creates an iframe element with the fussball.de widget and wraps it
+	 * in a div element with the appropriate attributes, including data attributes
+	 * for the widget's API key and type.
+	 *
+	 * @since 4.0
+	 * @return string The HTML output for the current version of the widget.
+	 */
+	private function renderCurrent(): string {
+		$classAttribute = 'class="fussballde_widget include-fussball-de-widgets';
+		if ( '' !== $this->attr['classes'] ) {
+			$classAttribute .= ' ' . esc_attr( $this->attr['classes'] ) . '"';
+		}
+		$classAttribute .= '"';
+
+		$dataId   = ' data-id="' . $this->attr['api'] . '"';
+		$dataType = ' data-type="' . $this->attr['type'] . '"';
+
+		return "<div $classAttribute $dataId $dataType></div>" . PHP_EOL;
+	}
+
+	/**
+	 * Generates the error output for the widget.
+	 *
+	 * @since 4.0
+	 * @param string|null $error The error message to display.
+	 * @return string The error output HTML.
 	 */
 	private function getErrorOutput( ?string $error ): string {
 		switch ( $error ) {
 			case self::ERROR['API_LENGTH']:
 				$output  = __(
-					'!!! The fussball.de API must have a length of exactly 32 characters. !!!',
+					'!! The fussball.de API must have a length of exactly 32 or 36 characters. !!',
 					'include-fussball-de-widgets'
 				) . PHP_EOL;
 				$output .= sprintf( /* translators: %s: The length of the api. */
@@ -162,8 +253,15 @@ final class Fubade {
 					esc_html( strlen( $this->attr['api'] ) )
 				);
 				return $output;
+			case self::ERROR['UUID']:
+				return __(
+					// phpcs:ignore Generic.Files.LineLength
+					'!! The fussball.de API with a length of 36 characters must be a valid UUID. !!',
+					'include-fussball-de-widgets'
+				);
 			case self::ERROR['HTTP_HOST']:
 				return __(
+					// phpcs:ignore Generic.Files.LineLength
 					'The PHP variable <code>$_SERVER["HTTP_HOST"]</code> was not set by the server.',
 					'include-fussball-de-widgets'
 				);
@@ -173,19 +271,20 @@ final class Fubade {
 	}
 
 	/**
-	 * Creates the iframe needed from fussball.de.
+	 * Generates an iframe element with the fussball.de widget.
 	 *
-	 * @since 3.0
-	 * @return string The iframe.
+	 * @since 4.0
+	 * @return string The HTML for the iframe element.
 	 */
 	private function createIframe(): string {
 		$src    = '//www.fussball.de/widget2/-/schluessel/' . $this->attr['api'];
 		$src   .= '/target/' . $this->attr['id'];
 		$src   .= '/caller/' . Settings::getHost();
-		$width  = $this->attr['fullwidth'] ? '100%' : '900px';
+		$width  = $this->attr['fullWidth'] ? '100%' : '900px';
 		$height = '100%';
 		$style  = 'border: 1px solid #CECECE; overflow: hidden; min-height: 200px;';
+		$attrs  = "src='$src' width='$width' height='$height' scrolling='no' style='$style'";
 
-		return "<iframe src='$src' width='$width' height='$height' scrolling='no' style='$style'></iframe>";
+		return "<iframe $attrs></iframe>";
 	}
 }

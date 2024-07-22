@@ -23,13 +23,12 @@ namespace ITSB\IFDW\Utils;
  */
 final class CheckHelper {
 	/**
-	 * Checks the needed WordPress and PHP version is used.
+	 * Checks if the current WordPress and PHP versions are valid.
 	 *
 	 * @since 3.2
-	 * @param string $wpVersion     The minimum WordPress version.
-	 * @param string $phpVersion    The minimum PHP version.
-	 * @return boolean              True, if the minimum WordPress and
-	 *                              PHP version is used; otherwise false.
+	 * @param string $wpVersion The required WordPress version.
+	 * @param string $phpVersion The required PHP version.
+	 * @return bool True if the versions are invalid, false otherwise.
 	 */
 	public static function versionsAreInvalid( string $wpVersion, string $phpVersion ): bool {
 		global $wp_version;

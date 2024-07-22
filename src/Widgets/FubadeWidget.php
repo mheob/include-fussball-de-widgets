@@ -22,8 +22,9 @@ use ITSB\IFDW\Frontend\Fubade;
  */
 class FubadeWidget extends \WP_Widget {
 	/**
-	 * FubadeWidget constructor.
-	 * Set up the Widgets name etc.
+	 * Constructs a new instance of the FubadeWidget class.
+	 *
+	 * This constructor initializes the widget with the appropriate ID, title, and description.
 	 *
 	 * @since 3.0
 	 */
@@ -31,24 +32,27 @@ class FubadeWidget extends \WP_Widget {
 		parent::__construct(
 			'ifdw_fubade_widget',
 			__( 'Fussball.de Widget', 'include-fussball-de-widgets' ),
+		// phpcs:ignore Generic.Files.LineLength
 			[ 'description' => __( 'Displays the fussball.de widget.', 'include-fussball-de-widgets' ) ]
 		);
 	}
 
 	/**
-	 * Outputs the options form on admin
+	 * Renders the widget form in the WordPress admin area.
 	 *
-	 * @since 3.0
-	 * @param array $instance The widget options.
-	 * @return void
+	 * This method is called when the widget is displayed in the admin area, allowing the user
+	 * to configure the widget's settings.
+	 *
+	 * @since 4.0
+	 * @param array $instance The current settings for this widget instance.
 	 */
 	public function form( $instance ): void {
 		// Set the Widgets defaults and Parse current settings with defaults.
 		$defaults = [
 			'api'       => '',
-			'classes'   => '',
+			'type'      => '',
 			'title'     => '',
-			'fullwidth' => '',
+			'fullWidth' => '',
 			'devtools'  => '',
 		];
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -75,10 +79,23 @@ class FubadeWidget extends \WP_Widget {
 			<input
 				type="text"
 				class="widefat"
-				pattern="[A-Za-z0-9]{32}"
 				id="<?php echo esc_attr( $this->get_field_id( 'api' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'api' ) ); ?>"
 				value="<?php echo esc_attr( $instance['api'] ); ?>"
+			/>
+		</p>
+
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'type' ) ); ?>">
+				<?php esc_html_e( 'Type: ', 'include-fussball-de-widgets' ); ?>
+			</label>
+
+			<input
+				type="text"
+				class="widefat"
+				id="<?php echo esc_attr( $this->get_field_id( 'type' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'type' ) ); ?>"
+				value="<?php echo esc_attr( $instance['type'] ); ?>"
 			/>
 		</p>
 
@@ -98,14 +115,14 @@ class FubadeWidget extends \WP_Widget {
 
 		<p>
 			<input
-				id="<?php echo esc_attr( $this->get_field_id( 'fullwidth' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'fullwidth' ) ); ?>"
+				id="<?php echo esc_attr( $this->get_field_id( 'fullWidth' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'fullWidth' ) ); ?>"
 				type="checkbox"
-				<?php checked( '1', $instance['fullwidth'] ); ?>
+				<?php checked( '1', $instance['fullWidth'] ); ?>
 				value="1"
 			/>
 
-			<label for="<?php echo esc_attr( $this->get_field_id( 'fullwidth' ) ); ?>">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'fullWidth' ) ); ?>">
 				<?php esc_html_e( 'view in full width', 'include-fussball-de-widgets' ); ?>
 			</label>
 		</p>
@@ -127,38 +144,42 @@ class FubadeWidget extends \WP_Widget {
 	}
 
 	/**
-	 * Processing widget options on save
+	 * Updates the widget instance with the new values provided.
 	 *
-	 * @since 3.0
-	 * @param array $new_instance The new options.
-	 * @param array $old_instance The previous options.
-	 * @return array The new options.
+	 * @since 4.0
+	 * @param array $new_instance The new instance values.
+	 * @param array $old_instance The old instance values.
+	 * @return array The updated instance values.
 	 */
 	public function update( $new_instance, $old_instance ): array {
+		/* phpcs:disable Generic.Files.LineLength */
 		$instance              = $old_instance;
 		$instance['api']       = isset( $new_instance['api'] ) ? wp_strip_all_tags( $new_instance['api'] ) : '';
+		$instance['type']      = isset( $new_instance['type'] ) ? wp_strip_all_tags( $new_instance['type'] ) : '';
 		$instance['classes']   = isset( $new_instance['classes'] ) ? wp_strip_all_tags( $new_instance['classes'] ) : '';
 		$instance['title']     = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
-		$instance['fullwidth'] = isset( $new_instance['fullwidth'] ) ? 1 : false;
+		$instance['fullWidth'] = isset( $new_instance['fullWidth'] ) ? 1 : false;
 		$instance['devtools']  = isset( $new_instance['devtools'] ) ? 1 : false;
+		/* phpcs:disable */
 
 		return $instance;
 	}
 
 	/**
-	 * Outputs the content of the widget
-	 *
-	 * @since 3.0
-	 * @param array $args     The Widget arguments.
-	 * @param array $instance The saved values from the database.
-	 */
-	public function widget( $args, $instance ): void {
+  * Renders the widget output.
+  *
+	* @since 3.0
+  * @param array $args     Widget arguments.
+  * @param array $instance Widget settings.
+  */
+  public function widget( $args, $instance ): void {
 		// phpcs:disable
 		// Check the widget options.
 		$api       = $instance['api'] ?? '';
+		$type      = isset( $instance['type'] ) ? apply_filters( 'widget_title', $instance['type'] ) : '';
 		$classes   = isset( $instance['classes'] ) ? apply_filters( 'widget_title', $instance['classes'] ) : '';
 		$title     = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-		$fullwidth = empty( $instance['fullwidth'] ) ? false : true;
+		$fullWidth = empty( $instance['fullWidth'] ) ? false : true;
 		$devtools  = empty( $instance['devtools'] ) ? false : true;
 
 
@@ -171,12 +192,13 @@ class FubadeWidget extends \WP_Widget {
 			[
 				'api'       => $api,
 				'id'        => '',
+				'type'      => $type,
 				'classes'   => $classes,
 				'notice'    => $title,
-				'fullwidth' => $fullwidth,
+				'fullWidth' => $fullWidth,
 				'devtools'  => $devtools,
-			]
-		);
+				]
+			);
 
 		echo $output;
 

@@ -22,10 +22,12 @@ use ITSB\IFDW\Infrastructure\ActionBase;
  */
 class Widgets extends ActionBase {
 	/**
-	 * Initialize all Widgets
+	 * Registers the FubadeWidget widget.
 	 *
-	 * @since 3.0.0
-	 * @return void
+	 * This method is responsible for registering the FubadeWidget widget with WordPress,
+	 * allowing it to be used in the plugin.
+	 *
+	 * @since 3.0
 	 */
 	public function action(): void {
 		register_widget( '\\ITSB\\IFDW\\Widgets\\FubadeWidget' );

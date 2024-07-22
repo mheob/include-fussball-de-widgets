@@ -23,13 +23,14 @@ use ITSB\IFDW\Infrastructure\FilterBase;
  */
 final class PluginActions extends FilterBase {
 	/**
-	 * Additional links on plugin page.
-	 * Add additional links to the plugin on the plugin page along with meta
-	 * information.
+	 * Filters the plugin action links.
+	 *
+	 * This method is used to add additional links to the plugin page in the WordPress
+	 * admin dashboard.
 	 *
 	 * @since 3.0
-	 * @param mixed ...$args List of arguments.
-	 * @return array List of modified plugin meta links.
+	 * @param array ...$args An array of plugin action links and files.
+	 * @return array The updated array of plugin action links.
 	 */
 	public function filter( ...$args ): array {
 		$links = func_get_arg( 0 );
@@ -43,7 +44,8 @@ final class PluginActions extends FilterBase {
 			esc_url( 'https://www.paypal.me/mheob' );
 		$ariaLabel = esc_attr__( 'Plugin Additional Links', 'include-fussball-de-widgets' );
 		$linkText  = esc_html__( 'Donate', 'include-fussball-de-widgets' );
-		$rowMeta   = [ 'docs' => "<a href=\"$href\" target=\"_blank\" aria-label=\"$ariaLabel\">$linkText</a>" ];
+		// phpcs:ignore Generic.Files.LineLength
+		$rowMeta = [ 'docs' => "<a href=\"$href\" target=\"_blank\" aria-label=\"$ariaLabel\">$linkText</a>" ];
 
 		return array_merge( $links, $rowMeta );
 	}

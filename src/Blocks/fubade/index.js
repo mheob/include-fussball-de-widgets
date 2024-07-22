@@ -13,7 +13,6 @@ const { registerBlockType } = wp.blocks;
 const { PanelBody, TextControl, ToggleControl } = wp.components;
 const { withInstanceId } = wp.compose;
 const { InspectorControls, PlainText } = wp.blockEditor;
-const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 
 /**
@@ -33,25 +32,35 @@ registerBlockType('ifdw/fubade', {
 		api: { type: 'string' },
 		classes: { type: 'string' },
 		devtools: { type: 'boolean' },
-		fullwidth: { type: 'boolean' },
+		fullWidth: { type: 'boolean' },
 		id: { type: 'string' },
 		notice: { type: 'string' },
+		type: { type: 'string' },
 	},
 	category: 'widgets',
 	description: __('Showing the fussball.de widget', 'include-fussball-de-widgets'),
 	edit: withInstanceId(({ attributes, className, instanceId, setAttributes }) => {
-		const { api = '', classes = '', devtools = false, fullwidth = true, notice = '' } = attributes;
+		const {
+			api = '',
+			classes = '',
+			devtools = false,
+			fullWidth = true,
+			notice = '',
+			type = '',
+		} = attributes;
 		const inputId = `${className}-${instanceId}`;
 		const apiLength = 32;
+		const apiUUIDLength = 36;
 
 		if (Object.entries(attributes).length === 0) {
 			setAttributes({
 				api: '',
 				classes: '',
 				devtools: false,
-				fullwidth: true,
+				fullWidth: true,
 				id: '',
 				notice: '',
+				type: '',
 			});
 		}
 
@@ -76,7 +85,7 @@ registerBlockType('ifdw/fubade', {
 
 					<ToggleControl
 						help={
-							fullwidth
+							fullWidth
 								? __(
 										'The widget will be shown in the maximal width.',
 										'include-fussball-de-widgets',
@@ -87,10 +96,10 @@ registerBlockType('ifdw/fubade', {
 										'include-fussball-de-widgets',
 									)
 						}
-						onChange={newFullwidth => {
-							setAttributes({ fullwidth: newFullwidth });
+						onChange={newFullWidth => {
+							setAttributes({ fullWidth: newFullWidth });
 						}}
-						checked={fullwidth}
+						checked={fullWidth}
 						label={__('Show in full width', 'include-fussball-de-widgets')}
 					/>
 
@@ -112,14 +121,14 @@ registerBlockType('ifdw/fubade', {
 				</PanelBody>
 			</InspectorControls>,
 
-			<Fragment key="output">
-				<h4 className={`${className}-header`}>
+			<div className={className} key="output">
+				<h4 className={`${className}__header`}>
 					{__('Fussball.de Widget', 'include-fussball-de-widgets')}
 					{typeof notice === 'undefined' || notice === '' ? '' : `: "${notice}"`}
 				</h4>
 
-				<div className={className}>
-					<label htmlFor={inputId}>{__('Api:', 'include-fussball-de-widgets')}</label>
+				<div className={`${className}__main`}>
+					<label htmlFor={`${inputId}-api`}>{__('Api:', 'include-fussball-de-widgets')}</label>
 
 					<PlainText
 						onChange={newApi => {
@@ -131,28 +140,47 @@ registerBlockType('ifdw/fubade', {
 							});
 						}}
 						className="input-control"
-						id={inputId}
-						placeholder={__('Insert API here...', 'include-fussball-de-widgets')}
+						id={`${inputId}-api`}
+						placeholder={__('Insert "data-id" here...', 'include-fussball-de-widgets')}
 						value={api}
 					/>
+
+					{typeof api !== 'undefined' && api.length === apiUUIDLength && (
+						<>
+							<label htmlFor={`${inputId}-type`}>
+								{__('Type:', 'include-fussball-de-widgets')}
+							</label>
+
+							<PlainText
+								onChange={newType => {
+									setAttributes({ type: newType });
+								}}
+								className="input-control"
+								id={`${inputId}-type`}
+								placeholder={__('Insert "data-type" here...', 'include-fussball-de-widgets')}
+								value={type}
+							/>
+						</>
+					)}
 				</div>
 
-				{typeof api !== 'undefined' && apiLength === api.length ? (
-					<div className={`${className}-shortcode`}>
+				{typeof api !== 'undefined' &&
+				(apiLength === api.length || api.length === apiUUIDLength) ? (
+					<div className={`${className}__footer`}>
 						{__(
 							'The widget should now be able to be displayed in the frontend.',
 							'include-fussball-de-widgets',
 						)}
 					</div>
 				) : (
-					<div className={`${className}-shortcode error`}>
+					<div className={`${className}__footer ${className}__footer--error`}>
 						{__(
-							'!!! The fussball.de API must have a length of exactly 32 characters. !!!',
+							'!! The fussball.de API must have a length of exactly 32 or 36 characters. !!',
 							'include-fussball-de-widgets',
 						)}
 					</div>
 				)}
-			</Fragment>,
+			</div>,
 		];
 	}),
 	icon,

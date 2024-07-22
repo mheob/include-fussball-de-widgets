@@ -25,26 +25,25 @@ namespace ITSB\IFDW\Infrastructure;
  */
 abstract class ShortcodeBase {
 	/**
-	 * Add the init shortcode for registering the fubade api.
+	 * Adds a WordPress shortcode with the given tag.
+	 *
+	 * The `shortcode` method will be called whenever the shortcode is used in a post or page.
 	 *
 	 * @since 3.0
-	 * @param string $tag The name of the shortcode to generate.
-	 * @return void
+	 * @param string $tag The shortcode tag to register.
 	 */
 	public function addShortcode( string $tag ): void {
 		add_shortcode( $tag, [ $this, 'shortcode' ] );
 	}
-
 	/**
-	 * The callback function to run when the shortcode is found. Every
-	 * shortcode callback is passed three parameters by default, including
-	 * an array of attributes ($atts), the shortcode content or null if not
-	 * set ($content), and finally the shortcode tag itself ($shortcode_tag),
-	 * in that order.
+	 * Renders the shortcode content.
+	 *
+	 * This method is called whenever the shortcode is used in a post or page. It should
+	 * return the HTML content to be displayed in place of the shortcode.
 	 *
 	 * @since 3.1
-	 * @param array $atts An array fo attributes.
-	 * @return string The output to the sourcecode.
+	 * @param array $atts An associative array of shortcode attributes.
+	 * @return string The HTML content to be displayed.
 	 */
 	abstract public function shortcode( array $atts ): string;
 }

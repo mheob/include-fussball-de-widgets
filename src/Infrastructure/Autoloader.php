@@ -30,32 +30,33 @@ final class Autoloader {
 	private const AUTOLOAD_METHOD = 'autoload';
 
 	/**
-	 * Array containing the registered namespace structures.
+	 * Stores the namespaces that the autoloader is responsible for.
 	 *
 	 * @since 3.1
-	 * @var array<array>
+	 * @var string[]
 	 */
-	private $namespaceNames = [];
+	private $namespaces = [];
 
 	/**
-	 * Destructor for the Autoloader class.
-	 *
-	 * The destructor automatically unregister the autoload callback function
-	 * with the SPL autoload system.
+	 * Unregister the autoload callback with the SPL autoload system when the Autoloader instance
+	 * is destroyed.
 	 *
 	 * @since 3.1
-	 * @return void
 	 */
 	public function __destruct() {
 		$this->unregister();
 	}
 
 	/**
-	 * Registers the autoload callback with the SPL autoload system.
+	 * Register the autoload callback with the SPL autoload system.
+	 *
+	 * This method registers the autoload method of this Autoloader instance with the SPL
+	 * autoload system, allowing the autoloader to handle class loading for the namespaces that
+	 * have been added to it.
 	 *
 	 * @since 3.1
-	 * @return void
-	 * @throws \Exception If the autoloader could not be registered.
+
+	 * @throws \TypeError If the autoloader could not be registered.
 	 */
 	public function register(): void {
 		spl_autoload_register( [ $this, self::AUTOLOAD_METHOD ] );
@@ -64,35 +65,37 @@ final class Autoloader {
 	/**
 	 * Unregister the autoload callback with the SPL autoload system.
 	 *
+	 * This method unregisters the autoload method of this Autoloader instance from the SPL
+	 * autoload system, allowing other autoloaders to handle class loading.
+	 *
 	 * @since 3.1
-	 * @return void
 	 */
 	public function unregister(): void {
 		spl_autoload_unregister( [ $this, self::AUTOLOAD_METHOD ] );
 	}
 
 	/**
-	 * Returns the Namespaces.
+	 * Returns the namespaces that the autoloader is responsible for.
 	 *
 	 * @since 3.1
-	 * @return string[]
+	 * @return string[] The namespaces managed by this autoloader.
 	 */
-	public function getNamespaces() {
+	public function getNamespaces(): array {
 		return $this->namespaces;
 	}
 
 	/**
-	 * Add a specific namespace structure with our custom autoloader.
+	 * Adds a new namespace to the autoloader.
+	 *
+	 * This method allows you to register a new namespace with the autoloader.
+	 * The autoloader will then be able to load classes from that namespace.
 	 *
 	 * @since 3.1
-	 *
-	 * @param string $root    Root namespace name.
-	 * @param string $baseDir Directory containing the class files.
-	 * @param string $prefix  (Optional) Prefix to be added before the
-	 *                        class. Defaults to an empty string.
-	 * @param string $suffix  (Optional) Suffix to be added after the
-	 *                        class. Defaults to '.php'.
-	 * @return self
+	 * @param string $root    The root namespace to register.
+	 * @param string $baseDir The base directory where classes for this namespace are located.
+	 * @param string $prefix  An optional prefix to prepend to the class file names.
+	 * @param string $suffix  An optional suffix to append to the class file names.
+	 * @return $this The current Autoloader instance, for method chaining.
 	 */
 	public function addNamespace(
 		string $root,
@@ -111,12 +114,14 @@ final class Autoloader {
 	}
 
 	/**
-	 * The autoload function that gets registered with the SPL Autoloader
-	 * system.
+	 * Autoloads a class when it is requested.
+	 *
+	 * This method is responsible for loading a class when it is requested by the application.
+	 * It searches through the registered namespaces to find the appropriate file path for the
+	 * class, and then includes that file.
 	 *
 	 * @since 3.1
-	 * @param string $className The class that got requested by the spl_autoloader.
-	 * @return void
+	 * @param string $className The name of the class to be autoloaded.
 	 */
 	public function autoload( string $className ): void {
 		// Iterate over namespaces to find a match.
@@ -150,11 +155,13 @@ final class Autoloader {
 	}
 
 	/**
-	 * Normalize a namespace root.
+	 * Normalizes the root directory path.
+	 *
+	 * This method ensures that the root directory path provided has a trailing backslash.
 	 *
 	 * @since 3.1
-	 * @param string $root Namespace root that needs to be normalized.
-	 * @return string Normalized namespace root.
+	 * @param string $root The root directory path to normalize.
+	 * @return string The normalized root directory path.
 	 */
 	private function normalizeRoot( string $root ): string {
 		$root = $this->removeLeadingBackslash( $root );
@@ -164,32 +171,41 @@ final class Autoloader {
 	}
 
 	/**
-	 * Remove a leading backslash from a namespace.
+	 * Removes any leading backslash from the given namespace name.
 	 *
 	 * @since 3.1
-	 * @param string $namespaceName Namespace to remove the leading backslash from.
-	 * @return string Modified namespace.
+	 * @param string $namespaceName The namespace name to remove the leading backslash from.
+	 * @return string The namespace name with any leading backslash removed.
 	 */
 	private function removeLeadingBackslash( string $namespaceName ): string {
 		return ltrim( $namespaceName, '\\' );
 	}
 
 	/**
-	 * Make sure a namespace ends with a trailing backslash.
+	 * Ensures that the given namespace name has a trailing backslash.
 	 *
-	 * @param string $namespaceName Namespace to check the trailing backslash of.
-	 * @return string Modified namespace.
+	 * This method takes a namespace name and ensures that it ends with a backslash.
+	 * This is useful for consistently formatting namespace names when constructing
+	 * file paths.
+	 *
+	 * @since 3.1
+	 * @param string $namespaceName The namespace name to ensure has a trailing backslash.
+	 * @return string The namespace name with a trailing backslash.
 	 */
 	private function ensureTrailingBackslash( string $namespaceName ): string {
 		return rtrim( $namespaceName, '\\' ) . '\\';
 	}
 
 	/**
-	 * Make sure a path ends with a trailing slash.
+	 * Ensures that the given path has a trailing slash.
+	 *
+	 * This method takes a path and ensures that it ends with a slash.
+	 * This is useful for consistently formatting paths when constructing
+	 * file paths.
 	 *
 	 * @since 3.1
-	 * @param string $path Path to check the trailing slash of.
-	 * @return string Modified path.
+	 * @param string $path The path to ensure has a trailing slash.
+	 * @return string The path with a trailing slash.
 	 */
 	private function ensureTrailingSlash( string $path ): string {
 		return rtrim( $path, '/' ) . '/';

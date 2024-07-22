@@ -22,20 +22,22 @@ use ITSB\IFDW\Utils\CheckHelper;
  */
 final class Activation {
 	/**
-	 * Set the activation hook for a plugin.
+	 * Registers the activation hook for the plugin.
+	 *
+	 * This method is responsible for registering the activation hook for the plugin,
+	 * which will call the `activate()` method when the plugin is activated.
 	 *
 	 * @since 3.2
-	 * @return void
 	 */
 	public function addActivationHook(): void {
 		register_activation_hook( IFDW_FILE, [ $this, 'activate' ] );
 	}
 
 	/**
-	 * Load the function hooked to the 'activate_PLUGIN' action.
+	 * Activate the plugin and checks if the minimum required versions of WordPress and PHP are met.
 	 *
-	 * @since 3.2
-	 * @return void
+	 * If the minimum required versions are not met, this method will display an error message
+	 * and stop the plugin activation process.
 	 */
 	public function activate(): void {
 		if ( CheckHelper::versionsAreInvalid( Settings::MIN_WP, Settings::MIN_PHP ) ) {

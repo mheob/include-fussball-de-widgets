@@ -27,12 +27,14 @@ namespace ITSB\IFDW;
  */
 final class PluginFactory {
 	/**
-	 * Create and return an instance of the plugin.
+	 * Creates a singleton instance of the Plugin class.
 	 *
-	 * This always returns a shared instance. This way, outside code can always
-	 * get access to the object instance of the plugin.
+	 * This method ensures that only one instance of the Plugin class is created and returned.
+	 * If an instance has already been created, it will return the existing instance instead
+	 * of creating a new one.
 	 *
-	 * @return Plugin Plugin instance.
+	 * @since 3.1
+	 * @return Plugin The singleton instance of the Plugin class.
 	 */
 	public static function create(): Plugin {
 		static $plugin = null;
