@@ -39,18 +39,19 @@ All three variants are supported. For the "old" widgets from [fussball.de](https
 
 = Where can I get the website key (old version) =
 
-You can get the required key from fussball.de in your widgets (<https://www.fussball.de/account.admin.widgets>). In the overview
-of your widget you will find the item `Website key`. This is the required character string.
+You can get the required key from fussball.de in your widgets (<https://www.fussball.de/account.admin.widgets>). In the overview of your widget you will find the item `Website key`. This is the required character string.
 
 = Where do I get the necessary information (new variant) =
 
-You can obtain the required data from next.fussball.de in your widgets (<https://next.fussball.de/widgets>). There you click on
-the button "to widget". Then click on "Show code" in the left column. The lower code block contains the necessary information. For
-example like this:
+You can obtain the required data from next.fussball.de in your widgets (<https://next.fussball.de/widgets>). There you click on the button "to widget". Then click on "Show code" in the left column. The lower code block contains the necessary information. For example like this:
 
-```html
-<div class="soccer_widget" data-id="299e1496-abcd-abcd-1234-8880c7270477" data-type="table" />
-```
+`
+<div
+  class="soccer_widget"
+  data-id="299e1496-abcd-abcd-1234-8880c7270477"
+	data-type="table"
+/>
+`
 
 = How should I write the shortcode (old variant) =
 
@@ -115,7 +116,7 @@ The latest state of development is available at any time in my [GitHub repositor
 
 == Screenshots ==
 
-1. fubade-widget.png
+1. screenshot-1.png
 
 == Changelog ==
 
