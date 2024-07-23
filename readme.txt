@@ -119,6 +119,16 @@ The latest state of development is available at any time in my [GitHub repositor
 
 == Changelog ==
 
+= 4.0.0 - 2024-07-23 =
+= Added =
+* use new fussball.de API
+= Changed =
+* remove BorlabsCookie integration (BREAKING CHANGE!)
+* increase the minimum required PHP version to 7.4 (BREAKING CHANGE!)
+* update all dependencies
+= Refactored =
+* reorganize the whole code structure
+
 = 3.7.0 - 2022-02-08 =
 = Added =
 * Add Elementor Toggle exception for loading inside tabs.
@@ -337,4 +347,4 @@ The latest state of development is available at any time in my [GitHub repositor
 
 == Upgrade Notice ==
 
-* Add Elementor Toggle exception for loading inside tabs.
+* use new fussball.de API and remove BorlabsCookie integration (BREAKING CHANGE!)
