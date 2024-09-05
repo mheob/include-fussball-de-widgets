@@ -112,8 +112,8 @@ registerBlockType('ifdw/fubade', {
 									)
 								: __('No debugging information were outputted.', 'include-fussball-de-widgets')
 						}
-						onChange={isDevTools => {
-							setAttributes({ devtools: isDevTools });
+						onChange={isDevelopmentTools => {
+							setAttributes({ devtools: isDevelopmentTools });
 						}}
 						checked={devtools}
 						label={__('Show some information for debugging', 'include-fussball-de-widgets')}
@@ -124,7 +124,7 @@ registerBlockType('ifdw/fubade', {
 			<div className={className} key="output">
 				<h4 className={`${className}__header`}>
 					{__('Fussball.de Widget', 'include-fussball-de-widgets')}
-					{typeof notice === 'undefined' || notice === '' ? '' : `: "${notice}"`}
+					{notice === undefined || notice === '' ? '' : `: "${notice}"`}
 				</h4>
 
 				<div className={`${className}__main`}>
@@ -135,7 +135,7 @@ registerBlockType('ifdw/fubade', {
 							setAttributes({
 								api: newApi,
 								id: `fubade-${instanceId}-${
-									apiLength === newApi.length ? newApi.slice(-5) : `ERROR_${Number(new Date())}`
+									apiLength === newApi.length ? newApi.slice(-5) : `ERROR_${Date.now()}`
 								}`,
 							});
 						}}
@@ -145,7 +145,7 @@ registerBlockType('ifdw/fubade', {
 						value={api}
 					/>
 
-					{typeof api !== 'undefined' && api.length === apiUUIDLength && (
+					{api !== undefined && api.length === apiUUIDLength && (
 						<>
 							<label htmlFor={`${inputId}-type`}>
 								{__('Type:', 'include-fussball-de-widgets')}
@@ -164,8 +164,7 @@ registerBlockType('ifdw/fubade', {
 					)}
 				</div>
 
-				{typeof api !== 'undefined' &&
-				(apiLength === api.length || api.length === apiUUIDLength) ? (
+				{api !== undefined && (apiLength === api.length || api.length === apiUUIDLength) ? (
 					<div className={`${className}__footer`}>
 						{__(
 							'The widget should now be able to be displayed in the frontend.',

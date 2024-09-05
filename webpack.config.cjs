@@ -1,10 +1,10 @@
 const path = require('node:path');
 const process = require('node:process');
 
+const postcssPlugins = require('@wordpress/postcss-plugins-preset');
+const CopyPlugin = require('copy-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const postcssPlugins = require('@wordpress/postcss-plugins-preset');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -52,7 +52,7 @@ const commonConfig = {
 					name(module, chunks, cacheGroupKey) {
 						return `${cacheGroupKey}-${chunks[0].name}`;
 					},
-					test: /[\\/]style(\.module)?\.(sc|sa|c)ss$/,
+					test: /[/\\]style(\.module)?\.(sc|sa|c)ss$/,
 					type: 'css/mini-extract',
 				},
 			},

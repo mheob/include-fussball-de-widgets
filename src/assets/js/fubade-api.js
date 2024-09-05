@@ -17,8 +17,8 @@ import './fubade-api.legacy.js';
 	}
 
 	function initializeWidget(container) {
-		const widgetId = container.getAttribute('data-id');
-		const widgetType = container.getAttribute('data-type');
+		const widgetId = container.dataset.id;
+		const widgetType = container.dataset.type;
 
 		if (container && widgetId) {
 			const iframeName = `${generateSecureRandomId(4)}_fussballde_widget-${widgetId}`;
@@ -30,7 +30,7 @@ import './fubade-api.legacy.js';
 			iframe.setAttribute('frameborder', '0');
 			iframe.setAttribute('scrolling', 'no');
 
-			container.appendChild(iframe);
+			container.append(iframe);
 
 			window.addEventListener('message', function (event) {
 				if (
@@ -47,10 +47,10 @@ import './fubade-api.legacy.js';
 	}
 
 	function loadWidgets() {
-		const containers = Array.from(document.getElementsByClassName(containerClass));
-		containers.forEach(element => {
+		const containers = [...document.querySelectorAll(containerClass)];
+		for (const element of containers) {
 			initializeWidget(element);
-		});
+		}
 	}
 
 	if (document.readyState === 'loading') {

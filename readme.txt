@@ -36,7 +36,6 @@ All three variants are supported. For the "old" widgets from [fussball.de](https
 
 == Frequently Asked Questions ==
 
-
 = Where can I get the website key (old version) =
 
 You can get the required key from fussball.de in your widgets (<https://www.fussball.de/account.admin.widgets>). In the overview of your widget you will find the item `Website key`. This is the required character string.
@@ -47,21 +46,23 @@ You can obtain the required data from next.fussball.de in your widgets (<https:/
 
 `
 <div
-  class="soccer_widget"
+  class="fussballde_widget"
   data-id="299e1496-abcd-abcd-1234-8880c7270477"
-	data-type="table"
+  data-type="table"
 />
 `
 
 = How should I write the shortcode (old variant) =
 
-`[fubade api="{32-digit API}" notice="{Note}" fullWidth={iframe in full width} devtools={output of the DevTools}]` e.g. like this: `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullWidth=true devtools=false]`
-The fields `notice`, `fullWidth` and `devtools` are optional and do not have to be set.
+Like this: `[fubade api="{32-digit API}" notice="{Note}" fullWidth={iframe in full width} devtools={output of the DevTools}]`
+e.g. like this: `[fubade api="020EXXXXXG000000VS54XXXXXSGIXXME" notice="Standings U19" fullWidth=true devtools=false]`
+The fields "notice", "fullWidth" and "devtools" are optional and do not have to be set.
 
 = How should I write the shortcode (new variant) =
 
-`[fubade api="{36-digit data-id}" type="{data-type}" notice="{notice}" fullWidth={iframe in full width} devtools={output of the DevTools}]` e.g.`[fubade api="299e1496-abcd-abcd-1234-8880c7270477" notice="Standings U19" fullWidth=true devtools=false]`
-The fields `notice`, `fullWidth` and `devtools` are optional and do not have to be set.
+Like this: `[fubade api="{36-digit data-id}" type="{data-type}" notice="{notice}" fullWidth={iframe in full width} devtools={output of the DevTools}]`
+e.g.`[fubade api="299e1496-abcd-abcd-1234-8880c7270477" type="table" notice="Standings U19" fullWidth=true devtools=false]`
+The fields "notice", "fullWidth" and "devtools" are optional and do not have to be set.
 
 = What is the `api` (old: `{32-digit API}`) =
 

@@ -2,28 +2,28 @@
 /* eslint-disable no-console */
 
 window.fussballDeWidgetAPI = () => {
-	const devTools = typeof attr !== 'undefined' && !!attr.devtools;
+	const developmentTools = typeof attr !== 'undefined' && Boolean(attr.devtools);
 
 	window.addEventListener(
 		'message',
-		evt => {
-			if (devTools) {
-				console.info('window.fussballDeWidgetAPI -> evt.data.container', evt.data.container);
+		event => {
+			if (developmentTools) {
+				console.info('window.fussballDeWidgetAPI -> evt.data.container', event_.data.container);
 			}
 
-			const currentIframe = document.querySelector(`#${evt.data.container} iframe`);
+			const currentIframe = document.querySelector(`#${event_.data.container} iframe`);
 
 			if (!currentIframe) return;
 
-			if (evt.data.type === 'setHeight') {
-				currentIframe.setAttribute('height', `${evt.data.value}px`);
+			if (event.data.type === 'setHeight') {
+				currentIframe.setAttribute('height', `${event_.data.value}px`);
 				currentIframe.style.height = '';
 				currentIframe.style.minHeight = '200px';
 			}
 
-			if (evt.data.type === 'setWidth') {
+			if (event_.data.type === 'setWidth') {
 				if (currentIframe.getAttribute('width') !== '100%') {
-					currentIframe.setAttribute('width', `${evt.data.value}px`);
+					currentIframe.setAttribute('width', `${event_.data.value}px`);
 				}
 
 				currentIframe.style.width = '';
@@ -47,25 +47,26 @@ window.fussballDeWidgetAPI = () => {
 			'.et_pb_tabs_controls a, .fusion-tabs a.tab-link, .kt-tabs-title-list a, .su-spoiler-title, .vc_tta-tab a, .omsc-tabs-control a, .elementor-tab-title, .elementor-toggle',
 		);
 		if (tabs.length > 0) {
-			Array.from(tabs).forEach(tab => {
+			for (const tab of tabs) {
 				tab.addEventListener(
 					'click',
 					() => {
 						const iFrames = document.querySelectorAll('iframe');
 						setTimeout(
-							Array.from(iFrames).forEach(iFrame => {
+							// eslint-disable-next-line unicorn/no-array-for-each
+							[...iFrames].forEach(iFrame => {
 								iFrame.src += '';
 							}),
 							700,
 						);
-						if (devTools) {
+						if (developmentTools) {
 							console.info('window.fussballDeWidgetAPI -> tab', tab);
 							console.info('window.fussballDeWidgetAPI -> iFrames', iFrames);
 						}
 					},
 					false,
 				);
-			});
+			}
 		}
 	}
 };
